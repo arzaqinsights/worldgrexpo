@@ -1,0 +1,62 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    
+    /* Authentic World Grexpo Palette */
+    --color-brand-primary: #004b23; /* Deep Green from Logo */
+    --color-brand-primary-light: #006431;
+    --color-brand-primary-dark: #003318;
+    
+    --color-brand-accent: #aacc00; /* Lime/Sunflower Accent */
+    --color-brand-accent-hover: #bbee00;
+    --color-brand-accent-dark: #778800;
+    
+    --color-brand-navy: #1a2b48; /* Navy from Website buttons */
+    
+    --color-brand-secondary: #f0fdf4; /* Very light green tint */
+    --color-brand-secondary-hover: #dcfce7;
+    --color-brand-secondary-dark: #bbf7d0;
+    
+    --color-brand-border: #e2e8f0;
+    
+    /* SHARP EDGES CONSTRAINT: Overriding default radius tokens to max rounded-sm (0.125rem) */
+    --radius-sm: 0.125rem;
+    --radius-md: 0.125rem;
+    --radius-lg: 0.125rem;
+    --radius-xl: 0.125rem;
+    --radius-2xl: 0.125rem;
+    --radius-3xl: 0.125rem;
+    --radius-full: 0.125rem;
+}
+
+@layer base {
+    body {
+        @apply bg-white;
+    }
+}
+@layer components {
+    .border {
+        @apply border-brand-border;
+    }
+    .border-l {
+        @apply border-brand-border;
+    }
+    .border-l {
+        @apply border-brand-border;
+    }
+    .border-b {
+        @apply border-brand-border;
+    }
+    .border-r {
+        @apply border-brand-border;
+    }
+}
+.container {
+    @apply max-w-[1600px] mx-auto px-4 md:px-6 lg:px-8;
+}

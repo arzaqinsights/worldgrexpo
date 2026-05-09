@@ -1,0 +1,889 @@
+@extends('layouts.admin')
+
+@section('title', $event->exists ? 'Edit Event' : 'Schedule Event')
+
+@section('content')
+
+<div class="mb-6 flex justify-between items-end">
+    <div>
+        <h2 class="text-2xl font-black text-slate-900">{{ $event->exists ? 'Update Event: ' . $event->title : 'Schedule Platform Event' }}</h2>
+        <p class="text-sm font-bold text-slate-500 mt-1">Control visual hierarchy and event information.</p>
+    </div>
+    <a href="{{ route('admin.events.index') }}" class="text-slate-500 hover:text-slate-800 font-bold text-sm bg-white border border-slate-200 px-4 py-2 rounded-xl shadow-sm">
+        <i class="fa-solid fa-arrow-left-long mr-1"></i> Back to Events
+    </a>
+</div>
+
+<form action="{{ $event->exists ? route('admin.events.update', $event) : route('admin.events.store') }}" method="POST" enctype="multipart/form-data" x-data="eventBuilder()">
+    @csrf
+    @if($event->exists) @method('PUT') @endif
+
+    @if ($errors->any())
+        <div class="mb-6 p-4 bg-red-50 border-l-4 border-red-500 rounded-xl">
+            <div class="flex items-center mb-2">
+                <i class="fa-solid fa-triangle-exclamation text-red-500 mr-2"></i>
+                <h4 class="text-red-800 font-black text-sm uppercase tracking-widest">Configuration Errors</h4>
+            </div>
+            <ul class="list-disc list-inside text-xs text-red-600 font-bold space-y-1">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+    <div class="flex flex-col xl:flex-row gap-6 items-start">
+        
+        <!-- Main Form Area -->
+        <div class="w-full xl:w-3/4 space-y-6">
+            
+            <!-- Basics Section -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden p-8 space-y-6">
+                <h3 class="text-xs font-black text-slate-400 uppercase tracking-widest border-b border-slate-50 pb-3">1. Basic Logistics</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Event Title</label>
+                        <input type="text" name="title" value="{{ old('title', $event->title) }}" required 
+                               class="w-full bg-slate-50 border border-slate-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 p-3 rounded-xl outline-none font-bold text-slate-900 transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">URL Slug</label>
+                        <input type="text" name="slug" value="{{ old('slug', $event->slug) }}" 
+                               class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none focus:border-purple-500 font-bold text-slate-900">
+                    </div>
+                </div>
+
+                <div class="pt-4">
+                    <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Short Description / Card Preview</label>
+                    <textarea name="short_description" rows="2" placeholder="Brief 1-2 line summary to show on cards."
+                              class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none focus:border-purple-500 font-medium text-slate-900 transition-all text-sm">{{ old('short_description', $event->short_description) }}</textarea>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Start Date & Time</label>
+                        <input type="datetime-local" name="event_date" value="{{ old('event_date', $event->event_date ? $event->event_date->format('Y-m-d\TH:i') : '') }}" required 
+                               class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none focus:border-purple-500 font-bold text-slate-900">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">End Date (Optional)</label>
+                        <input type="datetime-local" name="end_date" value="{{ old('end_date', $event->end_date ? $event->end_date->format('Y-m-d\TH:i') : '') }}" 
+                               class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none focus:border-purple-500 font-bold text-slate-900">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Quick Location</label>
+                        <input type="text" name="location" value="{{ old('location', $event->location) }}" placeholder="e.g. Jio World Convention Centre, Mumbai"
+                               class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none focus:border-purple-500 font-bold text-slate-900">
+                    </div>
+                </div>
+
+                <div class="pt-4">
+                    <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Banner Image / Hero Photo</label>
+                    <div class="flex items-center space-x-4 mb-3">
+                        @if($event->image)
+                            <img src="{{ asset($event->image) }}" class="h-20 w-32 rounded-lg object-cover border border-slate-200 shadow-sm">
+                        @endif
+                        <input type="file" name="image" class="text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-[10px] file:font-black file:uppercase file:bg-purple-50 file:text-purple-700 hover:file:bg-purple-100 transition-all cursor-pointer">
+                    </div>
+                    <input type="hidden" name="image_url" value="{{ $event->image }}">
+                </div>
+            </div>
+
+            <!-- EVENT BUILDER -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="bg-slate-900 p-4 flex flex-col xl:flex-row xl:items-center justify-between gap-4">
+                    <h3 class="text-sm font-black text-white uppercase tracking-widest shrink-0"><i class="fa-solid fa-layer-group text-purple-400 mr-2"></i> Event Content Builder</h3>
+                    <div class="flex flex-wrap gap-1 bg-white/10 p-1 rounded-lg">
+                        <template x-for="tab in tabs">
+                            <button type="button" @click="activeTab = tab.id" 
+                                    :class="activeTab === tab.id ? 'bg-white text-slate-900' : 'text-white/60 hover:text-white'"
+                                    class="px-4 py-1.5 rounded-md text-[10px] font-black uppercase tracking-widest transition-all"
+                                    x-text="tab.label"></button>
+                        </template>
+                    </div>
+                </div>
+
+                <div class="p-8">
+                    <!-- About Tab -->
+                    <div x-show="activeTab === 'about'" class="space-y-6">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Summit Subtitle / Hook</label>
+                            <input type="text" name="builder_content[about][subtitle]" x-model="content.about.subtitle"
+                                   class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none focus:border-purple-500 font-bold text-slate-900">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">About Description (Rich Content)</label>
+                            <textarea name="builder_content[about][description]" x-model="content.about.description" rows="8" 
+                                      class="w-full bg-slate-50 border border-slate-200 rounded-xl p-4 outline-none focus:border-purple-500 font-medium text-slate-700 leading-relaxed"></textarea>
+                        </div>
+                        <div class="pt-6 border-t border-slate-100">
+                            <h4 class="text-xs font-black text-slate-900 uppercase tracking-widest mb-4 flex items-center gap-2">
+                                <i class="fa-solid fa-link text-brand-primary"></i> Registration Configuration
+                            </h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-[10px] font-black text-slate-400 uppercase mb-1.5 tracking-widest">Select Linked Form</label>
+                                    <select x-model="content.about.registration_url" 
+                                            class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none focus:border-purple-500 font-bold text-slate-900 text-xs">
+                                        <option value="">-- Custom Link / Manual --</option>
+                                        @foreach($forms ?? [] as $f)
+                                            <option value="{{ route('join.forms.show', $f->slug) }}">{{ $f->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] font-black text-slate-400 uppercase mb-1.5 tracking-widest">Registration URL (Custom)</label>
+                                    <input type="text" name="builder_content[about][registration_url]" x-model="content.about.registration_url" placeholder="https://..."
+                                           class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none focus:border-purple-500 font-mono text-[10px] text-slate-500">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Chief Guest Tab -->
+                    <!-- Special Guests Tab -->
+                    <div x-show="activeTab === 'guests'" class="space-y-4" style="display: none;">
+                        <div class="flex justify-between items-center mb-4">
+                            <p class="text-xs font-bold text-slate-400">Add Chief Guests, Special Guests, etc.</p>
+                            <button type="button" @click="addItem('guests')" class="bg-brand-primary text-white px-3 py-1.5 rounded-lg text-xs font-black uppercase tracking-widest">
+                                <i class="fa-solid fa-plus mr-1"></i> Add Guest
+                            </button>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <template x-for="(item, index) in content.guests" :key="index">
+                                <div class="bg-amber-50 border border-amber-100 rounded-2xl p-6 relative group">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                        <div>
+                                            <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5">Section/Title (e.g. Guest of Honor)</label>
+                                            <input type="text" :name="'builder_content[guests]['+index+'][title]'" x-model="item.title" placeholder="e.g. Chief Guest"
+                                                   class="w-full bg-white border border-slate-200 rounded-xl p-3 outline-none focus:border-purple-500 font-bold text-slate-900">
+                                        </div>
+                                        <div>
+                                            <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5">Full Name</label>
+                                            <input type="text" :name="'builder_content[guests]['+index+'][name]'" x-model="item.name" placeholder="e.g. Shri. Narendra Modi"
+                                                   class="w-full bg-white border border-slate-200 rounded-xl p-3 outline-none focus:border-purple-500 font-bold text-slate-900">
+                                        </div>
+                                    </div>
+
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                        <div>
+                                            <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5">Designation</label>
+                                            <input type="text" :name="'builder_content[guests]['+index+'][designation]'" x-model="item.designation" placeholder="e.g. Honorable Prime Minister of India"
+                                                   class="w-full bg-white border border-slate-200 rounded-xl p-3 outline-none focus:border-purple-500 font-bold text-slate-900">
+                                        </div>
+                                        <div>
+                                            <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5">Display Style</label>
+                                            <select :name="'builder_content[guests]['+index+'][display_style]'" x-model="item.display_style"
+                                                    class="w-full bg-white border border-slate-200 rounded-xl p-3 outline-none focus:border-purple-500 font-bold text-slate-900">
+                                                <option value="full">Full Width Highlight</option>
+                                                <option value="portrait">Portrait Short Card</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-6">
+                                        <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5">About / Bio (Optional)</label>
+                                        <textarea :name="'builder_content[guests]['+index+'][about]'" x-model="item.about" rows="3" placeholder="Brief bio..."
+                                                  class="w-full bg-white border border-slate-200 rounded-xl p-3 outline-none focus:border-purple-500 font-medium text-slate-900"></textarea>
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5">Profile Photo</label>
+                                        <div class="flex items-center gap-4">
+                                            <div class="w-24 h-24 rounded-full border-4 border-white shadow-lg bg-slate-100 flex items-center justify-center overflow-hidden shrink-0">
+                                                <template x-if="item.photo">
+                                                    <img :src="item.photo" class="w-full h-full object-cover">
+                                                </template>
+                                                <template x-if="!item.photo">
+                                                    <i class="fa-solid fa-user-tie text-3xl text-slate-300"></i>
+                                                </template>
+                                            </div>
+                                            <div class="flex-1">
+                                                <label class="bg-white border border-slate-200 hover:border-purple-500 text-slate-600 hover:text-purple-600 px-4 py-2 rounded-lg text-xs font-black uppercase tracking-widest cursor-pointer transition-all inline-block shadow-sm">
+                                                    <i class="fa-solid fa-cloud-arrow-up mr-1"></i> Upload Photo
+                                                    <input type="file" @change="uploadPartnerLogo($event, index, 'guest_photo')" accept="image/*" class="hidden">
+                                                </label>
+                                                <p class="text-[9px] font-bold text-slate-400 mt-2 uppercase tracking-widest">Recommended: Square Image (1:1), Max 1MB</p>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" :name="'builder_content[guests]['+index+'][photo]'" x-model="item.photo">
+                                    </div>
+
+                                    <button type="button" @click="removeItem('guests', index)" class="absolute -top-2 -right-2 w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
+                                        <i class="fa-solid fa-xmark text-[10px]"></i>
+                                    </button>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+
+                    <!-- CTA Tab -->
+                    <div x-show="activeTab === 'cta'" class="space-y-6" style="display: none;">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">CTA Heading</label>
+                            <input type="text" name="builder_content[cta][heading]" x-model="content.cta.heading" placeholder="e.g. Ready to Showcase Your Excellence?"
+                                   class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none focus:border-purple-500 font-black text-slate-900">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">CTA Description</label>
+                            <textarea name="builder_content[cta][description]" x-model="content.cta.description" rows="2" placeholder="e.g. Join hundreds of top-tier organizations..."
+                                      class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none focus:border-purple-500 font-medium text-slate-900"></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Call To Action Button Text</label>
+                            <input type="text" name="builder_content[cta][btn_text]" x-model="content.cta.btn_text" placeholder="e.g. Register Now"
+                                   class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none focus:border-purple-500 font-bold text-slate-900">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-black text-slate-400 uppercase mb-1.5 tracking-widest">Select Target Form</label>
+                            <select name="builder_content[cta][form_url]" x-model="content.cta.form_url" 
+                                    class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none focus:border-purple-500 font-bold text-slate-900 text-xs">
+                                <option value="">-- Select Form --</option>
+                                @foreach($forms ?? [] as $f)
+                                    <option value="{{ route('join.forms.show', $f->slug) }}">{{ $f->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Highlights Tab -->
+                    <div x-show="activeTab === 'highlights'" class="space-y-4">
+                        <div class="flex justify-between items-center mb-4">
+                            <p class="text-xs font-bold text-slate-400">Add key reasons to attend or summit highlights.</p>
+                            <button type="button" @click="addItem('highlights')" class="bg-purple-600 text-white px-3 py-1.5 rounded-lg text-xs font-black uppercase tracking-widest hover:bg-purple-700">
+                                <i class="fa-solid fa-plus mr-1"></i> Add Highlight
+                            </button>
+                        </div>
+                        <div class="grid grid-cols-1 gap-4">
+                            <template x-for="(item, index) in content.highlights" :key="index">
+                                <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 relative group">
+                                    <div class="space-y-4">
+                                        <!-- Title -->
+                                        <div>
+                                            <label class="block text-[9px] font-black text-slate-400 uppercase mb-1">Highlight Title</label>
+                                            <input type="text" :name="'builder_content[highlights]['+index+'][title]'" x-model="item.title"
+                                                   class="w-full bg-white border border-slate-200 rounded-lg p-2.5 text-xs font-bold outline-none focus:border-brand-primary">
+                                        </div>
+
+                                        <!-- Description -->
+                                        <div>
+                                            <label class="block text-[9px] font-black text-slate-400 uppercase mb-1">Brief Description (Optional)</label>
+                                            <textarea :name="'builder_content[highlights]['+index+'][desc]'" x-model="item.desc" rows="2"
+                                                      class="w-full bg-white border border-slate-200 rounded-lg p-2.5 text-xs outline-none focus:border-brand-primary"></textarea>
+                                        </div>
+
+                                        <!-- PDF Section -->
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-slate-100">
+                                            <!-- PDF Slot 1 -->
+                                            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
+                                                <label class="block text-[8px] font-black text-slate-400 uppercase mb-2">PDF Attachment 01</label>
+                                                <div class="space-y-3">
+                                                    <div class="flex items-center gap-3">
+                                                        <div class="w-14 h-14 rounded-lg border border-slate-200 bg-slate-50 flex items-center justify-center overflow-hidden shrink-0">
+                                                            <template x-if="item.pdf1_thumb">
+                                                                <img :src="item.pdf1_thumb" class="w-full h-full object-cover">
+                                                            </template>
+                                                            <template x-if="!item.pdf1_thumb">
+                                                                <i class="fa-solid fa-file-pdf text-slate-200 text-xl"></i>
+                                                            </template>
+                                                        </div>
+                                                        <div class="flex-1 min-w-0 space-y-2">
+                                                            <input type="text" :name="'builder_content[highlights]['+index+'][pdf1_name]'" x-model="item.pdf1_name" placeholder="Document Label"
+                                                                   class="w-full bg-slate-50 border border-slate-200 rounded-lg p-2 text-[10px] font-bold outline-none focus:border-brand-primary">
+                                                            <div class="flex gap-2">
+                                                                <div class="relative flex-1">
+                                                                    <button type="button" class="w-full bg-red-50 text-red-600 px-3 py-1.5 rounded text-[8px] font-black uppercase border border-red-100">Upload PDF</button>
+                                                                    <input type="file" @change="uploadPartnerLogo($event, index, 'highlights_pdf1')" accept=".pdf" class="absolute inset-0 opacity-0 cursor-pointer">
+                                                                </div>
+                                                                <div class="relative flex-1">
+                                                                    <button type="button" class="w-full bg-blue-50 text-blue-600 px-3 py-1.5 rounded text-[8px] font-black uppercase border border-blue-100">Thumb</button>
+                                                                    <input type="file" @change="uploadPartnerLogo($event, index, 'highlights_thumb1')" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer">
+                                                                </div>
+                                                            </div>
+                                                            <input type="hidden" :name="'builder_content[highlights]['+index+'][pdf1_path]'" x-model="item.pdf1_path">
+                                                            <input type="hidden" :name="'builder_content[highlights]['+index+'][pdf1_thumb]'" x-model="item.pdf1_thumb">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- PDF Slot 2 -->
+                                            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs">
+                                                <label class="block text-[8px] font-black text-slate-400 uppercase mb-2">PDF Attachment 02</label>
+                                                <div class="space-y-3">
+                                                    <div class="flex items-center gap-3">
+                                                        <div class="w-14 h-14 rounded-lg border border-slate-200 bg-slate-50 flex items-center justify-center overflow-hidden shrink-0">
+                                                            <template x-if="item.pdf2_thumb">
+                                                                <img :src="item.pdf2_thumb" class="w-full h-full object-cover">
+                                                            </template>
+                                                            <template x-if="!item.pdf2_thumb">
+                                                                <i class="fa-solid fa-file-pdf text-slate-200 text-xl"></i>
+                                                            </template>
+                                                        </div>
+                                                        <div class="flex-1 min-w-0 space-y-2">
+                                                            <input type="text" :name="'builder_content[highlights]['+index+'][pdf2_name]'" x-model="item.pdf2_name" placeholder="Document Label"
+                                                                   class="w-full bg-slate-50 border border-slate-200 rounded-lg p-2 text-[10px] font-bold outline-none focus:border-brand-primary">
+                                                            <div class="flex gap-2">
+                                                                <div class="relative flex-1">
+                                                                    <button type="button" class="w-full bg-red-50 text-red-600 px-3 py-1.5 rounded text-[8px] font-black uppercase border border-red-100">Upload PDF</button>
+                                                                    <input type="file" @change="uploadPartnerLogo($event, index, 'highlights_pdf2')" accept=".pdf" class="absolute inset-0 opacity-0 cursor-pointer">
+                                                                </div>
+                                                                <div class="relative flex-1">
+                                                                    <button type="button" class="w-full bg-blue-50 text-blue-600 px-3 py-1.5 rounded text-[8px] font-black uppercase border border-blue-100">Thumb</button>
+                                                                    <input type="file" @change="uploadPartnerLogo($event, index, 'highlights_thumb2')" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer">
+                                                                </div>
+                                                            </div>
+                                                            <input type="hidden" :name="'builder_content[highlights]['+index+'][pdf2_path]'" x-model="item.pdf2_path">
+                                                            <input type="hidden" :name="'builder_content[highlights]['+index+'][pdf2_thumb]'" x-model="item.pdf2_thumb">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" @click="removeItem('highlights', index)" class="absolute -top-2 -right-2 w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
+                                        <i class="fa-solid fa-xmark text-[10px]"></i>
+                                    </button>
+                                    </div>
+                                    </div>
+                                    <button type="button" @click="removeItem('highlights', index)" class="absolute -top-2 -right-2 w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <i class="fa-solid fa-xmark text-[10px]"></i>
+                                    </button>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+
+                    <!-- Pricing Tab -->
+                    <div x-show="activeTab === 'pricing'" class="space-y-4">
+                        <div class="flex justify-between items-center mb-4">
+                            <p class="text-xs font-bold text-slate-400">Define delegate/summits entry passes.</p>
+                            <button type="button" @click="addItem('pricing')" class="bg-brand-primary text-white px-3 py-1.5 rounded-lg text-xs font-black uppercase tracking-widest">
+                                <i class="fa-solid fa-plus mr-1"></i> Add Tier
+                            </button>
+                        </div>
+                        <div class="space-y-4 mb-6 border-b border-slate-100 pb-6">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Pricing Section Heading</label>
+                                <input type="text" name="builder_content[pricing_header][heading]" x-model="content.pricing_header.heading" placeholder="e.g. Secure Your Nomination"
+                                       class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none focus:border-purple-500 font-black text-slate-900">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Pricing Section Sub-text</label>
+                                <textarea name="builder_content[pricing_header][description]" x-model="content.pricing_header.description" rows="2" placeholder="e.g. Choose your access level"
+                                          class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none focus:border-purple-500 font-medium text-slate-900"></textarea>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <template x-for="(item, index) in content.pricing" :key="index">
+                                <div class="bg-indigo-50/50 border border-indigo-100 rounded-2xl p-6 relative group">
+                                    <div class="mb-4">
+                                        <label class="block text-[9px] font-black text-slate-400 uppercase mb-1">Access Level (e.g. Delegate, Sponsor)</label>
+                                        <input type="text" :name="'builder_content[pricing]['+index+'][type]'" x-model="item.type"
+                                               class="w-full bg-white border border-indigo-200 rounded-lg p-2.5 text-sm font-black text-indigo-900">
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-4 mb-4">
+                                        <div>
+                                            <label class="block text-[9px] font-black text-slate-400 uppercase mb-1">Price</label>
+                                            <input type="text" :name="'builder_content[pricing]['+index+'][price]'" x-model="item.price" placeholder="45,000"
+                                                   class="w-full bg-white border border-indigo-200 rounded-lg p-2.5 text-sm font-bold">
+                                        </div>
+                                        <div>
+                                            <label class="block text-[9px] font-black text-slate-400 uppercase mb-1">Currency Symbol</label>
+                                            <input type="text" :name="'builder_content[pricing]['+index+'][currency]'" x-model="item.currency" placeholder="INR"
+                                                   class="w-full bg-white border border-indigo-200 rounded-lg p-2.5 text-sm font-bold text-slate-500">
+                                        </div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="block text-[9px] font-black text-slate-400 uppercase mb-1">Inclusions / Description</label>
+                                        <textarea :name="'builder_content[pricing]['+index+'][desc]'" x-model="item.desc" rows="3" placeholder="e.g. Lunch, Networking, Certification"
+                                                  class="w-full bg-white border border-indigo-200 rounded-lg p-2.5 text-xs"></textarea>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div>
+                                            <label class="block text-[9px] font-black text-slate-400 uppercase mb-1">Button Text</label>
+                                            <input type="text" :name="'builder_content[pricing]['+index+'][btn_text]'" x-model="item.btn_text" placeholder="e.g. Apply Now"
+                                                   class="w-full bg-white border border-indigo-200 rounded-lg p-2.5 text-xs font-bold">
+                                        </div>
+                                        <div>
+                                            <label class="block text-[9px] font-black text-slate-400 uppercase mb-1">Target Form</label>
+                                            <select :name="'builder_content[pricing]['+index+'][form_url]'" x-model="item.form_url" 
+                                                    class="w-full bg-white border border-indigo-200 rounded-lg p-2.5 text-xs font-bold text-slate-900">
+                                                <option value="">-- Custom Link / Default --</option>
+                                                @foreach($forms ?? [] as $f)
+                                                    <option value="{{ route('join.forms.show', $f->slug) }}">{{ $f->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <button type="button" @click="removeItem('pricing', index)" class="absolute -top-2 -right-2 w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <i class="fa-solid fa-xmark text-[10px]"></i>
+                                    </button>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+
+                    <!-- Venue Tab -->
+                    <div x-show="activeTab === 'venue'" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-[10px] font-black text-slate-400 uppercase mb-1.5 tracking-widest">Venue Name</label>
+                                    <input type="text" name="builder_content[venue][name]" x-model="content.venue.name" placeholder="e.g. Pragati Maidan, New Delhi"
+                                           class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none focus:border-purple-500 font-bold text-slate-900">
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] font-black text-slate-400 uppercase mb-1.5 tracking-widest">Full Address & Details</label>
+                                    <textarea name="builder_content[venue][address]" x-model="content.venue.address" rows="3"
+                                              class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none focus:border-purple-500 font-medium"></textarea>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-black text-slate-400 uppercase mb-1.5 tracking-widest">Venue Visual Image</label>
+                                <div class="relative aspect-video rounded-2xl border-2 border-dashed border-slate-200 bg-slate-50 overflow-hidden flex items-center justify-center group">
+                                    <template x-if="content.venue.image">
+                                        <img :src="content.venue.image" class="w-full h-full object-cover">
+                                    </template>
+                                    <template x-if="!content.venue.image">
+                                        <div class="text-center">
+                                            <i class="fa-solid fa-building-circle-check text-4xl text-slate-200 mb-2"></i>
+                                            <p class="text-[10px] font-bold text-slate-400">Click to upload Venue Photo</p>
+                                        </div>
+                                    </template>
+                                    <input type="file" @change="uploadPartnerLogo($event, null, 'venue_image')" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer">
+                                    <input type="hidden" name="builder_content[venue][image]" x-model="content.venue.image">
+                                    
+                                    <template x-if="content.venue.image">
+                                        <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                            <button type="button" @click="content.venue.image = ''" class="bg-white text-red-600 px-4 py-2 rounded-full text-[10px] font-black uppercase shadow-xl">
+                                                Remove Photo
+                                            </button>
+                                        </div>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Partners Tab -->
+                    <div x-show="activeTab === 'partners'" class="space-y-4">
+                        <div class="flex justify-between items-center mb-4">
+                            <p class="text-xs font-bold text-slate-400">Add Sponsors, Partners, or Exhibitor logos.</p>
+                            <button type="button" @click="addItem('partners')" class="bg-slate-900 text-white px-3 py-1.5 rounded-lg text-xs font-black uppercase tracking-widest">
+                                <i class="fa-solid fa-plus mr-1"></i> Add Partner
+                            </button>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <template x-for="(item, index) in content.partners" :key="index">
+                                <div class="bg-white border border-slate-100 rounded-xl p-4 text-center relative group shadow-sm transition-all hover:border-brand-primary">
+                                    <div class="h-20 flex items-center justify-center mb-3">
+                                        <template x-if="item.logo">
+                                            <img :src="item.logo" class="max-h-full max-w-full transition-all">
+                                        </template>
+                                        <template x-if="!item.logo">
+                                            <i class="fa-solid fa-image text-slate-200 text-2xl"></i>
+                                        </template>
+                                    </div>
+                                    <div class="mt-2 text-left">
+                                        <label class="block text-[8px] font-black text-slate-400 uppercase mb-1 tracking-widest text-center">Partner Name</label>
+                                        <input type="text" :name="'builder_content[partners]['+index+'][name]'" x-model="item.name" placeholder="Enter Company Name"
+                                               class="w-full bg-slate-50 border border-slate-100 rounded-lg p-2 text-[10px] font-black uppercase tracking-widest text-center outline-none focus:border-brand-primary">
+                                    </div>
+                                    
+                                    <div class="mt-2 relative">
+                                        <button type="button" class="text-[9px] font-black text-blue-600 uppercase">Upload Logo</button>
+                                        <input type="file" @change="uploadPartnerLogo($event, index)" class="absolute inset-0 opacity-0 cursor-pointer">
+                                        <input type="hidden" :name="'builder_content[partners]['+index+'][logo]'" x-model="item.logo">
+                                    </div>
+
+                                    <div class="mt-3 pt-3 border-t border-slate-50">
+                                        <label class="flex items-center justify-center gap-2 cursor-pointer">
+                                            <input type="checkbox" :name="'builder_content[partners]['+index+'][is_pending]'" x-model="item.is_pending" class="w-3 h-3 text-purple-600 rounded">
+                                            <span class="text-[9px] font-black text-slate-400 uppercase tracking-widest">Under Confirmation</span>
+                                        </label>
+                                    </div>
+
+                                    <button type="button" @click="removeItem('partners', index)" class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity translate-x-1/2 -translate-y-1/2 shadow-lg">
+                                        <i class="fa-solid fa-xmark text-[8px]"></i>
+                                    </button>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Tab -->
+                    <div x-show="activeTab === 'faq'" class="space-y-4">
+                        <div class="flex justify-between items-center mb-4">
+                            <p class="text-xs font-bold text-slate-400">Common questions about the summit.</p>
+                            <button type="button" @click="addItem('faq')" class="bg-slate-700 text-white px-3 py-1.5 rounded-lg text-xs font-black uppercase tracking-widest">
+                                <i class="fa-solid fa-plus mr-1"></i> Add FAQ
+                            </button>
+                        </div>
+                        <div class="space-y-4">
+                            <template x-for="(item, index) in content.faq" :key="index">
+                                <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 group">
+                                    <div class="mb-3">
+                                        <input type="text" :name="'builder_content[faq]['+index+'][q]'" x-model="item.q" placeholder="Question?" 
+                                               class="w-full bg-white border border-slate-200 rounded-lg p-2.5 text-sm font-bold text-slate-900">
+                                    </div>
+                                    <div class="relative">
+                                        <textarea :name="'builder_content[faq]['+index+'][a]'" x-model="item.a" rows="2" placeholder="Answer..."
+                                                  class="w-full bg-white border border-slate-200 rounded-lg p-2.5 text-xs text-slate-600"></textarea>
+                                        <button type="button" @click="removeItem('faq', index)" class="absolute top-2 right-2 text-red-300 hover:text-red-500 transition-colors">
+                                            <i class="fa-solid fa-trash-can text-xs"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+
+                    <!-- Resources Tab (Original Attachments) -->
+                    <div x-show="activeTab === 'resources'" class="space-y-4">
+                        <div class="flex justify-between items-center mb-4">
+                            <p class="text-xs font-bold text-slate-400">Downloadable PDFs, Brochures, or Videos.</p>
+                            <button type="button" @click="addItem('resources')" class="bg-emerald-600 text-white px-3 py-1.5 rounded-lg text-xs font-black uppercase tracking-widest">
+                                <i class="fa-solid fa-plus mr-1"></i> Add Resource
+                            </button>
+                        </div>
+                        <div class="grid grid-cols-1 gap-3">
+                            <template x-for="(item, index) in content.resources" :key="index">
+                                <div class="bg-white border border-slate-200 rounded-xl p-4 flex gap-4 items-center group">
+                                    <div class="flex-1">
+                                        <input type="text" :name="'builder_content[resources]['+index+'][title]'" x-model="item.title" placeholder="Resource Title"
+                                               class="w-full bg-slate-50 border-0 rounded-lg p-2 text-xs font-bold">
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex flex-col gap-2">
+                                            <div class="flex gap-2">
+                                                <input type="text" :name="'builder_content[resources]['+index+'][url]'" x-model="item.url" readonly placeholder="File URL"
+                                                       class="flex-1 bg-slate-100 border border-slate-200 rounded-lg p-2 text-[10px] font-mono">
+                                                <div class="relative overflow-hidden">
+                                                    <button type="button" class="bg-emerald-50 text-emerald-600 px-3 py-2 rounded-lg text-[10px] font-black uppercase border border-emerald-100 whitespace-nowrap">Upload File</button>
+                                                    <input type="file" @change="uploadPartnerLogo($event, index, 'resources_file')" class="absolute inset-0 opacity-0 cursor-pointer">
+                                                </div>
+                                            </div>
+                                            <div class="flex gap-2">
+                                                <input type="text" :name="'builder_content[resources]['+index+'][thumbnail]'" x-model="item.thumbnail" readonly placeholder="Thumbnail Image URL"
+                                                       class="flex-1 bg-slate-100 border border-slate-200 rounded-lg p-2 text-[10px] font-mono">
+                                                <div class="relative overflow-hidden">
+                                                    <button type="button" class="bg-blue-50 text-blue-600 px-3 py-2 rounded-lg text-[10px] font-black uppercase border border-blue-100 whitespace-nowrap">Upload Thumb</button>
+                                                    <input type="file" @change="uploadPartnerLogo($event, index, 'resources_thumb')" class="absolute inset-0 opacity-0 cursor-pointer">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" @click="removeItem('resources', index)" class="text-red-300 hover:text-red-500">
+                                        <i class="fa-solid fa-circle-xmark"></i>
+                                    </button>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Tab -->
+                    <div x-show="activeTab === 'gallery'" class="space-y-4">
+                        <div class="flex justify-between items-center mb-4">
+                            <p class="text-xs font-bold text-slate-400">Add past images or video links.</p>
+                            <button type="button" @click="addItem('gallery')" class="bg-pink-600 text-white px-3 py-1.5 rounded-lg text-xs font-black uppercase tracking-widest">
+                                <i class="fa-solid fa-plus mr-1"></i> Add Media
+                            </button>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <template x-for="(item, index) in content.gallery" :key="index">
+                                <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 relative group">
+                                    <div class="mb-3">
+                                        <label class="block text-[9px] font-black text-slate-400 uppercase mb-1">Media Type</label>
+                                        <select :name="'builder_content[gallery]['+index+'][type]'" x-model="item.type" class="w-full bg-white border border-slate-200 rounded-lg p-2 text-xs font-bold outline-none">
+                                            <option value="image">Image</option>
+                                            <option value="video">Video (YouTube/Vimeo embed URL)</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="block text-[9px] font-black text-slate-400 uppercase mb-1">Media URL</label>
+                                        <div class="flex gap-2">
+                                            <input type="text" :name="'builder_content[gallery]['+index+'][url]'" x-model="item.url" placeholder="File or Embed URL"
+                                                   class="w-full bg-white border border-slate-200 rounded-lg p-2 text-xs outline-none">
+                                            <template x-if="item.type === 'image'">
+                                                <div class="relative overflow-hidden shrink-0">
+                                                    <button type="button" class="bg-emerald-50 text-emerald-600 px-3 py-2 rounded-lg text-[10px] font-black uppercase border border-emerald-100 whitespace-nowrap">Upload</button>
+                                                    <input type="file" @change="uploadPartnerLogo($event, index, 'gallery_image')" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer">
+                                                </div>
+                                            </template>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3" x-show="item.type === 'video'">
+                                        <label class="block text-[9px] font-black text-slate-400 uppercase mb-1">Thumbnail (for video)</label>
+                                        <div class="flex gap-2">
+                                            <input type="text" :name="'builder_content[gallery]['+index+'][thumbnail]'" x-model="item.thumbnail" placeholder="Thumbnail URL"
+                                                   class="w-full bg-white border border-slate-200 rounded-lg p-2 text-xs outline-none">
+                                            <div class="relative overflow-hidden shrink-0">
+                                                <button type="button" class="bg-blue-50 text-blue-600 px-3 py-2 rounded-lg text-[10px] font-black uppercase border border-blue-100 whitespace-nowrap">Upload</button>
+                                                <input type="file" @change="uploadPartnerLogo($event, index, 'gallery_thumb')" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="button" @click="removeItem('gallery', index)" class="absolute -top-2 -right-2 w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <i class="fa-solid fa-xmark text-[10px]"></i>
+                                    </button>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+
+                    <!-- Testimonials Tab -->
+                    <div x-show="activeTab === 'testimonials'" class="space-y-4">
+                        <div class="flex justify-between items-center mb-4">
+                            <p class="text-xs font-bold text-slate-400">Add past reviews or testimonials.</p>
+                            <button type="button" @click="addItem('testimonials')" class="bg-blue-600 text-white px-3 py-1.5 rounded-lg text-xs font-black uppercase tracking-widest">
+                                <i class="fa-solid fa-plus mr-1"></i> Add Review
+                            </button>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <template x-for="(item, index) in content.testimonials" :key="index">
+                                <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 relative group">
+                                    <div class="flex gap-4 mb-3">
+                                        <div class="w-16 h-16 rounded-full border-2 border-slate-200 bg-white overflow-hidden shrink-0 relative">
+                                            <template x-if="item.avatar">
+                                                <img :src="item.avatar" class="w-full h-full object-cover">
+                                            </template>
+                                            <template x-if="!item.avatar">
+                                                <div class="w-full h-full flex items-center justify-center text-slate-300">
+                                                    <i class="fa-solid fa-user"></i>
+                                                </div>
+                                            </template>
+                                            <input type="file" @change="uploadPartnerLogo($event, index, 'testimonial_avatar')" accept="image/*" class="absolute inset-0 opacity-0 cursor-pointer">
+                                        </div>
+                                        <div class="flex-1 space-y-2">
+                                            <div>
+                                                <label class="block text-[9px] font-black text-slate-400 uppercase mb-1">Name</label>
+                                                <input type="text" :name="'builder_content[testimonials]['+index+'][name]'" x-model="item.name" placeholder="John Doe"
+                                                       class="w-full bg-white border border-slate-200 rounded-lg p-2 text-xs font-bold outline-none">
+                                            </div>
+                                            <div>
+                                                <label class="block text-[9px] font-black text-slate-400 uppercase mb-1">Company / Designation</label>
+                                                <input type="text" :name="'builder_content[testimonials]['+index+'][company]'" x-model="item.company" placeholder="CEO, TechCorp"
+                                                       class="w-full bg-white border border-slate-200 rounded-lg p-2 text-xs outline-none">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="block text-[9px] font-black text-slate-400 uppercase mb-1">Review</label>
+                                        <textarea :name="'builder_content[testimonials]['+index+'][review]'" x-model="item.review" rows="3" placeholder="This award changed my business..."
+                                                  class="w-full bg-white border border-slate-200 rounded-lg p-2 text-xs outline-none"></textarea>
+                                    </div>
+                                    <input type="hidden" :name="'builder_content[testimonials]['+index+'][avatar]'" x-model="item.avatar">
+                                    <button type="button" @click="removeItem('testimonials', index)" class="absolute -top-2 -right-2 w-6 h-6 bg-red-500 text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <i class="fa-solid fa-xmark text-[10px]"></i>
+                                    </button>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Right Side: Publishing Parameters -->
+        <div class="w-full xl:w-1/4 space-y-6 sticky top-6">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                <h3 class="text-lg font-black text-slate-900 mb-4 border-b border-slate-100 pb-3">Status</h3>
+                <div class="space-y-4">
+                    <!-- Design Strategy -->
+                    <div>
+                        <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Display Strategy</label>
+                        <select name="design_style" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none focus:border-purple-500 font-bold text-slate-900 cursor-pointer text-xs">
+                            <option value="standard" {{ old('design_style', $event->design_style) === 'standard' ? 'selected' : '' }}>Standard Listing</option>
+                            <option value="featured" {{ old('design_style', $event->design_style) === 'featured' ? 'selected' : '' }}>Featured Hero</option>
+                        </select>
+                    </div>
+
+                    <select name="status" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 outline-none focus:border-purple-500 font-black text-slate-900 cursor-pointer">
+                        <option value="published" {{ old('status', $event->status) === 'published' ? 'selected' : '' }}>Published Publicly</option>
+                        <option value="draft" {{ old('status', $event->status) === 'draft' ? 'selected' : '' }}>Hidden Draft Array</option>
+                    </select>
+
+                    <label class="flex items-center gap-3 p-3 bg-slate-50 rounded-xl cursor-pointer border border-slate-100">
+                        <input type="checkbox" name="show_timer" value="1" {{ $event->show_timer ? 'checked' : '' }} class="w-4 h-4 text-purple-600 rounded">
+                        <span class="text-xs font-bold text-slate-700">Live Countdown Timer</span>
+                    </label>
+
+                    <label class="flex items-center gap-3 p-3 {{ (isset($currentPopup) && $currentPopup && !$event->show_as_popup) ? 'bg-slate-100 opacity-60 cursor-not-allowed' : 'bg-slate-50 cursor-pointer' }} rounded-xl border border-slate-100">
+                        <input type="checkbox" name="show_as_popup" value="1" 
+                               {{ $event->show_as_popup ? 'checked' : '' }} 
+                               {{ (isset($currentPopup) && $currentPopup && !$event->show_as_popup) ? 'disabled' : '' }}
+                               class="w-4 h-4 text-purple-600 rounded">
+                        <span class="text-xs font-bold text-slate-700">Homepage Popup Mode</span>
+                    </label>
+                    
+                    @if(isset($currentPopup) && $currentPopup)
+                        <div class="px-3 py-2 bg-amber-50 rounded-lg border border-amber-100">
+                            <p class="text-[9px] font-black text-amber-700 uppercase tracking-widest leading-tight">
+                                <i class="fa-solid fa-lock mr-1"></i> Feature Locked
+                            </p>
+                            <p class="text-[10px] font-bold text-amber-900 mt-1">Currently assigned to: <br> "{{ $currentPopup->title }}"</p>
+                            <p class="text-[8px] text-amber-600 font-medium mt-1">* Please turn off the popup from the above event to enable this toggle.</p>
+                        </div>
+                    @endif
+
+                    <div class="pt-4">
+                        <button type="submit" class="w-full bg-slate-900 hover:bg-black text-white font-black py-4 rounded-xl transition-all shadow-xl shadow-slate-900/10 flex justify-center items-center gap-2">
+                             <i class="fa-solid fa-save"></i> Save Event
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-purple-900 rounded-2xl p-6 text-white shadow-xl shadow-purple-900/20">
+                <i class="fa-solid fa-circle-info text-2xl text-purple-300 mb-3 block"></i>
+                <h4 class="text-xs font-black uppercase tracking-widest border-b border-purple-800 pb-2 mb-3">Live Page URL</h4>
+                @if($event->exists)
+                    <a href="{{ route('events.show', $event->slug) }}" target="_blank" class="text-[10px] font-mono break-all text-purple-200 block hover:text-white transition-colors underline">
+                        {{ route('events.show', $event->slug) }}
+                    </a>
+                @else
+                    <p class="text-[10px] text-purple-300 italic">Page will be available after saving.</p>
+                @endif
+            </div>
+        </div>
+
+    </div>
+</form>
+
+<script>
+    function eventBuilder() {
+        return {
+            activeTab: 'about',
+            tabs: [
+                { id: 'about', label: 'About' },
+                { id: 'highlights', label: 'Highlights' },
+                { id: 'pricing', label: 'Pricing' },
+                { id: 'venue', label: 'Venue' },
+                { id: 'partners', label: 'Partners' },
+                { id: 'faq', label: 'FAQ' },
+                { id: 'resources', label: 'Resources' },
+                { id: 'gallery', label: 'Gallery' },
+                { id: 'testimonials', label: 'Testimonials' },
+                { id: 'guests', label: 'Special Guests' },
+                { id: 'cta', label: 'Call To Action' },
+            ],
+            // Default content structure
+            content: {
+                about: {
+                    subtitle: @json($event->builder_content['about']['subtitle'] ?? ''),
+                    description: @json($event->builder_content['about']['description'] ?? ''),
+                    registration_url: @json($event->builder_content['about']['registration_url'] ?? ''),
+                },
+                guests: @json($event->builder_content['guests'] ?? (isset($event->builder_content['chief_guest']) && !empty($event->builder_content['chief_guest']['name']) ? [$event->builder_content['chief_guest']] : [])).map(g => ({
+                    title: g.title || '',
+                    name: g.name || '',
+                    designation: g.designation || '',
+                    about: g.about || '',
+                    photo: g.photo || '',
+                    display_style: g.display_style || 'full'
+                })),
+                cta: {
+                    heading: @json($event->builder_content['cta']['heading'] ?? ''),
+                    description: @json($event->builder_content['cta']['description'] ?? ''),
+                    btn_text: @json($event->builder_content['cta']['btn_text'] ?? 'Register Now'),
+                    form_url: @json($event->builder_content['cta']['form_url'] ?? ''),
+                },
+                highlights: @json($event->builder_content['highlights'] ?? []).map(h => ({ 
+                    title: h.title || '', 
+                    desc: h.desc || '', 
+                    pdf1_path: h.pdf1_path || h.pdf_path || '',
+                    pdf1_thumb: h.pdf1_thumb || h.pdf_thumbnail || '',
+                    pdf1_name: h.pdf1_name || '',
+                    pdf2_path: h.pdf2_path || '',
+                    pdf2_thumb: h.pdf2_thumb || '',
+                    pdf2_name: h.pdf2_name || ''
+                })),
+                pricing: @json($event->builder_content['pricing'] ?? []),
+                pricing_header: {
+                    heading: @json($event->builder_content['pricing_header']['heading'] ?? ''),
+                    description: @json($event->builder_content['pricing_header']['description'] ?? '')
+                },
+                venue: {
+                    name: @json($event->builder_content['venue']['name'] ?? ''),
+                    address: @json($event->builder_content['venue']['address'] ?? ''),
+                    image: @json($event->builder_content['venue']['image'] ?? ''),
+                },
+                partners: @json($event->builder_content['partners'] ?? []).map(p => ({
+                    name: p.name || '',
+                    logo: p.logo || '',
+                    is_pending: !!p.is_pending
+                })),
+                faq: @json($event->builder_content['faq'] ?? []),
+                resources: @json($event->builder_content['resources'] ?? []),
+                gallery: @json($event->builder_content['gallery'] ?? []),
+                testimonials: @json($event->builder_content['testimonials'] ?? []),
+            },
+            addItem(section) {
+                if (section === 'highlights') this.content.highlights.push({ title: '', desc: '', pdf1_path: '', pdf1_thumb: '', pdf1_name: '', pdf2_path: '', pdf2_thumb: '', pdf2_name: '' });
+                if (section === 'pricing') this.content.pricing.push({ type: 'Standard Delegate', price: '0', currency: 'INR', desc: '', btn_text: 'Apply Now', form_url: '' });
+                if (section === 'partners') this.content.partners.push({ name: '', logo: '', is_pending: false });
+                if (section === 'faq') this.content.faq.push({ q: '', a: '' });
+                if (section === 'resources') this.content.resources.push({ title: '', url: '', thumbnail: '' });
+                if (section === 'gallery') this.content.gallery.push({ type: 'image', url: '', thumbnail: '' });
+                if (section === 'testimonials') this.content.testimonials.push({ name: '', company: '', review: '', avatar: '' });
+                if (section === 'guests') this.content.guests.push({ title: 'Special Guest', name: '', designation: '', about: '', photo: '', display_style: 'full' });
+            },
+            removeItem(section, index) {
+                this.content[section].splice(index, 1);
+            },
+            async uploadPartnerLogo(event, index, type = 'partners') {
+                const file = event.target.files[0];
+                if (!file) return;
+
+                const formData = new FormData();
+                formData.append('file', file);
+                formData.append('_token', '{{ csrf_token() }}');
+
+                try {
+                    const response = await fetch('{{ route('admin.events.upload-attachment') }}', {
+                        method: 'POST',
+                        body: formData
+                    });
+                    const data = await response.json();
+                    if (data.success) {
+                        if (type === 'partners') {
+                            this.content.partners[index].logo = data.path;
+                            if(!this.content.partners[index].name) this.content.partners[index].name = data.name;
+                        } else if (type === 'resources_file') {
+                            this.content.resources[index].url = data.path;
+                            if(!this.content.resources[index].title) this.content.resources[index].title = data.name;
+                        } else if (type === 'resources_thumb') {
+                            this.content.resources[index].thumbnail = data.path;
+                        } else if (type === 'highlights_pdf1') {
+                            this.content.highlights[index].pdf1_path = data.path;
+                        } else if (type === 'highlights_thumb1') {
+                            this.content.highlights[index].pdf1_thumb = data.path;
+                        } else if (type === 'highlights_pdf2') {
+                            this.content.highlights[index].pdf2_path = data.path;
+                        } else if (type === 'highlights_thumb2') {
+                            this.content.highlights[index].pdf2_thumb = data.path;
+                        } else if (type === 'venue_image') {
+                            this.content.venue.image = data.path;
+                        } else if (type === 'gallery_image') {
+                            this.content.gallery[index].url = data.path;
+                        } else if (type === 'gallery_thumb') {
+                            this.content.gallery[index].thumbnail = data.path;
+                        } else if (type === 'testimonial_avatar') {
+                            this.content.testimonials[index].avatar = data.path;
+                        } else if (type === 'guest_photo') {
+                            this.content.guests[index].photo = data.path;
+                        }
+                    }
+                } catch (e) {
+                    console.error(e);
+                    alert('Upload failed.');
+                }
+            }
+        }
+    }
+</script>
+
+@endsection
