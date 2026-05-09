@@ -16,213 +16,221 @@
 
 <?php $__env->startSection('content'); ?>
 
-<!-- Header -->
-<div class="relative bg-slate-950 pt-32 pb-48 border-b border-slate-900">
+<!-- Header Backdrop -->
+<div class="relative bg-slate-950 pt-32 pb-48 overflow-hidden">
     <div class="absolute inset-0 z-0">
-        <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
     </div>
+    <!-- Animated Decorators -->
+    <div class="absolute top-1/4 right-0 w-[600px] h-[600px] bg-brand-primary/10 rounded-full blur-[120px] animate-pulse"></div>
 </div>
 
-<!-- Main Article Container -->
+<!-- Article Interface -->
 <section class="relative z-10 -mt-32 pb-32">
-    <div class="max-w-[1200px] mx-auto px-6 lg:px-8">
+    <div class="max-w-[1100px] mx-auto px-6">
         
-        <article class="bg-white border border-slate-100 overflow-hidden rounded-sm shadow-4xl">
+        <article class="bg-white rounded-[4rem] shadow-2xl overflow-hidden border border-slate-100">
             
-            <!-- Hero Image -->
-            <div class="w-full h-[500px] lg:h-[700px] relative border-b border-slate-100">
-                <img src="<?php echo e($article->thumbnail_url); ?>" alt="<?php echo e($article->title); ?>" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-[2000ms]">
-                <div class="absolute inset-0 bg-slate-950/20"></div>
+            <!-- Hero Media -->
+            <div class="relative aspect-[16/9] overflow-hidden group">
+                <img src="<?php echo e($article->thumbnail_url); ?>" alt="<?php echo e($article->title); ?>" 
+                     class="w-full h-full object-cover transition-all duration-[3000ms] group-hover:scale-110 grayscale group-hover:grayscale-0">
+                <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 via-transparent to-transparent opacity-60 group-hover:opacity-20 transition-opacity"></div>
+                
                 <?php if($article->category): ?>
-                    <div class="absolute top-10 left-10 flex flex-wrap gap-3">
+                    <div class="absolute top-10 left-10 flex flex-wrap gap-3 z-20">
                         <?php $__currentLoopData = array_map('trim', explode(',', $article->category)); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $cat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <span class="bg-slate-950/80 backdrop-blur-md px-6 py-3 text-[10px] font-black text-brand-accent uppercase tracking-[0.3em] border border-white/10 italic rounded-sm"><?php echo e($cat); ?></span>
+                            <span class="px-6 py-2 bg-brand-primary text-white text-[9px] font-black uppercase tracking-widest rounded-full shadow-2xl"><?php echo e($cat); ?></span>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </div>
                 <?php endif; ?>
+
+                <!-- Meta Tag -->
+                <div class="absolute bottom-10 left-10 px-6 py-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl text-white text-[10px] font-black uppercase tracking-widest shadow-2xl">
+                    <i class="fa-regular fa-calendar mr-3 text-brand-accent"></i> 
+                    <?php echo e($article->published_at ? $article->published_at->format('F d, Y') : $article->created_at->format('F d, Y')); ?>
+
+                </div>
             </div>
 
             <!-- Content Header -->
-            <div class="px-12 md:px-24 pt-24 pb-16 border-b border-slate-100">
-                <div class="flex flex-wrap items-center gap-8 text-[10px] font-black text-slate-500 mb-12 uppercase tracking-[0.3em] italic">
-                    <span class="flex items-center gap-4">
-                        <i class="fa-regular fa-calendar text-brand-accent"></i> <?php echo e($article->published_at ? $article->published_at->format('F d, Y') : $article->created_at->format('F d, Y')); ?>
+            <div class="p-12 md:p-24 space-y-12">
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4">
+                        <div class="h-[1px] w-12 bg-brand-primary"></div>
+                        <span class="text-brand-primary text-[10px] font-black uppercase tracking-[0.4em]">Intelligence Report</span>
+                    </div>
+                    <h1 class="text-4xl md:text-7xl font-black text-slate-900 leading-[0.9] tracking-tighter uppercase italic">
+                        <?php echo e($article->title); ?>
 
-                    </span>
+                    </h1>
+                </div>
+
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-10 py-10 border-y border-slate-100">
                     <?php if($article->author): ?>
-                        <span class="w-2 h-2 bg-slate-100"></span>
-                        <span class="flex items-center gap-4">
-                            <i class="fa-solid fa-user-pen text-brand-accent"></i> <?php echo e($article->author); ?>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center text-brand-primary">
+                                <i class="fa-solid fa-user-pen"></i>
+                            </div>
+                            <div>
+                                <span class="block text-[8px] font-black text-slate-400 uppercase tracking-widest">Architect</span>
+                                <span class="text-sm font-black text-slate-900 uppercase tracking-tight"><?php echo e($article->author); ?></span>
+                            </div>
+                        </div>
+                    <?php endif; ?>
 
-                        </span>
+                    <div class="flex items-center gap-6">
+                        <span class="text-[9px] font-black uppercase tracking-[0.4em] text-slate-400">Distribution Nodes:</span>
+                        <div class="flex gap-3">
+                            <?php $__currentLoopData = [
+                                ['icon' => 'fa-facebook-f', 'url' => "https://www.facebook.com/sharer/sharer.php?u=".urlencode(url()->current())],
+                                ['icon' => 'fa-twitter', 'url' => "https://twitter.com/intent/tweet?url=".urlencode(url()->current())."&text=".urlencode($article->title)],
+                                ['icon' => 'fa-linkedin-in', 'url' => "https://www.linkedin.com/shareArticle?mini=true&url=".urlencode(url()->current())."&title=".urlencode($article->title)],
+                                ['icon' => 'fa-whatsapp', 'url' => "https://api.whatsapp.com/send?text=".urlencode($article->title . ' ' . url()->current())]
+                            ]; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $social): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <a href="<?php echo e($social['url']); ?>" target="_blank" 
+                                   class="w-12 h-12 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-400 hover:bg-brand-primary hover:text-white hover:shadow-lg transition-all duration-500">
+                                    <i class="fa-brands <?php echo e($social['icon']); ?> text-xs"></i>
+                                </a>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Rendering Layer -->
+                <div class="space-y-16 prose-builder">
+                    <?php $blocks = json_decode($article->content, true); ?>
+                    <?php if(is_array($blocks)): ?>
+                        <?php $__currentLoopData = $blocks; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $block): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <?php switch($block['type'] ?? ''):
+                                case ('heading'): ?>
+                                    <?php $tag = $block['level'] ?? 'h2'; ?>
+                                    <<?php echo e($tag); ?> class="text-4xl font-black text-slate-900 leading-none uppercase tracking-tighter pt-8">
+                                        <?php echo $block['content'] ?? ''; ?><span class="text-brand-primary">.</span>
+                                    </<?php echo e($tag); ?>>
+                                    <?php break; ?>
+
+                                <?php case ('paragraph'): ?>
+                                    <div class="text-xl text-slate-500 leading-relaxed font-medium prose-builder-inline">
+                                        <?php echo $block['content'] ?? ''; ?>
+
+                                    </div>
+                                    <?php break; ?>
+
+                                <?php case ('image'): ?>
+                                    <?php if($block['url'] ?? ''): ?>
+                                        <figure class="rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100">
+                                            <img src="<?php echo e($block['url']); ?>" alt="<?php echo e($block['caption'] ?? ''); ?>" class="w-full grayscale hover:grayscale-0 transition-all duration-1000">
+                                            <?php if($block['caption'] ?? ''): ?>
+                                                <figcaption class="p-6 bg-slate-50 text-[9px] font-black text-slate-400 uppercase tracking-widest italic text-center">
+                                                    <?php echo e($block['caption']); ?>
+
+                                                </figcaption>
+                                            <?php endif; ?>
+                                        </figure>
+                                    <?php endif; ?>
+                                    <?php break; ?>
+
+                                <?php case ('quote'): ?>
+                                    <div class="relative p-16 rounded-[3.5rem] bg-slate-950 overflow-hidden shadow-2xl">
+                                        <div class="absolute top-0 right-0 w-32 h-32 bg-brand-primary/10 rounded-full blur-2xl"></div>
+                                        <i class="fa-solid fa-quote-left text-brand-primary/10 text-9xl absolute -top-4 -left-4"></i>
+                                        <div class="space-y-6 relative z-10">
+                                            <p class="text-3xl text-white font-black italic tracking-tight leading-tight">
+                                                "<?php echo $block['content'] ?? ''; ?>"
+                                            </p>
+                                            <?php if($block['author'] ?? ''): ?>
+                                                <cite class="block text-[10px] font-black text-brand-primary uppercase tracking-[0.4em] not-italic">— <?php echo e($block['author']); ?></cite>
+                                            <?php endif; ?>
+                                        </div>
+                                    </div>
+                                    <?php break; ?>
+
+                                <?php case ('list'): ?>
+                                    <ul class="space-y-6">
+                                        <?php $__currentLoopData = ($block['items'] ?? []); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <li class="flex items-start gap-6 group">
+                                                <div class="w-8 h-8 rounded-xl bg-brand-primary/10 flex items-center justify-center text-brand-primary shrink-0 group-hover:bg-brand-primary group-hover:text-white transition-colors shadow-sm">
+                                                    <i class="fa-solid fa-check text-[10px]"></i>
+                                                </div>
+                                                <div class="text-xl text-slate-500 font-medium leading-relaxed"><?php echo $item; ?></div>
+                                            </li>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    </ul>
+                                    <?php break; ?>
+
+                                <?php case ('divider'): ?>
+                                    <div class="py-8 flex items-center gap-4">
+                                        <div class="h-px flex-1 bg-slate-100"></div>
+                                        <div class="w-2 h-2 rounded-full bg-brand-primary"></div>
+                                        <div class="h-px flex-1 bg-slate-100"></div>
+                                    </div>
+                                    <?php break; ?>
+                                    
+                                <?php default: ?>
+                                    
+                            <?php endswitch; ?>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    <?php else: ?>
+                        <div class="prose prose-slate prose-xl max-w-none text-slate-500 italic font-medium leading-relaxed">
+                            <?php echo $article->content; ?>
+
+                        </div>
                     <?php endif; ?>
                 </div>
                 
-                <h1 class="text-4xl md:text-7xl font-black text-slate-950 leading-[0.9] tracking-tighter uppercase italic mb-12">
-                    <?php echo e($article->title); ?>
-
-                </h1>
-                
-                <div class="flex items-center gap-8">
-                    <span class="text-[10px] font-black uppercase tracking-[0.5em] text-slate-400 italic">Distribute Node:</span>
-                    <div class="flex gap-4">
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo e(urlencode(url()->current())); ?>" target="_blank" class="w-14 h-14 bg-slate-50 text-slate-950 flex items-center justify-center hover:bg-slate-950 hover:text-white transition-all duration-500 border border-slate-100 rounded-sm group">
-                            <i class="fa-brands fa-facebook-f text-sm group-hover:scale-125 transition-transform"></i>
-                        </a>
-                        <a href="https://twitter.com/intent/tweet?url=<?php echo e(urlencode(url()->current())); ?>&text=<?php echo e(urlencode($article->title)); ?>" target="_blank" class="w-14 h-14 bg-slate-50 text-slate-950 flex items-center justify-center hover:bg-slate-950 hover:text-white transition-all duration-500 border border-slate-100 rounded-sm group">
-                            <i class="fa-brands fa-twitter text-sm group-hover:scale-125 transition-transform"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo e(urlencode(url()->current())); ?>&title=<?php echo e(urlencode($article->title)); ?>" target="_blank" class="w-14 h-14 bg-slate-50 text-slate-950 flex items-center justify-center hover:bg-slate-950 hover:text-white transition-all duration-500 border border-slate-100 rounded-sm group">
-                            <i class="fa-brands fa-linkedin-in text-sm group-hover:scale-125 transition-transform"></i>
-                        </a>
-                        <a href="https://api.whatsapp.com/send?text=<?php echo e(urlencode($article->title . ' ' . url()->current())); ?>" target="_blank" class="w-14 h-14 bg-slate-50 text-slate-950 flex items-center justify-center hover:bg-slate-950 hover:text-white transition-all duration-500 border border-slate-100 rounded-sm group">
-                            <i class="fa-brands fa-whatsapp text-sm group-hover:scale-125 transition-transform"></i>
-                        </a>
-                    </div>
+                <!-- Return Channel -->
+                <div class="pt-16 border-t border-slate-100">
+                    <a href="<?php echo e(route('blog.index')); ?>" class="group inline-flex items-center gap-4 text-[11px] font-black text-slate-900 uppercase tracking-[0.3em] hover:text-brand-primary transition-all">
+                        <i class="fa-solid fa-arrow-left-long group-hover:-translate-x-3 transition-transform"></i>
+                        Return to Intelligence Node
+                    </a>
                 </div>
-            </div>
-
-            <!-- Block Content Renderer -->
-            <div class="px-12 md:px-24 py-24 space-y-12">
-                <?php $blocks = json_decode($article->content, true); ?>
-                <?php if(is_array($blocks)): ?>
-                    <?php $__currentLoopData = $blocks; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $block): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <?php switch($block['type'] ?? ''):
-                            case ('heading'): ?>
-                                <?php $tag = $block['level'] ?? 'h2'; ?>
-                                <?php if($tag === 'h1'): ?>
-                                    <h1 class="text-5xl font-black text-slate-950 leading-none uppercase italic tracking-tighter border-l-8 border-brand-accent pl-10"><?php echo $block['content'] ?? ''; ?></h1>
-                                <?php elseif($tag === 'h2'): ?>
-                                    <h2 class="text-4xl font-black text-slate-950 leading-none uppercase italic tracking-tighter border-l-8 border-brand-accent pl-10"><?php echo $block['content'] ?? ''; ?></h2>
-                                <?php elseif($tag === 'h3'): ?>
-                                    <h3 class="text-3xl font-black text-slate-950 leading-none uppercase italic tracking-tighter border-l-8 border-brand-accent pl-10"><?php echo $block['content'] ?? ''; ?></h3>
-                                <?php else: ?>
-                                    <h4 class="text-2xl font-black text-slate-950 leading-none uppercase italic tracking-tighter border-l-8 border-brand-accent pl-10"><?php echo $block['content'] ?? ''; ?></h4>
-                                <?php endif; ?>
-                                <?php break; ?>
-
-                            <?php case ('paragraph'): ?>
-                                <div class="text-2xl text-slate-600 leading-relaxed font-light italic prose-builder-inline"><?php echo $block['content'] ?? ''; ?></div>
-                                <?php break; ?>
-
-                            <?php case ('image'): ?>
-                                <?php if($block['url'] ?? ''): ?>
-                                    <figure class="my-16 <?php echo e(($block['size'] ?? 'full') === 'medium' ? 'max-w-[75%] mx-auto' : (($block['size'] ?? 'full') === 'small' ? 'max-w-[50%] mx-auto' : '')); ?>">
-                                        <img src="<?php echo e($block['url']); ?>" alt="<?php echo e($block['caption'] ?? ''); ?>" class="w-full h-auto rounded-sm grayscale hover:grayscale-0 transition-all duration-[2000ms] border border-slate-100">
-                                        <?php if($block['caption'] ?? ''): ?>
-                                            <figcaption class="text-left text-[10px] font-black text-slate-400 italic uppercase tracking-[0.3em] mt-6 border-l-2 border-slate-200 pl-4"><?php echo e($block['caption']); ?></figcaption>
-                                        <?php endif; ?>
-                                    </figure>
-                                <?php endif; ?>
-                                <?php break; ?>
-
-                            <?php case ('gallery'): ?>
-                                <?php if(!empty($block['images'])): ?>
-                                    <div class="grid gap-2 my-16" style="grid-template-columns: repeat(<?php echo e($block['columns'] ?? 3); ?>, 1fr);">
-                                        <?php $__currentLoopData = $block['images']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $img): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                            <a href="<?php echo e($img); ?>" target="_blank" class="block rounded-sm overflow-hidden border border-slate-100 hover:border-slate-950 transition-colors bg-slate-950 group/gal">
-                                                <img src="<?php echo e($img); ?>" alt="Gallery node" class="w-full h-auto object-cover grayscale group-hover/gal:grayscale-0 transition-all duration-700">
-                                            </a>
-                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                    </div>
-                                <?php endif; ?>
-                                <?php break; ?>
-
-                            <?php case ('list'): ?>
-                                <?php if($block['style'] === 'ordered'): ?>
-                                    <ol class="list-none pl-0 space-y-4 text-xl text-slate-600 leading-relaxed font-light italic prose-builder-inline">
-                                        <?php $__currentLoopData = ($block['items'] ?? []); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                            <?php if(trim(strip_tags($item))): ?>
-                                                <li class="flex items-start gap-6">
-                                                    <span class="text-brand-accent font-black tracking-tighter">0<?php echo e($loop->iteration); ?>.</span>
-                                                    <span><?php echo $item; ?></span>
-                                                </li>
-                                            <?php endif; ?>
-                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                    </ol>
-                                <?php else: ?>
-                                    <ul class="list-none pl-0 space-y-4 text-xl text-slate-600 leading-relaxed font-light italic prose-builder-inline">
-                                        <?php $__currentLoopData = ($block['items'] ?? []); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                            <?php if(trim(strip_tags($item))): ?>
-                                                <li class="flex items-start gap-6">
-                                                    <span class="text-brand-accent font-black tracking-tighter">/</span>
-                                                    <span><?php echo $item; ?></span>
-                                                </li>
-                                            <?php endif; ?>
-                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                    </ul>
-                                <?php endif; ?>
-                                <?php break; ?>
-
-                            <?php case ('quote'): ?>
-                                <blockquote class="border-l-[16px] border-slate-950 bg-slate-50 p-16 my-16 prose-builder-inline rounded-sm relative overflow-hidden group hover:bg-slate-950 transition-all duration-700">
-                                    <div class="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:20px_20px] group-hover:bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)]"></div>
-                                    <div class="text-3xl font-black text-slate-950 leading-tight uppercase italic tracking-tighter group-hover:text-white transition-colors relative z-10"><?php echo $block['content'] ?? ''; ?></div>
-                                    <?php if($block['author'] ?? ''): ?>
-                                        <cite class="block mt-8 text-[10px] font-black text-brand-primary uppercase tracking-[0.3em] not-italic group-hover:text-brand-accent transition-colors relative z-10">— <?php echo e($block['author']); ?></cite>
-                                    <?php endif; ?>
-                                </blockquote>
-                                <?php break; ?>
-
-                            <?php case ('code'): ?>
-                                <div class="bg-slate-950 rounded-sm p-10 my-16 overflow-x-auto border-l-8 border-brand-accent">
-                                    <pre class="text-brand-accent text-sm font-mono whitespace-pre-wrap"><?php echo strip_tags($block['content'] ?? ''); ?></pre>
-                                </div>
-                                <?php break; ?>
-
-                            <?php case ('divider'): ?>
-                                <hr class="border-slate-100 my-20">
-                                <?php break; ?>
-
-                            <?php case ('spacer'): ?>
-                                <?php
-                                    $h = ['small' => '24px','medium' => '48px','large' => '80px','xlarge' => '120px'][$block['height'] ?? 'medium'] ?? '48px';
-                                ?>
-                                <div style="height: <?php echo e($h); ?>;"></div>
-                                <?php break; ?>
-                        <?php endswitch; ?>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                <?php else: ?>
-                    
-                    <div class="prose prose-slate prose-2xl max-w-none prose-headings:uppercase prose-headings:italic prose-headings:font-black prose-headings:tracking-tighter prose-p:font-light prose-p:italic italic">
-                        <?php echo $article->content; ?>
-
-                    </div>
-                <?php endif; ?>
-            </div>
-            
-            <!-- Bottom Nav -->
-            <div class="px-12 md:px-24 py-12 bg-slate-50 border-t border-slate-100 flex items-center justify-between group/bot transition-colors hover:bg-slate-950">
-                <a href="<?php echo e(route('blog.index')); ?>" class="text-[10px] font-black text-slate-950 uppercase tracking-[0.4em] italic flex items-center gap-4 group-hover/bot:text-white transition-all">
-                    <i class="fa-solid fa-arrow-left-long group-hover/bot:text-brand-accent"></i> Return to Intelligence Node
-                </a>
             </div>
         </article>
     </div>
 </section>
 
+<!-- Related Intelligence -->
 <?php if(isset($related) && $related->count() > 0): ?>
-<section class="py-32 bg-slate-50 border-t border-slate-100">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <h2 class="text-5xl font-black text-slate-950 tracking-tighter uppercase italic mb-16">Related <span class="text-brand-primary not-italic">Intelligence</span></h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
-            <?php $__currentLoopData = $related; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rel): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <article class="bg-white border border-slate-100 rounded-sm overflow-hidden group hover:bg-slate-950 transition-all duration-700 flex flex-col relative shadow-sm">
-                    <a href="<?php echo e(route('blog.show', $rel->slug)); ?>" class="block relative h-64 overflow-hidden border-b border-slate-100 group-hover:border-slate-800 transition-colors">
-                        <img src="<?php echo e($rel->thumbnail_url); ?>" alt="<?php echo e($rel->title); ?>" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000">
-                    </a>
-                    <div class="p-10 flex flex-col flex-1">
-                        <div class="text-[8px] font-black text-brand-primary uppercase tracking-[0.4em] italic mb-4 group-hover:text-brand-accent transition-colors"><?php echo e($rel->category ?? 'Intelligence Node'); ?></div>
-                        <a href="<?php echo e(route('blog.show', $rel->slug)); ?>"><h3 class="text-xl font-black text-slate-950 leading-tight uppercase italic tracking-tighter group-hover:text-white transition-colors line-clamp-2 mb-6"><?php echo e($rel->title); ?></h3></a>
-                        <p class="text-slate-500 text-[10px] font-black uppercase tracking-widest leading-loose line-clamp-2 flex-1 group-hover:text-slate-400 transition-colors"><?php echo e($rel->excerpt); ?></p>
-                        <a href="<?php echo e(route('blog.show', $rel->slug)); ?>" class="text-[9px] font-black text-slate-950 group-hover:text-brand-accent transition-colors flex items-center gap-3 mt-8 uppercase tracking-[0.3em] italic">Read Insight <i class="fa-solid fa-arrow-right-long group-hover:translate-x-2 transition-transform"></i></a>
-                    </div>
-                </article>
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+<section class="section-padding bg-slate-50 border-t border-slate-100">
+    <div class="container">
+        <div class="space-y-16">
+            <div class="space-y-4">
+                <div class="h-1 w-24 bg-brand-primary"></div>
+                <h2 class="text-5xl font-black text-slate-900 uppercase tracking-tighter">Related <br><span class="text-brand-primary italic">Intelligence.</span></h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <?php $__currentLoopData = $related; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rel): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <article class="group relative rounded-[3rem] bg-white border border-slate-100 overflow-hidden shadow-xl transition-all duration-700 hover:-translate-y-4 hover:shadow-brand-primary/20">
+                        <a href="<?php echo e(route('blog.show', $rel->slug)); ?>" class="block aspect-video overflow-hidden">
+                            <img src="<?php echo e($rel->thumbnail_url); ?>" alt="<?php echo e($rel->title); ?>" 
+                                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110">
+                        </a>
+                        <div class="p-10 space-y-6">
+                            <div class="text-[9px] font-black text-brand-primary uppercase tracking-widest"><?php echo e($rel->category ?? 'Institutional Node'); ?></div>
+                            <a href="<?php echo e(route('blog.show', $rel->slug)); ?>">
+                                <h3 class="text-xl font-black text-slate-900 uppercase tracking-tighter line-clamp-2 group-hover:text-brand-primary transition-colors leading-none">
+                                    <?php echo e($rel->title); ?>
+
+                                </h3>
+                            </a>
+                            <div class="pt-6 border-t border-slate-50">
+                                <a href="<?php echo e(route('blog.show', $rel->slug)); ?>" class="inline-flex items-center gap-4 text-[9px] font-black text-slate-900 uppercase tracking-[0.3em] hover:gap-6 transition-all">
+                                    Read Insight <i class="fa-solid fa-arrow-right-long"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </div>
         </div>
     </div>
 </section>
 <?php endif; ?>
+
+<?php $__env->stopSection(); ?>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.website', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\laragon\www\worldgrexpo\resources\views/website/articles/show.blade.php ENDPATH**/ ?>

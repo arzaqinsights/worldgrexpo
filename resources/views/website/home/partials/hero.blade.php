@@ -1,32 +1,29 @@
 <!-- Rebuilt Hero Section: Premium Industrial Excellence -->
-<section class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-slate-950">
+<section class="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-slate-950">
     <!-- Dynamic Swiper Background -->
     <div class="absolute inset-0 z-0">
         <div class="swiper hero-swiper h-full w-full">
             <div class="swiper-wrapper">
-                @foreach ($slides as $image)
+                @foreach ($sliders as $slider)
                     <div class="swiper-slide">
-                        <div class="absolute inset-0 bg-linear-to-b from-slate-950/90 via-slate-950/40 to-slate-950/95 z-10"></div>
-                        <img src="{{ asset($image) }}" alt="Slider Image" class="w-full h-full object-cover">
+                        <!-- <div class="absolute inset-0 bg-linear-to-b from-slate-950/90 via-slate-950/40 to-slate-950/95 z-10"> </div> -->
+                        <img src="{{ asset($slider->image_path) }}" alt="Slider Image" class="w-full h-full object-cover">
                     </div>
                 @endforeach
             </div>
             <!-- Pagination Bullets -->
-            <div class="swiper-pagination !bottom-10 !left-auto !right-10 !w-auto flex flex-col gap-2"></div>
+            <div class="swiper-pagination bottom-10! left-auto! right-10! w-auto! flex flex-col gap-2"></div>
         </div>
     </div>
 
-    <!-- Content Layer -->
-    <div class="container relative z-20" x-data="{ loaded: false }" x-init="setTimeout(() => loaded = true, 100)">
+    <!-- <div class="container relative z-20" x-data="{ loaded: false }" x-init="setTimeout(() => loaded = true, 100)">
         <div class="max-w-4xl space-y-8">
-            <!-- Badge -->
             <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-brand-accent/10 border border-brand-accent/20 text-brand-accent text-[11px] font-black uppercase tracking-[0.2em]"
                 x-show="loaded" x-transition:enter="transition ease-out duration-1000" x-transition:enter-start="opacity-0 -translate-y-4">
                 <span class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
                 Make in India • For the World
             </div>
 
-            <!-- Main Heading -->
             <h1 class="text-6xl md:text-8xl lg:text-9xl font-black text-white leading-[0.85] tracking-tighter"
                 x-show="loaded" x-transition:enter="transition ease-out duration-1000 delay-300" x-transition:enter-start="opacity-0 -translate-x-10">
                 INDUSTRIAL<br>
@@ -40,7 +37,6 @@
                 <span class="text-white">India Expo Centre | 2026.</span>
             </p>
 
-            <!-- Action Buttons -->
             <div class="flex flex-wrap gap-5 pt-4"
                 x-show="loaded" x-transition:enter="transition ease-out duration-1000 delay-700" x-transition:enter-start="opacity-0 scale-95">
                 <a href="{{ route('join.index') }}" 
@@ -53,7 +49,6 @@
                 </a>
             </div>
 
-            <!-- Floating Stats Bar -->
             <div class="pt-16 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 border-t border-white/10"
                 x-show="loaded" x-transition:enter="transition ease-out duration-1000 delay-900" x-transition:enter-start="opacity-0">
                 <div class="space-y-1">
@@ -74,25 +69,27 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Decorative Gradient Overlay -->
-    <div class="absolute bottom-0 left-0 w-full h-32 bg-linear-to-t from-slate-950 to-transparent pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-full h-32 bg-linear-to-t from-slate-950 to-transparent pointer-events-none">
+    </div>
 </section>
 
 @once
-<style>
-    .hero-swiper .swiper-pagination-bullet {
-        width: 12px;
-        height: 12px;
-        background: rgba(255,255,255,0.2);
-        opacity: 1;
-        transition: all 0.3s;
-    }
-    .hero-swiper .swiper-pagination-bullet-active {
-        background: var(--color-brand-accent);
-        height: 32px;
-        border-radius: 6px;
-    }
-</style>
+    <style>
+        .hero-swiper .swiper-pagination-bullet {
+            width: 12px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.2);
+            opacity: 1;
+            transition: all 0.3s;
+        }
+
+        .hero-swiper .swiper-pagination-bullet-active {
+            background: var(--color-brand-accent);
+            height: 32px;
+            border-radius: 6px;
+        }
+    </style>
 @endonce

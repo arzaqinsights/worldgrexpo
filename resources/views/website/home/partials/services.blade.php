@@ -11,18 +11,18 @@
                     <span class="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse"></span>
                     Specialized Framework
                 </div>
-                <h2 class="text-5xl md:text-7xl font-black text-slate-900 leading-[0.9] tracking-tighter">
+                <h2 class="text-4xl md:text-5xl font-black text-slate-900 leading-[0.9] tracking-tighter">
                     Our Core <span class="text-brand-primary italic">Service Pillars.</span>
                 </h2>
-                <p class="text-xl text-slate-500 font-medium leading-relaxed">
+                <p class="text-base text-slate-500 font-medium leading-relaxed">
                     Empowering enterprises through strategic initiatives, industry advocacy, and growth-driven solutions designed to foster global competitiveness.
                 </p>
             </div>
 
             <!-- Stats Overlay Cards -->
             <div class="flex flex-col sm:flex-row gap-6">
-                <div class="glass-panel p-6 rounded-3xl border border-slate-200/50 flex items-center gap-5 group hover:bg-white transition-all duration-500">
-                    <div class="w-14 h-14 bg-brand-primary text-white rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
+                <div class="glass-panel p-4 rounded border border-slate-200 flex items-center gap-4 group hover:bg-white transition-all duration-500">
+                    <div class="w-14 h-14 bg-brand-primary text-white rounded flex items-center justify-center group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-users-gear text-2xl"></i>
                     </div>
                     <div>
@@ -30,8 +30,8 @@
                         <div class="text-lg font-black text-slate-900">5,000+ Members</div>
                     </div>
                 </div>
-                <div class="glass-panel p-6 rounded-3xl border border-slate-200/50 flex items-center gap-5 group hover:bg-white transition-all duration-500">
-                    <div class="w-14 h-14 bg-brand-accent text-brand-primary-dark rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
+                <div class="glass-panel p-4 rounded border border-slate-200 flex items-center gap-4 group hover:bg-white transition-all duration-500">
+                    <div class="w-14 h-14 bg-brand-accent text-brand-primary-dark rounded flex items-center justify-center group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-earth-asia text-2xl"></i>
                     </div>
                     <div>
@@ -43,7 +43,7 @@
         </div>
 
         <!-- Premium Services Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             @php
                 $services = [
                     [
@@ -93,18 +93,18 @@
 
             @foreach($services as $svc)
                 <a href="{{ url('services/'.$svc['slug']) }}" 
-                    class="group relative h-full flex flex-col rounded-[2.5rem] bg-white border border-slate-100 p-4 transition-all duration-700 hover:-translate-y-4 hover:shadow-2xl hover:shadow-brand-primary/5"
+                    class="group relative h-full flex flex-col rounded bg-brand-primary/10 border border-slate-100 p-4 transition-all duration-700 hover:-translate-y-4 hover:shadow-2xl hover:shadow-brand-primary/5"
                     x-data="{ visible: false }" x-intersect="visible = true"
                     :class="visible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'"
                     style="transition-delay: {{ $loop->index * 100 }}ms">
                     
                     <!-- Card Media -->
-                    <div class="h-64 relative rounded-[2rem] overflow-hidden">
+                    <div class="h-64 relative rounded overflow-hidden">
                         <img src="{{ asset($svc['image']) }}" alt="{{ $svc['title'] }}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
                         <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 via-transparent to-transparent"></div>
                         
                         <!-- Floating Icon Container -->
-                        <div class="absolute bottom-6 left-6 w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white transition-all duration-500 group-hover:bg-brand-accent group-hover:text-brand-primary group-hover:scale-110">
+                        <div class="absolute bottom-6 left-6 w-16 h-16 rounded bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white transition-all duration-500 group-hover:bg-brand-accent group-hover:text-brand-primary group-hover:scale-110">
                             <i class="fa-solid fa-{{ $svc['icon'] }} text-2xl"></i>
                         </div>
                     </div>
@@ -130,7 +130,7 @@
         </div>
 
         <!-- Modern CTA Banner -->
-        <div class="mt-24 relative rounded-[3rem] premium-gradient p-12 lg:p-20 overflow-hidden shadow-2xl group">
+        <div class="mt-24 relative rounded premium-gradient p-12 lg:p-20 overflow-hidden group">
             <!-- Animated Background Pattern -->
             <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] mix-blend-overlay"></div>
             <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-accent/20 rounded-full blur-[100px] animate-pulse"></div>
@@ -148,13 +148,13 @@
                     </p>
                 </div>
                 
-                <div class="flex flex-col sm:flex-row gap-6 shrink-0">
+                <div class="flex flex-col gap-6 shrink-0">
                     <a href="{{ route('register') }}" 
-                        class="px-12 py-6 rounded-2xl bg-brand-accent text-brand-primary-dark font-black uppercase text-sm tracking-widest shadow-2xl hover:bg-white hover:scale-105 transition-all">
+                        class="px-12 py-6 rounded bg-brand-accent text-brand-primary-dark font-black uppercase text-sm tracking-widest hover:bg-white hover:scale-105 transition-all">
                         Get Started Now
                     </a>
                     <a href="{{ route('join.index') }}" 
-                        class="px-12 py-6 rounded-2xl bg-white/10 backdrop-blur-md text-white font-black uppercase text-sm tracking-widest border border-white/20 hover:bg-white/20 transition-all">
+                        class="px-12 py-6 rounded bg-white/10 backdrop-blur-md text-white font-black uppercase text-sm tracking-widest border border-white/20 hover:bg-white/20 transition-all">
                         Learn More
                     </a>
                 </div>

@@ -2,8 +2,8 @@
 <?php $__env->startSection('title', 'Welcome to World Grexpo Foundation'); ?>
 <?php $__env->startSection('content'); ?>
     <?php echo $__env->make('website.home.partials.hero', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
-    <?php echo $__env->make('website.home.partials.events', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
     <?php echo $__env->make('website.home.partials.about', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+    <?php echo $__env->make('website.home.partials.events', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
     <?php echo $__env->make('website.home.partials.excellence', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
     <?php echo $__env->make('website.home.partials.services', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
     <?php echo $__env->make('website.home.partials.awards', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>

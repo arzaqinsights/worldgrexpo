@@ -1,91 +1,104 @@
-<section class="py-20 bg-white relative overflow-hidden">
-    <!-- Background Decorators -->
-    <div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-brand-accent/10 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-brand-primary/10 rounded-full blur-3xl"></div>
+<section class="section-padding relative overflow-hidden bg-white">
+    <!-- Sophisticated Background Decorators -->
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-accent/5 rounded-full blur-[100px]"></div>
+    <div class="absolute top-1/2 left-0 -translate-x-1/2 w-64 h-64 bg-brand-primary/5 rounded-full blur-[80px]"></div>
 
     <div class="container relative z-10">
-        <div class="flex flex-col lg:flex-row items-center gap-16">
-            <!-- Image Area -->
-            <div class="w-full lg:w-1/2 relative group animate-on-scroll">
-                <div class="relative overflow-hidden flex flex-col gap-4">
-                    <img src="<?php echo e(asset('images/home/growth.jpeg')); ?>" alt="About World Grexpo"
-                        class="w-full md:h-[330px] object-cover rounded-lg" loading="lazy">
-                    <!-- <div class="absolute inset-0 bg-brand-primary/20 group-hover:bg-transparent transition-all duration-500"></div> -->
-                    <img src="<?php echo e(asset('images/home/award-1.jpeg')); ?>" alt="About World Grexpo"
-                        class="w-full md:h-[300px] object-cover object-top rounded-lg" loading="lazy">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            
+            <!-- Visual Content Side -->
+            <div class="relative group" x-data="{ visible: false }" x-intersect="visible = true">
+                <div class="relative z-10 grid grid-cols-2 gap-4">
+                    <div class="space-y-4 pt-12">
+                        <div class="aspect-4/5 rounded overflow-hidden transform transition-all duration-700 hover:scale-[1.02]"
+                            :class="visible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'">
+                            <img src="<?php echo e(asset('images/home/growth.jpeg')); ?>" alt="Growth" class="w-full h-full object-cover">
+                        </div>
+                        <div class="aspect-square rounded overflow-hidden transform transition-all duration-700 delay-300 hover:scale-[1.02]"
+                            :class="visible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'">
+                            <img src="<?php echo e(asset('images/home/award-1.jpeg')); ?>" alt="Award" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="aspect-square rounded overflow-hidden transform transition-all duration-700 delay-150 hover:scale-[1.02]"
+                            :class="visible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'">
+                            <img src="<?php echo e(asset('images/home/slide-1.webp')); ?>" alt="Innovation" class="w-full h-full object-cover">
+                        </div>
+                        <div class="aspect-4/5 rounded overflow-hidden transform transition-all duration-700 delay-450 hover:scale-[1.02]"
+                            :class="visible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'">
+                            <img src="<?php echo e(asset('images/home/slide-3.webp')); ?>" alt="Global" class="w-full h-full object-cover">
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Floating Badge -->
-                <!-- <div
-                    class="absolute -bottom-6 md:-right-6 right-2 bg-brand-primary text-white p-6 rounded-md shadow-2xl z-20 animate-on-scroll delay-200">
-                    <p class="text-4xl font-black text-brand-accent mb-1">7+ Years</p>
-                    <p class="text-xs font-bold tracking-widest uppercase text-white/70">Relentless Services <br> to the
-                        Industreis</p>
-                </div> -->
+                <!-- Floating Experience Badge -->
+                <div class="absolute -bottom-8 -left-8 glass-panel p-8 rounded border border-slate-200 z-20 hidden md:block animate-float"
+                    x-show="visible" x-transition:enter="transition ease-out duration-1000 delay-700" x-transition:enter-start="scale-50 opacity-0">
+                    <div class="text-5xl font-black text-brand-primary leading-none mb-2">7+</div>
+                    <div class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500">Years of Industrial<br>Global Leadership</div>
+                </div>
             </div>
 
-            <!-- Content Area -->
-            <div class="w-full lg:w-1/2 animate-on-scroll delay-100">
-                <!-- <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-primary border mb-6">
-                    <span class="w-2 h-2 rounded-full bg-brand-light"></span>
-                    <span class="text-brand-light text-xs font-bold tracking-widest uppercase">About World Grexpo</span>
-                </div> -->
+            <!-- Text Content Side -->
+            <div class="space-y-10" x-data="{ visible: false }" x-intersect="visible = true">
+                <div class="space-y-4">
+                    <div class="inline-flex items-center gap-2 mt-10 px-4 py-1.5 rounded-full bg-brand-primary/5 text-brand-primary text-[10px] font-black uppercase tracking-[0.2em]">
+                        <span class="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse"></span>
+                        Our Vision & Mission
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-black text-slate-900 leading-[1.1] tracking-tighter">
+                        Empowering <span class="text-brand-primary">MSME Ecosystems</span> on a Global Stage.
+                    </h2>
+                    <p class="text-lg text-slate-500 leading-relaxed font-medium">
+                        World Grexpo is more than a network; it's a dedicated catalyst for growth. We bridge the gap between local innovation and international markets, creating a vibrant community where enterprises thrive through cross-border trade and strategic partnerships.
+                    </p>
+                </div>
 
-                <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-[1.15] mb-6">
-                    India's Premier Network for <span class="text-brand-primary">MSME Growth</span> and Innovation
-                </h2>
-
-                <p class="text-lg text-slate-600 mb-8 leading-relaxed">
-                    We are a global business network and dedicated NGO committed to furthering the interests of the MSME
-                    sector. By fostering an inclusive and vibrant community, we create unparalleled opportunities for
-                    growth, exposure, and cross-border trade.
-                </p>
-
-                <div class="space-y-5 mb-8">
-                    <div class="flex items-start gap-4">
-                        <div class="shrink-0 w-12 h-12 rounded-xl bg-brand-accent/20 flex items-center justify-center">
-                            <i class="fa-solid fa-award text-brand-primary text-xl"></i>
+                <!-- Feature List -->
+                <div class="grid grid-cols-1 gap-6">
+                    <!-- Feature 1 -->
+                    <div class="group flex items-start gap-4 p-4 rounded border border-brand-primary hover:bg-brand-primary/5 transition-all duration-300">
+                        <div class="shrink-0 w-14 h-14 rounded bg-brand-accent/20 flex items-center justify-center text-brand-primary group-hover:bg-brand-accent group-hover:scale-110 transition-all duration-300">
+                            <i class="fa-solid fa-award text-2xl"></i>
                         </div>
-                        <div>
-                            <h4 class="text-lg font-bold text-slate-900 mb-1">Eminent Advisory Board</h4>
-                            <p class="text-slate-500 text-sm leading-relaxed">Our Global Advisory Board features
-                                distinguished Padma Shri and Padma Bhushan awardees guiding our vision.</p>
+                        <div class="space-y-1">
+                            <h4 class="text-lg font-bold text-slate-900">Eminent Advisory Board</h4>
+                            <p class="text-sm text-slate-500 leading-relaxed">Guided by Padma Shri and Padma Bhushan awardees, ensuring strategic excellence in every initiative.</p>
                         </div>
                     </div>
 
-                    <div class="flex items-start gap-4">
-                        <div class="shrink-0 w-12 h-12 rounded-xl bg-brand-primary/10 flex items-center justify-center">
-                            <i class="fa-solid fa-globe text-brand-primary text-xl"></i>
+                    <!-- Feature 2 -->
+                    <div class="group flex items-start gap-4 p-4 rounded border border-brand-primary hover:bg-brand-primary/5 transition-all duration-300">
+                        <div class="shrink-0 w-14 h-14 rounded bg-brand-primary/10 flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white group-hover:scale-110 transition-all duration-300">
+                            <i class="fa-solid fa-globe-americas text-2xl"></i>
                         </div>
-                        <div>
-                            <h4 class="text-lg font-bold text-slate-900 mb-1">Global Impact Across 40+ Countries</h4>
-                            <p class="text-slate-500 text-sm leading-relaxed">Representing India's MSMEs effectively on
-                                national and international governance platforms.</p>
+                        <div class="space-y-1">
+                            <h4 class="text-lg font-bold text-slate-900">Global Strategic Impact</h4>
+                            <p class="text-sm text-slate-500 leading-relaxed">Representing India's industrial interests across 40+ countries and major international trade bodies.</p>
                         </div>
                     </div>
 
-                    <div class="flex items-start gap-4">
-                        <div class="shrink-0 w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center">
-                            <i class="fa-solid fa-handshake text-purple-600 text-xl"></i>
+                    <!-- Feature 3 -->
+                    <div class="group flex items-start gap-4 p-4 rounded border border-brand-primary hover:bg-brand-primary/5 transition-all duration-300">
+                        <div class="shrink-0 w-14 h-14 rounded bg-slate-100 flex items-center justify-center text-slate-600 group-hover:bg-slate-900 group-hover:text-white group-hover:scale-110 transition-all duration-300">
+                            <i class="fa-solid fa-handshake-angle text-2xl"></i>
                         </div>
-                        <div>
-                            <h4 class="text-lg font-bold text-slate-900 mb-1">Networking & Business Growth</h4>
-                            <p class="text-slate-500 text-sm leading-relaxed">Connecting MSMEs with investors, markets,
-                                and strategic partners for sustainable growth.</p>
+                        <div class="space-y-1">
+                            <h4 class="text-lg font-bold text-slate-900">B2B Networking Catalyst</h4>
+                            <p class="text-sm text-slate-500 leading-relaxed">Directly connecting MSMEs with high-value investors, emerging markets, and strategic industrial partners.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="flex flex-col md:flex-row items-center gap-4">
-                    <a href="<?php echo e(route('about.what_is')); ?>"
-                        class="inline-flex items-center justify-center w-full md:w-auto px-8 py-4 border bg-brand-primary text-white rounded-md font-bold transition-all group">
-                        Discover More About Us
-                        <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="<?php echo e(route('about.index')); ?>"
+                        class="px-8 py-4 rounded bg-brand-primary text-white font-bold text-sm uppercase tracking-widest hover:bg-brand-primary-dark transition-all flex items-center gap-2">
+                        Discover More <i class="fa-solid fa-arrow-right-long"></i>
                     </a>
                     <a href="<?php echo e(route('contact')); ?>"
-                        class="inline-flex items-center justify-center w-full md:w-auto px-8 py-4 bg-brand-accent border text-black rounded-md font-bold transition-all group">
-                        Contact Us
-                        <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        class="px-8 py-4 rounded bg-white border border-brand-primary text-brand-primary font-bold text-sm uppercase tracking-widest hover:bg-brand-primary-dark hover:text-white transition-all">
+                        Connect with Us
                     </a>
                 </div>
             </div>

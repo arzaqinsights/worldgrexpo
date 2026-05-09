@@ -21,13 +21,6 @@
     --color-brand-secondary: #f8fafc;
     --color-brand-border: #e2e8f0;
 
-    /* PREMIUM MODERN RADIUS - Overriding old sharp constraints */
-    --radius-sm: 0.5rem;
-    --radius-md: 0.75rem;
-    --radius-lg: 1rem;
-    --radius-xl: 1.5rem;
-    --radius-2xl: 2rem;
-    --radius-3xl: 3rem;
 }
 
 @layer base {
@@ -38,10 +31,10 @@
 
 @layer components {
     .glass-panel {
-        @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl;
+        @apply bg-white/70 backdrop-blur-md border border-white/20;
     }
     .glass-card {
-        @apply bg-white/40 backdrop-blur-lg border border-white/30 shadow-2xl;
+        @apply bg-white/40 backdrop-blur-lg border border-white/30;
     }
     .premium-gradient {
         @apply bg-linear-to-br from-brand-primary to-brand-primary-dark;
@@ -50,12 +43,12 @@
         @apply bg-linear-to-r from-brand-accent to-[#d4ef00];
     }
     .section-padding {
-        @apply py-20 md:py-32;
+        @apply py-15 md:py-20;
     }
 }
 
 .container {
-    @apply max-w-[1440px] mx-auto px-4 md:px-6 lg:px-10;
+    @apply max-w-[1480px] mx-auto px-4 md:px-6;
 }
 
 /* Custom Scrollbar for Premium Feel */

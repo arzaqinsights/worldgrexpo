@@ -10,7 +10,7 @@ Alpine.plugin(collapse);
 
 // Make Alpine available globally
 window.Alpine = Alpine;
-console.log('MSMECCII App JS v1.3 loaded - Alpine Collapse registered EARLY');
+console.log('World Grexpo App JS v2.0 loaded');
 
 // Start Alpine
 Alpine.start();

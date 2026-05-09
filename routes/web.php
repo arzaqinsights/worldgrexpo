@@ -22,7 +22,7 @@ Route::get('/contact-us', [PageController::class, 'contact'])->name('contact');
 Route::get('/contact', [PageController::class, 'contact']);
 
 Route::prefix('about')->group(function () {
-    Route::get('/what-is-msmeccii', [PageController::class, 'about'])->name('about.what_is');
+    Route::get('/institutional-profile', [PageController::class, 'about'])->name('about.index');
     Route::get('/chairman', [PageController::class, 'chairman'])->name('about.chairman');
     Route::get('/leadership', [PageController::class, 'leadership'])->name('about.leadership');
 });

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://msmeccii.test/sitemap.xml
+Sitemap: https://worldgrexpo.com/sitemap.xml

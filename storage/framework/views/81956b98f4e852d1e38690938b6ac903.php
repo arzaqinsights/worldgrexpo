@@ -1,74 +1,73 @@
-<!-- FAQs Section -->
-<section class="py-24 bg-white relative">
+<section class="section-padding bg-white relative overflow-hidden">
+    <!-- Sophisticated Background Decorators -->
+    <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-primary/5 rounded-full blur-[120px] -mr-96 -mt-96"></div>
+    <div class="absolute bottom-0 left-0 w-64 h-64 bg-brand-accent/5 rounded-full blur-[100px]"></div>
+
     <div class="container relative z-10">
-        <div class="flex flex-col lg:flex-row gap-16 items-start">
+        <div class="flex flex-col lg:flex-row gap-20 items-start">
             
-            <!-- Left Scrollable Content (FAQs) -->
-            <div class="w-full lg:w-7/12" x-data="{ active: null }">
+            <!-- FAQ Content Area -->
+            <div class="w-full lg:w-7/12 space-y-12" x-data="{ active: 1 }">
                 <!-- Mobile Header -->
-                <div class="lg:hidden mb-12 text-center">
-                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-primary/10 border border-brand-primary/20 mb-6">
-                        <i class="fa-solid fa-circle-question text-brand-primary text-xs"></i>
-                        <span class="text-brand-primary text-[10px] font-black tracking-widest uppercase">FAQ Center</span>
+                <div class="lg:hidden text-center space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-primary/5 text-brand-primary text-[10px] font-black uppercase tracking-[0.2em]">
+                        <span class="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse"></span>
+                        Knowledge Base
                     </div>
-                    <h2 class="text-4xl font-extrabold text-slate-900 leading-[1.15] mb-4">
-                        Any Questions? <span class="text-brand-primary">We have Answers.</span>
+                    <h2 class="text-4xl font-black text-slate-900 tracking-tighter">
+                        Common <span class="text-brand-primary italic">Questions.</span>
                     </h2>
                 </div>
 
-                <!-- Desktop Intro Text -->
-                <div class="hidden lg:block mb-12">
-                    <h3 class="text-3xl font-black text-slate-900 mb-4 border-b-4 border-brand-accent inline-block pb-2">Frequently Asked Questions</h3>
-                    <p class="text-xl text-slate-600 font-medium leading-relaxed italic border-l-4 border-brand-primary pl-6 py-2">
-                        Everything you need to know about World Grexpo events, memberships, guidelines, and benefits.
+                <!-- Desktop Header -->
+                <div class="hidden lg:block space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-primary/5 text-brand-primary text-[10px] font-black uppercase tracking-[0.2em]">
+                        <span class="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse"></span>
+                        FAQ Center
+                    </div>
+                    <h2 class="text-5xl md:text-7xl font-black text-slate-900 leading-[0.9] tracking-tighter">
+                        Everything you need <br>
+                        <span class="text-brand-primary italic">to know.</span>
+                    </h2>
+                    <p class="text-xl text-slate-500 font-medium leading-relaxed max-w-xl">
+                        Comprehensive answers about World Grexpo events, memberships, guidelines, and global opportunities.
                     </p>
                 </div>
 
                 <?php
                     $faqs = [
-                        ['id' => 1, 'q' => 'What is World Grexpo?', 'a' => 'MSME Chamber of Commerce & Industry of India (World Grexpo) is a leading platform dedicated to empowering MSMEs, startups, corporates, and entrepreneurs through networking, policy advocacy, and global business opportunities.'],
+                        ['id' => 1, 'q' => 'What is World Grexpo?', 'a' => 'World Grexpo Foundation is a leading platform dedicated to empowering MSMEs, startups, corporates, and entrepreneurs through high-impact networking, policy advocacy, and global business opportunities.'],
                         ['id' => 2, 'q' => 'What types of events do you organize?', 'a' => 'We organize Global Summits & Expos, Industry Conferences, Business Excellence Awards, Startup & Innovation Forums, and Sector-specific networking events.'],
-                        ['id' => 3, 'q' => 'How can I register for an event?', 'a' => 'You can register directly through our website by selecting your desired event, filling in your details, and completing the payment via our secure payment gateway.'],
-                        ['id' => 4, 'q' => 'What payment methods are accepted?', 'a' => 'We accept multiple payment options, including UPI, Debit/Credit Cards, Net Banking, and Wallets through our secure gateway.'],
-                        ['id' => 5, 'q' => 'Is my payment information secure?', 'a' => 'Yes. All transactions are securely processed using advanced encryption. World Grexpo does not store your card or banking details.'],
-                        ['id' => 6, 'q' => 'Will I receive a confirmation?', 'a' => 'Yes, once your payment is successful, you will receive a confirmation email, payment receipt, and event access details.'],
-                        ['id' => 7, 'q' => 'What is the refund policy?', 'a' => 'Refunds are subject to our policy. Generally, transfers to another event may be allowed, though last-minute cancellations have limited refunds.'],
-                        ['id' => 8, 'q' => 'Can I transfer my ticket?', 'a' => 'Yes, ticket transfers may be allowed prior to the event date. Please contact our support team with details for approval.'],
-                        ['id' => 9, 'q' => 'How can I become a sponsor?', 'a' => 'You can fill out the sponsorship inquiry form or contact our team via email to get customized sponsorship packages.'],
-                        ['id' => 10, 'q' => 'Does World Grexpo provide membership?', 'a' => 'Yes, we offer membership for MSMEs, Corporates, and Startups with exclusive access to events and industry insights.'],
-                        ['id' => 11, 'q' => 'Is networking available at events?', 'a' => 'Absolutely. Our events facilitate B2B networking, investor connections, and global industrial collaborations.'],
-                        ['id' => 12, 'q' => 'How will I get event updates?', 'a' => 'Updates are shared via official email notifications, WhatsApp/SMS (if opted), and website announcements.'],
-                        ['id' => 13, 'q' => 'What if my payment fails?', 'a' => 'If money is deducted, it is usually reversed within 5–7 working days. If not, please contact us with transaction details.'],
-                        ['id' => 14, 'q' => 'Who do I contact for support?', 'a' => 'Contact ighosh.1457@gmail.com or ighosh.chairman@World Grexpo.com for all support and technical queries.'],
-                        ['id' => 15, 'q' => 'Is GST invoice provided?', 'a' => 'Yes, GST compliant invoices are issued for all eligible transactions as per Indian regulations.'],
-                        ['id' => 16, 'q' => 'Can international participants join?', 'a' => 'Yes, we welcome global participants and many of our events feature international speakers and delegations.']
+                        ['id' => 3, 'q' => 'How can I register for an event?', 'a' => 'You can register directly through our website by selecting your desired event, filling in your details, and completing the registration via our secure portal.'],
+                        ['id' => 4, 'q' => 'Is membership available for startups?', 'a' => 'Yes, we offer specialized membership tiers for MSMEs, Corporates, and Startups with exclusive access to events and industry insights.'],
+                        ['id' => 5, 'q' => 'Who do I contact for technical support?', 'a' => 'Contact ighosh.1457@gmail.com or ighosh.chairman@worldgrexpo.com for all support and technical queries related to the platform.'],
                     ];
                 ?>
 
-                <!-- FAQ Accordion List -->
-                <div class="space-y-4 animate-on-scroll">
+                <!-- Premium Accordion List -->
+                <div class="space-y-4">
                     <?php $__currentLoopData = $faqs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <div class="group border border-slate-300 bg-white rounded-md overflow-hidden transition-all duration-300 h-fit" 
-                             :class="active === <?php echo e($item['id']); ?> ? 'border-brand-primary' : 'hover:border-slate-300'">
+                        <div class="group bg-white rounded-3xl border border-slate-100 transition-all duration-500 hover:shadow-xl hover:shadow-brand-primary/5"
+                             :class="active === <?php echo e($item['id']); ?> ? 'border-brand-primary/20 shadow-xl shadow-brand-primary/5' : ''">
                             
-                            <button class="w-full flex items-center justify-between p-5 md:p-6 text-left outline-none" 
+                            <button class="w-full flex items-center justify-between p-8 text-left outline-none" 
                                     @click="active === <?php echo e($item['id']); ?> ? active = null : active = <?php echo e($item['id']); ?>">
-                                <span class="text-base md:text-lg font-black text-slate-800 group-hover:text-brand-primary transition-colors pr-4 leading-tight">
+                                <span class="text-lg font-black text-slate-900 group-hover:text-brand-primary transition-colors pr-6 leading-tight uppercase tracking-tight">
                                     <?php echo e($item['q']); ?>
 
                                 </span>
-                                <div class="w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300"
+                                <div class="w-10 h-10 rounded-2xl flex items-center justify-center shrink-0 transition-all duration-500"
                                      :class="active === <?php echo e($item['id']); ?> ? 'bg-brand-primary text-white rotate-180' : 'bg-slate-50 text-slate-400 group-hover:bg-brand-primary group-hover:text-white'">
                                     <i class="fa-solid fa-chevron-down text-xs"></i>
                                 </div>
                             </button>
 
-                            <div class="transition-all duration-300 overflow-hidden" 
+                            <div class="transition-all duration-500 overflow-hidden" 
                                  x-show="active === <?php echo e($item['id']); ?>" 
                                  x-collapse>
-                                <div class="px-5 md:px-6 pb-6">
-                                    <div class="h-[1px] w-full bg-slate-100 mb-5"></div>
-                                    <p class="text-slate-500 font-medium leading-relaxed text-sm md:text-base">
+                                <div class="px-8 pb-8">
+                                    <div class="h-[1px] w-full bg-slate-50 mb-6"></div>
+                                    <p class="text-slate-500 font-medium leading-relaxed">
                                         <?php echo e($item['a']); ?>
 
                                     </p>
@@ -77,40 +76,32 @@
                         </div>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
-
-                <!-- Mini Support footer (Mobile Only) -->
-                <div class="lg:hidden mt-12 text-center">
-                    <a href="<?php echo e(route('contact')); ?>" class="w-full inline-flex items-center justify-center px-8 py-4 bg-brand-primary text-white rounded-2xl font-black text-sm shadow-xl uppercase tracking-widest">
-                        Contact Support
-                    </a>
-                </div>
             </div>
 
-            <!-- Right Sticky Sidebar Image & CTA -->
-            <div class="w-full lg:w-5/12 sticky top-32 z-30 hidden lg:block self-start">
-                <div class="relative rounded-lg overflow-hidden shadow-2xl group w-full h-[calc(100vh-10rem)] max-h-[700px] min-h-[500px]">
-                    <img src="<?php echo e(asset('images/faq-bg.png')); ?>" alt="World Grexpo Support FAQ" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000">
-                    <div class="absolute inset-0 bg-linear-to-t from-slate-900 via-slate-900/70 to-transparent"></div>
+            <!-- Sticky Visual Sidebar -->
+            <div class="w-full lg:w-5/12 lg:sticky lg:top-32 self-start">
+                <div class="relative rounded-[3rem] overflow-hidden shadow-2xl group min-h-[600px] flex items-end">
+                    <img src="<?php echo e(asset('images/faq-bg.png')); ?>" alt="Support" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 grayscale group-hover:grayscale-0">
+                    <div class="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
                     
-                    <div class="absolute bottom-0 left-0 right-0 p-10">
-                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800/80 border border-slate-600/50 mb-6 backdrop-blur-md">
-                            <i class="fa-solid fa-headset text-white text-xs"></i>
-                            <span class="text-white text-[10px] font-black tracking-widest uppercase">24/7 Premium Support</span>
+                    <div class="relative z-10 p-12 space-y-8">
+                        <div class="space-y-4">
+                            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] font-black uppercase tracking-[0.2em]">
+                                <i class="fa-solid fa-headset text-brand-accent"></i>
+                                24/7 Premium Support
+                            </div>
+                            <h3 class="text-4xl font-black text-white leading-tight">
+                                Still have <br><span class="text-brand-accent italic">Questions?</span>
+                            </h3>
+                            <p class="text-white/70 font-medium leading-relaxed">
+                                Our dedicated support team is available round the clock to help you with your global business journey.
+                            </p>
                         </div>
                         
-                        <h2 class="text-3xl lg:text-4xl font-extrabold text-white leading-tight mb-4">
-                            Need More <span class="text-brand-accent">Help?</span>
-                        </h2>
-                        
-                        <p class="text-white/80 text-sm font-medium mb-8 leading-relaxed">
-                            If you still have queries or need customized support, our dedicated team is here to assist you round the clock.
-                        </p>
-                        
-                        <a href="<?php echo e(route('contact')); ?>" class="w-full relative overflow-hidden inline-flex items-center justify-center px-8 py-4 bg-slate-800 hover:bg-brand-accent text-white hover:text-slate-900 border border-slate-600 hover:border-transparent rounded-md font-black text-sm transition-all shadow-xl group/btn uppercase tracking-widest">
-                            <span class="relative z-10 flex items-center justify-center">
-                                Contact Support Team
-                                <i class="fa-solid fa-arrow-right ml-3 group-hover/btn:translate-x-1 transition-transform"></i>
-                            </span>
+                        <a href="<?php echo e(route('contact')); ?>" 
+                            class="w-full py-5 rounded-2xl bg-white text-slate-900 font-black text-xs uppercase tracking-widest flex items-center justify-center gap-3 hover:bg-brand-accent transition-all shadow-xl">
+                            Contact Support Team
+                            <i class="fa-solid fa-arrow-right-long transition-transform group-hover:translate-x-1"></i>
                         </a>
                     </div>
                 </div>

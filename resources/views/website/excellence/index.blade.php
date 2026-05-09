@@ -78,7 +78,7 @@
             @empty
             <div class="col-span-full py-32 text-center bg-slate-50 border border-slate-100 rounded-sm">
                 <i class="fa-solid fa-medal text-8xl text-slate-200 mb-8"></i>
-                <h3 class="text-2xl font-black text-slate-400 uppercase tracking-widest italic">Institutional Wall is Being Decorated</h3>
+                <h3 class="text-2xl font-black text-slate-400 uppercase tracking-widest italic">Global Recognition Nodes are Being Authenticated</h3>
             </div>
             @endforelse
         </div>
