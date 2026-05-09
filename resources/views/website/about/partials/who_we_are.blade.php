@@ -1,32 +1,36 @@
-<section class="py-32 bg-white relative overflow-hidden">
-    <!-- Background Decor -->
-    <div class="absolute top-0 right-0 w-1/3 h-full bg-slate-50 -skew-x-12 translate-x-1/2"></div>
+<section class="section-padding bg-white relative overflow-hidden">
+    <!-- Visual Decorators -->
+    <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-primary/5 rounded-full blur-[150px] translate-x-1/2 -translate-y-1/2"></div>
     
     <div class="container relative z-10">
-        <div class="flex flex-col lg:flex-row items-center gap-24">
+        <div class="grid lg:grid-cols-2 gap-24 items-center">
             
-            <!-- Content Area -->
-            <div class="w-full lg:w-1/2 animate-on-scroll">
-                <div class="inline-flex items-center gap-3 px-4 py-2 bg-slate-950 border-l-4 border-brand-accent mb-10">
-                    <span class="text-white text-[10px] font-black tracking-[0.4em] uppercase">The Global Foundation</span>
+            <!-- Information Layer -->
+            <div class="space-y-12 animate-on-scroll">
+                <div class="space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-primary/5 text-brand-primary text-[10px] font-black uppercase tracking-[0.2em]">
+                        The Global Foundation
+                    </div>
+                    <h2 class="text-5xl md:text-7xl font-black text-slate-900 leading-[0.9] tracking-tighter uppercase">
+                        World <span class="text-brand-primary italic">Grexpo.</span> <br> Foundation
+                    </h2>
                 </div>
 
-                <h2 class="text-5xl md:text-8xl font-black text-slate-950 uppercase tracking-tighter italic leading-[0.85] mb-12">
-                    World <span class="text-brand-accent not-italic">Grexpo</span> <br> Foundation
-                </h2>
-
-                <div class="space-y-8 mb-12">
-                    <p class="text-2xl text-slate-600 leading-relaxed font-light">
-                        World Grexpo Foundation (WGF) is a Section-8 Global Think-Tank and Not-for-Profit organization architecting the future of <span class="font-black text-slate-950 uppercase italic tracking-tighter">Industrial Sustainability</span>.
+                <div class="space-y-8">
+                    <p class="text-2xl text-slate-500 font-medium leading-relaxed">
+                        World Grexpo Foundation (WGF) is a Section-8 Global Think-Tank and Not-for-Profit organization architecting the future of <strong class="text-slate-900 uppercase">Industrial Sustainability</strong>.
                     </p>
 
-                    <p class="text-lg text-slate-500 leading-relaxed font-light italic border-l-2 border-slate-100 pl-8">
-                        We operate at the absolute intersection of industrial innovation and environmental stewardship, driving the global transition toward a zero-carbon economy.
-                    </p>
+                    <div class="p-10 rounded-[3rem] bg-slate-50 border border-slate-100 relative group overflow-hidden">
+                        <div class="absolute inset-0 bg-linear-to-br from-brand-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <p class="text-lg text-slate-500 leading-relaxed font-medium italic relative z-10">
+                            We operate at the absolute intersection of industrial innovation and environmental stewardship, driving the global transition toward a zero-carbon economy.
+                        </p>
+                    </div>
                 </div>
 
-                <!-- Key Focus Areas Grid -->
-                <div class="grid grid-cols-2 gap-4 mb-14">
+                <!-- Focus Areas -->
+                <div class="grid grid-cols-2 gap-4">
                     @php
                         $focus = [
                             ['icon' => 'fa-leaf', 'label' => 'Green Hydrogen'],
@@ -36,52 +40,55 @@
                         ];
                     @endphp
                     @foreach($focus as $item)
-                        <div class="flex items-center gap-4 p-4 bg-slate-50 border border-slate-100 rounded-sm group hover:bg-slate-950 transition-all duration-500">
-                            <div class="w-10 h-10 bg-white border border-slate-200 flex items-center justify-center rounded-sm group-hover:bg-brand-accent group-hover:border-brand-accent transition-all duration-500">
-                                <i class="fa-solid {{ $item['icon'] }} text-slate-950 text-sm group-hover:scale-110"></i>
+                        <div class="flex items-center gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-100 group hover:bg-brand-primary transition-all duration-500">
+                            <div class="w-10 h-10 bg-white shadow-md flex items-center justify-center rounded-xl group-hover:scale-110 transition-transform">
+                                <i class="fa-solid {{ $item['icon'] }} text-brand-primary text-sm transition-colors group-hover:text-brand-primary"></i>
                             </div>
-                            <span class="text-slate-950 font-black uppercase tracking-widest text-[10px] group-hover:text-white transition-colors">{{ $item['label'] }}</span>
+                            <span class="text-slate-900 font-black uppercase tracking-widest text-[9px] group-hover:text-white transition-colors">{{ $item['label'] }}</span>
                         </div>
                     @endforeach
                 </div>
 
-                <!-- Highlight Box -->
-                <div class="bg-slate-950 p-12 rounded-sm relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-brand-accent opacity-10 -translate-y-1/2 translate-x-1/2 rotate-45 group-hover:rotate-90 transition-transform duration-1000"></div>
-                    <p class="text-white italic font-light relative z-10 text-2xl leading-tight tracking-tight">
-                        <i class="fa-solid fa-quote-left absolute -top-8 -left-8 text-white/5 text-8xl -z-10"></i>
-                        "Architecting a global industrial ecosystem where <span class="text-brand-accent not-italic">growth</span> and <span class="text-brand-accent not-italic">sustainability</span> are structurally inseparable."
+                <!-- Quote Box -->
+                <div class="relative p-12 rounded-[3rem] bg-slate-950 overflow-hidden shadow-2xl">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-primary/10 rounded-full blur-2xl"></div>
+                    <i class="fa-solid fa-quote-left text-brand-primary/10 text-8xl absolute -top-4 -left-4"></i>
+                    <p class="text-2xl text-white font-black italic tracking-tight leading-tight relative z-10">
+                        "Architecting a global industrial ecosystem where <span class="text-brand-primary not-italic">growth</span> and <span class="text-brand-primary not-italic">sustainability</span> are structurally inseparable."
                     </p>
                 </div>
             </div>
 
-            <!-- Image Area -->
-            <div class="w-full lg:w-1/2 relative group animate-on-scroll delay-100">
-                <div class="relative rounded-sm overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.2)] h-[750px] border border-slate-100">
-                    <img src="{{ asset('images/about/who-we-are.png') }}" alt="World Grexpo Foundation Global" class="w-full h-full object-cover grayscale group-hover:grayscale-0 scale-105 group-hover:scale-100 transition-all duration-[2000ms]">
+            <!-- Media Layer -->
+            <div class="relative animate-on-scroll delay-100">
+                <div class="relative rounded-[4rem] overflow-hidden shadow-2xl h-[800px] group border border-slate-100">
+                    <img src="{{ asset('images/about/who-we-are.png') }}" 
+                        alt="World Grexpo Foundation Global" 
+                        class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-[3000ms] group-hover:scale-110">
                     
-                    <div class="absolute inset-0 bg-slate-950/20 group-hover:bg-transparent transition-all duration-1000"></div>
+                    <div class="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
                     
-                    <!-- Stats overlay -->
-                    <div class="absolute bottom-12 left-12 right-12 p-12 bg-white/95 backdrop-blur-xl shadow-2xl rounded-sm border-t-4 border-brand-accent">
-                        <div class="flex items-center justify-around">
-                            <div class="text-center">
-                                <span class="block text-4xl font-black text-slate-950 italic tracking-tighter mb-1">7+</span>
-                                <span class="text-[9px] font-black uppercase tracking-[0.3em] text-slate-500">Impact Nodes</span>
+                    <!-- Stats Floating Card -->
+                    <div class="absolute bottom-12 left-12 right-12 p-12 bg-white/10 backdrop-blur-3xl rounded-[3rem] border border-white/20 shadow-2xl">
+                        <div class="grid grid-cols-3 gap-8 text-center divide-x divide-white/10">
+                            <div class="space-y-1">
+                                <span class="block text-4xl font-black text-white tracking-tighter">7+</span>
+                                <span class="text-[8px] font-black uppercase tracking-[0.3em] text-brand-accent">Impact Nodes</span>
                             </div>
-                            <div class="w-px h-16 bg-slate-200"></div>
-                            <div class="text-center">
-                                <span class="block text-4xl font-black text-slate-950 italic tracking-tighter mb-1">{{ count(config('sectors.sectors')) }}</span>
-                                <span class="text-[9px] font-black uppercase tracking-[0.3em] text-slate-500">Global Sectors</span>
+                            <div class="space-y-1">
+                                <span class="block text-4xl font-black text-white tracking-tighter">{{ count(config('sectors.sectors')) }}</span>
+                                <span class="text-[8px] font-black uppercase tracking-[0.3em] text-brand-accent">Sectors</span>
                             </div>
-                            <div class="w-px h-16 bg-slate-200"></div>
-                            <div class="text-center">
-                                <span class="block text-4xl font-black text-slate-950 italic tracking-tighter mb-1">30+</span>
-                                <span class="text-[9px] font-black uppercase tracking-[0.3em] text-slate-500">Active Nations</span>
+                            <div class="space-y-1">
+                                <span class="block text-4xl font-black text-white tracking-tighter">30+</span>
+                                <span class="text-[8px] font-black uppercase tracking-[0.3em] text-brand-accent">Nations</span>
                             </div>
                         </div>
                     </div>
                 </div>
+                
+                <!-- Floating Decorator -->
+                <div class="absolute -top-12 -right-12 w-48 h-48 bg-brand-primary rounded-[3rem] -z-10 animate-pulse"></div>
             </div>
 
         </div>

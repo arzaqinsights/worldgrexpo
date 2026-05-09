@@ -15,10 +15,10 @@ class AdminUserSeeder extends Seeder
     public function run(): void
     {
         User::updateOrCreate(
-            ['email' => 'admin@World Grexpo.com'],
+            ['email' => 'admin@worldgrexpo.com'],
             [
                 'name' => 'Master Admin',
-                'password' => Hash::make('World Grexpo@1457'),
+                'password' => Hash::make('Worldgrexpo@1457'),
                 'company_name' => 'World Grexpo Official',
                 'designation' => 'System Administrator',
                 'phone_number' => '+910000000000',

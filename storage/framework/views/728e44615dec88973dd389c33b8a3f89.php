@@ -4,12 +4,12 @@
     <div class="absolute inset-0 z-0">
         <div class="swiper hero-swiper h-full w-full">
             <div class="swiper-wrapper">
-                @foreach ($slides as $image)
+                <?php $__currentLoopData = $slides; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $image): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="swiper-slide">
                         <div class="absolute inset-0 bg-linear-to-b from-slate-950/90 via-slate-950/40 to-slate-950/95 z-10"></div>
-                        <img src="{{ asset($image) }}" alt="Slider Image" class="w-full h-full object-cover">
+                        <img src="<?php echo e(asset($image)); ?>" alt="Slider Image" class="w-full h-full object-cover">
                     </div>
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
             <!-- Pagination Bullets -->
             <div class="swiper-pagination !bottom-10 !left-auto !right-10 !w-auto flex flex-col gap-2"></div>
@@ -43,11 +43,11 @@
             <!-- Action Buttons -->
             <div class="flex flex-wrap gap-5 pt-4"
                 x-show="loaded" x-transition:enter="transition ease-out duration-1000 delay-700" x-transition:enter-start="opacity-0 scale-95">
-                <a href="{{ route('join.index') }}" 
+                <a href="<?php echo e(route('join.index')); ?>" 
                     class="px-12 py-5 rounded-2xl bg-brand-primary text-white font-black text-sm uppercase tracking-widest shadow-2xl shadow-brand-primary/40 hover:bg-brand-primary-dark hover:-translate-y-1 transition-all">
                     Register Now
                 </a>
-                <a href="{{ route('sectors.index') }}" 
+                <a href="<?php echo e(route('sectors.index')); ?>" 
                     class="px-12 py-5 rounded-2xl bg-white/10 backdrop-blur-md text-white font-black text-sm uppercase tracking-widest border border-white/20 hover:bg-white hover:text-brand-primary-dark hover:-translate-y-1 transition-all">
                     Explore Sectors
                 </a>
@@ -65,7 +65,7 @@
                     <div class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Summits</div>
                 </div>
                 <div class="space-y-1">
-                    <div class="text-4xl font-black text-white italic">{{ count(config('sectors.sectors')) }}</div>
+                    <div class="text-4xl font-black text-white italic"><?php echo e(count(config('sectors.sectors'))); ?></div>
                     <div class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Sectors</div>
                 </div>
                 <div class="space-y-1">
@@ -80,7 +80,7 @@
     <div class="absolute bottom-0 left-0 w-full h-32 bg-linear-to-t from-slate-950 to-transparent pointer-events-none"></div>
 </section>
 
-@once
+<?php if (! $__env->hasRenderedOnce('050b64f9-597e-4abb-be0c-42d9a1b54d38')): $__env->markAsRenderedOnce('050b64f9-597e-4abb-be0c-42d9a1b54d38'); ?>
 <style>
     .hero-swiper .swiper-pagination-bullet {
         width: 12px;
@@ -95,4 +95,5 @@
         border-radius: 6px;
     }
 </style>
-@endonce
+<?php endif; ?>
+<?php /**PATH C:\laragon\www\worldgrexpo\resources\views/website/home/partials/hero.blade.php ENDPATH**/ ?>

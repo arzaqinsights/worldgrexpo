@@ -4,40 +4,59 @@
 
 @section('content')
 
-    <!-- HERO -->
-    <section class="relative pt-32 pb-24 bg-orange-950 text-white overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-orange-900 via-stone-900 to-black"></div>
-        <div class="absolute inset-0 opacity-25"
-            style="background-image: url('{{ asset('images/sectors/agro-food-processing.jpg') }}'); background-size: cover; background-position: center;">
+    <!-- Premium Hero Section -->
+    <section class="relative pt-48 pb-32 bg-slate-950 overflow-hidden">
+        <!-- Visual Backdrop -->
+        <div class="absolute inset-0 opacity-30">
+            <img src="{{ asset('images/sectors/agro-food-processing.jpg') }}" class="w-full h-full object-cover">
         </div>
+        <div class="absolute inset-0 bg-linear-to-b from-slate-950 via-slate-950/80 to-slate-950"></div>
+        
+        <!-- Animated Decorators -->
+        <div class="absolute top-1/4 right-0 w-[600px] h-[600px] bg-brand-primary/10 rounded-full blur-[120px] animate-pulse"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-brand-accent/5 rounded-full blur-[100px]"></div>
 
-        <div class="container relative z-10 text-center">
-            <h1 class="text-4xl md:text-6xl font-black uppercase mb-4 tracking-wide">
-                Agro & Food <span class="text-orange-400">Processing</span>
+        <div class="container relative z-10 text-center space-y-8">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md text-brand-accent text-[10px] font-black uppercase tracking-[0.3em]">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse"></span>
+                Sector Insight
+            </div>
+            <h1 class="text-6xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter uppercase">
+                Agro & Food <br>
+                <span class="text-brand-primary italic">Processing.</span>
             </h1>
-            <p class="text-xl md:text-2xl text-orange-100 max-w-4xl mx-auto leading-relaxed uppercase italic font-medium">
-                Transforming Agriculture through Value-Added Manufacturing.
+            <p class="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto leading-relaxed font-medium">
+                Transforming global agriculture through value-added manufacturing and sustainable processing innovations.
             </p>
         </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="py-16 bg-white">
-        <div class="container space-y-20">
+    <!-- Content Section -->
+    <section class="section-padding bg-white relative">
+        <div class="container space-y-32">
 
-            <!-- WHAT IS AGRO & FOOD PROCESSING -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="animate-in fade-in slide-in-from-left duration-700">
-                    <h2 class="text-3xl font-extrabold mb-6 text-orange-900 uppercase italic">From Farm to Plate</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4 text-lg">
-                        <strong>Agro and Food Processing</strong> refers to the transformation of agricultural raw materials into value-added food, beverage, and industrial products through modern processing, preservation, packaging, and distribution systems.
-                    </p>
-                    <p class="text-slate-600 leading-relaxed font-medium">
-                        This sector acts as a vital bridge between agriculture and manufacturing, ensuring food security, reducing wastage, and delivering high-quality products to global markets.
-                    </p>
+            <!-- Executive Summary -->
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div class="space-y-8" x-data="{ visible: false }" x-intersect="visible = true">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-primary/5 text-brand-primary text-[10px] font-black uppercase tracking-[0.2em]">
+                        Executive Summary
+                    </div>
+                    <h2 class="text-5xl font-black text-slate-900 leading-[0.9] tracking-tighter uppercase">
+                        From Farm <br>
+                        <span class="text-brand-primary italic">To Plate.</span>
+                    </h2>
+                    <div class="space-y-6 text-xl text-slate-500 font-medium leading-relaxed">
+                        <p>
+                            <strong class="text-slate-900">Agro and Food Processing</strong> refers to the transformation of agricultural raw materials into value-added food, beverage, and industrial products through modern processing, preservation, packaging, and distribution systems.
+                        </p>
+                        <p>
+                            This sector acts as a vital bridge between agriculture and manufacturing, ensuring food security, reducing wastage, and delivering high-quality products to global markets.
+                        </p>
+                    </div>
                 </div>
 
-                <div class="grid grid-cols-2 gap-4 animate-in fade-in slide-in-from-right duration-700">
+                <!-- Segments Grid -->
+                <div class="grid grid-cols-2 gap-6">
                     @php
                         $segments = [
                             ['icon' => 'cow', 'label' => 'Dairy Processing'],
@@ -47,138 +66,135 @@
                         ];
                     @endphp
                     @foreach($segments as $seg)
-                        <div class="p-6 bg-orange-50 border border-orange-100 rounded-2xl text-center group hover:bg-orange-600 hover:text-white transition-all duration-300">
-                            <i class="fa-solid fa-{{ $seg['icon'] }} text-3xl mb-3 text-orange-400 group-hover:text-white"></i>
-                            <p class="text-xs font-black uppercase tracking-tight">{{ $seg['label'] }}</p>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-
-            <!-- KEY ACTIVITIES -->
-            <div class="p-10 rounded-3xl bg-orange-900 font-serif italic text-white relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -mr-32 -mt-32"></div>
-                <h3 class="text-2xl font-black mb-10 uppercase italic tracking-widest text-center">Key Processing Activities</h3>
-                
-                <div class="grid grid-cols-2 md:grid-cols-5 gap-6 relative z-10">
-                    @php
-                        $activities = [
-                            'Cleaning & Sorting',
-                            'Milling & Grinding',
-                            'Packaging & Preservation',
-                            'Cold Storage & Logistics',
-                            'Quality Testing & Distribution'
-                        ];
-                    @endphp
-                    @foreach($activities as $index => $activity)
-                        <div class="text-center group">
-                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4 font-black text-xl shadow-lg ring-4 ring-orange-800 group-hover:bg-orange-400 group-hover:text-orange-950 transition-all">
-                                {{ $index + 1 }}
+                        <div class="p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 flex flex-col items-center text-center group hover:bg-brand-primary hover:border-brand-primary transition-all duration-500">
+                            <div class="w-16 h-16 rounded-2xl bg-white shadow-xl flex items-center justify-center text-brand-primary text-3xl mb-6 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-{{ $seg['icon'] }}"></i>
                             </div>
-                            <p class="text-[10px] font-bold uppercase text-orange-200 leading-tight">{{ $activity }}</p>
+                            <p class="text-xs font-black uppercase tracking-widest text-slate-400 group-hover:text-white/80">{{ $seg['label'] }}</p>
                         </div>
                     @endforeach
                 </div>
             </div>
 
-            <!-- MARKET STATS -->
-            <div class="grid md:grid-cols-2 gap-10">
-                <!-- GLOBAL -->
-                <div class="p-8 rounded-3xl bg-gradient-to-br from-stone-800 to-stone-900 text-white shadow-2xl">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="p-3 bg-white/10 rounded-xl text-orange-400">
-                            <i class="fa-solid fa-earth-asia text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold uppercase tracking-tight">Global Market</h3>
+            <!-- Key Activities (Modern Horizontal Process) -->
+            <div class="relative p-12 lg:p-20 rounded-[4rem] bg-slate-950 overflow-hidden shadow-2xl">
+                <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-primary/10 rounded-full blur-[120px]"></div>
+                <div class="relative z-10 space-y-16">
+                    <div class="text-center space-y-4">
+                        <div class="text-brand-accent text-[10px] font-black uppercase tracking-[0.4em]">Core Operations</div>
+                        <h3 class="text-4xl font-black text-white uppercase tracking-tighter">Key Processing Activities</h3>
                     </div>
                     
-                    <ul class="space-y-4 text-stone-300">
-                        <li class="flex items-baseline justify-between border-b border-white/10 pb-2">
-                            <span class="text-sm uppercase font-bold text-stone-400">Market Value (2025)</span>
-                            <span class="text-xl font-black text-white">$8 Trillion</span>
-                        </li>
-                        <li class="flex items-baseline justify-between border-b border-white/10 pb-2">
-                            <span class="text-sm uppercase font-bold text-stone-400">Projected (2031)</span>
-                            <span class="text-xl font-black text-white">$11 Trillion</span>
-                        </li>
-                        <li class="flex items-baseline justify-between border-b border-white/10 pb-2">
-                            <span class="text-sm uppercase font-bold text-stone-400">Annual CAGR</span>
-                            <span class="text-xl font-black text-orange-400">5% - 6%</span>
-                        </li>
-                    </ul>
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-10 relative">
+                        @php
+                            $activities = [
+                                'Cleaning & Sorting',
+                                'Milling & Grinding',
+                                'Packaging & Preservation',
+                                'Cold Storage & Logistics',
+                                'Quality Testing & Distribution'
+                            ];
+                        @endphp
+                        @foreach($activities as $index => $activity)
+                            <div class="relative group text-center space-y-6">
+                                <div class="w-16 h-16 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/10 flex items-center justify-center mx-auto text-xl font-black text-brand-accent group-hover:bg-brand-primary group-hover:text-white transition-all shadow-2xl">
+                                    {{ $index + 1 }}
+                                </div>
+                                <p class="text-xs font-black uppercase tracking-widest text-slate-400 group-hover:text-white transition-colors leading-tight">{{ $activity }}</p>
+                                
+                                @if($index < 4)
+                                    <div class="hidden md:block absolute top-8 left-[calc(50%+2rem)] w-[calc(100%-4rem)] h-[1px] bg-white/10"></div>
+                                @endif
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
 
-                    <div class="mt-8 p-4 bg-white/5 rounded-xl border border-white/10">
-                        <p class="text-[10px] text-stone-500 uppercase font-black mb-1">Total Companies</p>
-                        <p class="text-lg font-bold">500,000+ Globally</p>
+            <!-- Market Intelligence Grid -->
+            <div class="grid lg:grid-cols-2 gap-10">
+                <!-- Global Metrics -->
+                <div class="p-12 rounded-[3rem] bg-slate-900 border border-white/5 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-12 text-brand-primary/10 group-hover:text-brand-primary/20 transition-colors">
+                        <i class="fa-solid fa-earth-asia text-9xl"></i>
+                    </div>
+                    <div class="relative z-10 space-y-10">
+                        <div class="space-y-2">
+                            <div class="text-brand-primary text-[10px] font-black uppercase tracking-[0.3em]">Market Scale</div>
+                            <h3 class="text-3xl font-black text-white uppercase tracking-tight">Global Market</h3>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-end justify-between border-b border-white/10 pb-4">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-widest">Market Value (2025)</span>
+                                <span class="text-3xl font-black text-white tracking-tighter">$8 Trillion</span>
+                            </div>
+                            <div class="flex items-end justify-between border-b border-white/10 pb-4">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-widest">Projected (2031)</span>
+                                <span class="text-3xl font-black text-white tracking-tighter">$11 Trillion</span>
+                            </div>
+                            <div class="flex items-end justify-between">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-widest">Annual CAGR</span>
+                                <span class="text-3xl font-black text-brand-primary tracking-tighter">6%</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-6">
+                            <div class="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-white/5 border border-white/10">
+                                <div class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></div>
+                                <span class="text-xs font-black text-white uppercase tracking-widest">500,000+ Enterprises Globally</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- INDIA -->
-                <div class="p-8 rounded-3xl bg-orange-50 border border-orange-200 shadow-xl">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="p-3 bg-orange-200 rounded-xl text-orange-600">
-                            <i class="fa-solid fa-tractor text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-stone-900 uppercase tracking-tight">Indian Market</h3>
+                <!-- India Metrics -->
+                <div class="p-12 rounded-[3rem] bg-slate-50 border border-slate-100 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-12 text-brand-primary/5 group-hover:text-brand-primary/10 transition-colors">
+                        <i class="fa-solid fa-tractor text-9xl"></i>
                     </div>
-                    
-                    <ul class="space-y-4 text-stone-600">
-                        <li class="flex items-baseline justify-between border-b border-orange-200 pb-2">
-                            <span class="text-sm uppercase font-bold text-stone-400">Market Value (2025)</span>
-                            <span class="text-xl font-black text-stone-900">$600 Billion</span>
-                        </li>
-                        <li class="flex items-baseline justify-between border-b border-orange-200 pb-2">
-                            <span class="text-sm uppercase font-bold text-stone-400">Projected (2031)</span>
-                            <span class="text-xl font-black text-stone-900">$1 Trillion</span>
-                        </li>
-                        <li class="flex items-baseline justify-between border-b border-orange-200 pb-2">
-                            <span class="text-sm uppercase font-bold text-stone-400">Annual CAGR</span>
-                            <span class="text-xl font-black text-orange-700">10% - 12%</span>
-                        </li>
-                    </ul>
-
-                    <div class="mt-8 flex gap-4">
-                        <div class="flex-1 p-3 bg-white rounded-xl border border-orange-100 shadow-sm">
-                            <p class="text-[10px] text-stone-400 uppercase font-bold">Processed Units</p>
-                            <p class="text-lg font-black text-orange-600">40,000+</p>
+                    <div class="relative z-10 space-y-10">
+                        <div class="space-y-2">
+                            <div class="text-brand-primary text-[10px] font-black uppercase tracking-[0.3em]">National Focus</div>
+                            <h3 class="text-3xl font-black text-slate-900 uppercase tracking-tight">Indian Market</h3>
                         </div>
-                        <div class="flex-1 p-3 bg-white rounded-xl border border-orange-100 shadow-sm">
-                            <p class="text-[10px] text-stone-400 uppercase font-bold">Growth Stage</p>
-                            <p class="text-lg font-black text-stone-700 uppercase">High Growth</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-end justify-between border-b border-slate-200 pb-4">
+                                <span class="text-[10px] font-black uppercase text-slate-400 tracking-widest">Market Value (2025)</span>
+                                <span class="text-3xl font-black text-slate-900 tracking-tighter">$600 Billion</span>
+                            </div>
+                            <div class="flex items-end justify-between border-b border-slate-200 pb-4">
+                                <span class="text-[10px] font-black uppercase text-slate-400 tracking-widest">Projected (2031)</span>
+                                <span class="text-3xl font-black text-slate-900 tracking-tighter">$1 Trillion</span>
+                            </div>
+                            <div class="flex items-end justify-between">
+                                <span class="text-[10px] font-black uppercase text-slate-400 tracking-widest">Annual CAGR</span>
+                                <span class="text-3xl font-black text-brand-primary tracking-tighter">12%</span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="p-4 rounded-2xl bg-white border border-slate-100 shadow-sm">
+                                <div class="text-[9px] font-black uppercase text-slate-400 tracking-widest mb-1">Processing Units</div>
+                                <div class="text-xl font-black text-slate-900 uppercase">40,000+</div>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-white border border-slate-100 shadow-sm">
+                                <div class="text-[9px] font-black uppercase text-slate-400 tracking-widest mb-1">Growth Index</div>
+                                <div class="text-xl font-black text-brand-primary uppercase">High</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- COMPARISON -->
-            <div class="overflow-x-auto rounded-3xl border border-orange-200 shadow-sm">
-                <table class="w-full text-left border-collapse">
-                    <thead>
-                        <tr class="bg-orange-950 text-white">
-                            <th class="p-6 uppercase text-sm tracking-widest font-black">Snapshot Parameter</th>
-                            <th class="p-6 uppercase text-sm tracking-widest font-black text-center">Global Market</th>
-                            <th class="p-6 uppercase text-sm tracking-widest font-black text-center">India Market</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-orange-50 italic">
-                        <tr class="hover:bg-orange-50/50 transition-colors">
-                            <td class="p-6 font-bold text-stone-500 uppercase text-xs">Market Stage</td>
-                            <td class="p-6 text-center font-black text-stone-800">Mature / Expanding</td>
-                            <td class="p-6 text-center font-black text-orange-700">High Growth</td>
-                        </tr>
-                        <tr class="hover:bg-orange-50/50 transition-colors">
-                            <td class="p-6 font-bold text-stone-500 uppercase text-xs">Key Driver</td>
-                            <td class="p-6 text-center text-stone-600 font-medium">Food Demand + Retail</td>
-                            <td class="p-6 text-center text-stone-600 font-medium">Agriculture Base + Consumption</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- OUTLOOK -->
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="p-10 bg-stone-900 rounded-3xl text-white">
-                    <h3 class="text-3xl font-black mb-8 uppercase italic border-b border-orange-600 pb-4">Global Outlook</h3>
+            <!-- Future Outlook -->
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div class="p-12 rounded-[3rem] bg-slate-950 text-white space-y-10">
+                    <div class="space-y-4">
+                        <div class="text-brand-primary text-[10px] font-black uppercase tracking-[0.3em]">Global Perspective</div>
+                        <h3 class="text-4xl font-black uppercase tracking-tighter">The Global Outlook</h3>
+                    </div>
                     <ul class="space-y-6">
                         @foreach([
                             'Increased automation in food manufacturing',
@@ -186,14 +202,20 @@
                             'Expansion of sustainable and smart packaging',
                             'Strong investment in traceability and food-tech'
                         ] as $item)
-                        <li class="flex items-center gap-4 text-sm font-bold uppercase tracking-tight text-orange-100">
-                             <i class="fa-solid fa-circle-nodes text-orange-500 text-xl"></i> {{ $item }}
+                        <li class="flex items-center gap-6 group">
+                            <div class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-all">
+                                <i class="fa-solid fa-circle-nodes"></i>
+                            </div>
+                            <span class="text-sm font-black uppercase tracking-widest text-slate-400 group-hover:text-white transition-colors">{{ $item }}</span>
                         </li>
                         @endforeach
                     </ul>
                 </div>
-                <div class="p-10 bg-orange-50 rounded-3xl border border-orange-200">
-                    <h3 class="text-3xl font-black mb-8 uppercase italic border-b border-orange-200 pb-4 text-orange-900">India Outlook</h3>
+                <div class="p-12 rounded-[3rem] bg-slate-50 border border-slate-100 space-y-10">
+                    <div class="space-y-4">
+                        <div class="text-brand-primary text-[10px] font-black uppercase tracking-[0.3em]">India Perspective</div>
+                        <h3 class="text-4xl font-black text-slate-900 uppercase tracking-tighter">The India Outlook</h3>
+                    </div>
                     <ul class="space-y-6">
                         @foreach([
                             'Rapid growth in packaged & ready-to-eat segments',
@@ -201,31 +223,27 @@
                             'Increased FDI and private equity investments',
                             'Rise in food-tech startups and processing clusters'
                         ] as $item)
-                        <li class="flex items-center gap-4 text-sm font-bold uppercase tracking-tight text-orange-700">
-                             <i class="fa-solid fa-arrow-trend-up text-xl"></i> {{ $item }}
+                        <li class="flex items-center gap-6 group">
+                            <div class="w-10 h-10 rounded-xl bg-brand-primary/5 border border-brand-primary/10 flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-all">
+                                <i class="fa-solid fa-arrow-trend-up"></i>
+                            </div>
+                            <span class="text-sm font-black uppercase tracking-widest text-slate-500 group-hover:text-slate-900 transition-colors">{{ $item }}</span>
                         </li>
                         @endforeach
                     </ul>
                 </div>
             </div>
 
-            <!-- SEGMENTS GRID -->
-            <div class="space-y-8">
-                <h2 class="text-3xl font-black text-stone-900 uppercase italic text-center">Major Industry Segments</h2>
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-                    @foreach(['Dairy Processing', 'Fruits & Vegetables', 'Grain Milling & Cereals', 'Packaged Foods & Snacks', 'Beverage Manufacturing', 'Cold Storage & Logistics'] as $segm)
-                    <div class="p-8 bg-white border border-stone-200 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all text-center">
-                        <p class="text-xs font-black uppercase text-stone-400 mb-2">Category</p>
-                        <p class="font-bold text-orange-900">{{ $segm }}</p>
+            <!-- Strategic Importance -->
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div class="space-y-10">
+                    <div class="space-y-6">
+                        <div class="text-brand-primary text-[10px] font-black uppercase tracking-[0.3em]">Economic Impact</div>
+                        <h2 class="text-5xl font-black text-slate-900 leading-[0.9] tracking-tighter uppercase">
+                            Strategic <br>
+                            <span class="text-brand-primary italic">Importance.</span>
+                        </h2>
                     </div>
-                    @endforeach
-                </div>
-            </div>
-
-            <!-- STRATEGIC IMPORTANCE -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="space-y-8">
-                    <h2 class="text-3xl font-extrabold text-stone-900 uppercase tracking-tight">Strategic Importance</h2>
                     <div class="space-y-4">
                         @foreach([
                             'Reduces post-harvest agricultural losses',
@@ -234,40 +252,49 @@
                             'Boosts industrialization of agriculture',
                             'Drives value-added manufacturing demand'
                         ] as $imp)
-                        <div class="flex items-center gap-4 p-4 bg-orange-50 border border-orange-100 rounded-2xl group hover:bg-orange-600 transition-colors">
-                            <i class="fa-solid fa-check text-orange-600 group-hover:text-white"></i>
-                            <span class="text-sm font-bold text-stone-700 uppercase group-hover:text-white">{{ $imp }}</span>
+                        <div class="flex items-center gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-100 group hover:bg-brand-primary transition-all duration-500">
+                            <div class="w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center text-brand-primary group-hover:text-brand-primary">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <span class="text-sm font-black uppercase tracking-widest text-slate-600 group-hover:text-white">{{ $imp }}</span>
                         </div>
                         @endforeach
                     </div>
                 </div>
 
-                <div class="p-10 bg-orange-900 rounded-3xl text-white relative overflow-hidden group">
-                    <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
-                    <div class="relative z-10">
-                        <h4 class="text-2xl font-black mb-6 uppercase italic text-orange-400">The Power of Agri-Tech</h4>
-                        <p class="text-orange-100 leading-relaxed text-sm font-medium mb-8">
+                <div class="relative p-12 lg:p-20 rounded-[4rem] bg-slate-950 overflow-hidden shadow-2xl">
+                    <div class="absolute inset-0 bg-linear-to-br from-brand-primary/20 to-transparent"></div>
+                    <div class="relative z-10 space-y-8">
+                        <div class="text-brand-accent text-[10px] font-black uppercase tracking-[0.4em]">Future Proofing</div>
+                        <h4 class="text-4xl font-black text-white leading-tight uppercase tracking-tighter">The Power of <br><span class="text-brand-primary italic">Agri-Tech.</span></h4>
+                        <p class="text-lg text-slate-400 font-medium leading-relaxed">
                             Agro and Food Processing is a strategic pillar of economic growth, connecting agriculture with manufacturing and retail. With strong policy support, India is set to become one of the largest agro-processing hubs globally.
                         </p>
-                        <div class="flex items-center gap-4">
-                             <div class="w-12 h-1 bg-orange-400"></div>
-                             <p class="text-[10px] font-black uppercase tracking-widest">Sustainability & Quality First</p>
+                        <div class="pt-8 flex items-center gap-6">
+                             <div class="w-16 h-1 bg-brand-accent rounded-full"></div>
+                             <p class="text-[10px] font-black uppercase tracking-[0.4em] text-white">Sustainability & Quality First</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- CONCLUSION (CTA) -->
-            <div class="relative bg-orange-950 text-white p-12 md:p-16 rounded-3xl text-center shadow-2xl overflow-hidden border-b-4 border-orange-500">
-                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(249,115,22,0.1),transparent)]"></div>
-                <div class="relative z-10">
-                    <h3 class="text-3xl font-bold mb-6 uppercase tracking-tight">Drive the Agro-Manufacturing Revolution</h3>
-                    <p class="text-xl text-orange-100 max-w-4xl mx-auto leading-relaxed mb-10">
+            <!-- Conclusion CTA -->
+            <div class="relative p-16 lg:p-24 rounded-[4rem] bg-slate-950 overflow-hidden text-center shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] border border-white/5">
+                <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_bottom,rgba(0,75,35,0.2),transparent)]"></div>
+                <div class="relative z-10 space-y-12">
+                    <h3 class="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter leading-none">
+                        Drive the <span class="text-brand-primary italic">Agro-Manufacturing</span> <br>Revolution.
+                    </h3>
+                    <p class="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed font-medium">
                         Maximize agricultural value and optimize food supply chains. Join the mission to build world-class food processing clusters and advanced cold chain logistics.
                     </p>
-                    <a href="" class="inline-flex items-center gap-3 px-10 py-5 bg-white text-orange-900 font-black uppercase tracking-widest rounded-full hover:bg-orange-500 hover:text-white transition-all duration-300 shadow-xl group">
-                        Register for Agro Support <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform text-orange-500"></i>
-                    </a>
+                    <div class="flex justify-center">
+                        <a href="{{ route('join.index') }}" 
+                            class="group flex items-center gap-4 px-12 py-6 rounded-2xl bg-brand-primary text-white font-black uppercase tracking-widest text-sm hover:bg-brand-primary-dark transition-all shadow-2xl shadow-brand-primary/20">
+                            Register for Agro Support 
+                            <i class="fa-solid fa-arrow-right-long group-hover:translate-x-2 transition-transform"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
 

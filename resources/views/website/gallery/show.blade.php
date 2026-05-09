@@ -4,56 +4,82 @@
 
 @section('content')
 
-    <!-- HERO -->
-    <section class="relative pt-48 pb-16 bg-slate-950 text-white overflow-hidden">
+    <!-- Premium Hero Section -->
+    <section class="relative pt-48 pb-16 bg-slate-950 overflow-hidden">
+        <!-- Visual Backdrop -->
         <div class="absolute inset-0 z-0">
-            <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
         </div>
-        <div class="container relative z-10 text-left">
-            <a href="{{ route('gallery') }}" class="inline-flex items-center gap-4 text-slate-500 hover:text-brand-accent font-black text-[10px] mb-10 transition-all uppercase tracking-[0.3em] italic group">
+        
+        <!-- Animated Decorators -->
+        <div class="absolute top-1/4 right-0 w-[600px] h-[600px] bg-brand-primary/10 rounded-full blur-[120px] animate-pulse"></div>
+
+        <div class="container relative z-10 space-y-12">
+            <a href="{{ route('gallery') }}" class="inline-flex items-center gap-4 text-white/40 hover:text-brand-accent font-black text-[10px] transition-all uppercase tracking-[0.3em] group">
                 <i class="fa-solid fa-arrow-left group-hover:-translate-x-2 transition-transform"></i> Back to Archives
             </a>
-            <h1 class="text-5xl md:text-7xl font-black mb-6 text-white leading-none uppercase italic tracking-tighter">
-                {{ $category }}
-            </h1>
-            <p class="text-brand-accent font-black uppercase tracking-[0.4em] text-[10px] flex items-center gap-4 italic">
-                <i class="fa-regular fa-image"></i> {{ $images->count() }} Institutional Nodes in Album
-            </p>
+            
+            <div class="space-y-6">
+                <h1 class="text-5xl md:text-7xl font-black text-white leading-none uppercase tracking-tighter">
+                    {{ $category }}<span class="text-brand-primary">.</span>
+                </h1>
+                <div class="flex items-center gap-4">
+                    <div class="h-[1px] w-12 bg-brand-accent"></div>
+                    <p class="text-brand-accent font-black uppercase tracking-[0.4em] text-[10px]">
+                        {{ $images->count() }} Institutional Nodes Recorded
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- IMAGES GRID -->
-    <section class="py-32 bg-white min-h-screen relative">
+    <!-- Institutional Archives Grid -->
+    <section class="section-padding bg-white relative">
         <div class="container">
-            <div class="columns-1 sm:columns-2 lg:columns-3 gap-2 space-y-2">
+            <div class="columns-1 sm:columns-2 lg:columns-3 gap-8 space-y-8">
                 @foreach($images as $image)
-                    <div class="relative group rounded-sm overflow-hidden shadow-sm hover:shadow-4xl transition-all duration-700 cursor-pointer bg-slate-950 break-inside-avoid border border-slate-100 group-hover:border-slate-900"
+                    <div class="relative group rounded-[2.5rem] overflow-hidden bg-slate-950 shadow-2xl transition-all duration-700 cursor-pointer break-inside-avoid border border-slate-100 hover:border-brand-primary hover:-translate-y-2"
                          onclick="openModal('{{ asset($image->image_path) }}')">
-                        <img src="{{ asset($image->image_path) }}" class="w-full h-auto object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[2000ms] block" alt="Gallery Image">
                         
-                        <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-all duration-700 flex items-center justify-center backdrop-blur-sm">
-                            <div class="w-20 h-20 bg-brand-accent rounded-sm flex items-center justify-center text-slate-950 scale-50 group-hover:scale-100 transition-all duration-700">
-                                <i class="fa-solid fa-magnifying-glass-plus text-2xl drop-shadow-2xl"></i>
+                        <img src="{{ asset($image->image_path) }}" 
+                             class="w-full h-auto object-cover transition-all duration-[2000ms] group-hover:scale-110 grayscale group-hover:grayscale-0 block" 
+                             alt="Institutional Node">
+                        
+                        <!-- Interaction Layer -->
+                        <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-all duration-700 flex items-center justify-center backdrop-blur-md">
+                            <div class="w-20 h-20 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full flex items-center justify-center text-white scale-50 group-hover:scale-100 transition-all duration-500">
+                                <i class="fa-solid fa-expand text-2xl"></i>
                             </div>
                         </div>
-                        <div class="absolute top-0 left-0 w-0 h-1 bg-brand-accent group-hover:w-full transition-all duration-700"></div>
+
+                        <!-- Indicator -->
+                        <div class="absolute top-0 left-0 w-full h-2 bg-brand-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-700"></div>
                     </div>
                 @endforeach
             </div>
         </div>
     </section>
 
-    <!-- LIGHTBOX MODAL -->
-    <div id="imageModal" class="fixed inset-0 z-50 bg-slate-950/95 backdrop-blur-xl hidden items-center justify-center opacity-0 transition-all duration-700">
-        <button onclick="closeModal()" class="absolute top-12 right-12 text-white hover:text-brand-accent transition-all bg-white/5 hover:bg-white/10 p-6 rounded-sm border border-white/10 italic font-black uppercase tracking-widest text-[10px] group">
-            Close Node <i class="fa-solid fa-xmark ml-4 group-hover:rotate-90 transition-transform"></i>
+    <!-- Premium Lightbox Modal -->
+    <div id="imageModal" class="fixed inset-0 z-[100] bg-slate-950/95 backdrop-blur-2xl hidden items-center justify-center opacity-0 transition-all duration-700">
+        <!-- Close Controls -->
+        <button onclick="closeModal()" class="absolute top-12 right-12 z-10 w-16 h-16 rounded-full bg-white/5 border border-white/10 text-white flex items-center justify-center text-2xl hover:bg-brand-primary hover:border-brand-primary hover:text-slate-950 transition-all group">
+            <i class="fa-solid fa-xmark group-hover:rotate-90 transition-transform"></i>
         </button>
-        <div class="relative p-4 md:p-12 w-full h-full flex items-center justify-center">
-            <img id="modalImage" src="" class="max-w-full max-h-full rounded-sm shadow-4xl object-contain scale-95 transition-all duration-700 border border-white/5">
+
+        <div class="relative w-full h-full p-12 md:p-24 flex items-center justify-center" onclick="closeModal()">
+            <img id="modalImage" src="" 
+                 class="max-w-full max-h-full rounded-[2rem] shadow-2xl object-contain scale-95 transition-all duration-700 border border-white/10"
+                 onclick="event.stopPropagation()">
+            
+            <!-- Branding Tag -->
+            <div class="absolute bottom-12 left-1/2 -translate-x-1/2 px-6 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl text-[10px] font-black text-white/40 uppercase tracking-[0.4em]">
+                World Grexpo <span class="text-brand-primary">Visual Archive</span>
+            </div>
         </div>
     </div>
 
-    <!-- LIGHTBOX SCRIPT -->
+    <!-- Lightbox Logic -->
     <script>
         const modal = document.getElementById('imageModal');
         const modalImage = document.getElementById('modalImage');
@@ -67,6 +93,7 @@
                 modalImage.classList.remove('scale-95');
                 modalImage.classList.add('scale-100');
             }, 10);
+            document.body.style.overflow = 'hidden';
         }
 
         function closeModal() {
@@ -76,21 +103,17 @@
             setTimeout(() => {
                 modal.classList.add('hidden');
                 modal.classList.remove('flex');
+                document.body.style.overflow = 'auto';
             }, 700);
         }
 
-        // Close on escape
+        // Keyboard Protocol
         document.addEventListener('keydown', function(event) {
             if (event.key === "Escape" && !modal.classList.contains('hidden')) {
                 closeModal();
             }
         });
-        
-        // Close on background click
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal || e.target.closest('.relative') === e.target) {
-                closeModal();
-            }
-        });
     </script>
+
+@endsection
 @endsection

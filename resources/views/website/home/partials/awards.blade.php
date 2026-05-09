@@ -1,70 +1,79 @@
-<!-- Awards & Recognition -->
-<section class="py-10 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+<section class="section-padding bg-white relative overflow-hidden">
+    <!-- Sophisticated Background Decorators -->
+    <div class="absolute top-1/2 right-0 -translate-y-1/2 w-96 h-96 bg-brand-primary/5 rounded-full blur-[100px]"></div>
+    <div class="absolute bottom-0 left-0 w-64 h-64 bg-brand-accent/5 rounded-full blur-[80px]"></div>
+
     <div class="container relative z-10">
-        <div class="flex flex-col lg:flex-row items-center gap-16">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 
-            <!-- Content -->
-            <div class="w-full lg:w-1/2 animate-on-scroll">
-                <!-- <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 border border-amber-200 mb-6">
-                    <i class="fa-solid fa-medal text-amber-600 text-xs"></i>
-                    <span class="text-amber-700 text-xs font-bold tracking-widest uppercase">Awards & Recognition</span>
-                </div> -->
-
-                <h2 class="text-4xl md:text-5xl xl:text-6xl font-extrabold text-slate-900 leading-[1.15] mb-6">
-                    National Business <span class="text-brand-primary">Excellence Awards</span>
-                </h2>
-
-                <p class="text-lg text-slate-600 mb-6 leading-relaxed">
-                    World Grexpo's National Business Excellence Awards celebrate the remarkable achievements of India's SMEs, MSMEs, Mid-Sized Industries, and Corporates who are setting new benchmarks in innovation, sustainability, and business excellence.
-                </p>
-
-                <p class="text-slate-500 mb-8 leading-relaxed">
-                    Our awards recognize businesses that demonstrate exceptional quality, leadership, social responsibility, and contribution to India's economic growth across 26+ focused industry sectors.
-                </p>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-                    <div class="bg-brand-primary/10 rounded-md p-4">
-                        <div class="text-3xl font-black text-brand-primary mb-1">{{ count(config('sectors.sectors')) }}+</div>
-                        <p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Industry Sectors</p>
+            <!-- Content Side -->
+            <div class="space-y-10" x-data="{ visible: false }" x-intersect="visible = true">
+                <div class="space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-primary/5 text-brand-primary text-[10px] font-black uppercase tracking-[0.2em]">
+                        <span class="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse"></span>
+                        Recognition of Excellence
                     </div>
-                    <div class="bg-brand-primary/10 rounded-md p-4">
-                        <div class="text-3xl font-black text-brand-primary mb-1">2300+</div>
-                        <p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Award Categories</p>
+                    <h2 class="text-5xl md:text-7xl font-black text-slate-900 leading-[0.9] tracking-tighter">
+                        National Business <br>
+                        <span class="text-brand-primary italic">Excellence Awards.</span>
+                    </h2>
+                    <p class="text-xl text-slate-500 font-medium leading-relaxed">
+                        World Grexpo's National Business Excellence Awards celebrate the remarkable achievements of India's SMEs, MSMEs, Mid-Sized Industries, and Corporates who are setting new benchmarks in innovation, sustainability, and business excellence.
+                    </p>
+                </div>
+
+                <!-- Stats Highlighting -->
+                <div class="grid grid-cols-3 gap-6">
+                    <div class="p-6 rounded-3xl bg-slate-50 border border-slate-100 group hover:border-brand-primary/20 hover:bg-brand-primary/5 transition-all duration-500">
+                        <div class="text-3xl font-black text-slate-900 mb-1 group-hover:text-brand-primary transition-colors tracking-tighter">
+                            {{ count(config('sectors.sectors')) }}+
+                        </div>
+                        <div class="text-[9px] font-black uppercase tracking-[0.1em] text-slate-400">Industry Sectors</div>
                     </div>
-                    <div class="bg-brand-primary/10 rounded-md p-4">
-                        <div class="text-3xl font-black text-brand-primary mb-1">350+</div>
-                        <p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Past Awardees</p>
+                    <div class="p-6 rounded-3xl bg-slate-50 border border-slate-100 group hover:border-brand-primary/20 hover:bg-brand-primary/5 transition-all duration-500">
+                        <div class="text-3xl font-black text-slate-900 mb-1 group-hover:text-brand-primary transition-colors tracking-tighter">
+                            2300+
+                        </div>
+                        <div class="text-[9px] font-black uppercase tracking-[0.1em] text-slate-400">Award Categories</div>
                     </div>
+                    <div class="p-6 rounded-3xl bg-slate-50 border border-slate-100 group hover:border-brand-primary/20 hover:bg-brand-primary/5 transition-all duration-500">
+                        <div class="text-3xl font-black text-slate-900 mb-1 group-hover:text-brand-primary transition-colors tracking-tighter">
+                            350+
+                        </div>
+                        <div class="text-[9px] font-black uppercase tracking-[0.1em] text-slate-400">Past Awardees</div>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="{{ route('join.index') }}"
+                        class="px-10 py-5 rounded-2xl bg-brand-primary text-white font-bold text-sm uppercase tracking-widest shadow-xl shadow-brand-primary/20 hover:bg-brand-primary-dark transition-all flex items-center gap-2 group">
+                        Nominate Now <i class="fa-solid fa-arrow-right-long group-hover:translate-x-2 transition-transform"></i>
+                    </a>
                 </div>
             </div>
 
-            <!-- Image / Visual -->
-            <div class="w-full lg:w-1/2 animate-on-scroll delay-200">
-                <div class="relative">
-                    <div class="rounded-lg overflow-hidden">
-                        <img src="{{ asset('images/home/award.jpeg') }}" alt="World Grexpo Awards Ceremony"
-                            class="w-full md:h-[480px] object-cover bg-slate-200" loading="lazy">
-                    </div>
-
-                    <!-- Trophy Badge -->
-                    <!-- <div class="absolute md:-top-12 -top-14 left-2 md:-left-6 bg-white rounded-md p-4 border animate-on-scroll delay-300">
-                        <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 rounded-md bg-amber-100 flex items-center justify-center">
-                                <i class="fa-solid fa-trophy text-amber-500 text-xl"></i>
-                            </div>
-                            <div>
-                                <p class="text-sm font-black text-slate-900">Excellence Awards</p>
-                                <p class="text-xs text-slate-500">Since 2019</p>
-                            </div>
-                        </div>
-                    </div> -->
-
-                    <!-- Award Badge -->
-                    <!-- <div class="absolute -bottom-8 right-2 md:-right-4 bg-brand-primary text-white rounded-md p-4">
-                        <p class="text-2xl font-black mb-0.5">⭐ 3rd Edition</p>
-                        <p class="text-xs font-semibold text-white/70">Coming Soon</p>
-                    </div> -->
+            <!-- Visual Side -->
+            <div class="relative group" x-data="{ visible: false }" x-intersect="visible = true">
+                <div class="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white transform group-hover:scale-[1.02] transition-transform duration-1000">
+                    <img src="{{ asset('images/home/award.jpeg') }}" alt="Awards Ceremony" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-linear-to-t from-slate-950/40 via-transparent to-transparent"></div>
                 </div>
+
+                <!-- Floating Trophy Badge -->
+                <div class="absolute -top-10 -left-10 glass-panel p-8 rounded-3xl shadow-2xl z-20 animate-float"
+                    x-show="visible" x-transition:enter="transition ease-out duration-1000 delay-500" x-transition:enter-start="scale-50 opacity-0">
+                    <div class="w-16 h-16 bg-brand-accent rounded-2xl flex items-center justify-center text-brand-primary shadow-xl mb-4">
+                        <i class="fa-solid fa-trophy text-3xl"></i>
+                    </div>
+                    <div class="space-y-1">
+                        <div class="text-lg font-black text-slate-900">3rd Edition</div>
+                        <div class="text-[10px] font-black text-slate-500 uppercase tracking-widest">Coming Soon 2026</div>
+                    </div>
+                </div>
+
+                <!-- Decorative Elements -->
+                <div class="absolute -bottom-10 -right-10 w-64 h-64 border-2 border-brand-primary/10 rounded-full -z-10 group-hover:scale-110 transition-transform duration-1000"></div>
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-brand-primary/5 blur-3xl -z-20"></div>
             </div>
 
         </div>

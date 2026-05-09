@@ -4,160 +4,118 @@
 
 @section('content')
 
-    <!-- HERO -->
-    <section class="relative pt-32 pb-24 bg-slate-950 text-white overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-cyan-900 via-slate-900 to-black"></div>
-        <div class="absolute inset-0 opacity-30"
-            style="background-image: url('{{ asset('images/sectors/ai-for-industry.jpg') }}'); background-size: cover; background-position: center;">
+    <!-- Premium Hero Section -->
+    <section class="relative pt-48 pb-32 bg-slate-950 overflow-hidden">
+        <!-- Visual Backdrop -->
+        <div class="absolute inset-0 opacity-30">
+            <img src="{{ asset('images/sectors/ai-for-industry.jpg') }}" class="w-full h-full object-cover">
         </div>
+        <div class="absolute inset-0 bg-linear-to-b from-slate-950 via-slate-950/80 to-slate-950"></div>
+        
+        <!-- Animated Decorators -->
+        <div class="absolute top-1/4 right-0 w-[600px] h-[600px] bg-brand-primary/10 rounded-full blur-[120px] animate-pulse"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-brand-accent/5 rounded-full blur-[100px]"></div>
 
-        <div class="container relative z-10 text-center">
-            <div class="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full mb-6">
-                <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-                <span class="text-cyan-300 text-xs font-black uppercase tracking-widest">Intelligent Systems Era</span>
+        <div class="container relative z-10 text-center space-y-8">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md text-brand-accent text-[10px] font-black uppercase tracking-[0.3em]">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse"></span>
+                Intelligent Systems Era
             </div>
-            <h1 class="text-4xl md:text-6xl font-black uppercase mb-4 tracking-wide">
-                AI FOR <span class="text-cyan-400">INDUSTRY</span> SERIES
+            <h1 class="text-6xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter uppercase">
+                AI FOR <br>
+                <span class="text-brand-primary italic">Industry.</span>
             </h1>
-            <p class="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed uppercase italic font-medium">
-                Transforming Every Sector Through Intelligent Systems.
+            <p class="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto leading-relaxed font-medium">
+                Transforming global industrial landscapes through autonomous intelligence and cognitive computing.
             </p>
         </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="py-16 bg-white">
-        <div class="container space-y-20">
+    <!-- Content Section -->
+    <section class="section-padding bg-white relative">
+        <div class="container space-y-32">
 
-            <!-- INTRO -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="animate-in fade-in slide-in-from-left duration-700">
-                    <h2 class="text-3xl font-extrabold mb-6 text-slate-900 uppercase italic border-l-8 border-cyan-500 pl-6">The Horizontal Capability Layer</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4 text-lg">
-                        Artificial Intelligence is no longer sector-specific—it is a <strong>horizontal capability layer</strong> transforming every major industry.
-                    </p>
-                    <p class="text-slate-600 leading-relaxed font-medium">
-                        AI enabling Industry 4.0, where machines learn, predict failures, and optimize production in real time, driving intelligent, sustainable, and inclusive growth.
-                    </p>
+            <!-- Executive Summary -->
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div class="space-y-8" x-data="{ visible: false }" x-intersect="visible = true">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-primary/5 text-brand-primary text-[10px] font-black uppercase tracking-[0.2em]">
+                        Executive Summary
+                    </div>
+                    <h2 class="text-5xl font-black text-slate-900 leading-[0.9] tracking-tighter uppercase">
+                        The Horizontal <br>
+                        <span class="text-brand-primary italic">Capability Layer.</span>
+                    </h2>
+                    <div class="space-y-6 text-xl text-slate-500 font-medium leading-relaxed">
+                        <p>
+                            Artificial Intelligence is no longer sector-specific—it is a <strong class="text-slate-900">horizontal capability layer</strong> transforming every major industry.
+                        </p>
+                        <p>
+                            AI enabling Industry 4.0, where machines learn, predict failures, and optimize production in real time, driving intelligent, sustainable, and inclusive growth.
+                        </p>
+                    </div>
                 </div>
 
-                <div class="grid grid-cols-2 gap-4 animate-in fade-in slide-in-from-right duration-700">
+                <!-- Segments Grid -->
+                <div class="grid grid-cols-2 gap-6">
                     @foreach(['Manufacturing', 'Sustainability', 'Agriculture', 'Healthcare'] as $idx => $svc)
-                        <div class="p-6 bg-slate-50 border border-slate-100 rounded-2xl text-center group hover:bg-slate-900 hover:text-white transition-all duration-300 shadow-sm transition-transform hover:-translate-y-2">
-                            <p class="text-xl font-black text-cyan-500 mb-2">0{{ $idx+1 }}</p>
-                            <p class="text-[10px] font-black uppercase tracking-tight">{{ $svc }}</p>
+                        <div class="p-10 rounded-[2.5rem] bg-slate-50 border border-slate-100 flex flex-col items-center text-center group hover:bg-brand-primary transition-all duration-500">
+                            <div class="text-4xl font-black text-brand-primary group-hover:text-white transition-colors mb-4">
+                                0{{ $idx + 1 }}
+                            </div>
+                            <p class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 group-hover:text-white/80">{{ $svc }}</p>
                         </div>
                     @endforeach
                 </div>
             </div>
 
-            <!-- SECTOR FOCUS AREAS -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {{-- Manufacturing --}}
-                <div class="p-8 bg-slate-50 border border-slate-200 rounded-3xl hover:shadow-xl transition-all border-t-4 border-t-cyan-500">
-                    <h3 class="text-xl font-black text-slate-900 mb-4 uppercase italic">AI in Manufacturing</h3>
-                    <p class="text-xs text-slate-500 mb-6 font-bold tracking-tight">Smart Factories | Predictive Intelligence</p>
-                    <ul class="space-y-3 mb-6">
-                        @foreach(['Predictive Maintenance', 'Quality Inspection', 'Demand Forecasting', 'Robotics & Automation'] as $item)
-                            <li class="flex items-center gap-2 text-xs font-bold text-slate-600 uppercase">
-                                <i class="fa-solid fa-microchip text-cyan-500"></i> {{ $item }}
-                            </li>
-                        @endforeach
-                    </ul>
-                    <div class="pt-4 border-t border-slate-200">
-                        <p class="text-[10px] font-black text-cyan-600 uppercase tracking-widest leading-loose">Impact: 30-50% Downtime Reduction</p>
+            <!-- Focus Areas Grid -->
+            <div class="grid lg:grid-cols-3 gap-10">
+                @php
+                    $focusAreas = [
+                        ['title' => 'AI in Manufacturing', 'tag' => 'Smart Factories', 'items' => ['Predictive Maintenance', 'Quality Inspection', 'Demand Forecasting', 'Robotics & Automation'], 'impact' => '30-50% Downtime Reduction', 'color' => 'brand-primary'],
+                        ['title' => 'AI in Sustainability', 'tag' => 'Climate Action', 'items' => ['Carbon Footprint Tracking', 'Energy Optimization', 'Recycling Automation', 'Climate Risk Modeling'], 'impact' => 'Accelerates Decarbonization', 'color' => 'brand-accent'],
+                        ['title' => 'AI in Agriculture', 'tag' => 'Precision Farming', 'items' => ['Crop Health Monitoring', 'Soil Analysis', 'Yield Prediction', 'Pest Detection'], 'impact' => 'Increased Productivity', 'color' => 'slate-900'],
+                        ['title' => 'AI in Healthcare', 'tag' => 'Diagnostics', 'items' => ['Medical Imaging', 'Drug Discovery', 'Virtual Assistants', 'Predictive Analytics'], 'impact' => 'Better Patient Outcomes', 'color' => 'brand-primary'],
+                        ['title' => 'AI in Retail', 'tag' => 'Consumer Intel', 'items' => ['Demand Forecasting', 'Hyper-Personalization', 'Smart Pricing', 'Inventory Optimization'], 'impact' => 'Increased Sales & Margins', 'color' => 'brand-accent'],
+                        ['title' => 'AI in Cybersecurity', 'tag' => 'Threat Detection', 'items' => ['Real-Time Detection', 'Behavioral Analytics', 'Fraud Prevention', 'Risk Assessment'], 'impact' => 'Stronger Data Protection', 'color' => 'slate-900'],
+                    ];
+                @endphp
+                @foreach($focusAreas as $area)
+                    <div class="p-12 rounded-[3rem] bg-slate-50 border border-slate-100 space-y-8 group hover:bg-white hover:shadow-2xl hover:shadow-brand-primary/5 transition-all duration-500">
+                        <div class="space-y-2">
+                            <div class="text-brand-primary text-[10px] font-black uppercase tracking-[0.3em]">{{ $area['tag'] }}</div>
+                            <h3 class="text-3xl font-black text-slate-900 uppercase tracking-tighter">{{ $area['title'] }}</h3>
+                        </div>
+                        <ul class="space-y-4">
+                            @foreach($area['items'] as $item)
+                                <li class="flex items-center gap-4 text-xs font-black uppercase tracking-widest text-slate-500 group-hover:text-slate-900 transition-colors">
+                                    <i class="fa-solid fa-microchip text-brand-primary"></i>
+                                    {{ $item }}
+                                </li>
+                            @endforeach
+                        </ul>
+                        <div class="pt-6 border-t border-slate-200">
+                            <div class="text-[10px] font-black text-brand-primary uppercase tracking-[0.2em]">{{ $area['impact'] }}</div>
+                        </div>
                     </div>
-                </div>
-
-                {{-- Sustainability --}}
-                <div class="p-8 bg-slate-50 border border-slate-200 rounded-3xl hover:shadow-xl transition-all border-t-4 border-t-emerald-500">
-                    <h3 class="text-xl font-black text-slate-900 mb-4 uppercase italic">AI in Sustainability</h3>
-                    <p class="text-xs text-slate-500 mb-6 font-bold tracking-tight">Data-Driven Climate Action</p>
-                    <ul class="space-y-3 mb-6">
-                        @foreach(['Carbon Footprint Tracking', 'Energy Optimization', 'Recycling Automation', 'Climate Risk Modeling'] as $item)
-                            <li class="flex items-center gap-2 text-xs font-bold text-slate-600 uppercase">
-                                <i class="fa-solid fa-leaf text-emerald-500"></i> {{ $item }}
-                            </li>
-                        @endforeach
-                    </ul>
-                    <div class="pt-4 border-t border-slate-200">
-                        <p class="text-[10px] font-black text-emerald-600 uppercase tracking-widest leading-loose">Accelerates Decarbonization</p>
-                    </div>
-                </div>
-
-                {{-- Agriculture --}}
-                <div class="p-8 bg-slate-50 border border-slate-200 rounded-3xl hover:shadow-xl transition-all border-t-4 border-t-orange-500">
-                    <h3 class="text-xl font-black text-slate-900 mb-4 uppercase italic">AI in Agriculture</h3>
-                    <p class="text-xs text-slate-500 mb-6 font-bold tracking-tight">Precision Farming | Yield Optimization</p>
-                    <ul class="space-y-3 mb-6">
-                        @foreach(['Crop Health Monitoring', 'Soil Analysis', 'Yield Prediction', 'Pest Detection'] as $item)
-                            <li class="flex items-center gap-2 text-xs font-bold text-slate-600 uppercase">
-                                <i class="fa-solid fa-seedling text-orange-500"></i> {{ $item }}
-                            </li>
-                        @endforeach
-                    </ul>
-                    <div class="pt-4 border-t border-slate-200">
-                        <p class="text-[10px] font-black text-orange-600 uppercase tracking-widest leading-loose">Increased Productivity</p>
-                    </div>
-                </div>
-
-                {{-- Healthcare --}}
-                <div class="p-8 bg-slate-50 border border-slate-200 rounded-3xl hover:shadow-xl transition-all border-t-4 border-t-blue-500">
-                    <h3 class="text-xl font-black text-slate-900 mb-4 uppercase italic">AI in Healthcare</h3>
-                    <p class="text-xs text-slate-500 mb-6 font-bold tracking-tight">Intelligent Diagnostics</p>
-                    <ul class="space-y-3 mb-6">
-                        @foreach(['Medical Imaging', 'Drug Discovery', 'Virtual Assistants', 'Predictive Analytics'] as $item)
-                            <li class="flex items-center gap-2 text-xs font-bold text-slate-600 uppercase">
-                                <i class="fa-solid fa-heart-pulse text-blue-500"></i> {{ $item }}
-                            </li>
-                        @endforeach
-                    </ul>
-                    <div class="pt-4 border-t border-slate-200">
-                        <p class="text-[10px] font-black text-blue-600 uppercase tracking-widest leading-loose">Better Patient Outcomes</p>
-                    </div>
-                </div>
-
-                {{-- FMCG & Retail --}}
-                <div class="p-8 bg-slate-50 border border-slate-200 rounded-3xl hover:shadow-xl transition-all border-t-4 border-t-pink-500">
-                    <h3 class="text-xl font-black text-slate-900 mb-4 uppercase italic">AI in Retail</h3>
-                    <p class="text-xs text-slate-500 mb-6 font-bold tracking-tight">Consumer Intelligence</p>
-                    <ul class="space-y-3 mb-6">
-                        @foreach(['Demand Forecasting', 'Hyper-Personalization', 'Smart Pricing', 'Inventory Optimization'] as $item)
-                            <li class="flex items-center gap-2 text-xs font-bold text-slate-600 uppercase">
-                                <i class="fa-solid fa-cart-shopping text-pink-500"></i> {{ $item }}
-                            </li>
-                        @endforeach
-                    </ul>
-                    <div class="pt-4 border-t border-slate-200">
-                        <p class="text-[10px] font-black text-pink-600 uppercase tracking-widest leading-loose">Increased Sales & Margins</p>
-                    </div>
-                </div>
-
-                {{-- Cyber Security --}}
-                <div class="p-8 bg-slate-50 border border-slate-200 rounded-3xl hover:shadow-xl transition-all border-t-4 border-t-indigo-500">
-                    <h3 class="text-xl font-black text-slate-900 mb-4 uppercase italic">AI in Cyber Security</h3>
-                    <p class="text-xs text-slate-500 mb-6 font-bold tracking-tight">Intelligent Threat Detection</p>
-                    <ul class="space-y-3 mb-6">
-                        @foreach(['Real-Time Detection', 'Behavioral Analytics', 'Fraud Prevention', 'Risk Assessment'] as $item)
-                            <li class="flex items-center gap-2 text-xs font-bold text-slate-600 uppercase">
-                                <i class="fa-solid fa-shield-halved text-indigo-500"></i> {{ $item }}
-                            </li>
-                        @endforeach
-                    </ul>
-                    <div class="pt-4 border-t border-slate-200">
-                        <p class="text-[10px] font-black text-indigo-600 uppercase tracking-widest leading-loose">Stronger Data Protection</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
 
-            <!-- INVESTOR SNAPSHOT -->
-            <div class="p-10 rounded-3xl bg-slate-900 text-white relative overflow-hidden shadow-xl">
-                <div class="absolute top-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl -mr-48 -mt-48"></div>
-                <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h3 class="text-3xl font-black mb-6 uppercase italic tracking-widest text-cyan-400">Investor Snapshot</h3>
-                        <p class="text-slate-400 mb-8 leading-relaxed italic text-lg">Why AI is the #1 Investment Opportunity of the Decade.</p>
-                        
+            <!-- Investor Snapshot -->
+            <div class="relative p-12 lg:p-24 rounded-[4rem] bg-slate-950 overflow-hidden shadow-2xl">
+                <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-primary/10 rounded-full blur-[150px]"></div>
+                <div class="relative z-10 grid lg:grid-cols-2 gap-20 items-center">
+                    <div class="space-y-10">
+                        <div class="space-y-6">
+                            <div class="text-brand-accent text-[10px] font-black uppercase tracking-[0.3em]">Market Intelligence</div>
+                            <h2 class="text-5xl font-black text-white leading-[0.9] tracking-tighter uppercase">
+                                Investor <br>
+                                <span class="text-brand-primary italic">Snapshot.</span>
+                            </h2>
+                            <p class="text-xl text-slate-400 font-medium leading-relaxed">
+                                Why AI is the #1 Investment Opportunity of the Decade.
+                            </p>
+                        </div>
                         <div class="space-y-4">
                             @foreach([
                                 'Fastest-growing global tech sector',
@@ -165,9 +123,9 @@
                                 'High ROI through efficiency & automation',
                                 'Strong government & corporate backing'
                             ] as $hl)
-                                <div class="flex items-center gap-3">
-                                    <div class="w-1.5 h-1.5 rounded-full bg-cyan-500"></div>
-                                    <span class="text-xs font-bold uppercase text-slate-300">{{ $hl }}</span>
+                                <div class="flex items-center gap-4 group">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse"></div>
+                                    <span class="text-xs font-black uppercase text-slate-400 group-hover:text-white transition-colors tracking-widest">{{ $hl }}</span>
                                 </div>
                             @endforeach
                         </div>
@@ -175,34 +133,42 @@
 
                     <div class="grid grid-cols-2 gap-6">
                         @foreach(['Generative AI', 'AI SaaS', 'AI Infrastructure', 'Industry Solutions'] as $tag)
-                            <div class="p-6 bg-white/5 border border-white/10 rounded-2xl text-center shadow-lg group hover:bg-cyan-500 hover:text-white transition-all">
-                                <p class="text-[10px] font-black uppercase tracking-widest">{{ $tag }}</p>
+                            <div class="p-10 rounded-[2.5rem] bg-white/5 border border-white/10 backdrop-blur-md flex flex-col items-center justify-center text-center group hover:bg-brand-primary transition-all duration-500">
+                                <span class="text-[10px] font-black uppercase tracking-[0.3em] text-white group-hover:text-white">{{ $tag }}</span>
                             </div>
                         @endforeach
                     </div>
                 </div>
             </div>
 
-            <!-- GLOBAL AI SUMMIT (CONCEPT) -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="space-y-8">
-                    <h2 class="text-3xl font-black text-slate-900 uppercase tracking-tight italic">Global AI Summit</h2>
-                    <div class="p-6 bg-cyan-50 border border-cyan-100 rounded-3xl border-l-[10px] border-l-cyan-600">
-                        <p class="text-xs font-black uppercase text-cyan-700 mb-2">Concept Theme (World Grexpo Ready)</p>
-                        <p class="text-xl font-black text-slate-900 leading-tight">"AI for Viksit Bharat 2047: Driving Intelligent, Sustainable & Inclusive Growth"</p>
+            <!-- Global Summit Concept -->
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div class="space-y-10">
+                    <div class="space-y-6">
+                        <div class="text-brand-primary text-[10px] font-black uppercase tracking-[0.3em]">Thought Leadership</div>
+                        <h2 class="text-5xl font-black text-slate-900 leading-[0.9] tracking-tighter uppercase">
+                            Global AI <br>
+                            <span class="text-brand-primary italic">Summit.</span>
+                        </h2>
                     </div>
-                    <div class="grid grid-cols-2 gap-4">
+                    <div class="p-10 rounded-[3rem] bg-slate-50 border border-slate-100 space-y-6">
+                        <p class="text-[10px] font-black text-brand-primary uppercase tracking-[0.2em]">Summit Theme</p>
+                        <p class="text-3xl font-black text-slate-900 leading-tight tracking-tight uppercase">
+                            "AI for Viksit Bharat 2047: Driving Intelligent, Sustainable & Inclusive Growth"
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-4">
                         @foreach(['Global Leaders', 'Policy Makers', 'Startup Founders', 'Academic Experts'] as $spk)
-                             <div class="px-4 py-3 bg-slate-900 text-white text-[10px] font-black uppercase rounded-xl text-center">{{ $spk }}</div>
+                             <div class="px-6 py-3 rounded-2xl bg-slate-900 text-white text-[10px] font-black uppercase tracking-widest">{{ $spk }}</div>
                         @endforeach
                     </div>
                 </div>
 
-                <div class="p-8 bg-slate-950 rounded-[40px] text-white relative group overflow-hidden shadow-2xl border-b-8 border-cyan-500">
-                    <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
-                    <div class="relative z-10">
-                        <h4 class="text-2xl font-black mb-6 uppercase italic text-cyan-400">Conference Tracks</h4>
-                        <div class="space-y-3">
+                <div class="p-12 lg:p-20 rounded-[4rem] bg-slate-950 text-white space-y-12 relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-linear-to-br from-brand-primary/20 to-transparent"></div>
+                    <div class="relative z-10 space-y-8">
+                        <h4 class="text-2xl font-black uppercase tracking-[0.2em] text-brand-accent">Conference Tracks</h4>
+                        <div class="space-y-6">
                             @foreach([
                                 'AI in Manufacturing & Industry 4.0',
                                 'AI for Sustainability & Net Zero',
@@ -211,9 +177,11 @@
                                 'Finance, Cybersecurity & Governance',
                                 'Generative AI & Future of Work'
                             ] as $track)
-                            <div class="flex items-center gap-4 group">
-                                <div class="w-2 h-2 rounded-full bg-cyan-500"></div>
-                                <p class="text-[11px] font-bold uppercase text-slate-300 tracking-tight">{{ $track }}</p>
+                            <div class="flex items-center gap-6 group/track">
+                                <div class="w-10 h-10 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-brand-primary group-hover/track:bg-brand-primary group-hover/track:text-white transition-all">
+                                    <i class="fa-solid fa-circle-nodes"></i>
+                                </div>
+                                <p class="text-sm font-black uppercase tracking-widest text-slate-400 group-hover/track:text-white transition-colors">{{ $track }}</p>
                             </div>
                             @endforeach
                         </div>
@@ -221,17 +189,23 @@
                 </div>
             </div>
 
-            <!-- CONCLUSION (CTA) -->
-            <div class="relative bg-slate-950 text-white p-12 md:p-16 rounded-[40px] text-center shadow-2xl overflow-hidden border-b-4 border-cyan-500">
-                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(6,182,212,0.1),transparent)]"></div>
-                <div class="relative z-10">
-                    <h3 class="text-3xl font-bold mb-6 uppercase tracking-tight font-serif italic">Structural Shift in Industry</h3>
-                    <p class="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed mb-10">
+            <!-- Conclusion CTA -->
+            <div class="relative p-16 lg:p-24 rounded-[4rem] bg-slate-950 overflow-hidden text-center shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] border border-white/5">
+                <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_bottom,rgba(0,75,35,0.2),transparent)]"></div>
+                <div class="relative z-10 space-y-12">
+                    <h3 class="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter leading-none">
+                        Structural Shift <br>in <span class="text-brand-primary italic">Industry.</span>
+                    </h3>
+                    <p class="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed font-medium">
                         AI is not just a technology wave—it is a structural shift in how economies function and industries operate. Empower your industrial future with intelligent systems today.
                     </p>
-                    <a href="" class="inline-flex items-center gap-3 px-10 py-5 bg-white text-slate-900 font-black uppercase tracking-widest rounded-full hover:bg-cyan-500 hover:text-white transition-all duration-300 shadow-xl group">
-                        Register for AI Training & Support <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform text-cyan-400"></i>
-                    </a>
+                    <div class="flex justify-center">
+                        <a href="{{ route('join.index') }}" 
+                            class="group flex items-center gap-4 px-12 py-6 rounded-2xl bg-brand-primary text-white font-black uppercase tracking-widest text-sm hover:bg-brand-primary-dark transition-all shadow-2xl shadow-brand-primary/20">
+                            Register for AI Training & Support
+                            <i class="fa-solid fa-arrow-right-long group-hover:translate-x-2 transition-transform"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -239,3 +213,4 @@
     </section>
 
 @endsection
+on

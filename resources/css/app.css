@@ -8,55 +8,63 @@
 @theme {
     --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
     
-    /* Authentic World Grexpo Palette */
-    --color-brand-primary: #004b23; /* Deep Green from Logo */
+    /* Authentic World Grexpo Palette - Keeping as requested */
+    --color-brand-primary: #004b23;
     --color-brand-primary-light: #006431;
     --color-brand-primary-dark: #003318;
     
-    --color-brand-accent: #aacc00; /* Lime/Sunflower Accent */
+    --color-brand-accent: #aacc00;
     --color-brand-accent-hover: #bbee00;
     --color-brand-accent-dark: #778800;
     
-    --color-brand-navy: #1a2b48; /* Navy from Website buttons */
-    
-    --color-brand-secondary: #f0fdf4; /* Very light green tint */
-    --color-brand-secondary-hover: #dcfce7;
-    --color-brand-secondary-dark: #bbf7d0;
-    
+    --color-brand-navy: #1a2b48;
+    --color-brand-secondary: #f8fafc;
     --color-brand-border: #e2e8f0;
-    
-    /* SHARP EDGES CONSTRAINT: Overriding default radius tokens to max rounded-sm (0.125rem) */
-    --radius-sm: 0.125rem;
-    --radius-md: 0.125rem;
-    --radius-lg: 0.125rem;
-    --radius-xl: 0.125rem;
-    --radius-2xl: 0.125rem;
-    --radius-3xl: 0.125rem;
-    --radius-full: 0.125rem;
+
+    /* PREMIUM MODERN RADIUS - Overriding old sharp constraints */
+    --radius-sm: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-2xl: 2rem;
+    --radius-3xl: 3rem;
 }
 
 @layer base {
     body {
-        @apply bg-white;
+        @apply bg-[#fdfdfd] text-slate-900 antialiased selection:bg-brand-accent selection:text-brand-primary-dark;
     }
 }
+
 @layer components {
-    .border {
-        @apply border-brand-border;
+    .glass-panel {
+        @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl;
     }
-    .border-l {
-        @apply border-brand-border;
+    .glass-card {
+        @apply bg-white/40 backdrop-blur-lg border border-white/30 shadow-2xl;
     }
-    .border-l {
-        @apply border-brand-border;
+    .premium-gradient {
+        @apply bg-linear-to-br from-brand-primary to-brand-primary-dark;
     }
-    .border-b {
-        @apply border-brand-border;
+    .accent-gradient {
+        @apply bg-linear-to-r from-brand-accent to-[#d4ef00];
     }
-    .border-r {
-        @apply border-brand-border;
+    .section-padding {
+        @apply py-20 md:py-32;
     }
 }
+
 .container {
-    @apply max-w-[1600px] mx-auto px-4 md:px-6 lg:px-8;
+    @apply max-w-[1440px] mx-auto px-4 md:px-6 lg:px-10;
+}
+
+/* Custom Scrollbar for Premium Feel */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    @apply bg-slate-100;
+}
+::-webkit-scrollbar-thumb {
+    @apply bg-brand-primary/20 rounded-full hover:bg-brand-primary/40 transition-colors;
 }
