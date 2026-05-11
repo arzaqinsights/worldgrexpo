@@ -4,218 +4,177 @@
 
 @section('content')
 
-    <!-- HERO -->
-    <section class="relative pt-32 pb-24 bg-slate-900 text-white overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-amber-900 via-slate-900 to-black"></div>
-        <div class="absolute inset-0 opacity-10"
-            style="background-image: url('{{ asset('images/sectors/other-types-of-packaging.webp') }}'); background-size: cover; background-position: center;">
+    <!-- Architectural Hero -->
+    <section class="relative pt-64 pb-32 bg-slate-950 overflow-hidden border-b border-slate-900">
+        <!-- Visual Backdrop -->
+        <div class="absolute inset-0 opacity-20">
+            <img src="{{ asset('images/sectors/other-types-of-packaging.webp') }}" class="w-full h-full object-cover grayscale">
         </div>
+        <div class="absolute inset-0 bg-linear-to-b from-slate-950 via-slate-950/90 to-slate-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(79,70,229,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        
+        <!-- Industrial Accents -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-indigo-600 opacity-5 -skew-x-12 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-1/4 h-64 bg-indigo-600 opacity-5 skew-x-12 -translate-x-1/2"></div>
 
-        <div class="container relative z-10 text-center">
-            <h1 class="text-4xl md:text-6xl font-black uppercase mb-4 tracking-wide">
-                Other Types of Packaging Industry
+        <div class="container relative z-10 text-center space-y-12">
+            <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10">
+                <span class="w-2 h-2 bg-indigo-400 animate-pulse"></span>
+                <span class="text-white text-[10px] font-black tracking-[0.4em] uppercase">Packaging Intelligence Protocol</span>
+            </div>
+            <h1 class="text-6xl md:text-[9rem] font-black text-white leading-[0.85] tracking-tighter uppercase">
+                Specialized <br>
+                <span class="text-indigo-600">Packaging.</span>
             </h1>
-            <p class="text-xl text-slate-300 max-w-3xl mx-auto">
+            <p class="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium border-l-4 border-indigo-600 pl-10 uppercase tracking-widest italic md:text-center mx-auto">
                 Industrial, protective, retail, luxury, transport, and sustainable packaging solutions across all sectors.
             </p>
         </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="py-16 bg-white">
-        <div class="container space-y-16">
+    <!-- Content Interface -->
+    <section class="py-32 bg-white relative">
+        <div class="container space-y-48">
 
-            <!-- INTRO -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl font-extrabold mb-4 text-slate-900">What are Other Types of Packaging?</h2>
-                    <p class="text-slate-600 mb-4 leading-relaxed">
-                        <strong>Other Types of Packaging</strong> include a wide range of industrial, protective, retail, luxury, transport,
-                        and sustainable packaging solutions used across manufacturing, logistics, e-commerce, FMCG,
-                        pharmaceuticals, electronics, agriculture, and consumer industries.
+            <!-- Executive Summary -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200">
+                <div class="p-16 lg:p-24 bg-white space-y-12">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Material Diversity Framework</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">Packaging <br><span class="text-indigo-600">Spectrum.</span></h2>
+                        <div class="accent-line bg-indigo-600"></div>
+                    </div>
+                    
+                    <div class="space-y-8 text-2xl text-slate-500 font-medium leading-relaxed italic border-l-4 border-slate-100 pl-10">
+                        <p>
+                            <strong class="text-slate-900 font-black uppercase tracking-tight">Other Types of Packaging</strong> include a wide range of industrial, protective, retail, luxury, and transport solutions used across manufacturing and logistics.
+                        </p>
+                        <p>
+                            Designed for product safety, branding, and transportation, these materials are the invisible engine behind global e-commerce and retail expansion.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-indigo-600/10"></div>
+                    <div class="relative h-full overflow-hidden border-l border-slate-200 shadow-3xl">
+                        <img src="{{ asset('images/sectors/other-types-of-packaging.webp') }}" alt="Specialized Packaging"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <div class="bg-indigo-600 text-white text-[10px] font-black px-6 py-2 uppercase tracking-[0.3em] shadow-2xl">
+                            Material Standard
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categories Grid -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
+                <div class="p-24 bg-slate-950 text-white space-y-16">
+                    <h3 class="text-5xl font-black uppercase tracking-tighter italic text-indigo-500 border-l-8 border-indigo-600 pl-10">Major Categories</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-px bg-white/5 border border-white/5">
+                        @foreach([
+                            ['icon' => 'box-open', 'label' => 'Corrugated & Paper'],
+                            ['icon' => 'gift', 'label' => 'Folding Boxes'],
+                            ['icon' => 'gem', 'label' => 'Luxury Packaging'],
+                            ['icon' => 'industry', 'label' => 'Industrial Bulk'],
+                            ['icon' => 'shield-halved', 'label' => 'Protective Systems'],
+                            ['icon' => 'tree', 'label' => 'Wooden Pallets'],
+                        ] as $cat)
+                            <div class="p-10 bg-slate-950 group/item hover:bg-indigo-600 transition-all duration-500 relative overflow-hidden">
+                                <div class="absolute top-0 left-0 w-1 h-full bg-white scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                                <i class="fa-solid fa-{{ $cat['icon'] }} text-3xl mb-6 text-indigo-600 group-hover/item:text-slate-950 transition-colors"></i>
+                                <p class="text-[12px] font-black uppercase text-slate-400 group-hover/item:text-slate-950 tracking-[0.2em] leading-tight transition-colors italic">{{ $cat['label'] }}</p>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+
+                <div class="p-24 bg-white space-y-16 border-l border-slate-200">
+                    <h3 class="text-5xl font-black uppercase tracking-tighter italic text-slate-950 border-l-8 border-slate-950 pl-10">Functional Outputs</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        @foreach(['Metal/Tin Cans', 'Glass Bottles', 'Blister Packs', 'Flexible Pouches', 'Kraft Wraps', 'Protective Films'] as $prod)
+                            <div class="p-10 bg-white border border-slate-100 flex items-center justify-center group/prod hover:bg-slate-950 transition-all duration-700 shadow-sm">
+                                <span class="text-[12px] font-black uppercase text-slate-500 group-hover/prod:text-white tracking-[0.3em] transition-colors italic text-center">{{ $prod }}</span>
+                            </div>
+                        @endforeach
+                    </div>
+                    <p class="text-[12px] font-black text-slate-400 uppercase tracking-widest text-center italic">Advanced Logistics Solutions</p>
+                </div>
+            </div>
+
+            <!-- Global vs India Market -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
+                <!-- GLOBAL -->
+                <div class="p-16 lg:p-24 bg-slate-950 text-white relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-12 text-indigo-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-earth-americas text-[12rem]"></i>
+                    </div>
+                    <div class="relative z-10 space-y-16">
+                        <div class="space-y-4">
+                            <div class="text-indigo-400 text-[10px] font-black uppercase tracking-[0.4em]">International Value</div>
+                            <h3 class="text-5xl font-black uppercase tracking-tighter italic">Global Market</h3>
+                        </div>
+                        
+                        <div class="space-y-12">
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Value (2025)</span>
+                                <span class="text-6xl font-black text-white tracking-tighter italic">$1.2 Trillion</span>
+                            </div>
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Annual CAGR</span>
+                                <span class="text-6xl font-black text-indigo-500 tracking-tighter italic">6%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INDIA -->
+                <div class="p-16 lg:p-24 bg-white relative overflow-hidden group border-l border-slate-200">
+                    <div class="absolute top-0 right-0 p-12 text-indigo-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-industry text-[12rem]"></i>
+                    </div>
+                    <div class="relative z-10 space-y-16 text-right">
+                        <div class="space-y-4">
+                            <div class="text-indigo-600 text-[10px] font-black uppercase tracking-[0.4em]">National Strategy</div>
+                            <h3 class="text-5xl font-black text-slate-950 uppercase tracking-tighter italic">Indian Market</h3>
+                        </div>
+                        
+                        <div class="space-y-12">
+                            <div class="flex items-end justify-between border-b border-slate-100 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-400 tracking-[0.3em]">Value (2025)</span>
+                                <span class="text-6xl font-black text-slate-950 tracking-tighter italic">₹90,000 Cr</span>
+                            </div>
+                            <div class="flex items-end justify-between border-b border-slate-100 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-400 tracking-[0.3em]">Growth Potential</span>
+                                <span class="text-6xl font-black text-indigo-600 tracking-tighter italic">11%</span>
+                            </div>
+                            <div class="p-12 bg-indigo-50 border-l-8 border-indigo-600 shadow-sm text-right">
+                                <p class="text-[9px] font-black text-indigo-600 uppercase tracking-[0.4em] mb-4 italic">Industrial Outlook</p>
+                                <p class="text-5xl font-black text-slate-950 uppercase italic leading-tight tracking-tighter">Packaging Hub</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Architecture CTA -->
+            <div class="relative p-24 lg:p-32 bg-slate-950 overflow-hidden text-center shadow-3xl group">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(79,70,229,0.2),transparent)]"></div>
+                <div class="relative z-10 space-y-16">
+                    <h3 class="text-5xl md:text-[8rem] font-black text-white uppercase tracking-tighter leading-[0.85]">
+                        The Shield <br><span class="text-indigo-600">Framework.</span>
+                    </h3>
+                    <p class="text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium italic border-l-4 border-indigo-600 pl-10 md:text-center mx-auto uppercase tracking-tighter">
+                        World Grexpo is the bridge connecting master-manufacturers of specialized packaging with global retail and logistics industries.
                     </p>
-                    <p class="text-slate-600 leading-relaxed">
-                        These packaging solutions are designed for <strong>product safety, branding, storage, transportation, and
-                        enhanced consumer experience</strong>.
-                    </p>
-                </div>
-
-                <img src="{{ asset('images/sectors/other-types-of-packaging.webp') }}" alt="Other Types of Packaging"
-                    class="h-[320px] w-full object-cover rounded-2xl shadow-lg">
-            </div>
-
-            <!-- CATEGORIES + IMAGE -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">Major Packaging Categories</h3>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-box-open text-amber-600 text-xs"></i></div>
-                            Corrugated & Paper Packaging
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-violet-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-gift text-violet-600 text-xs"></i></div>
-                            Cartons & Folding Boxes
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-rose-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-gem text-rose-600 text-xs"></i></div>
-                            Luxury / Premium Packaging
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-industry text-blue-600 text-xs"></i></div>
-                            Industrial Bulk Packaging
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-shield-halved text-emerald-600 text-xs"></i></div>
-                            Protective / Cushioning Packaging
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-orange-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-tree text-orange-600 text-xs"></i></div>
-                            Wooden / Pallet Packaging
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-slate-200 flex items-center justify-center shrink-0"><i class="fa-solid fa-can-food text-slate-600 text-xs"></i></div>
-                            Metal / Tin & Glass Packaging
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-green-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-leaf text-green-600 text-xs"></i></div>
-                            Sustainable / Eco-Friendly Packaging
-                        </div>
-                    </div>
-                </div>
-
-                <img src="{{ asset('images/sectors/other-types-of-packaging-1.jpg') }}" alt="Packaging Categories"
-                    class="h-[420px] w-full object-cover rounded-2xl shadow-lg">
-            </div>
-
-            <!-- GLOBAL MARKET -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-gradient-to-br from-brand-primary to-indigo-700 text-white shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4">Global Packaging Industry</h3>
-
-                    <h4 class="font-semibold mt-3 mb-2">Worldwide Market Size</h4>
-                    <ul class="text-sm space-y-1">
-                        <li>Global packaging: <strong>USD 1.2+ Trillion</strong> (2025)</li>
-                        <li>Paper & Board Packaging: <strong>USD 400+ Billion</strong></li>
-                        <li>Protective Packaging: <strong>USD 35+ Billion</strong></li>
-                    </ul>
-
-                    <h4 class="font-semibold mt-5 mb-2">Growth Forecast (2026–2031)</h4>
-                    <ul class="list-disc pl-5 text-sm space-y-1">
-                        <li>Expected CAGR: <strong>5–6%</strong></li>
-                        <li>E-commerce expansion</li>
-                        <li>Retail packaging innovation</li>
-                        <li>Sustainable material demand</li>
-                        <li>Premium/luxury product branding</li>
-                    </ul>
-                </div>
-
-                <img src="{{ asset('images/sectors/other-types-of-packaging-2.jpg') }}" alt="Global Packaging"
-                    class="h-[350px] w-full object-cover rounded-2xl shadow-md">
-
-            </div>
-
-            <!-- INDIA MARKET -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-brand-accent border border-slate-200 shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4 text-brand-primary">Indian Other Packaging Market</h3>
-
-                    <h4 class="font-semibold mb-2">Indian Market Size</h4>
-                    <ul class="text-sm text-slate-600 space-y-1">
-                        <li>Paper/corrugated/industrial packaging: <strong>₹80,000–90,000 Crore+</strong></li>
-                        <li>Luxury and premium packaging rapidly growing</li>
-                    </ul>
-
-                    <h4 class="font-semibold mt-5 mb-2">Growth Forecast (2026–2031)</h4>
-                    <ul class="text-sm text-slate-600 space-y-1">
-                        <li>Expected CAGR: <strong>8–11%</strong> annually</li>
-                        <li>Projected to exceed <strong>₹1.5 Lakh Crore+</strong> by 2031</li>
-                    </ul>
-                </div>
-
-                <img src="{{ asset('images/sectors/other-types-of-packaging-3.jpg') }}" alt="India Packaging"
-                    class="h-[300px] w-full object-cover rounded-2xl shadow-md">
-
-            </div>
-
-            <!-- STATS CARDS -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-brand-primary">$1.2T+</h4>
-                    <p class="text-sm text-slate-500 mt-1">Global Market</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-brand-primary">₹90K Cr</h4>
-                    <p class="text-sm text-slate-500 mt-1">India Market</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-brand-primary">5–6%</h4>
-                    <p class="text-sm text-slate-500 mt-1">Global CAGR</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-brand-primary">8–11%</h4>
-                    <p class="text-sm text-slate-500 mt-1">India CAGR</p>
-                </div>
-            </div>
-
-            <!-- PRODUCTS SECTION -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-
-                <div>
-                    <h2 class="text-3xl font-extrabold mb-4 text-slate-900">Packaging Products & Solutions</h2>
-                    <p class="text-slate-600 mb-4 leading-relaxed">
-                        Packaging Products & Solutions include a broad range of <strong>protective, storage, preservation, branding, and
-                        transportation materials</strong> designed for industrial, retail, food, pharmaceutical, FMCG, and logistics
-                        applications.
-                    </p>
-                    <p class="text-slate-600 leading-relaxed">
-                        Modern packaging not only protects products from damage and contamination but also enhances shelf life,
-                        improves visual appeal, and strengthens brand identity.
-                    </p>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h4 class="font-bold mb-3">Major Products Include</h4>
-                    <div class="grid grid-cols-2 gap-3">
-                        <div class="flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-circle text-brand-primary text-[6px]"></i> Protective Films</div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-circle text-brand-primary text-[6px]"></i> Glass Bottles & Jars</div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-circle text-brand-primary text-[6px]"></i> Protective Plastic Bags</div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-circle text-brand-primary text-[6px]"></i> Metal / Tin Cans</div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-circle text-brand-primary text-[6px]"></i> Flexible Wrappers</div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-circle text-brand-primary text-[6px]"></i> Blister Packs</div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-circle text-brand-primary text-[6px]"></i> Flexible Pouches</div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-circle text-brand-primary text-[6px]"></i> Kraft Paper Wraps</div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- CONCLUSION -->
-            <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-10 rounded-2xl text-center shadow-lg">
-                <h3 class="text-3xl font-bold mb-4">Why India is Emerging as a Packaging Hub</h3>
-                <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto mt-6 text-left">
-                    <div class="flex items-start gap-3 text-sm text-slate-300">
-                        <i class="fa-solid fa-check-circle text-emerald-400 mt-0.5 shrink-0"></i>
-                        Large domestic demand base
-                    </div>
-                    <div class="flex items-start gap-3 text-sm text-slate-300">
-                        <i class="fa-solid fa-check-circle text-emerald-400 mt-0.5 shrink-0"></i>
-                        Low-cost manufacturing ecosystem
-                    </div>
-                    <div class="flex items-start gap-3 text-sm text-slate-300">
-                        <i class="fa-solid fa-check-circle text-emerald-400 mt-0.5 shrink-0"></i>
-                        Growth in organized retail & exports
-                    </div>
-                    <div class="flex items-start gap-3 text-sm text-slate-300">
-                        <i class="fa-solid fa-check-circle text-emerald-400 mt-0.5 shrink-0"></i>
-                        Strong printing/conversion infrastructure
-                    </div>
-                    <div class="flex items-start gap-3 text-sm text-slate-300">
-                        <i class="fa-solid fa-check-circle text-emerald-400 mt-0.5 shrink-0"></i>
-                        Govt. push for sustainable alternatives
+                    <div class="flex justify-center">
+                        <a href="{{ route('join.index') }}" 
+                            class="btn-sharp px-16 group !border-indigo-600/30 hover:!bg-indigo-600">
+                            Partner for Packaging 
+                            <i class="fa-solid fa-arrow-right-long ml-6 group-hover:translate-x-4 transition-transform"></i>
+                        </a>
                     </div>
                 </div>
             </div>

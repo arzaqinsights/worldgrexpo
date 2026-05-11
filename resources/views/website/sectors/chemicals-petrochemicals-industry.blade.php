@@ -4,148 +4,191 @@
 
 @section('content')
 
-    <!-- HERO -->
-    <section class="relative pt-32 pb-24 bg-slate-950 text-white overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-indigo-900 via-slate-900 to-black"></div>
-        <div class="absolute inset-0 opacity-20"
-            style="background-image: url('{{ asset('images/sectors/chemicals-petrochemicals-industry.jpg') }}'); background-size: cover; background-position: center;">
+    <!-- Architectural Hero -->
+    <section class="relative pt-64 pb-32 bg-slate-950 overflow-hidden border-b border-slate-900">
+        <!-- Visual Backdrop -->
+        <div class="absolute inset-0 opacity-20">
+            <img src="{{ asset('images/sectors/chemicals-petrochemicals-industry.jpg') }}" class="w-full h-full object-cover grayscale">
         </div>
+        <div class="absolute inset-0 bg-linear-to-b from-slate-950 via-slate-950/90 to-slate-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        
+        <!-- Industrial Accents -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-indigo-600 opacity-5 -skew-x-12 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-1/4 h-64 bg-indigo-600 opacity-5 skew-x-12 -translate-x-1/2"></div>
 
-        <div class="container relative z-10 text-center">
-            <h1 class="text-4xl md:text-6xl font-black uppercase mb-4 tracking-wide">
-                Chemicals & <span class="text-indigo-400">Petrochemicals</span>
+        <div class="container relative z-10 text-center space-y-12">
+            <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10">
+                <span class="w-2 h-2 bg-indigo-400 animate-pulse"></span>
+                <span class="text-white text-[10px] font-black tracking-[0.4em] uppercase">Global Manufacturing Backbone</span>
+            </div>
+            <h1 class="text-6xl md:text-[9rem] font-black text-white leading-[0.85] tracking-tighter uppercase">
+                Chemicals & <br>
+                <span class="text-indigo-600">Petrochemicals.</span>
             </h1>
-            <p class="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed uppercase italic font-medium">
-                The Backbone of Modern Manufacturing & Industrial Transformation.
+            <p class="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium border-l-4 border-indigo-600 pl-10 uppercase tracking-widest italic md:text-center mx-auto">
+                Backbone of Modern Manufacturing & Industrial Transformation.
             </p>
         </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="py-16 bg-white">
-        <div class="container space-y-20">
+    <!-- Content Interface -->
+    <section class="py-32 bg-white relative">
+        <div class="container space-y-48">
 
-            <!-- INTRO -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="animate-in fade-in slide-in-from-left duration-700">
-                    <h2 class="text-3xl font-extrabold mb-6 text-slate-900 uppercase italic border-l-8 border-indigo-600 pl-6">Industrial Foundation</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4 text-lg">
-                        From everyday consumer products to advanced industrial applications, the <strong>Chemicals & Petrochemicals sector</strong> forms the invisible foundation of the global economy.
-                    </p>
-                    <p class="text-slate-600 leading-relaxed font-medium">
-                        It powers industries ranging from agriculture and healthcare to automotive, construction, packaging, and energy, transforming raw materials into thousands of value-added products.
-                    </p>
+            <!-- Executive Summary -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200">
+                <div class="p-16 lg:p-24 bg-white space-y-12">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Industrial Foundation Architecture</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">Primary <br><span class="text-indigo-600">Transformation.</span></h2>
+                        <div class="accent-line bg-indigo-600"></div>
+                    </div>
+                    
+                    <div class="space-y-8 text-2xl text-slate-500 font-medium leading-relaxed italic border-l-4 border-slate-100 pl-10">
+                        <p>
+                            From everyday consumer products to advanced industrial applications, the <strong class="text-slate-900 font-black uppercase tracking-tight">Chemicals & Petrochemicals sector</strong> forms the invisible foundation of the global economy.
+                        </p>
+                        <p>
+                            It powers industries ranging from agriculture and healthcare to automotive, construction, packaging, and energy, transforming raw materials into thousands of value-added products.
+                        </p>
+                    </div>
                 </div>
 
-                <div class="grid grid-cols-2 gap-4 animate-in fade-in slide-in-from-right duration-700">
+                <div class="grid grid-cols-2 gap-px bg-slate-200 shadow-3xl">
                     @php
                         $segments = [
-                            ['icon' => 'flask-vial', 'label' => 'Basic Chemicals'],
-                            ['icon' => 'oil-well', 'label' => 'Petrochemicals'],
-                            ['icon' => 'vial-circle-check', 'label' => 'Specialty Chemicals'],
-                            ['icon' => 'clover', 'label' => 'Agrochemicals'],
+                            ['icon' => 'flask-vial', 'label' => 'Basic Chemicals', 'color' => 'indigo'],
+                            ['icon' => 'oil-well', 'label' => 'Petrochemicals', 'color' => 'indigo'],
+                            ['icon' => 'vial-circle-check', 'label' => 'Specialty Chemicals', 'color' => 'indigo'],
+                            ['icon' => 'clover', 'label' => 'Agrochemicals', 'color' => 'indigo'],
                         ];
                     @endphp
                     @foreach($segments as $s)
-                        <div class="p-6 bg-slate-50 border border-slate-100 rounded-2xl text-center group hover:bg-slate-900 hover:text-white transition-all duration-300 shadow-sm">
-                            <i class="fa-solid fa-{{ $s['icon'] }} text-3xl mb-3 text-indigo-500 group-hover:text-indigo-400 font-black"></i>
-                            <p class="text-[10px] font-black uppercase tracking-tight">{{ $s['label'] }}</p>
+                        <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                             <div class="absolute top-0 left-0 w-1 h-full bg-indigo-600 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                            <div class="w-20 h-20 mx-auto mb-10 bg-slate-50 border border-slate-100 flex items-center justify-center text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-all shadow-sm duration-500">
+                                <i class="fa-solid fa-{{ $s['icon'] }} text-3xl font-black"></i>
+                            </div>
+                            <p class="text-[10px] font-black text-slate-900 group-hover:text-white uppercase tracking-[0.3em] leading-tight transition-colors">{{ $s['label'] }}</p>
                         </div>
                     @endforeach
                 </div>
             </div>
 
-            <!-- SNAPSHOT -->
-            <div class="p-10 rounded-3xl bg-slate-900 text-white relative overflow-hidden shadow-xl">
-                <div class="absolute top-0 right-0 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl -mr-48 -mt-48"></div>
-                <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h3 class="text-2xl font-black mb-6 uppercase italic tracking-widest text-indigo-400">Industry Snapshot</h3>
-                        <p class="text-slate-400 mb-8 leading-relaxed italic">Structural transformation driven by sustainability, innovation, and global supply chain realignment.</p>
-                        
-                        <div class="space-y-4">
+            <!-- Snapshot Bento -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
+                <div class="p-24 bg-slate-950 space-y-16 relative group">
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(79,70,229,0.05),transparent)]"></div>
+                    <div class="relative z-10 space-y-12">
+                        <div class="text-indigo-400 text-[10px] font-black uppercase tracking-[0.4em]">Sector Metrics</div>
+                        <h3 class="text-6xl font-black text-white uppercase tracking-tighter italic leading-tight">Industry <br>Snapshot.</h3>
+                        <p class="text-2xl text-slate-500 font-medium leading-relaxed italic border-l-4 border-white/10 pl-10 uppercase tracking-tighter">
+                            Structural transformation driven by sustainability, innovation, and global supply chain realignment.
+                        </p>
+                        <div class="space-y-8 pt-12 border-t border-white/5">
                             @foreach([
                                 'Global Market Size (2025): USD 5.5T+',
                                 'Projected Market Size (2031): USD 7.5T+',
                                 'Expected Growth Rate: ~5–6% CAGR',
                                 'India Market Outlook (2031): USD 400B'
                             ] as $stat)
-                                <div class="flex items-center gap-3">
-                                    <div class="w-1.5 h-1.5 rounded-full bg-indigo-500"></div>
-                                    <span class="text-xs font-bold uppercase text-slate-300">{{ $stat }}</span>
+                                <div class="flex items-center gap-8 group/item">
+                                    <div class="w-2 h-2 bg-indigo-500 group-hover/item:scale-150 transition-transform duration-500"></div>
+                                    <span class="text-[12px] font-black uppercase text-slate-400 tracking-[0.3em] group-hover/item:text-white transition-colors duration-500 leading-tight">{{ $stat }}</span>
                                 </div>
                             @endforeach
                         </div>
                     </div>
+                </div>
 
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="p-6 bg-white/5 border border-white/10 rounded-2xl text-center shadow-lg">
-                            <p class="text-[10px] font-black uppercase text-slate-500 mb-2">India (2025)</p>
-                            <p class="text-3xl font-black text-white">$220B+</p>
-                        </div>
-                        <div class="p-6 bg-white/5 border border-white/10 rounded-2xl text-center shadow-lg">
-                            <p class="text-[10px] font-black uppercase text-slate-500 mb-2">India (2031)</p>
-                            <p class="text-3xl font-black text-indigo-400">$400B</p>
-                        </div>
-                        <div class="col-span-2 p-4 bg-indigo-600/10 border border-indigo-600/20 rounded-xl text-center shadow-inner">
-                             <p class="text-sm font-black uppercase tracking-widest text-indigo-100">Rising Sector Momentum</p>
-                        </div>
+                <div class="grid grid-cols-2 gap-px bg-slate-200">
+                    <div class="p-16 lg:p-24 bg-white space-y-10 group hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                         <div class="absolute top-0 left-0 w-1 h-full bg-slate-950 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                        <p class="text-[10px] font-black uppercase text-slate-400 tracking-[0.4em] transition-colors group-hover:text-slate-500">India (2025)</p>
+                        <h4 class="text-7xl font-black text-slate-950 group-hover:text-white transition-colors tracking-tighter italic">$220B+</h4>
+                    </div>
+                    <div class="p-16 lg:p-24 bg-white space-y-10 group hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                         <div class="absolute top-0 left-0 w-1 h-full bg-indigo-600 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                        <p class="text-[10px] font-black uppercase text-slate-400 tracking-[0.4em] transition-colors group-hover:text-slate-500">India (2031)</p>
+                        <h4 class="text-7xl font-black text-indigo-600 group-hover:text-indigo-400 transition-colors tracking-tighter italic">$400B</h4>
+                    </div>
+                    <div class="col-span-2 p-16 lg:p-24 bg-slate-50 space-y-10 text-center group hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                         <div class="absolute top-0 left-0 w-full h-1 bg-indigo-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+                         <div class="text-[10px] font-black uppercase tracking-[0.4em] text-indigo-600 group-hover:text-indigo-400">Sector Status</div>
+                         <h4 class="text-5xl font-black uppercase tracking-tighter text-slate-950 group-hover:text-white transition-colors italic leading-tight">Rising Sector Momentum</h4>
                     </div>
                 </div>
             </div>
 
-            <!-- MANUFACTURING ERA -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="order-2 md:order-1 grid grid-cols-2 gap-4">
+            <!-- Global Hub Strategy -->
+            <div class="grid lg:grid-cols-2 gap-32 items-center">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
                     @foreach([
                         ['t' => 'Basic Chemicals', 'd' => 'Industrial Chemicals'],
                         ['t' => 'Petrochemicals', 'd' => 'Polymers & Olefins'],
                         ['t' => 'Specialty Chemicals', 'd' => 'Adhesives & Coatings'],
                         ['t' => 'Agrochemicals', 'd' => 'Fertilizers & Protection'],
                     ] as $idx => $pill)
-                    <div class="p-6 bg-slate-50 border border-slate-200 rounded-3xl text-center shadow hover:shadow-lg transition-all">
-                        <p class="text-[10px] font-black uppercase text-indigo-600 mb-2">Segment 0{{ $idx + 1 }}</p>
-                        <p class="text-lg font-black text-slate-900 leading-tight italic uppercase">{{ $pill['t'] }}</p>
+                    <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-1 h-full bg-indigo-600 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                        <p class="text-[10px] font-black uppercase text-indigo-600 group-hover:text-indigo-400 tracking-[0.4em] mb-6 transition-colors">Segment 0{{ $idx + 1 }}</p>
+                        <p class="text-3xl font-black text-slate-950 group-hover:text-white uppercase tracking-tighter italic leading-tight mb-4 transition-colors">{{ $pill['t'] }}</p>
+                        <p class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] transition-colors">{{ $pill['d'] }}</p>
                     </div>
                     @endforeach
                 </div>
 
-                <div class="order-1 md:order-2 space-y-6">
-                    <h3 class="text-3xl font-black uppercase text-slate-900 italic">India: A Global Hub</h3>
-                    <p class="text-slate-600 leading-relaxed font-serif">India is emerging as a strategic alternative in global supply chains, fueled by competitive manufacturing and domestic demand.</p>
-                    <div class="space-y-4">
+                <div class="space-y-16">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Global Manufacturing Expansion</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">India: A <br><span class="text-indigo-600">Global Hub.</span></h2>
+                        <div class="accent-line bg-indigo-600"></div>
+                    </div>
+                    <p class="text-2xl text-slate-500 font-medium leading-relaxed italic border-l-4 border-slate-100 pl-10 uppercase tracking-tighter">
+                        India is emerging as a strategic alternative in global supply chains, fueled by competitive manufacturing and domestic demand.
+                    </p>
+                    <div class="space-y-10 pt-8">
                         @foreach([
                             'Competitive manufacturing costs',
                             'Strong domestic demand across sectors',
                             'Government PLI schemes & clusters',
                             'China+1 diversification strategy'
                         ] as $item)
-                        <div class="flex items-center gap-4 group">
-                            <div class="w-2 h-2 rounded-full bg-indigo-500 group-hover:scale-150 transition-transform"></div>
-                            <p class="text-sm font-bold uppercase text-slate-700 tracking-tight transition-transform group-hover:translate-x-2">{{ $item }}</p>
+                        <div class="flex items-center gap-10 group">
+                            <div class="w-2 h-2 bg-indigo-500 group-hover:scale-150 transition-transform duration-500"></div>
+                            <p class="text-[14px] font-black uppercase text-slate-700 tracking-[0.2em] transition-all duration-500 group-hover:translate-x-6 leading-tight group-hover:text-slate-950">{{ $item }}</p>
                         </div>
                         @endforeach
                     </div>
                 </div>
             </div>
 
-            <!-- ECOSYSTEM GRID -->
-            <div class="p-12 rounded-[50px] bg-slate-50 border border-slate-200 shadow-inner">
-                <h3 class="text-3xl font-black mb-10 text-center uppercase italic tracking-tighter">Industry Connectivity</h3>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            <!-- Connectivity Grid -->
+            <div class="space-y-24">
+                <div class="text-center space-y-4">
+                    <span class="text-indigo-600 text-[10px] font-black uppercase tracking-[0.4em]">Integrated Industrial Web</span>
+                    <h3 class="text-6xl font-black text-slate-950 uppercase tracking-tighter italic">Industry Connectivity</h3>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
                     @foreach(['Packaging & FMCG', 'Agriculture', 'Automotive', 'Construction', 'Healthcare', 'Textiles'] as $eco)
-                        <div class="p-6 bg-white border border-slate-200 rounded-2xl text-center group hover:border-indigo-500 hover:shadow-xl transition-all">
-                             <p class="text-xs font-black uppercase text-slate-600 group-hover:text-indigo-600 transition-colors">{{ $eco }}</p>
+                        <div class="p-12 bg-white text-center group hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                             <div class="absolute top-0 left-0 w-full h-1 bg-indigo-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+                             <div class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-600 group-hover:text-white transition-colors leading-tight">{{ $eco }}</div>
                         </div>
                     @endforeach
                 </div>
             </div>
 
-            <!-- STRATEGIC IMPORTANCE -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="space-y-8">
-                    <h2 class="text-3xl font-black text-slate-900 uppercase tracking-tight italic">Strategic Significance</h2>
-                    <div class="space-y-4">
+            <!-- Strategic Importance -->
+            <div class="grid lg:grid-cols-2 gap-32 items-center">
+                <div class="space-y-16">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Systemic Impact Architecture</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">Strategic <br><span class="text-indigo-600">Significance.</span></h2>
+                        <div class="accent-line bg-indigo-600"></div>
+                    </div>
+                    <div class="space-y-px bg-slate-200 border border-slate-200 shadow-3xl">
                         @foreach([
                             'Core input provider for nearly all manufacturing',
                             'Drives industrial growth & export competitiveness',
@@ -153,41 +196,51 @@
                             'Supports sustainability & advanced materials',
                             'Significant contribution to GDP & employment'
                         ] as $imp)
-                        <div class="flex items-center gap-4 p-4 rounded-xl border-l-4 border-indigo-500 bg-slate-50 hover:bg-white hover:shadow-md transition-all">
-                            <i class="fa-solid fa-check text-indigo-400 font-black"></i>
-                            <span class="text-sm font-bold uppercase tracking-tight text-slate-900">{{ $imp }}</span>
+                        <div class="flex items-center gap-10 p-12 bg-white group hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-1 h-full bg-indigo-600 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                            <i class="fa-solid fa-check text-indigo-400 text-2xl font-black transition-colors group-hover:text-indigo-500"></i>
+                            <span class="text-[14px] font-black uppercase tracking-[0.15em] text-slate-900 group-hover:text-white transition-colors leading-tight">{{ $imp }}</span>
                         </div>
                         @endforeach
                     </div>
                 </div>
 
-                <div class="p-8 bg-slate-900 rounded-3xl text-white relative group overflow-hidden shadow-2xl">
-                    <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
-                    <div class="relative z-10">
-                        <h4 class="text-2xl font-black mb-6 uppercase italic text-indigo-400">The Transition Ahead</h4>
-                        <p class="text-slate-300 leading-relaxed text-sm font-medium mb-8">
+                <div class="p-16 lg:p-24 bg-slate-950 text-white space-y-16 relative overflow-hidden group shadow-3xl">
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(79,70,229,0.05),transparent)]"></div>
+                    <div class="relative z-10 space-y-12">
+                        <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10 text-indigo-400 text-[10px] font-black uppercase tracking-[0.4em]">
+                            Future Evolution
+                        </div>
+                        <h4 class="text-6xl font-black uppercase tracking-tighter italic text-indigo-600">The Transition <br><span class="text-white">Ahead.</span></h4>
+                        <p class="text-2xl text-slate-400 font-medium italic border-l-8 border-indigo-600/30 pl-10 leading-relaxed uppercase tracking-tighter">
                             Low-carbon technologies, hydrogen feedstocks, and green chemicals will define the next decade of industrial transformation.
                         </p>
-                        <div class="flex flex-wrap gap-2">
+                        <div class="grid grid-cols-2 gap-px bg-white/5 pt-12">
                              @foreach(['GREEN CHEM', 'ESG FOCUS', 'HYDROGEN', 'CIRCULAR'] as $tag)
-                                <span class="px-3 py-1 bg-white/10 rounded-lg text-[10px] font-black uppercase text-indigo-300 border border-indigo-500/20">{{ $tag }}</span>
+                                <span class="p-6 bg-slate-950 border border-white/5 text-[10px] font-black uppercase tracking-[0.4em] text-indigo-300 text-center hover:bg-indigo-600 hover:text-slate-950 transition-all cursor-default">{{ $tag }}</span>
                              @endforeach
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- CONCLUSION (CTA) -->
-            <div class="relative bg-slate-950 text-white p-12 md:p-16 rounded-[40px] text-center shadow-2xl overflow-hidden border-b-4 border-indigo-600">
-                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(79,70,229,0.1),transparent)]"></div>
-                <div class="relative z-10">
-                    <h3 class="text-3xl font-bold mb-6 uppercase tracking-tight font-serif italic">Industrial Civilization Foundation</h3>
-                    <p class="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed mb-10">
+            <!-- Conclusion CTA -->
+            <div class="relative p-24 lg:p-32 bg-slate-950 overflow-hidden text-center shadow-3xl group">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(79,70,229,0.2),transparent)]"></div>
+                <div class="relative z-10 space-y-16">
+                    <h3 class="text-5xl md:text-[8rem] font-black text-white uppercase tracking-tighter leading-[0.85]">
+                        Industrial <br><span class="text-indigo-600">Foundation.</span>
+                    </h3>
+                    <p class="text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium italic border-l-4 border-indigo-600 pl-10 md:text-center mx-auto">
                         India stands at a pivotal point to become a global leader in chemical manufacturing and exports. Join the mission to shape the future of industrial manufacturing.
                     </p>
-                    <a href="" class="inline-flex items-center gap-3 px-10 py-5 bg-white text-slate-900 font-black uppercase tracking-widest rounded-full hover:bg-indigo-500 hover:text-white transition-all duration-300 shadow-xl group">
-                        Register for Chemical Support <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform text-indigo-400"></i>
-                    </a>
+                    <div class="flex justify-center">
+                        <a href="{{ route('join.index') }}" 
+                            class="btn-sharp px-16 group !border-indigo-600/30 hover:!bg-indigo-600">
+                            Register for Chemical Support 
+                            <i class="fa-solid fa-arrow-right-long ml-6 group-hover:translate-x-4 transition-transform"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
 

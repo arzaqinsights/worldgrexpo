@@ -4,40 +4,58 @@
 
 @section('content')
 
-    <!-- HERO -->
-    <section class="relative pt-32 pb-24 bg-slate-950 text-white overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-blue-900 via-slate-900 to-black"></div>
-        <div class="absolute inset-0 opacity-20"
-            style="background-image: url('{{ asset('images/sectors/cyber-security.jpg') }}'); background-size: cover; background-position: center;">
+    <!-- Architectural Hero -->
+    <section class="relative pt-64 pb-32 bg-slate-950 overflow-hidden border-b border-slate-900">
+        <!-- Visual Backdrop -->
+        <div class="absolute inset-0 opacity-20">
+            <img src="{{ asset('images/sectors/cyber-security.jpg') }}" class="w-full h-full object-cover grayscale">
         </div>
+        <div class="absolute inset-0 bg-linear-to-b from-slate-950 via-slate-950/90 to-slate-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        
+        <!-- Industrial Accents -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-cyan-600 opacity-5 -skew-x-12 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-1/4 h-64 bg-cyan-600 opacity-5 skew-x-12 -translate-x-1/2"></div>
 
-        <div class="container relative z-10 text-center">
-            <h1 class="text-4xl md:text-6xl font-black uppercase mb-4 tracking-wide">
-                Cyber <span class="text-cyan-400">Security</span>
+        <div class="container relative z-10 text-center space-y-12">
+            <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10">
+                <span class="w-2 h-2 bg-cyan-400 animate-pulse"></span>
+                <span class="text-white text-[10px] font-black tracking-[0.4em] uppercase">Digital Defense Infrastructure</span>
+            </div>
+            <h1 class="text-6xl md:text-[9rem] font-black text-white leading-[0.85] tracking-tighter uppercase">
+                Cyber <br>
+                <span class="text-cyan-600">Security.</span>
             </h1>
-            <p class="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed uppercase italic font-medium">
+            <p class="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium border-l-4 border-cyan-600 pl-10 uppercase tracking-widest italic md:text-center mx-auto">
                 Protecting the Digital World Through Advanced Security Solutions.
             </p>
         </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="py-16 bg-white">
-        <div class="container space-y-20">
+    <!-- Content Interface -->
+    <section class="py-32 bg-white relative">
+        <div class="container space-y-48">
 
-            <!-- WHAT IS CYBER SECURITY -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="animate-in fade-in slide-in-from-left duration-700">
-                    <h2 class="text-3xl font-extrabold mb-6 text-slate-900 uppercase italic border-l-8 border-cyan-500 pl-6">Digital Shield</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4 text-lg">
-                        In today's digital-first economy, <strong>Cyber Security</strong> has become one of the most critical industries globally, safeguarding organizations, governments, and individuals against cyber threats, data breaches, and digital fraud.
-                    </p>
-                    <p class="text-slate-600 leading-relaxed font-medium">
-                        As businesses shift toward cloud, AI, and digital platforms, cybersecurity has evolved from a simple IT requirement into a core strategic business necessity.
-                    </p>
+            <!-- Executive Summary -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200">
+                <div class="p-16 lg:p-24 bg-white space-y-12">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Digital Shield Architecture</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">Safeguarding <br><span class="text-cyan-600">Digital Assets.</span></h2>
+                        <div class="accent-line bg-cyan-600"></div>
+                    </div>
+                    
+                    <div class="space-y-8 text-2xl text-slate-500 font-medium leading-relaxed italic border-l-4 border-slate-100 pl-10">
+                        <p>
+                            In today's digital-first economy, <strong class="text-slate-900 font-black uppercase tracking-tight">Cyber Security</strong> has become one of the most critical industries globally, safeguarding organizations, governments, and individuals.
+                        </p>
+                        <p>
+                            As businesses shift toward cloud, AI, and digital platforms, cybersecurity has evolved from a simple IT requirement into a core strategic business necessity.
+                        </p>
+                    </div>
                 </div>
 
-                <div class="grid grid-cols-2 gap-4 animate-in fade-in slide-in-from-right duration-700">
+                <div class="grid grid-cols-2 gap-px bg-slate-200 shadow-3xl">
                     @php
                         $protected = [
                             ['icon' => 'server', 'label' => 'Networks & Servers'],
@@ -47,112 +65,129 @@
                         ];
                     @endphp
                     @foreach($protected as $p)
-                        <div class="p-6 bg-slate-50 border border-slate-100 rounded-2xl text-center group hover:bg-slate-900 hover:text-white transition-all duration-300">
-                            <i class="fa-solid fa-{{ $p['icon'] }} text-3xl mb-3 text-cyan-500 group-hover:text-cyan-400"></i>
-                            <p class="text-[10px] font-black uppercase tracking-tight">{{ $p['label'] }}</p>
+                        <div class="p-16 bg-white flex flex-col items-center justify-center text-center group hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                             <div class="absolute top-0 left-0 w-1 h-full bg-cyan-600 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                            <i class="fa-solid fa-{{ $p['icon'] }} text-5xl mb-8 text-slate-200 group-hover:text-cyan-600 transition-all duration-500"></i>
+                            <p class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 group-hover:text-white transition-colors">{{ $p['label'] }}</p>
                         </div>
                     @endforeach
                 </div>
             </div>
 
-            <!-- GLOBAL MARKET LANDSCAPE -->
-            <div class="p-10 rounded-3xl bg-slate-900 text-white relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl -mr-48 -mt-48"></div>
-                <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h3 class="text-2xl font-black mb-6 uppercase italic tracking-widest text-cyan-400">Global Landscape</h3>
-                        <p class="text-slate-400 mb-8 leading-relaxed">Cyber Security is among the fastest-growing technology sectors worldwide, driven by global digital transformation and increasing cybercrime.</p>
-                        
+            <!-- Global Landscape -->
+            <div class="p-24 lg:p-32 bg-slate-950 relative overflow-hidden group shadow-3xl border border-white/5">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(6,182,212,0.05),transparent)]"></div>
+                <div class="relative z-10 grid lg:grid-cols-2 gap-24 items-center">
+                    <div class="space-y-12">
                         <div class="space-y-4">
+                            <span class="text-cyan-400 text-[10px] font-black uppercase tracking-[0.4em]">International Market Dynamics</span>
+                            <h3 class="text-6xl font-black text-white uppercase tracking-tighter italic">Global Landscape</h3>
+                        </div>
+                        <p class="text-2xl text-slate-400 font-medium leading-relaxed italic border-l-8 border-cyan-600/30 pl-10 uppercase tracking-tighter">
+                            Cyber Security is among the fastest-growing technology sectors worldwide, driven by global digital transformation.
+                        </p>
+                        <div class="grid grid-cols-2 gap-px bg-white/10 border border-white/10 shadow-3xl">
+                            <div class="p-12 bg-slate-950 space-y-4 group/stat hover:bg-cyan-600 transition-all duration-500">
+                                <p class="text-[10px] font-black uppercase text-slate-500 group-hover/stat:text-slate-950/70 tracking-[0.3em]">Market Value (2025)</p>
+                                <p class="text-6xl font-black text-white group-hover/stat:text-slate-950 italic tracking-tighter">$250B+</p>
+                            </div>
+                            <div class="p-12 bg-slate-950 space-y-4 group/stat hover:bg-cyan-600 transition-all duration-500">
+                                <p class="text-[10px] font-black uppercase text-slate-500 group-hover/stat:text-slate-950/70 tracking-[0.3em]">Projected (2031)</p>
+                                <p class="text-6xl font-black text-cyan-400 group-hover/stat:text-slate-950 italic tracking-tighter">$500B+</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-10">
+                        <h4 class="text-[10px] font-black uppercase tracking-[0.4em] text-cyan-400">Primary Growth Drivers</h4>
+                        <div class="space-y-px bg-white/10 border border-white/10 shadow-3xl">
                             @foreach([
                                 'Rising cyber-attacks & ransomware',
                                 'Expansion of cloud & remote work',
                                 'Growth in AI, IoT & 5G infrastructure',
                                 'Increasing data privacy regulations'
                             ] as $driver)
-                                <div class="flex items-center gap-3">
-                                    <div class="w-1.5 h-1.5 rounded-full bg-cyan-500"></div>
-                                    <span class="text-xs font-bold uppercase text-slate-300">{{ $driver }}</span>
-                                </div>
+                            <div class="flex items-center gap-10 p-10 bg-slate-950 hover:bg-white/5 transition-all group/item">
+                                <div class="w-2 h-2 bg-cyan-600 group-hover/item:scale-150 transition-transform"></div>
+                                <span class="text-[14px] font-black uppercase tracking-[0.2em] text-slate-400 group-hover:text-white transition-colors">{{ $driver }}</span>
+                            </div>
                             @endforeach
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="p-6 bg-white/5 border border-white/10 rounded-2xl text-center">
-                            <p class="text-[10px] font-black uppercase text-slate-500 mb-2">Market Value (2025)</p>
-                            <p class="text-3xl font-black text-white">$250B+</p>
-                        </div>
-                        <div class="p-6 bg-white/5 border border-white/10 rounded-2xl text-center">
-                            <p class="text-[10px] font-black uppercase text-slate-500 mb-2">Projected (2031)</p>
-                            <p class="text-3xl font-black text-cyan-400">$500B+</p>
-                        </div>
-                        <div class="col-span-2 p-4 bg-cyan-500/10 border border-cyan-500/20 rounded-xl text-center">
-                             <p class="text-sm font-black uppercase tracking-widest">12% - 15% Annual CAGR</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- INDIA MARKET -->
-            <div class="grid md:grid-cols-2 gap-10 items-center">
-                <div class="order-2 md:order-1 grid grid-cols-2 gap-4">
-                    <div class="p-8 bg-slate-50 border border-slate-200 rounded-3xl text-center shadow-lg">
-                        <p class="text-[10px] font-black uppercase text-slate-400 mb-2">India Size (2025)</p>
-                        <p class="text-2xl font-black text-slate-900">$8 - 10B</p>
+            <!-- India Ecosystem -->
+            <div class="grid lg:grid-cols-2 gap-32 items-center">
+                <div class="order-2 lg:order-1 grid grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
+                    <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                         <div class="absolute top-0 left-0 w-1 h-full bg-slate-950 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                        <p class="text-[10px] font-black uppercase text-slate-400 tracking-[0.4em] mb-4">India Size (2025)</p>
+                        <h4 class="text-5xl font-black text-slate-950 group-hover:text-white transition-colors tracking-tighter italic">$8 - 10B</h4>
                     </div>
-                    <div class="p-8 bg-cyan-50 border border-cyan-200 rounded-3xl text-center shadow-lg">
-                        <p class="text-[10px] font-black uppercase text-cyan-600 mb-2">Growth Rate</p>
-                        <p class="text-2xl font-black text-cyan-900">20% CAGR</p>
+                    <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                         <div class="absolute top-0 left-0 w-1 h-full bg-cyan-600 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                        <p class="text-[10px] font-black uppercase text-slate-400 tracking-[0.4em] mb-4">Growth Rate</p>
+                        <h4 class="text-5xl font-black text-cyan-600 group-hover:text-cyan-400 transition-colors tracking-tighter italic">20% CAGR</h4>
                     </div>
-                    <div class="col-span-2 p-8 bg-slate-900 text-white rounded-3xl">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-xs font-black uppercase tracking-widest text-cyan-400">Total Startups</span>
-                            <span class="text-xl font-bold">3,500+</span>
+                    <div class="col-span-2 p-16 lg:p-24 bg-slate-950 text-white space-y-12 relative overflow-hidden group">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-cyan-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-[10px] font-black uppercase tracking-[0.4em] text-cyan-400">Total Startups</span>
+                            <span class="text-4xl font-black italic tracking-tighter">3,500+</span>
                         </div>
-                        <div class="h-1 bg-white/10 rounded-full overflow-hidden">
-                            <div class="w-2/3 h-full bg-cyan-500"></div>
+                        <div class="h-2 bg-white/5 border border-white/10 relative">
+                            <div class="absolute top-0 left-0 h-full bg-cyan-600 w-2/3 group-hover:w-full transition-all duration-1000"></div>
                         </div>
-                        <p class="mt-4 text-[10px] text-slate-400 uppercase font-medium">BENGALURU • HYDERABAD • PUNE • NCR</p>
+                        <p class="text-[10px] text-slate-500 uppercase font-black tracking-[0.4em] text-center">BENGALURU • HYDERABAD • PUNE • NCR</p>
                     </div>
                 </div>
 
-                <div class="order-1 md:order-2 space-y-6">
-                    <h3 class="text-3xl font-black uppercase text-slate-900 italic">India Cyber Ecosystem</h3>
-                    <p class="text-slate-600 leading-relaxed font-serif">India is emerging as one of the most promising cybersecurity markets due to rapid digital adoption and rising enterprise awareness.</p>
-                    <div class="space-y-3">
-                        @foreach([
-                            'Digital India initiatives',
-                            'UPI / FinTech system expansion',
-                            'Smart Cities & GovTech digitization',
-                            'Enterprise cloud migration'
-                        ] as $cat)
-                        <div class="flex items-center gap-3 p-3 bg-slate-50 border border-slate-100 rounded-xl">
-                            <i class="fa-solid fa-bolt text-cyan-500"></i>
-                            <span class="text-xs font-bold uppercase text-slate-700">{{ $cat }}</span>
+                <div class="order-1 lg:order-2 space-y-16">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">National Security Hub</span>
+                        <h2 class="text-6xl font-black uppercase tracking-tighter italic">India Cyber <br><span class="text-cyan-600">Ecosystem.</span></h2>
+                        <div class="accent-line bg-cyan-600"></div>
+                    </div>
+                    <p class="text-2xl text-slate-500 font-medium leading-relaxed italic border-l-8 border-slate-100 pl-10 uppercase tracking-tighter">
+                        India is emerging as one of the most promising cybersecurity markets due to rapid digital adoption and rising enterprise awareness.
+                    </p>
+                    <div class="space-y-px bg-slate-200 border border-slate-200 shadow-3xl">
+                        @foreach(['Digital India initiatives', 'UPI / FinTech system expansion', 'Smart Cities & GovTech digitization', 'Enterprise cloud migration'] as $cat)
+                        <div class="flex items-center gap-10 p-10 bg-white group hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                             <div class="absolute top-0 left-0 w-1 h-full bg-cyan-600 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                            <i class="fa-solid fa-bolt text-cyan-600 group-hover:text-white transition-colors"></i>
+                            <span class="text-[14px] font-black uppercase text-slate-700 group-hover:text-white tracking-[0.2em] transition-colors leading-tight italic">{{ $cat }}</span>
                         </div>
                         @endforeach
                     </div>
                 </div>
             </div>
 
-            <!-- HIGH GROWTH SEGMENTS -->
-            <div class="p-12 rounded-3xl bg-slate-50 border border-slate-200">
-                <h3 class="text-3xl font-black mb-10 text-center uppercase italic tracking-tighter">High-Growth Segments (2026-2031)</h3>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <!-- High Growth Segments -->
+            <div class="space-y-24">
+                <div class="text-center space-y-4">
+                    <span class="text-cyan-600 text-[10px] font-black uppercase tracking-[0.4em]">Vertical Specialization</span>
+                    <h3 class="text-6xl font-black text-slate-950 uppercase tracking-tighter italic">High-Growth Segments</h3>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
                     @foreach(['Cloud Security', 'AI Threat Detection', 'Endpoint Protection', 'Network Security', 'Ethical Hacking', 'Cyber Risk Mgmt', 'Managed Services', 'Privacy Compliance'] as $seg)
-                        <div class="p-6 bg-white border border-slate-200 rounded-2xl text-center hover:border-cyan-500 hover:shadow-xl transition-all group">
-                             <p class="text-xs font-black uppercase text-slate-600 group-hover:text-cyan-600 transition-colors">{{ $seg }}</p>
+                        <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-cyan-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+                             <p class="text-[10px] font-black uppercase text-slate-600 group-hover:text-white tracking-[0.2em] transition-colors italic leading-tight">{{ $seg }}</p>
                         </div>
                     @endforeach
                 </div>
             </div>
 
-            <!-- STRATEGIC IMPORTANCE -->
-            <div class="grid md:grid-cols-2 gap-12 items-center pt-8">
-                <div class="grid gap-6">
-                    <h2 class="text-3xl font-black text-slate-900 uppercase tracking-tight">Strategic Importance</h2>
-                    <div class="space-y-4">
+            <!-- Strategic Importance -->
+            <div class="grid lg:grid-cols-2 gap-32 items-center">
+                <div class="space-y-16">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Systemic Resilience Architecture</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">Strategic <br><span class="text-cyan-600">Importance.</span></h2>
+                        <div class="accent-line bg-cyan-600"></div>
+                    </div>
+                    <div class="space-y-px bg-slate-200 border border-slate-200 shadow-3xl">
                         @foreach([
                             'Protects critical digital infrastructure',
                             'Prevents financial & reputational losses',
@@ -160,41 +195,51 @@
                             'Enables safe digital transformation',
                             'Supports national security & defense'
                         ] as $imp)
-                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-slate-900 text-white group hover:bg-cyan-500 transition-colors">
-                            <i class="fa-solid fa-shield-halved text-cyan-400 group-hover:text-white"></i>
-                            <span class="text-sm font-bold uppercase tracking-tight">{{ $imp }}</span>
+                        <div class="flex items-center gap-10 p-12 bg-white group hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-1 h-full bg-cyan-600 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                            <i class="fa-solid fa-shield-halved text-cyan-600 text-2xl group-hover:text-white transition-colors"></i>
+                            <span class="text-[14px] font-black uppercase tracking-[0.15em] text-slate-900 group-hover:text-white transition-colors leading-tight italic">{{ $imp }}</span>
                         </div>
                         @endforeach
                     </div>
                 </div>
 
-                <div class="p-8 bg-slate-900 rounded-3xl text-white relative overflow-hidden">
-                    <div class="absolute inset-0 bg-cyan-500/5"></div>
-                    <div class="relative z-10">
-                        <h4 class="text-2xl font-black mb-6 uppercase italic text-cyan-400">Future Landscape</h4>
-                        <p class="text-slate-300 leading-relaxed text-sm font-medium mb-8">
-                            With cybercrime projected to become one of the world's largest economic threats, Cyber Security is no longer optional—it is foundational to every modern organization. India is positioned to become a global innovation hub.
+                <div class="p-16 lg:p-24 bg-slate-950 text-white space-y-16 relative overflow-hidden group shadow-3xl border border-white/5">
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(6,182,212,0.05),transparent)]"></div>
+                    <div class="relative z-10 space-y-12">
+                        <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10 text-cyan-400 text-[10px] font-black uppercase tracking-[0.4em]">
+                            Future Landscape
+                        </div>
+                        <h4 class="text-6xl font-black uppercase tracking-tighter italic text-cyan-600">Building <br><span class="text-white">The Shield.</span></h4>
+                        <p class="text-2xl text-slate-400 font-medium italic border-l-8 border-cyan-600/30 pl-10 leading-relaxed uppercase tracking-tighter">
+                            With cybercrime projected to become one of the world's largest economic threats, Cyber Security is no longer optional—it is foundational.
                         </p>
-                        <div class="flex flex-wrap gap-2">
+                        <div class="grid grid-cols-2 gap-px bg-white/5 pt-12 border border-white/10 shadow-2xl">
                              @foreach(['AI-FIRST', 'ZERO TRUST', 'QUANTUM-SECURE', 'SOVEREIGN CLOUD'] as $tag)
-                                <span class="px-3 py-1 bg-white/10 rounded-lg text-[10px] font-black uppercase text-cyan-400 border border-cyan-500/20">{{ $tag }}</span>
+                                <span class="p-8 bg-slate-950 border border-white/5 text-[10px] font-black uppercase tracking-[0.4em] text-cyan-400 text-center hover:bg-cyan-600 hover:text-slate-950 transition-all cursor-default">{{ $tag }}</span>
                              @endforeach
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- CONCLUSION (CTA) -->
-            <div class="relative bg-slate-950 text-white p-12 md:p-16 rounded-3xl text-center shadow-2xl overflow-hidden border-b-4 border-cyan-600">
-                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(6,182,212,0.1),transparent)]"></div>
-                <div class="relative z-10">
-                    <h3 class="text-3xl font-bold mb-6 uppercase tracking-tight">Safeguard Your Digital Assets</h3>
-                    <p class="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed mb-10">
+            <!-- Conclusion CTA -->
+            <div class="relative p-24 lg:p-32 bg-slate-950 overflow-hidden text-center shadow-3xl group">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(6,182,212,0.2),transparent)]"></div>
+                <div class="relative z-10 space-y-16">
+                    <h3 class="text-5xl md:text-[8rem] font-black text-white uppercase tracking-tighter leading-[0.85]">
+                        Secure Your <br><span class="text-cyan-600">Digital Assets.</span>
+                    </h3>
+                    <p class="text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium italic border-l-4 border-cyan-600 pl-10 md:text-center mx-auto uppercase tracking-tighter">
                         Stay ahead of evolving digital threats. Explore cybersecurity frameworks, ethical hacking support, and AI-driven security solutions to protect your business ecosystem.
                     </p>
-                    <a href="" class="inline-flex items-center gap-3 px-10 py-5 bg-white text-slate-900 font-black uppercase tracking-widest rounded-full hover:bg-cyan-500 hover:text-white transition-all duration-300 shadow-xl group">
-                        Register for Security Support <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform text-cyan-400"></i>
-                    </a>
+                    <div class="flex justify-center">
+                        <a href="{{ route('join.index') }}" 
+                            class="btn-sharp px-16 group !border-cyan-600/30 hover:!bg-cyan-600">
+                            Register for Security Support 
+                            <i class="fa-solid fa-arrow-right-long ml-6 group-hover:translate-x-4 transition-transform"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
 

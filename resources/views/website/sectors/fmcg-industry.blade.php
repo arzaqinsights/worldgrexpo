@@ -4,40 +4,58 @@
 
 @section('content')
 
-    <!-- HERO -->
-    <section class="relative pt-32 pb-24 bg-rose-950 text-white overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-rose-900 via-stone-900 to-black"></div>
-        <div class="absolute inset-0 opacity-20"
-            style="background-image: url('{{ asset('images/sectors/fmcg-industry.jpg') }}'); background-size: cover; background-position: center;">
+    <!-- Architectural Hero -->
+    <section class="relative pt-64 pb-32 bg-slate-950 overflow-hidden border-b border-slate-900">
+        <!-- Visual Backdrop -->
+        <div class="absolute inset-0 opacity-20">
+            <img src="{{ asset('images/sectors/fmcg-industry.jpg') }}" class="w-full h-full object-cover grayscale">
         </div>
+        <div class="absolute inset-0 bg-linear-to-b from-slate-950 via-slate-950/90 to-slate-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(244,63,94,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        
+        <!-- Industrial Accents -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-rose-600 opacity-5 -skew-x-12 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-1/4 h-64 bg-rose-600 opacity-5 skew-x-12 -translate-x-1/2"></div>
 
-        <div class="container relative z-10 text-center">
-            <h1 class="text-4xl md:text-6xl font-black uppercase mb-4 tracking-wide">
-                FMCG <span class="text-rose-400">Industry</span>
+        <div class="container relative z-10 text-center space-y-12">
+            <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10">
+                <span class="w-2 h-2 bg-rose-400 animate-pulse"></span>
+                <span class="text-white text-[10px] font-black tracking-[0.4em] uppercase">High-Frequency Consumption Protocol</span>
+            </div>
+            <h1 class="text-6xl md:text-[9rem] font-black text-white leading-[0.85] tracking-tighter uppercase">
+                FMCG <br>
+                <span class="text-rose-600">Industry.</span>
             </h1>
-            <p class="text-xl md:text-2xl text-rose-100 max-w-4xl mx-auto leading-relaxed uppercase italic font-medium">
+            <p class="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium border-l-4 border-rose-600 pl-10 uppercase tracking-widest italic md:text-center mx-auto">
                 Powering Everyday Consumer Demand Across Global Markets.
             </p>
         </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="py-16 bg-white">
-        <div class="container space-y-20">
+    <!-- Content Interface -->
+    <section class="py-32 bg-white relative">
+        <div class="container space-y-48">
 
-            <!-- WHAT IS FMCG -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="animate-in fade-in slide-in-from-left duration-700">
-                    <h2 class="text-3xl font-extrabold mb-6 text-rose-900 uppercase italic">Consumer Essentials</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4 text-lg">
-                        <strong>Fast Moving Consumer Goods (FMCG)</strong> represent products that are sold quickly at relatively low cost and are consumed on a regular basis.
-                    </p>
-                    <p class="text-slate-600 leading-relaxed font-medium">
-                        These goods form an essential part of daily life and include packaged foods, beverages, personal care products, household care items, and other consumer essentials.
-                    </p>
+            <!-- Executive Summary -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200">
+                <div class="p-16 lg:p-24 bg-white space-y-12">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Consumer Demand Framework</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">Consumer <br><span class="text-rose-600">Essentials.</span></h2>
+                        <div class="accent-line bg-rose-600"></div>
+                    </div>
+                    
+                    <div class="space-y-8 text-2xl text-slate-500 font-medium leading-relaxed italic border-l-4 border-slate-100 pl-10">
+                        <p>
+                            <strong class="text-slate-900 font-black uppercase tracking-tight">Fast Moving Consumer Goods (FMCG)</strong> represent products that are sold quickly at relatively low cost and are consumed on a regular basis.
+                        </p>
+                        <p>
+                            These goods form an essential part of daily life and include packaged foods, beverages, personal care products, household care items, and other consumer essentials.
+                        </p>
+                    </div>
                 </div>
 
-                <div class="grid grid-cols-2 gap-4 animate-in fade-in slide-in-from-right duration-700">
+                <div class="grid grid-cols-2 gap-px bg-slate-200">
                     @php
                         $categories = [
                             ['icon' => 'burger', 'label' => 'Food & Beverages'],
@@ -47,152 +65,163 @@
                         ];
                     @endphp
                     @foreach($categories as $cat)
-                        <div class="p-6 bg-rose-50 border border-rose-100 rounded-2xl text-center group hover:bg-rose-900 hover:text-white transition-all duration-300">
-                            <i class="fa-solid fa-{{ $cat['icon'] }} text-3xl mb-3 text-rose-400 group-hover:text-rose-300"></i>
-                            <p class="text-[10px] font-black uppercase tracking-tight">{{ $cat['label'] }}</p>
+                        <div class="p-12 bg-white flex flex-col items-center justify-center text-center group hover:bg-slate-950 transition-all duration-700">
+                            <i class="fa-solid fa-{{ $cat['icon'] }} text-4xl mb-6 text-rose-600 transition-transform duration-500 group-hover:scale-110"></i>
+                            <p class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 group-hover:text-white">{{ $cat['label'] }}</p>
                         </div>
                     @endforeach
                 </div>
             </div>
 
-            <!-- MARKET LANDSCAPE -->
-            <div class="p-10 rounded-3xl bg-rose-900 text-white relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -mr-48 -mt-48"></div>
-                <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h3 class="text-2xl font-black mb-6 uppercase italic tracking-widest text-rose-300">Global Landscape</h3>
-                        <p class="text-rose-100 mb-8 leading-relaxed">The FMCG industry is among the world's largest business sectors, driven by population growth, urbanization, and changing consumer lifestyles.</p>
+            <!-- Global vs India Market -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
+                <!-- GLOBAL -->
+                <div class="p-16 lg:p-24 bg-slate-950 text-white relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-12 text-rose-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-earth-americas text-[12rem]"></i>
+                    </div>
+                    <div class="relative z-10 space-y-16">
+                        <div class="space-y-4">
+                            <div class="text-rose-400 text-[10px] font-black uppercase tracking-[0.4em]">Global Landscape</div>
+                            <h3 class="text-5xl font-black uppercase tracking-tighter italic">Global Market</h3>
+                        </div>
                         
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="p-6 bg-white/5 border border-white/10 rounded-2xl">
-                                <p class="text-[10px] font-black uppercase text-rose-400 mb-1">Market (2025)</p>
-                                <p class="text-2xl font-black">$8T+</p>
+                        <div class="space-y-12">
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Market (2025)</span>
+                                <span class="text-6xl font-black text-white tracking-tighter italic">$8T+</span>
                             </div>
-                            <div class="p-6 bg-white/5 border border-white/10 rounded-2xl">
-                                <p class="text-[10px] font-black uppercase text-rose-400 mb-1">Projected (2031)</p>
-                                <p class="text-2xl font-black">$12T+</p>
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Projected (2031)</span>
+                                <span class="text-6xl font-black text-white tracking-tighter italic">$12T+</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-8">
+                            <h4 class="text-[9px] font-black text-slate-500 uppercase tracking-[0.4em]">Growth Drivers</h4>
+                            <div class="grid grid-cols-1 gap-px bg-white/10 border border-white/10 shadow-2xl">
+                                @foreach(['Rising urban population & income', 'Expansion of organized retail', 'Direct-to-consumer (D2C) growth', 'Brand innovation & sustainability'] as $driver)
+                                    <div class="px-8 py-4 bg-slate-950 flex items-center gap-6 hover:bg-rose-600 hover:text-slate-950 transition-colors cursor-default group/item">
+                                        <i class="fa-solid fa-circle-check text-rose-600 group-hover/item:text-slate-950 transition-colors"></i>
+                                        <span class="text-[10px] font-black uppercase tracking-[0.1em]">{{ $driver }}</span>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="space-y-4">
-                        <h4 class="text-sm font-black uppercase tracking-widest mb-4">Global Growth Drivers</h4>
-                        @foreach([
-                            'Rising urban population & income',
-                            'Expansion of organized retail',
-                            'Direct-to-consumer (D2C) growth',
-                            'Brand innovation & sustainability'
-                        ] as $driver)
-                            <div class="flex items-center gap-3 p-3 bg-white/5 border border-white/10 rounded-xl">
-                                <i class="fa-solid fa-check text-rose-400"></i>
-                                <span class="text-xs font-bold uppercase">{{ $driver }}</span>
+                <!-- INDIA -->
+                <div class="p-16 lg:p-24 bg-white relative overflow-hidden group border-l border-slate-200">
+                    <div class="absolute top-0 right-0 p-12 text-rose-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-industry text-[12rem]"></i>
+                    </div>
+                    <div class="relative z-10 space-y-16 text-right">
+                        <div class="space-y-4">
+                            <div class="text-rose-600 text-[10px] font-black uppercase tracking-[0.4em]">Rapid Consumption</div>
+                            <h3 class="text-5xl font-black text-slate-900 uppercase tracking-tighter italic">Indian Market</h3>
+                        </div>
+                        
+                        <div class="p-12 bg-rose-50 border-l-8 border-rose-600 shadow-sm text-right space-y-6">
+                            <p class="text-[9px] font-black text-rose-600 uppercase tracking-[0.4em] italic">Market Forecast</p>
+                            <p class="text-4xl font-black text-slate-950 uppercase italic leading-tight tracking-tighter">$500B+ Projected (2031)</p>
+                            <p class="text-[12px] font-black text-slate-500 uppercase tracking-widest italic">16% CAGR Growth</p>
+                        </div>
+
+                        <div class="space-y-8">
+                            <h4 class="text-[9px] font-black text-slate-400 uppercase tracking-[0.4em]">Growth Catalysts</h4>
+                            <div class="grid grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-sm">
+                                @foreach(['Middle-class income', 'Rural penetration', 'Quick-commerce', 'Premiumization'] as $cat)
+                                    <div class="p-6 bg-white flex items-center gap-4 group/item hover:bg-slate-950 transition-all duration-500">
+                                        <div class="w-1.5 h-1.5 bg-rose-600 group-hover/item:scale-150 transition-transform"></div>
+                                        <span class="text-[9px] font-black uppercase text-slate-600 group-hover/item:text-white tracking-[0.1em] leading-tight">{{ $cat }}</span>
+                                    </div>
+                                @endforeach
                             </div>
-                        @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- INDIA FMCG MARKET -->
-            <div class="grid md:grid-cols-2 gap-10 items-center">
-                <div class="space-y-6">
-                    <h3 class="text-3xl font-black uppercase text-slate-900 italic">India: Rapid Consumption</h3>
-                    <p class="text-slate-600 leading-relaxed font-serif">India is one of the fastest-growing FMCG markets globally, supported by strong domestic consumption and expanding retail infrastructure.</p>
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-rose-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110">$220B+</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">India Market (2025)</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-rose-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">10K+</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">Organized Brands</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-rose-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">5%</h4>
+                    <div class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">Global Share</div>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-rose-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">8.4%</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">FMCG GDP Share</p>
+                </div>
+            </div>
+
+            <!-- Segments & Innovation -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
+                <div class="p-24 bg-white space-y-16">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Future Markets</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">High-Growth <br><span class="text-rose-600">Segments.</span></h2>
+                        <div class="accent-line bg-rose-600"></div>
+                    </div>
                     
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        @foreach([
-                            ['label' => 'Market 2025', 'val' => '$220B+'],
-                            ['label' => 'Forecast 2031', 'val' => '$500B+'],
-                            ['label' => 'Growth Rate', 'val' => '16% CAGR'],
-                            ['label' => 'Organized Brands', 'val' => '10,000+']
-                        ] as $stat)
-                            <div class="p-4 bg-rose-50 border border-rose-100 rounded-2xl">
-                                <p class="text-[10px] font-black uppercase text-rose-400 mb-1">{{ $stat['label'] }}</p>
-                                <p class="text-xl font-bold text-rose-900">{{ $stat['val'] }}</p>
+                    <div class="grid grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-sm">
+                        @foreach(['Health & Organic', 'Premium Foods', 'Eco-Friendly', 'Digital Brands', 'Personal Wellness', 'D2C Models'] as $seg)
+                            <div class="p-8 bg-white text-center group/seg hover:bg-slate-950 transition-all duration-500">
+                                <p class="text-[10px] font-black uppercase text-slate-500 group-hover:text-white tracking-[0.2em] transition-colors leading-tight">{{ $seg }}</p>
                             </div>
                         @endforeach
                     </div>
                 </div>
 
-                <div class="p-8 bg-slate-900 rounded-3xl text-white relative overflow-hidden group">
-                     <div class="absolute inset-0 bg-rose-500/5"></div>
-                     <h4 class="text-lg font-black text-rose-300 uppercase italic mb-6">India Growth Catalysts</h4>
-                     <div class="space-y-4 relative z-10">
-                        @foreach([
-                            'Rising middle-class disposable income',
-                            'Rapid rural market penetration',
-                            'Expansion of e-commerce & Quick-commerce',
-                            'Premiumization & lifestyle consumption'
-                        ] as $cat)
-                            <div class="flex items-start gap-3">
-                                <i class="fa-solid fa-bolt text-rose-400 mt-1"></i>
-                                <p class="text-xs font-bold uppercase text-slate-300 leading-normal">{{ $cat }}</p>
-                            </div>
-                        @endforeach
-                     </div>
-                </div>
-            </div>
-
-            <!-- EMERGING SEGMENTS -->
-            <div class="space-y-8">
-                <h2 class="text-3xl font-black text-slate-900 uppercase italic text-center">High-Growth Segments (2026-2031)</h2>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                    @foreach(['Health & Organic', 'Premium Foods', 'Eco-Friendly', 'Digital Brands', 'Personal Wellness', 'D2C Models'] as $seg)
-                        <div class="p-6 bg-white border border-slate-200 rounded-2xl text-center shadow-sm hover:border-rose-500 hover:shadow-rose-100 hover:shadow-md transition-all">
-                             <p class="text-[10px] font-black uppercase text-slate-500">{{ $seg }}</p>
+                <div class="p-24 bg-slate-950 text-white space-y-12 relative overflow-hidden group border-l border-slate-200">
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(244,63,94,0.05),transparent)]"></div>
+                    <div class="relative z-10 space-y-16">
+                        <div class="space-y-4">
+                            <div class="text-rose-400 text-[10px] font-black uppercase tracking-[0.4em]">Future Vision</div>
+                            <h3 class="text-5xl font-black text-white uppercase tracking-tighter italic">Smart Logistics</h3>
                         </div>
-                    @endforeach
-                </div>
-            </div>
-
-            <!-- STRATEGIC IMPORTANCE -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="p-8 bg-rose-50 rounded-3xl border border-rose-100">
-                    <h2 class="text-2xl font-black text-rose-900 uppercase tracking-tight mb-8">Strategic Importance</h2>
-                    <div class="space-y-4">
-                        @foreach([
-                            'Drives consumer spending & economic activity',
-                            'Supports large-scale employment generation',
-                            'Boosts manufacturing & supply chain ecosystems',
-                            'Encourages retail and logistics growth',
-                            'Stable sector during economic fluctuations'
-                        ] as $imp)
-                        <div class="flex items-center gap-4 p-4 bg-white border border-rose-100 rounded-2xl">
-                            <i class="fa-solid fa-check-double text-rose-500"></i>
-                            <span class="text-xs font-bold uppercase text-slate-700 leading-tight">{{ $imp }}</span>
-                        </div>
-                        @endforeach
-                    </div>
-                </div>
-
-                <div class="space-y-8">
-                    <h3 class="text-3xl font-black uppercase text-slate-900 italic">Future Vision</h3>
-                    <p class="text-slate-600 leading-relaxed font-medium">The future of FMCG will be shaped by smart packaging, AI-driven analytics, and omni-channel strategies.</p>
-                    
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="p-6 bg-slate-900 text-white rounded-2xl">
-                             <i class="fa-solid fa-microchip text-rose-400 text-2xl mb-3"></i>
-                             <p class="text-[10px] font-black uppercase">AI Analytics</p>
-                        </div>
-                        <div class="p-6 bg-slate-900 text-white rounded-2xl">
-                             <i class="fa-solid fa-leaf text-rose-400 text-2xl mb-3"></i>
-                             <p class="text-[10px] font-black uppercase">Sustainable Pack</p>
+                        <p class="text-2xl text-slate-400 font-medium italic border-l-4 border-rose-600/30 pl-10 leading-relaxed uppercase tracking-tighter">
+                            The future of FMCG will be shaped by smart packaging, AI-driven analytics, and omni-channel strategies.
+                        </p>
+                        <div class="grid grid-cols-2 gap-px bg-white/5 border border-white/5 pt-12">
+                             <div class="p-8 bg-slate-950 border border-white/5 flex flex-col items-center gap-4 group/item hover:bg-rose-600 transition-all duration-500">
+                                 <i class="fa-solid fa-microchip text-rose-600 text-3xl group-hover:text-slate-950 transition-colors"></i>
+                                 <span class="text-[10px] font-black uppercase text-slate-300 group-hover:text-slate-950 tracking-[0.2em] transition-colors leading-tight">AI Analytics</span>
+                             </div>
+                             <div class="p-8 bg-slate-950 border border-white/5 flex flex-col items-center gap-4 group/item hover:bg-rose-600 transition-all duration-500">
+                                 <i class="fa-solid fa-leaf text-rose-600 text-3xl group-hover:text-slate-950 transition-colors"></i>
+                                 <span class="text-[10px] font-black uppercase text-slate-300 group-hover:text-slate-950 tracking-[0.2em] transition-colors leading-tight">Sustainable Pack</span>
+                             </div>
                         </div>
                     </div>
-                    <p class="text-xs text-slate-400 italic">India is expected to become one of the top 5 FMCG markets globally.</p>
                 </div>
             </div>
 
-            <!-- CONCLUSION (CTA) -->
-            <div class="relative bg-rose-950 text-white p-12 md:p-16 rounded-3xl text-center shadow-2xl overflow-hidden border-b-4 border-rose-500">
-                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(244,63,94,0.1),transparent)]"></div>
-                <div class="relative z-10">
-                    <h3 class="text-3xl font-bold mb-6 uppercase tracking-tight">Expand Your Consumer Reach</h3>
-                    <p class="text-xl text-rose-100 max-w-4xl mx-auto leading-relaxed mb-10">
+            <!-- Conclusion CTA -->
+            <div class="relative p-24 lg:p-32 bg-slate-950 overflow-hidden text-center shadow-3xl group">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(244,63,94,0.2),transparent)]"></div>
+                <div class="relative z-10 space-y-16">
+                    <h3 class="text-5xl md:text-[8rem] font-black text-white uppercase tracking-tighter leading-[0.85]">
+                        Global <br><span class="text-rose-600">Consumption.</span>
+                    </h3>
+                    <p class="text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium italic border-l-4 border-rose-600 pl-10 md:text-center mx-auto uppercase tracking-tighter">
                         Scale your FMCG brand across expanding retail and e-commerce networks. Join the mission to build high-efficiency manufacturing and smart distribution ecosystems.
                     </p>
-                    <a href="" class="inline-flex items-center gap-3 px-10 py-5 bg-white text-rose-900 font-black uppercase tracking-widest rounded-full hover:bg-rose-500 hover:text-white transition-all duration-300 shadow-xl group">
-                        Register for FMCG Support <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform text-rose-500"></i>
-                    </a>
+                    <div class="flex justify-center">
+                        <a href="{{ route('join.index') }}" 
+                            class="btn-sharp px-16 group !border-rose-600/30 hover:!bg-rose-600">
+                            Register for FMCG Support 
+                            <i class="fa-solid fa-arrow-right-long ml-6 group-hover:translate-x-4 transition-transform"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
 

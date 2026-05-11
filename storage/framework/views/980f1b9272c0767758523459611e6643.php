@@ -1,300 +1,240 @@
-
-
 <?php $__env->startSection('title', 'Glass Recycling'); ?>
 
 <?php $__env->startSection('content'); ?>
 
-    <!-- HERO -->
-    <section class="relative pt-32 pb-24 bg-slate-900 text-white overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-cyan-900 via-slate-900 to-black"></div>
-        <div class="absolute inset-0 opacity-10"
-            style="background-image: url('<?php echo e(asset('images/sectors/glass-recycling.jpg')); ?>'); background-size: cover; background-position: center;">
+    <!-- Architectural Hero -->
+    <section class="relative pt-64 pb-32 bg-slate-950 overflow-hidden border-b border-slate-900">
+        <!-- Visual Backdrop -->
+        <div class="absolute inset-0 opacity-20">
+            <img src="<?php echo e(asset('images/sectors/glass-recycling.jpg')); ?>" class="w-full h-full object-cover grayscale">
         </div>
+        <div class="absolute inset-0 bg-linear-to-b from-slate-950 via-slate-950/90 to-slate-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        
+        <!-- Industrial Accents -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-cyan-600 opacity-5 -skew-x-12 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-1/4 h-64 bg-cyan-600 opacity-5 skew-x-12 -translate-x-1/2"></div>
 
-        <div class="container relative z-10 text-center">
-            <h1 class="text-4xl md:text-6xl font-black uppercase mb-4 tracking-wide">
-                Glass Recycling
+        <div class="container relative z-10 text-center space-y-12">
+            <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10">
+                <span class="w-2 h-2 bg-cyan-400 animate-pulse"></span>
+                <span class="text-white text-[10px] font-black tracking-[0.4em] uppercase">Infinite Loop Protocol</span>
+            </div>
+            <h1 class="text-6xl md:text-[9rem] font-black text-white leading-[0.85] tracking-tighter uppercase">
+                Glass <br>
+                <span class="text-cyan-600">Recycling.</span>
             </h1>
-            <p class="text-lg md:text-xl text-cyan-300 font-semibold mb-2">100% Recyclable. Infinitely Reusable.</p>
-            <p class="text-slate-300 max-w-3xl mx-auto">
-                Collecting, sorting, crushing, and re-melting waste glass into reusable raw material — one of the most sustainable materials on the planet.
+            <p class="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium border-l-4 border-cyan-600 pl-10 uppercase tracking-widest italic md:text-center mx-auto">
+                Collecting, sorting, and re-melting waste glass into reusable raw material.
             </p>
         </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="py-16 bg-white">
-        <div class="container space-y-16">
+    <!-- Content Interface -->
+    <section class="py-32 bg-white relative">
+        <div class="container space-y-48">
 
-            <!-- INTRO -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl font-extrabold mb-4 text-slate-900">What is Glass Recycling?</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4">
-                        <strong>Glass recycling</strong> is the process of collecting, sorting, crushing, cleaning, and
-                        re-melting waste glass into reusable raw material for manufacturing <strong>new glass products
-                        and industrial applications</strong>.
+            <!-- Executive Summary -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200">
+                <div class="p-16 lg:p-24 bg-white space-y-12">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Circular Material Framework</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">Infinitely <br><span class="text-cyan-600">Reusable.</span></h2>
+                        <div class="accent-line bg-cyan-600"></div>
+                    </div>
+                    
+                    <div class="space-y-8 text-2xl text-slate-500 font-medium leading-relaxed italic border-l-4 border-slate-100 pl-10">
+                        <p>
+                            <strong class="text-slate-900 font-black uppercase tracking-tight">Glass Recycling</strong> is the process of collecting, sorting, crushing, cleaning, and re-melting waste glass into reusable raw material.
+                        </p>
+                        <p>
+                            Unlike many other materials, glass can be recycled 100% and infinitely without loss of quality, making it one of the most sustainable packaging and construction materials.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 gap-px bg-slate-200">
+                    <div class="p-12 bg-white space-y-8">
+                        <h4 class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">Recycling Process</h4>
+                        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-px bg-slate-200 border border-slate-200">
+                            <?php
+                                $process = [
+                                    ['icon' => 'truck-ramp-box', 'label' => 'Collection'],
+                                    ['icon' => 'filter', 'label' => 'Colour Sorting'],
+                                    ['icon' => 'hammer', 'label' => 'Cullet Crushing'],
+                                    ['icon' => 'fire', 'label' => 'Furnace Melting'],
+                                    ['icon' => 'recycle', 'label' => 'Remanufacturing'],
+                                ];
+                            ?>
+                            <?php $__currentLoopData = $process; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $step): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <div class="p-8 bg-white text-center group hover:bg-slate-950 transition-all duration-500">
+                                    <i class="fa-solid fa-<?php echo e($step['icon']); ?> text-2xl mb-4 text-cyan-600 transition-transform group-hover:scale-110"></i>
+                                    <p class="text-[8px] font-black uppercase tracking-widest text-slate-500 group-hover:text-white"><?php echo e($step['label']); ?></p>
+                                </div>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        </div>
+                    </div>
+                    <div class="relative group h-full">
+                        <div class="absolute inset-0 bg-cyan-600/10"></div>
+                        <div class="relative h-full overflow-hidden border-t border-slate-200 shadow-3xl">
+                            <img src="<?php echo e(asset('images/sectors/glass-recycling.jpg')); ?>" alt="Glass Recycling"
+                                class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Global vs India Market -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
+                <!-- GLOBAL -->
+                <div class="p-16 lg:p-24 bg-slate-950 text-white relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-12 text-cyan-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-earth-americas text-[12rem]"></i>
+                    </div>
+                    <div class="relative z-10 space-y-16">
+                        <div class="space-y-4">
+                            <div class="text-cyan-400 text-[10px] font-black uppercase tracking-[0.4em]">Global Investment</div>
+                            <h3 class="text-5xl font-black uppercase tracking-tighter italic">Global Market</h3>
+                        </div>
+                        
+                        <div class="space-y-12">
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Market Size (2025)</span>
+                                <span class="text-6xl font-black text-white tracking-tighter italic">$5.4B</span>
+                            </div>
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Projected (2033)</span>
+                                <span class="text-6xl font-black text-white tracking-tighter italic">$8.4B</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-8">
+                            <h4 class="text-[9px] font-black text-slate-500 uppercase tracking-[0.4em]">Growth Drivers</h4>
+                            <div class="grid grid-cols-1 gap-px bg-white/10 border border-white/10 shadow-2xl">
+                                <?php $__currentLoopData = ['Sustainable packaging demand', 'Circular economy regulations', 'Rising energy cost', 'Construction sector demand']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $driver): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <div class="px-8 py-4 bg-slate-950 flex items-center gap-6 hover:bg-cyan-600 hover:text-slate-950 transition-colors cursor-default group/item">
+                                        <i class="fa-solid fa-circle-check text-cyan-600 group-hover/item:text-slate-950 transition-colors"></i>
+                                        <span class="text-[10px] font-black uppercase tracking-[0.1em]"><?php echo e($driver); ?></span>
+                                    </div>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INDIA -->
+                <div class="p-16 lg:p-24 bg-white relative overflow-hidden group border-l border-slate-200">
+                    <div class="absolute top-0 right-0 p-12 text-cyan-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-industry text-[12rem]"></i>
+                    </div>
+                    <div class="relative z-10 space-y-16 text-right">
+                        <div class="space-y-4">
+                            <div class="text-cyan-600 text-[10px] font-black uppercase tracking-[0.4em]">National Momentum</div>
+                            <h3 class="text-5xl font-black text-slate-900 uppercase tracking-tighter italic">Indian Market</h3>
+                        </div>
+                        
+                        <div class="p-12 bg-cyan-50 border-l-8 border-cyan-600 shadow-sm text-right space-y-6">
+                            <p class="text-[9px] font-black text-cyan-600 uppercase tracking-[0.4em] italic">Market Value</p>
+                            <p class="text-4xl font-black text-slate-950 uppercase italic leading-tight tracking-tighter">₹8,000 Crore+ Target</p>
+                            <p class="text-[12px] font-black text-slate-500 uppercase tracking-widest italic">7–9% Annual CAGR</p>
+                        </div>
+
+                        <div class="space-y-8">
+                            <h4 class="text-[9px] font-black text-slate-400 uppercase tracking-[0.4em]">Major Hubs</h4>
+                            <div class="grid grid-cols-3 gap-px bg-slate-200 border border-slate-200 shadow-sm">
+                                <?php $__currentLoopData = ['Gujarat', 'Maharashtra', 'Rajasthan', 'Delhi NCR', 'Tamil Nadu']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $city): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <div class="p-6 bg-white flex flex-col items-center justify-center gap-4 group/item hover:bg-slate-950 transition-all duration-500 text-center">
+                                        <div class="w-1.5 h-1.5 bg-cyan-600 group-hover/item:scale-150 transition-transform"></div>
+                                        <span class="text-[9px] font-black uppercase text-slate-600 group-hover/item:text-white tracking-[0.1em] leading-tight"><?php echo e($city); ?></span>
+                                    </div>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-cyan-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110">$5.4B</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">Global Market (2025)</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-cyan-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">₹5K Cr+</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">India Market (2025)</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-cyan-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">1,200+</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">India Recyclers</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-cyan-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">7-9%</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">India CAGR</p>
+                </div>
+            </div>
+
+            <!-- Trends & Opportunities -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
+                <div class="p-24 bg-white space-y-16">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Innovation Horizons</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">Emerging <br><span class="text-cyan-600">Trends.</span></h2>
+                        <div class="accent-line bg-cyan-600"></div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 gap-4">
+                        <?php
+                            $trends = [
+                                ['icon' => 'eye', 'title' => 'Smart Optical Sorting Tech'],
+                                ['icon' => 'gem', 'title' => 'High-Purity Cullet Mfg'],
+                                ['icon' => 'hammer', 'title' => 'Glass-to-Sand Conversion'],
+                                ['icon' => 'building', 'title' => 'Construction-Grade Products'],
+                                ['icon' => 'fire', 'title' => 'Fiberglass Insulation Apps'],
+                            ];
+                        ?>
+                        <?php $__currentLoopData = $trends; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="flex items-center gap-10 p-10 bg-slate-50 group/opp hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-1 h-full bg-cyan-600 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                            <div class="w-16 h-16 border border-slate-200 flex items-center justify-center text-cyan-600 group-hover/opp:bg-cyan-600 group-hover/opp:text-white transition-all duration-500 shadow-sm">
+                                <i class="fa-solid fa-<?php echo e($item['icon']); ?> text-2xl"></i>
+                            </div>
+                            <span class="text-xl font-black uppercase text-slate-700 tracking-[0.15em] group-hover/opp:text-white transition-colors leading-tight italic"><?php echo e($item['title']); ?></span>
+                        </div>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </div>
+                </div>
+
+                <div class="p-24 bg-slate-950 text-white space-y-12 relative overflow-hidden group border-l border-slate-200 text-center flex flex-col justify-center items-center">
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(6,182,212,0.05),transparent)]"></div>
+                    <div class="relative z-10 space-y-10">
+                        <i class="fa-solid fa-wine-bottle text-[8rem] text-cyan-600/10 group-hover:text-cyan-600 transition-all duration-700"></i>
+                        <h4 class="text-5xl font-black uppercase text-white tracking-tighter italic leading-tight">Bottle-to-Bottle</h4>
+                        <p class="text-2xl text-slate-400 font-medium italic max-w-sm mx-auto uppercase tracking-tighter">
+                            High potential segments in <span class="text-white font-black tracking-tight">Construction & Packaging</span> sectors.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conclusion CTA -->
+            <div class="relative p-24 lg:p-32 bg-slate-950 overflow-hidden text-center shadow-3xl group">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(6,182,212,0.2),transparent)]"></div>
+                <div class="relative z-10 space-y-16">
+                    <h3 class="text-5xl md:text-[8rem] font-black text-white uppercase tracking-tighter leading-[0.85]">
+                        Infinite <br><span class="text-cyan-600">Loop.</span>
+                    </h3>
+                    <p class="text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium italic border-l-4 border-cyan-600 pl-10 md:text-center mx-auto uppercase tracking-tighter">
+                        Glass is 100% recyclable, infinitely reusable, making it the ultimate circular material.
                     </p>
-                    <p class="text-slate-600 leading-relaxed">
-                        Unlike many other materials, glass can be recycled <strong>100% and infinitely without loss of
-                        quality</strong>, making it one of the most sustainable packaging and construction materials.
-                    </p>
-                </div>
-
-                <img src="<?php echo e(asset('images/sectors/glass-recycling.jpg')); ?>" alt="Glass Recycling"
-                    class="w-full h-[320px] object-cover rounded-2xl shadow-lg">
-            </div>
-
-            <!-- PROCESS STEPS -->
-            <div>
-                <h2 class="text-3xl font-extrabold text-slate-900 mb-8 text-center">Glass Recycling Process</h2>
-                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
-                    <div class="p-5 rounded-2xl bg-cyan-50 border border-cyan-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-cyan-100 flex items-center justify-center">
-                            <i class="fa-solid fa-truck-ramp-box text-xl text-cyan-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Collection</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-blue-50 border border-blue-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-blue-100 flex items-center justify-center">
-                            <i class="fa-solid fa-filter text-xl text-blue-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Colour Sorting</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-amber-50 border border-amber-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-amber-100 flex items-center justify-center">
-                            <i class="fa-solid fa-hammer text-xl text-amber-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Crushing to Cullet</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-orange-50 border border-orange-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-orange-100 flex items-center justify-center">
-                            <i class="fa-solid fa-fire text-xl text-orange-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Furnace Melting</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-emerald-50 border border-emerald-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-emerald-100 flex items-center justify-center">
-                            <i class="fa-solid fa-recycle text-xl text-emerald-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Remanufacturing</h4>
+                    <div class="flex justify-center">
+                        <a href="<?php echo e(route('join.index')); ?>" 
+                            class="btn-sharp px-16 group !border-cyan-600/30 hover:!bg-cyan-600">
+                            Join Circular Economy 
+                            <i class="fa-solid fa-arrow-right-long ml-6 group-hover:translate-x-4 transition-transform"></i>
+                        </a>
                     </div>
                 </div>
-            </div>
-
-            <!-- GLOBAL vs INDIA -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-gradient-to-br from-cyan-600 to-cyan-800 text-white shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4">Global Glass Recycling Market</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li>Market Size (2025): <strong>USD 5.4 Billion</strong></li>
-                        <li>Expected to reach <strong>USD 8.4 Billion</strong> by 2033</li>
-                        <li>CAGR: <strong>5–6%</strong> annually</li>
-                    </ul>
-
-                    <h4 class="font-semibold mt-5 mb-2">Growth Drivers</h4>
-                    <ul class="list-disc pl-5 text-sm space-y-1">
-                        <li>Sustainable packaging demand</li>
-                        <li>Circular economy regulations</li>
-                        <li>Rising energy cost in glass manufacturing</li>
-                        <li>Construction sector demand</li>
-                    </ul>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-brand-accent border border-slate-200 shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4 text-brand-primary">Indian Glass Recycling Market</h3>
-                    <ul class="space-y-2 text-sm text-slate-700">
-                        <li>Market Size (2025): <strong>₹3,500–5,000 Crore+</strong></li>
-                        <li>CAGR: <strong>7–9%</strong> annually (faster than global)</li>
-                    </ul>
-
-                    <h4 class="font-semibold mt-5 mb-2">India Growth Drivers</h4>
-                    <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1">
-                        <li>Infrastructure expansion</li>
-                        <li>Packaging growth</li>
-                        <li>Hospitality & beverage sector growth</li>
-                        <li>Sustainability mandates</li>
-                    </ul>
-
-                    <h4 class="font-semibold mt-3 mb-1">2031 Projection</h4>
-                    <p class="text-sm text-slate-600">Expected to exceed <strong>₹7,000–8,000 Crore+</strong></p>
-                </div>
-
-            </div>
-
-            <!-- STATS CARDS -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-cyan-600">$5.4B</h4>
-                    <p class="text-sm text-slate-500 mt-1">Global Market (2025)</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-cyan-600">₹5K Cr+</h4>
-                    <p class="text-sm text-slate-500 mt-1">India Market (2025)</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-cyan-600">1,200+</h4>
-                    <p class="text-sm text-slate-500 mt-1">India Recyclers</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-cyan-600">7–9%</h4>
-                    <p class="text-sm text-slate-500 mt-1">India CAGR</p>
-                </div>
-            </div>
-
-            <!-- INDIA CAPACITY + GLOBAL -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">India Glass Recycling Capacity</h3>
-                    <p class="text-sm text-slate-600 mb-3">
-                        Approx. <strong>800–1,200+ glass recyclers/processors</strong> operating across organized and
-                        unorganized sectors. Significant untapped potential remains.
-                    </p>
-
-                    <h4 class="font-semibold mt-4 mb-2">Major Recycling Hubs</h4>
-                    <div class="grid grid-cols-2 gap-2">
-                        <div class="flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-map-pin text-cyan-500 text-xs"></i> Gujarat</div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-map-pin text-cyan-500 text-xs"></i> Maharashtra</div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-map-pin text-cyan-500 text-xs"></i> Rajasthan</div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-map-pin text-cyan-500 text-xs"></i> Delhi NCR</div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-map-pin text-cyan-500 text-xs"></i> Tamil Nadu</div>
-                    </div>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">Global Glass Recycling</h3>
-                    <ul class="space-y-2 text-sm text-slate-600">
-                        <li>Estimated <strong>10,000+</strong> glass recycling facilities globally</li>
-                    </ul>
-
-                    <h4 class="font-semibold mt-4 mb-2">India's Global Position</h4>
-                    <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1">
-                        <li>Emerging <strong>high-growth market</strong> in Asia-Pacific</li>
-                        <li>Asia-Pacific among <strong>fastest growing regions</strong> for recycled glass</li>
-                    </ul>
-
-                    <h4 class="font-semibold mt-4 mb-2">Key Market Drivers</h4>
-                    <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1">
-                        <li>Rising eco-friendly packaging demand</li>
-                        <li>Increasing beverage & food packaging</li>
-                        <li>Lower furnace energy cost using cullet</li>
-                        <li>Government sustainability initiatives</li>
-                        <li>Construction recycled glass aggregates</li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- TRENDS + OPPORTUNITIES -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">Emerging Trends (2026–2031)</h3>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-violet-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-eye text-violet-600 text-xs"></i></div>
-                            Smart Optical Sorting Technology
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-cyan-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-gem text-cyan-600 text-xs"></i></div>
-                            High-Purity Cullet Manufacturing
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-cubes text-amber-600 text-xs"></i></div>
-                            Glass-to-Sand Conversion Plants
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-building text-blue-600 text-xs"></i></div>
-                            Construction-Grade Recycled Glass Products
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-orange-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-fire text-orange-600 text-xs"></i></div>
-                            Fiberglass Insulation Applications
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-rose-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-paintbrush text-rose-600 text-xs"></i></div>
-                            Decorative & Specialty Glass Reuse
-                        </div>
-                    </div>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">High Potential Segments</h3>
-                    <p class="text-sm text-slate-600 mb-4">Industry opportunities across the glass recycling chain:</p>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-wine-bottle text-brand-primary text-xs"></i></div>
-                            Bottle-to-Bottle Recycling
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-building text-brand-primary text-xs"></i></div>
-                            Construction Glass Recycling
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-cubes text-brand-primary text-xs"></i></div>
-                            Glass Sand / Aggregate Production
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-paintbrush text-brand-primary text-xs"></i></div>
-                            Decorative Recycled Glass Products
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-fire text-brand-primary text-xs"></i></div>
-                            Fiberglass Manufacturing Feedstock
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-solar-panel text-brand-primary text-xs"></i></div>
-                            Solar Panel Glass Recycling
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- WHY INDIA -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-
-                <img src="<?php echo e(asset('images/sectors/glass-recycling.jpg')); ?>" alt="India Glass Recycling"
-                    class="w-full h-[300px] object-cover rounded-2xl shadow-md">
-
-                <div class="p-6 rounded-2xl bg-gradient-to-br from-cyan-600 to-cyan-800 text-white shadow-lg min-h-[300px] flex flex-col justify-center">
-                    <h3 class="text-2xl font-bold mb-4">Why India is Emerging in Glass Recycling</h3>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-2 text-sm">
-                            <i class="fa-solid fa-check-circle text-cyan-200 shrink-0"></i>
-                            Growing beverage and FMCG packaging market
-                        </div>
-                        <div class="flex items-center gap-2 text-sm">
-                            <i class="fa-solid fa-check-circle text-cyan-200 shrink-0"></i>
-                            Rapid urbanization and construction boom
-                        </div>
-                        <div class="flex items-center gap-2 text-sm">
-                            <i class="fa-solid fa-check-circle text-cyan-200 shrink-0"></i>
-                            Increasing industrial glass waste generation
-                        </div>
-                        <div class="flex items-center gap-2 text-sm">
-                            <i class="fa-solid fa-check-circle text-cyan-200 shrink-0"></i>
-                            Availability of low-cost labor and logistics
-                        </div>
-                        <div class="flex items-center gap-2 text-sm">
-                            <i class="fa-solid fa-check-circle text-cyan-200 shrink-0"></i>
-                            Strong domestic manufacturing demand
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- CONCLUSION -->
-            <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-10 rounded-2xl text-center shadow-lg">
-                <h3 class="text-3xl font-bold mb-4">Glass: The Infinite Loop</h3>
-                <p class="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                    Glass is <strong>100% recyclable, infinitely reusable</strong>, making it the ultimate circular material.
-                    With <strong>1,200+ recyclers in India</strong> and a market projected to reach <strong>₹8,000 Crore+</strong>,
-                    glass recycling represents a growing pillar of <strong>sustainable manufacturing and circular economy</strong>.
-                </p>
             </div>
 
         </div>

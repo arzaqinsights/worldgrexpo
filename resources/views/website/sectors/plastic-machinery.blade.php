@@ -1,269 +1,254 @@
 @extends('layouts.website')
 
-@section('title', 'Plastic Machinery Industry')
+@section('title', 'Plastic Machinery Industry Overview')
 
 @section('content')
 
-    <!-- HERO -->
-    <section class="relative pt-32 pb-24 bg-slate-900 text-white overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-slate-800 via-slate-900 to-black"></div>
-        <div class="absolute inset-0 opacity-10"
-            style="background-image: url('{{ asset('images/sectors/plastic-machinery.jpg') }}'); background-size: cover; background-position: center;">
+    <!-- Architectural Hero -->
+    <section class="relative pt-64 pb-32 bg-slate-950 overflow-hidden border-b border-slate-900">
+        <!-- Visual Backdrop -->
+        <div class="absolute inset-0 opacity-20">
+            <img src="{{ asset('images/sectors/plastic-machinery.jpg') }}" class="w-full h-full object-cover grayscale">
         </div>
+        <div class="absolute inset-0 bg-linear-to-b from-slate-950 via-slate-950/90 to-slate-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(79,70,229,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        
+        <!-- Industrial Accents -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-indigo-600 opacity-5 -skew-x-12 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-1/4 h-64 bg-indigo-600 opacity-5 skew-x-12 -translate-x-1/2"></div>
 
-        <div class="container relative z-10 text-center">
-            <h1 class="text-4xl md:text-6xl font-black uppercase mb-4 tracking-wide">
-                Plastic Machinery Industry
+        <div class="container relative z-10 text-center space-y-12">
+            <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10">
+                <span class="w-2 h-2 bg-indigo-400 animate-pulse"></span>
+                <span class="text-white text-[10px] font-black tracking-[0.4em] uppercase">Engineering Precision Protocol</span>
+            </div>
+            <h1 class="text-6xl md:text-[9rem] font-black text-white leading-[0.85] tracking-tighter uppercase">
+                Plastic <br>
+                <span class="text-indigo-600">Machinery.</span>
             </h1>
-            <p class="text-xl text-slate-300 max-w-3xl mx-auto">
+            <p class="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium border-l-4 border-indigo-600 pl-10 uppercase tracking-widest italic md:text-center mx-auto">
                 Industrial equipment powering the entire plastics manufacturing ecosystem — from extrusion to recycling.
             </p>
         </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="py-16 bg-white">
-        <div class="container space-y-16">
+    <!-- Content Interface -->
+    <section class="py-32 bg-white relative">
+        <div class="container space-y-48">
 
-            <!-- INTRO -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl font-extrabold mb-4 text-slate-900">What is Plastic Machinery?</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4">
-                        <strong>Plastic machinery</strong> refers to industrial equipment used for processing raw polymers
-                        into finished plastic products. These machines convert plastic granules into <strong>films, sheets,
-                        bottles, pipes, packaging materials, and molded components</strong> through processes such as
-                        extrusion, injection molding, blow molding, and printing.
-                    </p>
-                    <p class="text-slate-600 leading-relaxed">
-                        The industry is the <strong>backbone of the plastics manufacturing ecosystem</strong>, enabling
-                        large-scale production across packaging, automotive, construction, FMCG, and industrial sectors.
-                    </p>
+            <!-- Executive Summary -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200">
+                <div class="p-16 lg:p-24 bg-white space-y-12">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Machinery Value Framework</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">Ecosystem <br><span class="text-indigo-600">Backbone.</span></h2>
+                        <div class="accent-line bg-indigo-600"></div>
+                    </div>
+                    
+                    <div class="space-y-8 text-2xl text-slate-500 font-medium leading-relaxed italic border-l-4 border-slate-100 pl-10">
+                        <p>
+                            <strong class="text-slate-900 font-black uppercase tracking-tight">Plastic Machinery</strong> refers to industrial equipment used for processing raw polymers into finished products.
+                        </p>
+                        <p>
+                            These machines convert granules into films, sheets, bottles, and molded components through processes such as extrusion, injection molding, and recycling.
+                        </p>
+                    </div>
                 </div>
 
-                <img src="{{ asset('images/sectors/plastic-machinery.jpg') }}" alt="Plastic Machinery"
-                    class="w-full h-[320px] object-cover rounded-2xl shadow-lg">
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-indigo-600/10"></div>
+                    <div class="relative h-full overflow-hidden border-l border-slate-200 shadow-3xl">
+                        <img src="{{ asset('images/sectors/plastic-machinery.jpg') }}" alt="Plastic Machinery"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <div class="bg-indigo-600 text-white text-[10px] font-black px-6 py-2 uppercase tracking-[0.3em] shadow-2xl">
+                            Precision Standard
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- GLOBAL vs INDIA MARKET -->
-            <div class="grid md:grid-cols-2 gap-10">
-
+            <!-- Global vs India Market -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
                 <!-- GLOBAL -->
-                <div class="p-6 rounded-2xl bg-gradient-to-br from-brand-primary to-indigo-700 text-white shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4">Global Plastic Machinery Market</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li>Market Size (2025): <strong>~USD 42–45 Billion</strong></li>
-                        <li>Projected (2031): <strong>~USD 60–65 Billion</strong></li>
-                        <li>CAGR: <strong>~5–6%</strong></li>
-                    </ul>
+                <div class="p-16 lg:p-24 bg-slate-950 text-white relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-12 text-indigo-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-earth-americas text-[12rem]"></i>
+                    </div>
+                    <div class="relative z-10 space-y-16">
+                        <div class="space-y-4">
+                            <div class="text-indigo-400 text-[10px] font-black uppercase tracking-[0.4em]">Global Landscape</div>
+                            <h3 class="text-5xl font-black uppercase tracking-tighter italic">Global Market</h3>
+                        </div>
+                        
+                        <div class="space-y-12">
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Value (2025)</span>
+                                <span class="text-6xl font-black text-white tracking-tighter italic">$45B</span>
+                            </div>
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Projected (2031)</span>
+                                <span class="text-6xl font-black text-white tracking-tighter italic">$65B</span>
+                            </div>
+                        </div>
 
-                    <h4 class="font-semibold mt-5 mb-2">Key Growth Drivers</h4>
-                    <ul class="list-disc pl-5 text-sm space-y-1">
-                        <li>Rising demand for plastic packaging worldwide</li>
-                        <li>Growth of FMCG, e-commerce, and logistics industries</li>
-                        <li>Expansion of automotive lightweight components</li>
-                        <li>Increasing adoption of automation & Industry 4.0</li>
-                        <li>Demand for energy-efficient and high-speed machinery</li>
-                    </ul>
+                        <div class="p-8 bg-white/5 border border-white/10 shadow-2xl">
+                             <p class="text-[10px] font-black text-indigo-400 uppercase tracking-[0.4em] mb-4">Core Drivers</p>
+                             <div class="grid grid-cols-2 gap-4">
+                                @foreach(['E-commerce Pkg', 'Automotive Lightening', 'Industry 4.0', 'Energy Efficiency'] as $d)
+                                    <div class="flex items-center gap-4 group/item">
+                                        <div class="w-1.5 h-1.5 bg-indigo-600"></div>
+                                        <span class="text-[9px] font-black uppercase text-slate-400 group-hover/item:text-white transition-colors tracking-widest leading-tight">{{ $d }}</span>
+                                    </div>
+                                @endforeach
+                             </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- INDIA -->
-                <div class="p-6 rounded-2xl bg-brand-accent border border-slate-200 shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4 text-brand-primary">Indian Plastic Machinery Market</h3>
-                    <ul class="space-y-2 text-sm text-slate-700">
-                        <li>Market Size (2025): <strong>~USD 3.5–4.5 Billion</strong></li>
-                        <li>Projected (2031): <strong>~USD 6–7 Billion</strong></li>
-                        <li>CAGR: <strong>~7–8%</strong></li>
-                    </ul>
-
-                    <h4 class="font-semibold mt-5 mb-2">India Market Highlights</h4>
-                    <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1">
-                        <li>One of the fastest-growing plastic machinery markets globally</li>
-                        <li>High dependence on imports (China, Germany, Italy)</li>
-                        <li>Rapid domestic manufacturing growth under Make in India</li>
-                        <li>Strong demand from packaging, film extrusion, and recycling</li>
-                        <li>Expansion of MSME-based plastic processing units</li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- STATS CARDS -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-brand-primary">$42–45B</h4>
-                    <p class="text-sm text-slate-500 mt-1">Global Market (2025)</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-brand-primary">$3.5–4.5B</h4>
-                    <p class="text-sm text-slate-500 mt-1">India Market (2025)</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-brand-primary">5–6%</h4>
-                    <p class="text-sm text-slate-500 mt-1">Global CAGR</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-brand-primary">7–8%</h4>
-                    <p class="text-sm text-slate-500 mt-1">India CAGR</p>
-                </div>
-            </div>
-
-            <!-- GLOBAL vs INDIA SHARE -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-
-                <img src="{{ asset('images/sectors/plastic-machinery.jpg') }}" alt="Plastic Machinery India"
-                    class="w-full h-[300px] object-cover rounded-2xl shadow-md">
-
-                <div class="p-6 rounded-2xl bg-slate-900 text-white shadow-lg min-h-[300px] flex flex-col justify-center">
-                    <h3 class="text-2xl font-bold mb-4">Global vs India Market Share</h3>
-                    <ul class="list-disc pl-5 space-y-2 text-sm text-slate-300">
-                        <li>India contributes approx. <strong>8–10%</strong> of global plastic consumption</li>
-                        <li>In plastic machinery manufacturing, India contributes only <strong>3–5%</strong> globally</li>
-                        <li>High import dependency creates strong opportunity for local manufacturing</li>
-                        <li>India is emerging as a <strong>high-growth machinery production hub</strong></li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- GROWTH OUTLOOK -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">Global Growth (2026–2031)</h3>
-                    <p class="text-sm text-slate-600 mb-3">Steady <strong>5–6% CAGR</strong> growth driven by:</p>
-                    <ul class="list-disc pl-5 space-y-2 text-sm text-slate-600">
-                        <li>Smart factories and automation</li>
-                        <li>Sustainable and energy-efficient machinery</li>
-                        <li>Demand for high-speed packaging lines</li>
-                        <li>Expansion in Asia-Pacific and Africa</li>
-                    </ul>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">India Growth (2026–2031)</h3>
-                    <p class="text-sm text-slate-600 mb-3">Strong <strong>7–8% CAGR</strong> growth driven by:</p>
-                    <ul class="list-disc pl-5 space-y-2 text-sm text-slate-600">
-                        <li>Packaging industry boom (BOPP, PET, CPP, Stretch film)</li>
-                        <li>Recycling & circular economy machinery demand</li>
-                        <li>Government support for manufacturing (Make in India)</li>
-                        <li>Rising exports of plastic products</li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- KEY TYPES OF MACHINERY -->
-            <div>
-                <h2 class="text-3xl font-extrabold text-slate-900 mb-8 text-center">Key Types of Plastic Machinery</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                    <div class="p-6 rounded-2xl bg-blue-50 border border-blue-200 text-center">
-                        <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-blue-100 flex items-center justify-center">
-                            <i class="fa-solid fa-industry text-2xl text-blue-600"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-800 mb-2">Extrusion Machines</h4>
-                        <ul class="text-xs text-slate-600 space-y-1 text-left list-disc pl-5">
-                            <li>Film extrusion (BOPP, CPP, LLDPE, PET)</li>
-                            <li>Sheet extrusion</li>
-                            <li>Pipe & profile extrusion</li>
-                        </ul>
+                <div class="p-16 lg:p-24 bg-white relative overflow-hidden group border-l border-slate-200">
+                    <div class="absolute top-0 right-0 p-12 text-indigo-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-gears text-[12rem]"></i>
                     </div>
-
-                    <div class="p-6 rounded-2xl bg-violet-50 border border-violet-200 text-center">
-                        <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-violet-100 flex items-center justify-center">
-                            <i class="fa-solid fa-syringe text-2xl text-violet-600"></i>
+                    <div class="relative z-10 space-y-16 text-right">
+                        <div class="space-y-4">
+                            <div class="text-indigo-600 text-[10px] font-black uppercase tracking-[0.4em]">National Momentum</div>
+                            <h3 class="text-5xl font-black text-slate-900 uppercase tracking-tighter italic">Indian Market</h3>
                         </div>
-                        <h4 class="font-bold text-slate-800 mb-2">Injection Molding</h4>
-                        <ul class="text-xs text-slate-600 space-y-1 text-left list-disc pl-5">
-                            <li>Packaging caps</li>
-                            <li>Automotive parts</li>
-                            <li>Household goods</li>
-                        </ul>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-amber-50 border border-amber-200 text-center">
-                        <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-amber-100 flex items-center justify-center">
-                            <i class="fa-solid fa-bottle-water text-2xl text-amber-600"></i>
+                        
+                        <div class="p-12 bg-indigo-50 border-l-8 border-indigo-600 shadow-sm text-right space-y-6">
+                            <p class="text-[9px] font-black text-indigo-600 uppercase tracking-[0.4em] italic">Market Projection</p>
+                            <p class="text-4xl font-black text-slate-950 uppercase italic leading-tight tracking-tighter">$7B Target (2031)</p>
+                            <p class="text-[12px] font-black text-slate-500 uppercase tracking-widest italic">7-8% Annual CAGR Growth</p>
                         </div>
-                        <h4 class="font-bold text-slate-800 mb-2">Blow Molding</h4>
-                        <ul class="text-xs text-slate-600 space-y-1 text-left list-disc pl-5">
-                            <li>Bottles & containers</li>
-                            <li>Jerry cans</li>
-                        </ul>
-                    </div>
 
-                    <div class="p-6 rounded-2xl bg-rose-50 border border-rose-200 text-center">
-                        <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-rose-100 flex items-center justify-center">
-                            <i class="fa-solid fa-print text-2xl text-rose-600"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-800 mb-2">Printing & Converting</h4>
-                        <ul class="text-xs text-slate-600 space-y-1 text-left list-disc pl-5">
-                            <li>Rotogravure printing machines</li>
-                            <li>Flexographic printing machines</li>
-                            <li>Lamination & slitting machines</li>
-                        </ul>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-emerald-50 border border-emerald-200 text-center sm:col-span-2 lg:col-span-2">
-                        <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-emerald-100 flex items-center justify-center">
-                            <i class="fa-solid fa-recycle text-2xl text-emerald-600"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-800 mb-2">Recycling Machinery</h4>
-                        <div class="grid sm:grid-cols-3 gap-4 mt-3">
-                            <ul class="text-xs text-slate-600 space-y-1 text-left list-disc pl-5">
-                                <li>PET bottle recycling lines</li>
-                            </ul>
-                            <ul class="text-xs text-slate-600 space-y-1 text-left list-disc pl-5">
-                                <li>Plastic granulation & pelletizing systems</li>
-                            </ul>
-                            <ul class="text-xs text-slate-600 space-y-1 text-left list-disc pl-5">
-                                <li>Washing & sorting plants</li>
-                            </ul>
+                        <div class="space-y-8">
+                            <h4 class="text-[9px] font-black text-slate-400 uppercase tracking-[0.4em]">Industrial Share</h4>
+                            <div class="grid grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-sm">
+                                <div class="p-8 bg-white flex flex-col items-center justify-center gap-4 group/item hover:bg-slate-950 transition-all duration-500">
+                                    <span class="text-4xl font-black text-indigo-600 group-hover:text-white transition-colors">10%</span>
+                                    <span class="text-[9px] font-black uppercase text-slate-600 group-hover:text-white tracking-[0.1em] text-center">Global Polymer Use</span>
+                                </div>
+                                <div class="p-8 bg-white flex flex-col items-center justify-center gap-4 group/item hover:bg-slate-950 transition-all duration-500">
+                                    <span class="text-4xl font-black text-indigo-600 group-hover:text-white transition-colors">HIGH</span>
+                                    <span class="text-[9px] font-black uppercase text-slate-600 group-hover:text-white tracking-[0.1em] text-center">Import Substitution Opp</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
                 </div>
             </div>
 
-            <!-- TRANSFORMATION TRENDS -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">Industry Transformation Trends</h3>
-                    <ul class="list-disc pl-5 space-y-2 text-sm text-slate-600">
-                        <li>Automation & AI-based production lines</li>
-                        <li>Energy-efficient high-speed machines</li>
-                        <li>Recycling-integrated machinery systems</li>
-                        <li>Sustainable packaging production equipment</li>
-                        <li>Smart Industry 4.0 connected machines</li>
-                    </ul>
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-indigo-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110">~6%</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">Global CAGR</p>
                 </div>
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">At a Glance (Quick Facts)</h3>
-                    <ul class="space-y-2 text-sm text-slate-600">
-                        <li>🌍 Global market: <strong>~USD 42–45 Billion</strong> (2025)</li>
-                        <li>🇮🇳 India market: <strong>~USD 3.5–4.5 Billion</strong> (2025)</li>
-                        <li>📈 Global CAGR: <strong>~5–6%</strong></li>
-                        <li>📈 India CAGR: <strong>~7–8%</strong></li>
-                        <li>📦 India import dependency: <strong>High (40–60% in key segments)</strong></li>
-                        <li>📦 Packaging machinery = <strong>Largest segment</strong></li>
-                        <li>♻️ Recycling machinery = <strong>Fastest growing segment</strong></li>
-                    </ul>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-indigo-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">$4.5B</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">India Market (2025)</p>
                 </div>
-
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-indigo-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">8%</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">India CAGR Target</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-indigo-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">TOP</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">Engineering Hub</p>
+                </div>
             </div>
 
-            <!-- CONCLUSION -->
-            <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-10 rounded-2xl text-center shadow-lg">
-                <h3 class="text-3xl font-bold mb-4">Conclusion</h3>
-                <p class="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                    The plastic machinery industry is a <strong>high-growth global manufacturing sector</strong>
-                    driving the entire plastics value chain. India is rapidly emerging as a <strong>strong demand hub
-                    and manufacturing base</strong>, with significant opportunities in extrusion, packaging, printing,
-                    and recycling machinery.
-                </p>
+            <!-- Key Machinery Types -->
+            <div class="p-24 bg-slate-950 text-white space-y-24 relative overflow-hidden group border border-white/5 shadow-3xl">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(79,70,229,0.1),transparent)] opacity-50"></div>
+                <div class="relative z-10 text-center space-y-6">
+                    <h3 class="text-6xl font-black uppercase tracking-tighter italic">Engineering <span class="text-indigo-600">Inventory.</span></h3>
+                    <p class="text-2xl text-slate-500 font-medium italic uppercase tracking-tighter">Essential production equipment.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10 shadow-2xl relative z-10">
+                    @php
+                        $machinery = [
+                            ['icon' => 'industry', 'title' => 'Extrusion Machines', 'desc' => 'Film, Sheet, Pipe & Profile lines.'],
+                            ['icon' => 'syringe', 'title' => 'Injection Molding', 'desc' => 'Packaging caps, Automotive & Household.'],
+                            ['icon' => 'bottle-water', 'title' => 'Blow Molding', 'desc' => 'Bottles, containers & jerry cans.'],
+                            ['icon' => 'print', 'title' => 'Printing & Converting', 'desc' => 'Rotogravure & Flexographic lines.'],
+                        ];
+                    @endphp
+                    @foreach($machinery as $m)
+                        <div class="p-12 bg-slate-950 group/item hover:bg-indigo-600 transition-all duration-500">
+                            <i class="fa-solid fa-{{ $m['icon'] }} text-4xl text-indigo-600 group-hover/item:text-slate-950 mb-8 transition-colors"></i>
+                            <h4 class="text-xl font-black uppercase text-white group-hover/item:text-slate-950 mb-4 transition-colors italic">{{ $m['title'] }}</h4>
+                            <p class="text-[10px] font-black uppercase text-slate-500 group-hover/item:text-slate-900 tracking-widest leading-relaxed transition-colors italic">{{ $m['desc'] }}</p>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+
+            <!-- Opportunities & Innovation -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
+                <div class="p-24 bg-white space-y-16">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Innovation Horizons</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">Emerging <br><span class="text-indigo-600">Trends.</span></h2>
+                        <div class="accent-line bg-indigo-600"></div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 gap-4">
+                        @php
+                            $trends = [
+                                ['icon' => 'recycle', 'title' => 'Recycling Machinery Systems'],
+                                ['icon' => 'robot', 'title' => 'AI & Robotics Integration'],
+                                ['icon' => 'wifi', 'title' => 'Smart Industry 4.0 Connected Lines'],
+                                ['icon' => 'leaf', 'title' => 'Energy-Efficient High-Speed Ops'],
+                                ['icon' => 'cube', 'title' => '3D Printing & Additive Mfg Equipment'],
+                            ];
+                        @endphp
+                        @foreach($trends as $item)
+                        <div class="flex items-center gap-10 p-10 bg-slate-50 group/opp hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-1 h-full bg-indigo-600 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                            <div class="w-16 h-16 border border-slate-200 flex items-center justify-center text-indigo-600 group-hover/opp:bg-indigo-600 group-hover/opp:text-white transition-all duration-500 shadow-sm">
+                                <i class="fa-solid fa-{{ $item['icon'] }} text-2xl"></i>
+                            </div>
+                            <span class="text-xl font-black uppercase text-slate-700 tracking-[0.15em] group-hover/opp:text-white transition-colors leading-tight italic">{{ $item['title'] }}</span>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+
+                <div class="p-24 bg-slate-950 text-white space-y-12 relative overflow-hidden group border-l border-slate-200 text-center flex flex-col justify-center items-center">
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(79,70,229,0.05),transparent)]"></div>
+                    <div class="relative z-10 space-y-10">
+                        <i class="fa-solid fa-industry text-[8rem] text-indigo-600/10 group-hover:text-indigo-600 transition-all duration-700"></i>
+                        <h4 class="text-5xl font-black uppercase text-white tracking-tighter italic leading-tight">Transformation</h4>
+                        <p class="text-2xl text-slate-400 font-medium italic max-w-sm mx-auto uppercase tracking-tighter leading-relaxed">
+                            The plastic machinery industry is a <span class="text-white font-black tracking-tight">high-growth</span> global sector driving the entire value chain.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conclusion CTA -->
+            <div class="relative p-24 lg:p-32 bg-slate-950 overflow-hidden text-center shadow-3xl group">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(79,70,229,0.2),transparent)]"></div>
+                <div class="relative z-10 space-y-16">
+                    <h3 class="text-5xl md:text-[8rem] font-black text-white uppercase tracking-tighter leading-[0.85]">
+                        Smart <br><span class="text-indigo-600">Production.</span>
+                    </h3>
+                    <p class="text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium italic border-l-4 border-indigo-600 pl-10 md:text-center mx-auto uppercase tracking-tighter">
+                        India is rapidly emerging as a strong demand hub and manufacturing base for high-end plastic machinery. Join the global production standard.
+                    </p>
+                    <div class="flex justify-center">
+                        <a href="{{ route('join.index') }}" 
+                            class="btn-sharp px-16 group !border-indigo-600/30 hover:!bg-indigo-600">
+                            Partner for Production 
+                            <i class="fa-solid fa-arrow-right-long ml-6 group-hover:translate-x-4 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
 
         </div>

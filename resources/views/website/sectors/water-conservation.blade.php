@@ -1,349 +1,270 @@
 @extends('layouts.website')
 
-@section('title', 'Water Conservation')
+@section('title', 'Water Conservation Industry')
 
 @section('content')
 
-    <!-- HERO -->
-    <section class="relative pt-32 pb-24 bg-slate-900 text-white overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-blue-900 via-slate-900 to-black"></div>
-        <div class="absolute inset-0 opacity-10"
-            style="background-image: url('{{ asset('images/sectors/water-conservation.jpg') }}'); background-size: cover; background-position: center;">
+    <!-- Architectural Hero -->
+    <section class="relative pt-64 pb-32 bg-slate-950 overflow-hidden border-b border-slate-900">
+        <!-- Visual Backdrop -->
+        <div class="absolute inset-0 opacity-20">
+            <img src="{{ asset('images/sectors/water-conservation.jpg') }}" class="w-full h-full object-cover grayscale">
         </div>
+        <div class="absolute inset-0 bg-linear-to-b from-slate-950 via-slate-950/90 to-slate-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        
+        <!-- Industrial Accents -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-blue-600 opacity-5 -skew-x-12 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-1/4 h-64 bg-blue-600 opacity-5 skew-x-12 -translate-x-1/2"></div>
 
-        <div class="container relative z-10 text-center">
-            <h1 class="text-4xl md:text-6xl font-black uppercase mb-4 tracking-wide">
-                Water Conservation
+        <div class="container relative z-10 text-center space-y-12">
+            <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10">
+                <span class="w-2 h-2 bg-blue-400 animate-pulse"></span>
+                <span class="text-white text-[10px] font-black tracking-[0.4em] uppercase">Hydrological Resource Protocol</span>
+            </div>
+            <h1 class="text-6xl md:text-[9rem] font-black text-white leading-[0.85] tracking-tighter uppercase">
+                Water <br>
+                <span class="text-blue-600">Conservation.</span>
             </h1>
-            <p class="text-lg md:text-xl text-blue-300 font-semibold mb-2">Preserving Our Most Vital Resource</p>
-            <p class="text-slate-300 max-w-3xl mx-auto">
-                Efficient management, preservation, and sustainable use of water resources to reduce wastage and ensure long-term sustainability.
+            <p class="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium border-l-4 border-blue-600 pl-10 uppercase tracking-widest italic md:text-center mx-auto">
+                Preserving our most vital resource through efficient management and preservation.
             </p>
         </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="py-16 bg-white">
-        <div class="container space-y-16">
+    <!-- Content Interface -->
+    <section class="py-32 bg-white relative">
+        <div class="container space-y-48">
 
-            <!-- INTRO -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl font-extrabold mb-4 text-slate-900">What is Water Conservation?</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4">
-                        <strong>Water Conservation</strong> refers to the efficient management, preservation, and sustainable use
-                        of water resources to <strong>reduce wastage, enhance availability, and ensure long-term environmental
-                        and economic sustainability</strong>.
+            <!-- Executive Summary -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200">
+                <div class="p-16 lg:p-24 bg-white space-y-12">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Aqueous Optimization Architecture</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic text-slate-950">Resource <br><span class="text-blue-600">Preservation.</span></h2>
+                        <div class="accent-line bg-blue-600"></div>
+                    </div>
+                    
+                    <div class="space-y-8 text-2xl text-slate-500 font-medium leading-relaxed italic border-l-4 border-slate-100 pl-10">
+                        <p>
+                            <strong class="text-slate-900 font-black uppercase tracking-tight">Water Conservation</strong> refers to the efficient management and sustainable use of water resources to reduce wastage.
+                        </p>
+                        <p>
+                            It involves strategic practices and technologies aimed at protecting freshwater resources while meeting the growing needs of industries and ecosystems.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-px bg-slate-200 shadow-3xl">
+                    @php
+                        $inclusions = [
+                            ['icon' => 'cloud-rain', 'label' => 'Rainwater Harvesting', 'color' => 'blue'],
+                            ['icon' => 'recycle', 'label' => 'Wastewater Reuse', 'color' => 'cyan'],
+                            ['icon' => 'seedling', 'label' => 'Efficient Irrigation', 'color' => 'emerald'],
+                            ['icon' => 'industry', 'label' => 'Industrial Recycling', 'color' => 'indigo'],
+                            ['icon' => 'microchip', 'label' => 'Smart Technologies', 'color' => 'violet'],
+                            ['icon' => 'water', 'label' => 'Groundwater Recharge', 'color' => 'teal'],
+                        ];
+                    @endphp
+                    @foreach($inclusions as $inc)
+                        <div class="p-10 bg-white flex flex-col items-center justify-center text-center group hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                             <div class="absolute top-0 left-0 w-1 h-full bg-{{ $inc['color'] }}-600 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                            <i class="fa-solid fa-{{ $inc['icon'] }} text-4xl mb-6 text-slate-200 group-hover:text-{{ $inc['color'] }}-600 transition-all duration-500"></i>
+                            <p class="text-[9px] font-black uppercase tracking-[0.2em] text-slate-400 group-hover:text-white transition-colors italic leading-tight">{{ $inc['label'] }}</p>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+
+            <!-- Global vs India Market -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
+                <!-- GLOBAL -->
+                <div class="p-16 lg:p-24 bg-slate-950 text-white relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-12 text-blue-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-earth-americas text-[12rem]"></i>
+                    </div>
+                    <div class="relative z-10 space-y-16">
+                        <div class="space-y-4">
+                            <div class="text-blue-400 text-[10px] font-black uppercase tracking-[0.4em]">International Value</div>
+                            <h3 class="text-5xl font-black uppercase tracking-tighter italic">Global Market</h3>
+                        </div>
+                        
+                        <div class="space-y-12">
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Value (2025)</span>
+                                <span class="text-6xl font-black text-white tracking-tighter italic">$350B+</span>
+                            </div>
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Projected (2035)</span>
+                                <span class="text-6xl font-black text-blue-500 tracking-tighter italic">$600B+</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-8">
+                            <h4 class="text-[9px] font-black text-slate-500 uppercase tracking-[0.4em]">Market Drivers</h4>
+                            <div class="grid grid-cols-2 gap-px bg-white/10 border border-white/10 shadow-2xl">
+                                @foreach(['Water Scarcity', 'Climate Change', 'Industrial Demand', 'Urban Growth'] as $driver)
+                                    <div class="p-8 bg-slate-950 text-center text-[10px] font-black uppercase tracking-[0.1em] text-slate-400 hover:bg-blue-600 hover:text-slate-950 transition-all cursor-default">{{ $driver }}</div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INDIA -->
+                <div class="p-16 lg:p-24 bg-white relative overflow-hidden group border-l border-slate-200">
+                    <div class="absolute top-0 right-0 p-12 text-blue-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-industry text-[12rem]"></i>
+                    </div>
+                    <div class="relative z-10 space-y-16 text-right">
+                        <div class="space-y-4">
+                            <div class="text-blue-600 text-[10px] font-black uppercase tracking-[0.4em]">National Strategy</div>
+                            <h3 class="text-5xl font-black text-slate-950 uppercase tracking-tighter italic">Indian Market</h3>
+                        </div>
+                        
+                        <div class="space-y-12">
+                            <div class="flex items-end justify-between border-b border-slate-100 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-400 tracking-[0.3em]">Value (2025)</span>
+                                <span class="text-6xl font-black text-slate-950 tracking-tighter italic">₹80K Cr+</span>
+                            </div>
+                            <div class="flex items-end justify-between border-b border-slate-100 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-400 tracking-[0.3em]">Annual CAGR</span>
+                                <span class="text-6xl font-black text-blue-600 tracking-tighter italic">15%</span>
+                            </div>
+                            <div class="p-12 bg-blue-50 border-l-8 border-blue-600 shadow-sm text-right">
+                                <p class="text-[9px] font-black text-blue-600 uppercase tracking-[0.4em] mb-4 italic">Projection (2031)</p>
+                                <p class="text-5xl font-black text-slate-950 uppercase italic leading-tight tracking-tighter">₹1.5 Lakh Cr+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-blue-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110">$350B+</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">Global Market</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-blue-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">₹80K Cr</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">India Market</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-blue-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">$600B</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">Global 2035</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-blue-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">12-15%</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">India Growth</p>
+                </div>
+            </div>
+
+            <!-- Trends & Opportunities -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
+                <div class="p-24 bg-slate-950 text-white space-y-16">
+                    <h3 class="text-5xl font-black uppercase tracking-tighter italic text-blue-500 border-l-8 border-blue-600 pl-10">Emerging Trends</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-px bg-white/5 border border-white/5">
+                        @foreach([
+                            ['icon' => 'gauge-high', 'label' => 'Smart Metering'],
+                            ['icon' => 'brain', 'label' => 'AI Monitoring'],
+                            ['icon' => 'droplet-slash', 'label' => 'Zero Liquid Dis.'],
+                            ['icon' => 'recycle', 'label' => 'Adv. Reuse Tech'],
+                            ['icon' => 'filter', 'label' => 'Sustainable Desal.'],
+                            ['icon' => 'building', 'label' => 'Water Positive'],
+                        ] as $trend)
+                            <div class="p-10 bg-slate-950 group/item hover:bg-blue-600 transition-all duration-500 relative overflow-hidden text-center">
+                                <div class="absolute top-0 left-0 w-1 h-full bg-white scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                                <i class="fa-solid fa-{{ $trend['icon'] }} text-3xl mb-6 text-blue-600 group-hover/item:text-slate-950 transition-colors"></i>
+                                <p class="text-[12px] font-black uppercase text-slate-400 group-hover/item:text-slate-950 tracking-[0.2em] leading-tight transition-colors italic">{{ $trend['label'] }}</p>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+
+                <div class="p-24 bg-white space-y-16 border-l border-slate-200">
+                    <h3 class="text-5xl font-black uppercase tracking-tighter italic text-slate-950 border-l-8 border-slate-950 pl-10">High Potential</h3>
+                    <div class="space-y-px bg-slate-200 border border-slate-200 shadow-sm">
+                        @foreach([
+                            ['icon' => 'building', 'label' => 'Treatment Infrastructure'],
+                            ['icon' => 'microchip', 'label' => 'Smart Tech Solutions'],
+                            ['icon' => 'recycle', 'label' => 'Industrial Recycling'],
+                            ['icon' => 'leaf', 'label' => 'ESG Consulting'],
+                            ['icon' => 'cloud-rain', 'label' => 'Rainwater Harvesting'],
+                            ['icon' => 'water', 'label' => 'Wastewater Mgmt'],
+                        ] as $opp)
+                        <div class="flex items-center gap-10 p-10 bg-white group/opp hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-1 h-full bg-blue-600 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                            <i class="fa-solid fa-{{ $opp['icon'] }} text-2xl text-blue-600 group-hover/opp:text-white transition-colors"></i>
+                            <span class="text-xl font-black uppercase text-slate-700 tracking-[0.15em] group-hover/opp:text-white transition-colors leading-tight italic">{{ $opp['label'] }}</span>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+
+            <!-- Future Roadmap -->
+            <div class="grid lg:grid-cols-2 gap-32 items-center">
+                <div class="space-y-16">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Systemic Aqueous Architecture</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic text-slate-950">Future <br><span class="text-blue-600">Evolution.</span></h2>
+                        <div class="accent-line bg-blue-600"></div>
+                    </div>
+                    <div class="space-y-px bg-slate-200 border border-slate-200 shadow-3xl">
+                        @foreach([
+                            'Transformation into strategic business priority',
+                            'Integration with Sustainability Strategy',
+                            'Manufacturing Operations optimization',
+                            'Supply Chain Management synergy',
+                            'ESG Reporting and transparency mandates'
+                        ] as $item)
+                        <div class="flex items-center gap-10 p-10 bg-white group hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                             <div class="absolute top-0 left-0 w-1 h-full bg-blue-600 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                            <i class="fa-solid fa-check text-blue-600 group-hover:text-white transition-colors"></i>
+                            <span class="text-[14px] font-black uppercase text-slate-700 group-hover:text-white tracking-[0.2em] transition-colors leading-tight italic">{{ $item }}</span>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+
+                <div class="p-16 lg:p-24 bg-slate-950 text-white space-y-16 relative overflow-hidden group shadow-3xl border border-white/5">
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(37,99,235,0.05),transparent)]"></div>
+                    <div class="relative z-10 space-y-12">
+                         <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10 text-blue-400 text-[10px] font-black uppercase tracking-[0.4em]">
+                            Sector Maturity
+                        </div>
+                        <h4 class="text-6xl font-black uppercase tracking-tighter italic text-blue-600">Strategic <br><span class="text-white">Continuity.</span></h4>
+                        <p class="text-2xl text-slate-400 font-medium italic border-l-8 border-blue-600/30 pl-10 leading-relaxed uppercase tracking-tighter">
+                            Water conservation is no longer optional — it is essential for business continuity.
+                        </p>
+                        <div class="grid grid-cols-2 gap-px bg-white/5 pt-12 border border-white/10">
+                             @foreach(['ESG COMPLIANT', 'ZLD SYSTEMS', 'SMART WATER', 'REUSE HUB'] as $tag)
+                                <span class="p-8 bg-slate-950 border border-white/5 text-[10px] font-black uppercase tracking-[0.4em] text-blue-300 text-center hover:bg-blue-600 hover:text-slate-950 transition-all cursor-default">{{ $tag }}</span>
+                             @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conclusion CTA -->
+            <div class="relative p-24 lg:p-32 bg-slate-950 overflow-hidden text-center shadow-3xl group">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(37,99,235,0.2),transparent)]"></div>
+                <div class="relative z-10 space-y-16">
+                    <h3 class="text-5xl md:text-[8rem] font-black text-white uppercase tracking-tighter leading-[0.85]">
+                        The Aqueous <br><span class="text-blue-600">Standard.</span>
+                    </h3>
+                    <p class="text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium italic border-l-4 border-blue-600 pl-10 md:text-center mx-auto uppercase tracking-tighter">
+                        Water conservation is essential for ensuring long-term socio-economic development in a water-stressed world.
                     </p>
-                    <p class="text-slate-600 leading-relaxed">
-                        It involves strategic practices, technologies, and policies aimed at <strong>protecting freshwater
-                        resources</strong> while meeting the growing needs of industries, agriculture, communities,
-                        and ecosystems.
-                    </p>
-                </div>
-
-                <img src="{{ asset('images/sectors/water-conservation.jpg') }}" alt="Water Conservation"
-                    class="w-full h-[320px] object-cover rounded-2xl shadow-lg">
-            </div>
-
-            <!-- INCLUDES -->
-            <div>
-                <h2 class="text-3xl font-extrabold text-slate-900 mb-8 text-center">Water Conservation Includes</h2>
-                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
-                    <div class="p-5 rounded-2xl bg-blue-50 border border-blue-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-blue-100 flex items-center justify-center">
-                            <i class="fa-solid fa-cloud-rain text-xl text-blue-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Rainwater Harvesting</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-cyan-50 border border-cyan-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-cyan-100 flex items-center justify-center">
-                            <i class="fa-solid fa-recycle text-xl text-cyan-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Wastewater Treatment & Reuse</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-emerald-50 border border-emerald-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-emerald-100 flex items-center justify-center">
-                            <i class="fa-solid fa-seedling text-xl text-emerald-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Efficient Irrigation Systems</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-indigo-50 border border-indigo-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-indigo-100 flex items-center justify-center">
-                            <i class="fa-solid fa-industry text-xl text-indigo-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Industrial Water Recycling</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-violet-50 border border-violet-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-violet-100 flex items-center justify-center">
-                            <i class="fa-solid fa-microchip text-xl text-violet-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Smart Water Technologies</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-teal-50 border border-teal-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-teal-100 flex items-center justify-center">
-                            <i class="fa-solid fa-arrow-down text-xl text-teal-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Groundwater Recharge</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-amber-50 border border-amber-200 text-center sm:col-span-2 lg:col-span-2">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-amber-100 flex items-center justify-center">
-                            <i class="fa-solid fa-magnifying-glass text-xl text-amber-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Leak Detection & Loss Prevention</h4>
+                    <div class="flex justify-center">
+                        <a href="{{ route('join.index') }}" 
+                            class="btn-sharp px-16 group !border-blue-600/30 hover:!bg-blue-600">
+                            Register for Water Support 
+                            <i class="fa-solid fa-arrow-right-long ml-6 group-hover:translate-x-4 transition-transform"></i>
+                        </a>
                     </div>
                 </div>
-            </div>
-
-            <!-- WHY IT MATTERS -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-
-                <div class="p-6 rounded-2xl bg-blue-700 text-white shadow-lg min-h-[320px] flex flex-col justify-center">
-                    <h3 class="text-2xl font-bold mb-5">Why Water Conservation Matters</h3>
-                    <p class="text-sm text-blue-100 mb-4">
-                        Water is one of the most critical natural resources for human survival, industrial operations,
-                        agriculture, and ecosystem balance. Sustainable water management is a strategic necessity.
-                    </p>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3 text-sm">
-                            <i class="fa-solid fa-check-circle text-blue-200 shrink-0"></i>
-                            Sustainable Resource Availability
-                        </div>
-                        <div class="flex items-center gap-3 text-sm">
-                            <i class="fa-solid fa-check-circle text-blue-200 shrink-0"></i>
-                            Reduced Water Costs
-                        </div>
-                        <div class="flex items-center gap-3 text-sm">
-                            <i class="fa-solid fa-check-circle text-blue-200 shrink-0"></i>
-                            Improved Operational Efficiency
-                        </div>
-                        <div class="flex items-center gap-3 text-sm">
-                            <i class="fa-solid fa-check-circle text-blue-200 shrink-0"></i>
-                            Enhanced Environmental Protection
-                        </div>
-                        <div class="flex items-center gap-3 text-sm">
-                            <i class="fa-solid fa-check-circle text-blue-200 shrink-0"></i>
-                            Lower Business Risk
-                        </div>
-                        <div class="flex items-center gap-3 text-sm">
-                            <i class="fa-solid fa-check-circle text-blue-200 shrink-0"></i>
-                            Stronger Regulatory Compliance
-                        </div>
-                    </div>
-                </div>
-
-                <img src="{{ asset('images/sectors/water-conservation.jpg') }}" alt="Water Conservation Importance"
-                    class="w-full h-[320px] object-cover rounded-2xl shadow-md">
-
-            </div>
-
-            <!-- GLOBAL vs INDIA -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 text-white shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4">Global Water Conservation Market</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li>Market Size (2025): <strong>USD 350+ Billion</strong></li>
-                        <li>Expected to exceed <strong>USD 600 Billion</strong> by 2035</li>
-                    </ul>
-
-                    <h4 class="font-semibold mt-5 mb-2">Growth Drivers</h4>
-                    <ul class="list-disc pl-5 text-sm space-y-1">
-                        <li>Increasing water scarcity</li>
-                        <li>Climate change impact</li>
-                        <li>Rising industrial demand</li>
-                        <li>Urban population growth</li>
-                        <li>Government sustainability regulations</li>
-                    </ul>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-brand-accent border border-slate-200 shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4 text-brand-primary">India Water Conservation Market</h3>
-                    <ul class="space-y-2 text-sm text-slate-700">
-                        <li>Market Size (2025): <strong>₹80,000+ Crore</strong></li>
-                        <li>Rapid investments in infrastructure, treatment & smart systems</li>
-                    </ul>
-
-                    <h4 class="font-semibold mt-5 mb-2">India Growth Forecast (2026–2031)</h4>
-                    <ul class="text-sm text-slate-600 space-y-1">
-                        <li>Expected CAGR: <strong>12–15%</strong> annually</li>
-                        <li>Projected to exceed <strong>₹1.5 Lakh Crore</strong> by 2031</li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- STATS CARDS -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-blue-600">$350B+</h4>
-                    <p class="text-sm text-slate-500 mt-1">Global Market (2025)</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-blue-600">₹80K Cr+</h4>
-                    <p class="text-sm text-slate-500 mt-1">India Market (2025)</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-blue-600">$600B+</h4>
-                    <p class="text-sm text-slate-500 mt-1">Global by 2035</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-blue-600">12–15%</h4>
-                    <p class="text-sm text-slate-500 mt-1">India CAGR</p>
-                </div>
-            </div>
-
-            <!-- KEY AREAS -->
-            <div>
-                <h2 class="text-3xl font-extrabold text-slate-900 mb-8 text-center">Key Areas of Water Conservation</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                    <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                        <div class="w-12 h-12 mb-4 rounded-full bg-blue-100 flex items-center justify-center">
-                            <i class="fa-solid fa-industry text-xl text-blue-600"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-800 mb-2">Industrial Water Management</h4>
-                        <p class="text-xs text-slate-600">Optimizing water use in manufacturing and industrial processes.</p>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                        <div class="w-12 h-12 mb-4 rounded-full bg-emerald-100 flex items-center justify-center">
-                            <i class="fa-solid fa-seedling text-xl text-emerald-600"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-800 mb-2">Agricultural Water Efficiency</h4>
-                        <p class="text-xs text-slate-600">Reducing water consumption through smart irrigation and precision farming.</p>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                        <div class="w-12 h-12 mb-4 rounded-full bg-violet-100 flex items-center justify-center">
-                            <i class="fa-solid fa-city text-xl text-violet-600"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-800 mb-2">Urban Water Infrastructure</h4>
-                        <p class="text-xs text-slate-600">Developing sustainable city-wide water systems and supply networks.</p>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                        <div class="w-12 h-12 mb-4 rounded-full bg-cyan-100 flex items-center justify-center">
-                            <i class="fa-solid fa-recycle text-xl text-cyan-600"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-800 mb-2">Wastewater Recycling</h4>
-                        <p class="text-xs text-slate-600">Treating and reusing water for secondary applications.</p>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm sm:col-span-2 lg:col-span-2">
-                        <div class="w-12 h-12 mb-4 rounded-full bg-teal-100 flex items-center justify-center">
-                            <i class="fa-solid fa-water text-xl text-teal-600"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-800 mb-2">Groundwater Preservation</h4>
-                        <p class="text-xs text-slate-600">Replenishing aquifers and protecting underground water reserves.</p>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- TRENDS + OPPORTUNITIES -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">Emerging Trends (2026–2031)</h3>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-gauge-high text-blue-600 text-xs"></i></div>
-                            Smart Water Metering Systems
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-violet-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-brain text-violet-600 text-xs"></i></div>
-                            AI-Based Water Monitoring Platforms
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-droplet-slash text-emerald-600 text-xs"></i></div>
-                            Zero Liquid Discharge (ZLD) Systems
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-cyan-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-recycle text-cyan-600 text-xs"></i></div>
-                            Advanced Wastewater Reuse Technologies
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-filter text-amber-600 text-xs"></i></div>
-                            Sustainable Desalination Solutions
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-sky-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-building text-sky-600 text-xs"></i></div>
-                            Water Positive Corporate Strategies
-                        </div>
-                    </div>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">Business Opportunities</h3>
-                    <p class="text-sm text-slate-600 mb-4">Organizations can leverage water conservation through:</p>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-building text-brand-primary text-xs"></i></div>
-                            Water Treatment Infrastructure
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-microchip text-brand-primary text-xs"></i></div>
-                            Smart Water Technology Solutions
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-recycle text-brand-primary text-xs"></i></div>
-                            Industrial Recycling Systems
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-leaf text-brand-primary text-xs"></i></div>
-                            ESG & Sustainability Consulting
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-cloud-rain text-brand-primary text-xs"></i></div>
-                            Rainwater Harvesting Projects
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-water text-brand-primary text-xs"></i></div>
-                            Wastewater Management Services
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- FUTURE -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-
-                <img src="{{ asset('images/sectors/water-conservation.jpg') }}" alt="Water Conservation Future"
-                    class="w-full h-[300px] object-cover rounded-2xl shadow-md">
-
-                <div class="p-6 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 text-white shadow-lg min-h-[300px] flex flex-col justify-center">
-                    <h3 class="text-2xl font-bold mb-4">Future of Water Conservation</h3>
-                    <p class="text-sm text-blue-100 mb-4">
-                        Water conservation is transforming into a strategic business and environmental priority.
-                        Forward-looking organizations are embedding water management into:
-                    </p>
-                    <div class="grid grid-cols-2 gap-3">
-                        <div class="flex items-center gap-2 text-sm">
-                            <i class="fa-solid fa-leaf text-blue-200"></i> Sustainability Strategy
-                        </div>
-                        <div class="flex items-center gap-2 text-sm">
-                            <i class="fa-solid fa-industry text-blue-200"></i> Manufacturing Ops
-                        </div>
-                        <div class="flex items-center gap-2 text-sm">
-                            <i class="fa-solid fa-link text-blue-200"></i> Supply Chain Mgmt
-                        </div>
-                        <div class="flex items-center gap-2 text-sm">
-                            <i class="fa-solid fa-chart-line text-blue-200"></i> ESG Reporting
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- CONCLUSION -->
-            <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-10 rounded-2xl text-center shadow-lg">
-                <h3 class="text-3xl font-bold mb-4">Why Water Conservation is Critical</h3>
-                <p class="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                    Water conservation is no longer optional — it is <strong>essential for ensuring business continuity</strong>,
-                    environmental responsibility, and <strong>long-term socio-economic development</strong> in a water-stressed world.
-                </p>
             </div>
 
         </div>

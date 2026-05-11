@@ -25,25 +25,54 @@
 
 @layer base {
     body {
-        @apply bg-[#fdfdfd] text-slate-900 antialiased selection:bg-brand-accent selection:text-brand-primary-dark;
+        @apply bg-[#ffffff] text-slate-900 antialiased selection:bg-brand-accent selection:text-brand-primary-dark;
+    }
+    
+    /* Global Sharp Edges Override */
+    * {
+        border-radius: 0 !important;
     }
 }
 
 @layer components {
-    .glass-panel {
-        @apply bg-white/70 backdrop-blur-md border border-white/20;
+    .sharp-panel {
+        @apply bg-white border border-slate-200 shadow-sm;
     }
-    .glass-card {
-        @apply bg-white/40 backdrop-blur-lg border border-white/30;
+    
+    .sharp-card {
+        @apply bg-white border border-slate-100 hover:border-brand-primary/20 transition-colors duration-300;
     }
+
+    .btn-sharp {
+        @apply inline-flex items-center justify-center px-8 py-4 bg-brand-primary text-white font-bold text-xs uppercase tracking-widest hover:bg-brand-primary-dark transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed;
+    }
+
+    .btn-sharp-outline {
+        @apply inline-flex items-center justify-center px-8 py-4 border-2 border-brand-primary text-brand-primary font-bold text-xs uppercase tracking-widest hover:bg-brand-primary hover:text-white transition-all duration-300;
+    }
+
+    .section-heading {
+        @apply relative mb-12;
+    }
+    
+    .section-heading h2 {
+        @apply text-3xl md:text-4xl font-extrabold text-slate-900 uppercase tracking-tighter leading-none;
+    }
+    
+    .section-heading .subtitle {
+        @apply text-brand-primary font-black text-xs uppercase tracking-[0.3em] mb-4 block;
+    }
+
+    .accent-line {
+        @apply w-12 h-1.5 bg-brand-accent mt-4;
+    }
+
     .premium-gradient {
         @apply bg-linear-to-br from-brand-primary to-brand-primary-dark;
     }
-    .accent-gradient {
-        @apply bg-linear-to-r from-brand-accent to-[#d4ef00];
-    }
+
     .section-padding {
-        @apply py-15 md:py-20;
+        @apply py-18 md:py-22;
     }
 }
 
@@ -53,11 +82,11 @@
 
 /* Custom Scrollbar for Premium Feel */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
 }
 ::-webkit-scrollbar-track {
-    @apply bg-slate-100;
+    @apply bg-slate-50;
 }
 ::-webkit-scrollbar-thumb {
-    @apply bg-brand-primary/20 rounded-full hover:bg-brand-primary/40 transition-colors;
+    @apply bg-brand-primary hover:bg-brand-primary-dark transition-colors;
 }

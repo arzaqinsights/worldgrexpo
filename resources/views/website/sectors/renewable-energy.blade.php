@@ -4,280 +4,255 @@
 
 @section('content')
 
-    <!-- HERO -->
-    <section class="relative pt-32 pb-24 bg-slate-900 text-white overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-emerald-900 via-slate-900 to-black"></div>
-        <div class="absolute inset-0 opacity-10"
-            style="background-image: url('{{ asset('images/sectors/renewable-energy.png') }}'); background-size: cover; background-position: center;">
+    <!-- Architectural Hero -->
+    <section class="relative pt-64 pb-32 bg-slate-950 overflow-hidden border-b border-slate-900">
+        <!-- Visual Backdrop -->
+        <div class="absolute inset-0 opacity-20">
+            <img src="{{ asset('images/sectors/renewable-energy.png') }}" class="w-full h-full object-cover grayscale">
         </div>
+        <div class="absolute inset-0 bg-linear-to-b from-slate-950 via-slate-950/90 to-slate-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        
+        <!-- Industrial Accents -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-emerald-600 opacity-5 -skew-x-12 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-1/4 h-64 bg-emerald-600 opacity-5 skew-x-12 -translate-x-1/2"></div>
 
-        <div class="container relative z-10 text-center">
-            <h1 class="text-4xl md:text-6xl font-black uppercase mb-4 tracking-wide">
-                Renewable Energy
+        <div class="container relative z-10 text-center space-y-12">
+            <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10">
+                <span class="w-2 h-2 bg-emerald-400 animate-pulse"></span>
+                <span class="text-white text-[10px] font-black tracking-[0.4em] uppercase">Sustainable Power Protocol</span>
+            </div>
+            <h1 class="text-6xl md:text-[9rem] font-black text-white leading-[0.85] tracking-tighter uppercase">
+                Renewable <br>
+                <span class="text-emerald-600">Energy.</span>
             </h1>
-            <p class="text-lg md:text-2xl text-emerald-300 font-semibold mb-2">Solar & Wind Energy</p>
-            <p class="text-slate-300 text-lg max-w-2xl mx-auto">
-                A Complete Global & India Market Snapshot
+            <p class="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium border-l-4 border-emerald-600 pl-10 uppercase tracking-widest italic md:text-center mx-auto">
+                Clean and sustainable power generation through Solar and Wind technology.
             </p>
         </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="py-16 bg-white">
-        <div class="container space-y-16">
+    <!-- Content Interface -->
+    <section class="py-32 bg-white relative">
+        <div class="container space-y-48">
 
-            <!-- INTRO -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl font-extrabold mb-4 text-slate-900">What is Renewable Energy?</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4">
-                        <strong>Renewable Energy</strong> refers to energy generated from naturally replenishing sources
-                        such as <strong>sunlight (Solar), wind, water, biomass, and geothermal heat</strong>.
-                        These sources are sustainable, eco-friendly, and play a critical role in reducing
-                        greenhouse gas emissions and combating climate change.
-                    </p>
-                    <p class="text-slate-600 leading-relaxed">
-                        Among all sources, <strong>Solar Energy</strong> and <strong>Wind Energy</strong> are the most
-                        widely deployed and fastest-growing technologies globally due to falling costs and strong
-                        government policies.
-                    </p>
-                </div>
-
-                <img src="{{ asset('images/sectors/renewable-energy.png') }}" alt="Renewable Energy"
-                    class="w-full h-[320px] object-cover rounded-2xl shadow-lg">
-            </div>
-
-            <!-- GLOBAL MARKET -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-gradient-to-br from-emerald-600 to-emerald-800 text-white shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4">Global Renewable Energy Market</h3>
-                    <p class="text-sm text-emerald-100 mb-4">
-                        The global renewable energy industry is one of the fastest-growing sectors in the world,
-                        driven by energy transition and net-zero commitments.
-                    </p>
-                    <ul class="space-y-2 text-sm">
-                        <li><strong>USD 1.6–1.8 Trillion</strong> — Global Market (2025)</li>
-                        <li><strong>USD 3.5–4.0 Trillion</strong> — Projected (2031)</li>
-                        <li><strong>CAGR: 12%–15%</strong></li>
-                        <li>Solar & Wind contribute <strong>65%+</strong> of new global power capacity</li>
-                        <li>Asia-Pacific holds <strong>40%+</strong> market share</li>
-                    </ul>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4 text-slate-800">Key Global Drivers</h3>
-                    <ul class="list-disc pl-5 space-y-2 text-sm text-slate-600">
-                        <li>Net Zero targets (2050–2070)</li>
-                        <li>Fossil fuel replacement policies</li>
-                        <li>Rapid solar cost reduction</li>
-                        <li>EV & hydrogen ecosystem growth</li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- INDIA MARKET -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-brand-accent border border-slate-200 shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4 text-brand-primary">India Renewable Energy Market</h3>
-                    <p class="text-sm text-slate-600 mb-4">
-                        India is among the <strong>top 3</strong> renewable energy markets in the world, with strong
-                        policy support and massive installation growth.
-                    </p>
-
-                    <h4 class="font-semibold mt-4 mb-2 text-slate-800">Installed Capacity (2025–26)</h4>
-                    <ul class="space-y-1 text-sm text-slate-700">
-                        <li>Total Renewable: <strong>~250–260 GW</strong></li>
-                        <li>Solar Power: <strong>~130–140 GW</strong></li>
-                        <li>Wind Power: <strong>~50–55 GW</strong></li>
-                        <li>Hydro + Bio + Others: Remaining share</li>
-                    </ul>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-gradient-to-br from-brand-primary to-indigo-700 text-white shadow-lg">
-                    <h4 class="text-xl font-bold mb-4">India Market Size</h4>
-                    <ul class="text-sm space-y-2">
-                        <li>Market Value (2025): <strong>~USD 135–150 Billion</strong></li>
-                        <li>Projected Market (2031): <strong>~USD 300–350 Billion</strong></li>
-                        <li>CAGR (2026–2031): <strong>~13%–15%</strong></li>
-                    </ul>
-
-                    <h4 class="font-semibold mt-6 mb-2">India Targets</h4>
-                    <ul class="list-disc pl-5 text-sm space-y-1">
-                        <li><strong>500 GW</strong> non-fossil capacity by 2030</li>
-                        <li>Net Zero Emissions by <strong>2070</strong></li>
-                        <li>Solar dominance in future capacity additions (60–70%)</li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- STATS CARDS -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-emerald-600">$1.8T</h4>
-                    <p class="text-sm text-slate-500 mt-1">Global Market (2025)</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-emerald-600">$150B</h4>
-                    <p class="text-sm text-slate-500 mt-1">India Market (2025)</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-emerald-600">12–15%</h4>
-                    <p class="text-sm text-slate-500 mt-1">Global CAGR</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-emerald-600">250 GW</h4>
-                    <p class="text-sm text-slate-500 mt-1">India Capacity</p>
-                </div>
-            </div>
-
-            <!-- GROWTH OUTLOOK -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">Global Growth Outlook (2026–2031)</h3>
-                    <ul class="list-disc pl-5 space-y-2 text-sm text-slate-600">
-                        <li>Renewable capacity expected to <strong>double by 2030</strong></li>
-                        <li>Solar PV will contribute <strong>70–80%</strong> of new installations</li>
-                        <li>Wind energy expanding in offshore & hybrid systems</li>
-                    </ul>
-                    <h4 class="font-semibold mt-4 mb-2">Strong integration with:</h4>
-                    <ul class="list-disc pl-5 space-y-1 text-sm text-slate-600">
-                        <li>Battery Energy Storage Systems (BESS)</li>
-                        <li>Green Hydrogen projects</li>
-                    </ul>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">India Growth Outlook (2026–2031)</h3>
-                    <ul class="list-disc pl-5 space-y-2 text-sm text-slate-600">
-                        <li>Expected addition: <strong>120–150 GW</strong> new renewable capacity</li>
-                        <li>Solar expansion: rooftop + utility + hybrid parks</li>
-                        <li>Wind revival through offshore wind projects</li>
-                    </ul>
-                    <h4 class="font-semibold mt-4 mb-2">Strong growth in:</h4>
-                    <ul class="list-disc pl-5 space-y-1 text-sm text-slate-600">
-                        <li>Green hydrogen corridors</li>
-                        <li>Domestic manufacturing (Make in India)</li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- COMPANIES -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">Global Companies</h3>
-                    <p class="text-sm text-slate-600 mb-3">There are approximately:</p>
-                    <ul class="space-y-2 text-sm text-slate-600">
-                        <li><strong>8,000–10,000+</strong> active renewable energy companies worldwide</li>
-                        <li>Includes developers, EPCs, OEMs, and technology providers</li>
-                    </ul>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">India Renewable Energy Ecosystem</h3>
-                    <p class="text-sm text-slate-600 mb-3">India has a rapidly expanding ecosystem of:</p>
-                    <ul class="space-y-2 text-sm text-slate-600">
-                        <li><strong>1,500–2,500+</strong> organized renewable energy companies</li>
-                        <li>Thousands of MSMEs in EPC, installation, and component supply</li>
-                    </ul>
-                    <h4 class="font-semibold mt-4 mb-2">Major Segments in India</h4>
-                    <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1">
-                        <li>Solar EPC companies</li>
-                        <li>Wind turbine manufacturers & operators</li>
-                        <li>Inverters, modules & battery suppliers</li>
-                        <li>Power developers & IPPs</li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- INDIA GLOBAL SHARE -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-
-                <img src="{{ asset('images/sectors/renewable-energy.png') }}" alt="India Renewable Energy"
-                    class="w-full h-[300px] object-cover rounded-2xl shadow-md">
-
-                <div class="p-6 rounded-2xl bg-emerald-600 text-white shadow-lg min-h-[300px]">
-                    <h3 class="text-2xl font-bold mb-4">India's Global Market Share</h3>
-                    <p class="text-sm mb-4">India contributes approximately:</p>
-                    <ul class="list-disc pl-5 space-y-2 text-sm">
-                        <li><strong>6%–8%</strong> of global renewable installed capacity</li>
-                        <li>One of the <strong>Top 3</strong> solar markets globally</li>
-                        <li>Among <strong>Top 5</strong> wind energy markets</li>
-                    </ul>
-                    <p class="text-sm mt-4 text-emerald-100">
-                        India is emerging as a global hub for solar manufacturing and clean energy investments.
-                    </p>
-                </div>
-
-            </div>
-
-            <!-- KEY HIGHLIGHTS -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="p-6 rounded-2xl bg-amber-50 border border-amber-200 text-center">
-                    <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-amber-100 flex items-center justify-center">
-                        <i class="fa-solid fa-sun text-2xl text-amber-500"></i>
+            <!-- Executive Summary -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200">
+                <div class="p-16 lg:p-24 bg-white space-y-12">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Natural Resource Architecture</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic text-slate-950">Sustainable <br><span class="text-emerald-600">Generation.</span></h2>
+                        <div class="accent-line bg-emerald-600"></div>
                     </div>
-                    <h4 class="font-bold text-slate-800 mb-2">Cheapest Power</h4>
-                    <p class="text-xs text-slate-600">Solar energy is the cheapest electricity source in many regions</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-sky-50 border border-sky-200 text-center">
-                    <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-sky-100 flex items-center justify-center">
-                        <i class="fa-solid fa-wind text-2xl text-sky-500"></i>
-                    </div>
-                    <h4 class="font-bold text-slate-800 mb-2">Grid Stability</h4>
-                    <p class="text-xs text-slate-600">Wind energy provides stable grid balancing power</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-violet-50 border border-violet-200 text-center">
-                    <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-violet-100 flex items-center justify-center">
-                        <i class="fa-solid fa-battery-full text-2xl text-violet-500"></i>
-                    </div>
-                    <h4 class="font-bold text-slate-800 mb-2">Energy Storage</h4>
-                    <p class="text-xs text-slate-600">Becoming essential for 24/7 renewable supply</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-emerald-50 border border-emerald-200 text-center">
-                    <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-emerald-100 flex items-center justify-center">
-                        <i class="fa-solid fa-atom text-2xl text-emerald-500"></i>
-                    </div>
-                    <h4 class="font-bold text-slate-800 mb-2">Green Hydrogen</h4>
-                    <p class="text-xs text-slate-600">Strong push toward Green Hydrogen economy</p>
-                </div>
-            </div>
-
-            <!-- FUTURE OUTLOOK -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">Future Outlook</h3>
-                    <p class="text-sm text-slate-600 mb-3">
-                        The next decade (2026–2036) will define a global transformation:
-                    </p>
-                    <ul class="list-disc pl-5 space-y-2 text-sm text-slate-600">
-                        <li>Fossil fuels will gradually decline</li>
-                        <li>Renewable energy will become the <strong>primary power source</strong></li>
-                        <li>India will become a global renewable <strong>manufacturing & export hub</strong></li>
-                        <li>Integrated systems (Solar + Wind + Storage + Hydrogen) will dominate</li>
-                    </ul>
-                </div>
-
-                <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-10 rounded-2xl flex items-center shadow-lg">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-4">Conclusion</h3>
-                        <p class="text-sm text-slate-300 leading-relaxed">
-                            Renewable Energy is not just an industry — it is the <strong>foundation of a clean,
-                            sustainable, and carbon-neutral future</strong>. With strong policy support, technological
-                            advancement, and global investments, both India and the world are entering a
-                            <strong>historic energy transition phase</strong>.
+                    
+                    <div class="space-y-8 text-2xl text-slate-500 font-medium leading-relaxed italic border-l-4 border-slate-100 pl-10">
+                        <p>
+                            <strong class="text-slate-900 font-black uppercase tracking-tight">Renewable Energy</strong> refers to energy generated from naturally replenishing sources such as sunlight, wind, and biomass.
+                        </p>
+                        <p>
+                            Solar and Wind are the fastest-growing technologies globally due to falling costs and strong policies, playing a critical role in reducing global emissions.
                         </p>
                     </div>
                 </div>
 
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-emerald-600/10"></div>
+                    <div class="relative h-full overflow-hidden border-l border-slate-200 shadow-3xl">
+                        <img src="{{ asset('images/sectors/renewable-energy.png') }}" alt="Renewable Energy"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000">
+                    </div>
+                    <div class="absolute top-0 right-0 p-8">
+                        <div class="bg-emerald-600 text-white text-[10px] font-black px-6 py-2 uppercase tracking-[0.3em] shadow-2xl">
+                            Eco-Friendly Power
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Global vs India Market -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
+                <!-- GLOBAL -->
+                <div class="p-16 lg:p-24 bg-slate-950 text-white relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-12 text-emerald-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-earth-americas text-[12rem]"></i>
+                    </div>
+                    <div class="relative z-10 space-y-16">
+                        <div class="space-y-4">
+                            <div class="text-emerald-400 text-[10px] font-black uppercase tracking-[0.4em]">International Transition</div>
+                            <h3 class="text-5xl font-black uppercase tracking-tighter italic">Global Market</h3>
+                        </div>
+                        
+                        <div class="space-y-12">
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Value (2025)</span>
+                                <span class="text-6xl font-black text-white tracking-tighter italic">$1.8T</span>
+                            </div>
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Projected (2031)</span>
+                                <span class="text-6xl font-black text-emerald-500 tracking-tighter italic">$4T</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-8">
+                            <h4 class="text-[9px] font-black text-slate-500 uppercase tracking-[0.4em]">Market Drivers</h4>
+                            <div class="grid grid-cols-2 gap-px bg-white/10 border border-white/10 shadow-2xl">
+                                @foreach(['Net Zero Targets', 'Fossil Replacement', 'Solar Cost Reduction', 'E-Mobility Growth'] as $driver)
+                                    <div class="p-8 bg-slate-950 text-center text-[10px] font-black uppercase tracking-[0.1em] text-slate-400 hover:bg-emerald-600 hover:text-slate-950 transition-all cursor-default">{{ $driver }}</div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INDIA -->
+                <div class="p-16 lg:p-24 bg-white relative overflow-hidden group border-l border-slate-200">
+                    <div class="absolute top-0 right-0 p-12 text-emerald-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-industry text-[12rem]"></i>
+                    </div>
+                    <div class="relative z-10 space-y-16 text-right">
+                        <div class="space-y-4">
+                            <div class="text-emerald-600 text-[10px] font-black uppercase tracking-[0.4em]">National Leadership</div>
+                            <h3 class="text-5xl font-black text-slate-950 uppercase tracking-tighter italic">Indian Market</h3>
+                        </div>
+                        
+                        <div class="space-y-12">
+                            <div class="flex items-end justify-between border-b border-slate-100 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-400 tracking-[0.3em]">Value (2025)</span>
+                                <span class="text-6xl font-black text-slate-950 tracking-tighter italic">$150B</span>
+                            </div>
+                            <div class="flex items-end justify-between border-b border-slate-100 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-400 tracking-[0.3em]">Annual CAGR</span>
+                                <span class="text-6xl font-black text-emerald-600 tracking-tighter italic">15%</span>
+                            </div>
+                            <div class="p-12 bg-emerald-50 border-l-8 border-emerald-600 shadow-sm text-right">
+                                <p class="text-[9px] font-black text-emerald-600 uppercase tracking-[0.4em] mb-4 italic">Target (2031)</p>
+                                <p class="text-5xl font-black text-slate-950 uppercase italic leading-tight tracking-tighter">$350 Billion Value</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-emerald-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110">$1.8T</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">Global Market</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-emerald-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">$150B</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">India Market</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-emerald-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">250 GW</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">India Capacity</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-emerald-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">13-15%</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">India Growth</p>
+                </div>
+            </div>
+
+            <!-- Growth Outlook -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
+                <div class="p-24 bg-slate-950 text-white space-y-16">
+                    <h3 class="text-5xl font-black uppercase tracking-tighter italic text-emerald-500 border-l-8 border-emerald-600 pl-10">Global Outlook</h3>
+                    <div class="space-y-px bg-white/5 border border-white/5">
+                        @foreach([
+                            'Capacity expected to double by 2030',
+                            'Solar PV contributing 80% of new installs',
+                            'Offshore & hybrid wind systems expansion',
+                            'Battery Energy Storage integration',
+                            'Green Hydrogen project synergy'
+                        ] as $outlook)
+                            <div class="p-10 bg-slate-950 group/item hover:bg-emerald-600 transition-all duration-500 relative overflow-hidden">
+                                <div class="absolute top-0 left-0 w-1 h-full bg-white scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                                <p class="text-[12px] font-black uppercase text-slate-400 group-hover/item:text-slate-950 tracking-[0.2em] leading-tight transition-colors italic">{{ $outlook }}</p>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+
+                <div class="p-24 bg-white space-y-16 border-l border-slate-200">
+                    <h3 class="text-5xl font-black uppercase tracking-tighter italic text-slate-950 border-l-8 border-slate-950 pl-10">India Outlook</h3>
+                    <div class="space-y-px bg-slate-100 border border-slate-100 shadow-2xl">
+                         @foreach([
+                            '150 GW new capacity addition expected',
+                            'Utility-scale solar dominance',
+                            'Offshore wind revival projects',
+                            'Green hydrogen industrial corridors',
+                            'Domestic module manufacturing (PLI)'
+                        ] as $outlook)
+                            <div class="p-10 bg-white group/val hover:bg-slate-950 transition-all duration-500 relative overflow-hidden">
+                                <div class="absolute top-0 left-0 w-full h-1 bg-emerald-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+                                <p class="text-[12px] font-black uppercase text-slate-500 group-hover/val:text-white tracking-[0.2em] leading-tight transition-colors italic">{{ $outlook }}</p>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ecosystem & Highlights -->
+            <div class="grid lg:grid-cols-2 gap-32 items-center">
+                <div class="space-y-16">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Systemic Progress Architecture</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic text-slate-950">Key Industry <br><span class="text-emerald-600">Highlights.</span></h2>
+                        <div class="accent-line bg-emerald-600"></div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
+                        @foreach([
+                            ['icon' => 'sun', 'label' => 'Solar EPC'],
+                            ['icon' => 'wind', 'label' => 'Wind OEM'],
+                            ['icon' => 'battery-full', 'label' => 'Storage Sys'],
+                            ['icon' => 'bolt', 'label' => 'Grid Stability'],
+                        ] as $h)
+                            <div class="p-12 bg-white text-center group hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                                <div class="absolute top-0 left-0 w-full h-1 bg-emerald-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+                                <i class="fa-solid fa-{{ $h['icon'] }} text-4xl mb-6 text-emerald-600 group-hover:text-white transition-colors"></i>
+                                <span class="text-[12px] font-black uppercase text-slate-700 group-hover:text-white tracking-[0.15em] transition-colors leading-tight italic">{{ $h['label'] }}</span>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+
+                <div class="p-16 lg:p-24 bg-slate-950 text-white space-y-16 relative overflow-hidden group shadow-3xl border border-white/5">
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.05),transparent)]"></div>
+                    <div class="relative z-10 space-y-12">
+                         <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10 text-emerald-400 text-[10px] font-black uppercase tracking-[0.4em]">
+                            Global Advantage
+                        </div>
+                        <h4 class="text-6xl font-black uppercase tracking-tighter italic text-emerald-600">Historic <br><span class="text-white">Transition.</span></h4>
+                        <p class="text-2xl text-slate-400 font-medium italic border-l-8 border-emerald-600/30 pl-10 leading-relaxed uppercase tracking-tighter">
+                            India is emerging as a global hub for clean energy manufacturing and investments.
+                        </p>
+                        <div class="grid grid-cols-2 gap-px bg-white/5 pt-12 border border-white/10">
+                             @foreach(['500 GW TARGET', 'NET ZERO 2070', 'TOP 3 MARKET', 'EXPORT HUB'] as $tag)
+                                <span class="p-8 bg-slate-950 border border-white/5 text-[10px] font-black uppercase tracking-[0.4em] text-emerald-300 text-center hover:bg-emerald-600 hover:text-slate-950 transition-all cursor-default">{{ $tag }}</span>
+                             @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conclusion CTA -->
+            <div class="relative p-24 lg:p-32 bg-slate-950 overflow-hidden text-center shadow-3xl group">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(16,185,129,0.2),transparent)]"></div>
+                <div class="relative z-10 space-y-16">
+                    <h3 class="text-5xl md:text-[8rem] font-black text-white uppercase tracking-tighter leading-[0.85]">
+                        The Power <br><span class="text-emerald-600">Standard.</span>
+                    </h3>
+                    <p class="text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium italic border-l-4 border-emerald-600 pl-10 md:text-center mx-auto uppercase tracking-tighter">
+                        Renewable energy is the foundation of a carbon-neutral future. Join the historic energy transition today.
+                    </p>
+                    <div class="flex justify-center">
+                        <a href="{{ route('join.index') }}" 
+                            class="btn-sharp px-16 group !border-emerald-600/30 hover:!bg-emerald-600">
+                            Explore Renewable Support 
+                            <i class="fa-solid fa-arrow-right-long ml-6 group-hover:translate-x-4 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
 
         </div>

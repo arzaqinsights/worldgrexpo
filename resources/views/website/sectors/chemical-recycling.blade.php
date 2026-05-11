@@ -4,319 +4,363 @@
 
 @section('content')
 
-    <!-- HERO -->
-    <section class="relative pt-32 pb-24 bg-slate-900 text-white overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-cyan-900 via-slate-900 to-black"></div>
-        <div class="absolute inset-0 opacity-10"
-            style="background-image: url('{{ asset('images/sectors/chemical-recycling.jpg') }}'); background-size: cover; background-position: center;">
+    <!-- Architectural Hero -->
+    <section class="relative pt-64 pb-32 bg-slate-950 overflow-hidden border-b border-slate-900">
+        <!-- Visual Backdrop -->
+        <div class="absolute inset-0 opacity-20">
+            <img src="{{ asset('images/sectors/chemical-recycling.jpg') }}" class="w-full h-full object-cover grayscale">
         </div>
+        <div class="absolute inset-0 bg-linear-to-b from-slate-950 via-slate-950/90 to-slate-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        
+        <!-- Industrial Accents -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-cyan-600 opacity-5 -skew-x-12 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-1/4 h-64 bg-cyan-600 opacity-5 skew-x-12 -translate-x-1/2"></div>
 
-        <div class="container relative z-10 text-center">
-            <h1 class="text-4xl md:text-6xl font-black uppercase mb-4 tracking-wide">
-                Chemical Recycling Industry
+        <div class="container relative z-10 text-center space-y-12">
+            <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10">
+                <span class="w-2 h-2 bg-cyan-400 animate-pulse"></span>
+                <span class="text-white text-[10px] font-black tracking-[0.4em] uppercase">Advanced Molecular Infrastructure</span>
+            </div>
+            <h1 class="text-6xl md:text-[9rem] font-black text-white leading-[0.85] tracking-tighter uppercase">
+                Chemical <br>
+                <span class="text-cyan-600">Recycling.</span>
             </h1>
-            <p class="text-lg md:text-xl text-cyan-300 font-semibold mb-2">Global & India Market Overview</p>
-            <p class="text-slate-300 max-w-3xl mx-auto">
-                Advanced waste processing technology transforming plastic waste into a circular feedstock economy.
+            <p class="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium border-l-4 border-cyan-600 pl-10 uppercase tracking-widest italic md:text-center mx-auto">
+                Advanced waste processing technology transforming plastic waste.
             </p>
         </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="py-16 bg-white">
-        <div class="container space-y-16">
+    <!-- Content Interface -->
+    <section class="py-32 bg-white relative">
+        <div class="container space-y-48">
 
-            <!-- INTRO -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl font-extrabold mb-4 text-slate-900">What is Chemical Recycling?</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4">
-                        <strong>Chemical recycling</strong> is an advanced waste processing technology that breaks down plastic waste
-                        into its original chemical building blocks (<strong>monomers, oils, gases, or feedstock</strong>) so it can be
-                        reused to produce virgin-quality plastics or other chemicals.
+            <!-- Executive Summary -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200">
+                <div class="p-16 lg:p-24 bg-white space-y-12">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Molecular Recovery Systems</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">Industrial <br><span class="text-cyan-600">Evolution.</span></h2>
+                        <div class="accent-line bg-cyan-600"></div>
+                    </div>
+                    
+                    <div class="space-y-8 text-2xl text-slate-500 font-medium leading-relaxed italic border-l-4 border-slate-100 pl-10">
+                        <p>
+                            <strong class="text-slate-900 font-black uppercase tracking-tight">Chemical recycling</strong> is an advanced waste processing technology that breaks down plastic waste into its original chemical building blocks (monomers, oils, gases, or feedstock) so it can be reused to produce virgin-quality plastics or other chemicals.
+                        </p>
+                        <p>
+                            Unlike mechanical recycling, it can process <strong>mixed plastics, multilayer packaging, contaminated plastics, and low-value plastic waste</strong>.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-cyan-600/10"></div>
+                    <div class="relative h-full overflow-hidden border-l border-slate-200 shadow-3xl">
+                        <img src="{{ asset('images/sectors/chemical-recycling.jpg') }}" alt="Chemical Recycling"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000">
+                    </div>
+                    <div class="absolute top-0 right-0 p-8">
+                        <div class="bg-cyan-600 text-white text-[10px] font-black px-6 py-2 uppercase tracking-[0.3em] shadow-2xl">
+                            Molecular Restoration
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technologies Grid -->
+            <div class="space-y-16">
+                <div class="text-center space-y-4">
+                    <span class="text-cyan-600 text-[10px] font-black uppercase tracking-[0.4em]">Core Process Methodologies</span>
+                    <h3 class="text-6xl font-black text-slate-950 uppercase tracking-tighter italic">Advanced Technologies</h3>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
+                    @php
+                        $techs = [
+                            ['icon' => 'fire-flame-curved', 'title' => 'Pyrolysis', 'desc' => 'Plastic → Oil', 'color' => 'orange'],
+                            ['icon' => 'wind', 'title' => 'Gasification', 'desc' => 'Plastic → Syngas', 'color' => 'sky'],
+                            ['icon' => 'atom', 'title' => 'Depolymerization', 'desc' => 'Polymer → Monomer', 'color' => 'violet'],
+                            ['icon' => 'flask', 'title' => 'Solvent-based', 'desc' => 'Purification Process', 'color' => 'emerald'],
+                        ];
+                    @endphp
+                    @foreach($techs as $tech)
+                        <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                             <div class="absolute top-0 left-0 w-1 h-full bg-cyan-600 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                            <div class="w-20 h-20 mx-auto mb-10 bg-slate-50 border border-slate-100 flex items-center justify-center text-cyan-600 group-hover:bg-cyan-600 group-hover:text-white transition-all shadow-sm duration-500">
+                                <i class="fa-solid fa-{{ $tech['icon'] }} text-3xl"></i>
+                            </div>
+                            <h4 class="text-xl font-black text-slate-950 group-hover:text-white uppercase tracking-tighter mb-2 italic leading-tight">{{ $tech['title'] }}</h4>
+                            <p class="text-[9px] font-black text-slate-400 uppercase tracking-[0.2em] leading-tight transition-colors">{{ $tech['desc'] }}</p>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+
+            <!-- Global vs India Market -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
+                <!-- GLOBAL -->
+                <div class="p-16 lg:p-24 bg-slate-950 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-12 text-cyan-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-earth-americas text-[12rem]"></i>
+                    </div>
+                    <div class="relative z-10 space-y-16">
+                        <div class="space-y-4">
+                            <div class="text-cyan-400 text-[10px] font-black uppercase tracking-[0.4em]">Global Scale</div>
+                            <h3 class="text-5xl font-black text-white uppercase tracking-tighter italic">Global Market</h3>
+                        </div>
+                        
+                        <div class="space-y-12">
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Market Size (2025)</span>
+                                <span class="text-6xl font-black text-white tracking-tighter italic">$10–12B</span>
+                            </div>
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Projected (2033)</span>
+                                <span class="text-6xl font-black text-white tracking-tighter italic">$40B+</span>
+                            </div>
+                            <div class="flex items-end justify-between">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Annual CAGR</span>
+                                <span class="text-6xl font-black text-cyan-500 tracking-tighter italic">15%</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-8">
+                            <h4 class="text-[9px] font-black text-slate-500 uppercase tracking-[0.4em]">Growth Drivers</h4>
+                            <div class="grid grid-cols-2 gap-px bg-white/10 border border-white/10 shadow-2xl">
+                                @foreach(['Plastic Crisis', 'ESG Commitments', 'Food-grade Demand', 'Circular Regulation'] as $driver)
+                                    <span class="px-8 py-6 bg-slate-950 text-[9px] font-black text-slate-400 uppercase tracking-[0.2em] text-center hover:bg-cyan-600 hover:text-slate-950 transition-colors cursor-default">{{ $driver }}</span>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INDIA -->
+                <div class="p-16 lg:p-24 bg-white relative overflow-hidden group border-l border-slate-200">
+                    <div class="absolute top-0 right-0 p-12 text-cyan-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-industry text-[12rem]"></i>
+                    </div>
+                    <div class="relative z-10 space-y-16">
+                        <div class="space-y-4">
+                            <div class="text-cyan-600 text-[10px] font-black uppercase tracking-[0.4em]">National Momentum</div>
+                            <h3 class="text-5xl font-black text-slate-950 uppercase tracking-tighter italic">Indian Market</h3>
+                        </div>
+                        
+                        <div class="space-y-12">
+                            <div class="flex items-end justify-between border-b border-slate-100 pb-8 text-right">
+                                <span class="text-[10px] font-black uppercase text-slate-400 tracking-[0.3em]">Market Size (2025)</span>
+                                <span class="text-6xl font-black text-slate-950 tracking-tighter italic block">$400M</span>
+                            </div>
+                            <div class="flex items-end justify-between border-b border-slate-100 pb-8 text-right">
+                                <span class="text-[10px] font-black uppercase text-slate-400 tracking-[0.3em]">Annual CAGR</span>
+                                <span class="text-6xl font-black text-cyan-600 tracking-tighter italic block">25%</span>
+                            </div>
+                            <div class="p-12 bg-cyan-50 border-l-8 border-cyan-600 shadow-sm text-right">
+                                <p class="text-[9px] font-black text-cyan-600 uppercase tracking-[0.4em] mb-4">India Forecast (2031)</p>
+                                <p class="text-5xl font-black text-slate-950 uppercase italic leading-tight tracking-tighter">USD 3 Billion+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-cyan-600 mb-4 transition-all duration-500 tracking-tighter italic">$12B</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">Global Size</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-cyan-600 mb-4 transition-all duration-500 tracking-tighter italic">$400M</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">India Size</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-cyan-600 mb-4 transition-all duration-500 tracking-tighter italic">15%</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">Global CAGR</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-cyan-600 mb-4 transition-all duration-500 tracking-tighter italic">25%</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">India CAGR</p>
+                </div>
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="space-y-16">
+                <div class="text-center space-y-4">
+                    <span class="text-cyan-600 text-[10px] font-black uppercase tracking-[0.4em]">Analytical Comparison</span>
+                    <h3 class="text-6xl font-black text-slate-950 uppercase tracking-tighter italic">Global vs India Snapshot</h3>
+                </div>
+                <div class="overflow-x-auto shadow-3xl">
+                    <table class="w-full text-sm border-collapse border border-slate-200">
+                        <thead>
+                            <tr class="bg-slate-950 text-white">
+                                <th class="text-left p-12 font-black uppercase tracking-[0.3em] border border-white/10">Parameter</th>
+                                <th class="text-left p-12 font-black uppercase tracking-[0.3em] border border-white/10">Global Market</th>
+                                <th class="text-left p-12 font-black uppercase tracking-[0.3em] border border-white/10">India Market</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white italic font-medium">
+                            @php
+                                $rows = [
+                                    ['Market Size (2025)', '$10–12B', '$0.2–0.4B'],
+                                    ['Forecast Value', '$28–40B+', '$1.5–3B+'],
+                                    ['CAGR (2026–2031)', '10–15%', '18–25%'],
+                                    ['Market Stage', 'Early-commercial', 'Early-emerging'],
+                                    ['Key Driver', 'ESG + Regulation', 'Waste crisis + EPR'],
+                                ];
+                            @endphp
+                            @foreach($rows as $row)
+                                <tr class="hover:bg-slate-50 transition-colors">
+                                    <td class="p-10 font-black text-slate-900 uppercase tracking-[0.1em] border border-slate-200 bg-slate-50/50">{{ $row[0] }}</td>
+                                    <td class="p-10 text-slate-600 font-bold border border-slate-200 tracking-widest">{{ $row[1] }}</td>
+                                    <td class="p-10 text-slate-600 font-bold border border-slate-200 tracking-widest">{{ $row[2] }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Growth Outlook -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
+                <div class="p-24 bg-white space-y-16">
+                    <h3 class="text-5xl font-black uppercase text-slate-950 italic border-l-8 border-slate-950 pl-10 tracking-tighter">Global Outlook</h3>
+                    <ul class="space-y-10">
+                        @foreach([
+                            'Rapid expansion of pyrolysis-based plants',
+                            'Integration with petrochemical industries',
+                            'Rise of advanced recycling partnerships',
+                            'Scaling of food-grade recycled plastic production',
+                            'Strong investments from global energy giants'
+                        ] as $outlook)
+                            <li class="flex items-start gap-8 group/item">
+                                <div class="w-2 h-2 bg-slate-950 mt-4 group-hover/item:scale-150 transition-transform duration-500"></div>
+                                <span class="text-[12px] font-black text-slate-600 uppercase tracking-[0.2em] group-hover/item:text-slate-950 transition-colors leading-relaxed">{{ $outlook }}</span>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+                <div class="p-24 bg-slate-50 space-y-16 border-l border-slate-200">
+                    <h3 class="text-5xl font-black uppercase text-slate-950 italic border-l-8 border-cyan-600 pl-10 tracking-tighter">India Outlook</h3>
+                    <ul class="space-y-10">
+                        @foreach([
+                            'Rapid entry of startups and pilot plants',
+                            'Growing collaboration with FMCG brands',
+                            'Expansion of EPR-driven recycling obligations',
+                            'High demand for technology transfer (EU/US)',
+                            'Shift from informal to organized recycling'
+                        ] as $outlook)
+                            <li class="flex items-start gap-8 group/item">
+                                <div class="w-2 h-2 bg-cyan-600 mt-4 group-hover/item:scale-150 transition-transform duration-500"></div>
+                                <span class="text-[12px] font-black text-slate-600 uppercase tracking-[0.2em] group-hover/item:text-slate-950 transition-colors leading-relaxed">{{ $outlook }}</span>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Scale + Capacity -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
+                <div class="p-24 bg-slate-950 text-white space-y-12 group">
+                    <div class="text-cyan-400 text-[10px] font-black uppercase tracking-[0.4em]">Worldwide Infrastructure</div>
+                    <h3 class="text-5xl font-black uppercase tracking-tighter italic leading-tight">300–500 Plants <br><span class="text-white/40">Globally (Pilot/Ops)</span></h3>
+                    <div class="flex flex-wrap gap-4 pt-12">
+                        @foreach(['Europe', 'USA', 'Japan', 'China'] as $hub)
+                            <span class="px-8 py-4 bg-white/5 border border-white/10 text-[9px] font-black uppercase tracking-[0.3em] hover:bg-cyan-600 hover:text-slate-950 transition-all cursor-default">{{ $hub }} Hubs</span>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="p-24 bg-white space-y-12 border-l border-slate-200">
+                    <div class="text-cyan-600 text-[10px] font-black uppercase tracking-[0.4em]">National Infrastructure</div>
+                    <h3 class="text-5xl font-black uppercase tracking-tighter italic text-slate-950 leading-tight">30–70 Plants <br><span class="text-slate-400">In India (Early Stage)</span></h3>
+                    <p class="text-2xl text-slate-500 font-medium italic border-l-4 border-slate-100 pl-10 leading-relaxed uppercase tracking-tighter">
+                        Mostly pyrolysis oil plants and small depolymerization units. Rapid pipeline of new projects expected post-2026.
                     </p>
-                    <p class="text-slate-600 leading-relaxed">
-                        Unlike mechanical recycling, it can process <strong>mixed plastics, multilayer packaging,
-                        contaminated plastics, and low-value plastic waste</strong>.
+                </div>
+            </div>
+
+            <!-- Key Outputs -->
+            <div class="space-y-16">
+                <div class="text-center space-y-4">
+                    <span class="text-cyan-600 text-[10px] font-black uppercase tracking-[0.4em]">Resource Recovery Outputs</span>
+                    <h3 class="text-6xl font-black text-slate-950 uppercase tracking-tighter italic">Key Industrial Outputs</h3>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
+                    @php
+                        $outputs = [
+                            ['icon' => 'cube', 'label' => 'Virgin-like Resin', 'sub' => 'Recycled Polymer', 'color' => 'cyan'],
+                            ['icon' => 'oil-can', 'label' => 'Pyrolysis Oil', 'sub' => 'Refinery Feedstock', 'color' => 'cyan'],
+                            ['icon' => 'bolt', 'label' => 'Syngas', 'sub' => 'Energy Recovery', 'color' => 'cyan'],
+                            ['icon' => 'atom', 'label' => 'Monomers', 'sub' => 'PET / PS Recovery', 'color' => 'cyan'],
+                        ];
+                    @endphp
+                    @foreach($outputs as $out)
+                        <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-1 h-full bg-cyan-600 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                            <div class="w-20 h-20 mx-auto mb-10 bg-slate-50 border border-slate-100 flex items-center justify-center text-cyan-600 group-hover:bg-cyan-600 group-hover:text-white transition-all shadow-sm duration-500">
+                                <i class="fa-solid fa-{{ $out['icon'] }} text-3xl"></i>
+                            </div>
+                            <h4 class="text-xl font-black text-slate-950 group-hover:text-white uppercase tracking-tighter mb-2 italic leading-tight">{{ $out['label'] }}</h4>
+                            <p class="text-[9px] font-black text-slate-400 uppercase tracking-[0.2em] leading-tight transition-colors">{{ $out['sub'] }}</p>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+
+            <!-- Strategic Importance -->
+            <div class="grid lg:grid-cols-2 gap-32 items-center">
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-cyan-600/10"></div>
+                    <div class="relative overflow-hidden border border-slate-200 shadow-3xl h-[600px]">
+                        <img src="{{ asset('images/sectors/chemical-recycling.jpg') }}" alt="Strategic Importance"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000">
+                    </div>
+                </div>
+
+                <div class="p-16 lg:p-24 bg-slate-950 text-white space-y-16 relative overflow-hidden group shadow-3xl">
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(6,182,212,0.05),transparent)]"></div>
+                    <div class="relative z-10 space-y-12">
+                        <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10 text-cyan-400 text-[10px] font-black uppercase tracking-[0.4em]">
+                            Strategic Value
+                        </div>
+                        <h3 class="text-5xl font-black uppercase tracking-tighter italic text-cyan-600">Why Chemical <br><span class="text-white">Recycling Matters.</span></h3>
+                        <ul class="space-y-12">
+                            @foreach([
+                                'Mechanical recycling alone cannot solve the plastic waste crisis',
+                                'Enables recycling of previously non-recyclable plastics',
+                                'Supports corporate net-zero and ESG targets',
+                                'Converts waste into high-value raw materials',
+                                'Bridges the gap between petrochemical and recycling industries'
+                            ] as $point)
+                                <li class="flex items-start gap-10 group/item">
+                                    <i class="fa-solid fa-check-circle text-cyan-600 text-3xl group-hover/item:scale-125 transition-transform duration-500"></i>
+                                    <span class="text-slate-400 text-xl font-black uppercase tracking-widest group-hover/item:text-white transition-colors duration-500 leading-tight">{{ $point }}</span>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conclusion CTA -->
+            <div class="relative p-24 lg:p-32 bg-slate-950 overflow-hidden text-center shadow-3xl group">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(8,145,178,0.2),transparent)]"></div>
+                <div class="relative z-10 space-y-16">
+                    <h3 class="text-5xl md:text-[8rem] font-black text-white uppercase tracking-tighter leading-[0.85]">
+                        The Molecular <br><span class="text-cyan-600">Economy.</span>
+                    </h3>
+                    <p class="text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium italic border-l-4 border-cyan-600 pl-10 md:text-center mx-auto">
+                        Chemical recycling represents the next evolution of the global recycling industry. Globally moving to commercial scaling, and in India expected to grow rapidly post-2026.
                     </p>
-                </div>
-
-                <img src="{{ asset('images/sectors/chemical-recycling.jpg') }}" alt="Chemical Recycling"
-                    class="w-full h-[320px] object-cover rounded-2xl shadow-lg">
-            </div>
-
-            <!-- KEY TECHNOLOGIES -->
-            <div>
-                <h2 class="text-3xl font-extrabold text-slate-900 mb-8 text-center">Key Chemical Recycling Technologies</h2>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    <div class="p-6 rounded-2xl bg-orange-50 border border-orange-200 text-center">
-                        <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-orange-100 flex items-center justify-center">
-                            <i class="fa-solid fa-fire-flame-curved text-2xl text-orange-500"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-800 mb-1">Pyrolysis</h4>
-                        <p class="text-xs text-slate-500">Plastic → Oil</p>
-                    </div>
-                    <div class="p-6 rounded-2xl bg-sky-50 border border-sky-200 text-center">
-                        <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-sky-100 flex items-center justify-center">
-                            <i class="fa-solid fa-wind text-2xl text-sky-500"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-800 mb-1">Gasification</h4>
-                        <p class="text-xs text-slate-500">Plastic → Syngas</p>
-                    </div>
-                    <div class="p-6 rounded-2xl bg-violet-50 border border-violet-200 text-center">
-                        <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-violet-100 flex items-center justify-center">
-                            <i class="fa-solid fa-atom text-2xl text-violet-500"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-800 mb-1">Depolymerization</h4>
-                        <p class="text-xs text-slate-500">Polymer → Monomer</p>
-                    </div>
-                    <div class="p-6 rounded-2xl bg-emerald-50 border border-emerald-200 text-center">
-                        <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-emerald-100 flex items-center justify-center">
-                            <i class="fa-solid fa-flask text-2xl text-emerald-500"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-800 mb-1">Solvent-based</h4>
-                        <p class="text-xs text-slate-500">Purification Process</p>
+                    <div class="flex justify-center">
+                        <a href="{{ route('join.index') }}" 
+                            class="btn-sharp px-16 group !border-cyan-600/30 hover:!bg-cyan-600">
+                            Join the Circular Transition 
+                            <i class="fa-solid fa-arrow-right-long ml-6 group-hover:translate-x-4 transition-transform"></i>
+                        </a>
                     </div>
                 </div>
-            </div>
-
-            <!-- GLOBAL vs INDIA MARKET -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-gradient-to-br from-cyan-600 to-cyan-800 text-white shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4">Global Chemical Recycling Market</h3>
-                    <p class="text-sm text-cyan-100 mb-4">
-                        One of the fastest-growing segments in the circular economy due to increasing plastic waste
-                        complexity and demand for virgin-quality recycled materials.
-                    </p>
-                    <ul class="space-y-2 text-sm">
-                        <li>Market Size (2025): <strong>~USD 10–12 Billion</strong></li>
-                        <li>Projected (2031–2033): <strong>~USD 28–40 Billion+</strong></li>
-                        <li>CAGR: <strong>~10%–15%</strong></li>
-                    </ul>
-
-                    <h4 class="font-semibold mt-5 mb-2">Key Global Drivers</h4>
-                    <ul class="list-disc pl-5 text-sm space-y-1">
-                        <li>Rising plastic waste crisis (multilayer packaging)</li>
-                        <li>Corporate ESG commitments (FMCG, packaging giants)</li>
-                        <li>Demand for food-grade recycled plastics</li>
-                        <li>EU & US regulatory push for circular plastics</li>
-                        <li>Investment in advanced recycling infrastructure</li>
-                    </ul>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-brand-accent border border-slate-200 shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4 text-brand-primary">India Chemical Recycling Market</h3>
-                    <p class="text-sm text-slate-600 mb-4">
-                        India is an early-stage but high-potential market, mainly driven by plastic waste generation
-                        and EPR regulations.
-                    </p>
-                    <ul class="space-y-2 text-sm text-slate-700">
-                        <li>Market Size (2025): <strong>~USD 200–400 Million</strong></li>
-                        <li>Forecast (2031): <strong>~USD 1.5–3 Billion+</strong></li>
-                        <li>CAGR: <strong>~18%–25%</strong></li>
-                    </ul>
-
-                    <h4 class="font-semibold mt-5 mb-2">India Growth Drivers</h4>
-                    <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1">
-                        <li>Strong plastic consumption growth</li>
-                        <li>EPR (Extended Producer Responsibility) regulations</li>
-                        <li>FMCG demand for recycled content</li>
-                        <li>Lack of high-quality mechanical recycling feedstock</li>
-                        <li>Government push toward circular economy</li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- STATS CARDS -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-cyan-600">$10–12B</h4>
-                    <p class="text-sm text-slate-500 mt-1">Global Market (2025)</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-cyan-600">$200–400M</h4>
-                    <p class="text-sm text-slate-500 mt-1">India Market (2025)</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-cyan-600">10–15%</h4>
-                    <p class="text-sm text-slate-500 mt-1">Global CAGR</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-cyan-600">18–25%</h4>
-                    <p class="text-sm text-slate-500 mt-1">India CAGR</p>
-                </div>
-            </div>
-
-            <!-- COMPARISON TABLE -->
-            <div class="overflow-x-auto">
-                <h2 class="text-3xl font-extrabold text-slate-900 mb-6 text-center">Global vs India Snapshot</h2>
-                <table class="w-full text-sm border-collapse rounded-2xl overflow-hidden shadow-sm">
-                    <thead>
-                        <tr class="bg-gradient-to-r from-cyan-600 to-cyan-800 text-white">
-                            <th class="text-left p-4 font-semibold">Parameter</th>
-                            <th class="text-left p-4 font-semibold">Global Market</th>
-                            <th class="text-left p-4 font-semibold">India Market</th>
-                        </tr>
-                    </thead>
-                    <tbody class="bg-white">
-                        <tr class="border-b border-slate-100">
-                            <td class="p-4 font-medium text-slate-700">Market Size (2025)</td>
-                            <td class="p-4 text-slate-600">$10–12B</td>
-                            <td class="p-4 text-slate-600">$0.2–0.4B</td>
-                        </tr>
-                        <tr class="border-b border-slate-100 bg-slate-50">
-                            <td class="p-4 font-medium text-slate-700">Forecast Value</td>
-                            <td class="p-4 text-slate-600">$28–40B+</td>
-                            <td class="p-4 text-slate-600">$1.5–3B+</td>
-                        </tr>
-                        <tr class="border-b border-slate-100">
-                            <td class="p-4 font-medium text-slate-700">CAGR (2026–2031)</td>
-                            <td class="p-4 text-slate-600">10–15%</td>
-                            <td class="p-4 text-slate-600">18–25%</td>
-                        </tr>
-                        <tr class="border-b border-slate-100 bg-slate-50">
-                            <td class="p-4 font-medium text-slate-700">Market Stage</td>
-                            <td class="p-4 text-slate-600">Early-commercial</td>
-                            <td class="p-4 text-slate-600">Early-emerging</td>
-                        </tr>
-                        <tr>
-                            <td class="p-4 font-medium text-slate-700">Key Driver</td>
-                            <td class="p-4 text-slate-600">ESG + Regulation</td>
-                            <td class="p-4 text-slate-600">Waste crisis + EPR</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- GROWTH OUTLOOK -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">Global Outlook (2026–2031)</h3>
-                    <ul class="list-disc pl-5 space-y-2 text-sm text-slate-600">
-                        <li>Rapid expansion of pyrolysis-based plants</li>
-                        <li>Integration with petrochemical industries</li>
-                        <li>Rise of advanced recycling partnerships (FMCG + Oil & Gas)</li>
-                        <li>Scaling of food-grade recycled plastic production</li>
-                        <li>Strong investments from global energy and chemical companies</li>
-                    </ul>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">India Outlook (2026–2031)</h3>
-                    <ul class="list-disc pl-5 space-y-2 text-sm text-slate-600">
-                        <li>Rapid entry of startups and pilot plants</li>
-                        <li>Growing collaboration between recyclers and FMCG brands</li>
-                        <li>Expansion of EPR-driven recycling obligations</li>
-                        <li>High demand for technology transfer from Europe/US</li>
-                        <li>Shift from informal to organized chemical recycling</li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- INDUSTRY CAPACITY -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">Industry Scale — Worldwide</h3>
-                    <ul class="space-y-2 text-sm text-slate-600">
-                        <li>Estimated <strong>300–500</strong> chemical recycling plants (operational + pilot)</li>
-                        <li>Major hubs: <strong>Europe, USA, Japan, China</strong></li>
-                        <li>Strong presence of oil & chemical giants entering recycling space</li>
-                    </ul>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">Industry Scale — India</h3>
-                    <ul class="space-y-2 text-sm text-slate-600">
-                        <li>Estimated <strong>30–70</strong> operational/pilot plants</li>
-                        <li>Mostly pyrolysis oil plants and small depolymerization units</li>
-                        <li>Rapid pipeline of new projects expected post-2026</li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- KEY OUTPUTS -->
-            <div>
-                <h2 class="text-3xl font-extrabold text-slate-900 mb-8 text-center">Key Outputs of Chemical Recycling</h2>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    <div class="p-6 rounded-2xl bg-cyan-50 border border-cyan-200 text-center">
-                        <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-cyan-100 flex items-center justify-center">
-                            <i class="fa-solid fa-cube text-2xl text-cyan-600"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-800 text-sm">Virgin-like Plastic Resin</h4>
-                    </div>
-                    <div class="p-6 rounded-2xl bg-amber-50 border border-amber-200 text-center">
-                        <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-amber-100 flex items-center justify-center">
-                            <i class="fa-solid fa-oil-can text-2xl text-amber-600"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-800 text-sm">Pyrolysis Oil</h4>
-                        <p class="text-xs text-slate-500 mt-1">Refinery feedstock</p>
-                    </div>
-                    <div class="p-6 rounded-2xl bg-emerald-50 border border-emerald-200 text-center">
-                        <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-emerald-100 flex items-center justify-center">
-                            <i class="fa-solid fa-bolt text-2xl text-emerald-600"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-800 text-sm">Syngas</h4>
-                        <p class="text-xs text-slate-500 mt-1">Energy use</p>
-                    </div>
-                    <div class="p-6 rounded-2xl bg-violet-50 border border-violet-200 text-center">
-                        <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-violet-100 flex items-center justify-center">
-                            <i class="fa-solid fa-atom text-2xl text-violet-600"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-800 text-sm">Chemical Monomers</h4>
-                        <p class="text-xs text-slate-500 mt-1">PET, PS, Nylon recovery</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- STRATEGIC IMPORTANCE -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-
-                <img src="{{ asset('images/sectors/chemical-recycling.jpg') }}" alt="Chemical Recycling Importance"
-                    class="w-full h-[300px] object-cover rounded-2xl shadow-md">
-
-                <div class="p-6 rounded-2xl bg-cyan-700 text-white shadow-lg min-h-[300px] flex flex-col justify-center">
-                    <h3 class="text-2xl font-bold mb-4">Why Chemical Recycling Matters</h3>
-                    <div class="space-y-3">
-                        <div class="flex items-start gap-3 text-sm">
-                            <i class="fa-solid fa-check-circle text-cyan-200 mt-0.5 shrink-0"></i>
-                            Mechanical recycling alone cannot solve the plastic waste crisis
-                        </div>
-                        <div class="flex items-start gap-3 text-sm">
-                            <i class="fa-solid fa-check-circle text-cyan-200 mt-0.5 shrink-0"></i>
-                            Enables recycling of previously non-recyclable plastics
-                        </div>
-                        <div class="flex items-start gap-3 text-sm">
-                            <i class="fa-solid fa-check-circle text-cyan-200 mt-0.5 shrink-0"></i>
-                            Supports net-zero and ESG targets
-                        </div>
-                        <div class="flex items-start gap-3 text-sm">
-                            <i class="fa-solid fa-check-circle text-cyan-200 mt-0.5 shrink-0"></i>
-                            Converts waste into high-value raw materials
-                        </div>
-                        <div class="flex items-start gap-3 text-sm">
-                            <i class="fa-solid fa-check-circle text-cyan-200 mt-0.5 shrink-0"></i>
-                            Bridges gap between petrochemical and recycling industries
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- CONCLUSION -->
-            <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-10 rounded-2xl text-center shadow-lg">
-                <h3 class="text-3xl font-bold mb-4">Conclusion</h3>
-                <p class="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                    Chemical recycling represents the <strong>next evolution of the global recycling industry</strong>,
-                    transforming plastic waste into a circular feedstock economy. Globally, it is moving from pilot stage
-                    to commercial scaling, while in <strong>India it is still emerging but expected to grow rapidly
-                    post-2026</strong> due to regulatory pressure and rising plastic waste volumes.
-                </p>
             </div>
 
         </div>

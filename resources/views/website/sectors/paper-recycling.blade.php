@@ -4,40 +4,58 @@
 
 @section('content')
 
-    <!-- HERO -->
-    <section class="relative pt-32 pb-24 bg-stone-900 text-white overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-stone-800 via-stone-900 to-black"></div>
-        <div class="absolute inset-0 opacity-20"
-            style="background-image: url('{{ asset('images/sectors/paper-recycling.jpg') }}'); background-size: cover; background-position: center;">
+    <!-- Architectural Hero -->
+    <section class="relative pt-64 pb-32 bg-slate-950 overflow-hidden border-b border-slate-900">
+        <!-- Visual Backdrop -->
+        <div class="absolute inset-0 opacity-20">
+            <img src="{{ asset('images/sectors/paper-recycling.jpg') }}" class="w-full h-full object-cover grayscale">
         </div>
+        <div class="absolute inset-0 bg-linear-to-b from-slate-950 via-slate-950/90 to-slate-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(217,119,6,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        
+        <!-- Industrial Accents -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-amber-600 opacity-5 -skew-x-12 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-1/4 h-64 bg-amber-600 opacity-5 skew-x-12 -translate-x-1/2"></div>
 
-        <div class="container relative z-10 text-center">
-            <h1 class="text-4xl md:text-6xl font-black uppercase mb-4 tracking-wide">
-                Paper <span class="text-amber-400">Recycling</span>
+        <div class="container relative z-10 text-center space-y-12">
+            <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10">
+                <span class="w-2 h-2 bg-amber-400 animate-pulse"></span>
+                <span class="text-white text-[10px] font-black tracking-[0.4em] uppercase">Circular Fiber Protocol</span>
+            </div>
+            <h1 class="text-6xl md:text-[9rem] font-black text-white leading-[0.85] tracking-tighter uppercase">
+                Paper <br>
+                <span class="text-amber-600">Recycling.</span>
             </h1>
-            <p class="text-xl md:text-2xl text-stone-300 max-w-3xl mx-auto leading-relaxed uppercase italic font-medium">
-                Turning waste paper and cardboard into sustainable raw materials.
+            <p class="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium border-l-4 border-amber-600 pl-10 uppercase tracking-widest italic md:text-center mx-auto">
+                Turning waste paper and cardboard into sustainable raw materials for a circular economy.
             </p>
         </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="py-16 bg-white">
-        <div class="container space-y-20">
+    <!-- Content Interface -->
+    <section class="py-32 bg-white relative">
+        <div class="container space-y-48">
 
-            <!-- WHAT IS PAPER RECYCLING -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="animate-in fade-in slide-in-from-left duration-700">
-                    <h2 class="text-3xl font-extrabold mb-6 text-stone-900 uppercase italic">Circular Fiber Solutions</h2>
-                    <p class="text-stone-600 leading-relaxed mb-4 text-lg">
-                        <strong>Paper recycling</strong> is the process of collecting, sorting, processing, and converting waste paper, cardboard, and used paper products into reusable raw materials for manufacturing new paper-based products.
-                    </p>
-                    <p class="text-stone-600 leading-relaxed font-medium">
-                        It helps conserve natural resources, reduce landfill waste, and significantly lower the environmental impact compared to virgin paper production.
-                    </p>
+            <!-- Executive Summary -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200">
+                <div class="p-16 lg:p-24 bg-white space-y-12">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Circular Material Framework</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">Fiber <br><span class="text-amber-600">Recovery.</span></h2>
+                        <div class="accent-line bg-amber-600"></div>
+                    </div>
+                    
+                    <div class="space-y-8 text-2xl text-slate-500 font-medium leading-relaxed italic border-l-4 border-slate-100 pl-10">
+                        <p>
+                            <strong class="text-slate-900 font-black uppercase tracking-tight">Paper recycling</strong> is the process of collecting, sorting, processing, and converting waste paper and cardboard into reusable raw materials.
+                        </p>
+                        <p>
+                            It helps conserve natural resources, reduce landfill waste, and significantly lower the environmental impact compared to virgin paper production.
+                        </p>
+                    </div>
                 </div>
 
-                <div class="grid grid-cols-2 gap-4 animate-in fade-in slide-in-from-right duration-700">
+                <div class="grid grid-cols-2 gap-px bg-slate-200">
                     @php
                         $uses = [
                             ['icon' => 'box-open', 'label' => 'Packaging Boxes'],
@@ -47,20 +65,25 @@
                         ];
                     @endphp
                     @foreach($uses as $use)
-                        <div class="p-6 bg-stone-50 border border-stone-100 rounded-2xl text-center group hover:bg-stone-900 hover:text-white transition-all duration-300">
-                            <i class="fa-solid fa-{{ $use['icon'] }} text-3xl mb-3 text-stone-400 group-hover:text-amber-400"></i>
-                            <p class="text-xs font-black uppercase tracking-tight">{{ $use['label'] }}</p>
+                        <div class="p-12 bg-white flex flex-col items-center justify-center text-center group hover:bg-slate-950 transition-all duration-700">
+                            <i class="fa-solid fa-{{ $use['icon'] }} text-4xl mb-6 text-amber-600 transition-transform duration-500 group-hover:scale-110"></i>
+                            <p class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 group-hover:text-white">{{ $use['label'] }}</p>
                         </div>
                     @endforeach
                 </div>
             </div>
 
-            <!-- KEY PROCESSES -->
-            <div class="p-10 rounded-3xl bg-stone-900 text-white relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
-                <h3 class="text-2xl font-black mb-10 uppercase italic tracking-widest text-center">Key Recycling Processes</h3>
+            <!-- Process Grid -->
+            <div class="p-24 bg-slate-950 text-white space-y-16 relative overflow-hidden group">
+                 <div class="absolute top-0 right-0 p-12 text-amber-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                    <i class="fa-solid fa-recycle text-[12rem]"></i>
+                </div>
+                <div class="relative z-10 text-center">
+                    <h3 class="text-5xl font-black uppercase tracking-tighter italic">Recycling Protocol</h3>
+                    <div class="accent-line bg-amber-600 mx-auto mt-4"></div>
+                </div>
                 
-                <div class="grid grid-cols-2 md:grid-cols-5 gap-6 relative z-10">
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-px bg-white/10 border border-white/10 shadow-3xl">
                     @php
                         $processes = [
                             'Collection & Segregation',
@@ -71,197 +94,159 @@
                         ];
                     @endphp
                     @foreach($processes as $index => $process)
-                        <div class="text-center">
-                            <div class="w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4 font-black text-xl shadow-lg ring-4 ring-stone-900">
-                                {{ $index + 1 }}
-                            </div>
-                            <p class="text-xs font-bold uppercase text-stone-300 leading-tight">{{ $process }}</p>
+                        <div class="p-12 bg-slate-950 text-center group/step hover:bg-amber-600 transition-all duration-500">
+                            <div class="text-4xl font-black text-amber-600 mb-6 group-hover/step:text-slate-950 transition-colors">0{{ $index + 1 }}</div>
+                            <p class="text-[10px] font-black uppercase text-slate-400 group-hover/step:text-slate-950 tracking-[0.2em] leading-tight">{{ $process }}</p>
                         </div>
                     @endforeach
                 </div>
             </div>
 
-            <!-- MARKET STATS -->
-            <div class="grid md:grid-cols-2 gap-10">
+            <!-- Global vs India Market -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
                 <!-- GLOBAL -->
-                <div class="p-8 rounded-3xl bg-gradient-to-br from-stone-800 to-stone-900 text-white shadow-2xl">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="p-3 bg-white/10 rounded-xl text-amber-400">
-                            <i class="fa-solid fa-earth-europe text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold uppercase tracking-tight">Global Market</h3>
+                <div class="p-16 lg:p-24 bg-white relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-12 text-amber-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-earth-europe text-[12rem]"></i>
                     </div>
-                    
-                    <ul class="space-y-4 text-stone-300">
-                        <li class="flex items-baseline justify-between border-b border-white/10 pb-2">
-                            <span class="text-sm uppercase font-bold text-stone-400">Market Value (2025)</span>
-                            <span class="text-xl font-black text-white">$48 Billion</span>
-                        </li>
-                        <li class="flex items-baseline justify-between border-b border-white/10 pb-2">
-                            <span class="text-sm uppercase font-bold text-stone-400">Projected (2031)</span>
-                            <span class="text-xl font-black text-white">$72 Billion</span>
-                        </li>
-                        <li class="flex items-baseline justify-between border-b border-white/10 pb-2">
-                            <span class="text-sm uppercase font-bold text-stone-400">Annual CAGR</span>
-                            <span class="text-xl font-black text-amber-400">7%</span>
-                        </li>
-                    </ul>
+                    <div class="relative z-10 space-y-16">
+                        <div class="space-y-4">
+                            <div class="text-amber-600 text-[10px] font-black uppercase tracking-[0.4em]">Global Landscape</div>
+                            <h3 class="text-5xl font-black text-slate-900 uppercase tracking-tighter italic">Global Market</h3>
+                        </div>
+                        
+                        <div class="space-y-12">
+                            <div class="flex items-end justify-between border-b border-slate-200 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Value (2025)</span>
+                                <span class="text-6xl font-black text-slate-950 tracking-tighter italic">$48B</span>
+                            </div>
+                            <div class="flex items-end justify-between border-b border-slate-200 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Projected (2031)</span>
+                                <span class="text-6xl font-black text-slate-950 tracking-tighter italic">$72B</span>
+                            </div>
+                        </div>
 
-                    <p class="mt-6 text-[10px] text-stone-500 uppercase font-black tracking-widest">Driven by Rising global packaging demand & E-commerce growth.</p>
+                        <div class="p-10 bg-amber-50 border-l-8 border-amber-600">
+                            <p class="text-[10px] font-black text-amber-600 uppercase tracking-[0.4em] mb-2">Expansion Driver</p>
+                            <p class="text-xl font-black text-slate-900 uppercase italic tracking-tighter">E-commerce Packaging Surge</p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- INDIA -->
-                <div class="p-8 rounded-3xl bg-stone-50 border border-stone-200 shadow-xl">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="p-3 bg-stone-200 rounded-xl text-stone-600">
-                            <i class="fa-solid fa-industry text-2xl"></i>
+                <div class="p-16 lg:p-24 bg-slate-950 text-white relative overflow-hidden group border-l border-slate-200">
+                    <div class="absolute top-0 right-0 p-12 text-amber-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-industry text-[12rem]"></i>
+                    </div>
+                    <div class="relative z-10 space-y-16 text-right">
+                        <div class="space-y-4">
+                            <div class="text-amber-400 text-[10px] font-black uppercase tracking-[0.4em]">National Momentum</div>
+                            <h3 class="text-5xl font-black text-white uppercase tracking-tighter italic">Indian Market</h3>
                         </div>
-                        <h3 class="text-2xl font-bold text-stone-900 uppercase tracking-tight">Indian Market</h3>
+                        
+                        <div class="p-12 bg-white/5 border border-white/10 text-right space-y-6">
+                            <p class="text-[9px] font-black text-amber-400 uppercase tracking-[0.4em] italic">Market Forecast</p>
+                            <p class="text-4xl font-black text-white uppercase italic leading-tight tracking-tighter">$8B Projected (2031)</p>
+                            <p class="text-[12px] font-black text-slate-500 uppercase tracking-widest italic">10-12% Annual CAGR</p>
+                        </div>
+
+                        <div class="space-y-8">
+                            <h4 class="text-[9px] font-black text-slate-400 uppercase tracking-[0.4em]">Industrial Base</h4>
+                            <div class="grid grid-cols-2 gap-px bg-white/10 border border-white/10">
+                                <div class="p-8 bg-slate-950 flex flex-col items-center justify-center gap-4 group/item hover:bg-amber-600 transition-all duration-500">
+                                    <span class="text-4xl font-black text-amber-600 group-hover:text-slate-950 transition-colors">850+</span>
+                                    <span class="text-[9px] font-black uppercase text-slate-300 group-hover:text-slate-950 tracking-[0.1em] text-center">Paper Mills</span>
+                                </div>
+                                <div class="p-8 bg-slate-950 flex flex-col items-center justify-center gap-4 group/item hover:bg-amber-600 transition-all duration-500">
+                                    <span class="text-4xl font-black text-amber-600 group-hover:text-slate-950 transition-colors">HIGH</span>
+                                    <span class="text-[9px] font-black uppercase text-slate-300 group-hover:text-slate-950 tracking-[0.1em] text-center">Growth Stage</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-amber-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110">7%</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">Global CAGR</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-amber-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">$3.5B</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">India Market (2025)</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-amber-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">12%</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">India CAGR Target</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-amber-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">Mature</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">Global Stage</p>
+                </div>
+            </div>
+
+            <!-- Opportunities & Innovation -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
+                <div class="p-24 bg-white space-y-16">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Growth Horizons</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">Emerging <br><span class="text-amber-600">Trends.</span></h2>
+                        <div class="accent-line bg-amber-600"></div>
                     </div>
                     
-                    <ul class="space-y-4 text-stone-600">
-                        <li class="flex items-baseline justify-between border-b border-stone-200 pb-2">
-                            <span class="text-sm uppercase font-bold text-stone-400">Market Value (2025)</span>
-                            <span class="text-xl font-black text-stone-900">$3.5 Billion</span>
-                        </li>
-                        <li class="flex items-baseline justify-between border-b border-stone-200 pb-2">
-                            <span class="text-sm uppercase font-bold text-stone-400">Projected (2031)</span>
-                            <span class="text-xl font-black text-stone-900">$8 Billion</span>
-                        </li>
-                        <li class="flex items-baseline justify-between border-b border-stone-200 pb-2">
-                            <span class="text-sm uppercase font-bold text-stone-400">Annual CAGR</span>
-                            <span class="text-xl font-black text-stone-800">10% - 12%</span>
-                        </li>
-                    </ul>
-
-                    <div class="mt-6 grid grid-cols-2 gap-3">
-                         <div class="bg-white p-3 rounded-xl border border-stone-100 shadow-sm">
-                            <p class="text-[10px] text-stone-400 uppercase font-bold">Paper Mills</p>
-                            <p class="text-sm font-black text-stone-700">850+</p>
-                         </div>
-                         <div class="bg-white p-3 rounded-xl border border-stone-100 shadow-sm">
-                            <p class="text-[10px] text-stone-400 uppercase font-bold">Growth Stage</p>
-                            <p class="text-sm font-black text-stone-700 uppercase">High Growth</p>
-                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- COMPARISON SNAPSHOT -->
-            <div class="overflow-x-auto rounded-3xl border border-stone-200 shadow-sm">
-                <table class="w-full text-left border-collapse">
-                    <thead>
-                        <tr class="bg-stone-900 text-white">
-                            <th class="p-6 uppercase text-sm tracking-widest font-black">Snapshot Parameter</th>
-                            <th class="p-6 uppercase text-sm tracking-widest font-black text-center">Global Market</th>
-                            <th class="p-6 uppercase text-sm tracking-widest font-black text-center">India Market</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-stone-100 italic">
-                        <tr class="hover:bg-stone-50 transition-colors">
-                            <td class="p-6 font-bold text-stone-500 uppercase text-xs">Market Stage</td>
-                            <td class="p-6 text-center font-black text-stone-800">Mature</td>
-                            <td class="p-6 text-center font-black text-stone-800">High Growth</td>
-                        </tr>
-                        <tr class="hover:bg-stone-50 transition-colors">
-                            <td class="p-6 font-bold text-stone-500 uppercase text-xs">Primary Driver</td>
-                            <td class="p-6 text-center text-stone-600 font-medium">Sustainable Packaging</td>
-                            <td class="p-6 text-center text-stone-600 font-medium">Packaging + Plastic Replacement</td>
-                        </tr>
-                        <tr class="hover:bg-stone-50 transition-colors">
-                            <td class="p-6 font-bold text-stone-500 uppercase text-xs">Recycling Facilities</td>
-                            <td class="p-6 text-center text-stone-600 font-medium">10,000+ Globally</td>
-                            <td class="p-6 text-center text-stone-600 font-medium">850+ Paper Mills</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- GROWTH OUTLOOK -->
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="space-y-6">
-                    <h2 class="text-3xl font-extrabold text-stone-900 uppercase tracking-tight">Global Outlook</h2>
-                    <div class="grid gap-4">
-                        @foreach([
-                            'Increased use of recycled fiber in packaging',
-                            'Growth in automated paper sorting technologies',
-                            'Rising global focus on eco-friendly packaging',
-                            'Expansion of closed-loop packaging systems'
-                        ] as $outlook)
-                        <div class="flex items-center gap-4 p-4 rounded-xl bg-stone-50 border border-stone-100 hover:border-stone-300 transition-all">
-                            <div class="w-8 h-8 flex items-center justify-center bg-stone-200 text-stone-600 rounded-lg">
-                                <i class="fa-solid fa-chevron-right text-xs"></i>
+                    <div class="grid grid-cols-1 gap-4">
+                        @php
+                            $trends = [
+                                ['icon' => 'box', 'title' => 'Recycled Fiber Packaging Surge'],
+                                ['icon' => 'robot', 'title' => 'Automated Paper Sorting Tech'],
+                                ['icon' => 'leaf', 'title' => 'Eco-Friendly Packaging Systems'],
+                                ['icon' => 'recycle', 'title' => 'Closed-Loop Circular Packing'],
+                                ['icon' => 'industry', 'title' => 'Kraft & Duplex Board Expansion'],
+                            ];
+                        @endphp
+                        @foreach($trends as $item)
+                        <div class="flex items-center gap-10 p-10 bg-slate-50 group/opp hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-1 h-full bg-amber-600 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                            <div class="w-16 h-16 border border-slate-200 flex items-center justify-center text-amber-600 group-hover/opp:bg-amber-600 group-hover/opp:text-white transition-all duration-500 shadow-sm">
+                                <i class="fa-solid fa-{{ $item['icon'] }} text-2xl"></i>
                             </div>
-                            <span class="font-bold text-stone-700 text-xs uppercase tracking-tight">{{ $outlook }}</span>
+                            <span class="text-xl font-black uppercase text-slate-700 tracking-[0.15em] group-hover/opp:text-white transition-colors leading-tight italic">{{ $item['title'] }}</span>
                         </div>
                         @endforeach
                     </div>
                 </div>
 
-                <div class="space-y-6">
-                    <h2 class="text-3xl font-extrabold text-stone-900 uppercase tracking-tight">India Outlook</h2>
-                    <div class="grid gap-4">
-                        @foreach([
-                            'Major increase in kraft paper and duplex board demand',
-                            'Expansion of organized recycling networks',
-                            'Rising domestic production by recycled mills',
-                            'Increased import substitution through local recycling'
-                        ] as $outlook)
-                        <div class="flex items-center gap-4 p-4 rounded-xl bg-amber-50 border border-amber-100 hover:border-amber-300 transition-all">
-                            <div class="w-8 h-8 flex items-center justify-center bg-amber-200 text-amber-700 rounded-lg">
-                                <i class="fa-solid fa-arrow-up text-xs"></i>
-                            </div>
-                            <span class="font-bold text-stone-700 text-xs uppercase tracking-tight">{{ $outlook }}</span>
-                        </div>
-                        @endforeach
+                <div class="p-24 bg-slate-950 text-white space-y-12 relative overflow-hidden group border-l border-slate-200 text-center flex flex-col justify-center items-center">
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(217,119,6,0.05),transparent)]"></div>
+                    <div class="relative z-10 space-y-10">
+                        <i class="fa-solid fa-file-circle-check text-[8rem] text-amber-600/10 group-hover:text-amber-600 transition-all duration-700"></i>
+                        <h4 class="text-5xl font-black uppercase text-white tracking-tighter italic leading-tight">Strategic Value</h4>
+                        <p class="text-2xl text-slate-400 font-medium italic max-w-sm mx-auto uppercase tracking-tighter leading-relaxed">
+                            Recycling <span class="text-white font-black tracking-tight">Saves Trees</span>, reduces water consumption, and lowers carbon footprint.
+                        </p>
                     </div>
                 </div>
             </div>
 
-            <!-- STRATEGIC IMPORTANCE -->
-            <div class="p-10 rounded-3xl bg-amber-50 border border-amber-100 relative overflow-hidden">
-                <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h3 class="text-3xl font-bold mb-6 uppercase text-stone-900 italic">Strategic Importance</h3>
-                        <div class="space-y-4">
-                            @foreach([
-                                'Saves trees and reduces deforestation',
-                                'Conserves water and energy in production',
-                                'Lowers landfill waste burden',
-                                'Reduces carbon footprint of paper manufacturing',
-                                'Supports sustainable packaging ecosystem'
-                            ] as $imp)
-                            <div class="flex items-center gap-3">
-                                <i class="fa-solid fa-check text-amber-600"></i>
-                                <span class="text-sm font-bold text-stone-700 uppercase tracking-tight">{{ $imp }}</span>
-                            </div>
-                            @endforeach
-                        </div>
-                    </div>
-                    <div class="relative">
-                        <div class="p-8 bg-stone-900 rounded-2xl text-white shadow-2xl">
-                            <h4 class="text-xl font-bold mb-4 italic text-amber-400 uppercase tracking-widest">Key Recycled Products</h4>
-                            <div class="flex flex-wrap gap-2">
-                                @foreach(['Corrugated Boxes', 'Printing Paper', 'Tissue Products', 'Paperboard', 'Paper Bags', 'Cartons'] as $prod)
-                                    <span class="px-3 py-1 bg-white/10 rounded-lg text-[10px] font-black uppercase text-stone-300 border border-white/5">{{ $prod }}</span>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CONCLUSION (CTA) -->
-            <div class="relative bg-stone-900 text-white p-12 md:p-16 rounded-3xl text-center shadow-2xl overflow-hidden border-b-4 border-amber-600">
-                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(245,158,11,0.05),transparent)]"></div>
-                <div class="relative z-10">
-                    <h3 class="text-3xl font-bold mb-6 uppercase tracking-tight">Build a Sustainable Packaging Future</h3>
-                    <p class="text-xl text-stone-300 max-w-4xl mx-auto leading-relaxed mb-10">
-                        Join the transition from single-use plastics to circular fiber solutions. Explore recycling infrastructure, waste collection networks, and sustainable paper manufacturing.
+            <!-- Conclusion CTA -->
+            <div class="relative p-24 lg:p-32 bg-slate-950 overflow-hidden text-center shadow-3xl group">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(217,119,6,0.2),transparent)]"></div>
+                <div class="relative z-10 space-y-16">
+                    <h3 class="text-5xl md:text-[8rem] font-black text-white uppercase tracking-tighter leading-[0.85]">
+                        Circular <br><span class="text-amber-600">Future.</span>
+                    </h3>
+                    <p class="text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium italic border-l-4 border-amber-600 pl-10 md:text-center mx-auto uppercase tracking-tighter">
+                        Join the transition from single-use plastics to circular fiber solutions. Support sustainable paper manufacturing globally.
                     </p>
-                    <a href="" class="inline-flex items-center gap-3 px-10 py-5 bg-white text-stone-900 font-black uppercase tracking-widest rounded-full hover:bg-amber-500 hover:text-white transition-all duration-300 shadow-xl group">
-                        Register for Paper Recycling Support <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform text-amber-600"></i>
-                    </a>
+                    <div class="flex justify-center">
+                        <a href="{{ route('join.index') }}" 
+                            class="btn-sharp px-16 group !border-amber-600/30 hover:!bg-amber-600">
+                            Support Fiber Recycling 
+                            <i class="fa-solid fa-arrow-right-long ml-6 group-hover:translate-x-4 transition-transform"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
 

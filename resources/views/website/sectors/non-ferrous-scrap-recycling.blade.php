@@ -4,319 +4,264 @@
 
 @section('content')
 
-    <!-- HERO -->
-    <section class="relative pt-32 pb-24 bg-slate-900 text-white overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-zinc-800 via-slate-900 to-black"></div>
-        <div class="absolute inset-0 opacity-10"
-            style="background-image: url('{{ asset('images/sectors/non-ferrous-scrap-recycling.jpeg') }}'); background-size: cover; background-position: center;">
+    <!-- Architectural Hero -->
+    <section class="relative pt-64 pb-32 bg-slate-950 overflow-hidden border-b border-slate-900">
+        <!-- Visual Backdrop -->
+        <div class="absolute inset-0 opacity-20">
+            <img src="{{ asset('images/sectors/non-ferrous-scrap-recycling.jpeg') }}" class="w-full h-full object-cover grayscale">
         </div>
+        <div class="absolute inset-0 bg-linear-to-b from-slate-950 via-slate-950/90 to-slate-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        
+        <!-- Industrial Accents -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-violet-600 opacity-5 -skew-x-12 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-1/4 h-64 bg-violet-600 opacity-5 skew-x-12 -translate-x-1/2"></div>
 
-        <div class="container relative z-10 text-center">
-            <h1 class="text-4xl md:text-6xl font-black uppercase mb-4 tracking-wide">
-                Non-Ferrous & Scrap Recycling
+        <div class="container relative z-10 text-center space-y-12">
+            <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10">
+                <span class="w-2 h-2 bg-violet-400 animate-pulse"></span>
+                <span class="text-white text-[10px] font-black tracking-[0.4em] uppercase">Secondary Metal Protocol</span>
+            </div>
+            <h1 class="text-6xl md:text-[9rem] font-black text-white leading-[0.85] tracking-tighter uppercase">
+                Non-Ferrous <br>
+                <span class="text-violet-600">Recycling.</span>
             </h1>
-            <p class="text-lg md:text-xl text-amber-300 font-semibold mb-2">Metals Reborn, Value Restored</p>
-            <p class="text-slate-300 max-w-3xl mx-auto">
-                Collection, processing, and re-use of discarded non-iron metals and industrial scrap into valuable secondary raw materials for manufacturing.
+            <p class="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium border-l-4 border-violet-600 pl-10 uppercase tracking-widest italic md:text-center mx-auto">
+                Metals Reborn, Value Restored — Driving Circular Industrial Independence.
             </p>
         </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="py-16 bg-white">
-        <div class="container space-y-16">
+    <!-- Content Interface -->
+    <section class="py-32 bg-white relative">
+        <div class="container space-y-48">
 
-            <!-- INTRO -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl font-extrabold mb-4 text-slate-900">What is Non-Ferrous & Scrap Recycling?</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4">
-                        <strong>Non-Ferrous & Scrap Recycling</strong> refers to the collection, segregation, processing,
-                        and re-use of discarded <strong>non-iron-based metals and industrial scrap</strong> materials
-                        into valuable secondary raw materials for manufacturing and industrial use.
+            <!-- Executive Summary -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200">
+                <div class="p-16 lg:p-24 bg-white space-y-12">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Scrap Asset Architecture</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic text-slate-950">Resource <br><span class="text-violet-600">Recovery.</span></h2>
+                        <div class="accent-line bg-violet-600"></div>
+                    </div>
+                    
+                    <div class="space-y-8 text-2xl text-slate-500 font-medium leading-relaxed italic border-l-4 border-slate-100 pl-10">
+                        <p>
+                            <strong class="text-slate-900 font-black uppercase tracking-tight">Non-Ferrous Recycling</strong> refers to the collection, segregation, and processing of discarded non-iron-based metals into valuable secondary raw materials.
+                        </p>
+                        <p>
+                            Recycling these metals reduces mining dependency, saves significant energy, lowers carbon emissions, and supports high-performance circular manufacturing across electronics and automotive sectors.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-violet-600/10"></div>
+                    <div class="relative h-full overflow-hidden border-l border-slate-200 shadow-3xl">
+                        <img src="{{ asset('images/sectors/non-ferrous-scrap-recycling.jpeg') }}" alt="Non-Ferrous Recycling"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000">
+                    </div>
+                    <div class="absolute top-0 right-0 p-8">
+                        <div class="bg-violet-600 text-white text-[10px] font-black px-6 py-2 uppercase tracking-[0.3em] shadow-2xl">
+                            Metal Standard
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Metal Types Grid -->
+            <div class="space-y-24">
+                <div class="text-center space-y-4">
+                    <span class="text-violet-600 text-[10px] font-black uppercase tracking-[0.4em]">Resource Classification</span>
+                    <h3 class="text-6xl font-black text-slate-950 uppercase tracking-tighter italic">Non-Ferrous Inventory</h3>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
+                    @php
+                        $metals = [
+                            ['icon' => 'cube', 'title' => 'Aluminium', 'color' => 'amber'],
+                            ['icon' => 'ring', 'title' => 'Copper', 'color' => 'orange'],
+                            ['icon' => 'coins', 'title' => 'Brass', 'color' => 'yellow'],
+                            ['icon' => 'weight-hanging', 'title' => 'Lead', 'color' => 'slate'],
+                            ['icon' => 'layer-group', 'title' => 'Zinc', 'color' => 'blue'],
+                            ['icon' => 'circle-dot', 'title' => 'Nickel', 'color' => 'violet'],
+                            ['icon' => 'recycle', 'title' => 'Stainless Steel', 'color' => 'emerald'],
+                            ['icon' => 'microchip', 'title' => 'E-Metal Scrap', 'color' => 'rose'],
+                        ];
+                    @endphp
+                    @foreach($metals as $metal)
+                        <div class="p-12 bg-white flex flex-col items-center justify-center text-center group hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-1 h-full bg-violet-600 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                            <div class="w-16 h-16 mb-8 border border-slate-100 bg-slate-50 flex items-center justify-center text-violet-600 group-hover:bg-violet-600 group-hover:text-white transition-all duration-500 shadow-sm">
+                                <i class="fa-solid fa-{{ $metal['icon'] }} text-2xl"></i>
+                            </div>
+                            <h4 class="text-[12px] font-black uppercase text-slate-950 group-hover:text-white transition-colors tracking-[0.15em] italic">{{ $metal['title'] }}</h4>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+
+            <!-- Global vs India Market -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
+                <!-- GLOBAL -->
+                <div class="p-16 lg:p-24 bg-slate-950 text-white relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-12 text-violet-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-earth-americas text-[12rem]"></i>
+                    </div>
+                    <div class="relative z-10 space-y-16">
+                        <div class="space-y-4">
+                            <div class="text-violet-400 text-[10px] font-black uppercase tracking-[0.4em]">International Transition</div>
+                            <h3 class="text-5xl font-black uppercase tracking-tighter italic">Global Market</h3>
+                        </div>
+                        
+                        <div class="space-y-12">
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Value (2026)</span>
+                                <span class="text-6xl font-black text-white tracking-tighter italic">$249B+</span>
+                            </div>
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Projected (2030)</span>
+                                <span class="text-6xl font-black text-violet-500 tracking-tighter italic">$300B+</span>
+                            </div>
+                        </div>
+
+                        <div class="p-10 bg-violet-600/10 border-l-8 border-violet-600">
+                            <p class="text-[10px] font-black text-violet-500 uppercase tracking-[0.4em] mb-2">Growth Drivers</p>
+                            <div class="grid grid-cols-2 gap-4">
+                                @foreach(['EV Mfg', 'Renewables', 'Infra Expansion', 'Circular Economy'] as $driver)
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-1.5 h-1.5 bg-violet-600"></div>
+                                        <span class="text-[10px] font-black uppercase text-slate-400 tracking-widest">{{ $driver }}</span>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INDIA -->
+                <div class="p-16 lg:p-24 bg-white relative overflow-hidden group border-l border-slate-200">
+                    <div class="absolute top-0 right-0 p-12 text-violet-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-industry text-[12rem]"></i>
+                    </div>
+                    <div class="relative z-10 space-y-16 text-right">
+                        <div class="space-y-4">
+                            <div class="text-violet-600 text-[10px] font-black uppercase tracking-[0.4em]">National Momentum</div>
+                            <h3 class="text-5xl font-black text-slate-900 uppercase tracking-tighter italic">Indian Market</h3>
+                        </div>
+                        
+                        <div class="p-12 bg-violet-50 border-l-8 border-violet-600 shadow-sm text-right space-y-6">
+                            <p class="text-[9px] font-black text-violet-600 uppercase tracking-[0.4em] italic">Market Projection</p>
+                            <p class="text-4xl font-black text-slate-950 uppercase italic leading-tight tracking-tighter">₹5 Lakh Cr+</p>
+                            <p class="text-[12px] font-black text-slate-500 uppercase tracking-widest italic">Fastest Growing Global Market</p>
+                        </div>
+
+                        <div class="space-y-8 text-right">
+                            <h4 class="text-[9px] font-black text-slate-400 uppercase tracking-[0.4em]">Recycling Hubs</h4>
+                            <div class="flex flex-wrap justify-end gap-2">
+                                @foreach(['Mumbai', 'Delhi NCR', 'Gujarat', 'Alang', 'Chennai', 'Kolkata', 'Ludhiana'] as $hub)
+                                    <span class="px-6 py-2 bg-slate-950 text-white text-[10px] font-black uppercase tracking-widest italic">{{ $hub }}</span>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-violet-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110">$249B+</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">Global Market (2026)</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-violet-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">₹34K Cr+</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">India Metal Scrap</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-violet-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">20K+</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">India Recyclers</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-violet-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">5L+</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">Direct Jobs India</p>
+                </div>
+            </div>
+
+            <!-- Emerging Opportunities -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
+                <div class="p-24 bg-white space-y-16">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Innovation Horizons</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic text-slate-950">Emerging <br><span class="text-violet-600">Trends.</span></h2>
+                        <div class="accent-line bg-violet-600"></div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 gap-4">
+                        @php
+                            $trends = [
+                                ['icon' => 'battery-full', 'title' => 'Battery Metal Recycling Growth'],
+                                ['icon' => 'robot', 'title' => 'AI & Automated Scrap Sorting'],
+                                ['icon' => 'gem', 'title' => 'High-Purity Metal Recovery'],
+                                ['icon' => 'car-battery', 'title' => 'EV Battery Dismantling'],
+                                ['icon' => 'microchip', 'title' => 'Precious Metal Extraction'],
+                                ['icon' => 'industry', 'title' => 'Integrated Recycling Parks'],
+                            ];
+                        @endphp
+                        @foreach($trends as $item)
+                        <div class="flex items-center gap-10 p-10 bg-slate-50 group/opp hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-1 h-full bg-violet-600 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                            <div class="w-16 h-16 border border-slate-200 flex items-center justify-center text-violet-600 group-hover/opp:bg-violet-600 group-hover/opp:text-white transition-all duration-500 shadow-sm">
+                                <i class="fa-solid fa-{{ $item['icon'] }} text-2xl"></i>
+                            </div>
+                            <span class="text-xl font-black uppercase text-slate-700 tracking-[0.15em] group-hover/opp:text-white transition-colors leading-tight italic">{{ $item['title'] }}</span>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+
+                <div class="p-24 bg-slate-950 text-white space-y-12 relative overflow-hidden group border-l border-slate-200 flex flex-col justify-center">
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(139,92,246,0.05),transparent)]"></div>
+                    <div class="relative z-10 space-y-16">
+                        <div class="space-y-4 text-center">
+                            <div class="text-violet-400 text-[10px] font-black uppercase tracking-[0.4em]">India Context</div>
+                            <h3 class="text-5xl font-black text-white uppercase tracking-tighter italic">Global Scrap Hub</h3>
+                        </div>
+                        <div class="grid grid-cols-1 gap-6">
+                            @foreach([
+                                'Huge domestic industrial demand',
+                                'Cost-effective labor and processing',
+                                'Strategic import/export ports',
+                                'Growing manufacturing sector',
+                                'Strong infra/auto/electrical demand'
+                            ] as $reason)
+                                <div class="flex items-center gap-6 group/item">
+                                    <i class="fa-solid fa-circle-check text-violet-600 group-hover:text-white transition-colors"></i>
+                                    <span class="text-lg font-black uppercase text-slate-400 group-hover:text-white transition-colors tracking-widest italic">{{ $reason }}</span>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conclusion CTA -->
+            <div class="relative p-24 lg:p-32 bg-slate-950 overflow-hidden text-center shadow-3xl group">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(139,92,246,0.2),transparent)]"></div>
+                <div class="relative z-10 space-y-16">
+                    <h3 class="text-5xl md:text-[8rem] font-black text-white uppercase tracking-tighter leading-[0.85]">
+                        Metals <br><span class="text-violet-600">Reborn.</span>
+                    </h3>
+                    <p class="text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium italic border-l-4 border-violet-600 pl-10 md:text-center mx-auto uppercase tracking-tighter">
+                        Non-ferrous and scrap recycling is the backbone of India's circular manufacturing economy, driving sustainable industrial growth and resource independence.
                     </p>
-                    <p class="text-slate-600 leading-relaxed">
-                        Recycling these metals <strong>reduces mining dependency, saves energy, lowers carbon emissions</strong>,
-                        and supports circular manufacturing.
-                    </p>
-                </div>
-
-                <img src="{{ asset('images/sectors/non-ferrous-scrap-recycling.jpeg') }}" alt="Non-Ferrous Recycling"
-                    class="w-full h-[320px] object-cover rounded-2xl shadow-lg">
-            </div>
-
-            <!-- METAL TYPES -->
-            <div>
-                <h2 class="text-3xl font-extrabold text-slate-900 mb-8 text-center">Non-Ferrous Metal Types</h2>
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-5">
-                    <div class="p-5 rounded-2xl bg-amber-50 border border-amber-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-amber-100 flex items-center justify-center">
-                            <i class="fa-solid fa-cube text-xl text-amber-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Aluminium</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-orange-50 border border-orange-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-orange-100 flex items-center justify-center">
-                            <i class="fa-solid fa-ring text-xl text-orange-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Copper</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-yellow-50 border border-yellow-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-yellow-100 flex items-center justify-center">
-                            <i class="fa-solid fa-coins text-xl text-yellow-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Brass</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-slate-100 border border-slate-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-slate-200 flex items-center justify-center">
-                            <i class="fa-solid fa-weight-hanging text-xl text-slate-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Lead</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-blue-50 border border-blue-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-blue-100 flex items-center justify-center">
-                            <i class="fa-solid fa-layer-group text-xl text-blue-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Zinc</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-violet-50 border border-violet-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-violet-100 flex items-center justify-center">
-                            <i class="fa-solid fa-circle-dot text-xl text-violet-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Nickel</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-emerald-50 border border-emerald-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-emerald-100 flex items-center justify-center">
-                            <i class="fa-solid fa-recycle text-xl text-emerald-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Stainless Steel Scrap</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-rose-50 border border-rose-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-rose-100 flex items-center justify-center">
-                            <i class="fa-solid fa-microchip text-xl text-rose-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Electronic Metal Scrap</h4>
+                    <div class="flex justify-center">
+                        <a href="{{ route('join.index') }}" 
+                            class="btn-sharp px-16 group !border-violet-600/30 hover:!bg-violet-600">
+                            Register for Metal Recovery 
+                            <i class="fa-solid fa-arrow-right-long ml-6 group-hover:translate-x-4 transition-transform"></i>
+                        </a>
                     </div>
                 </div>
-            </div>
-
-            <!-- GLOBAL vs INDIA -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-gradient-to-br from-zinc-700 to-slate-800 text-white shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4">Global Non-Ferrous Recycling Market</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li>Market Size (2026): <strong>USD 249+ Billion</strong></li>
-                        <li>Expected to surpass <strong>USD 300 Billion</strong> by 2030</li>
-                        <li>CAGR: <strong>4.5–6%</strong> annually</li>
-                    </ul>
-
-                    <h4 class="font-semibold mt-5 mb-2">Growth Drivers</h4>
-                    <ul class="list-disc pl-5 text-sm space-y-1">
-                        <li>Rising industrial metal demand</li>
-                        <li>Sustainability regulations</li>
-                        <li>Higher virgin metal prices</li>
-                        <li>Renewable energy and EV manufacturing</li>
-                        <li>Circular economy adoption</li>
-                    </ul>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-brand-accent border border-slate-200 shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4 text-brand-primary">Indian Scrap Recycling Market</h3>
-                    <ul class="space-y-2 text-sm text-slate-700">
-                        <li>Total scrap ecosystem: <strong>₹5 Lakh Crore+</strong></li>
-                        <li>Metal scrap market: <strong>₹34,000+ Crore</strong></li>
-                        <li>CAGR: <strong>6–8%</strong> annually</li>
-                    </ul>
-
-                    <h4 class="font-semibold mt-5 mb-2">India Target by 2031</h4>
-                    <ul class="text-sm text-slate-600 space-y-1">
-                        <li>Estimated to exceed <strong>₹50,000–60,000 Crore+</strong></li>
-                        <li>Fastest growing market globally for non-ferrous recycling</li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- STATS CARDS -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-amber-600">$249B+</h4>
-                    <p class="text-sm text-slate-500 mt-1">Global Market (2026)</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-amber-600">₹5L Cr+</h4>
-                    <p class="text-sm text-slate-500 mt-1">India Scrap Ecosystem</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-amber-600">20K+</h4>
-                    <p class="text-sm text-slate-500 mt-1">India Recyclers/Traders</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-amber-600">5L+</h4>
-                    <p class="text-sm text-slate-500 mt-1">Direct Jobs in India</p>
-                </div>
-            </div>
-
-            <!-- INDIA CAPACITY + GLOBAL -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">India Scrap Recycling Capacity</h3>
-                    <p class="text-sm text-slate-600 mb-3">
-                        Approx. <strong>15,000–20,000+ scrap dealers/recyclers/traders</strong> across organized and
-                        informal sectors. Over <strong>5 lakh direct jobs</strong> in the ecosystem.
-                    </p>
-
-                    <h4 class="font-semibold mt-4 mb-2">Major Recycling Hubs</h4>
-                    <div class="grid grid-cols-2 gap-2">
-                        <div class="flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-map-pin text-amber-500 text-xs"></i> Mumbai</div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-map-pin text-amber-500 text-xs"></i> Delhi NCR</div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-map-pin text-amber-500 text-xs"></i> Gujarat / Alang</div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-map-pin text-amber-500 text-xs"></i> Chennai</div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-map-pin text-amber-500 text-xs"></i> Kolkata</div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-map-pin text-amber-500 text-xs"></i> Ludhiana</div>
-                    </div>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">Global Non-Ferrous Ecosystem</h3>
-                    <ul class="space-y-2 text-sm text-slate-600">
-                        <li>Estimated <strong>50,000+</strong> scrap processing facilities globally</li>
-                    </ul>
-
-                    <h4 class="font-semibold mt-4 mb-2">India's Global Position</h4>
-                    <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1">
-                        <li>Asia-Pacific holds <strong>largest market share</strong> globally</li>
-                        <li>India becoming a major <strong>import-processing & secondary metal hub</strong></li>
-                    </ul>
-
-                    <h4 class="font-semibold mt-4 mb-2">Key Market Drivers</h4>
-                    <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1">
-                        <li>Rising copper/aluminium demand in EVs & renewables</li>
-                        <li>Infrastructure & construction demand</li>
-                        <li>High import cost of virgin metals</li>
-                        <li>Government circular economy push</li>
-                        <li>Industrial sustainability mandates</li>
-                        <li>E-waste & battery recycling growth</li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- TRENDS + OPPORTUNITIES -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">Emerging Trends (2026–2031)</h3>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-battery-full text-emerald-600 text-xs"></i></div>
-                            Battery Metal Recycling Growth
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-violet-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-robot text-violet-600 text-xs"></i></div>
-                            AI & Automated Scrap Sorting
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-orange-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-gem text-orange-600 text-xs"></i></div>
-                            High-Purity Copper/Aluminium Recovery
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-sky-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-car-battery text-sky-600 text-xs"></i></div>
-                            EV Battery Dismantling Ecosystem
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-yellow-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-microchip text-yellow-600 text-xs"></i></div>
-                            Precious Metal Extraction from E-Waste
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-teal-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-industry text-teal-600 text-xs"></i></div>
-                            Integrated Recycling Parks
-                        </div>
-                    </div>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">High Potential Segments</h3>
-                    <p class="text-sm text-slate-600 mb-4">Industry opportunities across the scrap value chain:</p>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-ring text-brand-primary text-xs"></i></div>
-                            Copper Wire Recycling
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-cube text-brand-primary text-xs"></i></div>
-                            Aluminium Scrap Processing
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-coins text-brand-primary text-xs"></i></div>
-                            Brass & Alloy Recovery
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-gem text-brand-primary text-xs"></i></div>
-                            E-Waste Precious Metal Extraction
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-battery-full text-brand-primary text-xs"></i></div>
-                            Lithium Battery Metal Recovery
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-ship text-brand-primary text-xs"></i></div>
-                            Imported Scrap Sorting & Processing
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- WHY INDIA -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-
-                <img src="{{ asset('images/sectors/non-ferrous-scrap-recycling.jpeg') }}" alt="India Scrap Hub"
-                    class="w-full h-[320px] object-cover rounded-2xl shadow-md">
-
-                <div class="p-6 rounded-2xl bg-gradient-to-br from-zinc-700 to-slate-800 text-white shadow-lg min-h-[320px] flex flex-col justify-center">
-                    <h3 class="text-2xl font-bold mb-4">Why India is a Global Scrap Hub</h3>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-2 text-sm">
-                            <i class="fa-solid fa-check-circle text-amber-300 shrink-0"></i>
-                            Huge domestic industrial demand
-                        </div>
-                        <div class="flex items-center gap-2 text-sm">
-                            <i class="fa-solid fa-check-circle text-amber-300 shrink-0"></i>
-                            Cost-effective labor and processing
-                        </div>
-                        <div class="flex items-center gap-2 text-sm">
-                            <i class="fa-solid fa-check-circle text-amber-300 shrink-0"></i>
-                            Strategic import/export ports
-                        </div>
-                        <div class="flex items-center gap-2 text-sm">
-                            <i class="fa-solid fa-check-circle text-amber-300 shrink-0"></i>
-                            Growing manufacturing sector
-                        </div>
-                        <div class="flex items-center gap-2 text-sm">
-                            <i class="fa-solid fa-check-circle text-amber-300 shrink-0"></i>
-                            Strong infra/auto/electrical demand
-                        </div>
-                        <div class="flex items-center gap-2 text-sm">
-                            <i class="fa-solid fa-check-circle text-amber-300 shrink-0"></i>
-                            Availability of unorganized scrap network
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- CONCLUSION -->
-            <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-10 rounded-2xl text-center shadow-lg">
-                <h3 class="text-3xl font-bold mb-4">Metals Reborn, Industries Empowered</h3>
-                <p class="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                    Non-ferrous and scrap recycling is the backbone of <strong>India's circular manufacturing economy</strong>.
-                    With <strong>₹5 Lakh Crore+ ecosystem</strong>, over <strong>20,000+ recyclers</strong>, and
-                    <strong>5 lakh+ direct jobs</strong>, this sector is driving sustainable industrial growth and
-                    <strong>resource independence for the nation</strong>.
-                </p>
             </div>
 
         </div>

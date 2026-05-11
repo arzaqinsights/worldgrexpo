@@ -1,348 +1,295 @@
-
-
 <?php $__env->startSection('title', 'Electric Mobility'); ?>
 
 <?php $__env->startSection('content'); ?>
 
-    <!-- HERO -->
-    <section class="relative pt-32 pb-24 bg-slate-900 text-white overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-sky-900 via-slate-900 to-black"></div>
-        <div class="absolute inset-0 opacity-10"
-            style="background-image: url('<?php echo e(asset('images/sectors/electric-mobility.jpg')); ?>'); background-size: cover; background-position: center;">
+    <!-- Architectural Hero -->
+    <section class="relative pt-64 pb-32 bg-slate-950 overflow-hidden border-b border-slate-900">
+        <!-- Visual Backdrop -->
+        <div class="absolute inset-0 opacity-20">
+            <img src="<?php echo e(asset('images/sectors/electric-mobility.jpg')); ?>" class="w-full h-full object-cover grayscale">
         </div>
+        <div class="absolute inset-0 bg-linear-to-b from-slate-950 via-slate-950/90 to-slate-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        
+        <!-- Industrial Accents -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-sky-600 opacity-5 -skew-x-12 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-1/4 h-64 bg-sky-600 opacity-5 skew-x-12 -translate-x-1/2"></div>
 
-        <div class="container relative z-10 text-center">
-            <h1 class="text-4xl md:text-6xl font-black uppercase mb-4 tracking-wide">
-                Electric Mobility
+        <div class="container relative z-10 text-center space-y-12">
+            <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10">
+                <span class="w-2 h-2 bg-sky-400 animate-pulse"></span>
+                <span class="text-white text-[10px] font-black tracking-[0.4em] uppercase">Sustainable Transport Protocol</span>
+            </div>
+            <h1 class="text-6xl md:text-[9rem] font-black text-white leading-[0.85] tracking-tighter uppercase">
+                Electric <br>
+                <span class="text-sky-600">Mobility.</span>
             </h1>
-            <p class="text-lg md:text-xl text-sky-300 font-semibold mb-2">Driving the Future of Sustainable Transport</p>
-            <p class="text-slate-300 max-w-3xl mx-auto">
-                Electrically powered transportation systems reducing fossil fuel dependence, lowering emissions, and creating sustainable ecosystems.
+            <p class="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium border-l-4 border-sky-600 pl-10 uppercase tracking-widest italic md:text-center mx-auto">
+                Driving the Future of Sustainable Transport: Reducing emissions through electrification.
             </p>
         </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="py-16 bg-white">
-        <div class="container space-y-16">
+    <!-- Content Interface -->
+    <section class="py-32 bg-white relative">
+        <div class="container space-y-48">
 
-            <!-- INTRO -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl font-extrabold mb-4 text-slate-900">What is Electric Mobility?</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4">
-                        <strong>Electric Mobility (E-Mobility)</strong> refers to the use of electrically powered transportation
-                        systems and technologies designed to <strong>reduce dependence on fossil fuels, lower carbon emissions,
-                        and create sustainable transportation ecosystems</strong>.
+            <!-- Executive Summary -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200">
+                <div class="p-16 lg:p-24 bg-white space-y-12">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Transport Decarbonization Architecture</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">E-Mobility <br><span class="text-sky-600">Transformation.</span></h2>
+                        <div class="accent-line bg-sky-600"></div>
+                    </div>
+                    
+                    <div class="space-y-8 text-2xl text-slate-500 font-medium leading-relaxed italic border-l-4 border-slate-100 pl-10">
+                        <p>
+                            <strong class="text-slate-900 font-black uppercase tracking-tight">Electric Mobility (E-Mobility)</strong> refers to the use of electrically powered transportation systems designed to reduce dependence on fossil fuels.
+                        </p>
+                        <p>
+                            It includes <strong>electric vehicles, charging infrastructure, battery technologies, and smart mobility systems</strong>, creating a cleaner and more efficient urban transport ecosystem.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-px bg-slate-200 shadow-3xl">
+                    <?php
+                        $segments = [
+                            ['icon' => 'car-side', 'label' => 'Electric Cars'],
+                            ['icon' => 'bus', 'label' => 'Electric Buses'],
+                            ['icon' => 'motorcycle', 'label' => '2 & 3 Wheelers'],
+                            ['icon' => 'truck', 'label' => 'Commercial EV'],
+                        ];
+                    ?>
+                    <?php $__currentLoopData = $segments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $s): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="p-16 bg-white flex flex-col items-center justify-center text-center group hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                             <div class="absolute top-0 left-0 w-1 h-full bg-sky-600 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                            <i class="fa-solid fa-<?php echo e($s['icon']); ?> text-5xl mb-8 text-slate-200 group-hover:text-sky-600 transition-all duration-500"></i>
+                            <p class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 group-hover:text-white transition-colors"><?php echo e($s['label']); ?></p>
+                        </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </div>
+            </div>
+
+            <!-- Ecosystem Elements -->
+            <div class="grid lg:grid-cols-3 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
+                <div class="p-16 lg:p-24 bg-slate-950 text-white space-y-12 group relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-sky-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+                    <div class="w-16 h-16 bg-white/5 border border-white/10 flex items-center justify-center text-sky-400 group-hover:bg-sky-600 group-hover:text-slate-950 transition-all duration-500">
+                        <i class="fa-solid fa-charging-station text-2xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-black uppercase italic tracking-tighter">Infrastructure</h4>
+                    <p class="text-[12px] font-black uppercase text-slate-500 tracking-[0.1em] leading-relaxed group-hover:text-slate-300 transition-colors">Development of public and private EV charging networks.</p>
+                </div>
+                <div class="p-16 lg:p-24 bg-slate-950 text-white space-y-12 group relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-sky-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+                    <div class="w-16 h-16 bg-white/5 border border-white/10 flex items-center justify-center text-sky-400 group-hover:bg-sky-600 group-hover:text-slate-950 transition-all duration-500">
+                        <i class="fa-solid fa-arrows-rotate text-2xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-black uppercase italic tracking-tighter">Battery Swapping</h4>
+                    <p class="text-[12px] font-black uppercase text-slate-500 tracking-[0.1em] leading-relaxed group-hover:text-slate-300 transition-colors">Next-gen energy replacement systems for high-utilization fleets.</p>
+                </div>
+                <div class="p-16 lg:p-24 bg-slate-950 text-white space-y-12 group relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-sky-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+                    <div class="w-16 h-16 bg-white/5 border border-white/10 flex items-center justify-center text-sky-400 group-hover:bg-sky-600 group-hover:text-slate-950 transition-all duration-500">
+                        <i class="fa-solid fa-network-wired text-2xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-black uppercase italic tracking-tighter">Smart Platforms</h4>
+                    <p class="text-[12px] font-black uppercase text-slate-500 tracking-[0.1em] leading-relaxed group-hover:text-slate-300 transition-colors">Integrated digital ecosystems for connected mobility.</p>
+                </div>
+            </div>
+
+            <!-- Global vs India Market -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
+                <!-- GLOBAL -->
+                <div class="p-16 lg:p-24 bg-slate-950 text-white relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-12 text-sky-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-earth-americas text-[12rem]"></i>
+                    </div>
+                    <div class="relative z-10 space-y-16">
+                        <div class="space-y-4">
+                            <div class="text-sky-400 text-[10px] font-black uppercase tracking-[0.4em]">Global Opportunity</div>
+                            <h3 class="text-5xl font-black uppercase tracking-tighter italic">Global Market</h3>
+                        </div>
+                        
+                        <div class="space-y-12">
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Market Size (2025)</span>
+                                <span class="text-6xl font-black text-white tracking-tighter italic">$600B+</span>
+                            </div>
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Projected (2035)</span>
+                                <span class="text-6xl font-black text-white tracking-tighter italic">$1.5T+</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-8">
+                            <h4 class="text-[9px] font-black text-slate-500 uppercase tracking-[0.4em]">Growth Drivers</h4>
+                            <div class="grid grid-cols-2 gap-px bg-white/10 border border-white/10 shadow-2xl">
+                                <?php $__currentLoopData = ['Rising Fuel Costs', 'EV Incentives', 'Battery Cost Reduction', 'Climate Regulations']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $driver): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <span class="px-8 py-6 bg-slate-950 text-[9px] font-black text-slate-400 uppercase tracking-[0.2em] text-center hover:bg-sky-600 hover:text-slate-950 transition-colors cursor-default"><?php echo e($driver); ?></span>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INDIA -->
+                <div class="p-16 lg:p-24 bg-white relative overflow-hidden group border-l border-slate-200">
+                    <div class="absolute top-0 right-0 p-12 text-sky-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-industry text-[12rem]"></i>
+                    </div>
+                    <div class="relative z-10 space-y-16 text-right">
+                        <div class="space-y-4">
+                            <div class="text-sky-600 text-[10px] font-black uppercase tracking-[0.4em]">National Momentum</div>
+                            <h3 class="text-5xl font-black text-slate-950 uppercase tracking-tighter italic">Indian Market</h3>
+                        </div>
+                        
+                        <div class="space-y-12">
+                            <div class="flex items-end justify-between border-b border-slate-100 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-400 tracking-[0.3em]">Value (2025)</span>
+                                <span class="text-6xl font-black text-slate-950 tracking-tighter italic">₹1L Cr</span>
+                            </div>
+                            <div class="flex items-end justify-between border-b border-slate-100 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-400 tracking-[0.3em]">Annual CAGR</span>
+                                <span class="text-6xl font-black text-sky-600 tracking-tighter italic">25%</span>
+                            </div>
+                            <div class="p-12 bg-sky-50 border-l-8 border-sky-600 shadow-sm text-right">
+                                <p class="text-[9px] font-black text-sky-600 uppercase tracking-[0.4em] mb-4">India Forecast (2031)</p>
+                                <p class="text-4xl font-black text-slate-950 uppercase italic leading-tight tracking-tighter">₹5 Lakh Crore+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Segments Detailed -->
+            <div class="space-y-24">
+                <div class="text-center space-y-4">
+                    <span class="text-sky-600 text-[10px] font-black uppercase tracking-[0.4em]">Vertical Specialization</span>
+                    <h3 class="text-6xl font-black text-slate-950 uppercase tracking-tighter italic">Key Industry Segments</h3>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
+                    <?php
+                        $ksegments = [
+                            ['icon' => 'car-side', 'title' => 'Passenger Vehicles', 'desc' => 'Personal & commercial car transport.'],
+                            ['icon' => 'bus', 'title' => 'Public Transport', 'desc' => 'Buses, metro feeders & fleet mobility.'],
+                            ['icon' => 'truck', 'title' => 'Commercial EV', 'desc' => 'Delivery vans & logistics trucks.'],
+                            ['icon' => 'charging-station', 'title' => 'Charging Infrastructure', 'desc' => 'Public & private network dev.'],
+                            ['icon' => 'battery-full', 'title' => 'Battery & Storage', 'desc' => 'Advanced cell & energy storage systems.'],
+                            ['icon' => 'rocket', 'title' => 'Next-Gen Mobility', 'desc' => 'V2G, autonomous & connected systems.'],
+                        ];
+                    ?>
+                    <?php $__currentLoopData = $ksegments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ks): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="p-16 bg-white space-y-8 group hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-1 h-full bg-sky-600 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                            <div class="w-16 h-16 bg-slate-50 border border-slate-100 flex items-center justify-center text-sky-600 group-hover:bg-sky-600 group-hover:text-white transition-all duration-500 shadow-sm">
+                                <i class="fa-solid fa-<?php echo e($ks['icon']); ?> text-2xl"></i>
+                            </div>
+                            <h4 class="text-2xl font-black text-slate-950 group-hover:text-white uppercase tracking-tighter italic transition-colors"><?php echo e($ks['title']); ?></h4>
+                            <p class="text-[12px] font-black uppercase text-slate-400 tracking-[0.1em] leading-relaxed group-hover:text-slate-300 transition-colors"><?php echo e($ks['desc']); ?></p>
+                        </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </div>
+            </div>
+
+            <!-- Trends & Opportunities -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
+                <div class="p-24 bg-white space-y-16">
+                    <h3 class="text-5xl font-black uppercase text-slate-950 italic border-l-8 border-slate-950 pl-10 tracking-tighter">Emerging Trends</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-px bg-slate-100 border border-slate-100">
+                        <?php $__currentLoopData = [
+                            ['icon' => 'bolt', 'label' => 'Ultra-Fast Charging'],
+                            ['icon' => 'arrows-rotate', 'label' => 'Battery Swapping'],
+                            ['icon' => 'atom', 'label' => 'Solid-State Battery'],
+                            ['icon' => 'robot', 'label' => 'Autonomous EVs'],
+                            ['icon' => 'plug-circle-bolt', 'label' => 'Vehicle-to-Grid (V2G)'],
+                            ['icon' => 'network-wired', 'label' => 'Connected Ecosystems'],
+                        ]; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $trend): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <div class="p-12 bg-white group/item hover:bg-slate-950 transition-all duration-500 relative overflow-hidden">
+                                <div class="absolute top-0 left-0 w-1 h-full bg-sky-600 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                                <div class="w-16 h-16 mb-8 bg-slate-50 border border-slate-100 flex items-center justify-center text-sky-600 group-hover/item:bg-sky-600 group-hover/item:text-white transition-all shadow-sm">
+                                    <i class="fa-solid fa-<?php echo e($trend['icon']); ?> text-2xl"></i>
+                                </div>
+                                <span class="text-[12px] font-black uppercase text-slate-900 group-hover/item:text-white tracking-[0.2em] leading-tight transition-colors"><?php echo e($trend['label']); ?></span>
+                            </div>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </div>
+                </div>
+
+                <div class="p-24 bg-slate-50 space-y-16 border-l border-slate-200 shadow-2xl">
+                    <h3 class="text-5xl font-black uppercase text-slate-950 italic border-l-8 border-sky-600 pl-10 tracking-tighter">Business Opportunities</h3>
+                    <div class="space-y-12">
+                        <?php $__currentLoopData = [
+                            ['icon' => 'industry', 'label' => 'EV Manufacturing & Assembly'],
+                            ['icon' => 'battery-full', 'label' => 'Battery Production & Recycling'],
+                            ['icon' => 'charging-station', 'label' => 'Infrastructure Development'],
+                            ['icon' => 'truck-fast', 'label' => 'Fleet Electrification Services'],
+                            ['icon' => 'mobile-screen', 'label' => 'Mobility-as-a-Service Platforms'],
+                            ['icon' => 'bolt', 'label' => 'Smart Grid & Energy Integration'],
+                        ]; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $opp): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="flex items-center gap-10 group/opp">
+                            <div class="w-16 h-16 border border-slate-200 flex items-center justify-center text-sky-600 group-hover/opp:bg-sky-600 group-hover/opp:text-white transition-all duration-500">
+                                <i class="fa-solid fa-<?php echo e($opp['icon']); ?> text-2xl"></i>
+                            </div>
+                            <span class="text-xl font-black uppercase text-slate-700 tracking-[0.15em] group-hover/opp:text-slate-950 transition-colors leading-tight italic"><?php echo e($opp['label']); ?></span>
+                        </div>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Future Vision -->
+            <div class="grid lg:grid-cols-2 gap-32 items-center">
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-sky-600/10"></div>
+                    <div class="relative overflow-hidden border border-slate-200 shadow-3xl h-[600px]">
+                        <img src="<?php echo e(asset('images/sectors/electric-mobility.jpg')); ?>" alt="Electric Mobility Future"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000">
+                    </div>
+                </div>
+
+                <div class="p-16 lg:p-24 bg-slate-950 text-white space-y-16 relative overflow-hidden group shadow-3xl border border-white/5">
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(2,132,199,0.05),transparent)]"></div>
+                    <div class="relative z-10 space-y-12">
+                        <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10 text-sky-400 text-[10px] font-black uppercase tracking-[0.4em]">
+                            Future Evolution
+                        </div>
+                        <h4 class="text-6xl font-black uppercase tracking-tighter italic text-sky-600">The Smart <br><span class="text-white">Transition.</span></h4>
+                        <p class="text-2xl text-slate-400 font-medium italic border-l-8 border-sky-600/30 pl-10 leading-relaxed uppercase tracking-tighter">
+                            Electric mobility is evolving into a key pillar of sustainable urban planning and energy management.
+                        </p>
+                        <div class="grid grid-cols-2 gap-px bg-white/5 pt-12 border border-white/10">
+                             <?php $__currentLoopData = ['Personal Mobility', 'Public Transport', 'Logistics & Fleet', 'Smart Grids']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <div class="p-8 bg-slate-950 border border-white/5 flex items-center gap-8 group/item hover:bg-sky-600 transition-all duration-500">
+                                    <i class="fa-solid fa-check-circle text-sky-600 text-2xl group-hover/item:text-slate-950 transition-colors"></i>
+                                    <span class="text-[12px] font-black uppercase text-slate-300 group-hover/item:text-slate-950 tracking-[0.2em] transition-colors leading-tight"><?php echo e($tag); ?></span>
+                                </div>
+                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conclusion CTA -->
+            <div class="relative p-24 lg:p-32 bg-slate-950 overflow-hidden text-center shadow-3xl group">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(2,132,199,0.2),transparent)]"></div>
+                <div class="relative z-10 space-y-16">
+                    <h3 class="text-5xl md:text-[8rem] font-black text-white uppercase tracking-tighter leading-[0.85]">
+                        The Mobility <br><span class="text-sky-600">Revolution.</span>
+                    </h3>
+                    <p class="text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium italic border-l-4 border-sky-600 pl-10 md:text-center mx-auto uppercase tracking-tighter">
+                        Electric mobility is no longer a concept — it is a transformative force driving cleaner transportation and economic innovation across the globe.
                     </p>
-                    <p class="text-slate-600 leading-relaxed">
-                        It includes <strong>electric vehicles, charging infrastructure, battery technologies, smart mobility
-                        systems</strong>, and integrated transport electrification solutions.
-                    </p>
-                </div>
-
-                <img src="<?php echo e(asset('images/sectors/electric-mobility.jpg')); ?>" alt="Electric Mobility"
-                    class="w-full h-[320px] object-cover rounded-2xl shadow-lg">
-            </div>
-
-            <!-- E-MOBILITY INCLUDES -->
-            <div>
-                <h2 class="text-3xl font-extrabold text-slate-900 mb-8 text-center">Electric Mobility Includes</h2>
-                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
-                    <div class="p-5 rounded-2xl bg-sky-50 border border-sky-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-sky-100 flex items-center justify-center">
-                            <i class="fa-solid fa-car-side text-xl text-sky-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Electric Cars</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-blue-50 border border-blue-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-blue-100 flex items-center justify-center">
-                            <i class="fa-solid fa-bus text-xl text-blue-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Electric Buses</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-emerald-50 border border-emerald-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-emerald-100 flex items-center justify-center">
-                            <i class="fa-solid fa-motorcycle text-xl text-emerald-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Electric 2 & 3 Wheelers</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-amber-50 border border-amber-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-amber-100 flex items-center justify-center">
-                            <i class="fa-solid fa-truck text-xl text-amber-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Electric Commercial Vehicles</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-violet-50 border border-violet-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-violet-100 flex items-center justify-center">
-                            <i class="fa-solid fa-charging-station text-xl text-violet-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">EV Charging Infrastructure</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-rose-50 border border-rose-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-rose-100 flex items-center justify-center">
-                            <i class="fa-solid fa-arrows-rotate text-xl text-rose-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Battery Swapping Systems</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-indigo-50 border border-indigo-200 text-center sm:col-span-2 lg:col-span-2">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-indigo-100 flex items-center justify-center">
-                            <i class="fa-solid fa-network-wired text-xl text-indigo-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Smart Mobility Platforms</h4>
+                    <div class="flex justify-center">
+                        <a href="<?php echo e(route('join.index')); ?>" 
+                            class="btn-sharp px-16 group !border-sky-600/30 hover:!bg-sky-600">
+                            Join the EV Transition 
+                            <i class="fa-solid fa-arrow-right-long ml-6 group-hover:translate-x-4 transition-transform"></i>
+                        </a>
                     </div>
                 </div>
-            </div>
-
-            <!-- WHY IT MATTERS -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-
-                <div class="p-6 rounded-2xl bg-sky-700 text-white shadow-lg min-h-[320px] flex flex-col justify-center">
-                    <h3 class="text-2xl font-bold mb-5">Why Electric Mobility Matters</h3>
-                    <p class="text-sm text-sky-100 mb-4">
-                        Electric mobility is rapidly becoming a global priority as governments, industries, and consumers
-                        transition toward cleaner, smarter, and more sustainable transportation solutions.
-                    </p>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3 text-sm">
-                            <i class="fa-solid fa-check-circle text-sky-200 shrink-0"></i>
-                            Reduced Carbon Emissions
-                        </div>
-                        <div class="flex items-center gap-3 text-sm">
-                            <i class="fa-solid fa-check-circle text-sky-200 shrink-0"></i>
-                            Lower Fuel Dependency
-                        </div>
-                        <div class="flex items-center gap-3 text-sm">
-                            <i class="fa-solid fa-check-circle text-sky-200 shrink-0"></i>
-                            Improved Air Quality
-                        </div>
-                        <div class="flex items-center gap-3 text-sm">
-                            <i class="fa-solid fa-check-circle text-sky-200 shrink-0"></i>
-                            Lower Operating Costs
-                        </div>
-                        <div class="flex items-center gap-3 text-sm">
-                            <i class="fa-solid fa-check-circle text-sky-200 shrink-0"></i>
-                            Enhanced Energy Security
-                        </div>
-                        <div class="flex items-center gap-3 text-sm">
-                            <i class="fa-solid fa-check-circle text-sky-200 shrink-0"></i>
-                            Sustainable Urban Mobility
-                        </div>
-                    </div>
-                </div>
-
-                <img src="<?php echo e(asset('images/sectors/electric-mobility.jpg')); ?>" alt="Electric Mobility Importance"
-                    class="w-full h-[320px] object-cover rounded-2xl shadow-md">
-
-            </div>
-
-            <!-- GLOBAL vs INDIA -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-gradient-to-br from-sky-600 to-sky-800 text-white shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4">Global Electric Mobility Market</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li>Market Size (2025): <strong>USD 600+ Billion</strong></li>
-                        <li>Expected to exceed <strong>USD 1.5 Trillion</strong> by 2035</li>
-                    </ul>
-
-                    <h4 class="font-semibold mt-5 mb-2">Growth Drivers</h4>
-                    <ul class="list-disc pl-5 text-sm space-y-1">
-                        <li>Rising fuel costs</li>
-                        <li>Government EV incentives</li>
-                        <li>Battery cost reduction</li>
-                        <li>Climate change regulations</li>
-                        <li>Consumer demand for sustainable transport</li>
-                    </ul>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-brand-accent border border-slate-200 shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4 text-brand-primary">India Electric Mobility Market</h3>
-                    <ul class="space-y-2 text-sm text-slate-700">
-                        <li>Market Size (2025): <strong>₹1+ Lakh Crore</strong></li>
-                        <li>Rapid adoption driven by policy support and infrastructure</li>
-                    </ul>
-
-                    <h4 class="font-semibold mt-5 mb-2">India Growth Forecast (2026–2031)</h4>
-                    <ul class="text-sm text-slate-600 space-y-1">
-                        <li>Expected CAGR: <strong>20–25%</strong> annually</li>
-                        <li>Projected to exceed <strong>₹5+ Lakh Crore</strong> by 2031</li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- STATS CARDS -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-sky-600">$600B+</h4>
-                    <p class="text-sm text-slate-500 mt-1">Global Market (2025)</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-sky-600">₹1L Cr+</h4>
-                    <p class="text-sm text-slate-500 mt-1">India Market (2025)</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-sky-600">$1.5T+</h4>
-                    <p class="text-sm text-slate-500 mt-1">Global by 2035</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-sky-600">20–25%</h4>
-                    <p class="text-sm text-slate-500 mt-1">India CAGR</p>
-                </div>
-            </div>
-
-            <!-- KEY SEGMENTS -->
-            <div>
-                <h2 class="text-3xl font-extrabold text-slate-900 mb-8 text-center">Key Segments of Electric Mobility</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                    <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                        <div class="w-12 h-12 mb-4 rounded-full bg-sky-100 flex items-center justify-center">
-                            <i class="fa-solid fa-car-side text-xl text-sky-600"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-800 mb-2">Electric Passenger Vehicles</h4>
-                        <p class="text-xs text-slate-600">Sustainable mobility solutions for personal and commercial transport.</p>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                        <div class="w-12 h-12 mb-4 rounded-full bg-blue-100 flex items-center justify-center">
-                            <i class="fa-solid fa-bus text-xl text-blue-600"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-800 mb-2">Electric Public Transport</h4>
-                        <p class="text-xs text-slate-600">Electrification of buses, metro feeders, and fleet mobility.</p>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                        <div class="w-12 h-12 mb-4 rounded-full bg-amber-100 flex items-center justify-center">
-                            <i class="fa-solid fa-truck text-xl text-amber-600"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-800 mb-2">Commercial EV Solutions</h4>
-                        <p class="text-xs text-slate-600">Electric trucks, delivery vans, and logistics vehicles.</p>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                        <div class="w-12 h-12 mb-4 rounded-full bg-violet-100 flex items-center justify-center">
-                            <i class="fa-solid fa-charging-station text-xl text-violet-600"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-800 mb-2">Charging Infrastructure</h4>
-                        <p class="text-xs text-slate-600">Development of public and private EV charging stations.</p>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm sm:col-span-2 lg:col-span-2">
-                        <div class="w-12 h-12 mb-4 rounded-full bg-emerald-100 flex items-center justify-center">
-                            <i class="fa-solid fa-battery-full text-xl text-emerald-600"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-800 mb-2">Battery & Energy Storage</h4>
-                        <p class="text-xs text-slate-600">Advanced battery systems and next-gen charging technologies.</p>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- TRENDS + OPPORTUNITIES -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">Emerging Trends (2026–2031)</h3>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-sky-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-bolt text-sky-600 text-xs"></i></div>
-                            Ultra-Fast Charging Technology
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-rose-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-arrows-rotate text-rose-600 text-xs"></i></div>
-                            Battery Swapping Networks
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-atom text-emerald-600 text-xs"></i></div>
-                            Solid-State Battery Development
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-violet-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-robot text-violet-600 text-xs"></i></div>
-                            Autonomous Electric Vehicles
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-plug-circle-bolt text-amber-600 text-xs"></i></div>
-                            Vehicle-to-Grid (V2G) Integration
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-network-wired text-blue-600 text-xs"></i></div>
-                            Smart Connected Mobility Ecosystem
-                        </div>
-                    </div>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">Business Opportunities</h3>
-                    <p class="text-sm text-slate-600 mb-4">Organizations can leverage electric mobility through:</p>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-industry text-brand-primary text-xs"></i></div>
-                            EV Manufacturing & Assembly
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-battery-full text-brand-primary text-xs"></i></div>
-                            Battery Production & Recycling
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-charging-station text-brand-primary text-xs"></i></div>
-                            Charging Infrastructure Development
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-truck-fast text-brand-primary text-xs"></i></div>
-                            Fleet Electrification Services
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-mobile-screen text-brand-primary text-xs"></i></div>
-                            Mobility-as-a-Service Platforms
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-bolt text-brand-primary text-xs"></i></div>
-                            Smart Grid & Energy Integration
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- FUTURE -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-
-                <img src="<?php echo e(asset('images/sectors/electric-mobility.jpg')); ?>" alt="Electric Mobility Future"
-                    class="w-full h-[300px] object-cover rounded-2xl shadow-md">
-
-                <div class="p-6 rounded-2xl bg-gradient-to-br from-sky-600 to-blue-700 text-white shadow-lg min-h-[300px] flex flex-col justify-center">
-                    <h3 class="text-2xl font-bold mb-4">Future of Electric Mobility</h3>
-                    <p class="text-sm text-sky-100 mb-4">
-                        Electric mobility is evolving beyond transportation into a key pillar of sustainable urban planning,
-                        energy management, and smart city ecosystems. Forward-looking businesses are integrating into:
-                    </p>
-                    <div class="grid grid-cols-2 gap-3">
-                        <div class="flex items-center gap-2 text-sm">
-                            <i class="fa-solid fa-leaf text-sky-200"></i> Sustainability Strategies
-                        </div>
-                        <div class="flex items-center gap-2 text-sm">
-                            <i class="fa-solid fa-truck-fast text-sky-200"></i> Fleet Management
-                        </div>
-                        <div class="flex items-center gap-2 text-sm">
-                            <i class="fa-solid fa-city text-sky-200"></i> Smart Infrastructure
-                        </div>
-                        <div class="flex items-center gap-2 text-sm">
-                            <i class="fa-solid fa-earth-americas text-sky-200"></i> Green Transport Policies
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- CONCLUSION -->
-            <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-10 rounded-2xl text-center shadow-lg">
-                <h3 class="text-3xl font-bold mb-4">Why Electric Mobility is Critical</h3>
-                <p class="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                    Electric mobility is no longer a future concept — it is a <strong>transformative force</strong> driving
-                    cleaner transportation, economic innovation, and <strong>sustainable development across the globe</strong>.
-                </p>
             </div>
 
         </div>

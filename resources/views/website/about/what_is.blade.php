@@ -1,44 +1,43 @@
 @extends('layouts.website')
 
-@section('title', 'What is World Grexpo | Global industrial Sustainability Foundation')
+@section('title', 'What is World Grexpo | Global Industrial Sustainability Foundation')
 
 @section('content')
-    <!-- Hero Banner -->
-    <section class="relative h-[55vh] min-h-[450px] w-full bg-slate-950 flex items-center justify-center overflow-hidden">
+    <!-- Sharp Industrial Hero -->
+    <section class="relative pt-64 pb-32 bg-slate-900 overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:60px_60px]"></div>
-            <img src="{{ asset('images/about/hero-bg.png') }}" alt="World Grexpo Global Background" class="w-full h-full object-cover opacity-30 grayscale scale-110">
-            <div class="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-slate-950/80 to-slate-950"></div>
+            <div class="absolute inset-0 opacity-20 grayscale" 
+                 style="background-image: url('{{ asset('images/about/hero-bg.png') }}'); background-size: cover; background-position: center;"></div>
+            <div class="absolute inset-0 bg-linear-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
         </div>
-        <div class="container relative z-10 text-center animate-on-scroll">
-            <nav class="flex justify-center mb-10" aria-label="Breadcrumb">
-                <ol class="inline-flex items-center space-x-1 md:space-x-3 text-[10px] font-black uppercase tracking-[0.3em]">
-                    <li class="inline-flex items-center"><a href="/" class="text-slate-500 hover:text-brand-accent transition-colors flex items-center gap-2">Home</a></li>
-                    <li><div class="flex items-center text-slate-700"><i class="fa-solid fa-chevron-right text-[8px] mx-4"></i><span class="text-brand-accent italic">The Foundation</span></div></li>
-                </ol>
-            </nav>
-            <h1 class="text-5xl md:text-8xl font-black text-white tracking-tighter leading-[0.9] uppercase italic">
-                What is <span class="text-brand-accent not-italic">World Grexpo?</span>
-            </h1>
-            <p class="text-slate-400 mt-8 text-xl md:text-2xl max-w-3xl mx-auto font-light leading-relaxed">
-                Pioneering the global industrial transition through strategic ESG frameworks and absolute sustainability advocacy.
-            </p>
+        
+        <div class="container relative z-10">
+            <div class="max-w-4xl space-y-10">
+                <div class="section-heading">
+                    <span class="subtitle text-brand-accent">The Foundation</span>
+                    <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-black">What is <span class="text-brand-accent">World Grexpo?</span></h1>
+                    <div class="accent-line bg-brand-accent"></div>
+                </div>
+                
+                <p class="text-xl text-slate-300 max-w-3xl leading-relaxed font-medium">
+                    Pioneering the global industrial transition through strategic ESG frameworks and absolute sustainability advocacy across cross-border trade corridors.
+                </p>
+            </div>
         </div>
     </section>
 
     <!-- Modular sections -->
     @include('website.about.partials.who_we_are')
 
-    {{-- Moved from Home Page --}}
+    {{-- Reusing high-impact home partials --}}
     @include('website.home.partials.why_choose')
     @include('website.home.partials.growth')
-    @include('website.home.partials.values')
-
+    
     @include('website.about.partials.history')
     @include('website.about.partials.mission_vision')
     @include('website.about.partials.core_values')
 
-    {{-- Moved from Home Page --}}
     @include('website.home.partials.membership')
 
 @endsection
+

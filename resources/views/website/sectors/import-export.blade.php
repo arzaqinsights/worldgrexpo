@@ -4,40 +4,58 @@
 
 @section('content')
 
-    <!-- HERO -->
-    <section class="relative pt-32 pb-24 bg-indigo-950 text-white overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-indigo-900 via-blue-900 to-black"></div>
-        <div class="absolute inset-0 opacity-20"
-            style="background-image: url('{{ asset('images/sectors/import-export.jpg') }}'); background-size: cover; background-position: center;">
+    <!-- Architectural Hero -->
+    <section class="relative pt-64 pb-32 bg-slate-950 overflow-hidden border-b border-slate-900">
+        <!-- Visual Backdrop -->
+        <div class="absolute inset-0 opacity-20">
+            <img src="{{ asset('images/sectors/import-export.jpg') }}" class="w-full h-full object-cover grayscale">
         </div>
+        <div class="absolute inset-0 bg-linear-to-b from-slate-950 via-slate-950/90 to-slate-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        
+        <!-- Industrial Accents -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-blue-600 opacity-5 -skew-x-12 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-1/4 h-64 bg-blue-600 opacity-5 skew-x-12 -translate-x-1/2"></div>
 
-        <div class="container relative z-10 text-center">
-            <h1 class="text-4xl md:text-6xl font-black uppercase mb-4 tracking-wide">
-                Import <span class="text-blue-400">&</span> Export
+        <div class="container relative z-10 text-center space-y-12">
+            <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10">
+                <span class="w-2 h-2 bg-blue-400 animate-pulse"></span>
+                <span class="text-white text-[10px] font-black tracking-[0.4em] uppercase">Global Logistics Protocol</span>
+            </div>
+            <h1 class="text-6xl md:text-[9rem] font-black text-white leading-[0.85] tracking-tighter uppercase">
+                Import & <br>
+                <span class="text-blue-600">Export.</span>
             </h1>
-            <p class="text-xl md:text-2xl text-indigo-100 max-w-4xl mx-auto leading-relaxed uppercase italic font-medium">
+            <p class="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium border-l-4 border-blue-600 pl-10 uppercase tracking-widest italic md:text-center mx-auto">
                 Driving Global Trade and International Business Expansion.
             </p>
         </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="py-16 bg-white">
-        <div class="container space-y-20">
+    <!-- Content Interface -->
+    <section class="py-32 bg-white relative">
+        <div class="container space-y-48">
 
-            <!-- WHAT IS IMPORT & EXPORT -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="animate-in fade-in slide-in-from-left duration-700">
-                    <h2 class="text-3xl font-extrabold mb-6 text-indigo-900 uppercase italic">Backbone of Global Commerce</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4 text-lg">
-                        <strong>Import and Export</strong> enable countries, businesses, and industries to exchange goods and services across international borders, connecting manufacturers with global consumers.
-                    </p>
-                    <p class="text-slate-600 leading-relaxed font-medium">
-                        It plays a vital role in supporting economic development and industrial growth while facilitating trade across key sectors such as manufacturing, agriculture, and pharmaceuticals.
-                    </p>
+            <!-- Executive Summary -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200">
+                <div class="p-16 lg:p-24 bg-white space-y-12">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Global Commerce Framework</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">Backbone of <br><span class="text-blue-600">Commerce.</span></h2>
+                        <div class="accent-line bg-blue-600"></div>
+                    </div>
+                    
+                    <div class="space-y-8 text-2xl text-slate-500 font-medium leading-relaxed italic border-l-4 border-slate-100 pl-10">
+                        <p>
+                            <strong class="text-slate-900 font-black uppercase tracking-tight">Import and Export</strong> enable countries, businesses, and industries to exchange goods and services across international borders, connecting manufacturers with global consumers.
+                        </p>
+                        <p>
+                            It plays a vital role in supporting economic development and industrial growth while facilitating trade across key sectors such as manufacturing, agriculture, and pharmaceuticals.
+                        </p>
+                    </div>
                 </div>
 
-                <div class="grid grid-cols-2 gap-4 animate-in fade-in slide-in-from-right duration-700">
+                <div class="grid grid-cols-2 gap-px bg-slate-200">
                     @php
                         $sectors = [
                             ['icon' => 'industry', 'label' => 'Industrial Goods'],
@@ -47,155 +65,160 @@
                         ];
                     @endphp
                     @foreach($sectors as $sec)
-                        <div class="p-6 bg-indigo-50 border border-indigo-100 rounded-2xl text-center group hover:bg-indigo-900 hover:text-white transition-all duration-300">
-                            <i class="fa-solid fa-{{ $sec['icon'] }} text-3xl mb-3 text-indigo-500 group-hover:text-blue-400"></i>
-                            <p class="text-[10px] font-black uppercase tracking-tight">{{ $sec['label'] }}</p>
+                        <div class="p-12 bg-white flex flex-col items-center justify-center text-center group hover:bg-slate-950 transition-all duration-700">
+                            <i class="fa-solid fa-{{ $sec['icon'] }} text-4xl mb-6 text-blue-600 transition-transform duration-500 group-hover:scale-110"></i>
+                            <p class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 group-hover:text-white">{{ $sec['label'] }}</p>
                         </div>
                     @endforeach
                 </div>
             </div>
 
-            <!-- TRADE STATISTICS -->
-            <div class="p-10 rounded-3xl bg-indigo-900 text-white relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl -mr-48 -mt-48"></div>
-                <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h3 class="text-2xl font-black mb-6 uppercase italic tracking-widest text-blue-300">Global Trade Value</h3>
-                        <p class="text-indigo-100 mb-8 leading-relaxed italic">International trade continues to be one of the largest contributors to global GDP and economic activity.</p>
-                        
+            <!-- Global vs India Market -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
+                <!-- GLOBAL -->
+                <div class="p-16 lg:p-24 bg-slate-950 text-white relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-12 text-blue-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-earth-world text-[12rem]"></i>
+                    </div>
+                    <div class="relative z-10 space-y-16">
                         <div class="space-y-4">
-                            @foreach([
-                                'Globalization of businesses',
-                                'Rising cross-border e-commerce',
-                                'Trade agreements & free zones',
-                                'Digital trade marketplaces'
-                            ] as $driver)
-                                <div class="flex items-center gap-3">
-                                    <div class="w-1.5 h-1.5 rounded-full bg-blue-400"></div>
-                                    <span class="text-xs font-bold uppercase text-indigo-200">{{ $driver }}</span>
-                                </div>
-                            @endforeach
+                            <div class="text-blue-400 text-[10px] font-black uppercase tracking-[0.4em]">Global Landscape</div>
+                            <h3 class="text-5xl font-black uppercase tracking-tighter italic">Global Market</h3>
+                        </div>
+                        
+                        <div class="space-y-12">
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Value (2025)</span>
+                                <span class="text-6xl font-black text-white tracking-tighter italic">$33T+</span>
+                            </div>
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Value (2031)</span>
+                                <span class="text-6xl font-black text-white tracking-tighter italic">$45T+</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-8">
+                            <h4 class="text-[9px] font-black text-slate-500 uppercase tracking-[0.4em]">Growth Drivers</h4>
+                            <div class="grid grid-cols-2 gap-px bg-white/10 border border-white/10 shadow-2xl">
+                                @foreach(['Global e-commerce', 'Trade Agreements', 'Globalization', 'Digital Markets'] as $driver)
+                                    <div class="px-8 py-4 bg-slate-950 flex items-center gap-6 hover:bg-blue-600 hover:text-slate-950 transition-colors cursor-default group/item">
+                                        <i class="fa-solid fa-circle-check text-blue-600 group-hover/item:text-slate-950 transition-colors"></i>
+                                        <span class="text-[10px] font-black uppercase tracking-[0.1em] text-center">{{ $driver }}</span>
+                                    </div>
+                                @endforeach
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="p-6 bg-white/5 border border-white/10 rounded-2xl text-center">
-                            <p class="text-[10px] font-black uppercase text-indigo-400 mb-2">Total Value (2025)</p>
-                            <p class="text-3xl font-black text-white">$33T+</p>
+                <!-- INDIA -->
+                <div class="p-16 lg:p-24 bg-white relative overflow-hidden group border-l border-slate-200">
+                    <div class="absolute top-0 right-0 p-12 text-blue-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-ship text-[12rem]"></i>
+                    </div>
+                    <div class="relative z-10 space-y-16 text-right">
+                        <div class="space-y-4">
+                            <div class="text-blue-600 text-[10px] font-black uppercase tracking-[0.4em]">National Momentum</div>
+                            <h3 class="text-5xl font-black text-slate-900 uppercase tracking-tighter italic">Indian Market</h3>
                         </div>
-                        <div class="p-6 bg-white/5 border border-white/10 rounded-2xl text-center">
-                            <p class="text-[10px] font-black uppercase text-indigo-400 mb-2">Value (2031)</p>
-                            <p class="text-3xl font-black text-blue-400">$45T+</p>
+                        
+                        <div class="p-12 bg-blue-50 border-l-8 border-blue-600 shadow-sm text-right space-y-6">
+                            <p class="text-[9px] font-black text-blue-600 uppercase tracking-[0.4em] italic">Market Forecast</p>
+                            <p class="text-4xl font-black text-slate-950 uppercase italic leading-tight tracking-tighter">$3 Trillion Target</p>
+                            <p class="text-[12px] font-black text-slate-500 uppercase tracking-widest italic">2031 Trade Volume Objective</p>
                         </div>
-                        <div class="col-span-2 p-4 bg-blue-500/10 border border-blue-500/20 rounded-xl text-center">
-                             <p class="text-sm font-black uppercase tracking-widest text-blue-100 font-serif">6% - 8% Annual CAGR</p>
+
+                        <div class="space-y-8">
+                            <h4 class="text-[9px] font-black text-slate-400 uppercase tracking-[0.4em]">Growth Catalysts</h4>
+                            <div class="grid grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-sm">
+                                @foreach(['Make in India', 'PLI Schemes', 'Global FTAs', 'Logistics Infra'] as $cat)
+                                    <div class="p-6 bg-white flex flex-col items-center justify-center gap-4 group/item hover:bg-slate-950 transition-all duration-500">
+                                        <div class="w-1.5 h-1.5 bg-blue-600 group-hover/item:scale-150 transition-transform"></div>
+                                        <span class="text-[9px] font-black uppercase text-slate-600 group-hover/item:text-white tracking-[0.1em] leading-tight text-center">{{ $cat }}</span>
+                                    </div>
+                                @endforeach
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- INDIA TRADE MARKET -->
-            <div class="grid md:grid-cols-2 gap-10 items-center">
-                <div class="order-2 md:order-1 grid grid-cols-2 gap-4">
-                    <div class="p-8 bg-indigo-50 border border-indigo-200 rounded-3xl text-center shadow-lg transform hover:-translate-y-1 transition-all">
-                        <p class="text-[10px] font-black uppercase text-indigo-400 mb-2">India Volume (2025)</p>
-                        <p class="text-2xl font-black text-indigo-900">$1.7 Trillion</p>
-                    </div>
-                    <div class="p-8 bg-blue-50 border border-blue-200 rounded-3xl text-center shadow-lg transform hover:-translate-y-1 transition-all">
-                        <p class="text-[10px] font-black uppercase text-blue-600 mb-2">Volume (2031)</p>
-                        <p class="text-2xl font-black text-blue-900">$3 Trillion</p>
-                    </div>
-                    <div class="col-span-2 p-10 bg-indigo-900 text-white rounded-3xl">
-                        <h4 class="text-xs font-black uppercase tracking-widest text-blue-300 mb-6">Growth Catalysts</h4>
-                        <div class="grid grid-cols-2 gap-4">
-                            @foreach(['Make in India', 'PLI Schemes', 'Global FTAs', 'Logistics Infra'] as $cat)
-                                <div class="p-3 bg-white/5 border border-white/10 rounded-xl text-center">
-                                    <p class="text-[10px] font-bold uppercase">{{ $cat }}</p>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-blue-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110">6-8%</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">Global CAGR</p>
                 </div>
-
-                <div class="order-1 md:order-2 space-y-6">
-                    <h3 class="text-3xl font-black uppercase text-indigo-900 italic">India's Global Footprint</h3>
-                    <p class="text-slate-600 leading-relaxed font-serif">India is among the fastest-growing global trading economies and a key player in international commerce through massive industrial expansion.</p>
-                    <div class="space-y-4">
-                        @foreach([
-                            '150,000+ Active Exporters/Importers',
-                            'Strategic Export Hubs across all major ports',
-                            'Rising manufacturing ecosystem expansion'
-                        ] as $item)
-                        <div class="flex items-center gap-4">
-                            <div class="w-2 h-2 rounded-full bg-blue-500"></div>
-                            <p class="text-sm font-bold uppercase text-slate-700 tracking-tight transition-transform hover:translate-x-2">{{ $item }}</p>
-                        </div>
-                        @endforeach
-                    </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-blue-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">1.5L</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">Active Traders</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-blue-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">$1.7T</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">India Volume (2025)</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-blue-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">TOP 10</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">Global Exporter Rank</p>
                 </div>
             </div>
 
-            <!-- EMERGING SEGMENTS -->
-            <div class="p-12 rounded-3xl bg-indigo-50 border border-indigo-200 shadow-inner">
-                <h3 class="text-3xl font-black mb-10 text-center uppercase italic tracking-tighter">High-Growth Segments (2026-2031)</h3>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    @foreach(['E-commerce Trade', 'Export Consulting', 'Freight Forwarding', 'Supply Chain Tech', 'Trade Compliance', 'Customs Solutions', 'Warehousing', 'Digital Logistics'] as $seg)
-                        <div class="p-6 bg-white border border-indigo-200 rounded-2xl text-center group hover:bg-indigo-900 hover:border-indigo-900 transition-all">
-                             <p class="text-xs font-black uppercase text-indigo-400 group-hover:text-white transition-colors">{{ $seg }}</p>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-
-            <!-- STRATEGIC IMPORTANCE -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="space-y-8">
-                    <h2 class="text-3xl font-black text-indigo-900 uppercase tracking-tight italic">Strategic Importance</h2>
-                    <div class="space-y-4">
-                        @foreach([
-                            'Enhances global economic development',
-                            'Expands market reach for businesses',
-                            'Generates foreign exchange earnings',
-                            'Strengthens industrial competitiveness',
-                            'Creates employment in logistics & manufacturing'
-                        ] as $imp)
-                        <div class="flex items-center gap-4 p-4 rounded-xl border-l-4 border-indigo-500 bg-indigo-50">
-                            <i class="fa-solid fa-earth-africa text-indigo-400"></i>
-                            <span class="text-sm font-bold uppercase tracking-tight text-indigo-900">{{ $imp }}</span>
-                        </div>
+            <!-- Opportunities & Innovation -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
+                <div class="p-24 bg-white space-y-16">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Global Horizons</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">High-Growth <br><span class="text-blue-600">Segments.</span></h2>
+                        <div class="accent-line bg-blue-600"></div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-sm">
+                        @foreach(['E-commerce Trade', 'Export Consulting', 'Freight Forwarding', 'Supply Chain Tech', 'Trade Compliance', 'Customs Solutions', 'Warehousing', 'Digital Logistics'] as $seg)
+                            <div class="p-8 bg-white text-center group/seg hover:bg-slate-950 transition-all duration-500">
+                                <p class="text-[10px] font-black uppercase text-slate-500 group-hover:text-white tracking-[0.2em] transition-colors leading-tight">{{ $seg }}</p>
+                            </div>
                         @endforeach
                     </div>
                 </div>
 
-                <div class="p-8 bg-indigo-900 rounded-3xl text-white relative group overflow-hidden shadow-2xl">
-                    <div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none transition-transform group-hover:scale-110">
-                        <i class="fa-solid fa-ship text-9xl"></i>
-                    </div>
-                    <div class="relative z-10">
-                        <h4 class="text-2xl font-black mb-6 uppercase italic text-blue-400">Future of Trade</h4>
-                        <p class="text-indigo-100 leading-relaxed text-sm font-medium mb-8">
-                            The future of global trade is being reshaped by AI-based trade intelligence, blockchain supply chains, and green logistics. India is poised to be among the top 3 global trade economies.
+                <div class="p-24 bg-slate-950 text-white space-y-12 relative overflow-hidden group border-l border-slate-200">
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(37,99,235,0.05),transparent)]"></div>
+                    <div class="relative z-10 space-y-16">
+                        <div class="space-y-4">
+                            <div class="text-blue-400 text-[10px] font-black uppercase tracking-[0.4em]">Future Outlook</div>
+                            <h3 class="text-5xl font-black text-white uppercase tracking-tighter italic">Digital Trade</h3>
+                        </div>
+                        <p class="text-2xl text-slate-400 font-medium italic border-l-4 border-blue-600/30 pl-10 leading-relaxed uppercase tracking-tighter">
+                            The future of trade is being reshaped by AI-based trade intelligence, blockchain supply chains, and green logistics.
                         </p>
-                        <div class="flex flex-wrap gap-2">
-                             @foreach(['AI-TRADE', 'BLOCKCHAIN', 'GREEN LOGISTICS', 'STAMRT PORTS'] as $tag)
-                                <span class="px-3 py-1 bg-white/10 rounded-lg text-[10px] font-black uppercase text-blue-300 border border-blue-500/20">{{ $tag }}</span>
+                        <div class="grid grid-cols-2 gap-px bg-white/5 border border-white/5 pt-12">
+                             @foreach(['AI-TRADE', 'BLOCKCHAIN', 'GREEN LOGISTICS', 'SMART PORTS'] as $tag)
+                                <div class="p-8 bg-slate-950 border border-white/5 flex flex-col items-center gap-4 group/item hover:bg-blue-600 transition-all duration-500">
+                                    <span class="text-[10px] font-black uppercase text-slate-300 group-hover:text-slate-950 tracking-[0.2em] transition-colors leading-tight">{{ $tag }}</span>
+                                </div>
                              @endforeach
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- CONCLUSION (CTA) -->
-            <div class="relative bg-indigo-950 text-white p-12 md:p-16 rounded-3xl text-center shadow-2xl overflow-hidden border-b-4 border-indigo-500">
-                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(99,102,241,0.1),transparent)]"></div>
-                <div class="relative z-10">
-                    <h3 class="text-3xl font-bold mb-6 uppercase tracking-tight font-serif">Expand Your Global Outreach</h3>
-                    <p class="text-xl text-indigo-100 max-w-4xl mx-auto leading-relaxed mb-10">
-                        Bridge the gap between domestic production and international demand. Join the ecosystem of global traders and export-quality manufacturers to lead the next era of international commerce.
+            <!-- Conclusion CTA -->
+            <div class="relative p-24 lg:p-32 bg-slate-950 overflow-hidden text-center shadow-3xl group">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(37,99,235,0.2),transparent)]"></div>
+                <div class="relative z-10 space-y-16">
+                    <h3 class="text-5xl md:text-[8rem] font-black text-white uppercase tracking-tighter leading-[0.85]">
+                        Global <br><span class="text-blue-600">Expansion.</span>
+                    </h3>
+                    <p class="text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium italic border-l-4 border-blue-600 pl-10 md:text-center mx-auto uppercase tracking-tighter">
+                        Bridge the gap between domestic production and international demand. Join the ecosystem of global traders to lead the next era of commerce.
                     </p>
-                    <a href="" class="inline-flex items-center gap-3 px-10 py-5 bg-white text-indigo-900 font-black uppercase tracking-widest rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-xl group">
-                        Register for Trade Support <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform text-indigo-500"></i>
-                    </a>
+                    <div class="flex justify-center">
+                        <a href="{{ route('join.index') }}" 
+                            class="btn-sharp px-16 group !border-blue-600/30 hover:!bg-blue-600">
+                            Register for Trade Support 
+                            <i class="fa-solid fa-arrow-right-long ml-6 group-hover:translate-x-4 transition-transform"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
 

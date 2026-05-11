@@ -1,25 +1,24 @@
-<section class="section-padding bg-white relative overflow-hidden">
-    <!-- Visual Decorators -->
-    <div class="absolute bottom-0 right-0 w-[800px] h-[800px] bg-brand-primary/5 rounded-full blur-[150px] translate-x-1/2 translate-y-1/2"></div>
+<section class="section-padding bg-white relative overflow-hidden border-b border-slate-100">
+    <!-- Industrial Pattern Background -->
+    <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:40px_40px] opacity-30"></div>
     
     <div class="container relative z-10">
         <!-- Section Header -->
         <div class="flex flex-col lg:flex-row justify-between items-end mb-24 gap-12 animate-on-scroll">
-            <div class="space-y-6 max-w-3xl">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-primary/5 text-brand-primary text-[10px] font-black uppercase tracking-[0.2em]">
-                    Executive Board
+            <div class="max-w-4xl space-y-8">
+                <div class="section-heading">
+                    <span class="subtitle">Executive Board</span>
+                    <h2>Institutional <span class="text-brand-primary">Leadership.</span></h2>
+                    <div class="accent-line"></div>
                 </div>
-                <h2 class="text-6xl md:text-8xl font-black text-slate-900 leading-[0.9] tracking-tighter uppercase">
-                    Institutional <br> <span class="text-brand-primary italic">Leadership.</span>
-                </h2>
+                <p class="text-2xl text-slate-500 font-medium leading-relaxed max-w-2xl">
+                    Architecting the global mission of World Grexpo Foundation through distinguished board governance and industrial expertise.
+                </p>
             </div>
-            <p class="text-xl text-slate-500 font-medium italic max-w-sm leading-relaxed border-l-4 border-brand-primary/20 pl-8 pb-4">
-                Architecting the global mission of World Grexpo Foundation through distinguished board governance.
-            </p>
         </div>
 
-        <!-- Leadership Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Leadership Grid (Sharp) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-slate-200 border border-slate-200 shadow-2xl">
             
             <?php
                 $leaders = [
@@ -55,44 +54,47 @@
             ?>
 
             <?php $__currentLoopData = $leaders; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $leader): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <div class="group relative rounded-[3rem] overflow-hidden bg-slate-50 border border-slate-100 shadow-xl transition-all duration-700 hover:-translate-y-4 hover:shadow-brand-primary/20 animate-on-scroll" style="transition-delay: <?php echo e($leader['delay']); ?>ms">
-                <!-- Media Layer -->
-                <div class="relative aspect-[4/5] overflow-hidden">
+            <div class="group relative bg-white overflow-hidden transition-all duration-700 animate-on-scroll">
+                <!-- Media Layer (Sharp) -->
+                <div class="relative aspect-[4/5] overflow-hidden bg-slate-900">
                     <img src="<?php echo e($leader['img']); ?>" 
                         alt="<?php echo e($leader['name']); ?>" 
-                        class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-[2000ms] group-hover:scale-110">
+                        class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-[2000ms] group-hover:scale-105 opacity-80 group-hover:opacity-100">
                     
-                    <!-- Premium Overlays -->
-                    <div class="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/40 to-transparent opacity-80 group-hover:opacity-40 transition-opacity"></div>
+                    <!-- Industrial Overlays -->
+                    <div class="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
                     
-                    <!-- Content Overlay -->
-                    <div class="absolute bottom-0 left-0 right-0 p-10 space-y-4">
-                        <div class="space-y-1">
+                    <!-- Content Overlay (Sharp) -->
+                    <div class="absolute bottom-0 left-0 right-0 p-10">
+                        <div class="space-y-4">
                             <h3 class="text-3xl font-black text-white uppercase tracking-tighter leading-none group-hover:text-brand-primary transition-colors">
                                 <?php echo e($leader['name']); ?>
 
                             </h3>
-                            <div class="flex items-center gap-3">
-                                <div class="h-[1px] w-6 bg-brand-primary transition-all group-hover:w-12"></div>
-                                <span class="text-[9px] font-black text-brand-accent uppercase tracking-[0.2em] italic"><?php echo e($leader['role']); ?></span>
+                            <div class="flex items-center gap-4">
+                                <span class="w-10 h-1 bg-brand-accent"></span>
+                                <span class="text-[9px] font-black text-brand-accent uppercase tracking-[0.2em]"><?php echo e($leader['role']); ?></span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Bio Layer -->
-                <div class="p-10 space-y-6 bg-white group-hover:bg-slate-950 transition-colors duration-700 h-full">
-                    <p class="text-slate-500 text-[11px] font-bold uppercase tracking-widest leading-relaxed group-hover:text-slate-400 transition-colors">
+                <!-- Bio Layer (Sharp) -->
+                <div class="p-10 space-y-8 bg-white group-hover:bg-slate-50 transition-colors duration-700 h-full">
+                    <p class="text-slate-500 text-[11px] font-bold uppercase tracking-widest leading-relaxed">
                         <?php echo e($leader['desc']); ?>
 
                     </p>
                     
-                    <div class="pt-6 border-t border-slate-100 group-hover:border-white/10 transition-colors">
-                        <a href="#" class="inline-flex items-center gap-4 text-[9px] font-black text-slate-950 uppercase tracking-[0.3em] group-hover:text-brand-accent transition-all">
-                            View Profile <i class="fa-solid fa-arrow-right-long group-hover:translate-x-2 transition-transform"></i>
+                    <div class="pt-8 border-t border-slate-100 group-hover:border-slate-200">
+                        <a href="#" class="inline-flex items-center gap-4 text-[9px] font-black text-slate-900 uppercase tracking-[0.4em] group-hover:text-brand-primary transition-all">
+                            View Profile <i class="fa-solid fa-plus text-[8px] group-hover:rotate-90 transition-transform"></i>
                         </a>
                     </div>
                 </div>
+
+                <!-- Sharp Side Accent -->
+                <div class="absolute top-0 right-0 w-1 h-0 bg-brand-primary group-hover:h-full transition-all duration-700"></div>
             </div>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 

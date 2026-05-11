@@ -1,97 +1,91 @@
 <!-- Membership Benefits -->
-<section class="py-24 bg-slate-50 relative">
+<section class="section-padding bg-white relative overflow-hidden border-b border-slate-100">
     <div class="container relative z-10">
-        <div class="flex flex-col lg:flex-row gap-16 items-start">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 xl:gap-24 items-start">
             
-            <!-- Left Sticky Sidebar Image & CTA -->
-            <div class="w-full lg:w-5/12 sticky top-32 z-30 hidden lg:block self-start">
-                <div class="relative rounded-2xl overflow-hidden shadow-2xl group w-full h-[calc(100vh-10rem)] max-h-[700px] min-h-[500px]">
-                    <img src="<?php echo e(asset('images/membership-sidebar.png')); ?>" alt="World Grexpo Membership" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+            <!-- Left Sticky Sidebar Image & CTA (Sharp) -->
+            <div class="lg:col-span-5 sticky top-32 z-30 hidden lg:block">
+                <div class="relative bg-slate-900 overflow-hidden border border-slate-200 aspect-[4/5]">
+                    <img src="<?php echo e(asset('images/membership-sidebar.png')); ?>" alt="World Grexpo Membership" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-1000">
+                    <div class="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
                     
-                    <div class="absolute bottom-0 left-0 right-0 p-10">
-                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-accent/20 border border-brand-accent/30 mb-6 backdrop-blur-md">
-                            <i class="fa-solid fa-gem text-brand-accent text-xs"></i>
-                            <span class="text-white text-[10px] font-black tracking-widest uppercase">Premium Network</span>
-                        </div>
-                        
-                        <h2 class="text-3xl lg:text-4xl font-extrabold text-white leading-tight mb-4">
-                            Empowering Business <span class="text-brand-accent">Growth</span>
-                        </h2>
-                        
-                        <p class="text-white/80 text-sm font-medium mb-8 leading-relaxed">
-                            Connect with industry leaders, Padmashri & Padma Bhushan dignitaries. Expand your reach and grow worldwide.
-                        </p>
-                        
-                        <a href="<?php echo e(route('join.index')); ?>" class="w-full relative overflow-hidden inline-flex items-center justify-center px-8 py-4 bg-brand-accent hover:bg-white text-slate-900 rounded-2xl font-black text-sm transition-all shadow-xl group/btn uppercase tracking-widest">
-                            <span class="relative z-10 flex items-center justify-center">
+                    <div class="absolute inset-0 p-12 flex flex-col justify-end">
+                        <div class="space-y-8">
+                            <div class="flex items-center gap-4">
+                                <span class="w-12 h-1 bg-brand-accent"></span>
+                                <span class="text-white text-[11px] font-black tracking-[0.3em] uppercase">Premium Network</span>
+                            </div>
+                            
+                            <h2 class="text-4xl font-black text-white leading-tight uppercase tracking-tighter">
+                                Empowering <br>Business <span class="text-brand-primary">Growth.</span>
+                            </h2>
+                            
+                            <p class="text-white/70 text-lg font-medium leading-relaxed">
+                                Connect with industry leaders, Padmashri & Padma Bhushan dignitaries. Expand your reach and grow worldwide.
+                            </p>
+                            
+                            <a href="<?php echo e(route('join.index')); ?>" class="btn-sharp w-full group">
                                 Join Membership Today
-                                <i class="fa-solid fa-arrow-right ml-3 group-hover/btn:translate-x-1 transition-transform"></i>
-                            </span>
-                        </a>
+                                <i class="fa-solid fa-arrow-right ml-3 group-hover:translate-x-2 transition-transform"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Right Scrollable Content -->
-            <div class="w-full lg:w-7/12">
-                <!-- Mobile Header -->
-                <div class="lg:hidden mb-12 text-center">
-                     <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-accent/10 border border-brand-accent/20 mb-6">
-                        <i class="fa-solid fa-gem text-brand-accent text-xs"></i>
-                        <span class="text-brand-primary text-[10px] font-black tracking-widest uppercase">Premium Network</span>
+            <!-- Right Content -->
+            <div class="lg:col-span-7 space-y-16">
+                <!-- Section Heading -->
+                <div class="space-y-8">
+                    <div class="section-heading">
+                        <span class="subtitle">Why Join World Grexpo?</span>
+                        <h2>Unlock <span class="text-brand-primary">Premium Benefits.</span></h2>
+                        <div class="accent-line"></div>
                     </div>
-                    <h2 class="text-4xl font-extrabold text-brand-primary leading-[1.15] mb-4">
-                        Unlock Premium <span class="text-brand-accent">Benefits</span>
-                    </h2>
-                    <p class="text-slate-500 font-medium">
-                        "World Grexpo membership empowers businesses with networking, visibility, policy support, and growth opportunities at national and global levels."
-                    </p>
-                </div>
-
-                <!-- Desktop Intro Text -->
-                <div class="hidden lg:block mb-16">
-                    <h3 class="text-3xl font-black text-slate-900 mb-4 border-b-4 border-brand-accent inline-block pb-2">Why Join World Grexpo?</h3>
-                    <p class="text-xl text-slate-600 font-medium leading-relaxed italic border-l-4 border-brand-primary pl-6 py-2">
-                        "World Grexpo membership empowers businesses with networking, visibility, policy support, and growth opportunities at national and global levels."
-                    </p>
+                    
+                    <div class="relative p-10 border-l-8 border-brand-primary bg-slate-50">
+                        <p class="text-2xl text-slate-900 font-black leading-tight tracking-tight uppercase italic">
+                            "World Grexpo membership empowers businesses with networking, visibility, policy support, and growth opportunities."
+                        </p>
+                    </div>
                 </div>
 
                 <?php
                     $benefits = [
-                        ['title' => '1. Strong Business Networking Platform', 'desc' => 'Access a global network of MSMEs and corporates. Join dedicated WhatsApp & digital groups to connect with worldwide investors and partners.'],
-                        ['title' => '2. Speaking & Brand Visibility', 'desc' => 'Become a Guest Speaker or Panelist at national & international conferences. Showcase your brand via summits, expos, and industry events.'],
-                        ['title' => '3. Business Growth & Promotion Support', 'desc' => 'Gain promotion through events, exhibitions, and chamber activities to increase brand recognition, credibility, and market exposure across sectors.'],
-                        ['title' => '4. Government Policy & Market Updates', 'desc' => 'Stay compliant and competitive with regular updates on critical Government schemes, MSME policies, and shifting industry regulations.'],
-                        ['title' => '5. Legal & Advisory Support', 'desc' => 'Receive vital legal assistance and strategic business guidance covering essential compliance, expansion, and detailed strategic planning.'],
-                        ['title' => '6. Events, Conferences & Awards Access', 'desc' => 'Secure exclusive invitations to premium industry conferences, targeted trade fairs, and prestigious business excellence awards.'],
-                        ['title' => '7. Business Planning & Support Services', 'desc' => 'Tailored assistance perfectly suited for Startups, MSMEs & Corporates in business planning, proactive growth strategies, and market entry tactics.'],
-                        ['title' => '8. Knowledge & Awareness Programs', 'desc' => 'Take part in skill-enhancing training programs, engaging awareness sessions, and sector-specific expert seminars.'],
-                        ['title' => '9. Liaisoning & Industry Representation', 'desc' => 'Strong support in connecting with key government bodies and authorities with an effective representation of crucial industry concerns.'],
-                        ['title' => '10. Multi-Sector Opportunities', 'desc' => 'Broad exposure to growing sectors like Recycling & Sustainability, Packaging & Plastics, Renewable Energy, Food Processing, Textile & Manufacturing.'],
-                        ['title' => '11. Exclusive Member Community', 'desc' => 'Become part of a highly trusted business ecosystem with direct access to an elite advisory board and renowned industry experts.'],
-                        ['title' => '12. Digital Platform & Visibility', 'desc' => 'Leverage our dynamic online platform to seamlessly share updates, widely promote your services, and effectively engage stakeholders.']
+                        ['title' => 'Strong Business Networking Platform', 'desc' => 'Access a global network of MSMEs and corporates. Join dedicated WhatsApp & digital groups to connect with worldwide investors and partners.'],
+                        ['title' => 'Speaking & Brand Visibility', 'desc' => 'Become a Guest Speaker or Panelist at national & international conferences. Showcase your brand via summits, expos, and industry events.'],
+                        ['title' => 'Business Growth & Promotion Support', 'desc' => 'Gain promotion through events, exhibitions, and chamber activities to increase brand recognition, credibility, and market exposure across sectors.'],
+                        ['title' => 'Government Policy & Market Updates', 'desc' => 'Stay compliant and competitive with regular updates on critical Government schemes, MSME policies, and shifting industry regulations.'],
+                        ['title' => 'Legal & Advisory Support', 'desc' => 'Receive vital legal assistance and strategic business guidance covering essential compliance, expansion, and detailed strategic planning.'],
+                        ['title' => 'Events, Conferences & Awards Access', 'desc' => 'Secure exclusive invitations to premium industry conferences, targeted trade fairs, and prestigious business excellence awards.'],
+                        ['title' => 'Business Planning & Support Services', 'desc' => 'Tailored assistance perfectly suited for Startups, MSMEs & Corporates in business planning, proactive growth strategies, and market entry tactics.'],
+                        ['title' => 'Knowledge & Awareness Programs', 'desc' => 'Take part in skill-enhancing training programs, engaging awareness sessions, and sector-specific expert seminars.'],
+                        ['title' => 'Liaisoning & Industry Representation', 'desc' => 'Strong support in connecting with key government bodies and authorities with an effective representation of crucial industry concerns.'],
+                        ['title' => 'Multi-Sector Opportunities', 'desc' => 'Broad exposure to growing sectors like Recycling & Sustainability, Packaging & Plastics, Renewable Energy, Food Processing, Textile & Manufacturing.'],
+                        ['title' => 'Exclusive Member Community', 'desc' => 'Become part of a highly trusted business ecosystem with direct access to an elite advisory board and renowned industry experts.'],
+                        ['title' => 'Digital Platform & Visibility', 'desc' => 'Leverage our dynamic online platform to seamlessly share updates, widely promote your services, and effectively engage stakeholders.']
                     ];
                 ?>
 
-                <!-- Scrollable Benefits List -->
-                <div class="space-y-6 lg:space-y-6">
+                <!-- Sharp Benefits List -->
+                <div class="grid grid-cols-1 gap-px bg-slate-100 border border-slate-100">
                     <?php $__currentLoopData = $benefits; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $index => $benefit): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <div class="flex gap-6 md:gap-8 group animate-on-scroll hover:bg-slate-200 rounded-2xl p-8">
-                            <!-- Big Number -->
-                            <div class="shrink-0 pt-1">
-                                <span class="text-4xl md:text-5xl font-black text-slate-200 group-hover:text-brand-accent transition-colors duration-500">
-                                    <?php echo e(str_pad($index + 1, 2, '0', STR_PAD_LEFT)); ?>.
+                        <div class="flex gap-10 bg-white p-10 group hover:bg-slate-50 transition-all duration-300">
+                            <!-- Big Number (Sharp) -->
+                            <div class="shrink-0">
+                                <span class="text-5xl font-black text-slate-100 group-hover:text-brand-primary transition-colors duration-500 tabular-nums">
+                                    <?php echo e(str_pad($index + 1, 2, '0', STR_PAD_LEFT)); ?>
+
                                 </span>
                             </div>
                             
                             <!-- Content -->
-                            <div>
-                                <h4 class="text-xl md:text-2xl font-black text-slate-900 mb-3 group-hover:text-brand-primary transition-colors duration-300">
-                                    <?php echo e(preg_replace('/^\d+\.\s*/', '', $benefit['title'])); ?>
+                            <div class="space-y-3 pt-2">
+                                <h4 class="text-xl font-black text-slate-900 group-hover:text-brand-primary transition-colors duration-300 uppercase tracking-tight">
+                                    <?php echo e($benefit['title']); ?>
 
                                 </h4>
-                                <p class="text-slate-500 font-medium leading-relaxed text-sm md:text-base">
+                                <p class="text-[13px] text-slate-500 font-medium leading-relaxed max-w-xl">
                                     <?php echo e($benefit['desc']); ?>
 
                                 </p>
@@ -100,10 +94,11 @@
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
 
-                <!-- Mobile CTA -->
-                <div class="lg:hidden mt-16 text-center">
-                    <a href="<?php echo e(route('join.index')); ?>" class="w-full inline-flex items-center justify-center px-8 py-5 bg-brand-primary text-white rounded-2xl font-black text-sm shadow-xl uppercase tracking-widest">
+                <!-- Final CTA -->
+                <div class="pt-12">
+                    <a href="<?php echo e(route('join.index')); ?>" class="btn-sharp w-full lg:w-auto px-16 group">
                         Apply For Membership Today
+                        <i class="fa-solid fa-chevron-right ml-4 group-hover:translate-x-2 transition-transform text-[10px]"></i>
                     </a>
                 </div>
 

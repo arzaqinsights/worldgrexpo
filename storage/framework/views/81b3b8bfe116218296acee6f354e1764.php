@@ -1,145 +1,176 @@
-
-
 <?php $__env->startSection('title', 'Biofuel / Bio Energy Overview'); ?>
 
 <?php $__env->startSection('content'); ?>
 
-    <!-- HERO -->
-    <section class="relative pt-32 pb-24 bg-slate-900 text-white overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-green-900 via-slate-900 to-black"></div>
-        <div class="absolute inset-0 opacity-25"
-            style="background-image: url('<?php echo e(asset('images/sectors/biofuel.jpeg')); ?>'); background-size: cover; background-position: center;">
+    <!-- Architectural Hero -->
+    <section class="relative pt-64 pb-32 bg-slate-950 overflow-hidden border-b border-slate-900">
+        <!-- Visual Backdrop -->
+        <div class="absolute inset-0 opacity-20">
+            <img src="<?php echo e(asset('images/sectors/biofuel.jpeg')); ?>" class="w-full h-full object-cover grayscale">
         </div>
+        <div class="absolute inset-0 bg-linear-to-b from-slate-950 via-slate-950/90 to-slate-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        
+        <!-- Industrial Accents -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-brand-primary opacity-5 -skew-x-12 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-1/4 h-64 bg-brand-primary opacity-5 skew-x-12 -translate-x-1/2"></div>
 
-        <div class="container relative z-10 text-center">
-            <h1 class="text-4xl md:text-6xl font-black uppercase mb-4 tracking-wide">
-                Biofuel & <span class="text-green-500">Bio Energy</span>
+        <div class="container relative z-10 text-center space-y-12">
+            <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10">
+                <span class="w-2 h-2 bg-brand-accent animate-pulse"></span>
+                <span class="text-white text-[10px] font-black tracking-[0.4em] uppercase">Sustainable Energy Architecture</span>
+            </div>
+            <h1 class="text-6xl md:text-[9rem] font-black text-white leading-[0.85] tracking-tighter uppercase">
+                Biofuel & <br>
+                <span class="text-brand-primary">Bio Energy.</span>
             </h1>
-            <p class="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+            <p class="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium border-l-4 border-brand-primary pl-10 md:text-center mx-auto uppercase tracking-widest italic">
                 Powering Tomorrow with Nature through sustainable alternatives to fossil fuels.
             </p>
         </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="py-16 bg-white">
-        <div class="container space-y-16">
+    <!-- Content Interface -->
+    <section class="py-32 bg-white relative">
+        <div class="container space-y-48">
 
-            <!-- INTRO -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="animate-in fade-in slide-in-from-left duration-700">
-                    <h2 class="text-3xl font-extrabold mb-6 text-slate-900 uppercase">Sustainable Energy Solutions</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4 text-lg">
-                        <strong>Biofuel and Bio Energy</strong> refer to renewable energy sources derived from biological materials such as agricultural residue, biomass, vegetable oils, and organic waste.
-                    </p>
-                    <p class="text-slate-600 leading-relaxed">
-                        As the world shifts towards carbon neutrality, these fuels provide a critical alternative for power generation, transportation, and industrial heating, significantly reducing greenhouse gas emissions.
-                    </p>
+            <!-- Executive Summary -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
+                <div class="p-16 lg:p-24 bg-white space-y-12">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Renewable Infrastructure</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">Sustainable Energy <br><span class="text-brand-primary">Solutions.</span></h2>
+                        <div class="accent-line"></div>
+                    </div>
+                    
+                    <div class="space-y-8 text-2xl text-slate-500 font-medium leading-relaxed italic border-l-4 border-slate-100 pl-10">
+                        <p>
+                            <strong class="text-slate-900 font-black uppercase tracking-tight">Biofuel and Bio Energy</strong> refer to renewable energy sources derived from biological materials such as agricultural residue, biomass, vegetable oils, and organic waste.
+                        </p>
+                        <p>
+                            As the world shifts towards carbon neutrality, these fuels provide a critical alternative for power generation, transportation, and industrial heating, significantly reducing greenhouse gas emissions.
+                        </p>
+                    </div>
                 </div>
 
-                <div class="relative group animate-in fade-in slide-in-from-right duration-700">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-                    <img src="<?php echo e(asset('images/sectors/biofuel.jpeg')); ?>" alt="Biofuel Industry"
-                        class="relative w-full h-[400px] object-cover rounded-2xl shadow-2xl">
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-brand-primary/10"></div>
+                    <div class="relative h-full overflow-hidden border-l border-slate-200 shadow-3xl">
+                        <img src="<?php echo e(asset('images/sectors/biofuel.jpeg')); ?>" alt="Biofuel Industry"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000">
+                    </div>
+                    <div class="absolute top-0 right-0 p-8">
+                        <div class="bg-brand-primary text-white text-[10px] font-black px-6 py-2 uppercase tracking-[0.3em] shadow-2xl">
+                            Carbon Neutral Focus
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- GLOBAL vs INDIA -->
-            <div class="grid md:grid-cols-2 gap-10">
-
+            <!-- Global vs India Grid -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
                 <!-- GLOBAL -->
-                <div class="p-8 rounded-3xl bg-gradient-to-br from-slate-800 to-slate-900 text-white shadow-2xl transform hover:-translate-y-1 transition-transform duration-300">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="p-3 bg-white/10 rounded-xl">
-                            <i class="fa-solid fa-earth-americas text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold uppercase tracking-tight">Global Market</h3>
+                <div class="p-16 lg:p-24 bg-slate-950 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-12 text-brand-primary opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-earth-americas text-[12rem]"></i>
                     </div>
-                    
-                    <ul class="space-y-4 text-slate-300">
-                        <li class="flex items-baseline justify-between border-b border-white/10 pb-2">
-                            <span class="text-sm uppercase font-bold text-slate-400">Biofuel Market (2025)</span>
-                            <span class="text-xl font-black text-white">$180 Billion+</span>
-                        </li>
-                        <li class="flex items-baseline justify-between border-b border-white/10 pb-2">
-                            <span class="text-sm uppercase font-bold text-slate-400">Bioenergy Market</span>
-                            <span class="text-xl font-black text-white">$350 Billion+</span>
-                        </li>
-                        <li class="flex items-baseline justify-between border-b border-white/10 pb-2">
-                            <span class="text-sm uppercase font-bold text-slate-400">Annual CAGR</span>
-                            <span class="text-xl font-black text-green-400">7% – 10%</span>
-                        </li>
-                    </ul>
+                    <div class="relative z-10 space-y-16">
+                        <div class="space-y-4">
+                            <div class="text-brand-primary text-[10px] font-black uppercase tracking-[0.4em]">Global Scale</div>
+                            <h3 class="text-5xl font-black text-white uppercase tracking-tighter italic">Global Market</h3>
+                        </div>
+                        
+                        <div class="space-y-12">
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Biofuel Market (2025)</span>
+                                <span class="text-6xl font-black text-white tracking-tighter italic">$180 Billion+</span>
+                            </div>
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Bioenergy Market</span>
+                                <span class="text-6xl font-black text-white tracking-tighter italic">$350 Billion+</span>
+                            </div>
+                            <div class="flex items-end justify-between">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Annual CAGR</span>
+                                <span class="text-6xl font-black text-brand-primary tracking-tighter italic">10%</span>
+                            </div>
+                        </div>
 
-                    <div class="mt-8">
-                        <h4 class="font-semibold mb-4 text-slate-400 uppercase tracking-wider text-xs">Growth Drivers</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <?php $__currentLoopData = ['Carbon Neutrality', 'Blending Mandates', 'Clean Energy Demand', 'SAF']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $driver): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <span class="px-3 py-1 bg-white/5 rounded-full text-xs font-bold border border-white/10 text-slate-300"><?php echo e($driver); ?></span>
-                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        <div class="space-y-8">
+                            <h4 class="text-[9px] font-black text-slate-500 uppercase tracking-[0.4em]">Growth Drivers</h4>
+                            <div class="grid grid-cols-2 gap-px bg-white/10 border border-white/10">
+                                <?php $__currentLoopData = ['Carbon Neutrality', 'Blending Mandates', 'Clean Energy Demand', 'SAF']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $driver): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <span class="px-8 py-6 bg-slate-950 text-[9px] font-black text-slate-300 uppercase tracking-[0.2em] text-center hover:bg-brand-primary hover:text-slate-950 transition-colors cursor-default"><?php echo e($driver); ?></span>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- INDIA -->
-                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200 shadow-xl transform hover:-translate-y-1 transition-transform duration-300">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="p-3 bg-green-100 rounded-xl text-green-600">
-                            <i class="fa-solid fa-industry text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-slate-900 uppercase tracking-tight">Indian Market</h3>
+                <div class="p-16 lg:p-24 bg-white relative overflow-hidden group border-l border-slate-200">
+                    <div class="absolute top-0 right-0 p-12 text-brand-primary opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-industry text-[12rem]"></i>
                     </div>
-                    
-                    <div class="grid grid-cols-2 gap-4 mb-8">
-                        <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                            <p class="text-[10px] text-slate-400 uppercase font-bold tracking-tight">Market value (2025)</p>
-                            <p class="text-xl font-black text-green-700">₹60K Cr+</p>
+                    <div class="relative z-10 space-y-16">
+                        <div class="space-y-4">
+                            <div class="text-brand-primary text-[10px] font-black uppercase tracking-[0.4em]">National Momentum</div>
+                            <h3 class="text-5xl font-black text-slate-950 uppercase tracking-tighter italic">Indian Market</h3>
                         </div>
-                        <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                            <p class="text-[10px] text-slate-400 uppercase font-bold tracking-tight">Target by 2031</p>
-                            <p class="text-xl font-black text-green-700">₹1.5L Cr+</p>
+                        
+                        <div class="grid grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-sm mb-12">
+                            <div class="bg-white p-12">
+                                <p class="text-[9px] text-slate-400 uppercase font-black tracking-[0.4em] mb-4">Market value (2025)</p>
+                                <p class="text-5xl font-black text-slate-950 uppercase italic tracking-tighter">₹60K Cr+</p>
+                            </div>
+                            <div class="bg-white p-12">
+                                <p class="text-[9px] text-slate-400 uppercase font-black tracking-[0.4em] mb-4">Target by 2031</p>
+                                <p class="text-5xl font-black text-slate-950 uppercase italic tracking-tighter">₹1.5L Cr+</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-px bg-slate-200 border border-slate-200">
+                            <div class="flex items-center justify-between p-10 bg-white group/stat">
+                                <span class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] group-hover/stat:text-brand-primary transition-colors">Ethanol Blending Target</span>
+                                <span class="text-2xl font-black text-brand-primary uppercase italic">20%+</span>
+                            </div>
+                            <div class="flex items-center justify-between p-10 bg-white group/stat">
+                                <span class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] group-hover/stat:text-slate-950 transition-colors">Projected CAGR</span>
+                                <span class="text-2xl font-black text-slate-950 uppercase italic">15-20%</span>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="space-y-3">
-                        <div class="flex items-center justify-between p-3 bg-white rounded-lg border border-slate-100">
-                            <span class="text-xs font-bold text-slate-500 uppercase">Ethanol Blending Target</span>
-                            <span class="text-sm font-black text-slate-800">20%+</span>
-                        </div>
-                        <div class="flex items-center justify-between p-3 bg-white rounded-lg border border-slate-100">
-                            <span class="text-xs font-bold text-slate-500 uppercase">Projected CAGR</span>
-                            <span class="text-sm font-black text-green-600">15-20%</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- STATS CARDS -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-green-200 transition-all duration-300 text-center">
-                    <div class="mb-2 text-green-600 text-3xl font-black group-hover:scale-110 transition-transform">$180B</div>
-                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Global Biofuel</div>
-                </div>
-                <div class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-green-200 transition-all duration-300 text-center">
-                    <div class="mb-2 text-green-600 text-3xl font-black group-hover:scale-110 transition-transform">700+</div>
-                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Ethanol Plants</div>
-                </div>
-                <div class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-green-200 transition-all duration-300 text-center">
-                    <div class="mb-2 text-green-600 text-3xl font-black group-hover:scale-110 transition-transform">15-20%</div>
-                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">India CAGR</div>
-                </div>
-                <div class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-green-200 transition-all duration-300 text-center">
-                    <div class="mb-2 text-green-600 text-3xl font-black group-hover:scale-110 transition-transform">TOP Hub</div>
-                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Energy Security</div>
                 </div>
             </div>
 
-            <!-- OPPORTUNITIES -->
-            <div class="grid md:grid-cols-2 gap-12 items-center pt-8">
-                <div class="order-2 md:order-1 space-y-8">
-                    <h2 class="text-3xl font-extrabold text-slate-900 uppercase tracking-tight">High Potential Segments</h2>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+             <!-- STATS CARDS -->
+             <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
+                <div class="group p-16 bg-white text-center hover:bg-slate-950 transition-all duration-700">
+                    <div class="mb-4 text-slate-950 text-5xl font-black group-hover:text-brand-primary transition-all duration-500 tracking-tighter">$180B</div>
+                    <div class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">Global Biofuel</div>
+                </div>
+                <div class="group p-16 bg-white text-center hover:bg-slate-950 transition-all duration-700">
+                    <div class="mb-4 text-slate-950 text-5xl font-black group-hover:text-brand-primary transition-all duration-500 tracking-tighter">700+</div>
+                    <div class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">Ethanol Plants</div>
+                </div>
+                <div class="group p-16 bg-white text-center hover:bg-slate-950 transition-all duration-700">
+                    <div class="mb-4 text-slate-950 text-5xl font-black group-hover:text-brand-primary transition-all duration-500 tracking-tighter">15-20%</div>
+                    <div class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">India CAGR</div>
+                </div>
+                <div class="group p-16 bg-white text-center hover:bg-slate-950 transition-all duration-700">
+                    <div class="mb-4 text-slate-950 text-5xl font-black group-hover:text-brand-primary transition-all duration-500 tracking-tighter">TOP HUB</div>
+                    <div class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">Energy Security</div>
+                </div>
+            </div>
+
+            <!-- High Potential Segments -->
+            <div class="grid lg:grid-cols-2 gap-32 items-center">
+                <div class="space-y-16">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Investment Horizons</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">High Potential <br><span class="text-brand-primary">Segments.</span></h2>
+                        <div class="accent-line"></div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
                         <?php
                             $items = [
                                 ['icon' => 'flask', 'title' => 'Ethanol Distilleries'],
@@ -151,60 +182,58 @@
                             ];
                         ?>
                         <?php $__currentLoopData = $items; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $i): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <div class="flex items-center gap-3 p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-green-200 hover:bg-white transition-all group">
-                            <div class="w-10 h-10 flex items-center justify-center bg-green-100 text-green-600 rounded-lg group-hover:bg-green-600 group-hover:text-white transition-all">
+                        <div class="flex items-center gap-8 p-12 bg-white group hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-1 h-full bg-brand-primary scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                            <div class="w-12 h-12 bg-slate-50 border border-slate-100 flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-all shadow-sm">
                                 <i class="fa-solid fa-<?php echo e($i['icon']); ?>"></i>
                             </div>
-                            <span class="font-bold text-slate-700 text-sm leading-tight"><?php echo e($i['title']); ?></span>
+                            <span class="text-[10px] font-black text-slate-600 group-hover:text-white uppercase tracking-[0.3em] leading-tight transition-colors"><?php echo e($i['title']); ?></span>
                         </div>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </div>
                 </div>
 
-                <div class="order-1 md:order-2 p-8 bg-slate-900 rounded-3xl text-white relative overflow-hidden">
-                    <div class="relative z-10">
-                        <h3 class="text-2xl font-bold mb-6 italic text-green-400">Emerging Trends (2026–2031)</h3>
-                        <div class="space-y-4">
-                            <div class="flex items-start gap-4">
-                                <div class="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 shrink-0 mt-1">
-                                    <i class="fa-solid fa-bolt text-[10px]"></i>
-                                </div>
-                                <p class="text-sm text-slate-300">2G / 3G Ethanol Plants development.</p>
+                <div class="p-16 lg:p-24 bg-slate-950 text-white space-y-16 relative overflow-hidden group shadow-3xl">
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(148,163,184,0.05),transparent)]"></div>
+                    <div class="relative z-10 space-y-12">
+                        <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10 text-brand-accent text-[10px] font-black uppercase tracking-[0.4em]">
+                            Future Projections
+                        </div>
+                        <h3 class="text-5xl font-black uppercase tracking-tighter italic text-brand-primary">Emerging Trends <br><span class="text-white">(2026–2031)</span></h3>
+                        <div class="space-y-10">
+                            <?php $__currentLoopData = [
+                                '2G / 3G Ethanol Plants development.',
+                                'Sustainable Aviation Fuel (SAF) adoption.',
+                                'Green Methanol and Bio-Hydrogen production.',
+                                'Waste-to-Biofuel Refineries expansion.'
+                            ]; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $trend): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <div class="flex items-start gap-10 group/item">
+                                <div class="w-2 h-2 bg-brand-primary mt-4 group-hover/item:scale-150 transition-transform duration-500"></div>
+                                <p class="text-xl font-black uppercase tracking-widest text-slate-400 group-hover/item:text-white transition-colors duration-500 leading-tight"><?php echo e($trend); ?></p>
                             </div>
-                            <div class="flex items-start gap-4">
-                                <div class="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 shrink-0 mt-1">
-                                    <i class="fa-solid fa-plane text-[10px]"></i>
-                                </div>
-                                <p class="text-sm text-slate-300">Sustainable Aviation Fuel (SAF) adoption.</p>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <div class="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 shrink-0 mt-1">
-                                    <i class="fa-solid fa-droplet text-[10px]"></i>
-                                </div>
-                                <p class="text-sm text-slate-300">Green Methanol and Bio-Hydrogen production.</p>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <div class="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 shrink-0 mt-1">
-                                    <i class="fa-solid fa-recycle text-[10px]"></i>
-                                </div>
-                                <p class="text-sm text-slate-300">Waste-to-Biofuel Refineries expansion.</p>
-                            </div>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- CONCLUSION (CTA) -->
-            <div class="relative bg-slate-900 text-white p-12 md:p-16 rounded-3xl text-center shadow-2xl overflow-hidden border-b-4 border-green-600">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-green-600/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
-                <div class="relative z-10">
-                    <h3 class="text-3xl font-bold mb-6 uppercase tracking-tight">The Bio Energy Revolution</h3>
-                    <p class="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed mb-10">
+            <!-- Conclusion CTA -->
+            <div class="relative p-24 lg:p-32 bg-slate-950 overflow-hidden text-center shadow-3xl group">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(0,75,35,0.3),transparent)]"></div>
+                <div class="relative z-10 space-y-16">
+                    <h3 class="text-5xl md:text-[8rem] font-black text-white uppercase tracking-tighter leading-[0.85]">
+                        The Bio Energy <br><span class="text-brand-primary">Revolution.</span>
+                    </h3>
+                    <p class="text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium italic border-l-4 border-brand-primary pl-10 md:text-center mx-auto">
                         Biofuel and bio energy are powering the transition from fossil fuels to sustainable energy. With India's 20%+ ethanol blending target, the sector represents one of the most significant clean energy opportunities of our time.
                     </p>
-                    <a href="" class="inline-flex items-center gap-3 px-10 py-5 bg-green-600 text-white font-black uppercase tracking-widest rounded-full hover:bg-white hover:text-slate-900 transition-all duration-300 shadow-xl group">
-                        Join the Energy Transition <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
-                    </a>
+                    <div class="flex justify-center">
+                        <a href="<?php echo e(route('join.index')); ?>" 
+                            class="btn-sharp px-16 group !border-brand-primary/30 hover:!bg-brand-primary">
+                            Join the Energy Transition 
+                            <i class="fa-solid fa-arrow-right-long ml-6 group-hover:translate-x-4 transition-transform"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
 

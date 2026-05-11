@@ -1,16 +1,14 @@
 <!-- Impact Numbers -->
-<section class="relative py-10 mt-10 bg-brand-primary overflow-hidden">
-    <!-- Decorative -->
-    <div
-        class="absolute inset-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMSIgZmlsbD0iI2ZmZmZmZiIvPjwvc3ZnPg==')] bg-repeat">
-    </div>
-    <div class="absolute left-0 top-0 w-1/3 h-full bg-brand-primary"></div>
+<section class="relative py-16 bg-brand-primary overflow-hidden border-y border-brand-primary-dark">
+    <!-- Industrial Pattern -->
+    <div class="absolute inset-0 opacity-[0.03] bg-[repeating-linear-gradient(45deg,transparent,transparent_10px,white_10px,white_20px)]"></div>
+    <div class="absolute left-0 top-0 w-full h-full bg-[radial-gradient(circle_at_20%_50%,rgba(170,204,0,0.05)_0%,transparent_50%)]"></div>
 
     <div class="container relative z-10">
         @php
             $sectorCount = count(config('sectors.sectors'));
         @endphp
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center" x-data="{
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10 shadow-2xl" x-data="{
                 shown: false,
                 animateCount(target, id) {
                     let current = 0;
@@ -29,31 +27,52 @@
                 animateCount(100, 'count-guest');
             ">
 
-            <div class="animate-on-scroll">
-                <div class="text-5xl md:text-7xl font-black text-brand-light mb-2 tabular-nums">
+            <!-- Stat Block -->
+            <div class="bg-brand-primary p-12 text-center group">
+                <div class="text-5xl lg:text-7xl font-black text-white mb-4 tabular-nums tracking-tighter">
                     <span id="count-enterprises">0</span><span class="text-brand-accent">K</span>
                 </div>
-                <p class="text-slate-400 text-sm font-semibold uppercase tracking-widest">Enterprises Reached</p>
+                <div class="flex items-center justify-center gap-3">
+                    <span class="w-8 h-px bg-brand-accent/30 group-hover:w-12 transition-all"></span>
+                    <p class="text-white/60 text-[10px] font-black uppercase tracking-[0.3em]">Enterprises</p>
+                    <span class="w-8 h-px bg-brand-accent/30 group-hover:w-12 transition-all"></span>
+                </div>
             </div>
 
-            <div class="animate-on-scroll delay-100">
-                <div class="text-5xl md:text-7xl font-black text-brand-light mb-2 tabular-nums">
+            <!-- Stat Block -->
+            <div class="bg-brand-primary p-12 text-center group">
+                <div class="text-5xl lg:text-7xl font-black text-white mb-4 tabular-nums tracking-tighter">
                     <span id="count-sectors">0</span><span class="text-brand-accent">+</span>
                 </div>
-                <p class="text-slate-400 text-sm font-semibold uppercase tracking-widest">Industry Sectors</p>
+                <div class="flex items-center justify-center gap-3">
+                    <span class="w-8 h-px bg-brand-accent/30 group-hover:w-12 transition-all"></span>
+                    <p class="text-white/60 text-[10px] font-black uppercase tracking-[0.3em]">Sectors</p>
+                    <span class="w-8 h-px bg-brand-accent/30 group-hover:w-12 transition-all"></span>
+                </div>
             </div>
 
-            <div class="animate-on-scroll delay-200">
-                <div class="text-5xl md:text-7xl font-black text-brand-light mb-2 tabular-nums">
+            <!-- Stat Block -->
+            <div class="bg-brand-primary p-12 text-center group">
+                <div class="text-5xl lg:text-7xl font-black text-white mb-4 tabular-nums tracking-tighter">
                     <span id="count-countries">0</span><span class="text-brand-accent">+</span>
                 </div>
-                <p class="text-slate-400 text-sm font-semibold uppercase tracking-widest">Countries Reached</p>
+                <div class="flex items-center justify-center gap-3">
+                    <span class="w-8 h-px bg-brand-accent/30 group-hover:w-12 transition-all"></span>
+                    <p class="text-white/60 text-[10px] font-black uppercase tracking-[0.3em]">Countries</p>
+                    <span class="w-8 h-px bg-brand-accent/30 group-hover:w-12 transition-all"></span>
+                </div>
             </div>
-            <div class="animate-on-scroll delay-200">
-                <div class="text-5xl md:text-7xl font-black text-brand-light mb-2 tabular-nums">
+
+            <!-- Stat Block -->
+            <div class="bg-brand-primary p-12 text-center group">
+                <div class="text-5xl lg:text-7xl font-black text-white mb-4 tabular-nums tracking-tighter">
                     <span id="count-guest">0</span><span class="text-brand-accent">+</span>
                 </div>
-                <p class="text-slate-400 text-sm font-semibold uppercase tracking-widest">Guest of Honour</p>
+                <div class="flex items-center justify-center gap-3">
+                    <span class="w-8 h-px bg-brand-accent/30 group-hover:w-12 transition-all"></span>
+                    <p class="text-white/60 text-[10px] font-black uppercase tracking-[0.3em]">Dignitaries</p>
+                    <span class="w-8 h-px bg-brand-accent/30 group-hover:w-12 transition-all"></span>
+                </div>
             </div>
 
         </div>

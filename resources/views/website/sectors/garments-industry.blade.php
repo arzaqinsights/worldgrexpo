@@ -4,146 +4,185 @@
 
 @section('content')
 
-    <!-- HERO -->
-    <section class="relative pt-32 pb-24 bg-slate-900 text-white overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-rose-900 via-slate-900 to-black"></div>
-        <div class="absolute inset-0 opacity-25"
-            style="background-image: url('{{ asset('images/sectors/garments.webp') }}'); background-size: cover; background-position: center;">
+    <!-- Architectural Hero -->
+    <section class="relative pt-64 pb-32 bg-slate-950 overflow-hidden border-b border-slate-900">
+        <!-- Visual Backdrop -->
+        <div class="absolute inset-0 opacity-20">
+            <img src="{{ asset('images/sectors/garments.webp') }}" class="w-full h-full object-cover grayscale">
         </div>
+        <div class="absolute inset-0 bg-linear-to-b from-slate-950 via-slate-950/90 to-slate-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(225,29,72,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        
+        <!-- Industrial Accents -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-rose-600 opacity-5 -skew-x-12 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-1/4 h-64 bg-rose-600 opacity-5 skew-x-12 -translate-x-1/2"></div>
 
-        <div class="container relative z-10 text-center">
-            <h1 class="text-4xl md:text-6xl font-black uppercase mb-4 tracking-wide">
-                Garments Industry
+        <div class="container relative z-10 text-center space-y-12">
+            <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10">
+                <span class="w-2 h-2 bg-rose-400 animate-pulse"></span>
+                <span class="text-white text-[10px] font-black tracking-[0.4em] uppercase">Global Fashion Protocol</span>
+            </div>
+            <h1 class="text-6xl md:text-[9rem] font-black text-white leading-[0.85] tracking-tighter uppercase">
+                Garments <br>
+                <span class="text-rose-600">Industry.</span>
             </h1>
-            <p class="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+            <p class="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium border-l-4 border-rose-600 pl-10 uppercase tracking-widest italic md:text-center mx-auto">
                 Stitching the future of global fashion through innovative manufacturing and style.
             </p>
         </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="py-16 bg-white">
-        <div class="container space-y-16">
+    <!-- Content Interface -->
+    <section class="py-32 bg-white relative">
+        <div class="container space-y-48">
 
-            <!-- INTRO -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="animate-in fade-in slide-in-from-left duration-700">
-                    <h2 class="text-3xl font-extrabold mb-6 text-slate-900">What is Garments Industry?</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4 text-lg">
-                        The <strong>garments industry</strong> (apparel industry) involves the design, manufacturing, and distribution of ready-made clothing for men, women, and children.
-                    </p>
-                    <p class="text-slate-600 leading-relaxed">
-                        From everyday casuals and formal wear to high-fashion apparel and industrial clothing, this sector is a massive consumer-driven powerhouse that combines creative design with large-scale industrial manufacturing.
-                    </p>
+            <!-- Executive Summary -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200">
+                <div class="p-16 lg:p-24 bg-white space-y-12">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Apparel Manufacturing Framework</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">Industrial <br><span class="text-rose-600">Fashion.</span></h2>
+                        <div class="accent-line bg-rose-600"></div>
+                    </div>
+                    
+                    <div class="space-y-8 text-2xl text-slate-500 font-medium leading-relaxed italic border-l-4 border-slate-100 pl-10">
+                        <p>
+                            <strong class="text-slate-900 font-black uppercase tracking-tight">The Garments Industry</strong> involves the design, manufacturing, and distribution of ready-made clothing for men, women, and children.
+                        </p>
+                        <p>
+                            From everyday casuals to high-fashion apparel, this sector is a massive consumer-driven powerhouse that combines creative design with large-scale industrial manufacturing.
+                        </p>
+                    </div>
                 </div>
 
-                <div class="relative group animate-in fade-in slide-in-from-right duration-700">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-rose-600 to-pink-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-                    <img src="{{ asset('images/sectors/garments.webp') }}" alt="Garments Industry"
-                        class="relative w-full h-[400px] object-cover rounded-2xl shadow-2xl">
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-rose-600/10"></div>
+                    <div class="relative h-full overflow-hidden border-l border-slate-200 shadow-3xl">
+                        <img src="{{ asset('images/sectors/garments.webp') }}" alt="Garments Industry"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000">
+                    </div>
+                    <div class="absolute top-0 right-0 p-8">
+                        <div class="bg-rose-600 text-white text-[10px] font-black px-6 py-2 uppercase tracking-[0.3em] shadow-2xl">
+                            Manufacturing Standard
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- GLOBAL vs INDIA -->
-            <div class="grid md:grid-cols-2 gap-10">
-
+            <!-- Global vs India Market -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
                 <!-- GLOBAL -->
-                <div class="p-8 rounded-3xl bg-gradient-to-br from-rose-800 to-rose-950 text-white shadow-2xl transform hover:-translate-y-1 transition-transform duration-300">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="p-3 bg-white/10 rounded-xl">
-                            <i class="fa-solid fa-shirt text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold">Global Market</h3>
+                <div class="p-16 lg:p-24 bg-slate-950 text-white relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-12 text-rose-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-shirt text-[12rem]"></i>
                     </div>
-                    <ul class="space-y-4 text-rose-50">
-                        <li class="flex items-start gap-2">
-                            <span class="font-bold text-white text-lg">USD 1.84 Trillion</span> 
-                            <span class="text-rose-200">(2025 Market Value)</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="font-bold text-white text-lg">USD 2.54 Trillion</span> 
-                            <span class="text-rose-200">(2033 Projection)</span>
-                        </li>
-                    </ul>
+                    <div class="relative z-10 space-y-16">
+                        <div class="space-y-4">
+                            <div class="text-rose-400 text-[10px] font-black uppercase tracking-[0.4em]">Global Sourcing</div>
+                            <h3 class="text-5xl font-black uppercase tracking-tighter italic">Global Market</h3>
+                        </div>
+                        
+                        <div class="space-y-12">
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Market (2025)</span>
+                                <span class="text-6xl font-black text-white tracking-tighter italic">$1.84T</span>
+                            </div>
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Projected (2033)</span>
+                                <span class="text-6xl font-black text-white tracking-tighter italic">$2.54T</span>
+                            </div>
+                        </div>
 
-                    <p class="mt-6 text-sm text-rose-200/80 leading-relaxed">Asia-Pacific holds <span class="text-white font-bold">40%+ share</span> of the global market and remains the dominant manufacturing hub.</p>
-
-                    <h4 class="font-semibold mt-8 mb-4 text-rose-300 uppercase tracking-wider text-sm">Growth Drivers</h4>
-                    <div class="grid grid-cols-2 gap-2">
-                            <div class="text-[10px] uppercase font-bold text-rose-100 flex items-center gap-2">
-                                <i class="fa-solid fa-bolt text-rose-400"></i> Fast Fashion
+                        <div class="space-y-8">
+                            <h4 class="text-[9px] font-black text-slate-500 uppercase tracking-[0.4em]">Growth Drivers</h4>
+                            <div class="grid grid-cols-2 gap-px bg-white/10 border border-white/10 shadow-2xl">
+                                @foreach(['Fast Fashion', 'E-commerce', 'Luxury Segment', 'Disposable Income'] as $driver)
+                                    <div class="px-8 py-4 bg-slate-950 flex items-center gap-6 hover:bg-rose-600 hover:text-slate-950 transition-colors cursor-default group/item">
+                                        <i class="fa-solid fa-circle-check text-rose-600 group-hover/item:text-slate-950 transition-colors"></i>
+                                        <span class="text-[10px] font-black uppercase tracking-[0.1em] text-center">{{ $driver }}</span>
+                                    </div>
+                                @endforeach
                             </div>
-                            <div class="text-[10px] uppercase font-bold text-rose-100 flex items-center gap-2">
-                                <i class="fa-solid fa-globe text-rose-400"></i> E-commerce
-                            </div>
-                            <div class="text-[10px] uppercase font-bold text-rose-100 flex items-center gap-2">
-                                <i class="fa-solid fa-gem text-rose-400"></i> Luxury Segment
-                            </div>
-                            <div class="text-[10px] uppercase font-bold text-rose-100 flex items-center gap-2">
-                                <i class="fa-solid fa-wallet text-rose-400"></i> Disposable Income
-                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- INDIA -->
-                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200 shadow-xl transform hover:-translate-y-1 transition-transform duration-300">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="p-3 bg-rose-100 rounded-xl text-rose-600">
-                            <i class="fa-solid fa-tags text-2xl"></i>
+                <div class="p-16 lg:p-24 bg-white relative overflow-hidden group border-l border-slate-200">
+                    <div class="absolute top-0 right-0 p-12 text-rose-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-tags text-[12rem]"></i>
+                    </div>
+                    <div class="relative z-10 space-y-16 text-right">
+                        <div class="space-y-4">
+                            <div class="text-rose-600 text-[10px] font-black uppercase tracking-[0.4em]">Export Dominance</div>
+                            <h3 class="text-5xl font-black text-slate-900 uppercase tracking-tighter italic">Indian Market</h3>
                         </div>
-                        <h3 class="text-2xl font-bold text-slate-900">Indian Market</h3>
+                        
+                        <div class="p-12 bg-rose-50 border-l-8 border-rose-600 shadow-sm text-right space-y-6">
+                            <p class="text-[9px] font-black text-rose-600 uppercase tracking-[0.4em] italic">Sector Contribution</p>
+                            <p class="text-4xl font-black text-slate-950 uppercase italic leading-tight tracking-tighter">40% Textile Share</p>
+                            <p class="text-[12px] font-black text-slate-500 uppercase tracking-widest italic">Top 6 Global Exporter</p>
+                        </div>
+
+                        <div class="space-y-8">
+                            <h4 class="text-[9px] font-black text-slate-400 uppercase tracking-[0.4em]">Manufacturing Hubs</h4>
+                            <div class="grid grid-cols-3 gap-px bg-slate-200 border border-slate-200 shadow-sm">
+                                @foreach(['Tiruppur', 'Bengaluru', 'Delhi NCR', 'Mumbai', 'Jaipur', 'Ludhiana'] as $city)
+                                    <div class="p-6 bg-white flex flex-col items-center justify-center gap-4 group/item hover:bg-slate-950 transition-all duration-500">
+                                        <div class="w-1.5 h-1.5 bg-rose-600 group-hover/item:scale-150 transition-transform"></div>
+                                        <span class="text-[9px] font-black uppercase text-slate-600 group-hover/item:text-white tracking-[0.1em] leading-tight text-center">{{ $city }}</span>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
                     </div>
-                    <p class="text-slate-600 mb-6 font-medium">Clothing accounts for <span class="text-rose-600 font-black">40% share</span> of India's textile market, supported by massive domestic demand and exports.</p>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-rose-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110">8-10%</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">Annual Growth</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-rose-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">20K</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">Organized Units</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-rose-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">1L+</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">MSME Enterprises</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-rose-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">40%</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">Textile Share</p>
+                </div>
+            </div>
+
+            <!-- Opportunities & Position -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
+                <div class="relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-rose-600/10"></div>
+                    <div class="relative overflow-hidden border border-slate-200 shadow-3xl h-[600px]">
+                        <img src="{{ asset('images/sectors/garments-details.jpg') }}" alt="Garments Details"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-12">
+                        <div class="bg-rose-600 text-white p-10 space-y-2 border-l-8 border-white/20 shadow-2xl">
+                            <p class="text-5xl font-black tracking-tighter uppercase italic">1M+</p>
+                            <p class="text-[10px] font-black uppercase tracking-[0.3em] opacity-80">Global Manufacturers</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-24 bg-white space-y-16">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Market Horizons</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">Emerging <br><span class="text-rose-600">Opportunities.</span></h2>
+                        <div class="accent-line bg-rose-600"></div>
+                    </div>
                     
-                    <h4 class="font-semibold mb-4 text-rose-600 uppercase tracking-wider text-sm">Manufacturing Hubs</h4>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        @foreach(['Tiruppur', 'Bengaluru', 'Delhi NCR', 'Mumbai', 'Jaipur', 'Ludhiana'] as $city)
-                            <span class="px-3 py-1 bg-white border border-slate-200 text-slate-600 text-xs font-bold rounded-full group hover:border-rose-400 hover:text-rose-600 transition-colors cursor-default">{{ $city }}</span>
-                        @endforeach
-                    </div>
-
-                    <div class="p-4 bg-rose-50 rounded-2xl border border-rose-100">
-                        <p class="text-[10px] font-black text-rose-600 uppercase mb-1">Export Performance</p>
-                        <p class="text-lg font-bold text-slate-800">Top 6 Global Apparel Exporter</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- STATS CARDS -->
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-rose-200 transition-all duration-300 text-center">
-                    <div class="mb-2 text-rose-600 text-3xl font-black group-hover:scale-110 transition-transform">8–10%</div>
-                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">India Annual Growth</div>
-                </div>
-                <div class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-rose-200 transition-all duration-300 text-center">
-                    <div class="mb-2 text-rose-600 text-3xl font-black group-hover:scale-110 transition-transform">20,000</div>
-                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Organized Units (India)</div>
-                </div>
-                <div class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-rose-200 transition-all duration-300 text-center">
-                    <div class="mb-2 text-rose-600 text-3xl font-black group-hover:scale-110 transition-transform">1 Lakh+</div>
-                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">MSME Enterprises</div>
-                </div>
-                <div class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-rose-200 transition-all duration-300 text-center">
-                    <div class="mb-2 text-rose-600 text-3xl font-black group-hover:scale-110 transition-transform">40%</div>
-                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Textile Mkt Share</div>
-                </div>
-            </div>
-
-            <!-- OPPORTUNITIES -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="order-2 md:order-1 relative">
-                    <img src="{{ asset('images/sectors/garments-details.jpg') }}" alt="Garments Details"
-                        class="w-full h-[400px] object-cover rounded-3xl shadow-xl">
-                    <div class="absolute -bottom-6 -right-6 p-6 bg-rose-600 text-white rounded-2xl shadow-2xl hidden md:block">
-                        <p class="text-3xl font-bold">1 Million+</p>
-                        <p class="text-sm opacity-80 uppercase tracking-widest">Global Manufacturers</p>
-                    </div>
-                </div>
-
-                <div class="order-1 md:order-2">
-                    <h2 class="text-3xl font-extrabold mb-8 text-slate-900">Emerging Opportunities</h2>
-                    <div class="grid gap-3">
+                    <div class="grid grid-cols-1 gap-4">
                         @php
                             $opportunities = [
                                 ['icon' => 'leaf', 'title' => 'Sustainable & Organic Clothing'],
@@ -155,56 +194,33 @@
                             ];
                         @endphp
                         @foreach($opportunities as $item)
-                        <div class="flex items-center gap-4 p-4 rounded-xl border border-slate-100 hover:bg-rose-50 hover:border-rose-200 hover:shadow-sm transition-all group">
-                            <div class="w-12 h-12 flex items-center justify-center bg-rose-100 text-rose-600 rounded-lg group-hover:bg-rose-600 group-hover:text-white transition-colors">
-                                <i class="fa-solid fa-{{ $item['icon'] }}"></i>
+                        <div class="flex items-center gap-10 p-10 bg-slate-50 group/opp hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-1 h-full bg-rose-600 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                            <div class="w-16 h-16 border border-slate-200 flex items-center justify-center text-rose-600 group-hover/opp:bg-rose-600 group-hover/opp:text-white transition-all duration-500 shadow-sm">
+                                <i class="fa-solid fa-{{ $item['icon'] }} text-2xl"></i>
                             </div>
-                            <span class="font-bold text-slate-700 text-lg">{{ $item['title'] }}</span>
+                            <span class="text-xl font-black uppercase text-slate-700 tracking-[0.15em] group-hover/opp:text-white transition-colors leading-tight italic">{{ $item['title'] }}</span>
                         </div>
                         @endforeach
                     </div>
                 </div>
             </div>
 
-            <!-- GLOBAL POSITION -->
-            <div class="p-10 rounded-3xl bg-slate-900 text-white overflow-hidden relative">
-                <div class="absolute top-0 right-0 w-80 h-80 bg-rose-500/10 rounded-full blur-3xl -mr-40 -mt-40"></div>
-                <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h3 class="text-3xl font-bold mb-4">India's Global Position</h3>
-                        <p class="text-slate-400 leading-relaxed mb-6">
-                            India ranks among the Top 6 global apparel exporters, contributing significantly to fashion sourcing through advantages in cotton, knitwear, and ethical manufacturing.
-                        </p>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="p-4 bg-white/5 rounded-2xl border border-white/10">
-                                <p class="text-[10px] font-black text-rose-500 uppercase">Strong Advantage</p>
-                                <p class="text-sm font-bold">Cotton Garments</p>
-                            </div>
-                            <div class="p-4 bg-white/5 rounded-2xl border border-white/10">
-                                <p class="text-[10px] font-black text-rose-500 uppercase">Export Niche</p>
-                                <p class="text-sm font-bold">Ethnic Fashion</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-10 bg-rose-600 rounded-[3rem] text-center shadow-xl">
-                        <i class="fa-solid fa-earth-asia text-5xl mb-6"></i>
-                        <h4 class="text-3xl font-black mb-2 uppercase">Global Hub</h4>
-                        <p class="text-sm opacity-90">Sourcing destination for the world's leading fashion brands.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CONCLUSION -->
-            <div class="bg-gradient-to-br from-rose-600 to-pink-700 text-white p-12 rounded-3xl text-center shadow-2xl relative group overflow-hidden">
-                <div class="absolute inset-0 bg-black/10 transition-opacity opacity-0 group-hover:opacity-100 duration-500"></div>
-                <div class="relative z-10">
-                    <h3 class="text-3xl font-bold mb-6">Why Garments Industry Matters</h3>
-                    <p class="text-xl text-rose-50 max-w-4xl mx-auto leading-relaxed">
-                        The garments sector is a key employment generator and economic driver, shaping global fashion innovation and retail growth. As a pillar of manufacturing and trade, its importance continues to grow with rising global sourcing opportunities.
+            <!-- Conclusion CTA -->
+            <div class="relative p-24 lg:p-32 bg-slate-950 overflow-hidden text-center shadow-3xl group">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(225,29,72,0.2),transparent)]"></div>
+                <div class="relative z-10 space-y-16">
+                    <h3 class="text-5xl md:text-[8rem] font-black text-white uppercase tracking-tighter leading-[0.85]">
+                        Fashion <br><span class="text-rose-600">Revolution.</span>
+                    </h3>
+                    <p class="text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium italic border-l-4 border-rose-600 pl-10 md:text-center mx-auto uppercase tracking-tighter">
+                        The garments sector is a key employment generator and economic driver, shaping global fashion innovation and retail growth.
                     </p>
-                    <div class="mt-8">
-                        <a href="" class="inline-flex items-center gap-2 px-10 py-5 bg-white text-rose-700 font-black uppercase tracking-widest rounded-full hover:bg-slate-900 hover:text-white transition-all duration-300 shadow-xl">
-                            Join Fashion Revolution <i class="fa-solid fa-arrow-right"></i>
+                    <div class="flex justify-center">
+                        <a href="{{ route('join.index') }}" 
+                            class="btn-sharp px-16 group !border-rose-600/30 hover:!bg-rose-600">
+                            Join Fashion Revolution 
+                            <i class="fa-solid fa-arrow-right-long ml-6 group-hover:translate-x-4 transition-transform"></i>
                         </a>
                     </div>
                 </div>

@@ -6,64 +6,63 @@
 ?>
 
 <?php if(isset($popupEvent) && $popupEvent): ?>
-    <div id="event-popup-container" class="fixed inset-0 z-9999 items-center justify-center p-4 sm:p-6" style="display: none;">
-        <!-- Premium Backdrop -->
-        <div id="popup-backdrop" class="absolute inset-0 bg-slate-950/90 backdrop-blur-md transition-opacity duration-700 opacity-0 cursor-pointer"></div>
+    <div id="event-popup-container" class="fixed inset-0 z-9999 items-center justify-center p-4 sm:p-12" style="display: none;">
+        <!-- Sharp Industrial Backdrop -->
+        <div id="popup-backdrop" class="absolute inset-0 bg-slate-950/95 transition-opacity duration-700 opacity-0 cursor-pointer"></div>
 
-        <!-- Modern Modal Content -->
-        <div id="popup-content" class="relative w-full max-w-5xl bg-white rounded-[3rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col lg:flex-row transform transition-all duration-700 translate-y-12 opacity-0">
+        <!-- Sharp Modal Content -->
+        <div id="popup-content" class="relative w-full max-w-6xl bg-white border border-slate-200 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.8)] overflow-hidden flex flex-col lg:flex-row transform transition-all duration-700 translate-y-24 opacity-0">
             
-            <!-- Floating Close Button -->
-            <button id="close-popup-btn" class="absolute top-6 right-6 z-50 w-12 h-12 rounded-2xl bg-white/10 hover:bg-white/20 text-white lg:text-slate-400 lg:bg-slate-50 lg:hover:bg-brand-primary lg:hover:text-white flex items-center justify-center transition-all backdrop-blur-xl group">
-                <i class="fa-solid fa-xmark group-hover:rotate-90 transition-transform"></i>
+            <!-- Sharp Close Button -->
+            <button id="close-popup-btn" class="absolute top-0 right-0 z-50 w-16 h-16 bg-slate-100 hover:bg-brand-primary text-slate-900 hover:text-white flex items-center justify-center transition-all group">
+                <i class="fa-solid fa-xmark text-lg group-hover:rotate-90 transition-transform"></i>
             </button>
 
-            <!-- Visual Side -->
-            <div class="lg:w-1/2 relative overflow-hidden bg-slate-100 min-h-[300px]">
+            <!-- Visual Side (Sharp) -->
+            <div class="lg:w-5/12 relative overflow-hidden bg-slate-900 min-h-[400px]">
                 <?php if($popupEvent->image): ?>
-                    <img src="<?php echo e(asset($popupEvent->image)); ?>" class="w-full h-full object-cover">
+                    <img src="<?php echo e(asset($popupEvent->image)); ?>" class="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-100 transition-opacity duration-1000">
                 <?php else: ?>
-                    <div class="absolute inset-0 bg-linear-to-br from-brand-primary to-brand-accent"></div>
+                    <div class="absolute inset-0 bg-brand-primary opacity-20"></div>
                 <?php endif; ?>
                 <div class="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
                 
                 <!-- Overlay Content -->
-                <div class="absolute bottom-10 left-10 right-10 space-y-4">
-                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-accent text-brand-primary-dark text-[10px] font-black uppercase tracking-[0.2em] shadow-xl">
-                        <i class="fa-solid fa-star"></i> Featured Event
+                <div class="absolute bottom-12 left-12 right-12 space-y-6">
+                    <div class="inline-flex items-center gap-4 bg-brand-accent px-6 py-2 shadow-2xl">
+                        <i class="fa-solid fa-star text-brand-primary-dark text-xs"></i>
+                        <span class="text-brand-primary-dark text-[10px] font-black uppercase tracking-[0.3em]">Featured Event</span>
                     </div>
-                    <div class="text-white">
-                        <div class="text-[10px] font-black uppercase tracking-[0.3em] text-white/60 mb-1">Global Summit</div>
-                        <div class="text-3xl font-black uppercase tracking-tighter"><?php echo e($popupEvent->title); ?></div>
+                    <div class="space-y-2">
+                        <div class="text-[10px] font-black uppercase tracking-[0.4em] text-white/60">Global Summit</div>
+                        <div class="text-3xl font-black uppercase tracking-tighter text-white"><?php echo e($popupEvent->title); ?></div>
                     </div>
                 </div>
             </div>
 
-            <!-- Data Side -->
-            <div class="lg:w-1/2 p-10 lg:p-16 flex flex-col justify-center bg-white space-y-10">
-                <div class="space-y-6">
-                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-primary/5 text-brand-primary text-[10px] font-black uppercase tracking-[0.2em]">
-                        <span class="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse"></span>
-                        Event Spotlight
+            <!-- Data Side (Sharp) -->
+            <div class="lg:w-7/12 p-12 lg:p-20 flex flex-col justify-center bg-white">
+                <div class="space-y-10">
+                    <div class="space-y-8">
+                        <div class="section-heading">
+                            <span class="subtitle">Event Spotlight</span>
+                            <h2><?php echo e($popupEvent->title); ?></h2>
+                            <div class="accent-line"></div>
+                        </div>
+                        <p class="text-xl text-slate-500 font-medium leading-relaxed max-w-2xl">
+                            <?php echo e($popupEvent->short_description ?: ($popupEvent->description ?: 'Join us for this exclusive event. Network with industry experts and discover new growth opportunities.')); ?>
+
+                        </p>
                     </div>
-                    <h2 class="text-4xl font-black text-slate-900 leading-[0.9] tracking-tighter uppercase">
-                        <?php echo e($popupEvent->title); ?>
 
-                    </h2>
-                    <p class="text-lg text-slate-500 font-medium leading-relaxed">
-                        <?php echo e($popupEvent->short_description ?: ($popupEvent->description ?: 'Join us for this exclusive event. Network with industry experts and discover new growth opportunities.')); ?>
-
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 gap-6">
-                    <div class="flex items-center gap-6 p-6 rounded-[2rem] bg-slate-50 border border-slate-100">
-                        <div class="w-14 h-14 rounded-2xl bg-white shadow-xl flex items-center justify-center text-brand-primary text-xl">
+                    <!-- Sharp Schedule Block -->
+                    <div class="flex items-center gap-8 p-10 bg-slate-50 border border-slate-100 relative overflow-hidden group">
+                        <div class="w-16 h-16 bg-white border border-slate-200 flex items-center justify-center text-brand-primary text-2xl shrink-0">
                             <i class="fa-regular fa-calendar-check"></i>
                         </div>
-                        <div>
-                            <div class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Schedule</div>
-                            <div class="text-lg font-black text-slate-900 tracking-tight">
+                        <div class="relative z-10">
+                            <div class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-2">Event Schedule</div>
+                            <div class="text-2xl font-black text-slate-900 tracking-tighter uppercase tabular-nums">
                                 <?php if($popupEvent->end_date): ?>
                                     <?php echo e($popupEvent->event_date->format('d')); ?> - <?php echo e($popupEvent->end_date->format('d M, Y')); ?>
 
@@ -74,13 +73,14 @@
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="<?php echo e(route('events.show', $popupEvent->slug)); ?>" 
-                        class="flex-1 py-5 rounded-2xl bg-brand-primary text-white text-center font-black uppercase tracking-widest text-xs shadow-2xl shadow-brand-primary/20 hover:bg-brand-primary-dark transition-all transform hover:-translate-y-1">
-                        Register For Event
-                    </a>
+                    <div class="pt-6">
+                        <a href="<?php echo e(route('events.show', $popupEvent->slug)); ?>" 
+                            class="btn-sharp w-full group">
+                            Register For Event
+                            <i class="fa-solid fa-arrow-right-long ml-4 group-hover:translate-x-2 transition-transform"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -111,7 +111,7 @@
                 function closePopup() {
                     backdrop.style.opacity = '0';
                     content.style.opacity = '0';
-                    content.style.transform = 'translateY(24px) scale(0.95)';
+                    content.style.transform = 'translateY(40px)';
                     
                     setTimeout(() => {
                         container.style.display = 'none';

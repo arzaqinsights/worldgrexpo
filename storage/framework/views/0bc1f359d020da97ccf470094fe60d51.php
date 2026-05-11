@@ -1,94 +1,128 @@
-<section class="section-padding bg-[#fdfdfd] overflow-hidden">
+<section class="section-padding bg-white border-b border-slate-100 overflow-hidden">
     <div class="container">
-        <!-- Modern Heading Structure -->
-        <div class="flex flex-col lg:flex-row items-end justify-between gap-10 mb-20">
-            <div class="max-w-3xl space-y-6">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-primary/5 text-brand-primary text-[10px] font-black uppercase tracking-[0.2em]">
-                    <span class="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse"></span>
-                    Industrial Pillars
+        <!-- Sharp Heading Structure -->
+        <div class="flex flex-col lg:flex-row items-end justify-between gap-12 mb-10">
+            <div class="max-w-3xl space-y-8">
+                <div class="section-heading">
+                    <span class="subtitle">Industrial Pillars</span>
+                    <h2>Strategic <span class="text-brand-primary">Global Sectors.</span></h2>
+                    <div class="accent-line"></div>
                 </div>
-                <h2 class="text-5xl md:text-7xl font-black text-slate-900 leading-[0.9] tracking-tighter">
-                    Strategic <span class="text-brand-primary italic">Global Sectors.</span>
-                </h2>
-                <p class="text-xl text-slate-500 font-medium leading-relaxed">
+                <p class="text-xl text-slate-500 font-medium leading-relaxed max-w-2xl">
                     Driving global commerce through targeted industrial excellence and strategic cross-border networking.
                 </p>
             </div>
             <a href="<?php echo e(route('sectors.index')); ?>"
-                class="group px-10 py-5 rounded-2xl bg-slate-900 text-white font-black text-sm uppercase tracking-widest transition-all hover:bg-brand-primary shadow-2xl flex items-center gap-3">
+                class="btn-sharp group">
                 Explore All Sectors
-                <i class="fa-solid fa-arrow-right-long group-hover:translate-x-2 transition-transform"></i>
+                <i class="fa-solid fa-arrow-right-long ml-4 group-hover:translate-x-3 transition-transform"></i>
             </a>
         </div>
 
-        <!-- Premium Swiper Slider -->
-        <div class="relative group" x-data="{ loaded: false }" x-intersect="loaded = true">
+        <!-- Sharp Industrial Slider -->
+        <div class="relative">
             <div class="swiper sector-slider !overflow-visible">
-                <div class="swiper-wrapper py-10">
+                <div class="swiper-wrapper py-6">
                     <?php $__currentLoopData = config('sectors.sectors'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $sector): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <div class="swiper-slide h-auto">
                             <a href="<?php echo e(route('sectors.show', $sector['slug'])); ?>"
-                                class="block relative h-[500px] rounded-[2.5rem] overflow-hidden group/card bg-slate-100 shadow-xl transition-all duration-700 hover:-translate-y-4 hover:shadow-brand-primary/10">
+                                class="block relative h-[550px] bg-slate-900 overflow-hidden group/card border border-slate-100 transition-all duration-500">
                                 
                                 <img src="<?php echo e(Str::startsWith($sector['thumbnail'], 'http') ? $sector['thumbnail'] : asset($sector['thumbnail'] ?: 'images/sectors/textile.png')); ?>"
-                                    class="w-full h-full object-cover grayscale group-hover/card:grayscale-0 group-hover/card:scale-110 transition duration-1000"
+                                    class="w-full h-full object-cover group-hover/card:scale-110 transition duration-1000 opacity-60 group-hover/card:opacity-40"
                                     loading="lazy">
 
-                                <!-- Glassmorphic Overlay -->
-                                <div class="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80 group-hover/card:opacity-90 transition-opacity duration-500"></div>
+                                <!-- Sharp Industrial Overlay -->
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-90"></div>
 
                                 <!-- Card Content -->
-                                <div class="absolute inset-0 p-10 flex flex-col justify-end z-10">
-                                    <div class="space-y-4">
-                                        <div class="w-12 h-1.5 bg-brand-accent rounded-full transform origin-left transition-all duration-700 group-hover/card:w-full"></div>
-                                        
-                                        <div class="space-y-1">
-                                            <span class="text-brand-accent text-[10px] font-black uppercase tracking-[0.3em] block opacity-70">Sector <?php echo e(str_pad($loop->iteration, 2, '0', STR_PAD_LEFT)); ?></span>
-                                            <h3 class="text-3xl font-black text-white leading-tight tracking-tighter group-hover/card:text-brand-accent transition-colors">
-                                                <?php echo e($sector['title']); ?>
-
-                                            </h3>
+                                <div class="absolute inset-0 p-12 flex flex-col justify-end z-10">
+                                    <div class="space-y-6">
+                                        <div class="flex items-center gap-4">
+                                            <span class="text-[10px] font-black text-brand-accent uppercase tracking-[0.3em]">Sector <?php echo e(str_pad($loop->iteration, 2, '0', STR_PAD_LEFT)); ?></span>
+                                            <div class="h-[1px] flex-1 bg-white/20"></div>
                                         </div>
+                                        
+                                        <h3 class="text-3xl font-black text-white leading-tight tracking-tighter uppercase group-hover/card:text-brand-accent transition-colors">
+                                            <?php echo e($sector['title']); ?>
 
-                                        <p class="text-sm text-slate-400 font-medium leading-relaxed max-h-0 opacity-0 overflow-hidden group-hover/card:max-h-20 group-hover/card:opacity-100 transition-all duration-700 delay-100">
-                                            <?php echo e(Str::limit($sector['description'], 100)); ?>
+                                        </h3>
+
+                                        <p class="text-[13px] text-slate-300 font-bold uppercase tracking-wider leading-relaxed opacity-0 max-h-0 group-hover/card:max-h-20 group-hover/card:opacity-100 transition-all duration-500 translate-y-4 group-hover/card:translate-y-0">
+                                            <?php echo e(Str::limit($sector['description'] ?? '', 120)); ?>
 
                                         </p>
                                         
-                                        <div class="flex items-center gap-2 text-white text-xs font-bold uppercase tracking-widest opacity-0 group-hover/card:opacity-100 transition-all duration-500 translate-y-4 group-hover/card:translate-y-0">
-                                            Explore Details <i class="fa-solid fa-arrow-right"></i>
+                                        <div class="inline-flex items-center gap-4 pt-4 border-t border-white/10 w-full">
+                                            <span class="text-[10px] font-black text-white uppercase tracking-widest">Learn More</span>
+                                            <div class="w-8 h-8 bg-brand-primary flex items-center justify-center text-white group-hover/card:bg-brand-accent group-hover/card:text-slate-900 transition-all">
+                                                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- Glow Effect -->
-                                <div class="absolute -inset-2 bg-brand-primary/20 blur-2xl opacity-0 group-hover/card:opacity-100 transition-opacity pointer-events-none"></div>
                             </a>
                         </div>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
             </div>
 
-            <!-- Custom Navigation Bullets (Desktop) -->
-            <div class="hidden lg:flex justify-center gap-3 mt-12">
-                <div class="swiper-pagination !static !w-auto"></div>
+            <!-- Custom Navigation (Sharp) -->
+            <div class="flex justify-start gap-4 mt-16 border-t border-slate-100 pt-10">
+                <div class="sector-pagination !static !w-auto flex gap-1"></div>
             </div>
         </div>
     </div>
 </section>
 
+<?php if (! $__env->hasRenderedOnce('d3b64837-4b9b-40a8-b103-8563817a1645')): $__env->markAsRenderedOnce('d3b64837-4b9b-40a8-b103-8563817a1645'); ?>
+<script>
+    (function() {
+        function initSectorSlider() {
+            if (document.querySelector('.sector-slider') && !document.querySelector('.sector-slider').swiper) {
+                new Swiper('.sector-slider', {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                    loop: true,
+                    speed: 1000,
+                    grabCursor: true,
+                    autoplay: {
+                        delay: 4000,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true,
+                    },
+                    pagination: {
+                        el: '.sector-pagination',
+                        clickable: true,
+                        renderBullet: function (index, className) {
+                            return '<span class="' + className + ' w-12 h-1 bg-slate-200 block cursor-pointer transition-all"></span>';
+                        },
+                    },
+                    breakpoints: {
+                        768: {
+                            slidesPerView: 2,
+                        },
+                        1024: {
+                            slidesPerView: 2,
+                        },
+                        1440: {
+                            slidesPerView: 3,
+                        }
+                    }
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', initSectorSlider);
+        document.addEventListener('turbo:load', initSectorSlider);
+    })();
+</script>
 <style>
-    .sector-slider .swiper-pagination-bullet {
-        width: 40px;
-        height: 6px;
-        background: #e2e8f0;
-        opacity: 1;
-        border-radius: 3px;
-        transition: all 0.3s;
-    }
-    .sector-slider .swiper-pagination-bullet-active {
-        background: var(--color-brand-primary);
-        width: 80px;
+    .sector-pagination .swiper-pagination-bullet-active {
+        background: #00ff64 !important; /* Brand Primary */
+        width: 48px !important;
     }
 </style>
+<?php endif; ?>
+
 <?php /**PATH C:\laragon\www\worldgrexpo\resources\views/website/home/partials/sectors.blade.php ENDPATH**/ ?>

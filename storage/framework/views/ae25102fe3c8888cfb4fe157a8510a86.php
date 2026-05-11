@@ -1,272 +1,191 @@
-
-
-<?php $__env->startSection('title', 'Specialty Films & Packaging Industry'); ?>
+<?php $__env->startSection('title', 'Specialty Films & Packaging Industry Overview'); ?>
 
 <?php $__env->startSection('content'); ?>
 
-    <!-- HERO -->
-    <section class="relative pt-32 pb-24 bg-slate-900 text-white overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-indigo-900 via-slate-900 to-black"></div>
-        <div class="absolute inset-0 opacity-10"
-            style="background-image: url('<?php echo e(asset('images/sectors/flexible-rigid-packaging.png')); ?>'); background-size: cover; background-position: center;">
+    <!-- Architectural Hero -->
+    <section class="relative pt-64 pb-32 bg-slate-950 overflow-hidden border-b border-slate-900">
+        <!-- Visual Backdrop -->
+        <div class="absolute inset-0 opacity-20">
+            <img src="<?php echo e(asset('images/sectors/flexible-rigid-packaging.png')); ?>" class="w-full h-full object-cover grayscale">
         </div>
+        <div class="absolute inset-0 bg-linear-to-b from-slate-950 via-slate-950/90 to-slate-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        
+        <!-- Industrial Accents -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-indigo-600 opacity-5 -skew-x-12 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-1/4 h-64 bg-indigo-600 opacity-5 skew-x-12 -translate-x-1/2"></div>
 
-        <div class="container relative z-10 text-center">
-            <h1 class="text-4xl md:text-6xl font-black uppercase mb-4 tracking-wide">
-                Specialty Films, Flexible & Rigid Packaging
+        <div class="container relative z-10 text-center space-y-12">
+            <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10">
+                <span class="w-2 h-2 bg-indigo-400 animate-pulse"></span>
+                <span class="text-white text-[10px] font-black tracking-[0.4em] uppercase">Material Engineering Protocol</span>
+            </div>
+            <h1 class="text-6xl md:text-[9rem] font-black text-white leading-[0.85] tracking-tighter uppercase">
+                Flexible & <br>
+                <span class="text-indigo-600">Rigid Pack.</span>
             </h1>
-            <p class="text-xl text-slate-300 max-w-3xl mx-auto">
-                Advanced packaging materials and solutions powering food, pharma, FMCG, and industrial sectors worldwide.
+            <p class="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium border-l-4 border-indigo-600 pl-10 uppercase tracking-widest italic md:text-center mx-auto">
+                Advanced packaging materials powering food, pharma, FMCG, and industrial sectors worldwide.
             </p>
         </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="py-16 bg-white">
-        <div class="container space-y-16">
+    <!-- Content Interface -->
+    <section class="py-32 bg-white relative">
+        <div class="container space-y-48">
 
-            <!-- INTRO -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl font-extrabold mb-4 text-slate-900">What is Specialty Films, Flexible & Rigid Packaging?</h2>
-                    <p class="text-slate-600 mb-4 leading-relaxed">
-                        <strong>Specialty Films, Flexible & Rigid Packaging</strong> refers to advanced packaging materials and solutions
-                        used across food, beverage, pharmaceutical, FMCG, industrial, agriculture, and consumer goods
-                        sectors for <strong>protection, preservation, branding, and transportation</strong> of products.
+            <!-- Executive Summary -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200">
+                <div class="p-16 lg:p-24 bg-white space-y-12">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Containment Architecture</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">Structural <br><span class="text-indigo-600">Defense.</span></h2>
+                        <div class="accent-line bg-indigo-600"></div>
+                    </div>
+                    
+                    <div class="space-y-8 text-2xl text-slate-500 font-medium leading-relaxed italic border-l-4 border-slate-100 pl-10">
+                        <p>
+                            <strong class="text-slate-900 font-black uppercase tracking-tight">Specialty Films, Flexible & Rigid Packaging</strong> refers to advanced materials used across global sectors for protection, preservation, and branding.
+                        </p>
+                        <p>
+                            From high-performance films to thermoformed rigid containers, this industry enhances shelf life, convenience, and product appeal through innovative engineering.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-indigo-600/10"></div>
+                    <div class="relative h-full overflow-hidden border-l border-slate-200 shadow-3xl">
+                        <img src="<?php echo e(asset('images/sectors/flexible-rigid-packaging.png')); ?>" alt="Flexible & Rigid Packaging"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <div class="bg-indigo-600 text-white text-[10px] font-black px-6 py-2 uppercase tracking-[0.3em] shadow-2xl">
+                            Packaging Standard
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Global vs India Market -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
+                <!-- GLOBAL -->
+                <div class="p-16 lg:p-24 bg-slate-950 text-white relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-12 text-indigo-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-earth-americas text-[12rem]"></i>
+                    </div>
+                    <div class="relative z-10 space-y-16">
+                        <div class="space-y-4">
+                            <div class="text-indigo-400 text-[10px] font-black uppercase tracking-[0.4em]">International Value</div>
+                            <h3 class="text-5xl font-black uppercase tracking-tighter italic">Global Market</h3>
+                        </div>
+                        
+                        <div class="space-y-12">
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Value (2025)</span>
+                                <span class="text-6xl font-black text-white tracking-tighter italic">$1.2T+</span>
+                            </div>
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Flexible Segment</span>
+                                <span class="text-6xl font-black text-indigo-500 tracking-tighter italic">$300B+</span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-px bg-white/10 border border-white/10 shadow-2xl">
+                            <div class="p-8 bg-slate-950 text-center space-y-2 group/item hover:bg-indigo-600 transition-all duration-500">
+                                <p class="text-3xl font-black italic group-hover:scale-110 transition-transform">$45B+</p>
+                                <p class="text-[9px] font-black uppercase text-slate-400 group-hover:text-slate-950 tracking-[0.2em]">Specialty Films</p>
+                            </div>
+                            <div class="p-8 bg-slate-950 text-center space-y-2 group/item hover:bg-indigo-600 transition-all duration-500">
+                                <p class="text-3xl font-black italic group-hover:scale-110 transition-transform">5% - 7%</p>
+                                <p class="text-[9px] font-black uppercase text-slate-400 group-hover:text-slate-950 tracking-[0.2em]">Annual CAGR</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INDIA -->
+                <div class="p-16 lg:p-24 bg-white relative overflow-hidden group border-l border-slate-200">
+                    <div class="absolute top-0 right-0 p-12 text-indigo-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-industry text-[12rem]"></i>
+                    </div>
+                    <div class="relative z-10 space-y-16 text-right">
+                        <div class="space-y-4">
+                            <div class="text-indigo-600 text-[10px] font-black uppercase tracking-[0.4em]">National Strategy</div>
+                            <h3 class="text-5xl font-black text-slate-950 uppercase tracking-tighter italic">Indian Market</h3>
+                        </div>
+                        
+                        <div class="space-y-12">
+                            <div class="flex items-end justify-between border-b border-slate-100 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-400 tracking-[0.3em]">Value (2025)</span>
+                                <span class="text-6xl font-black text-slate-950 tracking-tighter italic">₹2.5L Cr</span>
+                            </div>
+                            <div class="flex items-end justify-between border-b border-slate-100 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-400 tracking-[0.3em]">Projected CAGR</span>
+                                <span class="text-6xl font-black text-indigo-600 tracking-tighter italic">12%</span>
+                            </div>
+                            <div class="p-12 bg-indigo-50 border-l-8 border-indigo-600 shadow-sm text-right">
+                                <p class="text-[9px] font-black text-indigo-600 uppercase tracking-[0.4em] mb-4 italic">Economic Status</p>
+                                <p class="text-5xl font-black text-slate-950 uppercase italic leading-tight tracking-tighter">Manufacturing Hub</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hubs & Verticals -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
+                <div class="p-24 bg-slate-950 text-white space-y-16">
+                    <h3 class="text-5xl font-black uppercase tracking-tighter italic text-indigo-500 border-l-8 border-indigo-600 pl-10">Strategic Verticals</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-px bg-white/5 border border-white/5">
+                        <?php $__currentLoopData = [
+                            ['icon' => 'film', 'label' => 'Barrier Films'],
+                            ['icon' => 'layer-group', 'label' => 'BOPP / PET / CPP'],
+                            ['icon' => 'bag-shopping', 'label' => 'Flexible Pouches'],
+                            ['icon' => 'box-open', 'label' => 'Vacuum / Stretch'],
+                            ['icon' => 'bottle-water', 'label' => 'PET / HDPE Bottles'],
+                            ['icon' => 'cubes', 'label' => 'Thermoformed'],
+                        ]; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $opp): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <div class="p-10 bg-slate-950 group/item hover:bg-indigo-600 transition-all duration-500 relative overflow-hidden text-center">
+                                <div class="absolute top-0 left-0 w-1 h-full bg-white scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                                <i class="fa-solid fa-<?php echo e($opp['icon']); ?> text-3xl mb-6 text-indigo-600 group-hover/item:text-slate-950 transition-colors"></i>
+                                <p class="text-[12px] font-black uppercase text-slate-400 group-hover/item:text-slate-950 tracking-[0.2em] leading-tight transition-colors italic"><?php echo e($opp['label']); ?></p>
+                            </div>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </div>
+                </div>
+
+                <div class="p-24 bg-white space-y-16 border-l border-slate-200">
+                    <h3 class="text-5xl font-black uppercase tracking-tighter italic text-slate-950 border-l-8 border-slate-950 pl-10">Industrial Clusters</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <?php $__currentLoopData = ['Gujarat', 'Maharashtra', 'Delhi NCR', 'Tamil Nadu', 'Karnataka', 'West Bengal']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $hub): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <div class="p-10 bg-white border border-slate-100 flex items-center justify-center group/hub hover:bg-slate-950 transition-all duration-700 shadow-sm">
+                                <span class="text-[12px] font-black uppercase text-slate-500 group-hover/hub:text-white tracking-[0.3em] transition-colors italic"><?php echo e($hub); ?></span>
+                            </div>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </div>
+                    <p class="text-[12px] font-black text-slate-400 uppercase tracking-widest text-center italic">Key Indian Manufacturing Regions</p>
+                </div>
+            </div>
+
+            <!-- Architecture CTA -->
+            <div class="relative p-24 lg:p-32 bg-slate-950 overflow-hidden text-center shadow-3xl group">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(99,102,241,0.2),transparent)]"></div>
+                <div class="relative z-10 space-y-16">
+                    <h3 class="text-5xl md:text-[8rem] font-black text-white uppercase tracking-tighter leading-[0.85]">
+                        The Pack <br><span class="text-indigo-600">Standard.</span>
+                    </h3>
+                    <p class="text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium italic border-l-4 border-indigo-600 pl-10 md:text-center mx-auto uppercase tracking-tighter">
+                        Packaging is the backbone of product preservation. World Grexpo facilitates industry transition towards advanced specialty films and sustainable solutions.
                     </p>
-                    <p class="text-slate-600 leading-relaxed">
-                        The industry includes high-performance films, multilayer laminates, pouches, rigid containers,
-                        bottles, trays, and thermoformed packaging solutions designed to enhance shelf life, convenience,
-                        and product appeal.
-                    </p>
-                </div>
-
-                <img src="<?php echo e(asset('images/sectors/flexible-rigid-packaging.png')); ?>" alt="Flexible & Rigid Packaging"
-                    class="h-[320px] w-full object-cover rounded-2xl shadow-lg">
-            </div>
-
-            <!-- SEGMENTS + GLOBAL -->
-            <div class="grid md:grid-cols-2 gap-10">
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">Major Segments</h3>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-film text-blue-600 text-xs"></i></div>
-                            Specialty Barrier Films
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-violet-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-layer-group text-violet-600 text-xs"></i></div>
-                            BOPP / PET / CPP / PE Films
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-bag-shopping text-amber-600 text-xs"></i></div>
-                            Flexible Laminates & Pouches
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-box-open text-emerald-600 text-xs"></i></div>
-                            Vacuum, Stretch & Shrink Films
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-rose-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-bottle-water text-rose-600 text-xs"></i></div>
-                            PET / HDPE / PP Bottles & Containers
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-sky-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-cubes text-sky-600 text-xs"></i></div>
-                            Thermoformed & Injection Molded Packaging
-                        </div>
+                    <div class="flex justify-center">
+                        <a href="<?php echo e(route('join.index')); ?>" 
+                            class="btn-sharp px-16 group !border-indigo-600/30 hover:!bg-indigo-600">
+                            Partner in Innovation 
+                            <i class="fa-solid fa-arrow-right-long ml-6 group-hover:translate-x-4 transition-transform"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="p-6 rounded-2xl bg-gradient-to-br from-brand-primary to-indigo-700 text-white shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4">Global Packaging Market at a Glance</h3>
-
-                    <h4 class="font-semibold mt-4 mb-2">Worldwide Market Size</h4>
-                    <ul class="text-sm space-y-2">
-                        <li>Global Packaging Market: <strong>USD 1.2+ Trillion</strong> (2025)</li>
-                        <li>Flexible Packaging Market: <strong>USD 300+ Billion</strong></li>
-                        <li>Specialty Films Market: <strong>USD 45+ Billion</strong></li>
-                    </ul>
-
-                    <h4 class="font-semibold mt-5 mb-2">Growth Forecast (2026–2031)</h4>
-                    <ul class="list-disc pl-5 text-sm space-y-1">
-                        <li>Expected CAGR: <strong>5–7%</strong> annually</li>
-                        <li>E-commerce expansion</li>
-                        <li>Rising food delivery & convenience packaging</li>
-                        <li>Sustainable packaging innovations</li>
-                        <li>Growth in pharmaceutical packaging</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- IMAGE + GLOBAL GROWTH -->
-            <div class="grid md:grid-cols-2 gap-10">
-                <img src="<?php echo e(asset('images/sectors/packeging-1.jpeg')); ?>" alt="Packaging Growth"
-                    class="h-[320px] w-full object-cover rounded-2xl shadow-md">
-
-                <div class="p-6 rounded-2xl bg-white border shadow-sm">
-                    <h4 class="text-xl font-bold mb-4">Global Growth Drivers</h4>
-                    <ul class="list-disc pl-5 text-sm text-slate-600 space-y-2">
-                        <li>E-commerce expansion</li>
-                        <li>Rising food delivery and convenience packaging</li>
-                        <li>Premium branding demand</li>
-                        <li>Sustainable packaging innovations</li>
-                        <li>Growth in pharmaceutical packaging</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- INDIA MARKET -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-brand-accent border border-slate-200 shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4 text-brand-primary">Indian Specialty Films & Packaging Market</h3>
-
-                    <h4 class="font-semibold mb-2">Indian Market Size</h4>
-                    <ul class="text-sm text-slate-600 space-y-1">
-                        <li>India Packaging Industry: <strong>₹2.3–2.5 Lakh Crore+</strong></li>
-                        <li>Flexible Packaging: <strong>₹55,000–65,000 Crore+</strong></li>
-                        <li>Specialty Films rapidly expanding across sectors</li>
-                    </ul>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-gradient-to-br from-brand-primary to-indigo-700 text-white shadow-lg">
-                    <h4 class="text-xl font-bold mb-4">Indian Growth Forecast (2026–2031)</h4>
-                    <ul class="text-sm space-y-2">
-                        <li>Expected CAGR: <strong>10–12%</strong> annually</li>
-                        <li>India among the fastest-growing packaging markets globally</li>
-                    </ul>
-
-                    <h4 class="font-semibold mt-5 mb-2">Expected Market by 2031</h4>
-                    <ul class="text-sm space-y-1">
-                        <li>Projected to exceed <strong>₹4 Lakh Crore+</strong></li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- STATS CARDS -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-brand-primary">$1.2T+</h4>
-                    <p class="text-sm text-slate-500 mt-1">Global Packaging</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-brand-primary">₹2.5L Cr</h4>
-                    <p class="text-sm text-slate-500 mt-1">India Packaging</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-brand-primary">10–12%</h4>
-                    <p class="text-sm text-slate-500 mt-1">India CAGR</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-brand-primary">10,000+</h4>
-                    <p class="text-sm text-slate-500 mt-1">Manufacturers (IN)</p>
-                </div>
-            </div>
-
-            <!-- INDUSTRY CAPACITY -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">Industry Capacity — India</h3>
-                    <p class="text-sm text-slate-600 mb-3">Approx. <strong>10,000+</strong> packaging manufacturers/converters/processors across organized and SME sector.</p>
-
-                    <h4 class="font-semibold mt-4 mb-2">Major Manufacturing Hubs</h4>
-                    <div class="grid grid-cols-2 gap-2">
-                        <div class="flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-map-pin text-brand-primary text-xs"></i> Gujarat</div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-map-pin text-brand-primary text-xs"></i> Maharashtra</div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-map-pin text-brand-primary text-xs"></i> Delhi NCR</div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-map-pin text-brand-primary text-xs"></i> Tamil Nadu</div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-map-pin text-brand-primary text-xs"></i> Karnataka</div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-map-pin text-brand-primary text-xs"></i> West Bengal</div>
-                    </div>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">Global Capacity</h3>
-                    <p class="text-sm text-slate-600 mb-4">Estimated <strong>100,000+</strong> packaging manufacturers/processors globally.</p>
-
-                    <h4 class="font-semibold mt-4 mb-2">India's Global Share</h4>
-                    <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1">
-                        <li>India contributes approx. <strong>4–5%</strong> to global packaging market</li>
-                        <li>One of the fastest-growing packaging consumption markets</li>
-                        <li>Rapid export growth in packaging films and laminates</li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- DRIVERS + TRENDS -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">Key Market Drivers</h3>
-                    <ul class="list-disc pl-5 text-sm text-slate-600 space-y-2">
-                        <li>Expansion of FMCG and retail sector</li>
-                        <li>Growth in food processing industry</li>
-                        <li>Rising e-commerce and logistics packaging demand</li>
-                        <li>Export growth in pharma and processed foods</li>
-                        <li>Consumer demand for convenience and premium packaging</li>
-                        <li>Sustainability and recyclable packaging push</li>
-                    </ul>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">Emerging Trends (2026–2031)</h3>
-                    <ul class="list-disc pl-5 text-sm text-slate-600 space-y-2">
-                        <li>Mono-material recyclable packaging</li>
-                        <li>High-barrier sustainable films</li>
-                        <li>Smart & active packaging technology</li>
-                        <li>Compostable and biodegradable films</li>
-                        <li>Digital printing on flexible packaging</li>
-                        <li>Lightweight rigid packaging innovation</li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- OPPORTUNITIES + CONCLUSION -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">High Potential Segments</h3>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-fire text-brand-primary text-xs"></i></div>
-                            Retort & Barrier Packaging
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-utensils text-brand-primary text-xs"></i></div>
-                            Food Grade Flexible Laminates
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-pills text-brand-primary text-xs"></i></div>
-                            Pharma Blister & Strip Packaging
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-box text-brand-primary text-xs"></i></div>
-                            Stand-Up / Spout Pouches
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-leaf text-brand-primary text-xs"></i></div>
-                            Sustainable Eco-Friendly Films
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-10 rounded-2xl flex items-center shadow-lg">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-4">Why India is Emerging as a Packaging Hub</h3>
-                        <ul class="list-disc pl-5 space-y-2 text-sm text-slate-300">
-                            <li>Massive domestic consumer market</li>
-                            <li>Strong FMCG and pharma manufacturing base</li>
-                            <li>Competitive conversion/manufacturing cost</li>
-                            <li>Export competitiveness</li>
-                            <li>Skilled technical and engineering workforce</li>
-                            <li>Rapid infrastructure development</li>
-                        </ul>
-                    </div>
-                </div>
-
             </div>
 
         </div>

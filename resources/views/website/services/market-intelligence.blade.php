@@ -4,71 +4,90 @@
 
 @section('content')
 
-    <!-- HERO SECTION -->
-    <section class="relative pt-48 pb-24 bg-slate-950 text-white overflow-hidden">
+    <!-- Architectural Hero -->
+    <section class="relative pt-64 pb-32 bg-slate-950 text-white overflow-hidden border-b border-slate-900">
         <div class="absolute inset-0 z-0">
-            <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
         </div>
-        <div class="absolute inset-0 opacity-10 grayscale"
+        <div class="absolute inset-0 opacity-10 grayscale mix-blend-overlay"
             style="background-image: url('https://images.unsplash.com/photo-1551288049-bb848a55a178?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center;">
         </div>
+        
+        <!-- Industrial Accents -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-brand-primary opacity-5 -skew-x-12 translate-x-1/2"></div>
 
         <div class="container relative z-10 text-left">
-            <div class="inline-flex items-center gap-3 px-4 py-2 bg-slate-950 border-l-4 border-brand-accent mb-10">
-                <span class="text-white text-[10px] font-black tracking-[0.4em] uppercase italic">Data Intelligence</span>
+            <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10 backdrop-blur-md mb-12">
+                <span class="w-2 h-2 bg-brand-accent animate-pulse"></span>
+                <span class="text-white text-[10px] font-black tracking-[0.4em] uppercase">Data Intelligence</span>
             </div>
-            <h1 class="text-6xl md:text-8xl font-black uppercase mb-8 tracking-tighter leading-[0.85] italic">
-                Market <span class="text-brand-accent not-italic">Intelligence</span>
+            <h1 class="text-6xl md:text-[9rem] font-black uppercase mb-12 tracking-tighter leading-[0.85]">
+                Market <br> <span class="text-brand-primary">Intelligence.</span>
             </h1>
-            <p class="text-2xl text-slate-400 max-w-4xl leading-tight font-light italic">
-                Empowering industrial nodes with absolute real-time data and predictive transition analytics.
+            <p class="text-2xl text-slate-400 max-w-4xl leading-relaxed font-medium border-l-4 border-brand-primary pl-10">
+                Empowering industrial nodes with absolute real-time data and predictive transition analytics for the global economy.
             </p>
         </div>
     </section>
 
-    <!-- MAIN CONTENT -->
+    <!-- Main Content Interface -->
     <section class="py-32 bg-white relative">
-        <div class="container space-y-32">
+        <div class="container space-y-48">
             
-            <!-- SECTION 1: THE DATA EDGE -->
-            <div class="flex flex-col lg:flex-row items-center gap-24">
-                <div class="w-full lg:w-1/2 space-y-12 animate-on-scroll">
-                    <h2 class="text-5xl font-black text-slate-950 uppercase italic leading-none tracking-tighter">
-                        Intelligence is <span class="text-brand-primary not-italic">Power</span> <br> <span class="text-slate-400 text-3xl">Precision Node Analytics</span>
-                    </h2>
-                    <p class="text-slate-500 text-xl leading-relaxed font-light">
+            <!-- Section 1: The Data Edge -->
+            <div class="grid lg:grid-cols-2 gap-24 items-center">
+                <div class="space-y-12 animate-on-scroll">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Precision Analytics</span>
+                        <h2>Intelligence is <br> <span class="text-brand-primary">Absolute Power.</span></h2>
+                        <div class="accent-line"></div>
+                    </div>
+                    
+                    <p class="text-slate-500 text-xl leading-relaxed font-medium">
                         In a rapidly shifting global industrial economy, intuition is a liability. World Grexpo Foundation's Market Intelligence service provides our nodes with <strong>Real-Time Data Visualization</strong> and comprehensive transition reports. We decode complex market signals into absolute industrial strategies.
                     </p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="p-8 bg-slate-50 border border-slate-100 rounded-sm group hover:bg-slate-950 transition-all duration-500">
-                            <div class="w-12 h-12 bg-white border border-slate-200 flex items-center justify-center rounded-sm mb-6 group-hover:bg-brand-accent group-hover:border-brand-accent transition-all duration-500">
-                                <i class="fa-solid fa-microchip text-slate-950 text-xl group-hover:scale-110"></i>
+                    
+                    <div class="grid md:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-xl">
+                        <div class="p-10 bg-white group hover:bg-slate-950 transition-all duration-700">
+                            <div class="w-16 h-16 bg-slate-50 border border-slate-100 flex items-center justify-center mb-8 group-hover:bg-brand-primary group-hover:border-brand-primary transition-all">
+                                <i class="fa-solid fa-microchip text-brand-primary text-2xl group-hover:text-white transition-all"></i>
                             </div>
-                            <span class="text-[10px] font-black uppercase text-slate-950 tracking-widest group-hover:text-white transition-colors">AI-Powered Industrial Analytics</span>
+                            <span class="text-[10px] font-black uppercase text-slate-950 tracking-[0.2em] group-hover:text-white transition-colors">AI-Powered Industrial Analytics</span>
                         </div>
-                        <div class="p-8 bg-slate-950 border border-slate-800 rounded-sm group hover:bg-brand-primary transition-all duration-500">
-                            <div class="w-12 h-12 bg-white/5 border border-white/10 flex items-center justify-center rounded-sm mb-6 group-hover:bg-white transition-all duration-500">
-                                <i class="fa-solid fa-file-invoice-dollar text-brand-accent text-xl group-hover:scale-110"></i>
+                        <div class="p-10 bg-slate-950 group hover:bg-brand-primary transition-all duration-700">
+                            <div class="w-16 h-16 bg-white/5 border border-white/10 flex items-center justify-center mb-8 group-hover:bg-white transition-all duration-700">
+                                <i class="fa-solid fa-file-invoice-dollar text-brand-primary text-2xl"></i>
                             </div>
-                            <span class="text-[10px] font-black uppercase text-white tracking-widest transition-colors">Carbon Price Volatility Tools</span>
+                            <span class="text-[10px] font-black uppercase text-white tracking-[0.2em] group-hover:text-slate-900 transition-colors">Carbon Price Volatility Tools</span>
                         </div>
                     </div>
                 </div>
-                <div class="w-full lg:w-1/2 relative group">
-                    <div class="rounded-sm overflow-hidden border border-slate-100 shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1551288049-bb848a55a178?q=80&w=2070&auto=format&fit=crop" class="grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100" alt="Data Intelligence">
+
+                <div class="relative group">
+                    <div class="overflow-hidden border border-slate-200 shadow-2xl bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1551288049-bb848a55a178?q=80&w=2070&auto=format&fit=crop" 
+                             class="grayscale group-hover:grayscale-0 transition-all duration-[2000ms] group-hover:scale-105 opacity-80 group-hover:opacity-100 h-[600px] object-cover" 
+                             alt="Data Intelligence">
                     </div>
-                    <div class="absolute -top-10 -left-10 w-40 h-40 bg-brand-primary opacity-10 rounded-sm -z-10 rotate-12"></div>
+                    <!-- Sharp Industrial Decorator -->
+                    <div class="absolute -bottom-8 -right-8 w-48 h-48 bg-[repeating-linear-gradient(45deg,transparent,transparent_5px,rgba(170,204,0,0.1)_5px,rgba(170,204,0,0.1)_10px)] -z-10"></div>
                 </div>
             </div>
 
-            <!-- SECTION 2: INTELLIGENCE PORTFOLIO -->
-            <div class="space-y-20">
-                <div class="text-left max-w-3xl">
-                    <h3 class="text-5xl font-black uppercase italic text-slate-950 mb-8 tracking-tighter">Analytics Portfolio</h3>
-                    <p class="text-slate-500 text-xl font-light italic">Decoding the industrial future through historical and predictive transition modeling.</p>
+            <!-- Section 2: Intelligence Portfolio -->
+            <div class="space-y-24">
+                <div class="max-w-4xl space-y-8">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Predictive Modeling</span>
+                        <h2>Analytics <br> <span class="text-brand-primary">Portfolio.</span></h2>
+                        <div class="accent-line"></div>
+                    </div>
+                    <p class="text-2xl text-slate-500 font-medium leading-relaxed italic">
+                        Decoding the industrial future through historical and predictive transition modeling across global trade nodes.
+                    </p>
                 </div>
-                <div class="grid md:grid-cols-3 gap-2">
+                
+                <div class="grid lg:grid-cols-3 gap-px bg-slate-200 border border-slate-200 shadow-2xl">
                     @php
                         $portfolio = [
                             ['t' => 'Export Market Audits', 'img' => 'https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2069&auto=format&fit=crop', 'd' => 'Detailed analysis of global industrial demand for specific nodes.'],
@@ -77,62 +96,98 @@
                         ];
                     @endphp
                     @foreach($portfolio as $port)
-                    <div class="group relative h-[550px] overflow-hidden rounded-sm border border-slate-900">
-                        <img src="{{ $port['img'] }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" alt="Intelligence Node">
-                        <div class="absolute inset-0 bg-slate-950/80 group-hover:bg-brand-primary/80 transition-colors duration-700"></div>
-                        <div class="absolute inset-0 p-12 flex flex-col justify-end">
-                            <h4 class="text-3xl font-black text-brand-accent mb-4 uppercase italic tracking-tighter group-hover:text-white transition-colors">{{ $port['t'] }}</h4>
-                            <p class="text-slate-400 text-[10px] font-bold leading-relaxed uppercase tracking-widest group-hover:text-white transition-colors">{{ $port['d'] }}</p>
+                    <div class="group relative h-[600px] overflow-hidden bg-slate-900">
+                        <img src="{{ $port['img'] }}" 
+                             class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[2000ms] opacity-60 group-hover:opacity-100" 
+                             alt="Intelligence Node">
+                        
+                        <div class="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        
+                        <div class="absolute inset-0 p-12 flex flex-col justify-end space-y-6">
+                            <h4 class="text-4xl font-black text-white uppercase tracking-tighter group-hover:text-brand-primary transition-colors">
+                                {{ $port['t'] }}
+                            </h4>
+                            <p class="text-slate-400 text-[10px] font-black uppercase tracking-[0.3em] leading-relaxed group-hover:text-white transition-colors">
+                                {{ $port['d'] }}
+                            </p>
                         </div>
-                        <div class="absolute bottom-0 left-0 w-0 h-1.5 bg-brand-accent group-hover:w-full transition-all duration-700"></div>
+                        
+                        <!-- Sharp Hover Accent -->
+                        <div class="absolute bottom-0 left-0 w-0 h-1.5 bg-brand-primary group-hover:w-full transition-all duration-700"></div>
                     </div>
                     @endforeach
                 </div>
             </div>
 
-            <!-- SECTION 3: TECH STACK -->
-            <div class="bg-slate-950 p-16 lg:p-24 rounded-sm relative overflow-hidden text-center space-y-20">
+            <!-- Section 3: Tech Stack -->
+            <div class="bg-slate-950 p-24 lg:p-32 relative overflow-hidden shadow-3xl">
+                <!-- Industrial Pattern -->
                 <div class="absolute inset-0 z-0">
-                    <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
                 </div>
-                <h3 class="text-5xl font-black uppercase italic tracking-tighter text-white relative z-10">The Intelligence <span class="text-brand-accent">Engine</span></h3>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 relative z-10">
-                    @foreach([
-                        ['icon' => 'database', 'title' => 'Big Data Archiving'],
-                        ['icon' => 'brain', 'title' => 'Predictive AI'],
-                        ['icon' => 'satellite', 'title' => 'Real-Time Feeds'],
-                        ['icon' => 'magnifying-glass-chart', 'title' => 'Macro Audits']
-                    ] as $tech)
-                    <div class="p-10 bg-white/5 border border-white/10 rounded-sm hover:bg-brand-primary transition-all duration-700 group">
-                        <div class="w-16 h-16 bg-white/5 border border-white/10 mx-auto rounded-sm flex items-center justify-center text-brand-accent group-hover:bg-white group-hover:text-brand-primary transition-all duration-700 mb-8">
-                            <i class="fa-solid fa-{{ $tech['icon'] }} text-2xl group-hover:scale-110"></i>
-                        </div>
-                        <p class="text-[10px] font-black uppercase text-slate-400 tracking-widest group-hover:text-slate-950 transition-colors">{{ $tech['title'] }}</p>
+                
+                <div class="relative z-10 space-y-24 text-center">
+                    <div class="section-heading text-center">
+                        <span class="subtitle">Proprietary Architecture</span>
+                        <h2 class="text-white">The Intelligence <br> <span class="text-brand-primary">Engine.</span></h2>
+                        <div class="accent-line mx-auto"></div>
                     </div>
-                    @endforeach
-                </div>
-                <div class="max-w-4xl mx-auto pt-20 border-t border-white/10 relative z-10">
-                    <p class="text-3xl text-slate-300 italic font-light leading-tight tracking-tight">"Architecting industrial nodes that study global trends <span class="text-brand-accent not-italic">before</span> they become headlines."</p>
+
+                    <div class="grid md:grid-cols-4 gap-px bg-white/5 border border-white/10 shadow-3xl">
+                        @foreach([
+                            ['icon' => 'database', 'title' => 'Big Data Archiving'],
+                            ['icon' => 'brain', 'title' => 'Predictive AI'],
+                            ['icon' => 'satellite', 'title' => 'Real-Time Feeds'],
+                            ['icon' => 'magnifying-glass-chart', 'title' => 'Macro Audits']
+                        ] as $tech)
+                        <div class="p-12 bg-transparent hover:bg-brand-primary transition-all duration-700 group">
+                            <div class="w-20 h-20 bg-white/5 border border-white/10 mx-auto flex items-center justify-center text-brand-primary group-hover:bg-brand-primary-dark group-hover:text-white transition-all mb-10">
+                                <i class="fa-solid fa-{{ $tech['icon'] }} text-3xl"></i>
+                            </div>
+                            <p class="text-[10px] font-black uppercase text-slate-400 tracking-[0.3em] group-hover:text-slate-950 transition-colors">
+                                {{ $tech['title'] }}
+                            </p>
+                        </div>
+                        @endforeach
+                    </div>
+
+                    <div class="max-w-4xl mx-auto pt-24 border-t border-white/10">
+                        <p class="text-3xl text-slate-300 font-medium leading-relaxed italic">
+                            "Architecting industrial nodes that study global trends <span class="text-brand-primary not-italic">before</span> they become headlines."
+                        </p>
+                    </div>
                 </div>
             </div>
 
-            <!-- SECTION 4: CALL TO ACTION -->
-            <div class="relative bg-slate-950 p-24 rounded-sm text-left overflow-hidden border-l-[20px] border-brand-accent group">
+            <!-- Section 4: Call To Action -->
+            <div class="relative bg-slate-900 p-24 lg:p-32 overflow-hidden group border-t border-slate-800">
                 <div class="absolute inset-0 z-0">
-                    <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:30px_30px]"></div>
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:30px_30px]"></div>
                 </div>
-                <div class="relative z-10 space-y-12">
-                    <h3 class="text-6xl md:text-9xl font-black text-white uppercase tracking-tighter italic leading-none">Architect <br> <span class="text-brand-accent">Clarity</span></h3>
-                    <p class="text-2xl text-slate-400 max-w-4xl leading-relaxed font-light italic opacity-80 mb-16">
-                        The global market does not wait for node clarity. Get the data intelligence you need to make confident, absolute industrial transition moves today.
-                    </p>
-                    <a href="{{ route('forms.show', ['slug' => 'join-us']) }}" class="inline-flex items-center gap-6 px-16 py-8 bg-white text-slate-950 font-black uppercase tracking-[0.3em] text-xs rounded-sm hover:bg-brand-accent hover:text-slate-950 transition-all duration-700 shadow-4xl italic group">
-                        Request Market Node Audit <i class="fa-solid fa-arrow-right-long text-brand-accent group-hover:translate-x-4 transition-transform"></i>
+                
+                <div class="relative z-10 space-y-16 max-w-5xl">
+                    <div class="space-y-8">
+                        <h3 class="text-6xl md:text-9xl font-black text-white uppercase tracking-tighter leading-[0.85]">
+                            Architect <br> <span class="text-brand-primary">Clarity.</span>
+                        </h3>
+                        <p class="text-2xl text-slate-400 max-w-4xl leading-relaxed font-medium">
+                            The global market does not wait for node clarity. Get the data intelligence you need to make confident, absolute industrial transition moves today through World Grexpo Foundation.
+                        </p>
+                    </div>
+                    
+                    <a href="{{ route('forms.show', ['slug' => 'join-us']) }}" class="btn-sharp px-20 group">
+                        Request Market Node Audit 
+                        <i class="fa-solid fa-arrow-right-long ml-6 group-hover:translate-x-4 transition-transform"></i>
                     </a>
                 </div>
+
+                <!-- Industrial Accent Line -->
+                <div class="absolute left-0 top-0 w-2 h-full bg-brand-primary"></div>
             </div>
 
         </div>
     </section>
+
+@endsection
 
 @endsection

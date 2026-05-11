@@ -4,207 +4,223 @@
 
 @section('content')
 
-    <!-- HERO -->
-    <section class="relative pt-32 pb-24 bg-slate-900 text-white overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-stone-900 via-slate-900 to-black"></div>
-        <div class="absolute inset-0 opacity-25"
-            style="background-image: url('{{ asset('images/sectors/leather.webp') }}'); background-size: cover; background-position: center;">
+    <!-- Architectural Hero -->
+    <section class="relative pt-64 pb-32 bg-slate-950 overflow-hidden border-b border-slate-900">
+        <!-- Visual Backdrop -->
+        <div class="absolute inset-0 opacity-20">
+            <img src="{{ asset('images/sectors/leather.webp') }}" class="w-full h-full object-cover grayscale">
         </div>
+        <div class="absolute inset-0 bg-linear-to-b from-slate-950 via-slate-950/90 to-slate-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(217,119,6,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        
+        <!-- Industrial Accents -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-amber-600 opacity-5 -skew-x-12 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-1/4 h-64 bg-amber-600 opacity-5 skew-x-12 -translate-x-1/2"></div>
 
-        <div class="container relative z-10 text-center">
-            <h1 class="text-4xl md:text-6xl font-black uppercase mb-4 tracking-wide">
-                Leather Industry
+        <div class="container relative z-10 text-center space-y-12">
+            <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10">
+                <span class="w-2 h-2 bg-amber-400 animate-pulse"></span>
+                <span class="text-white text-[10px] font-black tracking-[0.4em] uppercase">Premium Craftsmanship Protocol</span>
+            </div>
+            <h1 class="text-6xl md:text-[9rem] font-black text-white leading-[0.85] tracking-tighter uppercase">
+                Leather <br>
+                <span class="text-amber-600">Industry.</span>
             </h1>
-            <p class="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+            <p class="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium border-l-4 border-amber-600 pl-10 uppercase tracking-widest italic md:text-center mx-auto">
                 Upholding craftsmanship and luxury through the timeless art of premium leather manufacturing.
             </p>
         </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="py-16 bg-white">
-        <div class="container space-y-16">
+    <!-- Content Interface -->
+    <section class="py-32 bg-white relative">
+        <div class="container space-y-48">
 
-            <!-- INTRO -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="animate-in fade-in slide-in-from-left duration-700">
-                    <h2 class="text-3xl font-extrabold mb-6 text-slate-900">What is Leather Industry?</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4 text-lg">
-                        The <strong>leather industry</strong> is one of the world's oldest and most prestigious manufacturing sectors, transforming hides and skins into high-value durable goods.
-                    </p>
-                    <p class="text-slate-600 leading-relaxed">
-                        Renowned for durability, flexibility, and luxury, finished leather is the primary material for premium footwear, handbags, automotive interiors, and upscale fashion accessories globally.
-                    </p>
+            <!-- Executive Summary -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200">
+                <div class="p-16 lg:p-24 bg-white space-y-12">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Artisan Value Framework</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">Luxury <br><span class="text-amber-600">Craft.</span></h2>
+                        <div class="accent-line bg-amber-600"></div>
+                    </div>
+                    
+                    <div class="space-y-8 text-2xl text-slate-500 font-medium leading-relaxed italic border-l-4 border-slate-100 pl-10">
+                        <p>
+                            <strong class="text-slate-900 font-black uppercase tracking-tight">The Leather Industry</strong> is one of the world's oldest and most prestigious manufacturing sectors, transforming hides and skins into high-value durable goods.
+                        </p>
+                        <p>
+                            Renowned for durability, flexibility, and luxury, finished leather is the primary material for premium footwear, handbags, automotive interiors, and upscale fashion accessories globally.
+                        </p>
+                    </div>
                 </div>
 
-                <div class="relative group animate-in fade-in slide-in-from-right duration-700">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-stone-600 to-amber-900 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
-                    <img src="{{ asset('images/sectors/leather.webp') }}" alt="Leather Industry"
-                        class="relative w-full h-[400px] object-cover rounded-2xl shadow-2xl">
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-amber-600/10"></div>
+                    <div class="relative h-full overflow-hidden border-l border-slate-200 shadow-3xl">
+                        <img src="{{ asset('images/sectors/leather.webp') }}" alt="Leather Industry"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000">
+                    </div>
+                    <div class="absolute top-0 right-0 p-8">
+                        <div class="bg-amber-600 text-white text-[10px] font-black px-6 py-2 uppercase tracking-[0.3em] shadow-2xl">
+                            Premium Standard
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- GLOBAL vs INDIA -->
-            <div class="grid md:grid-cols-2 gap-10">
-
+            <!-- Global vs India Market -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
                 <!-- GLOBAL -->
-                <div class="p-8 rounded-3xl bg-gradient-to-br from-stone-800 to-amber-950 text-white shadow-2xl transform hover:-translate-y-1 transition-transform duration-300">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="p-3 bg-white/10 rounded-xl">
-                            <i class="fa-solid fa-earth-europe text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold">Global Market</h3>
+                <div class="p-16 lg:p-24 bg-slate-950 text-white relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-12 text-amber-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-earth-europe text-[12rem]"></i>
                     </div>
-                    <ul class="space-y-4 text-stone-50">
-                        <li class="flex items-start gap-2">
-                            <span class="font-bold text-white text-lg">USD 430 Billion</span> 
-                            <span class="text-stone-300">(2026 Est. Market Value)</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="font-bold text-white text-lg">USD 648 Billion</span> 
-                            <span class="text-stone-300">(2035 Projection)</span>
-                        </li>
-                    </ul>
+                    <div class="relative z-10 space-y-16">
+                        <div class="space-y-4">
+                            <div class="text-amber-400 text-[10px] font-black uppercase tracking-[0.4em]">Global Landscape</div>
+                            <h3 class="text-5xl font-black uppercase tracking-tighter italic">Global Market</h3>
+                        </div>
+                        
+                        <div class="space-y-12">
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Value (2026 Est)</span>
+                                <span class="text-6xl font-black text-white tracking-tighter italic">$430B</span>
+                            </div>
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Projected (2035)</span>
+                                <span class="text-6xl font-black text-white tracking-tighter italic">$648B</span>
+                            </div>
+                        </div>
 
-                    <h4 class="font-semibold mt-8 mb-4 text-amber-300 uppercase tracking-wider text-sm">Growth Drivers</h4>
-                    <div class="grid grid-cols-2 gap-3">
-                        <div class="flex items-center gap-2 text-[11px] font-bold text-stone-100">
-                            <i class="fa-solid fa-gem text-amber-400"></i> Luxury Fashion
-                        </div>
-                        <div class="flex items-center gap-2 text-[11px] font-bold text-stone-100">
-                            <i class="fa-solid fa-car text-amber-400"></i> Automotive Interior
-                        </div>
-                        <div class="flex items-center gap-2 text-[11px] font-bold text-stone-100">
-                            <i class="fa-solid fa-socks text-amber-400"></i> Premium Footwear
-                        </div>
-                        <div class="flex items-center gap-2 text-[11px] font-bold text-stone-100">
-                            <i class="fa-solid fa-shop text-amber-400"></i> Global E-Commerce
+                        <div class="space-y-8">
+                            <h4 class="text-[9px] font-black text-slate-500 uppercase tracking-[0.4em]">Growth Drivers</h4>
+                            <div class="grid grid-cols-2 gap-px bg-white/10 border border-white/10 shadow-2xl">
+                                @foreach(['Luxury Fashion', 'Automotive Interior', 'Premium Footwear', 'Global E-Commerce'] as $driver)
+                                    <div class="px-8 py-4 bg-slate-950 flex items-center gap-6 hover:bg-amber-600 hover:text-slate-950 transition-colors cursor-default group/item">
+                                        <i class="fa-solid fa-circle-check text-amber-600 group-hover/item:text-slate-950 transition-colors"></i>
+                                        <span class="text-[10px] font-black uppercase tracking-[0.1em] text-center leading-tight">{{ $driver }}</span>
+                                    </div>
+                                @endforeach
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- INDIA -->
-                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200 shadow-xl transform hover:-translate-y-1 transition-transform duration-300">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="p-3 bg-stone-100 rounded-xl text-stone-600">
-                            <i class="fa-solid fa-shield-halved text-2xl"></i>
+                <div class="p-16 lg:p-24 bg-white relative overflow-hidden group border-l border-slate-200">
+                    <div class="absolute top-0 right-0 p-12 text-amber-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-industry text-[12rem]"></i>
+                    </div>
+                    <div class="relative z-10 space-y-16 text-right">
+                        <div class="space-y-4">
+                            <div class="text-amber-600 text-[10px] font-black uppercase tracking-[0.4em]">National Momentum</div>
+                            <h3 class="text-5xl font-black text-slate-900 uppercase tracking-tighter italic">Indian Market</h3>
                         </div>
-                        <h3 class="text-2xl font-bold text-slate-900">Indian Market</h3>
-                    </div>
-
-                    <div class="flex items-baseline gap-2 mb-6">
-                        <span class="text-3xl font-black text-stone-700">$25B+</span>
-                        <span class="text-xs font-bold text-slate-400 uppercase">Projected by 2030</span>
-                    </div>
-
-                    <h4 class="font-semibold mb-3 text-stone-600 uppercase tracking-wider text-sm">Manufacturing Hubs</h4>
-                    <div class="grid grid-cols-3 gap-2 mb-6">
-                        @foreach(['Kanpur', 'Agra', 'Chennai', 'Kolkata', 'Delhi', 'Mumbai'] as $hub)
-                            <div class="px-2 py-1 bg-white border border-slate-200 text-[10px] font-bold text-slate-500 rounded text-center">{{ $hub }}</div>
-                        @endforeach
-                    </div>
-
-                    <div class="p-4 bg-stone-900 text-white rounded-2xl flex items-center justify-between">
-                        <div>
-                            <p class="text-[10px] font-bold text-amber-400 uppercase">Employment</p>
-                            <p class="text-xl font-black">5 Million+</p>
+                        
+                        <div class="p-12 bg-amber-50 border-l-8 border-amber-600 shadow-sm text-right space-y-6">
+                            <p class="text-[9px] font-black text-amber-600 uppercase tracking-[0.4em] italic">Market Forecast</p>
+                            <p class="text-4xl font-black text-slate-950 uppercase italic leading-tight tracking-tighter">$25B+ Projected (2030)</p>
+                            <p class="text-[12px] font-black text-slate-500 uppercase tracking-widest italic">7.7% Annual CAGR Growth</p>
                         </div>
-                        <i class="fa-solid fa-users text-2xl opacity-30"></i>
+
+                        <div class="space-y-8">
+                            <h4 class="text-[9px] font-black text-slate-400 uppercase tracking-[0.4em]">Manufacturing Hubs</h4>
+                            <div class="grid grid-cols-3 gap-px bg-slate-200 border border-slate-200 shadow-sm">
+                                @foreach(['Kanpur', 'Agra', 'Chennai', 'Kolkata', 'Delhi', 'Mumbai'] as $city)
+                                    <div class="p-6 bg-white flex flex-col items-center justify-center gap-4 group/item hover:bg-slate-950 transition-all duration-500">
+                                        <div class="w-1.5 h-1.5 bg-amber-600 group-hover/item:scale-150 transition-transform"></div>
+                                        <span class="text-[9px] font-black uppercase text-slate-600 group-hover/item:text-white tracking-[0.1em] leading-tight text-center">{{ $city }}</span>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-            </div>
-
-            <!-- STATS CARDS -->
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-stone-200 transition-all duration-300 text-center">
-                    <div class="mb-2 text-stone-600 text-3xl font-black group-hover:scale-110 transition-transform">~7.7%</div>
-                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">India CAGR</div>
-                </div>
-                <div class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-stone-200 transition-all duration-300 text-center">
-                    <div class="mb-2 text-stone-600 text-3xl font-black group-hover:scale-110 transition-transform">Top 5</div>
-                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Global Producer Rank</div>
-                </div>
-                <div class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-stone-200 transition-all duration-300 text-center">
-                    <div class="mb-2 text-stone-600 text-3xl font-black group-hover:scale-110 transition-transform">20K+</div>
-                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Leather MSMEs</div>
-                </div>
-                <div class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-stone-200 transition-all duration-300 text-center">
-                    <div class="mb-2 text-stone-600 text-3xl font-black group-hover:scale-110 transition-transform">6%</div>
-                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Global Market Share</div>
                 </div>
             </div>
 
-            <!-- OPPORTUNITIES -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="order-2 md:order-1 relative">
-                    <img src="{{ asset('images/sectors/leather-details.jpg') }}" alt="Leather Details"
-                        class="w-full h-[400px] object-cover rounded-3xl shadow-xl border-8 border-slate-50">
-                    <div class="absolute inset-0 rounded-3xl bg-amber-900/10 pointer-events-none"></div>
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-amber-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110">~7.7%</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">India CAGR</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-amber-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">TOP 5</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">Global Producer Rank</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-amber-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">20K+</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">Leather MSMEs</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-amber-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">6%</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">Global Market Share</p>
+                </div>
+            </div>
+
+            <!-- Opportunities & Position -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
+                <div class="relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-amber-600/10"></div>
+                    <div class="relative overflow-hidden border border-slate-200 shadow-3xl h-[600px]">
+                        <img src="{{ asset('images/sectors/leather-details.jpg') }}" alt="Leather Opportunities"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-12">
+                        <div class="bg-amber-600 text-white p-10 space-y-2 border-l-8 border-white/20 shadow-2xl">
+                            <p class="text-5xl font-black tracking-tighter uppercase italic">5M+</p>
+                            <p class="text-[10px] font-black uppercase tracking-[0.3em] opacity-80">Employment Generation</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="order-1 md:order-2">
-                    <h2 class="text-3xl font-extrabold mb-8 text-slate-900">Emerging Opportunities</h2>
-                    <div class="space-y-3">
+                <div class="p-24 bg-white space-y-16">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Luxury Horizons</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">Emerging <br><span class="text-amber-600">Opportunities.</span></h2>
+                        <div class="accent-line bg-amber-600"></div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 gap-4">
                         @php
-                            $opportunities = [
+                            $items = [
                                 ['icon' => 'vest', 'title' => 'Premium Leather Fashion Products'],
                                 ['icon' => 'bag-shopping', 'title' => 'Luxury Handbags & Accessories'],
                                 ['icon' => 'shoe-prints', 'title' => 'Footwear Manufacturing'],
-                                ['icon' => 'car-seat', 'title' => 'Automotive Leather Upholstery'],
+                                ['icon' => 'car', 'title' => 'Automotive Leather Upholstery'],
                                 ['icon' => 'leaf', 'title' => 'Sustainable / Eco-Tanned Leather'],
                                 ['icon' => 'recycle', 'title' => 'Vegan & Alternative Leather'],
                             ];
                         @endphp
-                        @foreach($opportunities as $item)
-                            <div class="flex items-center gap-4 p-4 rounded-xl border border-slate-100 hover:bg-stone-50 hover:border-stone-200 transition-all group">
-                                <div class="w-12 h-12 flex items-center justify-center bg-stone-100 text-stone-600 rounded-lg group-hover:bg-amber-900 group-hover:text-white transition-colors">
-                                    <i class="fa-solid fa-{{ $item['icon'] }}"></i>
-                                </div>
-                                <span class="font-bold text-slate-700 text-lg">{{ $item['title'] }}</span>
+                        @foreach($items as $i)
+                        <div class="flex items-center gap-10 p-10 bg-slate-50 group/opp hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-1 h-full bg-amber-600 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                            <div class="w-16 h-16 border border-slate-200 flex items-center justify-center text-amber-600 group-hover/opp:bg-amber-600 group-hover/opp:text-white transition-all duration-500 shadow-sm">
+                                <i class="fa-solid fa-{{ $i['icon'] }} text-2xl"></i>
                             </div>
+                            <span class="text-xl font-black uppercase text-slate-700 tracking-[0.15em] group-hover/opp:text-white transition-colors leading-tight italic">{{ $i['title'] }}</span>
+                        </div>
                         @endforeach
                     </div>
                 </div>
             </div>
 
-            <!-- GLOBAL POSITION -->
-            <div class="p-10 rounded-3xl bg-slate-900 text-white overflow-hidden relative">
-                <div class="absolute bottom-0 left-0 w-80 h-80 bg-amber-500/5 rounded-full blur-3xl -ml-40 -mb-40"></div>
-                <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h3 class="text-3xl font-bold mb-4">India's Global Position</h3>
-                        <p class="text-slate-400 leading-relaxed mb-6">
-                            India is among the Top 5 leather producers in the world, renowned for its footwear, saddlery, and garment manufacturing exports.
-                        </p>
-                        <div class="grid grid-cols-2 gap-x-6 gap-y-3">
-                            @foreach(['Leather Footwear', 'Saddlery & Harness', 'Finished Leather', 'Leather Garments'] as $cat)
-                                <div class="flex items-center gap-3 text-xs font-bold text-amber-500/80">
-                                    <i class="fa-solid fa-check text-[8px]"></i> {{ $cat }}
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                    <div class="relative">
-                        <div class="absolute inset-0 bg-amber-500 blur-3xl opacity-10"></div>
-                        <div class="relative bg-white/5 border border-white/10 p-8 rounded-full aspect-square flex flex-col items-center justify-center text-center">
-                            <h4 class="text-4xl font-black text-amber-500">6%</h4>
-                            <p class="text-[10px] uppercase font-bold tracking-widest text-slate-400">Global Share</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CONCLUSION -->
-            <div class="bg-stone-900 text-white p-12 rounded-3xl text-center shadow-2xl relative overflow-hidden group border border-amber-900/30">
-                <div class="relative z-10">
-                    <h3 class="text-3xl font-bold mb-6">Why Leather Industry Matters</h3>
-                    <p class="text-xl text-stone-300 max-w-4xl mx-auto leading-relaxed">
-                        The leather industry is a crucial generator of employment and exports, sitting at the intersection of fashion, manufacturing, and luxury retail. Its role in the global value-added manufacturing ecosystem continues to grow with rising demand for premium goods.
+            <!-- Conclusion CTA -->
+            <div class="relative p-24 lg:p-32 bg-slate-950 overflow-hidden text-center shadow-3xl group">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(217,119,6,0.2),transparent)]"></div>
+                <div class="relative z-10 space-y-16">
+                    <h3 class="text-5xl md:text-[8rem] font-black text-white uppercase tracking-tighter leading-[0.85]">
+                        Luxury <br><span class="text-amber-600">Dynamics.</span>
+                    </h3>
+                    <p class="text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium italic border-l-4 border-amber-600 pl-10 md:text-center mx-auto uppercase tracking-tighter">
+                        The leather industry is a crucial generator of employment and exports, sitting at the intersection of fashion, manufacturing, and luxury retail.
                     </p>
-                    <div class="mt-8">
-                        <a href="" class="inline-flex items-center gap-2 px-10 py-5 bg-amber-700 text-white font-black uppercase tracking-widest rounded-full hover:bg-white hover:text-stone-900 transition-all duration-300 shadow-xl">
-                            Register with Leather Council <i class="fa-solid fa-arrow-right"></i>
+                    <div class="flex justify-center">
+                        <a href="{{ route('join.index') }}" 
+                            class="btn-sharp px-16 group !border-amber-600/30 hover:!bg-amber-600">
+                            Register with Leather Council 
+                            <i class="fa-solid fa-arrow-right-long ml-6 group-hover:translate-x-4 transition-transform"></i>
                         </a>
                     </div>
                 </div>

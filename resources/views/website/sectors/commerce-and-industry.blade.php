@@ -4,201 +4,218 @@
 
 @section('content')
 
-    <!-- HERO -->
-    <section class="relative pt-32 pb-24 bg-slate-900 text-white overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-indigo-900 via-slate-900 to-black"></div>
-        <div class="absolute inset-0 opacity-40 shadow-inner"
-            style="background-image: url('{{ asset('images/sectors/commerce-industry-hero.png') }}'); background-size: cover; background-position: center;">
+    <!-- Architectural Hero -->
+    <section class="relative pt-64 pb-32 bg-slate-950 overflow-hidden border-b border-slate-900">
+        <!-- Visual Backdrop -->
+        <div class="absolute inset-0 opacity-20">
+            <img src="{{ asset('images/sectors/commerce-industry-hero.png') }}" class="w-full h-full object-cover grayscale">
         </div>
+        <div class="absolute inset-0 bg-linear-to-b from-slate-950 via-slate-950/90 to-slate-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        
+        <!-- Industrial Accents -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-indigo-600 opacity-5 -skew-x-12 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-1/4 h-64 bg-indigo-600 opacity-5 skew-x-12 -translate-x-1/2"></div>
 
-        <div class="container relative z-10 text-center">
-            <h1 class="text-4xl md:text-6xl font-black uppercase mb-4 tracking-wide">
-                Commerce & <span class="text-indigo-400">Industry</span>
+        <div class="container relative z-10 text-center space-y-12">
+            <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10">
+                <span class="w-2 h-2 bg-indigo-400 animate-pulse"></span>
+                <span class="text-white text-[10px] font-black tracking-[0.4em] uppercase">Economic Integration Protocol</span>
+            </div>
+            <h1 class="text-6xl md:text-[9rem] font-black text-white leading-[0.85] tracking-tighter uppercase">
+                Commerce & <br>
+                <span class="text-indigo-600">Industry.</span>
             </h1>
-            <p class="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed italic font-medium">
-                "Empowering Trade. Enabling Industry. Accelerating Growth."<br>
-                <span class="text-lg opacity-80 mt-2 block font-normal not-italic">Your Gateway to Business Expansion & Global Opportunities</span>
+            <p class="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium border-l-4 border-indigo-600 pl-10 uppercase tracking-widest italic md:text-center mx-auto">
+                Empowering Trade. Enabling Industry. Accelerating Growth.
             </p>
         </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="py-16 bg-white">
-        <div class="container space-y-16">
+    <!-- Content Interface -->
+    <section class="py-32 bg-white relative">
+        <div class="container space-y-48">
 
-            <!-- INTRO -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="animate-in fade-in slide-in-from-left duration-700">
-                    <h2 class="text-3xl font-extrabold mb-6 text-slate-900 uppercase">Driving MSMEs Towards Global Competitiveness</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4 text-lg">
-                        The <strong>Commerce & Industry</strong> sector of World Grexpo acts as a strategic bridge between businesses, government, and global markets.
-                    </p>
-                    <p class="text-slate-600 leading-relaxed">
-                        It is dedicated to strengthening India's MSME ecosystem by enabling trade, fostering industrial growth, and supporting entrepreneurship at all levels.
-                    </p>
+            <!-- Executive Summary -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200">
+                <div class="p-16 lg:p-24 bg-white space-y-12">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Global Competitiveness Architecture</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">Driving <br><span class="text-indigo-600">MSME Growth.</span></h2>
+                        <div class="accent-line bg-indigo-600"></div>
+                    </div>
+                    
+                    <div class="space-y-8 text-2xl text-slate-500 font-medium leading-relaxed italic border-l-4 border-slate-100 pl-10">
+                        <p>
+                            The <strong class="text-slate-900 font-black uppercase tracking-tight">Commerce & Industry</strong> sector of World Grexpo acts as a strategic bridge between businesses, government, and global markets.
+                        </p>
+                        <p>
+                            It is dedicated to strengthening India's MSME ecosystem by enabling trade, fostering industrial growth, and supporting entrepreneurship at all levels.
+                        </p>
+                    </div>
                 </div>
 
-                <div class="relative group animate-in fade-in slide-in-from-right duration-700">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-indigo-600 to-blue-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-                    <img src="{{ asset('images/sectors/commerce-industry-details.png') }}" alt="Commerce & Industry"
-                        class="relative w-full h-[400px] object-cover rounded-2xl shadow-2xl">
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-indigo-600/10"></div>
+                    <div class="relative h-full overflow-hidden border-l border-slate-200 shadow-3xl">
+                        <img src="{{ asset('images/sectors/commerce-industry-details.png') }}" alt="Commerce & Industry"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000">
+                    </div>
+                    <div class="absolute top-0 right-0 p-8">
+                        <div class="bg-indigo-600 text-white text-[10px] font-black px-6 py-2 uppercase tracking-[0.3em] shadow-2xl">
+                            Strategic Trade Bridge
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- KEY FOCUS AREAS & SERVICES -->
-            <div class="grid md:grid-cols-2 gap-10">
-
+            <!-- Focus Areas & Services -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
                 <!-- Focus Areas -->
-                <div class="p-8 rounded-3xl bg-gradient-to-br from-slate-800 to-slate-900 text-white shadow-2xl transform hover:-translate-y-1 transition-transform duration-300">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="p-3 bg-white/10 rounded-xl">
-                            <i class="fa-solid fa-bullseye text-2xl text-indigo-400"></i>
+                <div class="p-16 lg:p-24 bg-slate-950 text-white space-y-16 relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(79,70,229,0.05),transparent)]"></div>
+                    <div class="relative z-10 space-y-12">
+                        <div class="text-indigo-400 text-[10px] font-black uppercase tracking-[0.4em]">Strategic Nodes</div>
+                        <h3 class="text-5xl font-black uppercase tracking-tighter italic text-white leading-tight">Key Focus Areas</h3>
+                        
+                        <div class="space-y-10 pt-8">
+                            @foreach([
+                                ['title' => 'Business Growth', 'desc' => 'Scaling operations & market linkage.'],
+                                ['title' => 'Trade & Export', 'desc' => 'Connecting with global buyers.'],
+                                ['title' => 'Policy Advocacy', 'desc' => 'Voice of MSMEs to policymakers.'],
+                                ['title' => 'Industrial Dev', 'desc' => 'Promoting "Make in India" initiatives.'],
+                                ['title' => 'Investment', 'desc' => 'Connecting startups with VC funding.'],
+                            ] as $area)
+                                <div class="space-y-4 group/item">
+                                    <div class="flex items-center gap-6">
+                                        <div class="w-2 h-2 bg-indigo-600 group-hover/item:scale-150 transition-transform duration-500"></div>
+                                        <span class="text-xl font-black uppercase tracking-widest text-indigo-400 group-hover/item:text-white transition-colors duration-500 leading-tight">{{ $area['title'] }}</span>
+                                    </div>
+                                    <p class="text-[12px] font-black uppercase text-slate-500 tracking-[0.1em] pl-8">{{ $area['desc'] }}</p>
+                                </div>
+                            @endforeach
                         </div>
-                        <h3 class="text-2xl font-bold uppercase tracking-tight">Key Focus Areas</h3>
                     </div>
-                    
-                    <ul class="space-y-4 text-slate-300">
-                        <li class="border-b border-white/10 pb-3">
-                            <span class="block text-indigo-400 font-bold uppercase text-sm mb-1">Business Growth & Expansion</span>
-                            <span class="text-sm">Supporting MSMEs in scaling operations, market linkage, and industry-specific growth strategies.</span>
-                        </li>
-                        <li class="border-b border-white/10 pb-3">
-                            <span class="block text-indigo-400 font-bold uppercase text-sm mb-1">Trade & Export Promotion</span>
-                            <span class="text-sm">Facilitating import-export opportunities and connecting businesses with global buyers.</span>
-                        </li>
-                        <li class="border-b border-white/10 pb-3">
-                            <span class="block text-indigo-400 font-bold uppercase text-sm mb-1">Policy Advocacy</span>
-                            <span class="text-sm">Acting as a voice of MSMEs to policymakers and supporting ease of doing business.</span>
-                        </li>
-                        <li class="border-b border-white/10 pb-3">
-                            <span class="block text-indigo-400 font-bold uppercase text-sm mb-1">Industrial Development</span>
-                            <span class="text-sm">Promoting manufacturing, smart infrastructure, and "Make in India" initiatives.</span>
-                        </li>
-                        <li class="pb-1">
-                            <span class="block text-indigo-400 font-bold uppercase text-sm mb-1">Investment & Funding</span>
-                            <span class="text-sm">Connecting startups with investors, VC, and private equity funding schemes.</span>
-                        </li>
-                    </ul>
                 </div>
 
                 <!-- Services -->
-                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200 shadow-xl transform hover:-translate-y-1 transition-transform duration-300">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="p-3 bg-indigo-100 rounded-xl text-indigo-600">
-                            <i class="fa-solid fa-handshake text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-slate-900 uppercase tracking-tight">Key Services Offered</h3>
+                <div class="p-16 lg:p-24 bg-white space-y-16 border-l border-slate-200">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Operational Excellence</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">Key Services <br><span class="text-indigo-600">Offered.</span></h2>
+                        <div class="accent-line bg-indigo-600"></div>
                     </div>
                     
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3 p-4 bg-white rounded-lg border border-slate-100 shadow-sm transition-all hover:border-indigo-200">
-                            <i class="fa-solid fa-network-wired text-indigo-500"></i>
-                            <span class="text-sm font-bold text-slate-700 uppercase">Business Networking Forums & Meets</span>
-                        </div>
-                        <div class="flex items-center gap-3 p-4 bg-white rounded-lg border border-slate-100 shadow-sm transition-all hover:border-indigo-200">
-                            <i class="fa-solid fa-plane-departure text-indigo-500"></i>
-                            <span class="text-sm font-bold text-slate-700 uppercase">International Trade Fairs & Delegations</span>
-                        </div>
-                        <div class="flex items-center gap-3 p-4 bg-white rounded-lg border border-slate-100 shadow-sm transition-all hover:border-indigo-200">
-                            <i class="fa-solid fa-users-gear text-indigo-500"></i>
-                            <span class="text-sm font-bold text-slate-700 uppercase">Policy Roundtables & Consultations</span>
-                        </div>
-                        <div class="flex items-center gap-3 p-4 bg-white rounded-lg border border-slate-100 shadow-sm transition-all hover:border-indigo-200">
-                            <i class="fa-solid fa-trophy text-indigo-500"></i>
-                            <span class="text-sm font-bold text-slate-700 uppercase">Awards & Recognition Platforms</span>
-                        </div>
-                        <div class="flex items-center gap-3 p-4 bg-white rounded-lg border border-slate-100 shadow-sm transition-all hover:border-indigo-200">
-                            <i class="fa-solid fa-graduation-cap text-indigo-500"></i>
-                            <span class="text-sm font-bold text-slate-700 uppercase">Skill Development & Capacity Building</span>
-                        </div>
+                    <div class="grid grid-cols-1 gap-px bg-slate-200 border border-slate-200 shadow-2xl">
+                        @foreach([
+                            ['icon' => 'network-wired', 'label' => 'Business Networking Forums'],
+                            ['icon' => 'plane-departure', 'label' => 'International Trade Fairs'],
+                            ['icon' => 'users-gear', 'label' => 'Policy Roundtables'],
+                            ['icon' => 'trophy', 'label' => 'Awards & Recognition Platforms'],
+                            ['icon' => 'graduation-cap', 'label' => 'Skill Development Programs'],
+                        ] as $svc)
+                            <div class="flex items-center gap-8 p-10 bg-white group hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                                <div class="absolute top-0 left-0 w-1 h-full bg-indigo-600 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                                <div class="w-16 h-16 bg-slate-50 border border-slate-100 flex items-center justify-center text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-all shadow-sm duration-500">
+                                    <i class="fa-solid fa-{{ $svc['icon'] }} text-2xl"></i>
+                                </div>
+                                <span class="text-xl font-black uppercase text-slate-900 group-hover:text-white tracking-[0.1em] leading-tight italic transition-colors">{{ $svc['label'] }}</span>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
-
             </div>
 
-            <!-- INDUSTRIES COVERED -->
-            <div class="p-10 rounded-3xl bg-slate-900 text-white overflow-hidden relative">
-                <div class="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_bottom_left,rgba(99,102,241,0.05),transparent)]"></div>
-                <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h3 class="text-3xl font-bold mb-4 uppercase italic tracking-wide">Diverse Industries Covered</h3>
-                        <p class="text-slate-400 leading-relaxed mb-6">
+            <!-- Industries Covered -->
+            <div class="p-24 lg:p-32 bg-slate-950 relative overflow-hidden group shadow-3xl border border-white/5">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(79,70,229,0.05),transparent)]"></div>
+                <div class="relative z-10 grid lg:grid-cols-2 gap-24 items-center">
+                    <div class="space-y-12">
+                        <h3 class="text-6xl font-black uppercase tracking-tighter italic text-indigo-600">Diverse Industries <br><span class="text-white">Covered.</span></h3>
+                        <p class="text-2xl text-slate-400 font-medium leading-relaxed italic border-l-8 border-indigo-600/30 pl-10 uppercase tracking-tighter">
                             Our Commerce & Industry domain connects multiple high-growth sectors, ensuring comprehensive growth strategies across the national economy.
                         </p>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="p-4 bg-white/5 rounded-xl border border-white/10 text-center">
-                                <p class="text-indigo-400 font-bold mb-1 italic">Multi-Sector</p>
-                                <p class="text-[10px] text-slate-400 uppercase tracking-tight">Ecosystem Integration</p>
-                            </div>
-                            <div class="p-4 bg-white/5 rounded-xl border border-white/10 text-center">
-                                <p class="text-indigo-400 font-bold mb-1 italic">Make In India</p>
-                                <p class="text-[10px] text-slate-400 uppercase tracking-tight">Self Reliant Economy</p>
-                            </div>
+                        <div class="grid grid-cols-2 gap-px bg-white/10 border border-white/10 shadow-2xl">
+                             <div class="p-10 bg-slate-950 text-center space-y-4 hover:bg-indigo-600 transition-all duration-500 group/card">
+                                <p class="text-2xl font-black text-indigo-400 group-hover/card:text-slate-950 italic">Multi-Sector</p>
+                                <p class="text-[10px] text-slate-500 uppercase tracking-tight group-hover/card:text-slate-950/70">Ecosystem Integration</p>
+                             </div>
+                             <div class="p-10 bg-slate-950 text-center space-y-4 hover:bg-indigo-600 transition-all duration-500 group/card">
+                                <p class="text-2xl font-black text-indigo-400 group-hover/card:text-slate-950 italic">Make In India</p>
+                                <p class="text-[10px] text-slate-500 uppercase tracking-tight group-hover/card:text-slate-950/70">Self Reliant Economy</p>
+                             </div>
                         </div>
                     </div>
-                    <div class="grid grid-cols-2 gap-3">
+                    <div class="grid grid-cols-2 gap-px bg-white/10 border border-white/10 shadow-3xl">
                         @foreach(['Manufacturing & Engineering', 'FMCG & Retail', 'Chemicals & Petro', 'Textile & Apparel', 'Renewable Energy', 'IT & Digital', 'Agriculture & Food', 'Logistics & Supply'] as $ind)
-                        <div class="flex items-center gap-2 px-3 py-2 bg-indigo-900/40 rounded-lg border border-indigo-500/20 text-xs font-bold text-indigo-100 hover:bg-indigo-600 transition-colors">
-                            <i class="fa-solid fa-check text-indigo-400"></i> {{ $ind }}
+                        <div class="flex items-center gap-6 p-8 bg-slate-950 hover:bg-indigo-600 group/ind transition-all duration-500">
+                            <i class="fa-solid fa-check text-indigo-400 group-hover/ind:text-slate-950"></i> 
+                            <span class="text-[10px] font-black uppercase text-indigo-100 group-hover/ind:text-slate-950 tracking-widest leading-tight">{{ $ind }}</span>
                         </div>
                         @endforeach
                     </div>
                 </div>
             </div>
 
-            <!-- WHY JOIN -->
-            <div class="grid md:grid-cols-2 gap-12 items-center pt-8">
-                <div class="order-2 md:order-1 space-y-6">
-                    <h2 class="text-3xl font-extrabold text-slate-900 uppercase tracking-tight">Why Join This Platform?</h2>
-                    <div class="grid grid-cols-1 sm:grid-cols-1 gap-4">
-                        @php
-                            $items = [
-                                ['icon' => 'globe', 'title' => 'Connection to 100K+ business network'],
-                                ['icon' => 'building-columns', 'title' => 'Direct connect with government & policymakers'],
-                                ['icon' => 'ship', 'title' => 'Opportunities for global trade expansion'],
-                                ['icon' => 'medal', 'title' => 'Recognition through national awards platforms'],
-                                ['icon' => 'calendar-check', 'title' => 'Participation in high-impact industry events & expos'],
-                            ];
-                        @endphp
-                        @foreach($items as $i)
-                        <div class="flex items-center gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-indigo-200 hover:bg-white transition-all group shadow-sm">
-                            <div class="w-12 h-12 flex shrink-0 items-center justify-center bg-indigo-100 text-indigo-600 rounded-lg group-hover:bg-indigo-600 group-hover:text-white transition-all shadow-sm">
-                                <i class="fa-solid fa-{{ $i['icon'] }} text-lg"></i>
+            <!-- Why Join -->
+            <div class="grid lg:grid-cols-2 gap-32 items-center">
+                <div class="space-y-16">
+                    <h2 class="text-6xl font-black text-slate-950 uppercase tracking-tighter italic">Why Join <br><span class="text-indigo-600">This Platform?</span></h2>
+                    <div class="grid grid-cols-1 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
+                        @foreach([
+                            ['icon' => 'globe', 'title' => 'Connection to 100K+ business network'],
+                            ['icon' => 'building-columns', 'title' => 'Direct connect with government & policymakers'],
+                            ['icon' => 'ship', 'title' => 'Opportunities for global trade expansion'],
+                            ['icon' => 'medal', 'title' => 'Recognition through national awards platforms'],
+                            ['icon' => 'calendar-check', 'title' => 'Participation in high-impact industry events & expos'],
+                        ] as $i)
+                        <div class="flex items-center gap-10 p-12 bg-white group hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-1 h-full bg-indigo-600 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                            <div class="w-16 h-16 flex shrink-0 items-center justify-center bg-slate-50 border border-slate-100 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-all shadow-sm duration-500">
+                                <i class="fa-solid fa-{{ $i['icon'] }} text-2xl"></i>
                             </div>
-                            <span class="font-bold text-slate-700 text-sm leading-tight uppercase">{{ $i['title'] }}</span>
+                            <span class="text-xl font-black text-slate-700 group-hover:text-white uppercase tracking-widest leading-tight transition-colors italic">{{ $i['title'] }}</span>
                         </div>
                         @endforeach
                     </div>
                 </div>
 
-                <div class="order-1 md:order-2 p-10 bg-indigo-50 rounded-3xl border border-indigo-100 shadow-sm relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
-                    <div class="relative z-10 text-center">
-                        <div class="w-20 h-20 mx-auto bg-white rounded-2xl flex items-center justify-center shadow-lg mb-6 text-indigo-600">
-                            <i class="fa-solid fa-rocket text-4xl"></i>
+                <div class="p-16 lg:p-24 bg-indigo-50 border border-indigo-100 shadow-3xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-indigo-600/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
+                    <div class="relative z-10 text-center space-y-12">
+                        <div class="w-24 h-24 mx-auto bg-white flex items-center justify-center shadow-2xl text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-700">
+                            <i class="fa-solid fa-rocket text-5xl"></i>
                         </div>
-                        <h3 class="text-2xl font-bold mb-4 text-slate-900 italic uppercase">Accelerate Your Journey</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed font-medium mb-8">
+                        <h3 class="text-5xl font-black text-slate-950 italic uppercase tracking-tighter">Accelerate Your Journey</h3>
+                        <p class="text-2xl text-slate-500 font-medium leading-relaxed italic border-l-8 border-indigo-600/30 pl-10 uppercase tracking-tighter">
                             Whether you are a startup seeking investment, or an established enterprise looking for global export opportunities, the Commerce & Industry wing is your dedicated partner.
                         </p>
-                        <a href="{{ route('join.index') }}" class="inline-flex w-full items-center justify-center p-4 bg-indigo-600 text-white font-black uppercase tracking-widest rounded-xl hover:bg-indigo-700 transition-all shadow-md group/btn">
-                            Become a Member <i class="fa-solid fa-arrow-right ml-2 group-hover/btn:translate-x-1 transition-transform"></i>
-                        </a>
+                        <div class="flex justify-center pt-8">
+                            <a href="{{ route('join.index') }}" class="btn-sharp px-16 w-full !bg-indigo-600 !text-white hover:!bg-slate-950 transition-all duration-700">
+                                Become a Member <i class="fa-solid fa-arrow-right-long ml-6 group-hover:translate-x-4 transition-transform"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- CONCLUSION (CTA) -->
-            <div class="relative bg-slate-900 text-white p-12 md:p-16 rounded-3xl text-center shadow-2xl overflow-hidden border-b-4 border-indigo-600">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-indigo-600/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
-                <div class="relative z-10">
-                    <h3 class="text-3xl font-bold mb-6 uppercase tracking-tight leading-loose">Collaborate. Execute. Succeed.</h3>
-                    <p class="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed mb-10 italic uppercase font-black">
+            <!-- Conclusion CTA -->
+            <div class="relative p-24 lg:p-32 bg-slate-950 overflow-hidden text-center shadow-3xl group">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(79,70,229,0.2),transparent)]"></div>
+                <div class="relative z-10 space-y-16">
+                    <h3 class="text-5xl md:text-[8rem] font-black text-white uppercase tracking-tighter leading-[0.85]">
+                        Collaborate. <br><span class="text-indigo-600">Succeed.</span>
+                    </h3>
+                    <p class="text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium italic border-l-4 border-indigo-600 pl-10 md:text-center mx-auto uppercase tracking-tighter">
                         Take your business to the next level with World Grexpo. Connect with global leaders, shape policies, and drive industrial growth.
                     </p>
-                    <a href="{{ route('contact') }}" class="inline-flex items-center gap-3 px-10 py-5 bg-indigo-600 text-white font-black uppercase tracking-widest rounded-full hover:bg-white hover:text-indigo-900 transition-all duration-300 shadow-xl group">
-                        Get In Touch <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
-                    </a>
+                    <div class="flex justify-center">
+                        <a href="{{ route('contact') }}" 
+                            class="btn-sharp px-16 group !border-indigo-600/30 hover:!bg-indigo-600">
+                            Get In Touch 
+                            <i class="fa-solid fa-arrow-right-long ml-6 group-hover:translate-x-4 transition-transform"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
 

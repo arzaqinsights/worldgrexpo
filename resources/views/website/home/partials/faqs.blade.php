@@ -1,34 +1,20 @@
-<section class="section-padding bg-white relative overflow-hidden">
-    <!-- Sophisticated Background Decorators -->
-    <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-primary/5 rounded-full blur-[120px] -mr-96 -mt-96"></div>
-    <div class="absolute bottom-0 left-0 w-64 h-64 bg-brand-accent/5 rounded-full blur-[100px]"></div>
+<section class="section-padding bg-white relative overflow-hidden border-b border-slate-100">
+    <!-- Industrial Background Accents -->
+    <div class="absolute top-0 right-0 w-1/3 h-full bg-slate-50/50 -z-0"></div>
+    <div class="absolute top-0 left-0 w-1 h-full bg-brand-primary opacity-20"></div>
 
     <div class="container relative z-10">
-        <div class="flex flex-col lg:flex-row gap-20 items-start">
+        <div class="flex flex-col lg:flex-row gap-12 items-start">
             
             <!-- FAQ Content Area -->
-            <div class="w-full lg:w-7/12 space-y-12" x-data="{ active: 1 }">
-                <!-- Mobile Header -->
-                <div class="lg:hidden text-center space-y-6">
-                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-primary/5 text-brand-primary text-[10px] font-black uppercase tracking-[0.2em]">
-                        <span class="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse"></span>
-                        Knowledge Base
+            <div class="w-full lg:w-7/12 space-y-8" x-data="{ active: 1 }">
+                <!-- Sharp Header -->
+                <div class="space-y-8">
+                    <div class="section-heading">
+                        <span class="subtitle">FAQ Center</span>
+                        <h2>Everything you need <span class="text-brand-primary">to know.</span></h2>
+                        <div class="accent-line"></div>
                     </div>
-                    <h2 class="text-4xl font-black text-slate-900 tracking-tighter">
-                        Common <span class="text-brand-primary italic">Questions.</span>
-                    </h2>
-                </div>
-
-                <!-- Desktop Header -->
-                <div class="hidden lg:block space-y-6">
-                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-primary/5 text-brand-primary text-[10px] font-black uppercase tracking-[0.2em]">
-                        <span class="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse"></span>
-                        FAQ Center
-                    </div>
-                    <h2 class="text-5xl md:text-7xl font-black text-slate-900 leading-[0.9] tracking-tighter">
-                        Everything you need <br>
-                        <span class="text-brand-primary italic">to know.</span>
-                    </h2>
                     <p class="text-xl text-slate-500 font-medium leading-relaxed max-w-xl">
                         Comprehensive answers about World Grexpo events, memberships, guidelines, and global opportunities.
                     </p>
@@ -44,29 +30,29 @@
                     ];
                 @endphp
 
-                <!-- Premium Accordion List -->
-                <div class="space-y-4">
+                <!-- Sharp Accordion List -->
+                <div class="space-y-px bg-slate-100 md:h-[432px] overflow-scroll">
                     @foreach($faqs as $item)
-                        <div class="group bg-white rounded-3xl border border-slate-100 transition-all duration-500 hover:shadow-xl hover:shadow-brand-primary/5"
-                             :class="active === {{ $item['id'] }} ? 'border-brand-primary/20 shadow-xl shadow-brand-primary/5' : ''">
+                        <div class="group bg-white transition-all duration-300 border border-slate-300"
+                             :class="active === {{ $item['id'] }} ? 'bg-slate-50' : ''">
                             
                             <button class="w-full flex items-center justify-between p-8 text-left outline-none" 
                                     @click="active === {{ $item['id'] }} ? active = null : active = {{ $item['id'] }}">
-                                <span class="text-lg font-black text-slate-900 group-hover:text-brand-primary transition-colors pr-6 leading-tight uppercase tracking-tight">
+                                <span class="text-lg font-black text-slate-900 group-hover:text-brand-primary transition-colors pr-6 leading-tight uppercase tracking-tighter">
                                     {{ $item['q'] }}
                                 </span>
-                                <div class="w-10 h-10 rounded-2xl flex items-center justify-center shrink-0 transition-all duration-500"
-                                     :class="active === {{ $item['id'] }} ? 'bg-brand-primary text-white rotate-180' : 'bg-slate-50 text-slate-400 group-hover:bg-brand-primary group-hover:text-white'">
-                                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                                <div class="w-10 h-10 border border-slate-200 flex items-center justify-center shrink-0 transition-all duration-300"
+                                     :class="active === {{ $item['id'] }} ? 'bg-brand-primary text-white border-brand-primary rotate-180' : 'text-slate-400 group-hover:bg-slate-50'">
+                                    <i class="fa-solid fa-chevron-down text-[10px]"></i>
                                 </div>
                             </button>
 
                             <div class="transition-all duration-500 overflow-hidden" 
                                  x-show="active === {{ $item['id'] }}" 
                                  x-collapse>
-                                <div class="px-8 pb-8">
-                                    <div class="h-[1px] w-full bg-slate-50 mb-6"></div>
-                                    <p class="text-slate-500 font-medium leading-relaxed">
+                                <div class="px-8 pb-10">
+                                    <div class="h-[1px] w-12 bg-brand-primary mb-8"></div>
+                                    <p class="text-[15px] text-slate-500 font-medium leading-relaxed max-w-2xl">
                                         {{ $item['a'] }}
                                     </p>
                                 </div>
@@ -76,30 +62,30 @@
                 </div>
             </div>
 
-            <!-- Sticky Visual Sidebar -->
+            <!-- Sticky Visual Sidebar (Sharp) -->
             <div class="w-full lg:w-5/12 lg:sticky lg:top-32 self-start">
-                <div class="relative rounded-[3rem] overflow-hidden shadow-2xl group min-h-[600px] flex items-end">
-                    <img src="{{ asset('images/faq-bg.png') }}" alt="Support" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 grayscale group-hover:grayscale-0">
-                    <div class="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
+                <div class="relative bg-slate-900 overflow-hidden group min-h-[650px] flex items-end border border-slate-200">
+                    <img src="{{ asset('images/faq-bg.png') }}" alt="Support" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-1000">
+                    <div class="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
                     
-                    <div class="relative z-10 p-12 space-y-8">
-                        <div class="space-y-4">
-                            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] font-black uppercase tracking-[0.2em]">
-                                <i class="fa-solid fa-headset text-brand-accent"></i>
-                                24/7 Premium Support
+                    <div class="relative z-10 p-12 space-y-10">
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <span class="w-12 h-1 bg-brand-accent"></span>
+                                <span class="text-white text-[10px] font-black tracking-[0.3em] uppercase">Premium Support</span>
                             </div>
-                            <h3 class="text-4xl font-black text-white leading-tight">
-                                Still have <br><span class="text-brand-accent italic">Questions?</span>
+                            <h3 class="text-4xl font-black text-white leading-tight uppercase tracking-tighter">
+                                Still have <br><span class="text-brand-accent">Questions?</span>
                             </h3>
-                            <p class="text-white/70 font-medium leading-relaxed">
+                            <p class="text-white/60 text-lg font-medium leading-relaxed">
                                 Our dedicated support team is available round the clock to help you with your global business journey.
                             </p>
                         </div>
                         
                         <a href="{{ route('contact') }}" 
-                            class="w-full py-5 rounded-2xl bg-white text-slate-900 font-black text-xs uppercase tracking-widest flex items-center justify-center gap-3 hover:bg-brand-accent transition-all shadow-xl">
+                            class="btn-sharp w-full group">
                             Contact Support Team
-                            <i class="fa-solid fa-arrow-right-long transition-transform group-hover:translate-x-1"></i>
+                            <i class="fa-solid fa-arrow-right ml-4 group-hover:translate-x-2 transition-transform"></i>
                         </a>
                     </div>
                 </div>

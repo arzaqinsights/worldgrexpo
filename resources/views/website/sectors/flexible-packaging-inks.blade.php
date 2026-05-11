@@ -4,215 +4,189 @@
 
 @section('content')
 
-    <!-- HERO -->
-    <section class="relative pt-32 pb-24 bg-slate-900 text-white overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-pink-900 via-slate-900 to-black"></div>
-        <div class="absolute inset-0 opacity-25"
-            style="background-image: url('{{ asset('images/sectors/packaging-inks-hero.png') }}'); background-size: cover; background-position: center;">
+    <!-- Architectural Hero -->
+    <section class="relative pt-64 pb-32 bg-slate-950 overflow-hidden border-b border-slate-900">
+        <!-- Visual Backdrop -->
+        <div class="absolute inset-0 opacity-20">
+            <img src="{{ asset('images/sectors/packaging-inks-hero.png') }}" class="w-full h-full object-cover grayscale">
         </div>
+        <div class="absolute inset-0 bg-linear-to-b from-slate-950 via-slate-950/90 to-slate-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(236,72,153,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        
+        <!-- Industrial Accents -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-pink-600 opacity-5 -skew-x-12 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-1/4 h-64 bg-pink-600 opacity-5 skew-x-12 -translate-x-1/2"></div>
 
-        <div class="container relative z-10 text-center">
-            <h1 class="text-4xl md:text-6xl font-black uppercase mb-4 tracking-wide">
-                Flexible Packaging <span class="text-pink-500">Inks</span>
+        <div class="container relative z-10 text-center space-y-12">
+            <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10">
+                <span class="w-2 h-2 bg-pink-400 animate-pulse"></span>
+                <span class="text-white text-[10px] font-black tracking-[0.4em] uppercase">Chromatic Engineering Protocol</span>
+            </div>
+            <h1 class="text-6xl md:text-[9rem] font-black text-white leading-[0.85] tracking-tighter uppercase">
+                Packaging <br>
+                <span class="text-pink-600">Inks.</span>
             </h1>
-            <p class="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                Bringing color and life to modern packaging through high-performance ink technology.
+            <p class="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium border-l-4 border-pink-600 pl-10 uppercase tracking-widest italic md:text-center mx-auto">
+                Bringing color and life to modern industrial packaging through high-performance ink technology.
             </p>
         </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="py-16 bg-white">
-        <div class="container space-y-16">
+    <!-- Content Interface -->
+    <section class="py-32 bg-white relative">
+        <div class="container space-y-48">
 
-            <!-- INTRO -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="animate-in fade-in slide-in-from-left duration-700">
-                    <h2 class="text-3xl font-extrabold mb-6 text-slate-900 uppercase">What are Flexible Packaging Inks?</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4 text-lg">
-                        <strong>Flexible Packaging Inks</strong> are specially formulated printing inks used for plastic films, laminates, and pouches.
-                    </p>
-                    <p class="text-slate-600 leading-relaxed">
-                        These inks provide vibrant graphics and branding visibility while maintaining resistance to heat, moisture, and chemicals—essential for food, pharmaceutical, and FMCG sectors.
-                    </p>
+            <!-- Executive Summary -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200">
+                <div class="p-16 lg:p-24 bg-white space-y-12">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Pigment Stability Architecture</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">Vibrant <br><span class="text-pink-600">Graphics.</span></h2>
+                        <div class="accent-line bg-pink-600"></div>
+                    </div>
+                    
+                    <div class="space-y-8 text-2xl text-slate-500 font-medium leading-relaxed italic border-l-4 border-slate-100 pl-10">
+                        <p>
+                            <strong class="text-slate-900 font-black uppercase tracking-tight">Flexible Packaging Inks</strong> are specially formulated printing inks used for plastic films, laminates, and pouches.
+                        </p>
+                        <p>
+                            These inks provide vibrant graphics while maintaining resistance to heat, moisture, and chemicals—essential for food, pharmaceutical, and FMCG sectors.
+                        </p>
+                    </div>
                 </div>
 
-                <div class="relative group animate-in fade-in slide-in-from-right duration-700">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-pink-600 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-                    <img src="{{ asset('images/sectors/packaging-inks-details.png') }}" alt="Packaging Inks Industry"
-                        class="relative w-full h-[400px] object-cover rounded-2xl shadow-2xl">
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-pink-600/10"></div>
+                    <div class="relative h-full overflow-hidden border-l border-slate-200 shadow-3xl">
+                        <img src="{{ asset('images/sectors/packaging-inks-details.png') }}" alt="Packaging Inks Industry"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000">
+                    </div>
+                    <div class="absolute top-0 right-0 p-8">
+                        <div class="bg-pink-600 text-white text-[10px] font-black px-6 py-2 uppercase tracking-[0.3em] shadow-2xl">
+                            Aesthetic Integrity
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- GLOBAL vs INDIA -->
-            <div class="grid md:grid-cols-2 gap-10">
-
+            <!-- Global vs India Market -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
                 <!-- GLOBAL -->
-                <div class="p-8 rounded-3xl bg-gradient-to-br from-slate-800 to-slate-900 text-white shadow-2xl transform hover:-translate-y-1 transition-transform duration-300">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="p-3 bg-white/10 rounded-xl">
-                            <i class="fa-solid fa-earth-americas text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold uppercase tracking-tight">Global Market</h3>
+                <div class="p-16 lg:p-24 bg-slate-950 text-white relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-12 text-pink-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-earth-americas text-[12rem]"></i>
                     </div>
-                    
-                    <ul class="space-y-4 text-slate-300">
-                        <li class="flex items-baseline justify-between border-b border-white/10 pb-2">
-                            <span class="text-sm uppercase font-bold text-slate-400">Market Value (2025)</span>
-                            <span class="text-xl font-black text-white">$26 Billion</span>
-                        </li>
-                        <li class="flex items-baseline justify-between border-b border-white/10 pb-2">
-                            <span class="text-sm uppercase font-bold text-slate-400">Projected (2033)</span>
-                            <span class="text-xl font-black text-white">$35 Billion</span>
-                        </li>
-                        <li class="flex items-baseline justify-between border-b border-white/10 pb-2">
-                            <span class="text-sm uppercase font-bold text-slate-400">Annual CAGR</span>
-                            <span class="text-xl font-black text-pink-400">5% – 7%</span>
-                        </li>
-                    </ul>
+                    <div class="relative z-10 space-y-16">
+                        <div class="space-y-4">
+                            <div class="text-pink-400 text-[10px] font-black uppercase tracking-[0.4em]">International Value</div>
+                            <h3 class="text-5xl font-black uppercase tracking-tighter italic">Global Market</h3>
+                        </div>
+                        
+                        <div class="space-y-12">
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Value (2025)</span>
+                                <span class="text-6xl font-black text-white tracking-tighter italic">$26 Billion</span>
+                            </div>
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Projected (2033)</span>
+                                <span class="text-6xl font-black text-pink-500 tracking-tighter italic">$35 Billion</span>
+                            </div>
+                        </div>
 
-                    <div class="mt-8">
-                        <h4 class="font-semibold mb-4 text-slate-400 uppercase tracking-wider text-xs">Primary Region</h4>
-                        <div class="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10 text-sm font-bold w-fit">
-                            <i class="fa-solid fa-map-pin text-pink-500"></i> Asia-Pacific (Largest & Fastest)
+                        <div class="grid grid-cols-2 gap-px bg-white/10 border border-white/10 shadow-2xl">
+                            <div class="p-8 bg-slate-950 text-center space-y-2 group/item hover:bg-pink-600 transition-all duration-500">
+                                <p class="text-3xl font-black italic group-hover:scale-110 transition-transform">3000+</p>
+                                <p class="text-[9px] font-black uppercase text-slate-400 group-hover:text-slate-950 tracking-[0.2em]">Global Mfgrs</p>
+                            </div>
+                            <div class="p-8 bg-slate-950 text-center space-y-2 group/item hover:bg-pink-600 transition-all duration-500">
+                                <p class="text-3xl font-black italic group-hover:scale-110 transition-transform">5% - 7%</p>
+                                <p class="text-[9px] font-black uppercase text-slate-400 group-hover:text-slate-950 tracking-[0.2em]">Annual CAGR</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- INDIA -->
-                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200 shadow-xl transform hover:-translate-y-1 transition-transform duration-300">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="p-3 bg-pink-100 rounded-xl text-pink-600">
-                            <i class="fa-solid fa-ink-roller text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-slate-900 uppercase tracking-tight">Indian Market</h3>
+                <div class="p-16 lg:p-24 bg-white relative overflow-hidden group border-l border-slate-200">
+                    <div class="absolute top-0 right-0 p-12 text-pink-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-industry text-[12rem]"></i>
                     </div>
-                    
-                    <div class="grid grid-cols-2 gap-4 mb-8">
-                        <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                            <p class="text-[10px] text-slate-400 uppercase font-bold tracking-tight">Market value (2025)</p>
-                            <p class="text-xl font-black text-pink-700">$1.5B+</p>
+                    <div class="relative z-10 space-y-16 text-right">
+                        <div class="space-y-4">
+                            <div class="text-pink-600 text-[10px] font-black uppercase tracking-[0.4em]">National Strategy</div>
+                            <h3 class="text-5xl font-black text-slate-950 uppercase tracking-tighter italic">Indian Market</h3>
                         </div>
-                        <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                            <p class="text-[10px] text-slate-400 uppercase font-bold tracking-tight">Projected CAGR</p>
-                            <p class="text-xl font-black text-pink-700">9% - 11%</p>
-                        </div>
-                    </div>
-
-                    <div class="space-y-3">
-                        <div class="flex items-center justify-between p-3 bg-white rounded-lg border border-slate-100">
-                            <span class="text-xs font-bold text-slate-500 uppercase italic">Organized Mfgrs</span>
-                            <span class="text-sm font-black text-slate-800">150+ Companies</span>
-                        </div>
-                        <div class="flex items-center justify-between p-3 bg-white rounded-lg border border-slate-100">
-                            <span class="text-xs font-bold text-slate-500 uppercase italic">Status</span>
-                            <span class="text-sm font-black text-pink-600 uppercase">High Export Demand</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-             <!-- STATS CARDS -->
-             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-pink-200 transition-all duration-300 text-center">
-                    <div class="mb-2 text-pink-600 text-3xl font-black group-hover:scale-110 transition-transform">3000+</div>
-                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Global Mfgrs</div>
-                </div>
-                <div class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-pink-200 transition-all duration-300 text-center">
-                    <div class="mb-2 text-pink-600 text-3xl font-black group-hover:scale-110 transition-transform">$30B+</div>
-                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Global Demand (2031)</div>
-                </div>
-                <div class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-pink-200 transition-all duration-300 text-center">
-                    <div class="mb-2 text-pink-600 text-3xl font-black group-hover:scale-110 transition-transform">TOP 4</div>
-                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">India Global Rank</div>
-                </div>
-                <div class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-pink-200 transition-all duration-300 text-center">
-                    <div class="mb-2 text-pink-600 text-3xl font-black group-hover:scale-110 transition-transform">11%</div>
-                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">India CAGR</div>
-                </div>
-            </div>
-
-            <!-- MANUFACTURING HUBS -->
-            <div class="p-10 rounded-3xl bg-slate-900 text-white overflow-hidden relative">
-                <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(236,72,153,0.05),transparent)]"></div>
-                <div class="relative z-10 grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h3 class="text-3xl font-bold mb-4 uppercase italic">Global Position</h3>
-                        <p class="text-slate-400 leading-relaxed mb-8">
-                            India is among the fastest-growing packaging ink consumption markets, with increasing domestic manufacturing of Gravure, Flexographic, and UV inks.
-                        </p>
-                        <div class="grid grid-cols-2 gap-4">
-                            @foreach(['USA', 'Germany', 'China', 'India', 'Japan', 'Italy'] as $country)
-                                <div class="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-xs font-bold text-slate-300 text-center uppercase tracking-tighter">
-                                    {{ $country }}
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                    <div class="p-8 bg-pink-600 rounded-2xl shadow-xl">
-                        <h4 class="text-xl font-bold mb-6 uppercase tracking-wider underline underline-offset-8 decoration-pink-300">Major Indian Hubs</h4>
-                        <div class="grid grid-cols-2 gap-3 text-xs font-black uppercase">
-                            @foreach(['Mumbai', 'Ahmedabad', 'Delhi NCR', 'Hyderabad', 'Chennai', 'Pune'] as $hub)
-                                <div class="flex items-center gap-2">
-                                    <i class="fa-solid fa-circle-dot text-[8px]"></i> {{ $hub }}
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- OPPORTUNITIES -->
-            <div class="grid md:grid-cols-2 gap-12 items-center pt-8">
-                <div class="order-2 md:order-1 space-y-8">
-                    <h2 class="text-3xl font-extrabold text-slate-900 uppercase tracking-tight">Future Tech Opportunities</h2>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        @php
-                            $items = [
-                                ['icon' => 'leaf', 'title' => 'Low Migration Food Inks'],
-                                ['icon' => 'droplet', 'title' => 'Water-Based Sustainable Inks'],
-                                ['icon' => 'bolt', 'title' => 'UV/LED Curable Inks'],
-                                ['icon' => 'gem', 'title' => 'Metallic & Matte Finishes'],
-                                ['icon' => 'print', 'title' => 'Digital Print Compatible'],
-                                ['icon' => 'truck-fast', 'title' => 'High-Speed Printing Inks'],
-                            ];
-                        @endphp
-                        @foreach($items as $i)
-                        <div class="flex items-center gap-3 p-4 rounded-xl bg-slate-50 border border-slate-100 hover:border-pink-200 hover:bg-white transition-all group">
-                            <div class="w-10 h-10 flex items-center justify-center bg-pink-100 text-pink-600 rounded-lg group-hover:bg-pink-600 group-hover:text-white transition-all">
-                                <i class="fa-solid fa-{{ $i['icon'] }}"></i>
+                        
+                        <div class="space-y-12">
+                            <div class="flex items-end justify-between border-b border-slate-100 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-400 tracking-[0.3em]">Value (2025)</span>
+                                <span class="text-6xl font-black text-slate-950 tracking-tighter italic">$1.5B+</span>
                             </div>
-                            <span class="font-bold text-slate-700 text-sm leading-tight uppercase italic tracking-tighter">{{ $i['title'] }}</span>
+                            <div class="flex items-end justify-between border-b border-slate-100 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-400 tracking-[0.3em]">Projected CAGR</span>
+                                <span class="text-6xl font-black text-pink-600 tracking-tighter italic">11%</span>
+                            </div>
+                            <div class="p-12 bg-pink-50 border-l-8 border-pink-600 shadow-sm text-right">
+                                <p class="text-[9px] font-black text-pink-600 uppercase tracking-[0.4em] mb-4 italic">Economic Status</p>
+                                <p class="text-5xl font-black text-slate-950 uppercase italic leading-tight tracking-tighter">#4 Global Rank</p>
+                            </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hubs & Verticals -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
+                <div class="p-24 bg-slate-950 text-white space-y-16">
+                    <h3 class="text-5xl font-black uppercase tracking-tighter italic text-pink-500 border-l-8 border-pink-600 pl-10">Strategic Verticals</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-px bg-white/5 border border-white/5">
+                        @foreach([
+                            ['icon' => 'leaf', 'label' => 'Low Migration'],
+                            ['icon' => 'droplet', 'label' => 'Water-Based'],
+                            ['icon' => 'bolt', 'label' => 'UV/LED Curable'],
+                            ['icon' => 'gem', 'label' => 'Metallic/Matte'],
+                            ['icon' => 'print', 'label' => 'Digital Print'],
+                            ['icon' => 'truck-fast', 'label' => 'High-Speed'],
+                        ] as $opp)
+                            <div class="p-10 bg-slate-950 group/item hover:bg-pink-600 transition-all duration-500 relative overflow-hidden text-center">
+                                <div class="absolute top-0 left-0 w-1 h-full bg-white scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                                <i class="fa-solid fa-{{ $opp['icon'] }} text-3xl mb-6 text-pink-600 group-hover/item:text-slate-950 transition-colors"></i>
+                                <p class="text-[12px] font-black uppercase text-slate-400 group-hover/item:text-slate-950 tracking-[0.2em] leading-tight transition-colors italic">{{ $opp['label'] }}</p>
+                            </div>
                         @endforeach
                     </div>
                 </div>
 
-                <div class="order-1 md:order-2 p-8 bg-slate-100 rounded-3xl border border-slate-200 shadow-sm relative overflow-hidden text-center">
-                    <div class="relative z-10">
-                        <h3 class="text-2xl font-bold mb-6 text-slate-900 uppercase italic">Branding & Appeal</h3>
-                        <p class="text-slate-500 leading-relaxed font-medium mb-8">
-                            Modern packaging aesthetics rely on vibrant graphics for shelf appeal and consumer communication. Specialty inks enable premium presentation and regulatory compliance.
-                        </p>
-                        <div class="inline-flex items-center gap-2 px-6 py-3 bg-white border border-slate-200 text-pink-600 font-black rounded-full shadow-sm uppercase tracking-widest text-xs">
-                            <i class="fa-solid fa-star"></i> Enabling Packaging Excellence
-                        </div>
+                <div class="p-24 bg-white space-y-16 border-l border-slate-200">
+                    <h3 class="text-5xl font-black uppercase tracking-tighter italic text-slate-950 border-l-8 border-slate-950 pl-10">Manufacturing Hubs</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        @foreach(['Mumbai', 'Ahmedabad', 'Delhi NCR', 'Hyderabad', 'Chennai', 'Pune'] as $hub)
+                            <div class="p-10 bg-white border border-slate-100 flex items-center justify-center group/hub hover:bg-slate-950 transition-all duration-700 shadow-sm">
+                                <span class="text-[12px] font-black uppercase text-slate-500 group-hover/hub:text-white tracking-[0.3em] transition-colors italic">{{ $hub }}</span>
+                            </div>
+                        @endforeach
                     </div>
+                    <p class="text-[12px] font-black text-slate-400 uppercase tracking-widest text-center italic">Key Indian Manufacturing Clusters</p>
                 </div>
             </div>
 
-            <!-- CONCLUSION (CTA) -->
-            <div class="relative bg-slate-900 text-white p-12 md:p-16 rounded-3xl text-center shadow-2xl overflow-hidden border-b-4 border-pink-600">
-                <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(236,72,153,0.05),transparent)]"></div>
-                <div class="relative z-10">
-                    <h3 class="text-3xl font-bold mb-6 uppercase tracking-tight">The Future of Packaging Inks</h3>
-                    <p class="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed mb-10">
-                        Flexible packaging inks are essential to value-added packaging. As demand for sustainable and high-performance inks rises, World Grexpo supports manufacturers in adopting next-gen ink technologies for global markets.
+            <!-- Architecture CTA -->
+            <div class="relative p-24 lg:p-32 bg-slate-950 overflow-hidden text-center shadow-3xl group">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(236,72,153,0.2),transparent)]"></div>
+                <div class="relative z-10 space-y-16">
+                    <h3 class="text-5xl md:text-[8rem] font-black text-white uppercase tracking-tighter leading-[0.85]">
+                        The Ink <br><span class="text-pink-600">Standard.</span>
+                    </h3>
+                    <p class="text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium italic border-l-4 border-pink-600 pl-10 md:text-center mx-auto uppercase tracking-tighter">
+                        Flexible packaging inks are essential to value-added packaging. As demand for sustainable and high-performance inks rises, World Grexpo supports the next-gen transition.
                     </p>
-                    <a href="" class="inline-flex items-center gap-3 px-10 py-5 bg-pink-600 text-white font-black uppercase tracking-widest rounded-full hover:bg-white hover:text-slate-900 transition-all duration-300 shadow-xl group">
-                        Explore Specialty Inks <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
-                    </a>
+                    <div class="flex justify-center">
+                        <a href="{{ route('join.index') }}" 
+                            class="btn-sharp px-16 group !border-pink-600/30 hover:!bg-pink-600">
+                            Partner in Innovation 
+                            <i class="fa-solid fa-arrow-right-long ml-6 group-hover:translate-x-4 transition-transform"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
 

@@ -7,77 +7,65 @@
 ?>
 
 <?php if($excellenceAwards->count() > 0): ?>
-<section class="section-padding bg-slate-50 relative overflow-hidden">
-    <!-- Sophisticated Background Accents -->
-    <div class="absolute top-0 right-0 w-1/3 h-full bg-brand-primary/5 -skew-x-12 translate-x-1/2"></div>
-    <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-brand-accent/5 rounded-full blur-[100px]"></div>
+<section class="section-padding bg-white relative overflow-hidden border-b border-slate-100">
+    <!-- Industrial Background Accents -->
+    <div class="absolute top-0 right-0 w-1/3 h-full bg-slate-50/30 -z-0"></div>
 
     <div class="container relative z-10">
-        <!-- Section Header -->
-        <div class="flex flex-col lg:flex-row justify-between items-end mb-20 gap-10" x-data="{ visible: false }" x-intersect="visible = true">
-            <div class="max-w-2xl space-y-6">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-primary/5 text-brand-primary text-[10px] font-black uppercase tracking-[0.2em]">
-                    <span class="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse"></span>
-                    Wall of Excellence
+        <!-- Sharp Section Header -->
+        <div class="flex flex-col lg:flex-row justify-between items-end mb-24 gap-12">
+            <div class="max-w-3xl space-y-8">
+                <div class="section-heading">
+                    <span class="subtitle">Wall of Excellence</span>
+                    <h2>Recognized for <span class="text-brand-primary">Excellence.</span></h2>
+                    <div class="accent-line"></div>
                 </div>
-                <h2 class="text-5xl md:text-7xl font-black text-slate-900 leading-[0.9] tracking-tighter">
-                    Recognized for <span class="text-brand-primary italic">Excellence.</span>
-                </h2>
-                <p class="text-xl text-slate-500 font-medium leading-relaxed">
+                <p class="text-xl text-slate-500 font-medium leading-relaxed max-w-2xl">
                     Celebrating visionary leadership and transformative contributions that define the future of global industry.
                 </p>
             </div>
             <a href="<?php echo e(route('excellence.index')); ?>" 
-                class="group flex items-center gap-4 px-8 py-4 rounded-2xl bg-white border border-slate-200 text-slate-900 font-black uppercase tracking-widest text-xs hover:border-brand-primary hover:text-brand-primary transition-all shadow-sm">
-                Explore Full Wall <i class="fa-solid fa-arrow-right-long group-hover:translate-x-2 transition-transform"></i>
+                class="btn-sharp-outline group">
+                Explore Full Wall <i class="fa-solid fa-arrow-right-long ml-4 group-hover:translate-x-3 transition-transform"></i>
             </a>
         </div>
 
-        <!-- Excellence Cards Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <!-- Sharp Excellence Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-1 border border-slate-100 bg-slate-100">
             <?php $__currentLoopData = $excellenceAwards; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $award): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <div class="group relative flex flex-col bg-white rounded-[2.5rem] p-6 border border-slate-100 transition-all duration-700 hover:-translate-y-4 hover:shadow-2xl hover:shadow-brand-primary/5"
-                    x-data="{ visible: false }" x-intersect="visible = true"
-                    :class="visible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'"
-                    style="transition-delay: <?php echo e($loop->index * 150); ?>ms">
+                <div class="group relative flex flex-col bg-white p-8 transition-all duration-500 hover:bg-slate-50">
                     
-                    <!-- Award Image -->
-                    <div class="relative rounded-[2rem] overflow-hidden aspect-[4/5] mb-8">
-                        <img src="<?php echo e(asset($award->award_image)); ?>" alt="<?php echo e($award->title); ?>" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 via-transparent to-transparent"></div>
-                        <div class="absolute bottom-6 left-6 right-6">
-                            <p class="text-white font-black text-xl leading-tight tracking-tight uppercase"><?php echo e($award->title); ?></p>
+                    <!-- Award Image (Sharp) -->
+                    <div class="relative aspect-[4/5] overflow-hidden mb-10 bg-slate-100">
+                        <img src="<?php echo e(asset($award->award_image)); ?>" alt="<?php echo e($award->title); ?>" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <div class="absolute bottom-0 left-0 bg-brand-primary p-6 w-full translate-y-full group-hover:translate-y-0 transition-transform">
+                            <p class="text-white font-black text-sm leading-tight tracking-widest uppercase"><?php echo e($award->title); ?></p>
                         </div>
                     </div>
                     
-                    <!-- Giver Info -->
-                    <div class="flex items-center justify-between gap-4 px-2">
-                        <div class="flex items-center gap-4">
+                    <!-- Giver Info (Sharp) -->
+                    <div class="flex items-center justify-between gap-6 border-t border-slate-100 pt-8">
+                        <div class="flex items-center gap-5">
                             <?php if($award->giver_image): ?>
-                                <div class="relative">
-                                    <img src="<?php echo e(asset($award->giver_image)); ?>" class="w-12 h-12 rounded-2xl border-2 border-white object-cover shadow-lg">
-                                    <div class="absolute -bottom-1 -right-1 w-5 h-5 bg-brand-accent rounded-full border-2 border-white flex items-center justify-center">
-                                        <i class="fa-solid fa-check text-[8px] text-brand-primary-dark"></i>
-                                    </div>
+                                <div class="w-14 h-14 bg-slate-50 overflow-hidden shrink-0 border border-slate-100">
+                                    <img src="<?php echo e(asset($award->giver_image)); ?>" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all">
                                 </div>
                             <?php endif; ?>
                             <div>
-                                <p class="text-sm font-black text-slate-900 leading-none mb-1.5 uppercase"><?php echo e($award->giver_name); ?></p>
-                                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest"><?php echo e(Str::limit($award->giver_designation, 30)); ?></p>
+                                <p class="text-xs font-black text-slate-900 leading-tight mb-1 uppercase tracking-wider"><?php echo e($award->giver_name); ?></p>
+                                <p class="text-[9px] font-bold text-slate-400 uppercase tracking-[0.15em] leading-relaxed"><?php echo e(Str::limit($award->giver_designation, 40)); ?></p>
                             </div>
                         </div>
 
                         <?php if($award->pdf_path): ?>
                             <a href="<?php echo e(asset($award->pdf_path)); ?>" target="_blank" 
-                                class="w-10 h-10 rounded-xl bg-slate-50 text-slate-400 flex items-center justify-center hover:bg-brand-primary hover:text-white transition-all shrink-0 shadow-sm" 
+                                class="w-10 h-10 border border-slate-200 text-slate-400 flex items-center justify-center hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all shrink-0" 
                                 title="View Recognition Details">
-                                <i class="fa-solid fa-file-invoice"></i>
+                                <i class="fa-solid fa-file-invoice text-xs"></i>
                             </a>
                         <?php endif; ?>
                     </div>
-
-                    <!-- Decorative Background -->
-                    <div class="absolute -inset-2 bg-brand-primary/5 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none -z-10"></div>
                 </div>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </div>

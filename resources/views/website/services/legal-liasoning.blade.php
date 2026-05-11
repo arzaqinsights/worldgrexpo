@@ -4,64 +4,85 @@
 
 @section('content')
 
-    <!-- HERO SECTION -->
-    <section class="relative pt-48 pb-24 bg-slate-950 text-white overflow-hidden">
+    <!-- Architectural Hero -->
+    <section class="relative pt-64 pb-32 bg-slate-950 text-white overflow-hidden border-b border-slate-900">
         <div class="absolute inset-0 z-0">
-            <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
         </div>
-        <div class="absolute inset-0 opacity-10 grayscale"
+        <div class="absolute inset-0 opacity-10 grayscale mix-blend-overlay"
             style="background-image: url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center;">
         </div>
+        
+        <!-- Industrial Accents -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-brand-primary opacity-5 -skew-x-12 translate-x-1/2"></div>
 
         <div class="container relative z-10 text-left">
-            <div class="inline-flex items-center gap-3 px-4 py-2 bg-slate-950 border-l-4 border-brand-accent mb-10">
-                <span class="text-white text-[10px] font-black tracking-[0.4em] uppercase italic">Node Security</span>
+            <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10 backdrop-blur-md mb-12">
+                <span class="w-2 h-2 bg-brand-accent animate-pulse"></span>
+                <span class="text-white text-[10px] font-black tracking-[0.4em] uppercase">Node Security</span>
             </div>
-            <h1 class="text-6xl md:text-8xl font-black uppercase mb-8 tracking-tighter leading-[0.85] italic">
-                Legal & <span class="text-brand-accent not-italic">Liaisoning</span>
+            <h1 class="text-6xl md:text-[9rem] font-black uppercase mb-12 tracking-tighter leading-[0.85]">
+                Legal & <br> <span class="text-brand-primary">Liaisoning.</span>
             </h1>
-            <p class="text-2xl text-slate-400 max-w-4xl leading-tight font-light italic">
+            <p class="text-2xl text-slate-400 max-w-4xl leading-relaxed font-medium border-l-4 border-brand-primary pl-10">
                 Absolute industrial security through specialized institutional legal support and strategic agency liaisoning.
             </p>
         </div>
     </section>
 
-    <!-- MAIN CONTENT -->
+    <!-- Main Content Interface -->
     <section class="py-32 bg-white relative">
-        <div class="container space-y-32">
+        <div class="container space-y-48">
             
-            <!-- SECTION 1: BUSINESS SECURITY -->
-            <div class="flex flex-col lg:flex-row items-center gap-24">
-                <div class="w-full lg:w-1/2 relative group">
-                    <div class="rounded-sm overflow-hidden border border-slate-100 shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070&auto=format&fit=crop" class="grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100" alt="Legal Security">
+            <!-- Section 1: Business Security -->
+            <div class="grid lg:grid-cols-2 gap-24 items-center">
+                <div class="relative group">
+                    <div class="overflow-hidden border border-slate-200 shadow-2xl bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070&auto=format&fit=crop" 
+                             class="grayscale group-hover:grayscale-0 transition-all duration-[2000ms] group-hover:scale-105 opacity-80 group-hover:opacity-100 h-[600px] object-cover" 
+                             alt="Legal Security">
                     </div>
-                    <div class="absolute -top-10 -left-10 w-40 h-40 bg-brand-primary opacity-10 rounded-sm -z-10 rotate-12"></div>
+                    <!-- Sharp Industrial Decorator -->
+                    <div class="absolute -top-8 -left-8 w-48 h-48 bg-[repeating-linear-gradient(45deg,transparent,transparent_5px,rgba(170,204,0,0.1)_5px,rgba(170,204,0,0.1)_10px)] -z-10"></div>
                 </div>
-                <div class="w-full lg:w-1/2 space-y-12 animate-on-scroll">
-                    <h2 class="text-5xl font-black text-slate-950 uppercase italic leading-none tracking-tighter">
-                        Architecting <span class="text-brand-primary not-italic">Compliance</span> <br> <span class="text-slate-400 text-3xl">Institutional Risk Mitigation</span>
-                    </h2>
-                    <p class="text-slate-500 text-xl leading-relaxed font-light">
+                
+                <div class="space-y-12 animate-on-scroll">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Risk Mitigation</span>
+                        <h2>Architecting <br> <span class="text-brand-primary">Compliance.</span></h2>
+                        <div class="accent-line"></div>
+                    </div>
+                    
+                    <p class="text-slate-500 text-xl leading-relaxed font-medium">
                         In the global industrial node, non-compliance is an absolute risk. World Grexpo Foundation provides highly <strong>Specialized Legal Support</strong> and essential Government Liaisoning nodes, architected to protect industrial security. From complex contract laws to environmental node clearances, our framework ensures absolute focus on transition.
                     </p>
-                     <div class="grid grid-cols-2 gap-2">
+                    
+                    <div class="grid grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-xl">
                         @foreach(['Environmental', 'Corporate Law', 'Arbitration', 'Licensing'] as $law)
-                            <div class="p-6 bg-slate-50 border border-slate-100 rounded-sm flex items-center justify-center text-[10px] font-black uppercase tracking-widest text-slate-600 hover:bg-slate-950 hover:text-white transition-all duration-500 cursor-default">
-                                {{ $law }}
+                            <div class="p-10 bg-white group hover:bg-slate-950 transition-all duration-700 text-center">
+                                <span class="text-[10px] font-black uppercase text-slate-950 tracking-[0.2em] group-hover:text-white transition-colors">
+                                    {{ $law }}
+                                </span>
                             </div>
                         @endforeach
                     </div>
                 </div>
             </div>
 
-            <!-- SECTION 2: LIAISON FRAMEWORK -->
-            <div class="space-y-20">
-                <div class="text-left max-w-3xl">
-                    <h3 class="text-5xl font-black uppercase italic text-slate-950 mb-8 tracking-tighter">Liaisoning Pathways</h3>
-                    <p class="text-slate-500 text-xl font-light italic">Streamlining institutional interactions with global and central regulatory nodes.</p>
+            <!-- Section 2: Liaison Framework -->
+            <div class="space-y-24">
+                <div class="max-w-4xl space-y-8">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Regulatory Pathways</span>
+                        <h2>Liaisoning <br> <span class="text-brand-primary">Ecosystem.</span></h2>
+                        <div class="accent-line"></div>
+                    </div>
+                    <p class="text-2xl text-slate-500 font-medium leading-relaxed italic">
+                        Streamlining institutional interactions with global and central regulatory nodes through absolute authority.
+                    </p>
                 </div>
-                <div class="grid md:grid-cols-3 gap-2">
+                
+                <div class="grid lg:grid-cols-3 gap-px bg-slate-200 border border-slate-200 shadow-2xl">
                     @php
                         $liaison = [
                             ['t' => 'Regulatory Clearances', 'img' => 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070&auto=format&fit=crop', 'd' => 'Fast-track node approvals from global industrial & pollution boards.'],
@@ -70,57 +91,92 @@
                         ];
                     @endphp
                     @foreach($liaison as $li)
-                    <div class="group relative h-[550px] overflow-hidden rounded-sm border border-slate-900">
-                        <img src="{{ $li['img'] }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" alt="Liaison Node">
-                        <div class="absolute inset-0 bg-slate-950/80 group-hover:bg-brand-primary/80 transition-colors duration-700"></div>
-                        <div class="absolute inset-0 p-12 flex flex-col justify-end">
-                            <h4 class="text-3xl font-black text-brand-accent mb-4 uppercase italic tracking-tighter group-hover:text-white transition-colors">{{ $li['t'] }}</h4>
-                            <p class="text-slate-400 text-[10px] font-bold leading-relaxed uppercase tracking-widest group-hover:text-white transition-colors">{{ $li['d'] }}</p>
+                    <div class="group relative h-[600px] overflow-hidden bg-slate-900">
+                        <img src="{{ $li['img'] }}" 
+                             class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[2000ms] opacity-60 group-hover:opacity-100" 
+                             alt="Liaison Node">
+                        
+                        <div class="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                        
+                        <div class="absolute inset-0 p-12 flex flex-col justify-end space-y-6">
+                            <h4 class="text-4xl font-black text-white uppercase tracking-tighter group-hover:text-brand-primary transition-colors">
+                                {{ $li['t'] }}
+                            </h4>
+                            <p class="text-slate-400 text-[10px] font-black uppercase tracking-[0.3em] leading-relaxed group-hover:text-white transition-colors">
+                                {{ $li['d'] }}
+                            </p>
                         </div>
-                        <div class="absolute top-0 left-0 w-0 h-1.5 bg-brand-accent group-hover:w-full transition-all duration-700"></div>
+                        
+                        <!-- Sharp Hover Accent -->
+                        <div class="absolute bottom-0 left-0 w-0 h-1.5 bg-brand-primary group-hover:w-full transition-all duration-700"></div>
                     </div>
                     @endforeach
                 </div>
             </div>
 
-            <!-- SECTION 3: SERVICE STRENGTH -->
-            <div class="bg-slate-950 p-16 lg:p-24 rounded-sm relative overflow-hidden text-center space-y-20">
-                 <div class="absolute inset-0 z-0">
-                    <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:40px_40px]"></div>
-                 </div>
-                 <h3 class="text-5xl font-black uppercase italic tracking-tighter text-white relative z-10">Institutional <span class="text-brand-accent">Security Nodes</span></h3>
-                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 relative z-10">
-                    @foreach([
-                        ['t' => 'Legal Advisory', 'val' => '24/7 Support'],
-                        ['t' => 'Agency Liaison', 'val' => '100+ Nodes'],
-                        ['t' => 'Dispute Resolution', 'val' => '95% Success'],
-                        ['t' => 'Certifications', 'val' => 'Absolute Node']
-                    ] as $metric)
-                    <div class="p-10 bg-white/5 border border-white/10 rounded-sm hover:bg-brand-primary transition-all duration-700 group">
-                        <p class="text-brand-accent font-black text-3xl mb-4 group-hover:text-slate-950 transition-colors italic tracking-tighter">{{ $metric['val'] }}</p>
-                        <p class="text-[10px] font-black uppercase text-slate-400 tracking-[0.3em] group-hover:text-slate-900 transition-colors">{{ $metric['t'] }}</p>
-                    </div>
-                    @endforeach
-                 </div>
-            </div>
-
-            <!-- SECTION 4: CALL TO ACTION -->
-            <div class="relative bg-slate-950 p-24 rounded-sm text-left overflow-hidden border-l-[20px] border-brand-accent group">
+            <!-- Section 3: Service Strength -->
+            <div class="bg-slate-950 p-24 lg:p-32 relative overflow-hidden shadow-3xl">
+                <!-- Industrial Pattern -->
                 <div class="absolute inset-0 z-0">
-                    <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:30px_30px]"></div>
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
                 </div>
-                <div class="relative z-10 space-y-12 text-left">
-                    <h3 class="text-6xl md:text-9xl font-black text-white uppercase tracking-tighter italic leading-none">Secure Your <br> <span class="text-brand-accent">Deal Node.</span></h3>
-                    <p class="text-2xl text-slate-400 max-w-4xl leading-relaxed font-light italic opacity-80 mb-16">
-                        Don't let institutional ambiguity stop your industrial node momentum. Get absolute protection and liaisoning support today.
-                    </p>
-                    <a href="{{ route('forms.show', ['slug' => 'join-us']) }}" class="inline-flex items-center gap-6 px-16 py-8 bg-white text-slate-950 font-black uppercase tracking-[0.3em] text-xs rounded-sm hover:bg-brand-accent hover:text-slate-950 transition-all duration-700 shadow-4xl italic group">
-                        Acquire Legal Consultation <i class="fa-solid fa-scale-balanced text-brand-accent group-hover:translate-x-4 transition-transform"></i>
+                
+                <div class="relative z-10 space-y-24 text-center">
+                    <div class="section-heading text-center">
+                        <span class="subtitle">Proprietary Nodes</span>
+                        <h2 class="text-white">Institutional <br> <span class="text-brand-primary">Security Nodes.</span></h2>
+                        <div class="accent-line mx-auto"></div>
+                    </div>
+
+                    <div class="grid md:grid-cols-4 gap-px bg-white/5 border border-white/10 shadow-3xl">
+                        @foreach([
+                            ['t' => 'Legal Advisory', 'val' => '24/7 Support'],
+                            ['t' => 'Agency Liaison', 'val' => '100+ Nodes'],
+                            ['t' => 'Dispute Resolution', 'val' => '95% Success'],
+                            ['t' => 'Certifications', 'val' => 'Absolute Node']
+                        ] as $metric)
+                        <div class="p-12 bg-transparent hover:bg-brand-primary transition-all duration-700 group">
+                            <p class="text-brand-primary font-black text-4xl mb-6 group-hover:text-slate-950 transition-colors tracking-tighter tabular-nums leading-none">
+                                {{ $metric['val'] }}
+                            </p>
+                            <p class="text-[10px] font-black uppercase text-slate-400 tracking-[0.3em] group-hover:text-slate-900 transition-colors">
+                                {{ $metric['t'] }}
+                            </p>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: Call To Action -->
+            <div class="relative bg-slate-900 p-24 lg:p-32 overflow-hidden group border-t border-slate-800">
+                <div class="absolute inset-0 z-0">
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:30px_30px]"></div>
+                </div>
+                
+                <div class="relative z-10 space-y-16 max-w-5xl">
+                    <div class="space-y-8">
+                        <h3 class="text-6xl md:text-9xl font-black text-white uppercase tracking-tighter leading-[0.85]">
+                            Secure Your <br> <span class="text-brand-primary">Deal Node.</span>
+                        </h3>
+                        <p class="text-2xl text-slate-400 max-w-4xl leading-relaxed font-medium">
+                            Don't let institutional ambiguity stop your industrial node momentum. Get absolute protection and liaisoning support today through World Grexpo Foundation.
+                        </p>
+                    </div>
+                    
+                    <a href="{{ route('forms.show', ['slug' => 'join-us']) }}" class="btn-sharp px-20 group">
+                        Acquire Legal Consultation 
+                        <i class="fa-solid fa-scale-balanced ml-6 group-hover:translate-x-4 transition-transform"></i>
                     </a>
                 </div>
+
+                <!-- Industrial Accent Line -->
+                <div class="absolute left-0 top-0 w-2 h-full bg-brand-primary"></div>
             </div>
 
         </div>
     </section>
+
+@endsection
 
 @endsection

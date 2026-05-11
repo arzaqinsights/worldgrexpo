@@ -1,49 +1,38 @@
-<section class="section-padding bg-slate-50 relative overflow-hidden">
-    <!-- Sophisticated Background Decor -->
-    <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-primary/5 rounded-full blur-[150px] -mr-96 -mt-96"></div>
-    <div class="absolute bottom-0 left-0 w-64 h-64 bg-brand-accent/5 rounded-full blur-[100px]"></div>
+<section class="section-padding bg-white relative overflow-hidden border-b border-slate-100">
+    <!-- Industrial Background Decor -->
+    <div class="absolute top-0 right-0 w-1/3 h-full bg-slate-50/50 -z-0"></div>
 
     <div class="container relative z-10">
-        <!-- Modern Section Header -->
-        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-24" x-data="{ visible: false }" x-intersect="visible = true">
-            <div class="max-w-3xl space-y-6">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-primary/5 text-brand-primary text-[10px] font-black uppercase tracking-[0.2em]">
-                    <span class="w-1.5 h-1.5 rounded-full bg-brand-accent animate-pulse"></span>
-                    Specialized Framework
+        <!-- Sharp Section Header -->
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-16 mb-24">
+            <div class="max-w-3xl space-y-8">
+                <div class="section-heading">
+                    <span class="subtitle">Specialized Framework</span>
+                    <h2>Our Core <span class="text-brand-primary">Service Pillars.</span></h2>
+                    <div class="accent-line"></div>
                 </div>
-                <h2 class="text-4xl md:text-5xl font-black text-slate-900 leading-[0.9] tracking-tighter">
-                    Our Core <span class="text-brand-primary italic">Service Pillars.</span>
-                </h2>
-                <p class="text-base text-slate-500 font-medium leading-relaxed">
+                <p class="text-xl text-slate-500 font-medium leading-relaxed max-w-2xl">
                     Empowering enterprises through strategic initiatives, industry advocacy, and growth-driven solutions designed to foster global competitiveness.
                 </p>
             </div>
 
-            <!-- Stats Overlay Cards -->
-            <div class="flex flex-col sm:flex-row gap-6">
-                <div class="glass-panel p-4 rounded border border-slate-200 flex items-center gap-4 group hover:bg-white transition-all duration-500">
-                    <div class="w-14 h-14 bg-brand-primary text-white rounded flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-users-gear text-2xl"></i>
-                    </div>
-                    <div>
-                        <div class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Industry Support</div>
-                        <div class="text-lg font-black text-slate-900">5,000+ Members</div>
-                    </div>
+            <!-- Stats Grid (Sharp) -->
+            <div class="grid grid-cols-2 gap-px bg-slate-200">
+                <div class="bg-white p-8 group">
+                    <div class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4">Industry Support</div>
+                    <div class="text-3xl font-black text-slate-900 group-hover:text-brand-primary transition-colors">5,000+</div>
+                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mt-1">Active Members</div>
                 </div>
-                <div class="glass-panel p-4 rounded border border-slate-200 flex items-center gap-4 group hover:bg-white transition-all duration-500">
-                    <div class="w-14 h-14 bg-brand-accent text-brand-primary-dark rounded flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-earth-asia text-2xl"></i>
-                    </div>
-                    <div>
-                        <div class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Global Presence</div>
-                        <div class="text-lg font-black text-slate-900">40+ Countries</div>
-                    </div>
+                <div class="bg-white p-8 group">
+                    <div class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4">Global Presence</div>
+                    <div class="text-3xl font-black text-slate-900 group-hover:text-brand-primary transition-colors">40+</div>
+                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mt-1">Countries</div>
                 </div>
             </div>
         </div>
 
-        <!-- Premium Services Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Sharp Services Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-slate-100">
             @php
                 $services = [
                     [
@@ -93,68 +82,61 @@
 
             @foreach($services as $svc)
                 <a href="{{ url('services/'.$svc['slug']) }}" 
-                    class="group relative h-full flex flex-col rounded bg-brand-primary/10 border border-slate-100 p-4 transition-all duration-700 hover:-translate-y-4 hover:shadow-2xl hover:shadow-brand-primary/5"
-                    x-data="{ visible: false }" x-intersect="visible = true"
-                    :class="visible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'"
-                    style="transition-delay: {{ $loop->index * 100 }}ms">
+                    class="group relative border border-slate-300 bg-white p-8 transition-all duration-500 hover:bg-slate-100 hover:border-brand-primary">
                     
-                    <!-- Card Media -->
-                    <div class="h-64 relative rounded overflow-hidden">
-                        <img src="{{ asset($svc['image']) }}" alt="{{ $svc['title'] }}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-linear-to-t from-slate-950/80 via-transparent to-transparent"></div>
-                        
-                        <!-- Floating Icon Container -->
-                        <div class="absolute bottom-6 left-6 w-16 h-16 rounded bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white transition-all duration-500 group-hover:bg-brand-accent group-hover:text-brand-primary group-hover:scale-110">
-                            <i class="fa-solid fa-{{ $svc['icon'] }} text-2xl"></i>
-                        </div>
-                    </div>
-
-                    <!-- Card Content -->
-                    <div class="flex-1 p-8 space-y-4">
+                    <div class="space-y-8">
                         <div class="flex items-center justify-between">
-                            <span class="text-brand-primary font-black text-[10px] uppercase tracking-[0.3em]">Core Pillar {{ $loop->iteration }}</span>
-                            <i class="fa-solid fa-arrow-up-right-from-square text-slate-300 text-xs transition-colors group-hover:text-brand-primary"></i>
+                            <div class="w-16 h-16 bg-brand-primary/5 flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-all">
+                                <i class="fa-solid fa-{{ $svc['icon'] }} text-2xl"></i>
+                            </div>
+                            <span class="text-[10px] font-black text-slate-300 uppercase tracking-widest">Pillar 0{{ $loop->iteration }}</span>
                         </div>
-                        <h3 class="text-2xl font-black text-slate-900 group-hover:text-brand-primary transition-colors tracking-tight uppercase">
-                            {{ $svc['title'] }}
-                        </h3>
-                        <p class="text-sm text-slate-500 font-medium leading-relaxed">
-                            {{ $svc['desc'] }}
-                        </p>
-                    </div>
 
-                    <!-- Interactive Decoration -->
-                    <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-2/3 h-1 bg-brand-primary/0 rounded-full transition-all duration-500 group-hover:bg-brand-primary group-hover:w-full"></div>
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-black text-slate-900 group-hover:text-brand-primary transition-colors tracking-tighter uppercase leading-tight">
+                                {{ $svc['title'] }}
+                            </h3>
+                            <p class="text-sm text-slate-500 font-medium leading-relaxed">
+                                {{ $svc['desc'] }}
+                            </p>
+                        </div>
+
+                        <div class="pt-6 border-t border-slate-50 flex items-center gap-4">
+                            <span class="text-[10px] font-black text-slate-900 uppercase tracking-widest">Explore Details</span>
+                            <div class="w-8 h-8 border border-slate-200 flex items-center justify-center text-slate-400 group-hover:border-brand-primary group-hover:text-brand-primary transition-all">
+                                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </div>
+                        </div>
+                    </div>
                 </a>
             @endforeach
         </div>
 
-        <!-- Modern CTA Banner -->
-        <div class="mt-24 relative rounded premium-gradient p-12 lg:p-20 overflow-hidden group">
-            <!-- Animated Background Pattern -->
-            <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] mix-blend-overlay"></div>
-            <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-accent/20 rounded-full blur-[100px] animate-pulse"></div>
+        <!-- Sharp CTA Banner -->
+        <div class="mt-24 bg-brand-primary p-12 lg:p-24 relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-1/2 h-full bg-black/10 -skew-x-12 translate-x-24"></div>
             
-            <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
-                <div class="space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-brand-accent text-[11px] font-black uppercase tracking-[0.2em]">
-                        Ready to elevate your business?
+            <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-16">
+                <div class="space-y-8 max-w-2xl">
+                    <div class="inline-flex items-center gap-4">
+                        <span class="w-12 h-1 bg-brand-accent"></span>
+                        <span class="text-[11px] font-black uppercase tracking-[0.3em] text-white">Join the Global Ecosystem</span>
                     </div>
-                    <h3 class="text-4xl md:text-5xl font-black text-white leading-[1.1] tracking-tighter">
-                        Join the Global Network <br> <span class="text-brand-accent">Today.</span>
+                    <h3 class="text-4xl md:text-6xl font-black text-white leading-[1] tracking-tighter uppercase">
+                        Transform Your <br> Business into a <br> <span class="text-brand-accent">Global Leader.</span>
                     </h3>
-                    <p class="text-white/70 text-lg font-medium max-w-xl">
-                        Access six specialized industrial pillars designed to accelerate your growth and transform your business into a global leader.
+                    <p class="text-white/70 text-lg font-medium leading-relaxed">
+                        Access six specialized industrial pillars designed to accelerate your growth and foster international competitiveness.
                     </p>
                 </div>
                 
-                <div class="flex flex-col gap-6 shrink-0">
+                <div class="flex flex-col sm:flex-row gap-4 shrink-0 w-full lg:w-auto">
                     <a href="{{ route('register') }}" 
-                        class="px-12 py-6 rounded bg-brand-accent text-brand-primary-dark font-black uppercase text-sm tracking-widest hover:bg-white hover:scale-105 transition-all">
-                        Get Started Now
+                        class="px-12 py-6 bg-brand-accent text-brand-primary-dark font-black uppercase text-sm tracking-widest hover:bg-white transition-all text-center">
+                        Register Now
                     </a>
                     <a href="{{ route('join.index') }}" 
-                        class="px-12 py-6 rounded bg-white/10 backdrop-blur-md text-white font-black uppercase text-sm tracking-widest border border-white/20 hover:bg-white/20 transition-all">
+                        class="px-12 py-6 bg-white/10 text-white font-black uppercase text-sm tracking-widest border border-white/20 hover:bg-white hover:text-brand-primary-dark transition-all text-center">
                         Learn More
                     </a>
                 </div>

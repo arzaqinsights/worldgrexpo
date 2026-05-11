@@ -4,332 +4,237 @@
 
 @section('content')
 
-    <!-- HERO -->
-    <section class="relative pt-32 pb-24 bg-slate-900 text-white overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-violet-900 via-slate-900 to-black"></div>
-        <div class="absolute inset-0 opacity-10"
-            style="background-image: url('{{ asset('images/sectors/packaging-machinery.jpg') }}'); background-size: cover; background-position: center;">
+    <!-- Architectural Hero -->
+    <section class="relative pt-64 pb-32 bg-slate-950 overflow-hidden border-b border-slate-900">
+        <!-- Visual Backdrop -->
+        <div class="absolute inset-0 opacity-20">
+            <img src="{{ asset('images/sectors/packaging-machinery.jpg') }}" class="w-full h-full object-cover grayscale">
         </div>
+        <div class="absolute inset-0 bg-linear-to-b from-slate-950 via-slate-950/90 to-slate-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        
+        <!-- Industrial Accents -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-violet-600 opacity-5 -skew-x-12 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-1/4 h-64 bg-violet-600 opacity-5 skew-x-12 -translate-x-1/2"></div>
 
-        <div class="container relative z-10 text-center">
-            <h1 class="text-4xl md:text-6xl font-black uppercase mb-4 tracking-wide">
-                Packaging Machinery Industry
+        <div class="container relative z-10 text-center space-y-12">
+            <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10">
+                <span class="w-2 h-2 bg-violet-400 animate-pulse"></span>
+                <span class="text-white text-[10px] font-black tracking-[0.4em] uppercase">Mechanical Conversion Protocol</span>
+            </div>
+            <h1 class="text-6xl md:text-[9rem] font-black text-white leading-[0.85] tracking-tighter uppercase">
+                Packaging <br>
+                <span class="text-violet-600">Machinery.</span>
             </h1>
-            <p class="text-xl text-slate-300 max-w-3xl mx-auto">
-                Industrial equipment powering the global packaging ecosystem — from film extrusion to printing, converting, and molding.
+            <p class="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium border-l-4 border-violet-600 pl-10 uppercase tracking-widest italic md:text-center mx-auto">
+                Industrial equipment powering the global packaging ecosystem — from film extrusion to high-speed printing and molding.
             </p>
         </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="py-16 bg-white">
-        <div class="container space-y-16">
+    <!-- Content Interface -->
+    <section class="py-32 bg-white relative">
+        <div class="container space-y-48">
 
-            <!-- INTRO -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl font-extrabold mb-4 text-slate-900">What is Packaging Machinery?</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4">
-                        <strong>Packaging machinery</strong> refers to a wide range of industrial equipment used to convert raw plastic
-                        polymers into finished packaging products such as <strong>films, pouches, bottles, containers, and labels</strong>.
-                        These machines are essential for producing flexible and rigid packaging used across FMCG, food, pharma,
-                        logistics, agriculture, and industrial sectors.
-                    </p>
-                    <p class="text-slate-600 leading-relaxed">
-                        The industry includes <strong>film production, printing, converting, molding, and finishing machinery</strong>
-                        that forms the backbone of the global packaging ecosystem.
-                    </p>
+            <!-- Executive Summary -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200">
+                <div class="p-16 lg:p-24 bg-white space-y-12">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Industrial Equipment Framework</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">Precision <br><span class="text-violet-600">Dynamics.</span></h2>
+                        <div class="accent-line bg-violet-600"></div>
+                    </div>
+                    
+                    <div class="space-y-8 text-2xl text-slate-500 font-medium leading-relaxed italic border-l-4 border-slate-100 pl-10">
+                        <p>
+                            <strong class="text-slate-900 font-black uppercase tracking-tight">Packaging Machinery</strong> refers to industrial equipment used to convert raw plastic polymers into finished products like films, pouches, and containers.
+                        </p>
+                        <p>
+                            From film production to printing and molding, these machines form the backbone of the global logistics and consumer goods ecosystem, enabling mass distribution and safety.
+                        </p>
+                    </div>
                 </div>
 
-                <img src="{{ asset('images/sectors/packaging-machinery.jpg') }}" alt="Packaging Machinery"
-                    class="w-full h-[320px] object-cover rounded-2xl shadow-lg">
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-violet-600/10"></div>
+                    <div class="relative h-full overflow-hidden border-l border-slate-200 shadow-3xl">
+                        <img src="{{ asset('images/sectors/packaging-machinery.jpg') }}" alt="Packaging Machinery"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000">
+                    </div>
+                    <div class="absolute top-0 right-0 p-8">
+                        <div class="bg-violet-600 text-white text-[10px] font-black px-6 py-2 uppercase tracking-[0.3em] shadow-2xl">
+                            Mechanical Standard
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- GLOBAL vs INDIA MARKET -->
-            <div class="grid md:grid-cols-2 gap-10">
-
+            <!-- Global vs India Market -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
                 <!-- GLOBAL -->
-                <div class="p-6 rounded-2xl bg-gradient-to-br from-violet-600 to-violet-800 text-white shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4">Global Packaging Machinery Market</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li>Market Size (2025): <strong>~USD 55–60 Billion</strong></li>
-                        <li>Projected (2031): <strong>~USD 80–90 Billion</strong></li>
-                        <li>CAGR: <strong>~5–6%</strong></li>
-                    </ul>
+                <div class="p-16 lg:p-24 bg-slate-950 text-white relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-12 text-violet-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-earth-americas text-[12rem]"></i>
+                    </div>
+                    <div class="relative z-10 space-y-16">
+                        <div class="space-y-4">
+                            <div class="text-violet-400 text-[10px] font-black uppercase tracking-[0.4em]">Global Landscape</div>
+                            <h3 class="text-5xl font-black uppercase tracking-tighter italic">Global Market</h3>
+                        </div>
+                        
+                        <div class="space-y-12">
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Value (2025)</span>
+                                <span class="text-6xl font-black text-white tracking-tighter italic">$60B</span>
+                            </div>
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Projected (2031)</span>
+                                <span class="text-6xl font-black text-white tracking-tighter italic">$90B</span>
+                            </div>
+                        </div>
 
-                    <h4 class="font-semibold mt-5 mb-2">Key Growth Drivers</h4>
-                    <ul class="list-disc pl-5 text-sm space-y-1">
-                        <li>Rising global demand for packaged food & FMCG</li>
-                        <li>Growth of e-commerce and logistics packaging</li>
-                        <li>Expansion of flexible packaging (films, laminates, pouches)</li>
-                        <li>Rapid industrialization in Asia-Pacific & Africa</li>
-                        <li>Shift toward automation and high-speed production</li>
-                    </ul>
+                        <div class="space-y-8">
+                            <h4 class="text-[9px] font-black text-slate-500 uppercase tracking-[0.4em]">Growth Drivers</h4>
+                            <div class="grid grid-cols-2 gap-px bg-white/10 border border-white/10 shadow-2xl">
+                                @foreach(['FMCG Demand', 'E-commerce', 'Automation', 'Film Expansion'] as $driver)
+                                    <div class="px-8 py-4 bg-slate-950 flex items-center gap-6 hover:bg-violet-600 hover:text-slate-950 transition-colors cursor-default group/item">
+                                        <i class="fa-solid fa-circle-check text-violet-600 group-hover/item:text-slate-950 transition-colors"></i>
+                                        <span class="text-[10px] font-black uppercase tracking-[0.1em] text-center leading-tight">{{ $driver }}</span>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- INDIA -->
-                <div class="p-6 rounded-2xl bg-brand-accent border border-slate-200 shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4 text-brand-primary">Indian Packaging Machinery Market</h3>
-                    <ul class="space-y-2 text-sm text-slate-700">
-                        <li>Market Size (2025): <strong>~USD 6–8 Billion</strong></li>
-                        <li>Projected (2031): <strong>~USD 10–12 Billion</strong></li>
-                        <li>CAGR: <strong>~7–9%</strong></li>
-                    </ul>
-
-                    <h4 class="font-semibold mt-5 mb-2">India Highlights</h4>
-                    <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1">
-                        <li>One of the fastest-growing packaging machinery markets</li>
-                        <li>Strong demand from FMCG, food, pharma, e-commerce</li>
-                        <li>High import dependence in advanced segments</li>
-                        <li>Rapid domestic growth under Make in India</li>
-                        <li>MSME clusters across Gujarat, Maharashtra, TN, NCR</li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- STATS CARDS -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-violet-600">$55–60B</h4>
-                    <p class="text-sm text-slate-500 mt-1">Global Market (2025)</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-violet-600">$6–8B</h4>
-                    <p class="text-sm text-slate-500 mt-1">India Market (2025)</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-violet-600">5–6%</h4>
-                    <p class="text-sm text-slate-500 mt-1">Global CAGR</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-violet-600">7–9%</h4>
-                    <p class="text-sm text-slate-500 mt-1">India CAGR</p>
-                </div>
-            </div>
-
-            <!-- GLOBAL vs INDIA SHARE -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-
-                <img src="{{ asset('images/sectors/packaging-machinery.jpg') }}" alt="Packaging Machinery Share"
-                    class="w-full h-[300px] object-cover rounded-2xl shadow-md">
-
-                <div class="p-6 rounded-2xl bg-slate-900 text-white shadow-lg min-h-[300px] flex flex-col justify-center">
-                    <h3 class="text-2xl font-bold mb-4">Global vs India Market Share</h3>
-                    <ul class="list-disc pl-5 space-y-2 text-sm text-slate-300">
-                        <li>India contributes approx. <strong>6–8%</strong> of global packaging consumption</li>
-                        <li>In packaging machinery manufacturing, India holds about <strong>4–6%</strong> global share</li>
-                        <li>Flexible packaging dominates over rigid packaging in growth rate</li>
-                        <li>India is emerging as a <strong>key manufacturing and export hub</strong> in Asia</li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- GROWTH OUTLOOK -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">Global Growth (2026–2031)</h3>
-                    <p class="text-sm text-slate-600 mb-3">Steady <strong>5–6% CAGR</strong> expansion driven by:</p>
-                    <ul class="list-disc pl-5 space-y-2 text-sm text-slate-600">
-                        <li>Smart packaging systems</li>
-                        <li>Sustainable and recyclable packaging demand</li>
-                        <li>High-speed automation lines</li>
-                        <li>Growth in flexible film packaging</li>
-                    </ul>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">India Growth (2026–2031)</h3>
-                    <p class="text-sm text-slate-600 mb-3">Strong <strong>7–9% CAGR</strong> growth driven by:</p>
-                    <ul class="list-disc pl-5 space-y-2 text-sm text-slate-600">
-                        <li>Packaging boom in FMCG & food delivery</li>
-                        <li>Expansion of export-oriented packaging units</li>
-                        <li>Recycling & circular economy integration</li>
-                        <li>Growth of domestic machinery manufacturing clusters</li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- KEY MACHINERY SEGMENTS -->
-            <div>
-                <h2 class="text-3xl font-extrabold text-slate-900 mb-8 text-center">Key Packaging Machinery Segments</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                    <div class="p-6 rounded-2xl bg-blue-50 border border-blue-200">
-                        <div class="w-14 h-14 mb-4 rounded-full bg-blue-100 flex items-center justify-center">
-                            <i class="fa-solid fa-industry text-2xl text-blue-600"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-800 mb-2">Film Extrusion Machinery</h4>
-                        <ul class="text-xs text-slate-600 space-y-1 list-disc pl-4">
-                            <li>Stretch Film (LLDPE) machines</li>
-                            <li>PET film extrusion lines</li>
-                            <li>BOPP film lines</li>
-                            <li>CPP cast film machines</li>
-                        </ul>
+                <div class="p-16 lg:p-24 bg-white relative overflow-hidden group border-l border-slate-200">
+                    <div class="absolute top-0 right-0 p-12 text-violet-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-industry text-[12rem]"></i>
                     </div>
+                    <div class="relative z-10 space-y-16 text-right">
+                        <div class="space-y-4">
+                            <div class="text-violet-600 text-[10px] font-black uppercase tracking-[0.4em]">National Momentum</div>
+                            <h3 class="text-5xl font-black text-slate-900 uppercase tracking-tighter italic">Indian Market</h3>
+                        </div>
+                        
+                        <div class="p-12 bg-violet-50 border-l-8 border-violet-600 shadow-sm text-right space-y-6">
+                            <p class="text-[9px] font-black text-violet-600 uppercase tracking-[0.4em] italic">Market Forecast</p>
+                            <p class="text-4xl font-black text-slate-950 uppercase italic leading-tight tracking-tighter">$12B Projected (2031)</p>
+                            <p class="text-[12px] font-black text-slate-500 uppercase tracking-widest italic">7.7% - 9% Annual CAGR</p>
+                        </div>
 
-                    <div class="p-6 rounded-2xl bg-violet-50 border border-violet-200">
-                        <div class="w-14 h-14 mb-4 rounded-full bg-violet-100 flex items-center justify-center">
-                            <i class="fa-solid fa-print text-2xl text-violet-600"></i>
+                        <div class="space-y-8">
+                            <h4 class="text-[9px] font-black text-slate-400 uppercase tracking-[0.4em]">Major Hubs</h4>
+                            <div class="grid grid-cols-3 gap-px bg-slate-200 border border-slate-200 shadow-sm">
+                                @foreach(['Gujarat', 'Maharashtra', 'Tamil Nadu', 'Delhi NCR', 'Punjab', 'Karnataka'] as $city)
+                                    <div class="p-6 bg-white flex flex-col items-center justify-center gap-4 group/item hover:bg-slate-950 transition-all duration-500">
+                                        <div class="w-1.5 h-1.5 bg-violet-600 group-hover/item:scale-150 transition-transform"></div>
+                                        <span class="text-[9px] font-black uppercase text-slate-600 group-hover/item:text-white tracking-[0.1em] leading-tight text-center">{{ $city }}</span>
+                                    </div>
+                                @endforeach
+                            </div>
                         </div>
-                        <h4 class="font-bold text-slate-800 mb-2">Printing Machinery</h4>
-                        <ul class="text-xs text-slate-600 space-y-1 list-disc pl-4">
-                            <li>Rotogravure printing machines</li>
-                            <li>Flexographic printing systems</li>
-                            <li>High-speed multi-color printing lines</li>
-                        </ul>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-amber-50 border border-amber-200">
-                        <div class="w-14 h-14 mb-4 rounded-full bg-amber-100 flex items-center justify-center">
-                            <i class="fa-solid fa-scissors text-2xl text-amber-600"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-800 mb-2">Converting Machinery</h4>
-                        <ul class="text-xs text-slate-600 space-y-1 list-disc pl-4">
-                            <li>Slitter rewinder machines</li>
-                            <li>Automatic winding machines</li>
-                            <li>Lamination & pouch-making systems</li>
-                        </ul>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-sky-50 border border-sky-200">
-                        <div class="w-14 h-14 mb-4 rounded-full bg-sky-100 flex items-center justify-center">
-                            <i class="fa-solid fa-wand-sparkles text-2xl text-sky-600"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-800 mb-2">Metallizing Machinery</h4>
-                        <ul class="text-xs text-slate-600 space-y-1 list-disc pl-4">
-                            <li>Vacuum metallizers for BOPP & PET films</li>
-                            <li>Used for barrier & reflective packaging films</li>
-                        </ul>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-rose-50 border border-rose-200 sm:col-span-2 lg:col-span-2">
-                        <div class="w-14 h-14 mb-4 rounded-full bg-rose-100 flex items-center justify-center">
-                            <i class="fa-solid fa-cubes text-2xl text-rose-600"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-800 mb-2">Molding Machinery</h4>
-                        <div class="grid sm:grid-cols-3 gap-4 mt-3">
-                            <ul class="text-xs text-slate-600 space-y-1 list-disc pl-4">
-                                <li>Injection molding (caps, closures, containers)</li>
-                            </ul>
-                            <ul class="text-xs text-slate-600 space-y-1 list-disc pl-4">
-                                <li>Blow molding (bottles, jars)</li>
-                            </ul>
-                            <ul class="text-xs text-slate-600 space-y-1 list-disc pl-4">
-                                <li>Rotational molding (large containers, tanks)</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- VALUE CHAIN -->
-            <div>
-                <h2 class="text-3xl font-extrabold text-slate-900 mb-8 text-center">Industry Value Chain Flow</h2>
-                <div class="flex flex-col md:flex-row items-center justify-between gap-3">
-                    <div class="flex-1 text-center p-5 rounded-2xl bg-violet-50 border border-violet-200">
-                        <div class="w-10 h-10 mx-auto mb-2 rounded-full bg-violet-100 flex items-center justify-center">
-                            <i class="fa-solid fa-1 text-sm text-violet-600 font-black"></i>
-                        </div>
-                        <h4 class="font-bold text-sm text-slate-800">Extrusion</h4>
-                        <p class="text-[11px] text-slate-500 mt-1">Stretch, PET, BOPP, CPP films</p>
-                    </div>
-                    <i class="fa-solid fa-arrow-right text-slate-300 hidden md:block"></i>
-                    <i class="fa-solid fa-arrow-down text-slate-300 md:hidden"></i>
-                    <div class="flex-1 text-center p-5 rounded-2xl bg-blue-50 border border-blue-200">
-                        <div class="w-10 h-10 mx-auto mb-2 rounded-full bg-blue-100 flex items-center justify-center">
-                            <i class="fa-solid fa-2 text-sm text-blue-600 font-black"></i>
-                        </div>
-                        <h4 class="font-bold text-sm text-slate-800">Printing</h4>
-                        <p class="text-[11px] text-slate-500 mt-1">Rotogravure / Flexographic</p>
-                    </div>
-                    <i class="fa-solid fa-arrow-right text-slate-300 hidden md:block"></i>
-                    <i class="fa-solid fa-arrow-down text-slate-300 md:hidden"></i>
-                    <div class="flex-1 text-center p-5 rounded-2xl bg-sky-50 border border-sky-200">
-                        <div class="w-10 h-10 mx-auto mb-2 rounded-full bg-sky-100 flex items-center justify-center">
-                            <i class="fa-solid fa-3 text-sm text-sky-600 font-black"></i>
-                        </div>
-                        <h4 class="font-bold text-sm text-slate-800">Metallizing</h4>
-                        <p class="text-[11px] text-slate-500 mt-1">PET/BOPP film coating</p>
-                    </div>
-                    <i class="fa-solid fa-arrow-right text-slate-300 hidden md:block"></i>
-                    <i class="fa-solid fa-arrow-down text-slate-300 md:hidden"></i>
-                    <div class="flex-1 text-center p-5 rounded-2xl bg-amber-50 border border-amber-200">
-                        <div class="w-10 h-10 mx-auto mb-2 rounded-full bg-amber-100 flex items-center justify-center">
-                            <i class="fa-solid fa-4 text-sm text-amber-600 font-black"></i>
-                        </div>
-                        <h4 class="font-bold text-sm text-slate-800">Converting</h4>
-                        <p class="text-[11px] text-slate-500 mt-1">Slitting, rewinding, pouches</p>
-                    </div>
-                    <i class="fa-solid fa-arrow-right text-slate-300 hidden md:block"></i>
-                    <i class="fa-solid fa-arrow-down text-slate-300 md:hidden"></i>
-                    <div class="flex-1 text-center p-5 rounded-2xl bg-rose-50 border border-rose-200">
-                        <div class="w-10 h-10 mx-auto mb-2 rounded-full bg-rose-100 flex items-center justify-center">
-                            <i class="fa-solid fa-5 text-sm text-rose-600 font-black"></i>
-                        </div>
-                        <h4 class="font-bold text-sm text-slate-800">Molding</h4>
-                        <p class="text-[11px] text-slate-500 mt-1">Injection / Blow / Roto</p>
                     </div>
                 </div>
             </div>
 
-            <!-- TRANSFORMATION + QUICK FACTS -->
-            <div class="grid md:grid-cols-2 gap-10">
+            <!-- Segments Grid -->
+            <div class="grid lg:grid-cols-3 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
+                @php
+                    $segments = [
+                        ['icon' => 'industry', 'title' => 'Film Extrusion', 'desc' => 'PET, BOPP, CPP, Stretch Lines'],
+                        ['icon' => 'print', 'title' => 'Printing Tech', 'desc' => 'Rotogravure & Flexo Printing'],
+                        ['icon' => 'scissors', 'title' => 'Converting', 'desc' => 'Slitters, Pouches, Lamination'],
+                        ['icon' => 'wand-sparkles', 'title' => 'Metallizing', 'desc' => 'Vacuum Metallization Units'],
+                        ['icon' => 'cubes', 'title' => 'Injection Molding', 'desc' => 'Caps, Closures, Containers'],
+                        ['icon' => 'flask', 'title' => 'Blow Molding', 'desc' => 'Bottles, Jars, Liquid Pack'],
+                    ];
+                @endphp
+                @foreach($segments as $seg)
+                    <div class="p-16 bg-white space-y-8 group hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-1 h-full bg-violet-600 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                        <div class="w-20 h-20 border border-slate-200 flex items-center justify-center text-violet-600 group-hover:bg-violet-600 group-hover:text-white transition-all duration-500">
+                            <i class="fa-solid fa-{{ $seg['icon'] }} text-3xl"></i>
+                        </div>
+                        <div class="space-y-4">
+                            <h4 class="text-2xl font-black uppercase tracking-tighter italic text-slate-900 group-hover:text-white transition-colors">{{ $seg['title'] }}</h4>
+                            <p class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 group-hover:text-slate-500 transition-colors">{{ $seg['desc'] }}</p>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
 
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">Industry Transformation Trends</h3>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-violet-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-robot text-violet-600 text-xs"></i></div>
-                            Automation & AI-driven production lines
+            <!-- Value Chain Interface -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
+                <div class="p-24 bg-white space-y-16">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Industrial Intelligence</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">Process <br><span class="text-violet-600">Evolution.</span></h2>
+                        <div class="accent-line bg-violet-600"></div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 gap-4">
+                        @php
+                            $trends = [
+                                ['icon' => 'robot', 'title' => 'AI Production Lines'],
+                                ['icon' => 'bolt', 'title' => 'Energy Efficient Engines'],
+                                ['icon' => 'recycle', 'title' => 'Integrated Recycling'],
+                                ['icon' => 'leaf', 'title' => 'Biodegradable Systems'],
+                                ['icon' => 'wifi', 'title' => 'Smart Factory 4.0'],
+                            ];
+                        @endphp
+                        @foreach($trends as $t)
+                        <div class="flex items-center gap-10 p-10 bg-slate-50 group/opp hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-1 h-full bg-violet-600 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                            <div class="w-16 h-16 border border-slate-200 flex items-center justify-center text-violet-600 group-hover/opp:bg-violet-600 group-hover/opp:text-white transition-all duration-500 shadow-sm">
+                                <i class="fa-solid fa-{{ $t['icon'] }} text-2xl"></i>
+                            </div>
+                            <span class="text-xl font-black uppercase text-slate-700 tracking-[0.15em] group-hover/opp:text-white transition-colors leading-tight italic">{{ $t['title'] }}</span>
                         </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-bolt text-emerald-600 text-xs"></i></div>
-                            High-speed energy-efficient machinery
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-recycle text-blue-600 text-xs"></i></div>
-                            Recycling-integrated packaging systems
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-green-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-leaf text-green-600 text-xs"></i></div>
-                            Sustainable & biodegradable packaging solutions
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-wifi text-amber-600 text-xs"></i></div>
-                            Smart factory & Industry 4.0 adoption
-                        </div>
+                        @endforeach
                     </div>
                 </div>
 
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">At a Glance (Quick Facts)</h3>
-                    <ul class="space-y-2 text-sm text-slate-600">
-                        <li>🌍 Global market: <strong>~USD 55–60 Billion</strong> (2025)</li>
-                        <li>🇮🇳 India market: <strong>~USD 6–8 Billion</strong> (2025)</li>
-                        <li>📈 Global CAGR: <strong>~5–6%</strong></li>
-                        <li>📈 India CAGR: <strong>~7–9%</strong></li>
-                        <li>📦 Flexible packaging = <strong>Fastest growing segment</strong></li>
-                        <li>🚢 High import dependence in advanced machinery</li>
-                        <li>♻️ Recycling + sustainable machinery = <strong>Fastest emerging segment</strong></li>
-                    </ul>
+                <div class="p-24 bg-slate-950 text-white space-y-12 relative overflow-hidden group border-l border-slate-200">
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(139,92,246,0.05),transparent)]"></div>
+                    <div class="relative z-10 space-y-16">
+                        <div class="space-y-4">
+                            <div class="text-violet-400 text-[10px] font-black uppercase tracking-[0.4em]">Future Outlook</div>
+                            <h3 class="text-5xl font-black text-white uppercase tracking-tighter italic">Machine Hub</h3>
+                        </div>
+                        <p class="text-2xl text-slate-400 font-medium italic border-l-4 border-violet-600/30 pl-10 leading-relaxed uppercase tracking-tighter">
+                            India is emerging as a high-potential global hub for both consumption and manufacturing of advanced packaging machinery.
+                        </p>
+                        <div class="grid grid-cols-2 gap-px bg-white/5 border border-white/5 pt-12">
+                             @foreach(['PET EXTRUSION', 'ROTO PRINTING', 'BLOW MOLDING', 'SMART LOGISTICS'] as $tag)
+                                <div class="p-8 bg-slate-950 border border-white/5 flex flex-col items-center gap-4 group/item hover:bg-violet-600 transition-all duration-500">
+                                    <span class="text-[10px] font-black uppercase text-slate-300 group-hover:text-slate-950 tracking-[0.2em] transition-colors leading-tight text-center">{{ $tag }}</span>
+                                </div>
+                             @endforeach
+                        </div>
+                    </div>
                 </div>
-
             </div>
 
-            <!-- CONCLUSION -->
-            <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-10 rounded-2xl text-center shadow-lg">
-                <h3 class="text-3xl font-bold mb-4">Conclusion</h3>
-                <p class="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                    The packaging machinery industry is a <strong>core pillar of global manufacturing</strong>, enabling the production
-                    of essential packaging across every sector. With rapid growth in flexible packaging, automation, and sustainability,
-                    <strong>India is emerging as a high-potential global hub</strong> for both consumption and manufacturing of advanced
-                    packaging machinery.
-                </p>
+            <!-- Conclusion CTA -->
+            <div class="relative p-24 lg:p-32 bg-slate-950 overflow-hidden text-center shadow-3xl group">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(139,92,246,0.2),transparent)]"></div>
+                <div class="relative z-10 space-y-16">
+                    <h3 class="text-5xl md:text-[8rem] font-black text-white uppercase tracking-tighter leading-[0.85]">
+                        Global <br><span class="text-violet-600">Dynamics.</span>
+                    </h3>
+                    <p class="text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium italic border-l-4 border-violet-600 pl-10 md:text-center mx-auto uppercase tracking-tighter">
+                        Packaging machinery is the core pillar of industrial scalability. Join World Grexpo to explore machinery sourcing and export protocols.
+                    </p>
+                    <div class="flex justify-center">
+                        <a href="{{ route('join.index') }}" 
+                            class="btn-sharp px-16 group !border-violet-600/30 hover:!bg-violet-600">
+                            Register for Machinery 
+                            <i class="fa-solid fa-arrow-right-long ml-6 group-hover:translate-x-4 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
 
         </div>

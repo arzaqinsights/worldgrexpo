@@ -4,143 +4,166 @@
 
 @section('content')
 
-    <!-- HERO -->
-    <section class="relative pt-32 pb-24 bg-slate-900 text-white overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-blue-900 via-slate-900 to-black"></div>
-        <div class="absolute inset-0 opacity-25"
-            style="background-image: url('{{ asset('images/sectors/handicraft.webp') }}'); background-size: cover; background-position: center;">
+    <!-- Architectural Hero -->
+    <section class="relative pt-64 pb-32 bg-slate-950 overflow-hidden border-b border-slate-900">
+        <!-- Visual Backdrop -->
+        <div class="absolute inset-0 opacity-20">
+            <img src="{{ asset('images/sectors/handicraft.webp') }}" class="w-full h-full object-cover grayscale">
         </div>
+        <div class="absolute inset-0 bg-linear-to-b from-slate-950 via-slate-950/90 to-slate-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        
+        <!-- Industrial Accents -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-blue-600 opacity-5 -skew-x-12 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-1/4 h-64 bg-blue-600 opacity-5 skew-x-12 -translate-x-1/2"></div>
 
-        <div class="container relative z-10 text-center">
-            <h1 class="text-4xl md:text-6xl font-black uppercase mb-4 tracking-wide">
-                Handicraft <span class="text-blue-500">Industry</span>
+        <div class="container relative z-10 text-center space-y-12">
+            <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10">
+                <span class="w-2 h-2 bg-blue-400 animate-pulse"></span>
+                <span class="text-white text-[10px] font-black tracking-[0.4em] uppercase">Artisan Legacy Protocol</span>
+            </div>
+            <h1 class="text-6xl md:text-[9rem] font-black text-white leading-[0.85] tracking-tighter uppercase">
+                Handicraft <br>
+                <span class="text-blue-600">Industry.</span>
             </h1>
-            <p class="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+            <p class="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium border-l-4 border-blue-600 pl-10 uppercase tracking-widest italic md:text-center mx-auto">
                 Celebrating cultural heritage through the artistry of human hands and timeless craftsmanship.
             </p>
         </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="py-16 bg-white">
-        <div class="container space-y-16">
+    <!-- Content Interface -->
+    <section class="py-32 bg-white relative">
+        <div class="container space-y-48">
 
-            <!-- INTRO -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="animate-in fade-in slide-in-from-left duration-700">
-                    <h2 class="text-3xl font-extrabold mb-6 text-slate-900 uppercase">Legacy of Artistry</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4 text-lg">
-                        The <strong>handicraft industry</strong> involves the creation of decorative and functional products made primarily by hand or with simple tools by skilled artisans.
-                    </p>
-                    <p class="text-slate-600 leading-relaxed">
-                        Reflecting deep cultural heritage and creativity, this sector supports millions of rural and artisan economies globally. From intricate metalwork to traditional textiles, handicrafts bridge ancient tradition with modern luxury.
-                    </p>
+            <!-- Executive Summary -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200">
+                <div class="p-16 lg:p-24 bg-white space-y-12">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Artisan Value Framework</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">Legacy of <br><span class="text-blue-600">Artistry.</span></h2>
+                        <div class="accent-line bg-blue-600"></div>
+                    </div>
+                    
+                    <div class="space-y-8 text-2xl text-slate-500 font-medium leading-relaxed italic border-l-4 border-slate-100 pl-10">
+                        <p>
+                            <strong class="text-slate-900 font-black uppercase tracking-tight">The Handicraft Industry</strong> involves the creation of decorative and functional products made primarily by hand or with simple tools by skilled artisans.
+                        </p>
+                        <p>
+                            Reflecting deep cultural heritage and creativity, this sector supports millions of rural and artisan economies globally, bridging ancient tradition with modern luxury.
+                        </p>
+                    </div>
                 </div>
 
-                <div class="relative group animate-in fade-in slide-in-from-right duration-700">
-                    <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-                    <img src="{{ asset('images/sectors/handicraft.webp') }}" alt="Handicraft Industry"
-                        class="relative w-full h-[400px] object-cover rounded-2xl shadow-2xl">
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-blue-600/10"></div>
+                    <div class="relative h-full overflow-hidden border-l border-slate-200 shadow-3xl">
+                        <img src="{{ asset('images/sectors/handicraft.webp') }}" alt="Handicraft Industry"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-12">
+                        <div class="bg-blue-600 text-white p-10 space-y-2 border-l-8 border-white/20 shadow-2xl">
+                            <p class="text-5xl font-black tracking-tighter uppercase italic">Luxury</p>
+                            <p class="text-[10px] font-black uppercase tracking-[0.3em] opacity-80">Artisan Segment</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- GLOBAL vs INDIA -->
-            <div class="grid md:grid-cols-2 gap-10">
-
+            <!-- Global vs India Market -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
                 <!-- GLOBAL -->
-                <div class="p-8 rounded-3xl bg-gradient-to-br from-slate-800 to-slate-900 text-white shadow-2xl transform hover:-translate-y-1 transition-transform duration-300">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="p-3 bg-white/10 rounded-xl">
-                            <i class="fa-solid fa-earth-asia text-2xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold uppercase tracking-tight">Global Market</h3>
+                <div class="p-16 lg:p-24 bg-slate-950 text-white relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-12 text-blue-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-earth-asia text-[12rem]"></i>
                     </div>
-                    
-                    <ul class="space-y-4 text-slate-300">
-                        <li class="flex items-baseline justify-between border-b border-white/10 pb-2">
-                            <span class="text-sm uppercase font-bold text-slate-400">Market Value (2025)</span>
-                            <span class="text-xl font-black text-white">$850 Billion</span>
-                        </li>
-                        <li class="flex items-baseline justify-between border-b border-white/10 pb-2">
-                            <span class="text-sm uppercase font-bold text-slate-400">Projected (2033)</span>
-                            <span class="text-xl font-black text-white">$1.2 Trillion</span>
-                        </li>
-                        <li class="flex items-baseline justify-between border-b border-white/10 pb-2">
-                            <span class="text-sm uppercase font-bold text-slate-400">Expected CAGR</span>
-                            <span class="text-xl font-black text-blue-400">10%</span>
-                        </li>
-                    </ul>
+                    <div class="relative z-10 space-y-16">
+                        <div class="space-y-4">
+                            <div class="text-blue-400 text-[10px] font-black uppercase tracking-[0.4em]">Global Investment</div>
+                            <h3 class="text-5xl font-black uppercase tracking-tighter italic">Global Market</h3>
+                        </div>
+                        
+                        <div class="space-y-12">
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Market Value (2025)</span>
+                                <span class="text-6xl font-black text-white tracking-tighter italic">$850B</span>
+                            </div>
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Projected (2033)</span>
+                                <span class="text-6xl font-black text-white tracking-tighter italic">$1.2T</span>
+                            </div>
+                        </div>
 
-                    <p class="mt-6 text-xs text-slate-500 italic">Asia-Pacific remains the largest hub, driven by traditional artisan economies.</p>
+                        <div class="p-12 bg-white/5 border border-white/10 shadow-2xl">
+                             <p class="text-[10px] font-black text-blue-400 uppercase tracking-[0.4em] mb-4">Market Reach</p>
+                             <p class="text-2xl font-black text-white uppercase italic leading-tight tracking-tighter">10% Expected CAGR</p>
+                             <p class="text-sm text-slate-500 mt-4 italic uppercase">Asia-Pacific remains the largest hub.</p>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- INDIA -->
-                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200 shadow-xl transform hover:-translate-y-1 transition-transform duration-300">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="p-3 bg-blue-100 rounded-xl text-blue-600">
-                            <i class="fa-solid fa-palette text-2xl"></i>
+                <div class="p-16 lg:p-24 bg-white relative overflow-hidden group border-l border-slate-200">
+                    <div class="absolute top-0 right-0 p-12 text-blue-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-palette text-[12rem]"></i>
+                    </div>
+                    <div class="relative z-10 space-y-16 text-right">
+                        <div class="space-y-4">
+                            <div class="text-blue-600 text-[10px] font-black uppercase tracking-[0.4em]">National Momentum</div>
+                            <h3 class="text-5xl font-black text-slate-900 uppercase tracking-tighter italic">Indian Market</h3>
                         </div>
-                        <h3 class="text-2xl font-bold text-slate-900 uppercase tracking-tight">Indian Market</h3>
+                        
+                        <div class="p-12 bg-blue-50 border-l-8 border-blue-600 shadow-sm text-right space-y-6">
+                            <p class="text-[9px] font-black text-blue-600 uppercase tracking-[0.4em] italic">Export Value</p>
+                            <p class="text-4xl font-black text-slate-950 uppercase italic leading-tight tracking-tighter">USD 5B+ Annually</p>
+                            <p class="text-[12px] font-black text-slate-500 uppercase tracking-widest italic">Global Export Rank: Top 2</p>
+                        </div>
+
+                        <div class="space-y-8">
+                            <h4 class="text-[9px] font-black text-slate-400 uppercase tracking-[0.4em]">Artisan Hubs</h4>
+                            <div class="grid grid-cols-3 gap-px bg-slate-200 border border-slate-200 shadow-sm">
+                                @foreach(['Jaipur', 'Moradabad', 'Saharanpur', 'Kutch', 'Kolkata', 'Kashmir'] as $city)
+                                    <div class="p-6 bg-white flex flex-col items-center justify-center gap-4 group/item hover:bg-slate-950 transition-all duration-500 text-center">
+                                        <div class="w-1.5 h-1.5 bg-blue-600 group-hover/item:scale-150 transition-transform"></div>
+                                        <span class="text-[9px] font-black uppercase text-slate-600 group-hover/item:text-white tracking-[0.1em] leading-tight">{{ $city }}</span>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-blue-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110">70L+</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">Active Artisans</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-blue-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">12%+</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">India CAGR</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-blue-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">7K+</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">Organized Exporters</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-blue-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">TOP 2</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">Global Export Rank</p>
+                </div>
+            </div>
+
+            <!-- Opportunities & Innovation -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
+                <div class="p-24 bg-white space-y-16">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Growth Perspectives</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">Artisan <br><span class="text-blue-600">Opportunities.</span></h2>
+                        <div class="accent-line bg-blue-600"></div>
                     </div>
                     
-                    <div class="grid grid-cols-1 gap-4 mb-8">
-                        <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm flex items-center justify-between">
-                            <div>
-                                <p class="text-[10px] text-slate-400 uppercase font-bold tracking-tight">Annual Export Value</p>
-                                <p class="text-3xl font-black text-blue-700">USD 5B+</p>
-                            </div>
-                            <div class="p-4 bg-blue-50 text-blue-600 rounded-full">
-                                <i class="fa-solid fa-ship text-2xl"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h4 class="font-bold text-xs text-slate-400 uppercase tracking-widest mb-4">Major Artisan Hubs</h4>
-                    <div class="grid grid-cols-2 gap-2">
-                        @foreach(['Jaipur', 'Moradabad', 'Saharanpur', 'Kutch', 'Kolkata', 'Kashmir'] as $hub)
-                            <div class="px-3 py-2 bg-white border border-slate-100 text-slate-600 text-[10px] font-black rounded-lg uppercase text-center">
-                                {{ $hub }}
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- STATS CARDS -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-blue-200 transition-all duration-300 text-center">
-                    <div class="mb-2 text-blue-600 text-3xl font-black group-hover:scale-110 transition-transform">70L+</div>
-                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Active Artisans</div>
-                </div>
-                <div class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-blue-200 transition-all duration-300 text-center">
-                    <div class="mb-2 text-blue-600 text-3xl font-black group-hover:scale-110 transition-transform">12%+</div>
-                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">India CAGR</div>
-                </div>
-                <div class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-blue-200 transition-all duration-300 text-center">
-                    <div class="mb-2 text-blue-600 text-3xl font-black group-hover:scale-110 transition-transform">7000+</div>
-                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Organized Exporters</div>
-                </div>
-                <div class="group p-6 bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-blue-200 transition-all duration-300 text-center">
-                    <div class="mb-2 text-blue-600 text-3xl font-black group-hover:scale-110 transition-transform">TOP 2</div>
-                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Global Export Rank</div>
-                </div>
-            </div>
-
-            <!-- OPPORTUNITIES -->
-            <div class="grid md:grid-cols-2 gap-12 items-center pt-8">
-                <div class="order-2 md:order-1 relative group">
-                    <img src="{{ asset('images/sectors/handicraft-details.jpg') }}" alt="Handicraft Opportunities"
-                        class="w-full h-[450px] object-cover rounded-3xl shadow-xl">
-                    <div class="absolute bottom-6 left-6 right-6 p-6 bg-white/90 backdrop-blur shadow-2xl rounded-2xl border-l-4 border-blue-600">
-                        <p class="text-xs font-black text-blue-600 uppercase mb-1">Artisan Luxury</p>
-                        <p class="text-slate-800 text-sm leading-relaxed">Merging traditional techniques with modern high-end aesthetics is creating a new multi-billion dollar niche.</p>
-                    </div>
-                </div>
-
-                <div class="order-1 md:order-2 space-y-8">
-                    <h2 class="text-3xl font-extrabold text-slate-900 uppercase tracking-tight">Growth Opportunities</h2>
-                    <div class="grid gap-3">
+                    <div class="grid grid-cols-1 gap-4">
                         @php
                             $items = [
                                 ['icon' => 'couch', 'title' => 'Premium Home Décor Products'],
@@ -152,31 +175,54 @@
                             ];
                         @endphp
                         @foreach($items as $i)
-                        <div class="flex items-center gap-4 p-4 rounded-xl hover:bg-blue-50 border border-transparent hover:border-blue-100 transition-all group">
-                            <div class="w-10 h-10 flex items-center justify-center bg-blue-100 text-blue-600 rounded-lg group-hover:bg-blue-600 group-hover:text-white transition-all text-lg">
-                                <i class="fa-solid fa-{{ $i['icon'] }}"></i>
+                        <div class="flex items-center gap-10 p-10 bg-slate-50 group/opp hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-1 h-full bg-blue-600 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                            <div class="w-16 h-16 border border-slate-200 flex items-center justify-center text-blue-600 group-hover/opp:bg-blue-600 group-hover/opp:text-white transition-all duration-500 shadow-sm">
+                                <i class="fa-solid fa-{{ $i['icon'] }} text-2xl"></i>
                             </div>
-                            <span class="font-bold text-slate-700 text-lg group-hover:text-blue-700 transition-colors uppercase italic tracking-tight">{{ $i['title'] }}</span>
+                            <span class="text-xl font-black uppercase text-slate-700 tracking-[0.15em] group-hover/opp:text-white transition-colors leading-tight italic">{{ $i['title'] }}</span>
                         </div>
                         @endforeach
                     </div>
                 </div>
+
+                <div class="p-24 bg-slate-950 text-white space-y-12 relative overflow-hidden group border-l border-slate-200">
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(37,99,235,0.05),transparent)]"></div>
+                    <div class="relative z-10 space-y-16">
+                        <div class="space-y-4">
+                            <div class="text-blue-400 text-[10px] font-black uppercase tracking-[0.4em]">Future Outlook</div>
+                            <h3 class="text-5xl font-black text-white uppercase tracking-tighter italic">Creative Economy</h3>
+                        </div>
+                        <p class="text-2xl text-slate-400 font-medium italic border-l-4 border-blue-600/30 pl-10 leading-relaxed uppercase tracking-tighter">
+                            Merging traditional techniques with modern high-end aesthetics is creating a new multi-billion dollar niche.
+                        </p>
+                        <div class="flex flex-col md:flex-row gap-4 mt-12">
+                             <a href="{{ route('join.index') }}" class="btn-sharp px-10 !border-white/10 hover:!bg-blue-600">
+                                Support Artisans
+                             </a>
+                             <a href="{{ route('join.index') }}" class="btn-sharp px-10 !border-white/10 hover:!bg-white hover:!text-slate-950">
+                                Partnership
+                             </a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- CONCLUSION (CTA) -->
-            <div class="relative bg-slate-900 text-white p-12 md:p-16 rounded-3xl text-center shadow-2xl overflow-hidden border-b-4 border-blue-600">
-                <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.05),transparent)]"></div>
-                <div class="relative z-10">
-                    <h3 class="text-3xl font-bold mb-6 uppercase tracking-tight leading-none">Preserve the Past. Build the Future.</h3>
-                    <p class="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed mb-10 uppercase font-black tracking-tighter">
+            <!-- Conclusion CTA -->
+            <div class="relative p-24 lg:p-32 bg-slate-950 overflow-hidden text-center shadow-3xl group">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(37,99,235,0.2),transparent)]"></div>
+                <div class="relative z-10 space-y-16">
+                    <h3 class="text-5xl md:text-[8rem] font-black text-white uppercase tracking-tighter leading-[0.85]">
+                        Artisan <br><span class="text-blue-600">Preservation.</span>
+                    </h3>
+                    <p class="text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium italic border-l-4 border-blue-600 pl-10 md:text-center mx-auto uppercase tracking-tighter">
                         World Grexpo empowers artisans to transition from local craftsmen to international creative entrepreneurs.
                     </p>
-                    <div class="flex flex-col md:flex-row items-center justify-center gap-4">
-                        <a href="" class="w-full md:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 bg-blue-600 text-white font-black uppercase tracking-widest rounded-full hover:bg-white hover:text-blue-900 transition-all duration-300 shadow-xl group">
-                            Support Local Artisans <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
-                        </a>
-                        <a href="{{ route('join.index') }}" class="w-full md:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 border border-white/20 text-white font-black uppercase tracking-widest rounded-full hover:bg-white/10 transition-all">
-                            Apply for Partnership
+                    <div class="flex justify-center">
+                        <a href="{{ route('join.index') }}" 
+                            class="btn-sharp px-16 group !border-blue-600/30 hover:!bg-blue-600">
+                            Support Local Artisans 
+                            <i class="fa-solid fa-arrow-right-long ml-6 group-hover:translate-x-4 transition-transform"></i>
                         </a>
                     </div>
                 </div>

@@ -10,7 +10,6 @@
 
     @stack('meta')
 
-
     <!-- DNS Prefetch & Preconnect for speed -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
@@ -45,99 +44,46 @@
 
     <!-- Tailwind Vite Directives & App JS (includes Alpine.js + Turbo) -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-    <!-- Google Analytics (GA4) — async, non-blocking -->
-    <!-- @if(config('services.google.analytics_id'))
-        <script async
-            src="https://www.googletagmanager.com/gtag/js?id={{ config('services.google.analytics_id') }}"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
-            gtag('config', '{{ config('services.google.analytics_id') }}');
-        </script>
-    @endif
-    <script type="text/javascript">
-        (function (c, l, a, r, i, t, y) {
-            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-        })(window, document, "clarity", "script", "wk5b6320u4");
-    </script>
-
-    <script
-        id="mcjs">!function (c, h, i, m, p) { m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p) }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/bfa5e1a8b8328405286aaebf5/35d901f961084419576fcf66c.js");</script> -->
 </head>
 
 <body class="font-sans text-gray-800 bg-white antialiased">
 
-    <!-- Header Navigation
-    <div class="bg-brand-light hidden md:block">
-        <div class="flex py-1.5 container items-center justify-between">
-            <div class="flex items-center gap-5">
-                    @if($site['phone_1'] ?? false)
-                        <a href="tel:{{ $site['phone_1'] }}" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                            <i class="fa-solid fa-phone text-brand-primary text-xs"></i>
-                            <span class="text-brand-primary text-xs font-medium">{{ $site['phone_1'] }}</span>
-                        </a>
-                    @endif
-                    @if($site['email_1'] ?? false)
-                        <a href="mailto:{{ $site['email_1'] }}" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                            <i class="fa-solid fa-envelope text-brand-primary text-xs"></i>
-                            <span class="text-brand-primary text-xs font-medium">{{ $site['email_1'] }}</span>
-                        </a>
-                    @endif
+    <!-- Top Bar -->
+    <div class="bg-brand-primary text-white py-2 hidden md:block">
+        <div class="container flex justify-between items-center">
+            <div class="flex items-center gap-8">
+                @if($site['phone_1'] ?? false)
+                    <a href="tel:{{ $site['phone_1'] }}" class="flex items-center gap-2 hover:text-brand-accent transition-colors text-[11px] font-bold tracking-widest uppercase">
+                        <i class="fa-solid fa-phone text-brand-accent"></i>
+                        {{ $site['phone_1'] }}
+                    </a>
+                @endif
+                @if($site['email_1'] ?? false)
+                    <a href="mailto:{{ $site['email_1'] }}" class="flex items-center gap-2 hover:text-brand-accent transition-colors text-[11px] font-bold tracking-widest uppercase">
+                        <i class="fa-solid fa-envelope text-brand-accent"></i>
+                        {{ $site['email_1'] }}
+                    </a>
+                @endif
             </div>
-            <div class="flex items-center gap-3">
-                @if($site['facebook_url'] ?? false)
-                    <a href="{{ $site['facebook_url'] }}" target="_blank"
-                        class="text-brand-primary hover:text-brand-accent transition-colors duration-300">
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </a>
-                @endif
-                @if($site['twitter_url'] ?? false)
-                    <a href="{{ $site['twitter_url'] }}" target="_blank"
-                        class="text-brand-primary hover:text-brand-accent transition-colors duration-300">
-                        <i class="fa-brands fa-twitter"></i>
-                    </a>
-                @endif
-                @if($site['instagram_url'] ?? false)
-                    <a href="{{ $site['instagram_url'] }}" target="_blank"
-                        class="text-brand-primary hover:text-brand-accent transition-colors duration-300">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                @endif
-                @if($site['linkedin_url'] ?? false)
-                    <a href="{{ $site['linkedin_url'] }}" target="_blank"
-                        class="text-brand-primary hover:text-brand-accent transition-colors duration-300">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
-                @endif
-                @if($site['youtube_url'] ?? false)
-                    <a href="{{ $site['youtube_url'] }}" target="_blank"
-                        class="text-brand-primary hover:text-brand-accent transition-colors duration-300">
-                        <i class="fa-brands fa-youtube"></i>
-                    </a>
-                @endif
-                @if($site['whatsapp_url'] ?? false)
-                    <a href="{{ $site['whatsapp_url'] }}" target="_blank"
-                        class="text-brand-primary hover:text-brand-accent transition-colors duration-300">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </a>
-                @endif
+            <div class="flex items-center gap-4">
+                @foreach(['facebook' => 'facebook-f', 'twitter' => 'x-twitter', 'linkedin' => 'linkedin-in', 'instagram' => 'instagram', 'youtube' => 'youtube'] as $platform => $icon)
+                    @if($site[$platform . '_url'] ?? false)
+                        <a href="{{ $site[$platform . '_url'] }}" target="_blank" class="text-white hover:text-brand-accent transition-colors text-xs">
+                            <i class="fa-brands fa-{{ $icon }}"></i>
+                        </a>
+                    @endif
+                @endforeach
             </div>
         </div>
-    </div> -->
+    </div>
 
-    <header x-data="{ megaOpen: false, toggleMenu() { this.megaOpen = !this.megaOpen; } }"
-        class="sticky bg-white border-b border-slate-200 top-0 left-0 w-full z-50 transition-all duration-500">
+    <header x-data="{ megaOpen: false, mobileOpen: false }"
+        class="sticky top-0 left-0 w-full z-50 bg-white border-b border-slate-100 transition-all duration-300">
 
-        <div class="container flex justify-between items-center py-3">
-            <!-- Logo - ICON ONLY as requested -->
-            <a href="/" class="relative group flex items-center">
-                <img src="{{ asset('images/logo/logo.png') }}" alt="Logo" class="h-14 w-full shrink-0 object-contain">
-                <!-- Hidden label for accessibility -->
-                <!-- <span class="sr-only">World Grexpo Home</span> -->
+        <div class="container flex justify-between items-center py-4">
+            <!-- Logo -->
+            <a href="/" class="flex items-center">
+                <img src="{{ asset('images/logo/logo.png') }}" alt="Logo" class="h-12 md:h-16 w-auto object-contain">
             </a>
 
             @php
@@ -179,28 +125,24 @@
                     ['name' => 'GALLERY', 'route' => 'gallery', 'active' => 'gallery.*'],
                 ];
             @endphp
+
             <!-- Desktop Navigation -->
-            <nav class="hidden lg:flex items-center gap-4 xl:gap-6">
+            <nav class="hidden lg:flex items-center gap-8">
                 @foreach ($menu as $m)
                     @if(isset($m['sub_menu']))
-                        <div class="relative group/nav" @if(isset($m['mega'])) @mouseenter="megaOpen = true"
-                        @mouseleave="megaOpen = false" @endif>
+                        <div class="relative group" @if(isset($m['mega'])) @mouseenter="megaOpen = true" @mouseleave="megaOpen = false" @endif>
                             <button
-                                class="flex items-center gap-1.5 text-sm font-bold tracking-tight transition-colors {{ request()->routeIs($m['active']) ? 'text-brand-primary' : 'text-slate-700 hover:text-brand-primary'}}">
+                                class="flex items-center gap-2 text-[12px] font-black tracking-[0.15em] transition-colors {{ request()->routeIs($m['active']) ? 'text-brand-primary' : 'text-slate-900 hover:text-brand-primary'}}">
                                 {{ $m['name'] }}
-                                <i
-                                    class="fa-solid fa-chevron-down text-[10px] opacity-50 group-hover/nav:rotate-180 transition-transform duration-300"></i>
+                                <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300 group-hover:rotate-180"></i>
                             </button>
 
                             @if(!isset($m['mega']))
-                                <div
-                                    class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover/nav:opacity-100 group-hover/nav:visible transition-all duration-300 translate-y-2 group-hover/nav:translate-y-0 z-50">
-                                    <div class="w-64 bg-white rounded shadow-2xl border border-slate-200 overflow-hidden p-2">
+                                <div class="absolute top-full left-0 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                    <div class="w-72 bg-white border border-slate-200 shadow-xl p-4 flex flex-col gap-1">
                                         @foreach($m['sub_menu'] as $sub)
                                             <a href="{{ isset($sub['slug']) ? route($sub['route'], $sub['slug']) : route($sub['route']) }}"
-                                                class="flex items-center gap-3 px-4 py-3 rounded text-[13px] font-semibold text-slate-700 hover:bg-slate-100 hover:text-brand-primary transition-all">
-                                                <span
-                                                    class="w-2 h-2 rounded-full bg-brand-primary/50 group-hover:bg-brand-primary"></span>
+                                                class="px-4 py-3 text-[11px] font-bold uppercase tracking-wider text-slate-700 hover:bg-brand-primary hover:text-white transition-all">
                                                 {{ $sub['name'] ?? $sub['title'] }}
                                             </a>
                                         @endforeach
@@ -210,7 +152,7 @@
                         </div>
                     @else
                         <a href="{{ route($m['route']) }}"
-                            class="text-sm font-bold tracking-tight transition-colors {{ request()->routeIs($m['active']) ? 'text-brand-primary' : 'text-slate-700 hover:text-brand-primary' }}">
+                            class="text-[12px] font-black tracking-[0.15em] transition-colors {{ request()->routeIs($m['active']) ? 'text-brand-primary' : 'text-slate-900 hover:text-brand-primary' }}">
                             {{ $m['name'] }}
                         </a>
                     @endif
@@ -220,116 +162,97 @@
             <!-- Action Buttons -->
             <div class="flex items-center gap-4">
                 <a href="{{ !auth()->check() ? route('register') : route('dashboard') }}"
-                    class="hidden md:flex items-center justify-center rounded px-6 py-3 font-bold text-sm transition-all duration-300 bg-brand-primary text-white hover:bg-brand-primary-dark">
+                    class="hidden md:flex items-center justify-center bg-brand-primary text-white px-8 py-3.5 text-[11px] font-black uppercase tracking-widest hover:bg-brand-primary-dark transition-all">
                     {{ !auth()->check() ? 'Get Started' : 'Dashboard' }}
                 </a>
 
                 <!-- Mobile Menu Toggle -->
-                <button @click="mobileOpen = true" class="p-2.5 rounded-xl lg:hidden transition-colors"
-                    :class="scrolled ? 'bg-slate-100 text-slate-900' : 'bg-white/10 text-white backdrop-blur-md'">
+                <button @click="mobileOpen = true" class="lg:hidden p-3 bg-slate-50 text-slate-900">
                     <i class="fa-solid fa-bars-staggered text-xl"></i>
                 </button>
             </div>
         </div>
 
-        {{-- MEGA MENU - Modern Grid --}}
-        <div x-show="megaOpen" x-transition:enter="transition ease-out duration-300"
-            x-transition:enter-start="opacity-0 -translate-y-4" x-transition:enter-end="opacity-100 translate-y-0"
-            x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0"
-            x-transition:leave-end="opacity-0 -translate-y-4"
-            class="absolute top-full left-0 w-full bg-white border-t border-slate-200 h-[75vh] shadow-2xl z-40 overflow-scroll"
+        {{-- MEGA MENU --}}
+        <div x-show="megaOpen" x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 -translate-y-2"
+            class="absolute top-full left-0 w-full bg-white h-[75vh] overflow-scroll border-t border-slate-200 shadow-2xl z-40"
             style="display: none;" @mouseenter="megaOpen = true" @mouseleave="megaOpen = false">
-            <div class="container py-6">
-                <div class="flex flex-col gap-6">
-                    <div
-                        class="bg-brand-primary/5 flex items-center justify-between p-4 rounded h-full border border-brand-primary/20">
-                        <div class="flex gap-4 items-center">
-                            <div
-                                class="w-12 h-12 bg-brand-primary text-white rounded flex items-center justify-center">
-                                <i class="fa-solid fa-industry text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold text-slate-900 mb-1 uppercase tracking-tight">Industry
-                                    Sectors
-                                </h3>
-                                <p class="text-sm text-slate-500 leading-relaxed">Explore the diverse sectors powering
-                                    the global economy and connect with industry leaders.</p>
-                            </div>
+            <div class="container py-12">
+                <div class="grid grid-cols-12 gap-12">
+                    <div class="col-span-4 border-r border-slate-100 pr-12">
+                        <div class="bg-slate-50 p-8">
+                            <h3 class="text-2xl font-black text-slate-900 mb-4 uppercase tracking-tighter">Industry Sectors</h3>
+                            <p class="text-sm text-slate-500 leading-relaxed mb-6">Explore the diverse sectors powering the global economy and connect with industry leaders through our specialized network.</p>
+                            <a href="{{ route('sectors.index') }}" class="inline-flex items-center gap-3 text-xs font-black text-brand-primary uppercase tracking-widest hover:gap-5 transition-all">
+                                View All Sectors <i class="fa-solid fa-arrow-right"></i>
+                            </a>
                         </div>
-                        <a href="{{ route('sectors.index') }}"
-                            class="inline-flex items-center gap-2 text-sm font-bold text-brand-primary hover:gap-3 transition-all">
-                            View All Sectors <i class="fa-solid fa-arrow-right"></i>
-                        </a>
                     </div>
-                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-2">
+                    <div class="col-span-8 columns-3 gap-x-12 space-y-1">
                         @foreach(config('sectors.sectors') as $sector)
                             <a href="{{ route('sectors.show', $sector['slug']) }}"
-                                class="group flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-brand-primary transition-all">
-                                <span
-                                    class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-[10px] font-black group-hover:bg-brand-primary group-hover:text-white transition-colors">
+                                class="group flex items-center gap-4 py-2 border-b border-transparent hover:border-brand-primary transition-all break-inside-avoid">
+                                <span class="text-[10px] font-black text-slate-300 group-hover:text-brand-primary transition-colors">
                                     {{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}
                                 </span>
-                                {{ $sector['title'] }}
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-600 group-hover:text-slate-900 transition-colors">
+                                    {{ $sector['title'] }}
+                                </span>
                             </a>
                         @endforeach
                     </div>
                 </div>
             </div>
         </div>
-        </div>
     </header>
 
     <!-- Mobile Slide-out Menu -->
-    <div x-show="mobileOpen" class="fixed inset-0 z-100 lg:hidden" style="display: none;">
+    <div x-show="mobileOpen" class="fixed inset-0 z-[100] lg:hidden" style="display: none;">
         <!-- Overlay -->
         <div @click="mobileOpen = false" x-show="mobileOpen" x-transition:enter="transition ease-out duration-300"
             x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
             x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100"
-            x-transition:leave-end="opacity-0" class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"></div>
+            x-transition:leave-end="opacity-0" class="absolute inset-0 bg-slate-900/60"></div>
 
         <!-- Menu Content -->
-        <div x-show="mobileOpen" x-transition:enter="transition ease-out duration-500"
+        <div x-show="mobileOpen" x-transition:enter="transition ease-out duration-300"
             x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"
-            x-transition:leave="transition ease-in duration-400" x-transition:leave-start="translate-x-0"
+            x-transition:leave="transition ease-in duration-300" x-transition:leave-start="translate-x-0"
             x-transition:leave-end="translate-x-full"
-            class="absolute top-0 right-0 w-[85%] max-w-md h-full bg-white shadow-2xl flex flex-col">
+            class="absolute top-0 right-0 w-[85%] max-w-sm h-full bg-white shadow-2xl flex flex-col">
 
             <!-- Mobile Header -->
             <div class="p-6 flex justify-between items-center border-b border-slate-100">
-                <div class="h-10 w-10 bg-brand-primary p-1 rounded-lg">
-                    <img src="{{ asset('images/logo/logo.png') }}" alt="Logo"
-                        class="h-full w-full object-contain brightness-0 invert">
-                </div>
-                <button @click="mobileOpen = false"
-                    class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 text-slate-600 hover:bg-red-50 hover:text-red-600 transition-colors">
-                    <i class="fa-solid fa-xmark text-xl"></i>
+                <img src="{{ asset('images/logo/logo.png') }}" alt="Logo" class="h-10 w-auto">
+                <button @click="mobileOpen = false" class="text-slate-900">
+                    <i class="fa-solid fa-xmark text-2xl"></i>
                 </button>
             </div>
 
             <!-- Scrollable Links -->
             <div class="flex-1 overflow-y-auto p-6 space-y-2">
-                @foreach ($menu as $mIndex => $m)
+                @foreach ($menu as $m)
                     <div x-data="{ open: false }">
                         @if(isset($m['sub_menu']))
                             <button @click="open = !open"
-                                class="flex justify-between items-center w-full p-4 rounded text-lg font-bold text-slate-800 hover:bg-slate-50">
+                                class="flex justify-between items-center w-full py-4 text-sm font-black uppercase tracking-widest text-slate-900">
                                 {{ $m['name'] }}
-                                <i class="fa-solid fa-chevron-down text-xs transition-transform"
-                                    :class="open ? 'rotate-180' : ''"></i>
+                                <i class="fa-solid fa-chevron-down text-xs transition-transform" :class="open ? 'rotate-180' : ''"></i>
                             </button>
-                            <div x-show="open" x-collapse>
-                                <div class="pl-4 py-2 space-y-1">
-                                    @foreach($m['sub_menu'] as $sub)
-                                        <a href="{{ isset($sub['slug']) ? route($sub['route'], $sub['slug']) : route($sub['route']) }}"
-                                            class="block p-3 rounded-xl text-[15px] font-semibold text-slate-600 hover:bg-slate-50 hover:text-brand-primary">
-                                            {{ $sub['name'] ?? $sub['title'] }}
-                                        </a>
-                                    @endforeach
-                                </div>
+                            <div x-show="open" class="pl-4 space-y-4 pb-4">
+                                @foreach($m['sub_menu'] as $sub)
+                                    <a href="{{ isset($sub['slug']) ? route($sub['route'], $sub['slug']) : route($sub['route']) }}"
+                                        class="block text-[11px] font-bold uppercase tracking-wider text-slate-500">
+                                        {{ $sub['name'] ?? $sub['title'] }}
+                                    </a>
+                                @endforeach
                             </div>
                         @else
                             <a href="{{ route($m['route']) }}"
-                                class="block p-4 rounded text-lg font-bold text-slate-800 hover:bg-slate-50">
+                                class="block py-4 text-sm font-black uppercase tracking-widest text-slate-900">
                                 {{ $m['name'] }}
                             </a>
                         @endif
@@ -338,18 +261,11 @@
             </div>
 
             <!-- Mobile Footer CTA -->
-            <div class="p-6 border-t border-slate-100 bg-slate-50/50">
-                @if (!auth()->check())
-                    <a href="{{ route('register') }}"
-                        class="block w-full text-center bg-brand-primary text-white py-4 rounded font-bold shadow-lg shadow-brand-primary/20">
-                        Get Started Today
-                    </a>
-                @else
-                    <a href="{{ route('dashboard') }}"
-                        class="block w-full text-center bg-brand-primary text-white py-4 rounded font-bold shadow-lg shadow-brand-primary/20">
-                        My Account Dashboard
-                    </a>
-                @endif
+            <div class="p-6 border-t border-slate-100">
+                <a href="{{ !auth()->check() ? route('register') : route('dashboard') }}"
+                    class="block w-full text-center bg-brand-primary text-white py-4 text-xs font-black uppercase tracking-widest">
+                    {{ !auth()->check() ? 'Get Started' : 'Dashboard' }}
+                </a>
             </div>
         </div>
     </div>
@@ -359,19 +275,17 @@
         @yield('content')
     </main>
 
-    <!-- Premium Footer -->
-    <footer class="bg-brand-primary-dark text-white pt-16 overflow-hidden relative">
-
+    <!-- Industrial Footer -->
+    <footer class="bg-white border-t border-slate-200 pt-24 pb-12 overflow-hidden relative">
         <div class="container relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 pb-20 border-b border-white/5">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 pb-20 border-b border-slate-100">
                 <!-- Brand Story -->
-                <div class="lg:col-span-4">
-                    <div class="h-24 bg-white p-2 rounded mb-8 border border-white/10">
-                        <img src="{{ asset('images/logo/logo.png') }}" alt="Logo" class="h-full shrink-0">
-                    </div>
-                    <h2 class="text-2xl font-bold mb-6 uppercase tracking-tighter">Connecting Global <br><span
-                            class="text-brand-accent">Excellence</span></h2>
-                    <p class="text-slate-400 leading-relaxed mb-10 text-sm max-w-sm">
+                <div class="lg:col-span-5">
+                    <img src="{{ asset('images/logo/logo.png') }}" alt="Logo" class="h-16 w-auto mb-10">
+                    <h2 class="text-3xl font-black mb-6 uppercase tracking-tighter leading-tight text-slate-900">
+                        Bridging Global <br><span class="text-brand-primary">Industrial Excellence</span>
+                    </h2>
+                    <p class="text-slate-500 leading-relaxed mb-10 text-sm max-w-md">
                         World Grexpo is the premier global business ecosystem bridging the gap between innovative
                         enterprises and industrial giants to redefine the future of trade.
                     </p>
@@ -379,7 +293,7 @@
                         @foreach(['facebook' => 'facebook-f', 'twitter' => 'x-twitter', 'linkedin' => 'linkedin-in', 'instagram' => 'instagram', 'youtube' => 'youtube'] as $platform => $icon)
                             @if($site[$platform . '_url'] ?? false)
                                 <a href="{{ $site[$platform . '_url'] }}" target="_blank"
-                                    class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all duration-300">
+                                    class="w-12 h-12 border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all duration-300">
                                     <i class="fa-brands fa-{{ $icon }}"></i>
                                 </a>
                             @endif
@@ -389,70 +303,60 @@
 
                 <!-- Footer Navigation Links -->
                 <div class="lg:col-span-2">
-                    <h3 class="text-xs font-black uppercase tracking-[0.2em] text-white/80 mb-8">Platform</h3>
+                    <h3 class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 mb-8">Platform</h3>
                     <ul class="space-y-4">
                         @foreach($menu as $m)
                             @if(!isset($m['sub_menu']) && $loop->index < 5)
                                 <li><a href="{{ route($m['route']) }}"
-                                        class="text-slate-400 hover:text-brand-accent text-[13px] font-semibold transition-colors">{{ $m['name'] }}</a>
+                                        class="text-slate-600 hover:text-brand-primary text-[11px] font-bold uppercase tracking-wider transition-colors">{{ $m['name'] }}</a>
                                 </li>
                             @endif
                         @endforeach
                         <li><a href="{{ route('join.index') }}"
-                                class="text-slate-400 hover:text-brand-accent text-[13px] font-semibold transition-colors">Participate</a>
+                                class="text-slate-600 hover:text-brand-primary text-[11px] font-bold uppercase tracking-wider transition-colors">Participate</a>
                         </li>
-                        <li><a href="{{ route('about.chairman') }}"
-                                class="text-slate-400 hover:text-brand-accent text-[13px] font-semibold transition-colors">Chairman's
-                                Message</a></li>
                     </ul>
                 </div>
 
                 <div class="lg:col-span-2">
-                    <h3 class="text-xs font-black uppercase tracking-[0.2em] text-white/80 mb-8">Quick Access</h3>
+                    <h3 class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 mb-8">Quick Access</h3>
                     <ul class="space-y-4">
                         <li><a href="{{ route('sectors.index') }}"
-                                class="text-slate-400 hover:text-brand-accent text-[13px] font-semibold transition-colors">Industry
-                                Sectors</a></li>
+                                class="text-slate-600 hover:text-brand-primary text-[11px] font-bold uppercase tracking-wider transition-colors">Sectors</a></li>
                         <li><a href="{{ route('events.index') }}"
-                                class="text-slate-400 hover:text-brand-accent text-[13px] font-semibold transition-colors">Global
-                                Events</a></li>
+                                class="text-slate-600 hover:text-brand-primary text-[11px] font-bold uppercase tracking-wider transition-colors">Global Events</a></li>
                         <li><a href="{{ route('blog.index') }}"
-                                class="text-slate-400 hover:text-brand-accent text-[13px] font-semibold transition-colors">Insights
-                                & News</a></li>
-                        <li><a href="{{ route('register') }}"
-                                class="text-slate-400 hover:text-brand-accent text-[13px] font-semibold transition-colors">Join
-                                Network</a></li>
+                                class="text-slate-600 hover:text-brand-primary text-[11px] font-bold uppercase tracking-wider transition-colors">Insights</a></li>
+                        <li><a href="{{ route('privacy') }}"
+                                class="text-slate-600 hover:text-brand-primary text-[11px] font-bold uppercase tracking-wider transition-colors">Privacy</a></li>
                     </ul>
                 </div>
 
-                <!-- Contact & Support -->
-                <div class="lg:col-span-4">
-                    <h3 class="text-xs font-black uppercase tracking-[0.2em] text-white/80 mb-8">Connect With Us</h3>
-                    <div class="space-y-6">
+                <!-- Contact Info -->
+                <div class="lg:col-span-3">
+                    <h3 class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 mb-8">Headquarters</h3>
+                    <div class="space-y-8">
                         @if($site['address'] ?? false)
-                            <div class="flex gap-5 group">
-                                <div
-                                    class="w-12 h-12 rounded bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:bg-brand-primary/20 group-hover:border-brand-primary/30 transition-all duration-500">
-                                    <i class="fa-solid fa-location-dot text-brand-accent"></i>
-                                </div>
-                                <p class="text-slate-400 text-sm leading-relaxed">{!! nl2br(e($site['address'])) !!}</p>
+                            <div class="flex gap-4">
+                                <i class="fa-solid fa-location-dot text-brand-primary mt-1"></i>
+                                <p class="text-slate-500 text-xs leading-relaxed font-bold uppercase tracking-wider">{!! nl2br(e($site['address'])) !!}</p>
                             </div>
                         @endif
-
-                        <div class="grid grid-cols-1 gap-4">
+                        <div class="space-y-4">
                             @if($site['phone_1'] ?? false)
-                                <a href="tel:{{ $site['phone_1'] }}"
-                                    class="flex items-center gap-4 p-3 rounded bg-white/5 border border-white/10 hover:bg-white/10 transition-all">
-                                    <i class="fa-solid fa-phone text-brand-accent text-sm"></i>
-                                    <span class="text-slate-300 text-[13px] font-medium">{{ $site['phone_1'] }}</span>
+                                <a href="tel:{{ $site['phone_1'] }}" class="flex items-center gap-4 text-slate-900 group">
+                                    <div class="w-10 h-10 bg-slate-50 flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-all">
+                                        <i class="fa-solid fa-phone text-xs"></i>
+                                    </div>
+                                    <span class="text-[11px] font-black tracking-widest uppercase">{{ $site['phone_1'] }}</span>
                                 </a>
                             @endif
                             @if($site['email_1'] ?? false)
-                                <a href="mailto:{{ $site['email_1'] }}"
-                                    class="flex items-center gap-4 p-3 rounded bg-white/5 border border-white/10 hover:bg-white/10 transition-all">
-                                    <i class="fa-solid fa-envelope text-brand-accent text-sm"></i>
-                                    <span
-                                        class="text-slate-300 text-[13px] font-medium truncate">{{ $site['email_1'] }}</span>
+                                <a href="mailto:{{ $site['email_1'] }}" class="flex items-center gap-4 text-slate-900 group">
+                                    <div class="w-10 h-10 bg-slate-50 flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-all">
+                                        <i class="fa-solid fa-envelope text-xs"></i>
+                                    </div>
+                                    <span class="text-[11px] font-black tracking-widest uppercase">{{ $site['email_1'] }}</span>
                                 </a>
                             @endif
                         </div>
@@ -461,53 +365,45 @@
             </div>
 
             <!-- Bottom Copyright -->
-            <div class="py-10 flex flex-col md:flex-row justify-between items-center gap-6">
-                <p class="text-slate-500 text-[13px] font-medium">
-                    &copy; {{ date('Y') }} World Grexpo Global Network. Crafted for Industrial Evolution.
+            <div class="pt-12 flex flex-col md:row justify-between items-center gap-6">
+                <p class="text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em]">
+                    &copy; {{ date('Y') }} World Grexpo Global Network. All Rights Reserved.
                 </p>
-                <div class="flex gap-8">
-                    <a href="{{ route('privacy') }}"
-                        class="text-slate-500 hover:text-white text-[13px] font-semibold transition-colors">Privacy
-                        Policy</a>
-                    <a href="{{ route('terms') }}"
-                        class="text-slate-500 hover:text-white text-[13px] font-semibold transition-colors">Terms of
-                        Service</a>
+                <div class="flex gap-12">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2 h-2 bg-brand-accent"></span>
+                        <span class="text-[10px] font-black uppercase tracking-widest text-slate-900">Industrial Standards</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="w-2 h-2 bg-brand-primary"></span>
+                        <span class="text-[10px] font-black uppercase tracking-widest text-slate-900">Global Connectivity</span>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Floating Quick Help -->
-    <div x-data="{ open: false }" class="fixed bottom-6 right-6 z-[90]">
-        <div x-show="open" x-transition x-cloak class="absolute bottom-full right-0 mb-4 flex flex-col gap-3 items-end">
+    <!-- Sharp Quick Help -->
+    <div x-data="{ open: false }" class="fixed bottom-8 right-8 z-[90]">
+        <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0" x-cloak class="absolute bottom-full right-0 mb-6 flex flex-col gap-2 items-end">
             @if($site['whatsapp_url'] ?? false)
-                <a href="{{ $site['whatsapp_url'] }}" target="_blank" class="flex items-center gap-3 group">
-                    <span
-                        class="px-3 py-1.5 rounded-xl bg-white text-slate-900 text-[11px] font-bold shadow-2xl opacity-0 group-hover:opacity-100 transition-all">WhatsApp</span>
-                    <div
-                        class="w-12 h-12 rounded bg-green-500 text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
-                        <i class="fa-brands fa-whatsapp text-xl"></i>
-                    </div>
+                <a href="{{ $site['whatsapp_url'] }}" target="_blank" class="flex items-center gap-4 bg-white border border-slate-200 p-4 hover:border-brand-primary transition-all group shadow-2xl">
+                    <span class="text-[10px] font-black uppercase tracking-widest text-slate-900">WhatsApp</span>
+                    <i class="fa-brands fa-whatsapp text-green-600 text-xl"></i>
                 </a>
             @endif
             @if($site['email_1'] ?? false)
-                <a href="mailto:{{ $site['email_1'] }}" class="flex items-center gap-3 group">
-                    <span
-                        class="px-3 py-1.5 rounded-xl bg-white text-slate-900 text-[11px] font-bold shadow-2xl opacity-0 group-hover:opacity-100 transition-all">Email
-                        Us</span>
-                    <div
-                        class="w-12 h-12 rounded bg-blue-500 text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-envelope text-lg"></i>
-                    </div>
+                <a href="mailto:{{ $site['email_1'] }}" class="flex items-center gap-4 bg-white border border-slate-200 p-4 hover:border-brand-primary transition-all group shadow-2xl">
+                    <span class="text-[10px] font-black uppercase tracking-widest text-slate-900">Support</span>
+                    <i class="fa-solid fa-envelope text-blue-600 text-xl"></i>
                 </a>
             @endif
         </div>
 
         <button @click="open = !open"
-            class="w-14 h-14 rounded bg-brand-primary text-white flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-all relative overflow-hidden group">
-            <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <i class="fa-solid fa-headset text-xl" x-show="!open"></i>
-            <i class="fa-solid fa-xmark text-xl" x-show="open"></i>
+            class="w-16 h-16 bg-brand-primary text-white flex items-center justify-center hover:bg-brand-primary-dark transition-all shadow-2xl group relative">
+            <div class="absolute inset-0 border-2 border-white/20 scale-90 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all"></div>
+            <i class="fa-solid fa-plus text-2xl transition-transform duration-300" :class="open ? 'rotate-45' : ''"></i>
         </button>
     </div>
 

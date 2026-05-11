@@ -4,345 +4,207 @@
 
 @section('content')
 
-    <!-- HERO -->
-    <section class="relative pt-32 pb-24 bg-slate-900 text-white overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-orange-900 via-slate-900 to-black"></div>
-        <div class="absolute inset-0 opacity-10"
-            style="background-image: url('{{ asset('images/sectors/tyre-rubber-recycling.jpg') }}'); background-size: cover; background-position: center;">
+    <!-- Architectural Hero -->
+    <section class="relative pt-64 pb-32 bg-slate-950 overflow-hidden border-b border-slate-900">
+        <!-- Visual Backdrop -->
+        <div class="absolute inset-0 opacity-20">
+            <img src="{{ asset('images/sectors/tyre-rubber-recycling.jpg') }}" class="w-full h-full object-cover grayscale">
         </div>
+        <div class="absolute inset-0 bg-linear-to-b from-slate-950 via-slate-950/90 to-slate-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(249,115,22,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        
+        <!-- Industrial Accents -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-orange-600 opacity-5 -skew-x-12 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-1/4 h-64 bg-orange-600 opacity-5 skew-x-12 -translate-x-1/2"></div>
 
-        <div class="container relative z-10 text-center">
-            <h1 class="text-4xl md:text-6xl font-black uppercase mb-4 tracking-wide">
-                Tyre & Rubber Recycling
+        <div class="container relative z-10 text-center space-y-12">
+            <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10">
+                <span class="w-2 h-2 bg-orange-400 animate-pulse"></span>
+                <span class="text-white text-[10px] font-black tracking-[0.4em] uppercase">Rubber Recovery Protocol</span>
+            </div>
+            <h1 class="text-6xl md:text-[9rem] font-black text-white leading-[0.85] tracking-tighter uppercase">
+                Tyre & <br>
+                <span class="text-orange-600">Rubber.</span>
             </h1>
-            <p class="text-lg md:text-xl text-orange-300 font-semibold mb-2">Turning Waste into Value</p>
-            <p class="text-slate-300 max-w-3xl mx-auto">
-                Collection, processing, recovery, and repurposing of used tyres and rubber waste into reusable raw materials, energy, and value-added products.
+            <p class="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium border-l-4 border-orange-600 pl-10 uppercase tracking-widest italic md:text-center mx-auto">
+                Turning waste into value through advanced collection, processing, and circular repurposing.
             </p>
         </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="py-16 bg-white">
-        <div class="container space-y-16">
+    <!-- Content Interface -->
+    <section class="py-32 bg-white relative">
+        <div class="container space-y-48">
 
-            <!-- INTRO -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl font-extrabold mb-4 text-slate-900">What is Tyre & Rubber Recycling?</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4">
-                        <strong>Tyre and Rubber Recycling</strong> refers to the collection, processing, recovery, and
-                        repurposing of used tyres and rubber waste into <strong>reusable raw materials, energy, and
-                        value-added products</strong>.
+            <!-- Executive Summary -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200">
+                <div class="p-16 lg:p-24 bg-white space-y-12">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Material Value Framework</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic">Waste to <br><span class="text-orange-600">Worth.</span></h2>
+                        <div class="accent-line bg-orange-600"></div>
+                    </div>
+                    
+                    <div class="space-y-8 text-2xl text-slate-500 font-medium leading-relaxed italic border-l-4 border-slate-100 pl-10">
+                        <p>
+                            <strong class="text-slate-900 font-black uppercase tracking-tight">Tyre and Rubber Recycling</strong> refers to the recovery and repurposing of used tyres into reusable raw materials and energy.
+                        </p>
+                        <p>
+                            The process prevents environmental pollution, recovers valuable rubber compounds, and supports circular economy initiatives across the automotive and industrial sectors.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-orange-600/10"></div>
+                    <div class="relative h-full overflow-hidden border-l border-slate-200 shadow-3xl">
+                        <img src="{{ asset('images/sectors/tyre-rubber-recycling.jpg') }}" alt="Tyre Recycling"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000">
+                    </div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <div class="bg-orange-600 text-white text-[10px] font-black px-6 py-2 uppercase tracking-[0.3em] shadow-2xl">
+                            Material Standard
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Global vs India Market -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
+                <!-- GLOBAL -->
+                <div class="p-16 lg:p-24 bg-slate-950 text-white relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-12 text-orange-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-earth-americas text-[12rem]"></i>
+                    </div>
+                    <div class="relative z-10 space-y-16">
+                        <div class="space-y-4">
+                            <div class="text-orange-400 text-[10px] font-black uppercase tracking-[0.4em]">Global Landscape</div>
+                            <h3 class="text-5xl font-black uppercase tracking-tighter italic">Global Market</h3>
+                        </div>
+                        
+                        <div class="space-y-12">
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Value (2025)</span>
+                                <span class="text-6xl font-black text-white tracking-tighter italic">$8B+</span>
+                            </div>
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Projected (2032)</span>
+                                <span class="text-6xl font-black text-white tracking-tighter italic">$12B+</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-8">
+                            <h4 class="text-[9px] font-black text-slate-500 uppercase tracking-[0.4em]">Growth Drivers</h4>
+                            <div class="grid grid-cols-2 gap-px bg-white/10 border border-white/10 shadow-2xl">
+                                @foreach(['Vehicle Ownership', 'Disposal Volume', 'Regulations', 'Circular Economy'] as $driver)
+                                    <div class="px-8 py-4 bg-slate-950 flex items-center gap-6 hover:bg-orange-600 hover:text-slate-950 transition-colors cursor-default group/item">
+                                        <i class="fa-solid fa-circle-check text-orange-600 group-hover/item:text-slate-950 transition-colors"></i>
+                                        <span class="text-[10px] font-black uppercase tracking-[0.1em] text-center leading-tight">{{ $driver }}</span>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INDIA -->
+                <div class="p-16 lg:p-24 bg-white relative overflow-hidden group border-l border-slate-200">
+                    <div class="absolute top-0 right-0 p-12 text-orange-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-industry text-[12rem]"></i>
+                    </div>
+                    <div class="relative z-10 space-y-16 text-right">
+                        <div class="space-y-4">
+                            <div class="text-orange-600 text-[10px] font-black uppercase tracking-[0.4em]">National Momentum</div>
+                            <h3 class="text-5xl font-black text-slate-900 uppercase tracking-tighter italic">Indian Market</h3>
+                        </div>
+                        
+                        <div class="p-12 bg-orange-50 border-l-8 border-orange-600 shadow-sm text-right space-y-6">
+                            <p class="text-[9px] font-black text-orange-600 uppercase tracking-[0.4em] italic">Market Forecast</p>
+                            <p class="text-4xl font-black text-slate-950 uppercase italic leading-tight tracking-tighter">₹25,000 Cr Target (2031)</p>
+                            <p class="text-[12px] font-black text-slate-500 uppercase tracking-widest italic">10-14% Annual CAGR Growth</p>
+                        </div>
+
+                        <div class="space-y-8">
+                            <h4 class="text-[9px] font-black text-slate-400 uppercase tracking-[0.4em]">Segment Highlights</h4>
+                            <div class="grid grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-sm">
+                                <div class="p-8 bg-white flex flex-col items-center justify-center gap-4 group/item hover:bg-slate-950 transition-all duration-500">
+                                    <span class="text-4xl font-black text-orange-600 group-hover:text-white transition-colors">₹15K Cr</span>
+                                    <span class="text-[9px] font-black uppercase text-slate-600 group-hover:text-white tracking-[0.1em] text-center">Market (2025)</span>
+                                </div>
+                                <div class="p-8 bg-white flex flex-col items-center justify-center gap-4 group/item hover:bg-slate-950 transition-all duration-500">
+                                    <span class="text-4xl font-black text-orange-600 group-hover:text-white transition-colors">FAST</span>
+                                    <span class="text-[9px] font-black uppercase text-slate-600 group-hover:text-white tracking-[0.1em] text-center">Growing Segment</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categories Grid -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
+                <div class="p-24 bg-slate-950 text-white space-y-16">
+                    <h3 class="text-5xl font-black uppercase tracking-tighter italic text-orange-500 border-l-8 border-orange-600 pl-10">Recycling Protocol</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-px bg-white/5 border border-white/5">
+                        @foreach([
+                            ['icon' => 'truck-ramp-box', 'label' => 'Scrap Collection'],
+                            ['icon' => 'cubes', 'label' => 'Rubber Crumb'],
+                            ['icon' => 'fire', 'label' => 'Pyrolysis / Fuel'],
+                            ['icon' => 'recycle', 'label' => 'Reclaimed Rubber'],
+                            ['icon' => 'atom', 'label' => 'Devulcanization'],
+                            ['icon' => 'road', 'label' => 'Infrastructure Apps'],
+                        ] as $cat)
+                            <div class="p-10 bg-slate-950 group/item hover:bg-orange-600 transition-all duration-500 relative overflow-hidden">
+                                <div class="absolute top-0 left-0 w-1 h-full bg-white scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                                <i class="fa-solid fa-{{ $cat['icon'] }} text-3xl mb-6 text-orange-600 group-hover/item:text-slate-950 transition-colors"></i>
+                                <p class="text-[12px] font-black uppercase text-slate-400 group-hover/item:text-slate-950 tracking-[0.2em] leading-tight transition-colors italic">{{ $cat['label'] }}</p>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+
+                <div class="p-24 bg-white space-y-16 border-l border-slate-200">
+                    <h3 class="text-5xl font-black uppercase tracking-tighter italic text-slate-950 border-l-8 border-slate-950 pl-10">Strategic Verticals</h3>
+                    <div class="grid grid-cols-1 gap-4">
+                        @php
+                            $trends = [
+                                ['icon' => 'bolt', 'title' => 'Energy Recovery Systems'],
+                                ['icon' => 'industry', 'title' => 'Rubber Product Mfg'],
+                                ['icon' => 'leaf', 'title' => 'ESG Sustainability Projects'],
+                                ['icon' => 'road', 'title' => 'Rubberized Asphalt Tech'],
+                            ];
+                        @endphp
+                        @foreach($trends as $t)
+                        <div class="flex items-center gap-10 p-10 bg-slate-50 group/opp hover:bg-slate-950 transition-all duration-700 relative overflow-hidden shadow-sm">
+                            <div class="absolute top-0 left-0 w-1 h-full bg-orange-600 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                            <div class="w-16 h-16 border border-slate-200 flex items-center justify-center text-orange-600 group-hover/opp:bg-orange-600 group-hover/opp:text-white transition-all duration-500">
+                                <i class="fa-solid fa-{{ $t['icon'] }} text-2xl"></i>
+                            </div>
+                            <span class="text-xl font-black uppercase text-slate-700 tracking-[0.15em] group-hover/opp:text-white transition-colors leading-tight italic">{{ $t['title'] }}</span>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+
+            <!-- Architecture CTA -->
+            <div class="relative p-24 lg:p-32 bg-slate-950 overflow-hidden text-center shadow-3xl group">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(249,115,22,0.2),transparent)]"></div>
+                <div class="relative z-10 space-y-16">
+                    <h3 class="text-5xl md:text-[8rem] font-black text-white uppercase tracking-tighter leading-[0.85]">
+                        The Circular <br><span class="text-orange-600">Rubber.</span>
+                    </h3>
+                    <p class="text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium italic border-l-4 border-orange-600 pl-10 md:text-center mx-auto uppercase tracking-tighter">
+                        Tyre and rubber recycling is a strategic sector driving environmental responsibility and industrial innovation.
                     </p>
-                    <p class="text-slate-600 leading-relaxed">
-                        The process helps <strong>reduce landfill waste, prevent environmental pollution, recover valuable
-                        rubber compounds</strong>, and support circular economy initiatives across industries.
-                    </p>
-                </div>
-
-                <img src="{{ asset('images/sectors/tyre-rubber-recycling.jpg') }}" alt="Tyre & Rubber Recycling"
-                    class="w-full h-[320px] object-cover rounded-2xl shadow-lg">
-            </div>
-
-            <!-- INCLUDES -->
-            <div>
-                <h2 class="text-3xl font-extrabold text-slate-900 mb-8 text-center">Tyre & Rubber Recycling Includes</h2>
-                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
-                    <div class="p-5 rounded-2xl bg-orange-50 border border-orange-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-orange-100 flex items-center justify-center">
-                            <i class="fa-solid fa-truck-ramp-box text-xl text-orange-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Scrap Tyre Collection</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-amber-50 border border-amber-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-amber-100 flex items-center justify-center">
-                            <i class="fa-solid fa-cubes text-xl text-amber-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Rubber Granule / Crumb</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-red-50 border border-red-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-red-100 flex items-center justify-center">
-                            <i class="fa-solid fa-fire text-xl text-red-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Pyrolysis & Fuel Recovery</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-emerald-50 border border-emerald-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-emerald-100 flex items-center justify-center">
-                            <i class="fa-solid fa-recycle text-xl text-emerald-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Reclaimed Rubber Mfg</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-violet-50 border border-violet-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-violet-100 flex items-center justify-center">
-                            <i class="fa-solid fa-atom text-xl text-violet-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Devulcanization Tech</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-blue-50 border border-blue-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-blue-100 flex items-center justify-center">
-                            <i class="fa-solid fa-mortar-pestle text-xl text-blue-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Rubber Powder Apps</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-slate-100 border border-slate-200 text-center sm:col-span-2 lg:col-span-2">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-slate-200 flex items-center justify-center">
-                            <i class="fa-solid fa-boxes-stacked text-xl text-slate-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Secondary Product Manufacturing</h4>
+                    <div class="flex justify-center">
+                        <a href="{{ route('join.index') }}" 
+                            class="btn-sharp px-16 group !border-orange-600/30 hover:!bg-orange-600">
+                            Partner for Recycling 
+                            <i class="fa-solid fa-arrow-right-long ml-6 group-hover:translate-x-4 transition-transform"></i>
+                        </a>
                     </div>
                 </div>
-            </div>
-
-            <!-- WHY IT MATTERS -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-
-                <div class="p-6 rounded-2xl bg-gradient-to-br from-orange-700 to-amber-800 text-white shadow-lg min-h-[320px] flex flex-col justify-center">
-                    <h3 class="text-2xl font-bold mb-5">Why Tyre & Rubber Recycling Matters</h3>
-                    <p class="text-sm text-orange-100 mb-4">
-                        With millions of tyres discarded every year globally, tyre and rubber recycling has become essential
-                        for sustainable waste management and environmental protection.
-                    </p>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3 text-sm">
-                            <i class="fa-solid fa-check-circle text-orange-200 shrink-0"></i>
-                            Reduced Environmental Pollution
-                        </div>
-                        <div class="flex items-center gap-3 text-sm">
-                            <i class="fa-solid fa-check-circle text-orange-200 shrink-0"></i>
-                            Resource Recovery & Reuse
-                        </div>
-                        <div class="flex items-center gap-3 text-sm">
-                            <i class="fa-solid fa-check-circle text-orange-200 shrink-0"></i>
-                            Lower Landfill Dependency
-                        </div>
-                        <div class="flex items-center gap-3 text-sm">
-                            <i class="fa-solid fa-check-circle text-orange-200 shrink-0"></i>
-                            Circular Economy Development
-                        </div>
-                        <div class="flex items-center gap-3 text-sm">
-                            <i class="fa-solid fa-check-circle text-orange-200 shrink-0"></i>
-                            Energy Recovery Opportunities
-                        </div>
-                        <div class="flex items-center gap-3 text-sm">
-                            <i class="fa-solid fa-check-circle text-orange-200 shrink-0"></i>
-                            Sustainable Industrial Production
-                        </div>
-                    </div>
-                </div>
-
-                <img src="{{ asset('images/sectors/tyre-rubber-recycling.jpg') }}" alt="Tyre Recycling Importance"
-                    class="w-full h-[320px] object-cover rounded-2xl shadow-md">
-
-            </div>
-
-            <!-- GLOBAL vs INDIA -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-gradient-to-br from-orange-600 to-orange-800 text-white shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4">Global Tyre Recycling Market</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li>Market Size (2025): <strong>USD 8+ Billion</strong></li>
-                        <li>Expected to exceed <strong>USD 12 Billion</strong> by 2032</li>
-                    </ul>
-
-                    <h4 class="font-semibold mt-5 mb-2">Growth Drivers</h4>
-                    <ul class="list-disc pl-5 text-sm space-y-1">
-                        <li>Rising vehicle ownership</li>
-                        <li>Increasing tyre disposal volumes</li>
-                        <li>Sustainability regulations</li>
-                        <li>Circular economy initiatives</li>
-                        <li>Demand for recycled rubber products</li>
-                    </ul>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-brand-accent border border-slate-200 shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4 text-brand-primary">India Tyre Recycling Market</h3>
-                    <ul class="space-y-2 text-sm text-slate-700">
-                        <li>Market Size (2025): <strong>₹10,000–15,000 Crore+</strong></li>
-                        <li>One of the <strong>fastest-growing recycling segments</strong></li>
-                    </ul>
-
-                    <h4 class="font-semibold mt-5 mb-2">India Growth Forecast (2026–2031)</h4>
-                    <ul class="text-sm text-slate-600 space-y-1">
-                        <li>Expected CAGR: <strong>10–14%</strong> annually</li>
-                        <li>Projected to exceed <strong>₹25,000+ Crore</strong> by 2031</li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- STATS CARDS -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-orange-600">$8B+</h4>
-                    <p class="text-sm text-slate-500 mt-1">Global Market (2025)</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-orange-600">₹15K Cr+</h4>
-                    <p class="text-sm text-slate-500 mt-1">India Market (2025)</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-orange-600">$12B+</h4>
-                    <p class="text-sm text-slate-500 mt-1">Global by 2032</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-orange-600">10–14%</h4>
-                    <p class="text-sm text-slate-500 mt-1">India CAGR</p>
-                </div>
-            </div>
-
-            <!-- KEY SEGMENTS -->
-            <div>
-                <h2 class="text-3xl font-extrabold text-slate-900 mb-8 text-center">Key Recycling Segments</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                    <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                        <div class="w-12 h-12 mb-4 rounded-full bg-orange-100 flex items-center justify-center">
-                            <i class="fa-solid fa-cubes text-xl text-orange-600"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-800 mb-2">Crumb Rubber Production</h4>
-                        <p class="text-xs text-slate-600">Conversion of waste tyres into granules/powder for industrial reuse.</p>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                        <div class="w-12 h-12 mb-4 rounded-full bg-red-100 flex items-center justify-center">
-                            <i class="fa-solid fa-fire text-xl text-red-600"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-800 mb-2">Pyrolysis & Fuel Recovery</h4>
-                        <p class="text-xs text-slate-600">Thermal conversion of tyres into oil, gas, and carbon black.</p>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                        <div class="w-12 h-12 mb-4 rounded-full bg-emerald-100 flex items-center justify-center">
-                            <i class="fa-solid fa-recycle text-xl text-emerald-600"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-800 mb-2">Reclaimed Rubber Mfg</h4>
-                        <p class="text-xs text-slate-600">Processing rubber waste into reusable rubber compounds.</p>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                        <div class="w-12 h-12 mb-4 rounded-full bg-amber-100 flex items-center justify-center">
-                            <i class="fa-solid fa-boxes-stacked text-xl text-amber-600"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-800 mb-2">Rubber Product Mfg</h4>
-                        <p class="text-xs text-slate-600">Production of mats, flooring, tiles, and molded products.</p>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm sm:col-span-2 lg:col-span-2">
-                        <div class="w-12 h-12 mb-4 rounded-full bg-blue-100 flex items-center justify-center">
-                            <i class="fa-solid fa-road text-xl text-blue-600"></i>
-                        </div>
-                        <h4 class="font-bold text-slate-800 mb-2">Road & Infrastructure Applications</h4>
-                        <p class="text-xs text-slate-600">Use of recycled rubber in asphalt and construction projects.</p>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- TRENDS + OPPORTUNITIES -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">Emerging Trends (2026–2031)</h3>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-violet-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-atom text-violet-600 text-xs"></i></div>
-                            Advanced Devulcanization Technologies
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-red-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-fire text-red-600 text-xs"></i></div>
-                            Sustainable Pyrolysis Systems
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-slate-200 flex items-center justify-center shrink-0"><i class="fa-solid fa-circle text-slate-600 text-xs"></i></div>
-                            High-Value Carbon Black Recovery
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-recycle text-emerald-600 text-xs"></i></div>
-                            Circular Tyre Manufacturing
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-road text-amber-600 text-xs"></i></div>
-                            Rubberized Asphalt Roads
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-sky-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-microchip text-sky-600 text-xs"></i></div>
-                            Smart Waste Collection Networks
-                        </div>
-                    </div>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">Business Opportunities</h3>
-                    <p class="text-sm text-slate-600 mb-4">Organizations can leverage tyre recycling through:</p>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-building text-brand-primary text-xs"></i></div>
-                            Recycling Plant Development
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-fire text-brand-primary text-xs"></i></div>
-                            Pyrolysis Project Investment
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-industry text-brand-primary text-xs"></i></div>
-                            Rubber Product Manufacturing
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-bolt text-brand-primary text-xs"></i></div>
-                            Fuel & Carbon Recovery Solutions
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-road text-brand-primary text-xs"></i></div>
-                            Infrastructure Material Supply
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-leaf text-brand-primary text-xs"></i></div>
-                            ESG and Sustainability Projects
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- FUTURE -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-
-                <img src="{{ asset('images/sectors/tyre-rubber-recycling.jpg') }}" alt="Tyre Recycling Future"
-                    class="w-full h-[300px] object-cover rounded-2xl shadow-md">
-
-                <div class="p-6 rounded-2xl bg-gradient-to-br from-orange-600 to-amber-800 text-white shadow-lg min-h-[300px] flex flex-col justify-center">
-                    <h3 class="text-2xl font-bold mb-4">Future of Tyre & Rubber Recycling</h3>
-                    <p class="text-sm text-orange-100 mb-4">
-                        Tyre and rubber recycling is evolving into a high-value circular industry focused on material
-                        recovery, alternative fuels, and sustainable industrial applications.
-                    </p>
-                    <div class="grid grid-cols-2 gap-3">
-                        <div class="flex items-center gap-2 text-sm">
-                            <i class="fa-solid fa-leaf text-orange-200"></i> Sustainability Strategies
-                        </div>
-                        <div class="flex items-center gap-2 text-sm">
-                            <i class="fa-solid fa-trash-can text-orange-200"></i> Waste Reduction
-                        </div>
-                        <div class="flex items-center gap-2 text-sm">
-                            <i class="fa-solid fa-recycle text-orange-200"></i> Circular Manufacturing
-                        </div>
-                        <div class="flex items-center gap-2 text-sm">
-                            <i class="fa-solid fa-arrow-trend-down text-orange-200"></i> Carbon Reduction
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- CONCLUSION -->
-            <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-10 rounded-2xl text-center shadow-lg">
-                <h3 class="text-3xl font-bold mb-4">Why Tyre & Rubber Recycling is Critical</h3>
-                <p class="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                    Tyre and rubber recycling is no longer just a waste disposal solution — it is a <strong>strategic sector</strong>
-                    driving environmental responsibility, industrial innovation, and <strong>circular economic growth</strong>.
-                </p>
             </div>
 
         </div>

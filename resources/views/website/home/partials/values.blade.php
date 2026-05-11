@@ -1,17 +1,20 @@
-<!-- World Grexpo Core Values: Industrial Bento Design -->
-<section class="py-24 bg-white relative overflow-hidden">
-    <!-- Grid Pattern Overlay -->
-    <div class="absolute inset-0 opacity-[0.05]"
-        style="background-image: linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px); background-size: 50px 50px;"></div>
+<!-- World Grexpo Core Values: Sharp Industrial Bento -->
+<section class="section-padding bg-white relative overflow-hidden border-b border-slate-100">
+    <!-- Industrial Pattern Background -->
+    <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:40px_40px] opacity-30"></div>
+    <div class="absolute top-0 right-0 w-1/3 h-full bg-slate-50/50 -z-0"></div>
 
     <div class="container relative z-10">
-        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-16 animate-on-scroll">
-            <div class="max-w-4xl">
-                <h2 class="text-5xl md:text-7xl font-black text-slate-950 leading-[0.9] mb-8 tracking-tighter uppercase italic">
-                    Our Core <span class="text-brand-accent not-italic">Values</span> <br> Architecting the Future
-                </h2>
-                <p class="text-slate-500 text-xl font-light leading-relaxed">
-                    At World Grexpo, our values are the structural foundations of every global initiative. From empowering visionaries to driving absolute industrial modernization, these principles guide our trajectory toward global sustainability.
+        <!-- Sharp Section Header -->
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-24">
+            <div class="max-w-4xl space-y-8">
+                <div class="section-heading">
+                    <span class="subtitle">Core Principles</span>
+                    <h2>Architecting <span class="text-brand-primary">The Future.</span></h2>
+                    <div class="accent-line"></div>
+                </div>
+                <p class="text-xl text-slate-500 font-medium leading-relaxed max-w-3xl">
+                    At World Grexpo, our values are the structural foundations of every global initiative. These principles guide our trajectory toward global sustainability and industrial excellence.
                 </p>
             </div>
         </div>
@@ -77,38 +80,37 @@
             ];
         @endphp
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 auto-rows-[300px]">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-slate-200 border border-slate-200 auto-rows-[300px]">
             @foreach ($values as $idx => $v)
-                <div class="{{ $v['size'] }} group relative rounded-sm overflow-hidden animate-on-scroll border border-slate-900"
-                    style="transition-delay: {{ $idx * 100 }}ms">
-                    <!-- Background Image with Zoom -->
+                <div class="{{ $v['size'] }} group relative overflow-hidden bg-slate-900 transition-all duration-700">
+                    <!-- Background Visual (Sharp) -->
                     <img src="{{ $v['image'] }}" alt="{{ $v['title'] }}"
-                        class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000">
+                        class="absolute inset-0 w-full h-full object-cover grayscale opacity-40 group-hover:grayscale-0 group-hover:scale-105 group-hover:opacity-60 transition-all duration-1000">
 
-                    <!-- Industrial Overlay -->
-                    <div class="absolute inset-0 bg-slate-950/80 group-hover:bg-brand-primary/80 transition-colors duration-700"></div>
+                    <!-- Industrial Overlay (Sharp) -->
+                    <div class="absolute inset-0 bg-slate-900/60 group-hover:bg-brand-primary/40 transition-colors duration-700"></div>
 
-                    <!-- Content -->
-                    <div class="absolute inset-0 p-10 flex flex-col justify-between z-20">
+                    <!-- Content (Sharp) -->
+                    <div class="absolute inset-0 p-12 flex flex-col justify-between z-20">
                         <div class="flex justify-between items-start">
-                            <span class="text-6xl font-black text-white/10 group-hover:text-brand-accent transition-colors duration-500 italic">{{ $v['id'] }}</span>
-                            <div class="w-12 h-12 rounded-sm border border-white/20 flex items-center justify-center text-white backdrop-blur-sm group-hover:bg-brand-accent group-hover:border-brand-accent group-hover:text-brand-primary transition-all duration-500">
-                                <i class="fa-solid fa-arrow-up-right text-xs -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                            <span class="text-6xl font-black text-white/5 group-hover:text-brand-accent transition-colors duration-500 tabular-nums">{{ $v['id'] }}</span>
+                            <div class="w-12 h-12 border border-white/20 flex items-center justify-center text-white backdrop-blur-sm group-hover:bg-brand-accent group-hover:border-brand-accent group-hover:text-brand-primary-dark transition-all duration-500">
+                                <i class="fa-solid fa-plus text-[10px] group-hover:rotate-90 transition-transform"></i>
                             </div>
                         </div>
 
-                        <div>
-                            <h3 class="text-2xl font-black text-white uppercase tracking-tighter italic mb-3 transform group-hover:-translate-y-2 transition-transform duration-500">
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-black text-white uppercase tracking-tighter leading-none transform group-hover:-translate-y-2 transition-transform duration-500">
                                 {{ $v['title'] }}
                             </h3>
-                            <p class="text-slate-400 text-xs font-bold uppercase tracking-widest leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                            <p class="text-[11px] text-white/60 font-black uppercase tracking-[0.2em] leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
                                 {{ $v['desc'] }}
                             </p>
                         </div>
                     </div>
 
-                    <!-- Sharp Accent Border -->
-                    <div class="absolute bottom-0 left-0 w-0 h-1.5 bg-brand-accent group-hover:w-full transition-all duration-700"></div>
+                    <!-- Sharp Accent Plate -->
+                    <div class="absolute bottom-0 left-0 w-1 h-0 bg-brand-accent group-hover:h-full transition-all duration-700"></div>
                 </div>
             @endforeach
         </div>

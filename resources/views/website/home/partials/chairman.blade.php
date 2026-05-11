@@ -1,87 +1,76 @@
-<section class="py-24 bg-slate-50 relative overflow-hidden">
-    <!-- Subtle Background -->
-    <div class="absolute top-0 right-0 w-96 h-96 bg-brand-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-    <div class="absolute bottom-0 left-0 w-80 h-80 bg-brand-accent/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+<section class="section-padding bg-slate-50 relative overflow-hidden border-b border-slate-100">
+    <!-- Industrial Background Decor -->
+    <div class="absolute top-0 right-0 w-1/3 h-full bg-slate-200/20 -z-0"></div>
 
     <div class="container relative z-10">
-        <div class="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-xl">
+        <div class="bg-white border border-slate-200 overflow-hidden shadow-[30px_30px_0px_0px_rgba(0,75,35,0.05)]">
             <div class="flex flex-col lg:flex-row">
 
-                <!-- Chairman Image -->
-                <div class="w-full lg:w-2/5 relative animate-on-scroll">
+                <!-- Chairman Image (Sharp) -->
+                <div class="w-full lg:w-5/12 relative group bg-slate-900 overflow-hidden">
                     <img src="{{ asset('images/home/chairman.jpg') }}" alt="Indrajit Ghosh - Chairman, World Grexpo"
-                        class="w-full h-full min-h-[400px] lg:min-h-[650px] object-cover bg-slate-200">
+                        class="w-full h-full min-h-[500px] lg:min-h-[750px] object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 opacity-80 group-hover:opacity-100">
 
-                    <!-- Gradient overlay for mobile name plate -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent lg:hidden"></div>
-
-                    <!-- Mobile name plate -->
-                    <div class="absolute bottom-0 left-0 w-full p-8 lg:hidden">
-                        <div class="border-l-4 border-brand-accent pl-4">
-                            <h3 class="text-2xl font-bold text-white mb-1">Indrajit Ghosh</h3>
-                            <p class="text-brand-accent font-medium text-sm">Chairman, World Grexpo</p>
+                    <!-- Sharp Name Plate (Overlay) -->
+                    <div class="absolute bottom-0 left-0 w-full p-12 bg-linear-to-t from-slate-950 via-slate-950/40 to-transparent">
+                        <div class="space-y-2 border-l-4 border-brand-accent pl-6">
+                            <h3 class="text-3xl font-black text-white uppercase tracking-tighter">Indrajit Ghosh</h3>
+                            <p class="text-brand-accent font-black text-xs uppercase tracking-[0.3em]">Chairman, World Grexpo</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Content Area -->
-                <div class="w-full lg:w-3/5 p-8 lg:p-14 flex flex-col justify-center animate-on-scroll delay-100">
+                <div class="w-full lg:w-7/12 p-12 lg:p-20 flex flex-col justify-center">
 
-                    <!-- Badge -->
-                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-primary/10 border border-brand-primary/20 mb-5 w-fit">
+                    <!-- Sharp Badge -->
+                    <div class="inline-flex items-center gap-4 border border-brand-primary/20 px-6 py-2 mb-10 w-fit bg-brand-primary/5">
                         <i class="fa-solid fa-trophy text-brand-primary text-xs"></i>
-                        <span class="text-brand-primary text-xs font-bold tracking-widest uppercase">World Grexpo Prestigious Awards</span>
+                        <span class="text-brand-primary text-[10px] font-black tracking-[0.3em] uppercase">Prestigious Global Awards</span>
                     </div>
 
-                    <!-- Desktop name -->
-                    <div class="mb-6 hidden lg:block">
-                        <div class="border-l-4 border-brand-primary pl-4">
-                            <h3 class="text-3xl font-extrabold text-slate-900 mb-1">Indrajit Ghosh</h3>
-                            <p class="text-brand-primary font-bold text-sm uppercase tracking-wide">Chairman, World Grexpo</p>
+                    <!-- Leadership Message -->
+                    <div class="space-y-10">
+                        <div class="relative">
+                            <i class="fa-solid fa-quote-left text-6xl text-brand-primary/10 absolute -top-8 -left-4"></i>
+                            <h4 class="text-2xl md:text-3xl font-black text-slate-900 leading-tight uppercase tracking-tighter mb-8 relative z-10">
+                                It is my privilege and honor to lead World Grexpo in recognizing the remarkable achievements of India's industrial landscape.
+                            </h4>
+
+                            <div class="prose max-w-none text-slate-500 text-[15px] leading-relaxed space-y-6 font-medium">
+                                <p>
+                                    At World Grexpo, we believe that businesses are the true drivers of economic growth, innovation, employment generation, and national development. The <strong>World Grexpo National Business Excellence Awards</strong> have been established to honor organizations and entrepreneurs who have demonstrated outstanding performance, innovation, sustainability, and leadership.
+                                </p>
+                                <p>
+                                    These awards aim to inspire enterprises of all scales—from emerging startups and MSMEs to established corporates—to continue striving for excellence and contributing meaningfully to India's industrial and economic progress.
+                                </p>
+                                <p>
+                                    With over <strong>39 years of extensive global experience</strong> across <strong>40+ countries</strong>, I strongly believe that recognition motivates excellence, and excellence drives transformation.
+                                </p>
+                                <p class="text-brand-primary font-black uppercase tracking-widest italic pt-4">
+                                    Together, let us build a stronger, more innovative, and globally competitive business ecosystem.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Sharp Stats Grid -->
+                        <div class="grid grid-cols-3 gap-1 bg-slate-100 border border-slate-100 pt-0 mt-12">
+                            <div class="bg-white p-8">
+                                <p class="text-4xl font-black text-brand-primary mb-1 tracking-tighter">39+</p>
+                                <p class="text-[9px] text-slate-400 font-black uppercase tracking-widest">Years Exp.</p>
+                            </div>
+                            <div class="bg-white p-8">
+                                <p class="text-4xl font-black text-brand-primary mb-1 tracking-tighter">40+</p>
+                                <p class="text-[9px] text-slate-400 font-black uppercase tracking-widest">Countries</p>
+                            </div>
+                            <div class="bg-white p-8">
+                                <p class="text-4xl font-black text-brand-primary mb-1 tracking-tighter">MBA</p>
+                                <p class="text-[9px] text-slate-400 font-black uppercase tracking-widest">Engineering</p>
+                            </div>
                         </div>
                     </div>
-
-                    <!-- Quote -->
-                    <div class="relative mb-8">
-                        <div class="absolute -top-4 -left-2 text-6xl text-brand-primary/10 font-serif leading-none">"</div>
-                        <h4 class="text-xl md:text-2xl font-bold text-slate-800 leading-snug mb-5 pl-6">
-                            It is my privilege and honor to lead World Grexpo in recognizing and celebrating the remarkable achievements of India's SMEs, MSMEs, Mid-Sized Industries, and Corporates through the National Business Excellence Awards.
-                        </h4>
-
-                        <div class="prose text-slate-600 text-[15px] leading-relaxed space-y-4 pl-6">
-                            <p>
-                                At World Grexpo, we believe that businesses are the true drivers of economic growth, innovation, employment generation, and national development. The <strong>World Grexpo National Business Excellence Awards</strong> have been established to honor organizations and entrepreneurs who have demonstrated outstanding performance, innovation, sustainability, and leadership.
-                            </p>
-                            <p>
-                                These awards aim to inspire enterprises of all scales—from emerging startups and MSMEs to established corporates—to continue striving for excellence and contributing meaningfully to India's industrial and economic progress.
-                            </p>
-                            <p>
-                                With over <strong>39 years of extensive global experience</strong> in Plastics, Packaging, and the Recycling Industry across <strong>40+ countries</strong>, I strongly believe that recognition motivates excellence, and excellence drives transformation.
-                            </p>
-                            <p class="text-slate-800 font-semibold italic">
-                                Together, let us build a stronger, more innovative, and globally competitive business ecosystem for India.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Stats -->
-                    <div class="grid grid-cols-3 gap-6 pt-6 border-t border-slate-200">
-                        <div>
-                            <p class="text-4xl font-black text-brand-primary mb-1">39+</p>
-                            <p class="text-xs text-slate-500 font-bold uppercase tracking-wider">Years Exp.</p>
-                        </div>
-                        <div>
-                            <p class="text-4xl font-black text-brand-primary mb-1">40+</p>
-                            <p class="text-xs text-slate-500 font-bold uppercase tracking-wider">Countries</p>
-                        </div>
-                        <div>
-                            <p class="text-4xl font-black text-brand-primary mb-1">MBA</p>
-                            <p class="text-xs text-slate-500 font-bold uppercase tracking-wider">Mech. Engineer</p>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>
     </div>
-</section>
+</section>ion>

@@ -1,311 +1,280 @@
-
-
-<?php $__env->startSection('title', 'Hydrogen'); ?>
+<?php $__env->startSection('title', 'Hydrogen Industry Overview'); ?>
 
 <?php $__env->startSection('content'); ?>
 
-    <!-- HERO -->
-    <section class="relative pt-32 pb-24 bg-slate-900 text-white overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-sky-900 via-slate-900 to-black"></div>
-        <div class="absolute inset-0 opacity-10"
-            style="background-image: url('<?php echo e(asset('images/sectors/hydrogen-industry.jpg')); ?>'); background-size: cover; background-position: center;">
+    <!-- Architectural Hero -->
+    <section class="relative pt-64 pb-32 bg-slate-950 overflow-hidden border-b border-slate-900">
+        <!-- Visual Backdrop -->
+        <div class="absolute inset-0 opacity-20">
+            <img src="<?php echo e(asset('images/sectors/hydrogen-industry.jpg')); ?>" class="w-full h-full object-cover grayscale">
         </div>
+        <div class="absolute inset-0 bg-linear-to-b from-slate-950 via-slate-950/90 to-slate-950"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(14,165,233,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        
+        <!-- Industrial Accents -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-sky-600 opacity-5 -skew-x-12 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-1/4 h-64 bg-sky-600 opacity-5 skew-x-12 -translate-x-1/2"></div>
 
-        <div class="container relative z-10 text-center">
-            <h1 class="text-4xl md:text-6xl font-black uppercase mb-4 tracking-wide">
-                Hydrogen
+        <div class="container relative z-10 text-center space-y-12">
+            <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10">
+                <span class="w-2 h-2 bg-sky-400 animate-pulse"></span>
+                <span class="text-white text-[10px] font-black tracking-[0.4em] uppercase">Clean Energy Protocol</span>
+            </div>
+            <h1 class="text-6xl md:text-[9rem] font-black text-white leading-[0.85] tracking-tighter uppercase">
+                Hydrogen <br>
+                <span class="text-sky-600">Industry.</span>
             </h1>
-            <p class="text-lg md:text-xl text-sky-300 font-semibold mb-2">The Fuel of the Future</p>
-            <p class="text-slate-300 max-w-3xl mx-auto">
-                Clean and versatile energy carrier powering decarbonization across power generation, industry, mobility, and energy storage.
+            <p class="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium border-l-4 border-sky-600 pl-10 uppercase tracking-widest italic md:text-center mx-auto">
+                Clean and versatile energy carrier powering global decarbonization.
             </p>
         </div>
     </section>
 
-    <!-- CONTENT -->
-    <section class="py-16 bg-white">
-        <div class="container space-y-16">
+    <!-- Content Interface -->
+    <section class="py-32 bg-white relative">
+        <div class="container space-y-48">
 
-            <!-- INTRO -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl font-extrabold mb-4 text-slate-900">What is Hydrogen Energy?</h2>
-                    <p class="text-slate-600 leading-relaxed mb-4">
-                        <strong>Hydrogen</strong> is a clean and versatile energy carrier used for <strong>power generation,
-                        industrial processes, mobility, and energy storage</strong>. It is considered one of the most promising
-                        fuels for achieving global decarbonization and net-zero emissions.
+            <!-- Executive Summary -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200">
+                <div class="p-16 lg:p-24 bg-white space-y-12">
+                    <div class="section-heading text-left">
+                        <span class="subtitle">Next-Gen Energy Carrier</span>
+                        <h2 class="text-5xl font-black uppercase tracking-tighter italic text-slate-950">Hydrogen <br><span class="text-sky-600">Dynamics.</span></h2>
+                        <div class="accent-line bg-sky-600"></div>
+                    </div>
+                    
+                    <div class="space-y-8 text-2xl text-slate-500 font-medium leading-relaxed italic border-l-4 border-slate-100 pl-10">
+                        <p>
+                            <strong class="text-slate-900 font-black uppercase tracking-tight">Hydrogen</strong> is a clean and versatile energy carrier used for power generation, industrial processes, mobility, and energy storage.
+                        </p>
+                        <p>
+                            It is considered one of the most promising fuels for achieving global decarbonization and net-zero emissions, produced through electrolysis, reforming, and biomass conversion.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-sky-600/10"></div>
+                    <div class="relative h-full overflow-hidden border-l border-slate-200 shadow-3xl">
+                        <img src="<?php echo e(asset('images/sectors/hydrogen-industry.jpg')); ?>" alt="Hydrogen Industry"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000">
+                    </div>
+                    <div class="absolute top-0 right-0 p-8">
+                        <div class="bg-sky-600 text-white text-[10px] font-black px-6 py-2 uppercase tracking-[0.3em] shadow-2xl">
+                            Fuel of the Future
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hydrogen Segments -->
+            <div class="space-y-24">
+                <div class="text-center space-y-4">
+                    <span class="text-sky-600 text-[10px] font-black uppercase tracking-[0.4em]">Resource Classification</span>
+                    <h3 class="text-6xl font-black text-slate-950 uppercase tracking-tighter italic">Major Segments</h3>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
+                    <?php
+                        $segments = [
+                            ['icon' => 'leaf', 'title' => 'Green Hydrogen', 'color' => 'emerald'],
+                            ['icon' => 'droplet', 'title' => 'Blue Hydrogen', 'color' => 'blue'],
+                            ['icon' => 'smog', 'title' => 'Grey Hydrogen', 'color' => 'slate'],
+                            ['icon' => 'bolt', 'title' => 'Fuel Cells', 'color' => 'violet'],
+                            ['icon' => 'database', 'title' => 'H2 Storage', 'color' => 'amber'],
+                            ['icon' => 'car-side', 'title' => 'H2 Mobility', 'color' => 'sky'],
+                            ['icon' => 'industry', 'title' => 'Industrial Apps', 'color' => 'rose'],
+                        ];
+                    ?>
+                    <?php $__currentLoopData = $segments; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $s): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="p-10 bg-white flex flex-col items-center justify-center text-center group hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-1 h-full bg-<?php echo e($s['color']); ?>-500 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                            <div class="w-16 h-16 mb-8 border border-slate-100 bg-slate-50 flex items-center justify-center text-<?php echo e($s['color']); ?>-600 group-hover:bg-<?php echo e($s['color']); ?>-600 group-hover:text-white transition-all duration-500 shadow-sm">
+                                <i class="fa-solid fa-<?php echo e($s['icon']); ?> text-2xl"></i>
+                            </div>
+                            <h4 class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 group-hover:text-white transition-colors leading-tight italic"><?php echo e($s['title']); ?></h4>
+                        </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </div>
+            </div>
+
+            <!-- Global vs India Market -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
+                <!-- GLOBAL -->
+                <div class="p-16 lg:p-24 bg-slate-950 text-white relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-12 text-sky-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-earth-americas text-[12rem]"></i>
+                    </div>
+                    <div class="relative z-10 space-y-16">
+                        <div class="space-y-4">
+                            <div class="text-sky-400 text-[10px] font-black uppercase tracking-[0.4em]">Global Decarbonization</div>
+                            <h3 class="text-5xl font-black uppercase tracking-tighter italic">Global Market</h3>
+                        </div>
+                        
+                        <div class="space-y-12">
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Value (2025)</span>
+                                <span class="text-6xl font-black text-white tracking-tighter italic">$230B</span>
+                            </div>
+                            <div class="flex items-end justify-between border-b border-white/10 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-500 tracking-[0.3em]">Projected (2032)</span>
+                                <span class="text-6xl font-black text-sky-500 tracking-tighter italic">$410B</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-8">
+                            <h4 class="text-[9px] font-black text-slate-500 uppercase tracking-[0.4em]">Market Drivers</h4>
+                            <div class="grid grid-cols-2 gap-px bg-white/10 border border-white/10 shadow-2xl">
+                                <?php $__currentLoopData = ['Net-Zero Commitments', 'Industrial Fuel Replacement', 'Green Mobility', 'Govt Subsidies']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $driver): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <div class="p-8 bg-slate-950 text-center text-[10px] font-black uppercase tracking-[0.1em] text-slate-400 hover:bg-sky-600 hover:text-slate-950 transition-all cursor-default"><?php echo e($driver); ?></div>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INDIA -->
+                <div class="p-16 lg:p-24 bg-white relative overflow-hidden group border-l border-slate-200">
+                    <div class="absolute top-0 right-0 p-12 text-sky-600 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fa-solid fa-industry text-[12rem]"></i>
+                    </div>
+                    <div class="relative z-10 space-y-16 text-right">
+                        <div class="space-y-4">
+                            <div class="text-sky-600 text-[10px] font-black uppercase tracking-[0.4em]">National Momentum</div>
+                            <h3 class="text-5xl font-black text-slate-950 uppercase tracking-tighter italic">Indian Market</h3>
+                        </div>
+                        
+                        <div class="space-y-12">
+                            <div class="flex items-end justify-between border-b border-slate-100 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-400 tracking-[0.3em]">Value (2025)</span>
+                                <span class="text-6xl font-black text-slate-950 tracking-tighter italic">₹30K Cr</span>
+                            </div>
+                            <div class="flex items-end justify-between border-b border-slate-100 pb-8">
+                                <span class="text-[10px] font-black uppercase text-slate-400 tracking-[0.3em]">Annual CAGR</span>
+                                <span class="text-6xl font-black text-sky-600 tracking-tighter italic">30%</span>
+                            </div>
+                            <div class="p-12 bg-sky-50 border-l-8 border-sky-600 shadow-sm text-right">
+                                <p class="text-[9px] font-black text-sky-600 uppercase tracking-[0.4em] mb-4 italic">Target (2031)</p>
+                                <p class="text-5xl font-black text-slate-950 uppercase italic leading-tight tracking-tighter">₹1.5 Lakh Cr+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-sky-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110">$230B+</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">Global Size</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-sky-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">₹30K Cr</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">India Size</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-sky-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">5 MMT</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">India 2030 Target</p>
+                </div>
+                <div class="p-16 bg-white text-center group hover:bg-slate-950 transition-all duration-700">
+                    <h4 class="text-6xl font-black text-sky-600 mb-4 transition-all duration-500 tracking-tighter italic group-hover:scale-110 uppercase">25-30%</h4>
+                    <p class="text-[10px] font-black text-slate-400 group-hover:text-white uppercase tracking-[0.4em]">India Growth</p>
+                </div>
+            </div>
+
+            <!-- Trends & Opportunities -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl overflow-hidden">
+                <div class="p-24 bg-slate-950 text-white space-y-16">
+                    <h3 class="text-5xl font-black uppercase tracking-tighter italic text-sky-600 border-l-8 border-sky-600 pl-10">Emerging Trends</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-px bg-white/5 border border-white/5">
+                        <?php $__currentLoopData = [
+                            ['icon' => 'industry', 'label' => 'Mega Plants'],
+                            ['icon' => 'car-side', 'label' => 'Fuel Cell EVs'],
+                            ['icon' => 'pipe-section', 'label' => 'H2 Blending'],
+                            ['icon' => 'ship', 'label' => 'Ammonia Exports'],
+                            ['icon' => 'gas-pump', 'label' => 'Refueling Infra'],
+                            ['icon' => 'wind', 'label' => 'Offshore H2'],
+                        ]; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $trend): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <div class="p-10 bg-slate-950 group/item hover:bg-sky-600 transition-all duration-500 relative overflow-hidden">
+                                <div class="absolute top-0 left-0 w-1 h-full bg-white scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                                <i class="fa-solid fa-<?php echo e($trend['icon']); ?> text-3xl mb-6 text-sky-600 group-hover/item:text-slate-950 transition-colors"></i>
+                                <p class="text-[12px] font-black uppercase text-slate-400 group-hover/item:text-slate-950 tracking-[0.2em] leading-tight transition-colors italic"><?php echo e($trend['label']); ?></p>
+                            </div>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </div>
+                </div>
+
+                <div class="p-24 bg-white space-y-16 border-l border-slate-200">
+                    <h3 class="text-5xl font-black uppercase tracking-tighter italic text-slate-950 border-l-8 border-slate-950 pl-10">High Potential</h3>
+                    <div class="space-y-px bg-slate-200 border border-slate-200 shadow-sm">
+                        <?php $__currentLoopData = [
+                            ['icon' => 'gears', 'label' => 'Electrolyzer Manufacturing'],
+                            ['icon' => 'database', 'label' => 'Storage & Transportation'],
+                            ['icon' => 'bolt', 'label' => 'Fuel Cell Manufacturing'],
+                            ['icon' => 'flask', 'label' => 'Green Ammonia Production'],
+                            ['icon' => 'building', 'label' => 'Infrastructure Development'],
+                            ['icon' => 'industry', 'label' => 'Industrial Conversion'],
+                        ]; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $opp): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="flex items-center gap-10 p-10 bg-white group/opp hover:bg-slate-950 transition-all duration-700 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-1 h-full bg-sky-600 scale-y-0 group-hover:scale-y-100 transition-transform origin-top duration-500"></div>
+                            <i class="fa-solid fa-<?php echo e($opp['icon']); ?> text-2xl text-sky-600 group-hover/opp:text-white transition-colors"></i>
+                            <span class="text-xl font-black uppercase text-slate-700 tracking-[0.15em] group-hover/opp:text-white transition-colors leading-tight italic"><?php echo e($opp['label']); ?></span>
+                        </div>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Global Position -->
+            <div class="grid lg:grid-cols-2 gap-px bg-slate-200 border border-slate-200 shadow-3xl">
+                <div class="p-24 bg-slate-50 space-y-16">
+                    <h3 class="text-5xl font-black uppercase tracking-tighter italic text-slate-950 border-l-8 border-sky-600 pl-10">Capacity Hubs</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <?php $__currentLoopData = ['Gujarat', 'Rajasthan', 'Maharashtra', 'Tamil Nadu', 'Odisha', 'Andhra Pradesh']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $state): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <div class="p-10 bg-white border border-slate-100 flex items-center justify-center group/state hover:bg-slate-950 transition-all duration-700 shadow-sm">
+                                <span class="text-[12px] font-black uppercase text-slate-500 group-hover/state:text-white tracking-[0.3em] transition-colors italic"><?php echo e($state); ?></span>
+                            </div>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </div>
+                    <p class="text-[12px] font-black text-slate-400 uppercase tracking-widest text-center italic">Key Indian Development States</p>
+                </div>
+
+                <div class="p-24 bg-slate-950 text-white space-y-16 relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(14,165,233,0.05),transparent)]"></div>
+                    <div class="relative z-10 space-y-12">
+                         <div class="inline-flex items-center gap-4 px-6 py-2 bg-white/5 border border-white/10 text-sky-400 text-[10px] font-black uppercase tracking-[0.4em]">
+                            Global Advantage
+                        </div>
+                        <h4 class="text-6xl font-black uppercase tracking-tighter italic text-sky-600">The Export <br><span class="text-white">Mandate.</span></h4>
+                        <p class="text-2xl text-slate-400 font-medium italic border-l-8 border-sky-600/30 pl-10 leading-relaxed uppercase tracking-tighter">
+                            India aims to become the lowest-cost producer of green hydrogen globally.
+                        </p>
+                        <div class="grid grid-cols-2 gap-px bg-white/5 pt-12 border border-white/10">
+                             <?php $__currentLoopData = ['EUROPE', 'JAPAN', 'KOREA', 'GLOBAL SOUTH']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $target): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <span class="p-8 bg-slate-950 border border-white/5 text-[10px] font-black uppercase tracking-[0.4em] text-sky-300 text-center hover:bg-sky-600 hover:text-slate-950 transition-all cursor-default"><?php echo e($target); ?></span>
+                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conclusion CTA -->
+            <div class="relative p-24 lg:p-32 bg-slate-950 overflow-hidden text-center shadow-3xl group">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(14,165,233,0.2),transparent)]"></div>
+                <div class="relative z-10 space-y-16">
+                    <h3 class="text-5xl md:text-[8rem] font-black text-white uppercase tracking-tighter leading-[0.85]">
+                        The Hydrogen <br><span class="text-sky-600">Economy.</span>
+                    </h3>
+                    <p class="text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-medium italic border-l-4 border-sky-600 pl-10 md:text-center mx-auto uppercase tracking-tighter">
+                        Massive global investments are transforming the energy landscape. Join the mission to build a sustainable and technologically advanced industrial future.
                     </p>
-                    <p class="text-slate-600 leading-relaxed">
-                        Hydrogen can be produced through various methods including <strong>electrolysis, natural gas reforming,
-                        biomass conversion</strong>, and industrial by-product recovery.
-                    </p>
-                </div>
-
-                <img src="<?php echo e(asset('images/sectors/hydrogen-industry.jpg')); ?>" alt="Hydrogen Industry"
-                    class="w-full h-[320px] object-cover rounded-2xl shadow-lg">
-            </div>
-
-            <!-- HYDROGEN SEGMENTS -->
-            <div>
-                <h2 class="text-3xl font-extrabold text-slate-900 mb-8 text-center">Major Hydrogen Segments</h2>
-                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
-                    <div class="p-5 rounded-2xl bg-emerald-50 border border-emerald-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-emerald-100 flex items-center justify-center">
-                            <i class="fa-solid fa-leaf text-xl text-emerald-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Green Hydrogen</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-blue-50 border border-blue-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-blue-100 flex items-center justify-center">
-                            <i class="fa-solid fa-droplet text-xl text-blue-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Blue Hydrogen</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-slate-100 border border-slate-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-slate-200 flex items-center justify-center">
-                            <i class="fa-solid fa-smog text-xl text-slate-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Grey Hydrogen</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-violet-50 border border-violet-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-violet-100 flex items-center justify-center">
-                            <i class="fa-solid fa-bolt text-xl text-violet-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Hydrogen Fuel Cells</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-amber-50 border border-amber-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-amber-100 flex items-center justify-center">
-                            <i class="fa-solid fa-database text-xl text-amber-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Hydrogen Storage</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-sky-50 border border-sky-200 text-center">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-sky-100 flex items-center justify-center">
-                            <i class="fa-solid fa-car-side text-xl text-sky-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Hydrogen Mobility</h4>
-                    </div>
-                    <div class="p-5 rounded-2xl bg-rose-50 border border-rose-200 text-center sm:col-span-2 lg:col-span-2">
-                        <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-rose-100 flex items-center justify-center">
-                            <i class="fa-solid fa-industry text-xl text-rose-600"></i>
-                        </div>
-                        <h4 class="font-bold text-xs text-slate-800">Industrial Hydrogen Applications</h4>
+                    <div class="flex justify-center">
+                        <a href="<?php echo e(route('join.index')); ?>" 
+                            class="btn-sharp px-16 group !border-sky-600/30 hover:!bg-sky-600">
+                            Explore Hydrogen Support 
+                            <i class="fa-solid fa-arrow-right-long ml-6 group-hover:translate-x-4 transition-transform"></i>
+                        </a>
                     </div>
                 </div>
-            </div>
-
-            <!-- GLOBAL vs INDIA -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-gradient-to-br from-sky-600 to-sky-800 text-white shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4">Global Hydrogen Market</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li>Market Size (2025): <strong>USD 230+ Billion</strong></li>
-                        <li>Expected to exceed <strong>USD 410 Billion</strong> by 2032</li>
-                        <li>CAGR: <strong>9–12%</strong> annually</li>
-                    </ul>
-
-                    <h4 class="font-semibold mt-5 mb-2">Growth Drivers</h4>
-                    <ul class="list-disc pl-5 text-sm space-y-1">
-                        <li>Net-zero and decarbonization commitments</li>
-                        <li>Industrial fuel replacement demand</li>
-                        <li>Green mobility initiatives</li>
-                        <li>Heavy industry decarbonization</li>
-                        <li>Government hydrogen missions and subsidies</li>
-                    </ul>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-brand-accent border border-slate-200 shadow-lg">
-                    <h3 class="text-2xl font-bold mb-4 text-brand-primary">Indian Hydrogen Market</h3>
-                    <ul class="space-y-2 text-sm text-slate-700">
-                        <li>Market Size (2025): <strong>₹25,000–30,000 Crore+</strong> (emerging)</li>
-                        <li>Massive investments under <strong>National Green Hydrogen Mission</strong></li>
-                        <li>CAGR: <strong>25–30%</strong> annually</li>
-                    </ul>
-
-                    <h4 class="font-semibold mt-5 mb-2">India Target by 2031</h4>
-                    <ul class="text-sm text-slate-600 space-y-1">
-                        <li>Projected to exceed <strong>₹1.5 Lakh Crore+</strong></li>
-                        <li>Among fastest growing clean energy sectors</li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- STATS CARDS -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-sky-600">$230B+</h4>
-                    <p class="text-sm text-slate-500 mt-1">Global Market (2025)</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-sky-600">₹30K Cr+</h4>
-                    <p class="text-sm text-slate-500 mt-1">India Market (2025)</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-sky-600">5 MMT</h4>
-                    <p class="text-sm text-slate-500 mt-1">India Green H₂ Target (2030)</p>
-                </div>
-                <div class="p-6 bg-white border rounded-xl shadow hover:shadow-lg transition">
-                    <h4 class="text-2xl font-bold text-sky-600">25–30%</h4>
-                    <p class="text-sm text-slate-500 mt-1">India CAGR</p>
-                </div>
-            </div>
-
-            <!-- INDIA CAPACITY + GLOBAL -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">India Hydrogen Capacity</h3>
-                    <p class="text-sm text-slate-600 mb-3">
-                        Government target: <strong>5 Million Metric Tons</strong> of Green Hydrogen annually by 2030.
-                        Multi-billion-dollar projects announced by major corporates.
-                    </p>
-
-                    <h4 class="font-semibold mt-4 mb-2">Major Development States</h4>
-                    <div class="grid grid-cols-2 gap-2">
-                        <div class="flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-map-pin text-sky-500 text-xs"></i> Gujarat</div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-map-pin text-sky-500 text-xs"></i> Rajasthan</div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-map-pin text-sky-500 text-xs"></i> Maharashtra</div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-map-pin text-sky-500 text-xs"></i> Tamil Nadu</div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-map-pin text-sky-500 text-xs"></i> Odisha</div>
-                        <div class="flex items-center gap-2 text-sm text-slate-600"><i class="fa-solid fa-map-pin text-sky-500 text-xs"></i> Andhra Pradesh</div>
-                    </div>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">Global Hydrogen Production</h3>
-                    <ul class="space-y-2 text-sm text-slate-600">
-                        <li>Global production exceeds <strong>90 Million Metric Tons</strong> annually</li>
-                    </ul>
-
-                    <h4 class="font-semibold mt-4 mb-2">India's Global Position</h4>
-                    <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1">
-                        <li>Aims to become <strong>lowest-cost producer</strong> of green hydrogen globally</li>
-                        <li>Strategic focus on exports to <strong>Europe, Japan, and Korea</strong></li>
-                    </ul>
-
-                    <h4 class="font-semibold mt-4 mb-2">Key Market Drivers</h4>
-                    <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1">
-                        <li>Strong government policy support</li>
-                        <li>Falling renewable electricity costs</li>
-                        <li>Industrial decarbonization pressure</li>
-                        <li>Export opportunities in green fuel</li>
-                        <li>Steel, refinery, fertilizer demand</li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <!-- TRENDS + OPPORTUNITIES -->
-            <div class="grid md:grid-cols-2 gap-10">
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">Emerging Trends (2026–2031)</h3>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-industry text-emerald-600 text-xs"></i></div>
-                            Green Hydrogen Mega Plants
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-sky-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-car-side text-sky-600 text-xs"></i></div>
-                            Hydrogen Fuel Cell Vehicles
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-pipe-section text-amber-600 text-xs"></i></div>
-                            Hydrogen Blending in Gas Networks
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-violet-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-ship text-violet-600 text-xs"></i></div>
-                            Ammonia Export Projects
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-gas-pump text-blue-600 text-xs"></i></div>
-                            Hydrogen Refueling Infrastructure
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-teal-100 flex items-center justify-center shrink-0"><i class="fa-solid fa-wind text-teal-600 text-xs"></i></div>
-                            Offshore Renewable Powered H₂ Production
-                        </div>
-                    </div>
-                </div>
-
-                <div class="p-6 rounded-2xl bg-slate-50 border shadow-sm">
-                    <h3 class="text-2xl font-bold mb-4">High Potential Segments</h3>
-                    <p class="text-sm text-slate-600 mb-4">Industry opportunities across the hydrogen value chain:</p>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-gears text-brand-primary text-xs"></i></div>
-                            Electrolyzer Manufacturing
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-database text-brand-primary text-xs"></i></div>
-                            Hydrogen Storage & Transportation
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-bolt text-brand-primary text-xs"></i></div>
-                            Fuel Cell Manufacturing
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-flask text-brand-primary text-xs"></i></div>
-                            Green Ammonia Production
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-building text-brand-primary text-xs"></i></div>
-                            Hydrogen Infrastructure Development
-                        </div>
-                        <div class="flex items-center gap-3 text-sm text-slate-600">
-                            <div class="w-8 h-8 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"><i class="fa-solid fa-industry text-brand-primary text-xs"></i></div>
-                            Industrial Hydrogen Conversion
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- WHY INDIA -->
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-
-                <img src="<?php echo e(asset('images/sectors/hydrogen-industry.jpg')); ?>" alt="India Hydrogen Hub"
-                    class="w-full h-[300px] object-cover rounded-2xl shadow-md">
-
-                <div class="p-6 rounded-2xl bg-gradient-to-br from-sky-600 to-blue-800 text-white shadow-lg min-h-[300px] flex flex-col justify-center">
-                    <h3 class="text-2xl font-bold mb-4">Why India is Emerging as a Hydrogen Hub</h3>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-2 text-sm">
-                            <i class="fa-solid fa-check-circle text-sky-200 shrink-0"></i>
-                            Low-cost solar/wind energy availability
-                        </div>
-                        <div class="flex items-center gap-2 text-sm">
-                            <i class="fa-solid fa-check-circle text-sky-200 shrink-0"></i>
-                            Strong industrial demand base
-                        </div>
-                        <div class="flex items-center gap-2 text-sm">
-                            <i class="fa-solid fa-check-circle text-sky-200 shrink-0"></i>
-                            Government incentives and policy support
-                        </div>
-                        <div class="flex items-center gap-2 text-sm">
-                            <i class="fa-solid fa-check-circle text-sky-200 shrink-0"></i>
-                            Export competitiveness
-                        </div>
-                        <div class="flex items-center gap-2 text-sm">
-                            <i class="fa-solid fa-check-circle text-sky-200 shrink-0"></i>
-                            Strategic global partnerships
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- CONCLUSION -->
-            <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-10 rounded-2xl text-center shadow-lg">
-                <h3 class="text-3xl font-bold mb-4">The Hydrogen Economy is Here</h3>
-                <p class="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                    Hydrogen is rapidly emerging as a <strong>game-changing clean energy solution</strong> for global
-                    decarbonization. With India's ambitious <strong>5 MMT Green Hydrogen target by 2030</strong> and
-                    massive global investments, the hydrogen economy represents one of the most significant
-                    <strong>industrial transformations of our generation</strong>.
-                </p>
             </div>
 
         </div>
