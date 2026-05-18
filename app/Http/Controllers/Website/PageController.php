@@ -34,11 +34,6 @@ class PageController extends Controller
         return view('website.about.chairman');
     }
 
-    public function leadership()
-    {
-        return view('website.about.leadership');
-    }
-
     public function news()
     {
         return view('website.news.index');

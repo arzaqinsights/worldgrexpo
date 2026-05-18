@@ -24,7 +24,6 @@ Route::get('/contact', [PageController::class, 'contact']);
 Route::prefix('about')->group(function () {
     Route::get('/institutional-profile', [PageController::class, 'about'])->name('about.index');
     Route::get('/chairman', [PageController::class, 'chairman'])->name('about.chairman');
-    Route::get('/leadership', [PageController::class, 'leadership'])->name('about.leadership');
 });
 
 Route::prefix('sectors')->name('sectors.')->group(function () {
@@ -137,8 +136,10 @@ Route::middleware(['auth', 'is_admin'])->prefix('admin')->name('admin.')->group(
     Route::put('invoice-designer/{template}', [\App\Http\Controllers\Admin\InvoiceTemplateController::class, 'update'])->name('invoice-designer.update');
     Route::delete('invoice-designer/{template}', [\App\Http\Controllers\Admin\InvoiceTemplateController::class, 'destroy'])->name('invoice-designer.destroy');
 
+    Route::post('forms/import-sql', [\App\Http\Controllers\Admin\FormController::class, 'importSql'])->name('forms.import-sql');
     Route::resource('forms', \App\Http\Controllers\Admin\FormController::class);
     Route::post('forms/{form}/duplicate', [\App\Http\Controllers\Admin\FormController::class, 'duplicate'])->name('forms.duplicate');
+    Route::get('forms/{form}/export-sql', [\App\Http\Controllers\Admin\FormController::class, 'exportSql'])->name('forms.export-sql');
     Route::get('forms/{form}/submissions', [\App\Http\Controllers\Admin\SubmissionController::class, 'formSubmissions'])->name('forms.submissions');
     Route::post('events/upload-attachment', [\App\Http\Controllers\Admin\EventController::class, 'uploadAttachment'])->name('events.upload-attachment');
     Route::resource('events', \App\Http\Controllers\Admin\EventController::class);

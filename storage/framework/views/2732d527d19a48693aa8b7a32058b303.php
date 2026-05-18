@@ -38,25 +38,26 @@
         onload="console.log('Razorpay Loaded Successfully')"></script>
 
     <!-- Form Header -->
-    <section class="relative pt-48 pb-24 bg-slate-950 text-white overflow-hidden border-b border-slate-900">
+    <section class="relative pt-40 pb-20 bg-slate-950 text-white overflow-hidden border-b border-slate-900">
         <div class="absolute inset-0 z-0">
-            <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
         </div>
         <?php if($form->thumbnail): ?>
-            <div class="absolute inset-0 opacity-20 grayscale pointer-events-none">
+            <div class="absolute inset-0 opacity-20 pointer-events-none">
                 <img src="<?php echo e(asset($form->thumbnail)); ?>" alt="<?php echo e($form->name); ?>" class="w-full h-full object-cover mix-blend-overlay">
             </div>
         <?php endif; ?>
-        <div class="container relative z-10 text-left">
-            <div class="inline-flex items-center gap-3 px-4 py-2 bg-slate-950 border-l-4 border-brand-accent mb-10">
-                <span class="text-white text-[10px] font-black tracking-[0.4em] uppercase italic">Institutional Activation Node</span>
+        <div class="container relative z-10">
+            <div class="inline-flex items-center gap-3 px-4 py-2 bg-white/5 border border-white/10 mb-8">
+                <span class="w-2 h-2 bg-brand-accent animate-pulse"></span>
+                <span class="text-white text-[10px] font-bold tracking-[0.4em] uppercase">Registration Portal</span>
             </div>
-            <h1 class="text-6xl md:text-8xl font-black text-white mb-8 tracking-tighter uppercase italic leading-[0.85]">
+            <h1 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
                 <?php echo e($form->name); ?>
 
             </h1>
             <?php if($form->description): ?>
-                <p class="text-2xl text-slate-400 font-light italic max-w-4xl leading-relaxed border-l-2 border-slate-800 pl-8">
+                <p class="text-lg text-slate-400 max-w-2xl leading-relaxed border-l-4 border-brand-primary pl-6">
                     <?php echo nl2br(e($form->description)); ?>
 
                 </p>
@@ -65,106 +66,106 @@
     </section>
 
     <!-- Dynamic Reactive Engine -->
-    <section class="py-32 bg-white relative">
-        <div class="container relative z-10 max-w-5xl">
-
-            <form action="<?php echo e(route('join.forms.store', $form->slug)); ?>" method="POST" enctype="multipart/form-data"
-                class="bg-slate-50 p-12 md:p-24 rounded-sm border border-slate-100 shadow-4xl relative" x-data="formEngine()"
-                @submit.prevent="submitForm">
-                <?php echo csrf_field(); ?>
+    <section class="py-20 bg-white relative">
+        <div class="container relative z-10">
+            <div class="max-w-3xl mx-auto">
+                <form action="<?php echo e(route('join.forms.store', $form->slug)); ?>" method="POST" enctype="multipart/form-data"
+                    class="bg-slate-50 p-8 md:p-12 rounded-2xl border border-slate-100 shadow-sm relative" x-data="formEngine()"
+                    @submit.prevent="submitForm">
+                    <?php echo csrf_field(); ?>
                 
                 <div class="absolute top-0 left-0 w-1 bg-brand-accent h-full"></div>
 
                 <!-- Standard Authentication Block -->
-                <div class="pb-16 mb-16 border-b border-slate-200">
-                    <h3 class="text-3xl font-black text-slate-950 mb-12 uppercase italic tracking-tighter flex items-center gap-6">
+                <div class="pb-12 mb-12 border-b border-slate-200">
+                    <h3 class="text-2xl font-bold text-slate-950 mb-8 flex items-center gap-4">
                         <i class="fa-solid fa-user-shield text-brand-primary"></i> Primary Identification
                     </h3>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div>
-                            <label class="block text-[10px] font-black text-slate-500 uppercase tracking-widest mb-4 italic">Full Name <span class="text-brand-primary ml-1">*</span></label>
+                            <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3">Full Name <span class="text-brand-primary ml-1">*</span></label>
                             <input type="text" name="first_name" placeholder="e.g. Indrajit Ghosh"
                                 value="<?php echo e(old('first_name', auth()->check() ? auth()->user()->name : '')); ?>" required
-                                class="w-full bg-white border border-slate-200 rounded-sm p-6 focus:border-brand-primary outline-none text-slate-950 font-black italic uppercase text-xs transition-all shadow-sm">
+                                class="w-full bg-white border border-slate-200 rounded-xl p-4 focus:border-brand-primary outline-none text-slate-950 font-medium text-sm transition-all shadow-sm">
                         </div>
                         <div>
-                            <label class="block text-[10px] font-black text-slate-500 uppercase tracking-widest mb-4 italic">Email Address <span class="text-brand-primary ml-1">*</span></label>
+                            <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3">Email Address <span class="text-brand-primary ml-1">*</span></label>
                             <input type="email" name="email" placeholder="e.g. info@worldgrexpo.in"
                                 value="<?php echo e(old('email', auth()->check() ? auth()->user()->email : '')); ?>" required
-                                class="w-full bg-white border border-slate-200 rounded-sm p-6 focus:border-brand-primary outline-none text-slate-950 font-black italic uppercase text-xs transition-all shadow-sm">
+                                class="w-full bg-white border border-slate-200 rounded-xl p-4 focus:border-brand-primary outline-none text-slate-950 font-medium text-sm transition-all shadow-sm">
                         </div>
                         <div>
-                            <label class="block text-[10px] font-black text-slate-500 uppercase tracking-widest mb-4 italic">Phone Number <span class="text-brand-primary ml-1">*</span></label>
+                            <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3">Phone Number <span class="text-brand-primary ml-1">*</span></label>
                             <input type="text" name="phone_number" placeholder="e.g. 9876543210"
                                 value="<?php echo e(old('phone_number', auth()->check() ? auth()->user()->phone_number : '')); ?>"
                                 required
-                                class="w-full bg-white border border-slate-200 rounded-sm p-6 focus:border-brand-primary outline-none text-slate-950 font-black italic uppercase text-xs transition-all shadow-sm">
+                                class="w-full bg-white border border-slate-200 rounded-xl p-4 focus:border-brand-primary outline-none text-slate-950 font-medium text-sm transition-all shadow-sm">
                         </div>
                         <div>
-                            <label class="block text-[10px] font-black text-slate-500 uppercase tracking-widest mb-4 italic">Company Name <span class="text-brand-primary ml-1">*</span></label>
+                            <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3">Company Name <span class="text-brand-primary ml-1">*</span></label>
                             <input type="text" name="company_name" placeholder="e.g. Global Industry Node"
                                 value="<?php echo e(old('company_name', auth()->check() ? auth()->user()->company_name : '')); ?>"
                                 required
-                                class="w-full bg-white border border-slate-200 rounded-sm p-6 focus:border-brand-primary outline-none text-slate-950 font-black italic uppercase text-xs transition-all shadow-sm">
+                                class="w-full bg-white border border-slate-200 rounded-xl p-4 focus:border-brand-primary outline-none text-slate-950 font-medium text-sm transition-all shadow-sm">
                         </div>
                         <div>
-                            <label class="block text-[10px] font-black text-slate-500 uppercase tracking-widest mb-4 italic">Designation <span class="text-brand-primary ml-1">*</span></label>
+                            <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3">Designation <span class="text-brand-primary ml-1">*</span></label>
                             <input type="text" name="designation" placeholder="e.g. Chief Strategist"
                                 value="<?php echo e(old('designation', auth()->check() ? auth()->user()->designation : '')); ?>"
                                 required
-                                class="w-full bg-white border border-slate-200 rounded-sm p-6 focus:border-brand-primary outline-none text-slate-950 font-black italic uppercase text-xs transition-all shadow-sm">
+                                class="w-full bg-white border border-slate-200 rounded-xl p-4 focus:border-brand-primary outline-none text-slate-950 font-medium text-sm transition-all shadow-sm">
                         </div>
                         <div>
-                            <label class="block text-[10px] font-black text-slate-500 uppercase tracking-widest mb-4 italic">Website</label>
+                            <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3">Website</label>
                             <input type="text" name="website" placeholder="e.g. www.worldgrexpo.in"
                                 value="<?php echo e(old('website', auth()->check() ? auth()->user()->website : '')); ?>"
-                                class="w-full bg-white border border-slate-200 rounded-sm p-6 focus:border-brand-primary outline-none text-slate-950 font-black italic uppercase text-xs transition-all shadow-sm">
+                                class="w-full bg-white border border-slate-200 rounded-xl p-4 focus:border-brand-primary outline-none text-slate-950 font-medium text-sm transition-all shadow-sm">
                         </div>
                     </div>
 
-                    <div class="mt-10">
-                        <label class="block text-[10px] font-black text-slate-500 uppercase tracking-widest mb-4 italic">Full Institutional Address <span class="text-brand-primary ml-1">*</span></label>
+                    <div class="mt-8">
+                        <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3">Full Institutional Address <span class="text-brand-primary ml-1">*</span></label>
                         <textarea name="address" rows="3" required
-                            class="w-full bg-white border border-slate-200 rounded-sm p-6 focus:border-brand-primary outline-none text-slate-950 font-medium italic uppercase text-xs transition-all shadow-sm resize-none"><?php echo e(old('address', auth()->check() ? auth()->user()->address : '')); ?></textarea>
+                            class="w-full bg-white border border-slate-200 rounded-xl p-4 focus:border-brand-primary outline-none text-slate-950 font-medium text-sm transition-all shadow-sm resize-none"><?php echo e(old('address', auth()->check() ? auth()->user()->address : '')); ?></textarea>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-10">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
                         <div>
-                            <label class="block text-[10px] font-black text-slate-500 uppercase tracking-widest mb-4 italic">City <span class="text-brand-primary ml-1">*</span></label>
+                            <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3">City <span class="text-brand-primary ml-1">*</span></label>
                             <input type="text" name="city" placeholder="e.g. New Delhi"
                                 value="<?php echo e(old('city', auth()->check() ? auth()->user()->city : '')); ?>" required
-                                class="w-full bg-white border border-slate-200 rounded-sm p-6 focus:border-brand-primary outline-none text-slate-950 font-black italic uppercase text-xs transition-all shadow-sm">
+                                class="w-full bg-white border border-slate-200 rounded-xl p-4 focus:border-brand-primary outline-none text-slate-950 font-medium text-sm transition-all shadow-sm">
                         </div>
                         <div>
-                            <label class="block text-[10px] font-black text-slate-500 uppercase tracking-widest mb-4 italic">Pin Code <span class="text-brand-primary ml-1">*</span></label>
+                            <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3">Pin Code <span class="text-brand-primary ml-1">*</span></label>
                             <input type="text" name="pincode" placeholder="e.g. 110001"
                                 value="<?php echo e(old('pincode', auth()->check() ? auth()->user()->pincode : '')); ?>" required
-                                class="w-full bg-white border border-slate-200 rounded-sm p-6 focus:border-brand-primary outline-none text-slate-950 font-black italic uppercase text-xs transition-all shadow-sm">
+                                class="w-full bg-white border border-slate-200 rounded-xl p-4 focus:border-brand-primary outline-none text-slate-950 font-medium text-sm transition-all shadow-sm">
                         </div>
                         <div>
-                            <label class="block text-[10px] font-black text-slate-500 uppercase tracking-widest mb-4 italic">Country <span class="text-brand-primary ml-1">*</span></label>
+                            <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3">Country <span class="text-brand-primary ml-1">*</span></label>
                             <input type="text" name="country" placeholder="e.g. India"
                                 value="<?php echo e(old('country', auth()->check() ? auth()->user()->country : 'India')); ?>" required
-                                class="w-full bg-white border border-slate-200 rounded-sm p-6 focus:border-brand-primary outline-none text-slate-950 font-black italic uppercase text-xs transition-all shadow-sm">
+                                class="w-full bg-white border border-slate-200 rounded-xl p-4 focus:border-brand-primary outline-none text-slate-950 font-medium text-sm transition-all shadow-sm">
                         </div>
                     </div>
 
-                    <div class="mt-10">
-                        <label class="block text-[10px] font-black text-slate-500 uppercase tracking-widest mb-4 italic">GSTIN Node</label>
+                    <div class="mt-8">
+                        <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3">GSTIN Node</label>
                         <input type="text" name="gstin" placeholder="e.g. 07AAAAA0000A1Z5"
                             value="<?php echo e(old('gstin', auth()->check() ? auth()->user()->gstin : '')); ?>"
-                            class="w-full bg-white border border-slate-200 rounded-sm p-6 focus:border-brand-primary outline-none text-slate-950 font-black italic uppercase text-xs transition-all shadow-sm">
+                            class="w-full bg-white border border-slate-200 rounded-xl p-4 focus:border-brand-primary outline-none text-slate-950 font-medium text-sm transition-all shadow-sm">
                     </div>
                 </div>
 
                 <!-- Dynamic Logic Block -->
-                <div class="space-y-12">
+                <div class="space-y-10">
                     <template x-for="field in fields" :key="field.field_identifier">
 
                         <div x-show="field.type !== 'hidden_price' && isFieldVisible(field)" x-transition.opacity
                             duration.500ms>
-                            <label class="block text-[10px] font-black text-slate-500 uppercase tracking-widest mb-6 italic">
+                            <label class="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4">
                                 <span x-text="field.label"></span>
                                 <span x-show="field.is_required" class="text-brand-primary ml-1">*</span>
                             </label>
@@ -175,7 +176,7 @@
                                     x-model="formData[field.field_identifier]"
                                     @input="handleFieldChange(field.field_identifier)" :placeholder="field.placeholder"
                                     :required="field.is_required && isFieldVisible(field)"
-                                    class="w-full bg-white border border-slate-200 rounded-sm p-6 focus:border-brand-primary outline-none text-slate-950 font-black italic uppercase text-xs transition-all shadow-sm">
+                                    class="w-full bg-white border border-slate-200 rounded-xl p-4 focus:border-brand-primary outline-none text-slate-950 font-medium text-sm transition-all shadow-sm">
                             </template>
 
                             <!-- Textarea -->
@@ -184,7 +185,7 @@
                                     x-model="formData[field.field_identifier]"
                                     @input="handleFieldChange(field.field_identifier)" :placeholder="field.placeholder"
                                     :required="field.is_required && isFieldVisible(field)" rows="5"
-                                    class="w-full bg-white border border-slate-200 rounded-sm p-6 focus:border-brand-primary outline-none text-slate-950 font-medium italic uppercase text-xs transition-all shadow-sm resize-none"></textarea>
+                                    class="w-full bg-white border border-slate-200 rounded-xl p-4 focus:border-brand-primary outline-none text-slate-950 font-medium text-sm transition-all shadow-sm resize-none"></textarea>
                             </template>
 
                             <!-- Dropdown / Event -->
@@ -193,7 +194,7 @@
                                     x-model="formData[field.field_identifier]"
                                     @change="handleFieldChange(field.field_identifier)"
                                     :required="field.is_required && isFieldVisible(field)"
-                                    class="w-full bg-white border border-slate-200 rounded-sm p-6 focus:border-brand-primary outline-none text-slate-950 font-black italic uppercase text-xs appearance-none cursor-pointer shadow-sm">
+                                    class="w-full bg-white border border-slate-200 rounded-xl p-4 focus:border-brand-primary outline-none text-slate-950 font-medium text-sm appearance-none cursor-pointer shadow-sm">
                                     <option value="" disabled selected>-- Select Industrial Node --</option>
                                     <template x-for="option in getFieldOptions(field)" :key="option.label">
                                         <option :value="option.label" x-text="option.label"></option>
@@ -205,15 +206,15 @@
                             <template x-if="field.type === 'file'">
                                 <input type="file" :name="'dynamic_fields[' + field.field_identifier + ']'"
                                     :required="field.is_required && isFieldVisible(field)"
-                                    class="w-full bg-white border border-slate-200 focus:border-brand-primary p-6 rounded-sm outline-none font-black italic uppercase text-[10px] text-slate-950 transition-all cursor-pointer shadow-sm file:mr-8 file:py-2 file:px-6 file:rounded-sm file:border-0 file:text-[8px] file:font-black file:uppercase file:tracking-widest file:bg-slate-950 file:text-white hover:file:bg-brand-accent hover:file:text-slate-950">
+                                    class="w-full bg-white border border-slate-200 focus:border-brand-primary p-4 rounded-xl outline-none font-bold text-[10px] text-slate-950 transition-all cursor-pointer shadow-sm file:mr-6 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-[8px] file:font-bold file:uppercase file:tracking-widest file:bg-slate-950 file:text-white hover:file:bg-brand-accent hover:file:text-slate-950">
                             </template>
 
                             <!-- Number Input (Converted to Range) -->
                             <template x-if="field.type === 'number'">
-                                <div class="bg-white p-10 rounded-sm border border-slate-200 shadow-sm">
-                                    <div class="flex justify-between items-center mb-8">
-                                        <span class="text-[10px] font-black text-slate-400 uppercase tracking-widest italic">Node Intensity</span>
-                                        <div class="bg-slate-950 text-brand-accent px-6 py-2 rounded-sm text-xs font-black italic shadow-2xl">
+                                <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm">
+                                    <div class="flex justify-between items-center mb-6">
+                                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Node Intensity</span>
+                                        <div class="bg-slate-950 text-brand-accent px-4 py-1.5 rounded-lg text-xs font-bold shadow-sm">
                                             <span x-text="formData[field.field_identifier] || field.options.min || 0"></span>
                                         </div>
                                     </div>
@@ -222,8 +223,8 @@
                                         @input="handleFieldChange(field.field_identifier)"
                                         :min="field.options ? field.options.min : 0"
                                         :max="field.options ? field.options.max : 100"
-                                        class="w-full h-1 bg-slate-100 rounded-sm appearance-none cursor-pointer accent-brand-primary">
-                                    <div class="flex justify-between text-[8px] font-black text-slate-400 uppercase tracking-widest mt-6 italic">
+                                        class="w-full h-1 bg-slate-100 rounded-full appearance-none cursor-pointer accent-brand-primary">
+                                    <div class="flex justify-between text-[8px] font-bold text-slate-400 uppercase tracking-widest mt-4">
                                         <span x-text="'Min Node: ' + (field.options ? field.options.min : 0)"></span>
                                         <span x-text="'Max Node: ' + (field.options ? field.options.max : 100)"></span>
                                     </div>
@@ -237,143 +238,136 @@
 
                 <!-- Pre-Checkout Injector (Monetization Engine) -->
                 <div x-show="totalCalculated > 0" x-transition
-                    class="mt-16 bg-slate-950 rounded-sm p-12 text-white relative overflow-hidden shadow-4xl">
-                    <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+                    class="mt-12 bg-slate-950 rounded-2xl p-8 text-white relative overflow-hidden shadow-sm">
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:30px_30px]"></div>
 
-                    <h4 class="text-[10px] font-black uppercase tracking-[0.4em] text-brand-accent mb-10 relative z-10 italic">Institutional Ledger Node</h4>
+                    <h4 class="text-[10px] font-bold uppercase tracking-[0.4em] text-brand-accent mb-8 relative z-10">Institutional Ledger</h4>
 
-                    <div class="space-y-4 relative z-10 border-b border-white/5 pb-10 mb-10">
+                    <div class="space-y-4 relative z-10 border-b border-white/5 pb-8 mb-8">
                         <template x-for="item in priceBreakdown" :key="item.label">
-                            <div class="flex justify-between items-center text-[10px] uppercase tracking-widest italic font-black">
+                            <div class="flex justify-between items-center text-[10px] uppercase tracking-widest font-bold">
                                 <span class="text-slate-400" x-text="item.label"></span>
                                 <span>₹<span x-text="item.amount.toFixed(2)"></span></span>
                             </div>
                         </template>
 
-                        <div class="pt-6 mt-6 border-t border-white/5 flex justify-between items-center text-xs font-black uppercase tracking-widest italic">
-                            <span class="text-slate-400">Total Subtotal</span>
+                        <div class="pt-4 mt-4 border-t border-white/5 flex justify-between items-center text-xs font-bold uppercase tracking-widest">
+                            <span class="text-slate-400">Subtotal</span>
                             <span>₹<span x-text="subtotal.toFixed(2)"></span></span>
                         </div>
-                        <div class="flex justify-between items-center text-xs font-black uppercase tracking-widest italic">
-                            <span class="text-slate-400">Taxes & Processing Nodes</span>
+                        <div class="flex justify-between items-center text-xs font-bold uppercase tracking-widest">
+                            <span class="text-slate-400">Taxes & Fees</span>
                             <span>₹<span x-text="totalTax.toFixed(2)"></span></span>
                         </div>
                     </div>
 
                     <div class="flex justify-between items-end relative z-10">
-                        <span class="text-[10px] font-black text-slate-500 uppercase tracking-[0.5em] italic">Absolute Amount Due</span>
-                        <span class="text-5xl font-black text-white italic tracking-tighter uppercase">₹<span x-text="totalCalculated.toFixed(2)"></span></span>
+                        <span class="text-[10px] font-bold text-slate-500 uppercase tracking-[0.5em]">Amount Due</span>
+                        <span class="text-4xl font-bold text-white tracking-tight">₹<span x-text="totalCalculated.toFixed(2)"></span></span>
                     </div>
                 </div>
 
                 <!-- Bank Details for Manual Payment -->
                 <div x-show="isManualPayment" x-transition
-                    class="mt-12 p-12 bg-slate-950 text-white rounded-sm border border-slate-900 shadow-4xl relative overflow-hidden">
-                    <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+                    class="mt-8 p-8 bg-slate-950 text-white rounded-2xl border border-slate-900 shadow-sm relative overflow-hidden">
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:30px_30px]"></div>
                     <div class="relative z-10">
-                        <div class="flex items-center gap-6 mb-12">
-                            <div class="w-16 h-16 bg-brand-accent rounded-sm flex items-center justify-center text-slate-950 shadow-2xl">
-                                <i class="fa-solid fa-building-columns text-2xl"></i>
+                        <div class="flex items-center gap-6 mb-10">
+                            <div class="w-12 h-12 bg-brand-primary/20 rounded-xl flex items-center justify-center text-brand-primary">
+                                <i class="fa-solid fa-building-columns text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="text-xl font-black text-white uppercase italic tracking-tighter leading-none">Manual Grid Transfer Node</h4>
-                                <p class="text-[10px] font-black text-brand-accent uppercase tracking-widest italic mt-2">Complete industrial transition via bank node</p>
+                                <h4 class="text-lg font-bold text-white uppercase tracking-tight leading-none">Bank Transfer Details</h4>
+                                <p class="text-[10px] font-bold text-brand-accent uppercase tracking-widest mt-2">Complete payment via bank node</p>
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 border-l border-white/5 pl-12">
-                            <div class="space-y-2">
-                                <p class="text-[8px] font-black text-slate-500 uppercase tracking-[0.3em] italic">Beneficiary Node</p>
-                                <p class="text-xl font-black text-white italic uppercase tracking-tighter">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 border-l border-white/10 pl-8">
+                            <div class="space-y-1">
+                                <p class="text-[8px] font-bold text-slate-500 uppercase tracking-widest">Beneficiary</p>
+                                <p class="text-lg font-bold text-white uppercase tracking-tight">
                                     <?php echo e($site['account_name'] ?? 'World Grexpo Foundation'); ?></p>
                             </div>
-                            <div class="space-y-2">
-                                <p class="text-[8px] font-black text-slate-500 uppercase tracking-[0.3em] italic">Banking Grid</p>
-                                <p class="text-xl font-black text-white italic uppercase tracking-tighter"><?php echo e($site['bank_name'] ?? 'Contact Intelligence Node'); ?>
+                            <div class="space-y-1">
+                                <p class="text-[8px] font-bold text-slate-500 uppercase tracking-widest">Bank</p>
+                                <p class="text-lg font-bold text-white uppercase tracking-tight"><?php echo e($site['bank_name'] ?? 'Contact Intelligence Node'); ?>
 
                                 </p>
                             </div>
-                            <div class="space-y-2">
-                                <p class="text-[8px] font-black text-slate-500 uppercase tracking-[0.3em] italic">Account Index</p>
-                                <p class="text-xl font-black text-brand-accent font-mono tracking-widest italic">
+                            <div class="space-y-1">
+                                <p class="text-[8px] font-bold text-slate-500 uppercase tracking-widest">Account Number</p>
+                                <p class="text-lg font-bold text-brand-accent font-mono tracking-widest">
                                     <?php echo e($site['account_number'] ?? 'Node Not Configured'); ?></p>
                             </div>
-                            <div class="space-y-2">
-                                <p class="text-[8px] font-black text-slate-500 uppercase tracking-[0.3em] italic">IFSC Node (Domestic)</p>
-                                <p class="text-xl font-black text-brand-accent font-mono tracking-widest italic"><?php echo e($site['ifsc_code'] ?? 'N/A'); ?></p>
+                            <div class="space-y-1">
+                                <p class="text-[8px] font-bold text-slate-500 uppercase tracking-widest">IFSC Code</p>
+                                <p class="text-lg font-bold text-brand-accent font-mono tracking-widest"><?php echo e($site['ifsc_code'] ?? 'N/A'); ?></p>
                             </div>
                             <?php if(isset($site['swift_code']) && $site['swift_code']): ?>
-                                <div class="space-y-2">
-                                    <p class="text-[8px] font-black text-slate-500 uppercase tracking-[0.3em] italic">SWIFT Node (Global)</p>
-                                    <p class="text-xl font-black text-brand-accent font-mono tracking-widest italic"><?php echo e($site['swift_code']); ?></p>
-                                </div>
-                            <?php endif; ?>
-                            <?php if(isset($site['bank_branch']) && $site['bank_branch']): ?>
-                                <div class="space-y-2 md:col-span-2">
-                                    <p class="text-[8px] font-black text-slate-500 uppercase tracking-[0.3em] italic">Branch Node Address</p>
-                                    <p class="text-sm font-black text-slate-400 italic uppercase leading-relaxed"><?php echo e($site['bank_branch']); ?></p>
+                                <div class="space-y-1">
+                                    <p class="text-[8px] font-bold text-slate-500 uppercase tracking-widest">SWIFT Code</p>
+                                    <p class="text-lg font-bold text-brand-accent font-mono tracking-widest"><?php echo e($site['swift_code']); ?></p>
                                 </div>
                             <?php endif; ?>
                         </div>
 
-                        <div class="mt-12 p-8 bg-white/5 rounded-sm border border-white/10 flex gap-6 italic">
-                            <i class="fa-solid fa-circle-exclamation text-brand-accent text-xl mt-1"></i>
-                            <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-loose">
-                                Post transition, distribute receipt intelligence to <?php echo e($site['email_1'] ??
-                                'info@worldgrexpo.in'); ?> or WhatsApp Node +91 9810690843 for validation.
+                        <div class="mt-8 p-6 bg-white/5 rounded-xl border border-white/10 flex gap-4">
+                            <i class="fa-solid fa-circle-exclamation text-brand-accent text-lg"></i>
+                            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-relaxed">
+                                Share receipt at <?php echo e($site['email_1'] ?? 'info@worldgrexpo.in'); ?> or WhatsApp +91 9810690843.
                             </p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Trust Signals -->
-                <div class="mt-16 pt-12 border-t border-slate-200">
+                <div class="mt-12 pt-8 border-t border-slate-200">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="flex items-center gap-6 bg-slate-950 p-8 rounded-sm border border-slate-900 group">
-                            <div class="w-16 h-16 bg-brand-accent/20 rounded-sm flex items-center justify-center text-brand-accent group-hover:bg-brand-accent group-hover:text-slate-950 transition-all duration-700">
-                                <i class="fa-solid fa-lock text-2xl"></i>
+                        <div class="flex items-center gap-4 bg-slate-50 p-6 rounded-xl border border-slate-100 group">
+                            <div class="w-12 h-12 bg-slate-200 rounded-xl flex items-center justify-center text-slate-400 group-hover:bg-brand-primary group-hover:text-white transition-all">
+                                <i class="fa-solid fa-lock text-xl"></i>
                             </div>
                             <div class="text-left">
-                                <span class="font-black block text-white uppercase italic tracking-[0.3em] text-[10px] mb-1">Secure Activation Node</span>
-                                <span class="text-slate-500 font-black text-[8px] uppercase tracking-widest italic">256-bit SSL Encrypted Grid</span>
+                                <span class="font-bold block text-slate-900 uppercase tracking-widest text-[10px] mb-1">Secure SSL</span>
+                                <span class="text-slate-500 font-bold text-[8px] uppercase tracking-widest">256-bit Encryption</span>
                             </div>
                         </div>
-                        <div class="flex items-center gap-6 bg-slate-950 p-8 rounded-sm border border-slate-900 group">
-                            <div class="w-16 h-16 bg-emerald-500/20 rounded-sm flex items-center justify-center text-emerald-500 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-700">
-                                <i class="fa-solid fa-shield-halved text-2xl"></i>
+                        <div class="flex items-center gap-4 bg-slate-50 p-6 rounded-xl border border-slate-100 group">
+                            <div class="w-12 h-12 bg-slate-200 rounded-xl flex items-center justify-center text-slate-400 group-hover:bg-emerald-500 group-hover:text-white transition-all">
+                                <i class="fa-solid fa-shield-halved text-xl"></i>
                             </div>
                             <div class="text-left">
-                                <span class="font-black block text-white uppercase italic tracking-[0.3em] text-[10px] mb-1">Verified Portal Grid</span>
-                                <span class="text-slate-500 font-black text-[8px] uppercase tracking-widest italic">Official Foundation Intelligence Server</span>
+                                <span class="font-bold block text-slate-900 uppercase tracking-widest text-[10px] mb-1">Verified Portal</span>
+                                <span class="text-slate-500 font-bold text-[8px] uppercase tracking-widest">Official Foundation Server</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="mt-16 pt-12 border-t border-slate-100">
+                <div class="mt-12 pt-8 border-t border-slate-100">
                     <input type="hidden" name="payment_method" :value="isManualPayment ? 'manual' : 'gateway'">
                     <button type="submit" :disabled="loading"
-                        class="w-full bg-slate-950 hover:bg-brand-accent text-white hover:text-slate-950 font-black py-10 rounded-sm transition-all duration-700 shadow-4xl text-xs uppercase tracking-[0.4em] italic flex justify-center items-center gap-6 disabled:opacity-50 disabled:cursor-wait">
+                        class="w-full bg-slate-950 hover:bg-brand-primary text-white font-bold py-6 rounded-xl transition-all shadow-lg text-sm uppercase tracking-widest flex justify-center items-center gap-4 disabled:opacity-50 disabled:cursor-wait">
                         <template x-if="loading">
                             <i class="fa-solid fa-circle-notch fa-spin"></i>
                         </template>
                         <span
-                            x-text="loading ? 'Processing Intelligence...' : (isManualPayment ? 'Activate Institutional Node' : '<?php echo e($form->submit_button_text); ?>')"></span>
-                        <i x-show="!loading" class="fa-solid fa-arrow-right-long text-sm group-hover:translate-x-4 transition-transform"></i>
+                            x-text="loading ? 'Processing...' : (isManualPayment ? 'Activate Membership' : '<?php echo e($form->submit_button_text); ?>')"></span>
+                        <i x-show="!loading" class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-2 transition-transform"></i>
                     </button>
 
                     <!-- Contact CTA -->
-                    <div class="mt-12 text-center">
-                        <p class="text-[10px] font-black uppercase tracking-[0.5em] text-slate-400 mb-8 italic">Intelligence Assistance Nodes</p>
+                    <div class="mt-10 text-center">
+                        <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-6">Assistance</p>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <a href="https://wa.me/919810690843?text=Hi,%20I'm%20interested%20in%20the%20<?php echo e(urlencode($form->name)); ?>%20nomination."
                                 target="_blank"
-                                class="flex items-center justify-center gap-4 px-8 bg-[#25D366] hover:bg-slate-950 text-white py-6 rounded-sm font-black text-[10px] uppercase tracking-[0.3em] transition-all italic shadow-4xl group/wa">
-                                <i class="fa-brands fa-whatsapp text-xl group-hover/wa:scale-125 transition-transform"></i> Apply via Node
+                                class="flex items-center justify-center gap-3 px-6 bg-[#25D366] hover:bg-emerald-600 text-white py-4 rounded-xl font-bold text-[10px] uppercase tracking-widest transition-all shadow-md group">
+                                <i class="fa-brands fa-whatsapp text-lg group-hover:scale-110 transition-transform"></i> WhatsApp
                             </a>
                             <a href="tel:+919810690843"
-                                class="flex items-center justify-center gap-4 px-8 bg-slate-950 hover:bg-brand-accent text-white hover:text-slate-950 py-6 rounded-sm font-black text-[10px] uppercase tracking-[0.3em] transition-all italic shadow-4xl group/call">
-                                <i class="fa-solid fa-phone text-xl group-hover/call:scale-125 transition-transform"></i> Direct Intelligence
+                                class="flex items-center justify-center gap-3 px-6 bg-slate-100 hover:bg-slate-200 text-slate-900 py-4 rounded-xl font-bold text-[10px] uppercase tracking-widest transition-all shadow-sm group">
+                                <i class="fa-solid fa-phone text-lg group-hover:scale-110 transition-transform"></i> Call Support
                             </a>
                         </div>
                     </div>

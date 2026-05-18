@@ -3,41 +3,41 @@
 <?php $__env->startSection('title', 'What is World Grexpo | Global Industrial Sustainability Foundation'); ?>
 
 <?php $__env->startSection('content'); ?>
-    <!-- Sharp Industrial Hero -->
-    <section class="relative pt-64 pb-32 bg-slate-900 overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <div class="absolute inset-0 opacity-20 grayscale" 
-                 style="background-image: url('<?php echo e(asset('images/about/hero-bg.png')); ?>'); background-size: cover; background-position: center;"></div>
-            <div class="absolute inset-0 bg-linear-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
-        </div>
-        
-        <div class="container relative z-10">
-            <div class="max-w-4xl space-y-10">
-                <div class="section-heading">
-                    <span class="subtitle text-brand-accent">The Foundation</span>
-                    <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-black">What is <span class="text-brand-accent">World Grexpo?</span></h1>
-                    <div class="accent-line bg-brand-accent"></div>
-                </div>
-                
-                <p class="text-xl text-slate-300 max-w-3xl leading-relaxed font-medium">
-                    Pioneering the global industrial transition through strategic ESG frameworks and absolute sustainability advocacy across cross-border trade corridors.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Modular sections -->
-    <?php echo $__env->make('website.about.partials.who_we_are', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
-
+ <!-- Sharp Industrial Hero -->
+ <section class="relative pt-40 pb-20 bg-slate-900 overflow-hidden">
+  <div class="absolute inset-0 z-0">
+   <div class="absolute inset-0 opacity-20 " 
+     style="background-image: url('<?php echo e(asset('images/about/hero-bg.png')); ?>'); background-size: cover; background-position: center;"></div>
+   <div class="absolute inset-0 bg-linear-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
+  </div>
+  
+  <div class="container relative z-10">
+   <div class="max-w-4xl space-y-8">
+    <div class="section-heading">
+     <span class="subtitle text-brand-accent">The Foundation</span>
+     <h1 class="text-white text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">What is <span class="text-brand-accent">World Grexpo?</span></h1>
+     <div class="accent-line bg-brand-accent"></div>
+    </div>
     
-    <?php echo $__env->make('website.home.partials.why_choose', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
-    <?php echo $__env->make('website.home.partials.growth', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
-    
-    <?php echo $__env->make('website.about.partials.history', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
-    <?php echo $__env->make('website.about.partials.mission_vision', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
-    <?php echo $__env->make('website.about.partials.core_values', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+    <p class="text-lg md:text-xl text-slate-300 max-w-3xl leading-relaxed font-medium">
+     Pioneering the global industrial transition through strategic ESG frameworks and absolute sustainability advocacy across cross-border trade corridors.
+    </p>
+   </div>
+  </div>
+ </section>
 
-    <?php echo $__env->make('website.home.partials.membership', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+ <!-- Modular sections -->
+ <?php echo $__env->make('website.about.partials.who_we_are', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+
+ 
+ <?php echo $__env->make('website.home.partials.why_choose', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+ <?php echo $__env->make('website.home.partials.growth', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+ 
+ <?php echo $__env->make('website.about.partials.history', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+ <?php echo $__env->make('website.about.partials.mission_vision', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+ <?php echo $__env->make('website.about.partials.core_values', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+
+ <?php echo $__env->make('website.home.partials.membership', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
 
 <?php $__env->stopSection(); ?>
 

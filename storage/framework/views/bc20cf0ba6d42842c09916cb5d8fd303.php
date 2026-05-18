@@ -11,23 +11,23 @@
             <div class="lg:col-span-4 space-y-10">
                 <div class="section-heading">
                     <span class="subtitle">Impact Growth</span>
-                    <h2>Scaling <span class="text-brand-primary">Global</span> Excellence.</h2>
+                    <h2 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight uppercase">Scaling <span class="text-brand-primary">Global</span> Excellence.</h2>
                     <div class="accent-line"></div>
                 </div>
                 
-                <p class="text-xl text-slate-500 font-medium leading-relaxed max-w-md">
+                <p class="text-lg text-slate-500 font-medium leading-relaxed max-w-md">
                     What started as a focused initiative has evolved into a global powerhouse, connecting visionaries across the industrial spectrum.
                 </p>
                 
                 <!-- Stats Grid (Sharp) -->
                 <div class="grid grid-cols-2 gap-px bg-slate-200 border border-slate-200">
                     <div class="bg-white p-8 group">
-                        <span class="block text-4xl font-black text-slate-900 tracking-tighter mb-2 group-hover:text-brand-primary transition-colors">5.2X</span>
-                        <span class="block text-[9px] font-black text-slate-400 uppercase tracking-widest">Growth Factor</span>
+                        <span class="block text-4xl font-bold text-slate-900 tracking-tighter mb-2 group-hover:text-brand-primary transition-colors">5.2X</span>
+                        <span class="block text-[9px] font-bold text-slate-400 uppercase tracking-widest">Growth Factor</span>
                     </div>
                     <div class="bg-white p-8 group">
-                        <span class="block text-4xl font-black text-slate-900 tracking-tighter mb-2 group-hover:text-brand-primary transition-colors">1.8K+</span>
-                        <span class="block text-[9px] font-black text-slate-400 uppercase tracking-widest">Expected 2027</span>
+                        <span class="block text-4xl font-bold text-slate-900 tracking-tighter mb-2 group-hover:text-brand-primary transition-colors">1.8K+</span>
+                        <span class="block text-[9px] font-bold text-slate-400 uppercase tracking-widest">Expected 2027</span>
                     </div>
                 </div>
             </div>
@@ -69,7 +69,7 @@
                                     </div>
 
                                     <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-2">
-                                        <div class="text-xl lg:text-3xl font-black <?php echo e($isLatest ? 'text-white' : 'text-brand-primary-dark'); ?> tracking-tighter tabular-nums leading-none">
+                                        <div class="text-xl lg:text-3xl font-bold <?php echo e($isLatest ? 'text-white' : 'text-brand-primary-dark'); ?> tracking-tighter tabular-nums leading-none">
                                             <?php echo e($stat->value); ?>
 
                                         </div>
@@ -78,14 +78,14 @@
                                     <!-- Latest Indicator -->
                                     <?php if($isLatest): ?>
                                         <div class="absolute -top-12 left-1/2 -translate-x-1/2">
-                                            <span class="bg-brand-primary text-white text-[8px] font-black px-3 py-1 uppercase tracking-widest whitespace-nowrap">Growth Peak</span>
+                                            <span class="bg-brand-primary text-white text-[8px] font-bold px-3 py-1 uppercase tracking-widest whitespace-nowrap">Growth Peak</span>
                                         </div>
                                     <?php endif; ?>
                                 </div>
                                 
                                 <!-- Year Label (Sharp) -->
                                 <div class="mt-8">
-                                    <span class="text-xs font-black <?php echo e($isLatest ? 'text-brand-primary' : 'text-slate-400'); ?> tracking-widest uppercase"><?php echo e($stat->year); ?></span>
+                                    <span class="text-xs font-bold <?php echo e($isLatest ? 'text-brand-primary' : 'text-slate-400'); ?> tracking-widest uppercase"><?php echo e($stat->year); ?></span>
                                 </div>
                             </div>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -102,7 +102,7 @@
                         <i class="fa-solid fa-star text-brand-accent text-[11px]"></i>
                     <?php endfor; ?>
                 </div>
-                <p class="text-slate-400 text-[10px] font-black uppercase tracking-[0.3em] italic">
+                <p class="text-slate-400 text-[10px] font-bold uppercase tracking-[0.3em] italic">
                     Certified Industrial Excellence — Covering <?php echo e(count(config('sectors.sectors'))); ?>+ Global Sectors
                 </p>
             </div>

@@ -173,6 +173,3 @@
     </section>
 
 @endsection
-
-@endsection
-@endsection

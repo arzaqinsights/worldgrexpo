@@ -87,18 +87,31 @@
             </a>
 
             @php
+                $teamPages = \App\Models\TeamPage::where('status', true)->orderBy('order')->get()->map(function ($page) {
+                    return [
+                        'name' => $page->title,
+                        'route' => 'about.team_page',
+                        'slug' => $page->slug,
+                        'active' => 'about/' . $page->slug
+                    ];
+                })->toArray();
+
                 $menu = [
                     ['name' => 'HOME', 'route' => 'home', 'active' => '/'],
                     [
                         'name' => 'ABOUT',
                         'route' => 'about.index',
                         'active' => 'about.*',
-                        'sub_menu' => [
-                            ['name' => 'Institutional Profile', 'route' => 'about.index', 'active' => 'about'],
-                            ['name' => 'Global Chairman', 'route' => 'about.chairman', 'active' => 'about/chairman'],
-                            ['name' => 'Core Leadership', 'route' => 'about.leadership', 'active' => 'about/leadership'],
-                            ['name' => 'Wall of Excellence', 'route' => 'excellence.index', 'active' => 'wall-of-excellence'],
-                        ]
+                        'sub_menu' => array_merge(
+                            [
+                                ['name' => 'Institutional Profile', 'route' => 'about.index', 'active' => 'about'],
+                                ['name' => 'Global Chairman', 'route' => 'about.chairman', 'active' => 'about/chairman'],
+                            ],
+                            $teamPages,
+                            [
+                                ['name' => 'Wall of Excellence', 'route' => 'excellence.index', 'active' => 'wall-of-excellence'],
+                            ]
+                        )
                     ],
                     [
                         'name' => 'PARTICIPATE',
@@ -276,25 +289,30 @@
     </main>
 
     <!-- Industrial Footer -->
-    <footer class="bg-white border-t border-slate-200 pt-24 pb-12 overflow-hidden relative">
+    <footer class="bg-brand-primary pt-20 pb-12 overflow-hidden relative text-white">
+        <!-- Subtle Industrial Pattern -->
+        <div class="absolute inset-0 z-0 opacity-5">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        </div>
+
         <div class="container relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 pb-20 border-b border-slate-100">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
                 <!-- Brand Story -->
                 <div class="lg:col-span-5">
-                    <img src="{{ asset('images/logo/logo.png') }}" alt="Logo" class="h-16 w-auto mb-10">
-                    <h2 class="text-3xl font-black mb-6 uppercase tracking-tighter leading-tight text-slate-900">
-                        Bridging Global <br><span class="text-brand-primary">Industrial Excellence</span>
+                    <img src="{{ asset('images/logo/logo.png') }}" alt="Logo" class="h-18 w-auto mb-8 brightness-0 invert">
+                    <h2 class="text-2xl font-bold mb-6 leading-tight tracking-tight">
+                        Bridging Global <br><span class="opacity-50">Industrial Excellence</span>
                     </h2>
-                    <p class="text-slate-500 leading-relaxed mb-10 text-sm max-w-md">
+                    <p class="text-white/60 leading-relaxed mb-8 text-sm max-w-md font-medium">
                         World Grexpo is the premier global business ecosystem bridging the gap between innovative
-                        enterprises and industrial giants to redefine the future of trade.
+                        enterprises and industrial giants to redefine trade.
                     </p>
-                    <div class="flex gap-4">
+                    <div class="flex gap-3">
                         @foreach(['facebook' => 'facebook-f', 'twitter' => 'x-twitter', 'linkedin' => 'linkedin-in', 'instagram' => 'instagram', 'youtube' => 'youtube'] as $platform => $icon)
                             @if($site[$platform . '_url'] ?? false)
                                 <a href="{{ $site[$platform . '_url'] }}" target="_blank"
-                                    class="w-12 h-12 border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-brand-primary hover:text-white hover:border-brand-primary transition-all duration-300">
-                                    <i class="fa-brands fa-{{ $icon }}"></i>
+                                    class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-white hover:text-brand-primary transition-all duration-300">
+                                    <i class="fa-brands fa-{{ $icon }} text-sm"></i>
                                 </a>
                             @endif
                         @endforeach
@@ -303,60 +321,60 @@
 
                 <!-- Footer Navigation Links -->
                 <div class="lg:col-span-2">
-                    <h3 class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 mb-8">Platform</h3>
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-white/40 mb-8">Platform</h3>
                     <ul class="space-y-4">
                         @foreach($menu as $m)
                             @if(!isset($m['sub_menu']) && $loop->index < 5)
                                 <li><a href="{{ route($m['route']) }}"
-                                        class="text-slate-600 hover:text-brand-primary text-[11px] font-bold uppercase tracking-wider transition-colors">{{ $m['name'] }}</a>
+                                        class="text-white/70 hover:text-white text-sm transition-colors">{{ $m['name'] }}</a>
                                 </li>
                             @endif
                         @endforeach
                         <li><a href="{{ route('join.index') }}"
-                                class="text-slate-600 hover:text-brand-primary text-[11px] font-bold uppercase tracking-wider transition-colors">Participate</a>
+                                class="text-white/70 hover:text-white text-sm transition-colors">Participate</a>
                         </li>
                     </ul>
                 </div>
 
                 <div class="lg:col-span-2">
-                    <h3 class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 mb-8">Quick Access</h3>
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-white/40 mb-8">Quick Access</h3>
                     <ul class="space-y-4">
                         <li><a href="{{ route('sectors.index') }}"
-                                class="text-slate-600 hover:text-brand-primary text-[11px] font-bold uppercase tracking-wider transition-colors">Sectors</a></li>
+                                class="text-white/70 hover:text-white text-sm transition-colors">Sectors</a></li>
                         <li><a href="{{ route('events.index') }}"
-                                class="text-slate-600 hover:text-brand-primary text-[11px] font-bold uppercase tracking-wider transition-colors">Global Events</a></li>
+                                class="text-white/70 hover:text-white text-sm transition-colors">Global Events</a></li>
                         <li><a href="{{ route('blog.index') }}"
-                                class="text-slate-600 hover:text-brand-primary text-[11px] font-bold uppercase tracking-wider transition-colors">Insights</a></li>
+                                class="text-white/70 hover:text-white text-sm transition-colors">Insights</a></li>
                         <li><a href="{{ route('privacy') }}"
-                                class="text-slate-600 hover:text-brand-primary text-[11px] font-bold uppercase tracking-wider transition-colors">Privacy</a></li>
+                                class="text-white/70 hover:text-white text-sm transition-colors">Privacy</a></li>
                     </ul>
                 </div>
 
                 <!-- Contact Info -->
                 <div class="lg:col-span-3">
-                    <h3 class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 mb-8">Headquarters</h3>
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-white/40 mb-8">Headquarters</h3>
                     <div class="space-y-8">
                         @if($site['address'] ?? false)
                             <div class="flex gap-4">
-                                <i class="fa-solid fa-location-dot text-brand-primary mt-1"></i>
-                                <p class="text-slate-500 text-xs leading-relaxed font-bold uppercase tracking-wider">{!! nl2br(e($site['address'])) !!}</p>
+                                <i class="fa-solid fa-location-dot text-white/40 mt-1"></i>
+                                <p class="text-white/70 text-xs leading-relaxed font-medium">{!! nl2br(e($site['address'])) !!}</p>
                             </div>
                         @endif
                         <div class="space-y-4">
                             @if($site['phone_1'] ?? false)
-                                <a href="tel:{{ $site['phone_1'] }}" class="flex items-center gap-4 text-slate-900 group">
-                                    <div class="w-10 h-10 bg-slate-50 flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-all">
+                                <a href="tel:{{ $site['phone_1'] }}" class="flex items-center gap-4 text-white/70 hover:text-white group transition-colors">
+                                    <div class="w-8 h-8 bg-white/5 flex items-center justify-center rounded-lg">
                                         <i class="fa-solid fa-phone text-xs"></i>
                                     </div>
-                                    <span class="text-[11px] font-black tracking-widest uppercase">{{ $site['phone_1'] }}</span>
+                                    <span class="text-sm font-bold tracking-wider">{{ $site['phone_1'] }}</span>
                                 </a>
                             @endif
                             @if($site['email_1'] ?? false)
-                                <a href="mailto:{{ $site['email_1'] }}" class="flex items-center gap-4 text-slate-900 group">
-                                    <div class="w-10 h-10 bg-slate-50 flex items-center justify-center group-hover:bg-brand-primary group-hover:text-white transition-all">
+                                <a href="mailto:{{ $site['email_1'] }}" class="flex items-center gap-4 text-white/70 hover:text-white group transition-colors">
+                                    <div class="w-8 h-8 bg-white/5 flex items-center justify-center rounded-lg">
                                         <i class="fa-solid fa-envelope text-xs"></i>
                                     </div>
-                                    <span class="text-[11px] font-black tracking-widest uppercase">{{ $site['email_1'] }}</span>
+                                    <span class="text-sm font-bold tracking-wider">{{ $site['email_1'] }}</span>
                                 </a>
                             @endif
                         </div>
@@ -365,45 +383,48 @@
             </div>
 
             <!-- Bottom Copyright -->
-            <div class="pt-12 flex flex-col md:row justify-between items-center gap-6">
-                <p class="text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em]">
-                    &copy; {{ date('Y') }} World Grexpo Global Network. All Rights Reserved.
+            <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-white/40 text-xs font-medium">
+                    &copy; {{ date('Y') }} World Grexpo Foundation. All Rights Reserved.
                 </p>
                 <div class="flex gap-12">
                     <div class="flex items-center gap-2">
-                        <span class="w-2 h-2 bg-brand-accent"></span>
-                        <span class="text-[10px] font-black uppercase tracking-widest text-slate-900">Industrial Standards</span>
+                        <span class="w-2 h-2 rounded-full bg-white/20"></span>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-white/40">Industrial Standards</span>
                     </div>
                     <div class="flex items-center gap-2">
-                        <span class="w-2 h-2 bg-brand-primary"></span>
-                        <span class="text-[10px] font-black uppercase tracking-widest text-slate-900">Global Connectivity</span>
+                        <span class="w-2 h-2 rounded-full bg-white/40"></span>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-white/40">Global Connectivity</span>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Sharp Quick Help -->
-    <div x-data="{ open: false }" class="fixed bottom-8 right-8 z-[90]">
-        <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0" x-cloak class="absolute bottom-full right-0 mb-6 flex flex-col gap-2 items-end">
+    <!-- Simplified Floating Help -->
+    <div x-data="{ open: false }" class="fixed bottom-6 right-6 z-[90]">
+        <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0" x-cloak class="absolute bottom-full right-0 mb-4 flex flex-col gap-2 items-end">
             @if($site['whatsapp_url'] ?? false)
-                <a href="{{ $site['whatsapp_url'] }}" target="_blank" class="flex items-center gap-4 bg-white border border-slate-200 p-4 hover:border-brand-primary transition-all group shadow-2xl">
-                    <span class="text-[10px] font-black uppercase tracking-widest text-slate-900">WhatsApp</span>
-                    <i class="fa-brands fa-whatsapp text-green-600 text-xl"></i>
+                <a href="{{ $site['whatsapp_url'] }}" target="_blank" class="flex items-center gap-3 bg-white border border-slate-100 p-3 rounded-xl hover:border-brand-primary transition-all group shadow-xl">
+                    <span class="text-xs font-bold text-slate-700">WhatsApp</span>
+                    <div class="w-8 h-8 rounded-full bg-green-50 flex items-center justify-center text-green-600">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
                 </a>
             @endif
             @if($site['email_1'] ?? false)
-                <a href="mailto:{{ $site['email_1'] }}" class="flex items-center gap-4 bg-white border border-slate-200 p-4 hover:border-brand-primary transition-all group shadow-2xl">
-                    <span class="text-[10px] font-black uppercase tracking-widest text-slate-900">Support</span>
-                    <i class="fa-solid fa-envelope text-blue-600 text-xl"></i>
+                <a href="mailto:{{ $site['email_1'] }}" class="flex items-center gap-3 bg-white border border-slate-100 p-3 rounded-xl hover:border-brand-primary transition-all group shadow-xl">
+                    <span class="text-xs font-bold text-slate-700">Support</span>
+                    <div class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
                 </a>
             @endif
         </div>
 
         <button @click="open = !open"
-            class="w-16 h-16 bg-brand-primary text-white flex items-center justify-center hover:bg-brand-primary-dark transition-all shadow-2xl group relative">
-            <div class="absolute inset-0 border-2 border-white/20 scale-90 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all"></div>
-            <i class="fa-solid fa-plus text-2xl transition-transform duration-300" :class="open ? 'rotate-45' : ''"></i>
+            class="w-14 h-14 bg-brand-primary text-white rounded-full border-2 border-white/20 flex items-center justify-center hover:bg-brand-primary-dark transition-all shadow-xl group">
+            <i class="fa-solid fa-plus text-xl transition-transform duration-300" :class="open ? 'rotate-45' : ''"></i>
         </button>
     </div>
 

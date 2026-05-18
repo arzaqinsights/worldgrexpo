@@ -9,10 +9,20 @@
         <h2 class="text-2xl font-black text-slate-900">Dynamic Forms</h2>
         <p class="text-sm font-bold text-slate-500 mt-1">Construct nomination and application forms visually.</p>
     </div>
-    <a href="{{ route('admin.forms.create') }}" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg hover:shadow-emerald-500/40 transition-all flex items-center gap-2">
-        <i class="fa-solid fa-plus"></i>
-        Create New Form
-    </a>
+    <div class="flex items-center gap-3">
+        <form action="{{ route('admin.forms.import-sql') }}" method="POST" enctype="multipart/form-data" class="flex items-center m-0">
+            @csrf
+            <label class="cursor-pointer bg-white hover:bg-slate-50 text-slate-700 font-bold py-3 px-5 rounded-xl border border-slate-200 hover:border-slate-300 shadow-sm transition-all flex items-center gap-2 text-sm">
+                <i class="fa-solid fa-file-import text-indigo-500 text-base"></i>
+                <span>Import Blueprint</span>
+                <input type="file" name="sql_file" accept=".sql" class="hidden" onchange="this.form.submit()">
+            </label>
+        </form>
+        <a href="{{ route('admin.forms.create') }}" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 px-6 rounded-xl shadow-lg hover:shadow-emerald-500/40 transition-all flex items-center gap-2 text-sm">
+            <i class="fa-solid fa-plus"></i>
+            Create New Form
+        </a>
+    </div>
 </div>
 
 <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
@@ -45,6 +55,9 @@
                                 </a>
                                 <a href="{{ route('admin.forms.edit', $form) }}" class="text-emerald-600 hover:text-emerald-700 font-bold bg-emerald-50 hover:bg-emerald-100 px-3 py-1.5 rounded-lg transition-colors">
                                     <i class="fa-regular fa-pen-to-square mr-1"></i> Edit Blueprint
+                                </a>
+                                <a href="{{ route('admin.forms.export-sql', $form) }}" class="text-indigo-600 hover:text-indigo-700 font-bold bg-indigo-50 hover:bg-indigo-100 px-3 py-1.5 rounded-lg transition-colors" title="Export Form to SQL">
+                                    <i class="fa-solid fa-file-export mr-1"></i> Export SQL
                                 </a>
                                 <div x-data="{
                                     copied: false,

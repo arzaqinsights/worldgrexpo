@@ -75,7 +75,7 @@
     </div>
 </section>
 
-<?php if (! $__env->hasRenderedOnce('d3b64837-4b9b-40a8-b103-8563817a1645')): $__env->markAsRenderedOnce('d3b64837-4b9b-40a8-b103-8563817a1645'); ?>
+<?php if (! $__env->hasRenderedOnce('fe105fb6-3876-4bde-b3c9-9da7cb03dd23')): $__env->markAsRenderedOnce('fe105fb6-3876-4bde-b3c9-9da7cb03dd23'); ?>
 <script>
     (function() {
         function initSectorSlider() {
