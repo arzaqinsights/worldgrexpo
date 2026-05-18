@@ -12,14 +12,14 @@
   </div>
   
   <div class="container relative z-10">
-   <div class="max-w-4xl space-y-8">
+   <div class="max-w-3xl space-y-6">
     <div class="section-heading">
-     <span class="subtitle text-brand-accent">The Foundation</span>
-     <h1 class="text-white text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">What is <span class="text-brand-accent">World Grexpo?</span></h1>
-     <div class="accent-line bg-brand-accent"></div>
+     <span class="subtitle text-brand-accent text-xs font-black tracking-[0.2em] uppercase">The Foundation</span>
+     <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight uppercase">What is <span class="text-brand-accent">World Grexpo?</span></h1>
+     <div class="accent-line bg-brand-accent w-16 h-1 mt-4"></div>
     </div>
     
-    <p class="text-lg md:text-xl text-slate-300 max-w-3xl leading-relaxed font-medium">
+    <p class="text-sm md:text-base text-slate-300 max-w-2xl leading-relaxed font-medium">
      Pioneering the global industrial transition through strategic ESG frameworks and absolute sustainability advocacy across cross-border trade corridors.
     </p>
    </div>
@@ -31,7 +31,6 @@
 
  {{-- Reusing high-impact home partials --}}
  @include('website.home.partials.why_choose')
- @include('website.home.partials.growth')
  
  @include('website.about.partials.history')
  @include('website.about.partials.mission_vision')

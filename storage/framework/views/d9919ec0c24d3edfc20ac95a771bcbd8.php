@@ -110,7 +110,7 @@
                         'sub_menu' => array_merge(
                             [
                                 ['name' => 'Institutional Profile', 'route' => 'about.index', 'active' => 'about'],
-                                ['name' => 'Global Chairman', 'route' => 'about.chairman', 'active' => 'about/chairman'],
+                                // ['name' => 'Global Chairman', 'route' => 'about.chairman', 'active' => 'about/chairman'],
                             ],
                             $teamPages,
                             [
